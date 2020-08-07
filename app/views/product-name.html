@@ -11,7 +11,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
       text: "Back",
-      href: "/add-product/brand"
+      href: "/add-product/brand-search?brand=" + data['brand']
     }) }}
 {% endblock %}
 
@@ -20,22 +20,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
-
-    <form action="/add-product/includes-brand" method="post">
-      <input type="hidden" name="includes-brand" value="yes" />
+    <form action="/add-product/product-categories" method="post">
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Brand name",
+          text: "Product category",
           classes: "",
           isPageHeading: false
         },
         classes: "govuk-input--width-20",
-        id: "brand-search",
-        name: "brand",
-        value: data['brand']
+        id: "category",
+        name: "category",
+        value: data['category']
       }) }}
 
       {{ govukButton({
@@ -46,13 +43,16 @@
 
     </form>
 
-    <form action="/add-product/brand" method="post">
+    <form action="/add-product/product-name" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
       {{ govukRadios({
-        idPrefix: "brand",
-        name: "brand",
+        idPrefix: "product-category",
+        name: "product-category",
         fieldset: {
           legend: {
-            text: "Is the brand one of these?",
+            text: "Is the product type one of these?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -62,14 +62,13 @@
         },
         items: [
           {
-            value: data['brand'] + " bikes",
-            text: data['brand'] + " bikes",
+            value: "Washing machine",
+            text: "Washing machine",
             label: {
               classes: "govuk-label--s"
             },
             hint: {
-              html: "<div>3 products</div>
-
+              html: "<div>34 products, including:</div>
               <div class=\"app-product-thumbnails\">
                 <div class=\"app-product-thumbnails--product\"></div>
                 <div class=\"app-product-thumbnails--product\"></div>
@@ -79,18 +78,14 @@
             }
           },
           {
-            value: data['brand'] + " toys",
+            value: "Sewing machine",
+            text: "Sewing machine",
             label: {
               classes: "govuk-label--s"
             },
-            text: data['brand'] + " toys",
             hint: {
               html: "<div>12 products, including:</div>
-
               <div class=\"app-product-thumbnails\">
-                <div class=\"app-product-thumbnails--product\"></div>
-                <div class=\"app-product-thumbnails--product\"></div>
-                <div class=\"app-product-thumbnails--product\"></div>
                 <div class=\"app-product-thumbnails--product\"></div>
               </div>
               "
@@ -100,23 +95,21 @@
             divider: "or"
           },
           {
-            value: 'new',
+            value: "new",
             label: {
               classes: "govuk-label--s"
             },
-            text: "Add ‘" + data['brand'] + "’ as a new product brand"
+            text: "Add ‘" + data['category'] + "’ as a product type"
           }
         ]
       }) }}
 
-      <input type="hidden" name="new-brand" value="{{ data['brand'] }}">
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    </form>
-
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
     </div>
+
   </div>
 
 {% endblock %}

@@ -17,37 +17,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/add-product/includes-brand" method="post">
+      <form action="/add-product/description" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% set brandHtml %}
+      {% set barcodeHtml %}
         {{ govukInput({
-          id: "brand",
-          name: "brand",
+          id: "upc-number",
+          name: "upc-number",
           type: "text",
           spellcheck: false,
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Brand name"
+            text: "Barcode (UPC) number",
+            classes: "govuk-label--s"
           },
-          value: data['brand']
+          hint: {
+            text: "This is often printed below the barcode, and is usually 13 digits long. UK products often start with 50."
+          },
+          value: data['upc-number']
         }) }}
       {% endset -%}
 
 
       {% set questionText %}
-        {% if data['counterfeit'] == "yes" %}
-          Is there a brand the product is a counterfeit of?
-        {% else %}
-          Does the product have a brand?
-        {% endif %}
+        Is there a barcode for the product?
       {% endset %}
 
       {{ govukRadios({
-        idPrefix: "includes-brand",
-        name: "includes-brand",
+        idPrefix: "includes-barcode",
+        name: "includes-barcode",
         fieldset: {
           legend: {
             text: questionText,
@@ -56,14 +56,14 @@
           }
         },
         hint: {
-          text: "This could be the name of the manufacturer, for example ‘Dyson’, or a brand for the range of products, for example ‘Xbox’ "
+          text: "Usually printed on the product or packaging."
         },
         items: [
           {
             value: "yes",
             text: "Yes",
             conditional: {
-              html: brandHtml
+              html: barcodeHtml
             }
           },
           {

@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/add-product/brand-search?brand=" + data['brand']
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="/add-product/summary" method="post">
+      <h1 class="govuk-heading-xl">Further details</h1>
+
+        {{ govukInput({
+          id: "webpage",
+          name: "webpage",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Webpage (optional)",
+            isPageHeading: false,
+            classes: ""
+          },
+          hint: {
+            text: "For example, a retailer or manufacturer page about this specific product"
+          },
+          value: data['webpage']
+        }) }}
+
+        {{ govukTextarea({
+          id: "description",
+          name: "description",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Description (optional)",
+            isPageHeading: false,
+            classes: ""
+          },
+          hint: {
+            text: "Include any additional details needed to identify the product"
+          },
+          value: data['description']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+
+  </div>
+
+{% endblock %}

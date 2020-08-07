@@ -31,8 +31,8 @@
         },
         classes: "govuk-input--width-20",
         id: "category",
-        name: "category",
-        value: data['category']
+        name: "product-category",
+        value: data['product-category']
       }) }}
 
       {{ govukButton({
@@ -43,7 +43,7 @@
 
     </form>
 
-    <form action="/add-product/existing-product" method="post">
+    <form action="/add-product/set-product-category" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -99,10 +99,12 @@
             label: {
               classes: "govuk-label--s"
             },
-            text: "Add ‘" + data['category'] + "’ as a product type"
+            text: "Add ‘" + data['product-category'] + "’ as a product type"
           }
         ]
       }) }}
+
+      <input type="hidden" name="new-product-category" value="{{ data['product-category'] }}">
 
         {{ govukButton({
           text: "Continue"

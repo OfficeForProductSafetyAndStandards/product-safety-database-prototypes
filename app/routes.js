@@ -32,12 +32,27 @@ router.post('/add-product/brand', function (req, res) {
   let brand = req.session.data['brand']
 
   if (brand == 'new') {
+    req.session.data['brand'] = req.session.data['new-brand']
     res.redirect('/add-product/product-category' )
   } else {
     res.redirect('/add-product/products-for-brand')
   }
 
 })
+
+router.post('/add-product/set-product-category', function (req, res) {
+
+  let productCategory = req.session.data['product-category']
+
+  if (productCategory == 'new') {
+    req.session.data['product-category'] = req.session.data['new-product-category']
+  }
+
+  res.redirect('/add-product/product-name' )
+
+})
+
+
 
 router.post('/add-product/existing-product', function (req, res) {
 

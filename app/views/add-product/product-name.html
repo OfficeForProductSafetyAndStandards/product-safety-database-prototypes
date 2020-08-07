@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/add-product/brand-search?brand=" + data['brand']
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="/add-product/barcode" method="post">
+
+        {{ govukInput({
+          id: "product",
+          name: "product",
+          type: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "What is the name or model of the " +  (data['product-category'] | lower) + '?',
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "Do not include the brand name (‘" + data['brand'] + '’) or any product variant details (for example, colour or finish).'
+          },
+          value: data['product']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+
+  </div>
+
+{% endblock %}

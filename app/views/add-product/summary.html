@@ -1,0 +1,130 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check the product details</h1>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Brand"
+            },
+            value: {
+              text: data['brand']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/brand",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name or model"
+            },
+            value: {
+              text: data['product']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/product-name",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Category"
+            },
+            value: {
+              html: data['product-category']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/product-category",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Barcode number"
+            },
+            value: {
+              html: data['upc-number']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/barcode",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Webpage"
+            },
+            value: {
+              html: data['webpage']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/description",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Description"
+            },
+            value: {
+              html: data['description']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/add-product/description",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({text: "Add this product" })}}
+
+    </div>
+  </div>
+
+{% endblock %}
