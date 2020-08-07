@@ -1,0 +1,165 @@
+
+{% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/add-product/brand-search?brand=" + data['brand']
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="/add-product/existing-product" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "product",
+        name: "product",
+        fieldset: {
+          legend: {
+            text: "Is the " + data['brand'] + " product one of these?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "There are 6 products currently associated with this brand."
+        },
+        items: [
+          {
+            value: "DC65",
+            text: "DC65",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              html: "<div>Vacuum cleaner</div>
+              <div class=\"app-product-thumbnails\">
+                <div class=\"app-product-thumbnails--product\"></div>
+              </div>
+              "
+            }
+          },
+          {
+            value: "Ball 4",
+            text: "Ball 4",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              html: "<div>Vacuum cleaner</div>
+              <div class=\"app-product-thumbnails\">
+                <div class=\"app-product-thumbnails--product\"></div>
+              </div>
+              "
+            }
+          },
+          {
+            value: "AirBlade",
+            text: "AirBlade",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              html: "<div>Hand dryer</div>
+              <div class=\"app-product-thumbnails\">
+                <div class=\"app-product-thumbnails--product\"></div>
+              </div>
+              "
+            }
+          },
+          {
+            value: "DC72",
+            text: "DC72",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              html: "<div>Vacuum cleaner</div>
+              <div class=\"app-product-thumbnails\">
+                <div class=\"app-product-thumbnails--product\"></div>
+              </div>
+              "
+            }
+          },
+          {
+            value: "Ball 2",
+            text: "Ball 2",
+            label: {
+              classes: "govuk-label--s"
+            },
+            hint: {
+              html: "<div>Vacuum cleaner</div>
+              <div class=\"app-product-thumbnails\">
+                <div class=\"app-product-thumbnails--product\"></div>
+              </div>
+              "
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "new",
+            label: {
+              classes: "govuk-label--s"
+            },
+            text: "Add new product"
+          }
+        ]
+      }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-one-third" style="padding-top: 100px;">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "product-category",
+        name: "product-category",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Filter by product category",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "1",
+            text: "Vacuum cleners (5)"
+          },
+          {
+            value: "2",
+            text: "Hand dryers (1)"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Filter",
+        classes: "govuk-button--secondary"
+
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

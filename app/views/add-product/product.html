@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ data['brand']}} {{ data['product'] }}</h1>
+
+      <p class="govuk-body">
+        [Case history?]
+      </p>
+
+      {{ govukButton({text: "Open a new case about this"}) }}
+
+    </div>
+  </div>
+
+{% endblock %}
