@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Product categoriser
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  {{ govukPanel({
+    titleText: "Done",
+    html: ""
+  }) }}
+
+  <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-8">
+    <strong><a href="#" class="govuk-link">Hufler 5m Power Strip, x6-way D41U-UK, Black</a></strong><br><br>categorised as<br><br><strong><a href="#" class="govuk-link">Mains power extension lead</a></strong>
+  </p>
+
+
+  <div class="govuk-!-margin-top-9">
+    {{ govukButton({
+      text: "Categorise another product",
+      href: "/product-categoriser/start",
+      isStartButton: true
+    }) }}
+  </div>
+
+{% endblock %}
