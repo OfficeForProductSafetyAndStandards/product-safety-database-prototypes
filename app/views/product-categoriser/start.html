@@ -1,0 +1,179 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Product categoriser
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/product-categoriser/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Hufler 5m Power Strip, x6-way D41U-UK, Black</h1>
+
+      <img src="/public/images/extension-lead.jpg" style="width: 400px;">
+
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Description"
+              },
+              value: {
+                text: "Extension lead comprising 6 sockets. Black."
+              }
+            },
+            {
+              key: {
+                text: "Top-level category"
+              },
+              value: {
+                text: "Electrical appliances and equipment"
+              }
+            },
+            {
+              key: {
+                text: "Existing category"
+              },
+              value: {
+                text: "Extension Lead"
+              }
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "category-name",
+          name: "category-name",
+          type: "category-name",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Search for a category"
+          }
+        }) }}
+        {% endset -%}
+
+
+      {% if data['search']  %}
+
+        {{ govukInput({
+          label: {
+            text: "Category search"
+          },
+          classes: "govuk-input--width-10",
+          id: "width-10",
+          name: "width-10",
+          value: data['search']
+        }) }}
+
+        {% set newCategoryHtml %}
+        {{ govukInput({
+          id: "category-name",
+          name: "category-name",
+          type: "category-name",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Category name"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukButton({
+          text: "Search again",
+          classes: "govuk-button--secondary"
+        }) }}
+
+        <form action="/product-categoriser/update" method="post">
+
+          {{ govukRadios({
+            idPrefix: "new-category",
+            name: "new-category",
+            fieldset: {
+              legend: {
+                text: "New category",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "123",
+                text: "Mains power extension lead (14 products)"
+              },
+              {
+                value: "456",
+                text: "USB power adapter (3 products)"
+              },
+              {
+                value: "456",
+                text: "Electric vehicle extension cable (2 products)"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "new",
+                text: "Add new category",
+                conditional: {
+                  html: newCategoryHtml
+                }
+              }
+            ]
+          }) }}
+
+          {{ govukButton({text: "Continue"}) }}
+
+        </form>
+
+      {% else %}
+
+        <form action="/product-categoriser/update" method="post">
+
+          {{ govukRadios({
+            idPrefix: "new-category",
+            name: "new-category",
+            fieldset: {
+              legend: {
+                text: "New category",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "123",
+                html: "Suggested: <b>Mains power extension lead</b>"
+              },
+              {
+                value: "other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+
+          {{ govukButton({text: "Continue"}) }}
+
+          </form>
+        {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
