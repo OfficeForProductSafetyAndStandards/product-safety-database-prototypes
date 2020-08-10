@@ -19,6 +19,9 @@ jobs:
         sudo cp /tmp/cf7 /usr/local/bin/cf7
 
     - name: Deploy to Cloudfoundry
+      env:
+        CF_USERNAME: ${{ secrets.CF_USERNAME }}
+        CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
       run: |
         cf7 api api.london.cloud.service.gov.uk
         cf7 auth
