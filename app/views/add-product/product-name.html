@@ -36,7 +36,7 @@
           hint: {
             text: "Do not include the brand name (‘" + data['brand'] + '’) or any product variant details (for example, colour or finish).'
           },
-          value: data['product']
+          value: ("" if data['product'] == 'new' else data['product'])
         }) }}
 
         {{ govukButton({
