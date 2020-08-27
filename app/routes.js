@@ -52,6 +52,18 @@ router.post('/add-product/set-product-category', function (req, res) {
 
 })
 
+router.post('/add-product/existing-product', function (req, res) {
+
+  let product = req.session.data['product']
+
+  if (product == 'new') {
+    res.redirect('/add-product/product-category' )
+  } else {
+    res.redirect('/add-product/product' )
+  }
+
+})
+
 
 
 router.post('/product-categoriser/update', function (req, res) {
