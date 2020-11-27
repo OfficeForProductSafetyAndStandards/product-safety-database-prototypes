@@ -25,6 +25,6 @@ jobs:
       run: |
         cf api api.london.cloud.service.gov.uk
         cf auth
-        cf target -s sandbox
+        cf target -o 'beis-opss' -s sandbox
         cf push
         cf logout
