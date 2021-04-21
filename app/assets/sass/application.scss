@@ -19,3 +19,14 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "components/product-thumbnails";
+
+
+
+// new bespoke .psd- css styles, start here...
+.psd-details-img {
+    max-height: 300px;
+    max-width: 100%;
+}
+ul.govuk-radios.govuk-list--spaced li {
+    @include govuk-clearfix;
+}
