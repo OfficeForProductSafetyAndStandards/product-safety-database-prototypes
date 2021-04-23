@@ -21,9 +21,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/product-thumbnails";
 
 
+//*********************************************************************
+//styles only for this prototype env - do not add to production, start:
+.strike {text-decoration: line-through; }
+
+
+
 
 // new bespoke .psd- css styles, start here...
-.psd-details-img {
+.opss-details-img {
     max-height: 300px;
     max-width: 100%;
 }
@@ -33,7 +39,7 @@ ul.govuk-radios.govuk-list--spaced li {
 
 
 // new bespoke .scnp css styles, start here...
-.scnp-search__wrapper {
+.opss-search__wrapper {
     .govuk-button {
         border: 2px solid govuk-colour("black");
         box-shadow: 0 0 0;
@@ -58,5 +64,63 @@ ul.govuk-radios.govuk-list--spaced li {
         }
     }
 
+}
+
+.js-enabled {
+    .opss-js-enabled-hidden {
+        display: none;  /* @include govuk-visually-hidden; */
+    }
+}
+
+.opss-skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.opss-no-wrap {
+  white-space: nowrap;
+}
+
+.opss-summary-list {
+    dt {
+        font-weight: normal;
+    }
+
+    &.opss-summary-list--small {
+        .govuk-summary-list__key,
+        .govuk-summary-list__value {
+            @include govuk-font($size: 16);
+
+            @include govuk-media-query($from: 450px) {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+        .govuk-summary-list__key {
+            @include govuk-media-query($from: tablet) {
+                width: 40%;
+            }
+        }
+        .govuk-summary-list__key,
+        .govuk-summary-list__value {
+            @include govuk-media-query($from: tablet) {
+                padding-bottom: govuk-spacing(2);
+            }
+        }
+        .govuk-summary-list__key,
+        .govuk-summary-list__value {
+            @include govuk-media-query($from: desktop) {
+                padding-bottom: 0;
+            }
+        }
+        @include govuk-media-query($from: desktop) {
+            padding-left: govuk-spacing(6);
+        }
+    }
 }
 
