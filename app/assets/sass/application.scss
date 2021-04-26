@@ -33,12 +33,66 @@ $govuk-assets-path: '/govuk/assets/';
     max-height: 300px;
     max-width: 100%;
 }
-ul.govuk-radios.govuk-list--spaced li {
+/*ul.govuk-radios.govuk-list--spaced li {
     @include govuk-clearfix;
-}
+}*/
 
 
 // new bespoke .scnp css styles, start here...
+.js-enabled {
+    .opss-js-enabled-hidden {
+        display: none;  /* @include govuk-visually-hidden; */
+    }
+}
+
+.opss-skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.opss-no-wrap {
+  white-space: nowrap;
+}
+
+.opss-button-link {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    color: $govuk-link-colour;
+    text-decoration: underline;
+
+    &:visited {
+        color: $govuk-link-colour;
+    }
+
+    &:hover {
+        color: $govuk-link-hover-colour;
+        text-decoration: underline;
+    }
+
+    &:focus, &:active {
+        outline: 3px solid transparent !important;
+        color: govuk-colour("black") !important;
+        background-color: govuk-colour("yellow") !important;
+        box-shadow: 0 -2px govuk-colour("yellow"), 0 4px govuk-colour("black") !important;
+        text-decoration: none !important;
+        top: 0 !important;
+    }
+}
+
+.opss-float-left {
+    float: left;
+}
+
+.opss-float-right {
+    float: right;
+}
+
 .opss-search__wrapper {
     .govuk-button {
         border: 2px solid govuk-colour("black");
@@ -66,26 +120,20 @@ ul.govuk-radios.govuk-list--spaced li {
 
 }
 
-.js-enabled {
-    .opss-js-enabled-hidden {
-        display: none;  /* @include govuk-visually-hidden; */
+.opss-list--borders {
+    li {
+        padding: govuk-spacing(4) 0 govuk-spacing(2) 0;
+        border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
     }
 }
 
-.opss-skip-link {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-.opss-no-wrap {
-  white-space: nowrap;
+*[class^="govuk-heading"] + .opss-summary-list {
+    margin-top: - govuk-spacing(1);
 }
 
 .opss-summary-list {
+    margin-bottom: govuk-spacing(2);
+
     dt {
         font-weight: normal;
     }
