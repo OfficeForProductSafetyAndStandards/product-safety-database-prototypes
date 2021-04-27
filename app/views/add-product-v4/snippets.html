@@ -1,0 +1,72 @@
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/add-product/brand-search?brand=" + data['brand']
+    }) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+
+govuk-!-display-none-print
+
+
+.app-task-list__section-number {
+  display: table-cell;
+
+  @include govuk-media-query($from: tablet) {
+    min-width: govuk-spacing(6);
+    padding-right: 0;
+  }
+}
+
+.app-task-list__items {
+  @include govuk-font($size: 19);
+  @include govuk-responsive-margin(9, "bottom");
+  list-style: none;
+  padding-left: 0;
+  @include govuk-media-query($from: tablet) {
+    padding-left: govuk-spacing(6);
+  }
+}
+
+.app-task-list__item {
+  border-bottom: 1px solid $govuk-border-colour;
+  margin-bottom: 0 !important;
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+  @include govuk-clearfix;
+}
+
+.app-task-list__item:first-child {
+  border-top: 1px solid $govuk-border-colour;
+}
+
+
+
+$until
+
+
+                <a class="govuk-link govuk-link--no-visited-state" id="dates-clear" href="#">Clear filters</a>

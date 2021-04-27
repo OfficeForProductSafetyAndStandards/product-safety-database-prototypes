@@ -1,0 +1,63 @@
+This is a very simple text file with some quick guidence notes ...
+
+
+
+#####
+The page will first load with all notifications/products (as if a wildcard search had been submitted).
+
+#####
+Submitting a new keywords search updates the search results list (maintaining the keywords in the keywords text field):
+if any filters have been set, the results will incorporate the filter settings and the filters form will maintains state.
+The span (id, opss-filters-txt) stating "using the current filters," will also be included in the results overview text (and not included when filters are empty).
+
+#####
+If the user selects the “clear filters” link (coded as a form button*), this refreshes/resubmits the page results, returns the filters form back to its original state (with radios unselected and collapsed) and does not include the span (id, opss-filters-txt) in the results overview text.
+
+*If you need the "clear filters" button to be a text link instead - replace the button with this HTML:
+<a class="govuk-link govuk-link--no-visited-state" id="dates-clear" href="#">Clear filters</a>
+
+#####
+The standard browser behaviour is for the values of dates, in either of the two date forms to be maintained if clicking between the two forms (opening and closing them by selecting the partent radios). This is correct.
+
+However, if one of the date forms has an error message and the user then selects the alternative radio option (to reveal the alternative date form): then REMOVE (not hide) '#dates-error' and '#error-summary-title' from the HTML and clear all the date input fields of the group which had an error.
+
+#####
+Sort by: JavaScript onChange reorders the results list. (There is a hidden button to submit a form for none JavaScript support).
+If onChange resubmits the search and the page refreshes (and the list is not dynamically updated), then please remove the following attributes from the HTML:
+1. aria-controls="results-order"
+2. id="results-order"
+3. aria-live="polite"
+
+
+
+
+#####
+Error messages:
+
+The HTML error page example includes some inline notes as the error classes are placed on specific/different DOM elements than usual (due to the show/hide forms), and the corresponding radio should be "checked" when loading the page if there is an error.
+
+The only form(s) to require error messaging are the dates fields (and these can be simplified):
+
+For empty fields - any field within one exposed group - we can simplify the error to one message:
+<span id="dates-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Each date field must have a value
+</span>
+
+For invalid inputs (letters, symbols, too many values):
+<span id="dates-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Dates must use the correct format
+</span>
+
+For the date range form:
+<span id="dates-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> The To date cannot precede the From date
+</span>
+
+Add class .govuk-input--error to each offending input elements (for the red border).
+
+If there is more than one offending input - in the error summary (heading) link to the first of the offending input fields.
+
+
+
+------------------------
+Note: The page may use a breadcrumb instead of Back link.

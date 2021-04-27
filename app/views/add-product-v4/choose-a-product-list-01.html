@@ -1,0 +1,103 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    01. Choose a product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+        <form class="form" action="#" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="product-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Select a product from the list
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-grid-row govuk-!-margin-bottom-6">
+                        <div class="govuk-grid-column-three-quarters">
+                            <div id="product-hint" class="govuk-hint">
+                                One or more products that match your search keyword(s) <span class="govuk-!-font-weight-bold">'product name, keyword'</span> have already been reported. Select a product or add a new product to our database.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-item-01" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-01-hint">
+                            <label class="govuk-label govuk-radios__label" for="product-item-01">
+                                The product brand - the product name
+                            </label>
+                            <div id="product-item-01-hint" class="govuk-hint govuk-radios__hint">
+                                Category - Personal protective equipment (PPE), Subcategory - Face covering, Product Markings - UKCA, CE
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-item-02" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-02-hint">
+                            <label class="govuk-label govuk-radios__label" for="product-item-02">
+                                Dyson - Supersonic
+                            </label>
+                            <div id="product-item-02-hint" class="govuk-hint govuk-radios__hint">
+                                Category - Lorem ipsum (SKKR), Subcategory - electricals, Product Markings - CE
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-item-03" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-03-hint">
+                            <label class="govuk-label govuk-radios__label" for="product-item-03">
+                                The product brand - the product name
+                            </label>
+                            <div id="product-item-03-hint" class="govuk-hint govuk-radios__hint">
+                                Category - Personal protective equipment (PPE), Subcategory - safety equipment, Product Markings - UKCA, CE, EUXX
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="product-item-04" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-04-hint">
+                            <label class="govuk-label govuk-radios__label" for="product-item-04">
+                                Panasonic - Super Fast XD
+                            </label>
+                            <div id="product-item-04-hint" class="govuk-hint govuk-radios__hint">
+                                Category - Lorem ipsum (SKKR), Subcategory - electricals, Product Markings - CE
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__divider govuk-!-margin-bottom-5">or</div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-product" name="product-item" type="radio" value="abroad">
+                            <label class="govuk-label govuk-radios__label" for="add-product">
+                                Add a new product
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-8 govuk-!-margin-bottom-6">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <a class="govuk-link" href="#">Search again</a>
+            </div>
+
+        </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
