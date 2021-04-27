@@ -56,8 +56,6 @@
 
 <div class="govuk-grid-row">
 
-    <a href="#search-results-section" class="opss-skip-link">Skip past filters to the search results section</a>
-
     <section class="govuk-grid-column-one-third">
         <form class="form" action="#" method="post" novalidate>
             <div class="govuk-form-group">
@@ -249,7 +247,7 @@
                         <label class="govuk-label govuk-body-s" for="results-sort">
                             Sort by
                         </label>
-                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
                             <option value="relevance" selected>Relevance</option>
                             <option value="recent">Newest</option>
                             <option value="oldest">Oldest</option>
@@ -263,7 +261,7 @@
         </div>
 
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
+            <div class="govuk-grid-column-full" role="region" aria-label="search-results-list" id="results-order" aria-live="polite">
                 <ul class="govuk-list opss-list--borders">
 
                     <li>
