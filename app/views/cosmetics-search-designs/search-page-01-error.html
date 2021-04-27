@@ -92,17 +92,13 @@
                             <div class="govuk-form-group">
 
                                 <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
-                                    The notified date. <br>
+                                    The date notified. <br>
                                     For example, 14 08 2019.
                                 </div>
 
-    <span id="dates-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Each date field must have a value
-    </span>
-
-    <!--span id="dates-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Dates must follow the correct format
-    </span-->
+                                <span id="dates-error" class="govuk-error-message">
+                                    <span class="govuk-visually-hidden">Error:</span> Each date field must have a value
+                                </span>
 
                                 <div class="govuk-date-input" id="by-date">
                                     <div class="govuk-date-input__item">
@@ -134,9 +130,6 @@
                             </div>
                         </div>
 
-<!-- *** if one radio sub-group has an error msg and the user then selects the alternative radio option: REMOVE (not hide) '#dates-error' and '#error-summary-title' and clear the input fields. (The inputs shouldn't be cleared by clicking the radios unless there are errors). *** -->
-
-
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date-range">
@@ -148,7 +141,7 @@
                             <div class="govuk-form-group">
 
                                 <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
-                                    The notified dates within a date range. For example, from <span class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09 2020</span>.
+                                    The dates notified within a date range. For example, from <span class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09 2020</span>.
                                 </div>
 
     <!--span id="dates-error" class="govuk-error-message">
