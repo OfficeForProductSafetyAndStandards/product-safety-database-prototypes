@@ -1,0 +1,21 @@
+1. covid related?:
+From: Is this case related to the coronavirus outbreak?
+To: Is this case related to the coronavirus pandemic?
+
+From: Yes, it is (or could be)
+To: Yes (or could be)
+
+From: No, this is business as usual
+To: No
+
+2. Removed, "Report an unsafe or non-compliant product" heading caption from all but the first page
+
+3.
+From: Reason for creating the case
+To: What is the reason for creating a case?
+
+Tried to make sense of the current v3 design using checkboxes instead of radios, and labels not answering the question irrationally
+
+Note: there is only one key question (as a header). Others are part of labels.
+
+Q: are the textarea fields required?

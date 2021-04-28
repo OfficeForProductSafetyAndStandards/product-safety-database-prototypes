@@ -1,12 +1,19 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-  Start page example
+  Start
 {% endblock %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
   {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
 {% endblock %}
 
 

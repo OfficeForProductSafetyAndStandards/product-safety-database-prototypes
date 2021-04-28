@@ -1,0 +1,156 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Reason for creating the case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "is-this-case-related-to-covid"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form class="form" action="#" method="post" novalidate>
+
+
+{% set reasonUnsafeHtml %}
+
+{% set unsafeformHtml %}
+    {{ govukSelect({
+        id: "primary-hazard",
+        name: "primary-hazard",
+        label: {
+            text: "What is the primary hazard?"
+        },
+        items: [
+            {
+            value: "hazard01",
+            text: "Lorem ipsum",
+            selected: true
+            },
+            {
+            value: "hazard02",
+            text: "Ipsum lorem"
+            },
+            {
+            value: "03",
+            text: "Ipusmi orem"
+            }
+        ]
+    })}}
+
+    {{ govukTextarea({
+    name: "why-unsafe",
+    id: "why-unsafe",
+    classes: "govuk-!-width-three-quarters",
+    label: {
+        text: "Why is the product unsafe?",
+        classes: "govuk-label",
+        isPageHeading: false
+    },
+    hint: {
+        classes: "govuk-!-font-size-16",
+        text: "If the product has been involved in an incident include this additional information."
+    }
+    }) }}
+{% endset -%}
+
+{% set noncompliantHtml %}
+    {{ govukTextarea({
+    name: "why-noncompliant",
+    id: "why-noncompliant",
+    classes: "govuk-!-width-three-quarters",
+    label: {
+        text: "Why is the product non-compliant?",
+        classes: "govuk-label",
+        isPageHeading: false
+    }
+    }) }}
+{% endset -%}
+
+
+{{ govukCheckboxes({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Select all options that apply",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+
+  items: [
+    {
+      value: "unsafeform",
+      text: "The product is unsafe (or suspected of being)",
+      conditional: {
+        html: unsafeformHtml
+      }
+    },
+    {
+      value: "noncompliantform",
+      text: "The product is non-compliant (or suspected of being)",
+      conditional: {
+        html: noncompliantHtml
+      }
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+
+
+
+{{ govukRadios({
+  idPrefix: "reason",
+  name: "reason",
+  classes: "govuk-!-padding-top-3",
+
+  fieldset: {
+    legend: {
+      text: "What is the reason for creating a case?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+    {
+      value: "unsafeoption",
+      text: "The product is unsafe or non-compliant",
+      hint: {
+        classes: "govuk-!-font-size-16 govuk-!-margin-bottom-4",
+        text: "The product is either unsafe, non-compliant or is suspected of being."
+      },
+      conditional: {
+        html: reasonUnsafeHtml
+      }
+    },
+    {
+      value: "issafeoption",
+      text: "Help other market surveillance authorities",
+      hint: {
+        classes: "govuk-!-font-size-16",
+        text: "The product is safe and compliant but a case will help others avoid testing the same product again."
+      }
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

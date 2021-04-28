@@ -31,7 +31,7 @@ $govuk-assets-path: '/govuk/assets/';
 // new bespoke .psd- css styles, start here...
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
-        min-height: 500px;
+        //min-height: 500px;
     }
 }
 

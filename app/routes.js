@@ -3,6 +3,47 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+//************* routes for add-product-v4 ************* starts
+
+router.post('/add-product-v4/is-this-case-related-to-covid', function (req, res) {
+  const iscovid = req.session.data['covid-related']
+
+  if (iscovid == null) {
+    res.redirect('/add-product-v4/is-this-case-related-to-covid-error' )
+  } else {
+    res.redirect('/add-product-v4/reason-for-creating-case' )
+  }
+})
+router.post('/add-product-v4/is-this-case-related-to-covid-error', function (req, res) {
+  const iscoviderror = req.session.data['covid-related-error']
+
+  if (iscoviderror != null) {
+    res.redirect('/add-product-v4/reason-for-creating-case' )
+  }
+})
+
+router.post('/add-product-v4/reason-for-creating-case', function (req, res) {
+  const casereason = req.session.data['reason']
+
+  if (casereason == null) {
+    res.redirect('/add-product-v4/reason-for-creating-case-error' )
+  } else {
+    res.redirect('/add-product-v4/is-case-counterfeit' )
+  }
+})
+router.post('/add-product-v4/reason-for-creating-case-error', function (req, res) {
+  const casereasonerror = req.session.data['reason']
+
+  if (iscoviderror != null) {
+    res.redirect('/add-product-v4/is-case-counterfeit' )
+  }
+})
+
+
+
+
+//************* routes for add-product-v4 ************* ends
+/*
 router.post('/add-product/counterfeit', function (req, res) {
 
   let counterfeit = req.session.data['counterfeit']
@@ -64,8 +105,6 @@ router.post('/add-product/existing-product', function (req, res) {
 
 })
 
-
-
 router.post('/product-categoriser/update', function (req, res) {
 
   let newCategory = req.session.data['new-category']
@@ -77,7 +116,6 @@ router.post('/product-categoriser/update', function (req, res) {
   }
 
 })
-
-
+*/
 
 module.exports = router
