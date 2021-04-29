@@ -1,13 +1,13 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Is this case a counterfeit product
+    Do you have the barcode number
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "reason-for-creating-case"
+        href: "is-case-counterfeit"
     }) }}
 {% endblock %}
 
@@ -20,30 +20,49 @@
       <form class="form" action="#" method="post" novalidate>
 
 
+
+{% set yesHtml %}
+{{ govukInput({
+  id: "barcodenumber",
+  name: "barcodenumber",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Barcode number (GTIN, EAN or UPC)"
+  },
+  hint: {
+      classes: "govuk-!-font-size-16",
+      text: "Normally 13 digits, although older products may have a 12 digit number."
+  }
+}) }}
+{% endset -%}
+
 {{ govukRadios({
-  idPrefix: "counterfeit",
-  name: "counterfeit",
+  idPrefix: "barcode",
+  name: "barcode",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Is this case related to a counterfeit product?",
+      text: "Do you have the product barcode number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-
+  hint: {
+    text: "The barcode number will help locate the products already reported."
+  },
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
     },
     {
       value: "no",
       text: "No"
-    },
-    {
-      value: "unsure",
-      text: "Unsure"
     }
   ]
 }) }}

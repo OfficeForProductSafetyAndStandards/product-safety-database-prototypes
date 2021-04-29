@@ -15,7 +15,7 @@ router.post('/add-product-v4/is-this-case-related-to-covid', function (req, res)
   }
 })
 router.post('/add-product-v4/is-this-case-related-to-covid-error', function (req, res) {
-  const iscoviderror = req.session.data['covid-related-error']
+  const iscoviderror = req.session.data['covid-related']
 
   if (iscoviderror != null) {
     res.redirect('/add-product-v4/reason-for-creating-case' )
@@ -34,12 +34,27 @@ router.post('/add-product-v4/reason-for-creating-case', function (req, res) {
 router.post('/add-product-v4/reason-for-creating-case-error', function (req, res) {
   const casereasonerror = req.session.data['reason']
 
-  if (iscoviderror != null) {
+  if (casereasonerror != null) {
     res.redirect('/add-product-v4/is-case-counterfeit' )
   }
 })
 
+router.post('/add-product-v4/is-case-counterfeit', function (req, res) {
+  const counterfeit = req.session.data['counterfeit']
 
+  if (counterfeit == null) {
+    res.redirect('/add-product-v4/is-case-counterfeit-error' )
+  } else {
+    res.redirect('/add-product-v4/do-you-have-the-barcode' )
+  }
+})
+router.post('/add-product-v4/is-case-counterfeit-error', function (req, res) {
+  const counterfeiterror = req.session.data['counterfeit']
+
+  if (counterfeiterror != null) {
+    res.redirect('/add-product-v4/do-you-have-the-barcode' )
+  }
+})
 
 
 //************* routes for add-product-v4 ************* ends

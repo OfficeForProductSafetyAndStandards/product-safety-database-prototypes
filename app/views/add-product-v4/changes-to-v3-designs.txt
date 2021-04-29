@@ -18,4 +18,12 @@ Tried to make sense of the current v3 design using checkboxes instead of radios,
 
 Note: there is only one key question (as a header). Others are part of labels.
 
-Q: are the textarea fields required?
+Q: are the textarea fields Required (validation)?
+
+4. Is case counterfiet.
+From:
+To:
+
+5. Do you have the barcode number
+From: Barcode number will help us find all the products already reported in our database.
+To: The barcode number will help locate the products already reported.
