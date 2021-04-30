@@ -28,7 +28,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 
 
-// new bespoke .psd- css styles, start here...
+// new bespoke PSD css styles, start here...
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
         min-height: 500px;
@@ -58,7 +58,7 @@ ul.opss-radio-list--borders {
 
 
 
-// new bespoke .scnp css styles, start here...
+// new bespoke SCNP css styles, start here...
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
@@ -200,7 +200,7 @@ ul.opss-radio-list--borders {
 
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
-        border-left: 4px solid #d4351c;
+        border-left: 4px solid $error-colour;
     }
     .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {//helps with smooth loading
         display: block !important;

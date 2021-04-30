@@ -25,5 +25,32 @@ From:
 To:
 
 5. Do you have the barcode number
+
+Clarify what we're doing on this page, so that if 'No' the next search page is more self explanitory.
 From: Barcode number will help us find all the products already reported in our database.
-To: The barcode number will help locate the products already reported.
+To:   This number will help to confirm if the product already exists within our records.
+
+[The barcode number will help to find products already reported.]
+
+6. Search for the product ... feels like we're about to find the product on some list of ALL products
+From: "Find an existing product" why? To do what? Find any existing product (which one)?
+To: "Search for the product" used with the hint text, I think this is much clearer as to what is happening. "the" product refers to the product the user is concerned with. Following the previous page, it is more self-explanitory.
+
+Hint:
+From: We will find products that are already reported in our database to identify.*
+To:
+
+
+OLD To: text: "Before reporting a product, check that it does not already exist within our records."
+    text: "[Before creating a case,] check that the product does not already exist within our records."
+
+
+* "to identify" is confusing? This will be obvious once the results are served. The priority is for it to clarify the objective and to avoid unnecessary confusion.
+
+************* If no search results: DON'T go straight to the "what is the product name" page. Instead we still go to Select a product, but show (with message) that no records could be found and offer the "Add a new product" link. *****************
+
+
+
+7. Search for an existing product
+From: Include product name, model name and model number
+To: Try to include the product name, model name and model number.

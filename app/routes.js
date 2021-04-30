@@ -55,6 +55,43 @@ router.post('/add-product-v4/is-case-counterfeit-error', function (req, res) {
     res.redirect('/add-product-v4/do-you-have-the-barcode' )
   }
 })
+//************* start barcode
+router.post('/add-product-v4/do-you-have-the-barcode', function (req, res) {
+  var barcode = req.session.data['barcode']
+  var barnumber = req.session.data['barnumber']
+
+  if ((barcode == 'yes') && (barnumber == '')) {
+    return res.redirect('/add-product-v4/do-you-have-the-barcode-error-2')
+  } else if ((barcode == 'yes') && (barnumber != '')) {
+    return res.redirect('/add-product-v4/select-a-product')
+  } else if (barcode == 'no') {
+    return res.redirect('/add-product-v4/search-for-an-existing-product')
+  } else {
+    return res.redirect('/add-product-v4/do-you-have-the-barcode-error')
+  }
+})
+router.post('/add-product-v4/do-you-have-the-barcode-error', function (req, res) {
+  var barcode1 = req.session.data['barcode']
+  if (barcode1 == 'yes') {
+    res.redirect('/add-product-v4/select-a-product')
+  } else if (barcode1 == 'no') {
+    return res.redirect('/add-product-v4/search-for-an-existing-product')
+  }
+})
+router.post('/add-product-v4/do-you-have-the-barcode-error-2', function (req, res) {
+  var barcode2 = req.session.data['barcode']
+  var barnumber2 = req.session.data['barnumber']
+  if ((barcode2 == 'yes') && (barnumber2 != '')) {
+    return res.redirect('/add-product-v4/select-a-product')
+  } else if (barcode2 == 'no') {
+    return res.redirect('/add-product-v4/search-for-an-existing-product')
+  }
+})
+//************* end barcode
+
+
+
+
 
 
 //************* routes for add-product-v4 ************* ends

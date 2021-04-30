@@ -13,12 +13,25 @@
 
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you have the product barcode number",
+      href: "#barcode"
+    },
+    {
+      text: "'or'...  The product barcode must be a number",
+      href: "#barnumber"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
       <form class="form" action="#" method="post" novalidate>
-
 
 {% set yesHtml %}
 {{ govukInput({
@@ -51,6 +64,9 @@
   },
   hint: {
     text: "This number will help to confirm if the product already exists within our records."
+  },
+  errorMessage: {
+    text: "Select yes if you have the product barcode number"
   },
   items: [
     {

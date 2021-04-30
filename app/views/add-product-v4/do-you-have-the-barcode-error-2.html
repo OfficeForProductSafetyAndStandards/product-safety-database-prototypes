@@ -13,12 +13,25 @@
 
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter the product barcode number",
+      href: "#barnumber"
+    },
+    {
+      text: "'or'...    The product barcode must be a number",
+      href: "#barnumber"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
       <form class="form" action="#" method="post" novalidate>
-
 
 {% set yesHtml %}
 {{ govukInput({
@@ -28,6 +41,9 @@
   pattern: "[0-9]*",
   spellcheck: false,
   classes: "govuk-!-width-one-third",
+  errorMessage: {
+    text: "Enter the product barcode number"
+  },
   label: {
     text: "Barcode number (GTIN, EAN or UPC)"
   },
@@ -56,6 +72,7 @@
     {
       value: "yes",
       text: "Yes",
+      checked: true,
       conditional: {
         html: yesHtml
       }
