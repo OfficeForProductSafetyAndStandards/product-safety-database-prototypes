@@ -30,6 +30,8 @@ Clarify what we're doing on this page, so that if 'No' the next search page is m
 From: Barcode number will help us find all the products already reported in our database.
 To:   This number will help to confirm if the product already exists within our records.
 
+I assume barcode numbers can sometimes include letters and symbols?
+
 [The barcode number will help to find products already reported.]
 
 6. Search for the product ... feels like we're about to find the product on some list of ALL products
