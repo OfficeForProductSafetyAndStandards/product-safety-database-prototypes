@@ -56,3 +56,17 @@ OLD To: text: "Before reporting a product, check that it does not already exist 
 7. Search for an existing product
 From: Include product name, model name and model number
 To: Try to include the product name, model name and model number.
+
+Not sure about the add another product being below the fold - could have search again and add new product at top of right col?
+or
+From "One or more products that match your search keyword(s) ... "
+To: a) "6 products that match your search keyword(s) ... "
+    b) "At least 12 products strongly matching your search keyword(s) ..." if 12 is the maximum we return
+
+and/or add a jumpto anchor link to the text "add a new product". (Does not repeat the label).
+
+Clicking Search again - prepopulate the search box again with the previous search?
+
+>>>>>>> Our product records do not have a match for your keyword(s) xxxx search. Please add the product to our records.
+
+What happens if they accidently choose a product which transpires to not be the same product?

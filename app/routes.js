@@ -63,7 +63,7 @@ router.post('/add-product-v4/do-you-have-the-barcode', function (req, res) {
   if ((barcode == 'yes') && (barnumber == '')) {
     return res.redirect('/add-product-v4/do-you-have-the-barcode-error-2')
   } else if ((barcode == 'yes') && (barnumber != '')) {
-    return res.redirect('/add-product-v4/select-a-product')
+    return res.redirect('/add-product-v4/select-a-product-barCodeTxt')
   } else if (barcode == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   } else {
@@ -72,8 +72,8 @@ router.post('/add-product-v4/do-you-have-the-barcode', function (req, res) {
 })
 router.post('/add-product-v4/do-you-have-the-barcode-error', function (req, res) {
   var barcode1 = req.session.data['barcode']
-  if (barcode1 == 'yes') {
-    res.redirect('/add-product-v4/select-a-product')
+  if ((barcode == 'yes') && (barnumber != '')) {
+    res.redirect('/add-product-v4/select-a-product-barCodeTxt')
   } else if (barcode1 == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   }
@@ -82,16 +82,57 @@ router.post('/add-product-v4/do-you-have-the-barcode-error-2', function (req, re
   var barcode2 = req.session.data['barcode']
   var barnumber2 = req.session.data['barnumber']
   if ((barcode2 == 'yes') && (barnumber2 != '')) {
-    return res.redirect('/add-product-v4/select-a-product')
+    return res.redirect('/add-product-v4/select-a-product-barCodeTxt')
   } else if (barcode2 == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   }
 })
 //************* end barcode
 
+//************* start search for existing product
+router.post('/add-product-v4/search-for-an-existing-product', function (req, res) {
+  var keywords = req.session.data['keywords']
 
+  if (keywords == '') {
+    return res.redirect('/add-product-v4/search-for-an-existing-product-error')
+  } else {
+    return res.redirect('/add-product-v4/select-a-product')
+  }
+})
+router.post('/add-product-v4/search-for-an-existing-product-error', function (req, res) {
+  var keywords2 = req.session.data['keywords']
 
+  if (keywords2 == '') {
+    return res.redirect('/add-product-v4/search-for-an-existing-product-error')
+  } else {
+    return res.redirect('/add-product-v4/select-a-product')
+  }
+})
+//*************************************************** ends
 
+//************* start select-a-product
+router.post('/add-product-v4/select-a-product', function (req, res) {
+  var productitem = req.session.data['product-item']
+//
+  if (productitem == null) {
+    return res.redirect('/add-product-v4/select-a-product-error')
+  } else {
+    return res.redirect('/add-product-v4/what-is-the-product-name')
+  }
+})
+router.post('/add-product-v4/select-a-product-error', function (req, res) {
+  var productitem2 = req.session.data['product-item']
+
+  if (productitem2 == null) {
+    return res.redirect('/add-product-v4/select-a-product-error')
+  } else {
+    return res.redirect('/add-product-v4/what-is-the-product-name')
+  }
+})
+//*************************************************** ends
+
+//} else if ((barcode == 'yes') && (barnumber == '2021')) {
+    //return res.redirect('/add-product-v4/select-a-product-barCodeTxt')
 
 
 //************* routes for add-product-v4 ************* ends

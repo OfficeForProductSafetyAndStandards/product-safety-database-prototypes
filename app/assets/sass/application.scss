@@ -47,8 +47,16 @@ ul.opss-radio-list--borders {
         display: inline-block;
         width: 100%;
         border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+
+        .govuk-radios__item .govuk-radios__hint {
+            padding-left: 2px;
+        }
     }
 }
+
+//span.govuk-error-message + input[class^="govuk-!-margin-top"].govuk-input--error {
+//    margin-top: 0;
+//}
 
 /*ul.govuk-radios.govuk-list--spaced li {
     @include govuk-clearfix;
@@ -58,7 +66,11 @@ ul.opss-radio-list--borders {
 
 
 
+
+
 // new bespoke SCNP css styles, start here...
+$opss-error-colour: #d4351c;
+
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
@@ -200,12 +212,13 @@ ul.opss-radio-list--borders {
 
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
-        border-left: 4px solid $error-colour;
+        border-left: 4px solid $opss-error-colour;
     }
     .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {//helps with smooth loading
         display: block !important;
     }
 }
+
 
 
 

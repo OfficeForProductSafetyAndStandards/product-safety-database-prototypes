@@ -13,12 +13,27 @@ select-a-product{% extends "layout-01.html" %}
 
 
 {% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#product-item-01">Select a product or select add a new product</a><!-- target the first product's id -->
+      </li>
+    </ul>
+  </div>
+</div>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
 
         <form class="form" action="#" method="post" novalidate>
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
                 <fieldset class="govuk-fieldset" aria-describedby="product-hint">
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -34,17 +49,14 @@ select-a-product{% extends "layout-01.html" %}
                                     One or more products that match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>, have already been reported.
                                 </div>
                                 <div class="govuk-hint">
-                                    <!--Select a reported product or add a new product to our records.
-                                    Select your product if it has already been reported or add a new product to our records.
-                                    If your product is not shown <span class="govuk-visually-hidden">or listed below</span>then add a new product to our records.-->
                                     Select your product if it appears in the list or add a new product to our records.
-                               </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-three-quarters">
+                            <span id="keywords-error" class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Select a product or select add a new product
+                            </span>
+
                             <ul class="govuk-list govuk-radios govuk-radios--small opss-radio-list--borders">
                                 <li>
 

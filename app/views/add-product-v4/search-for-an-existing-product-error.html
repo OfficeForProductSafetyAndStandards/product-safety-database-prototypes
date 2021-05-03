@@ -13,6 +13,17 @@
 
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter keywords to search for the product",
+      href: "#keywords"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -28,6 +39,9 @@
     text: "Search for the product",
     classes: "govuk-label--l govuk-!-margin-bottom-2",
     isPageHeading: true
+  },
+  errorMessage: {
+    text: "Enter keywords to search for the product"
   },
   hint: {
     classes: "govuk-!-margin-bottom-6",
