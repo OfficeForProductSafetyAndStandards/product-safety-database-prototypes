@@ -59,6 +59,8 @@ ul.opss-radio-list--borders {
 
 
 // new bespoke .scnp css styles, start here...
+$opss-error-colour: #d4351c;
+
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
@@ -200,7 +202,7 @@ ul.opss-radio-list--borders {
 
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
-        border-left: 4px solid $error-colour;
+        border-left: 4px solid $opss-error-colour;
     }
     .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {//helps with smooth loading
         display: block !important;
