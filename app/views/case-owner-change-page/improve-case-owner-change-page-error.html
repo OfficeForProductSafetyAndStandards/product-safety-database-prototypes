@@ -13,6 +13,17 @@
 
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select an option to change the case owner",
+      href: "#caseowner-2"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -32,6 +43,9 @@
   },
   hint: {
     text: "The current case owner is Jo Bernhard."
+  },
+  errorMessage: {
+    text: "Select an option to change the case owner"
   },
   items: [
     {
