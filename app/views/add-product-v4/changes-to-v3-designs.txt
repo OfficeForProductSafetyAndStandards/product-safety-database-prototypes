@@ -54,6 +54,8 @@ OLD To: text: "Before reporting a product, check that it does not already exist 
 
 
 7. Search for an existing product
+
+
 From: Include product name, model name and model number
 To: Try to include the product name, model name and model number.
 
