@@ -72,3 +72,28 @@ Clicking Search again - prepopulate the search box again with the previous searc
 >>>>>>> Our product records do not have a match for your keyword(s) xxxx search. Please add the product to our records.
 
 What happens if they accidently choose a product which transpires to not be the same product?
+
+8. Designs: Do you know the product name AND Do you know the product brand? ... are back to front in the flow? Brands will likely be added in the 'product name' form if it is first? Logically, I would start with the brand, and drill/filter downwards?
+
+From: Do you know the product brand?
+To: Does the product have a brand?   (This caters for the Yes/No format. "Do you know" is an ambiguous personal question?)
+
+Moved hint text from revealed form to be seen before the users makes a choice.
+
+The green buttons are closer (to avoid dangers of being missed below fold).
+
+9. What is the product name?     (Added '?')
+From: Include the model name and model number, for example, PlayStation 5
+To: Try to include the model name and any model number. For example, PlayStation 5, or .
+
+Added 'Try to' in case they don't have both?!
+Added another example - most products seem to have the number first (swapped number and name around in hint)
+
+
+10. This page has problems: not clear one is select the next is type. Two questions suddenly? The weird COVID hint is update info, not 'hint' text?
+From: Product category and subcategory
+To: What is the product category and subcategory?
+
+From: COVID-19 categories added: 'PPE' and Hand sanitiser
+To: COVID-19 categories PPE and Hand sanitiser have now been added.
+
