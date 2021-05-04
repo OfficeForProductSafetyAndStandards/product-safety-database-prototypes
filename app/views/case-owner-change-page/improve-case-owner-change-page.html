@@ -1,0 +1,94 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Change the case owner
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+        <form class="form" action="#" method="post" novalidate>
+
+{{ govukRadios({
+  idPrefix: "caseowner",
+  name: "caseowner",
+  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1 opss-radios__divider--title",
+  fieldset: {
+    legend: {
+      text: "Change the case owner",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "The current case owner is Jo Bernhard."
+  },
+  items: [
+    {
+      divider: "Your team"
+    },
+    {
+      checked: true,
+      value: "val01",
+      text: "Jo Bernard"
+    },
+    {
+      value: "val02",
+      text: "Someone in your team"
+    },
+    {
+      value: "val03",
+      text: "Southampton Council"
+    },
+    {
+      divider: "Other teams added to the case"
+    },
+    {
+      value: "val04",
+      html: "<abbr>OPSS</abbr> Enforcement"
+    },
+    {
+      value: "val05",
+      html: "<abbr>OPSS</abbr> Trading Standards Co-Ordination"
+    },
+    {
+      divider: "Other"
+    },
+    {
+      value: "val06",
+      html: "<abbr>OPSS</abbr> Incident management",
+      hint: {
+        html: "For reporting serious risks to OPSS.",
+        classes: "govuk-!-font-size-16"
+      }
+    },
+    {
+      value: "val07",
+      html: "<abbr>OPSS</abbr> Trading Standards Co-Ordination"
+    }
+
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+        </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
