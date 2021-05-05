@@ -97,3 +97,39 @@ To: What is the product category and subcategory?
 From: COVID-19 categories added: 'PPE' and Hand sanitiser
 To: COVID-19 categories PPE and Hand sanitiser have now been added.
 
+11.
+From: Product marking
+To: Does the product have marking
+... to keep consistency with other pages
+
+12.
+From: Description of product
+To: Describe the product   (as we are asking the user to do something and continues previous pages)
+
+Don't need 2nd label - the "title" is the label.
+Moved character count to correct position and used correct GDS wording.
+
+From: Details about the product you haven't included above. For example, colour, size, packaging description. You don't need to include details of damage or incidents
+To: Enter additional information about the product. For example, colour and size or a description of the packaging. (Do not add case information about damage or incidents).
+
+WAS: Add details about the product not already provided. For example, colour, size and a description of the packaging. (Do not add case information about damage or incidents).
+
+(To add is to provide another of something. Additional is extraneous.)
+
+13. when-was-the-product-placed
+ "placed"? not "available"? Are placed and available potentially different meanings?
+
+ Used .govuk-grid-column-three-quarters not full width as the title wrapped at only the "2021" and looked odd.
+
+ 14. Upload an image
+ What if you can't (as you don't have one)? Yes/No options provided.
+
+ From: Upload a product image
+ To: Can you provide a product image?     (Question for the yes/no)
+
+As all questions are related to the uploading of an "image", then one page makes sense.
+
+Don't ask what the image is named, as users may use the name already given to an image file copied from the web
+
+What does "Are there other product iamges to report?" mean? Is this, "Would you like to add another image after this one?" If so, we need a 'next' page, with different title, same form (not within the Yes/No image question wrapper form).
+

@@ -13,6 +13,17 @@
 
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if the product has any marking",
+      href: "#marking"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -60,6 +71,9 @@
     },
     hint: {
         html: "This includes the <abbr>UKCA</abbr>, <abbr>UKNI</abbr> or <abbr>CE</abbr> marking."
+    },
+    errorMessage: {
+        text: "Select yes if the product has any marking"
     },
     items: [
     {

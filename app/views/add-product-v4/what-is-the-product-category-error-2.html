@@ -32,8 +32,12 @@
     <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-l">What is the product category and subcategory?</h1>
+    </div>
+  </div>
 
-      <form class="form" action="#" method="post" novalidate>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      <form action="#" method="post" novalidate>
 
         {{ govukSelect({
         formGroup: {
@@ -46,8 +50,7 @@
             classes: "govuk-label--m"
         },
         hint: {
-            classes: "govuk-!-font-size-16",
-            html: "Select a category. (Note: COVID-19 categories <abbr>PPE</abbr> and Hand sanitiser have now been added)."
+            html: "Select a category. <br><span class='govuk-!-font-size-16'>(COVID-19 categories <abbr>PPE</abbr> and Hand sanitiser have now been added)</span>."
         },
         errorMessage: {
             text: "Select a product category"
@@ -95,7 +98,6 @@
         },
         classes: "govuk-input--width-10",
         hint: {
-            classes: "govuk-!-font-size-16",
             text: "Enter a subcategory. For example, Face mask, or Hair dryer"
         },
         errorMessage: {

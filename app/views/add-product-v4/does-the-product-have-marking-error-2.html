@@ -13,6 +13,18 @@
 
 
 {% block content %}
+
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select the marking",
+      href: "#mark"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -25,10 +37,13 @@
     name: "mark",
     fieldset: {
         legend: {
-        text: "Select all the marking which applies",
+        text: "Select the marking which applies",
         isPageHeading: false,
         classes: "govuk-fieldset__legend"
         }
+    },
+    errorMessage: {
+        text: "Select the marking"
     },
     items: [
         {
@@ -65,6 +80,7 @@
     {
         value: "yes",
         text: "Yes",
+        checked: true,
         conditional: {
         html: yesHtml
         }

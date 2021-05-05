@@ -1,13 +1,13 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Does the product have a brand
+    When was the product placed
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "select-a-product"
+        href: "describe-the-product"
     }) }}
 {% endblock %}
 
@@ -18,64 +18,43 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Enter the product brand",
-      href: "#brand"
+      text: "Select yes if the product was placed on the market before 1 January 2021",
+      href: "#when"
     }
   ]
 }) }}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
+    <div class="govuk-grid-column-three-quarters">
 
       <form action="#" method="post" novalidate>
 
-
-{% set yesHtml %}
-{{ govukInput({
-  id: "brand",
-  name: "brand",
-  spellcheck: false,
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Product brand"
-  },
-  errorMessage: {
-    text: "Enter the product brand"
-  }
-}) }}
-{% endset -%}
-
 {{ govukRadios({
-  idPrefix: "branded",
-  name: "branded",
+  idPrefix: "when",
+  name: "when",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Does the product have a brand?",
+      html: "Was the product placed on the market before 1&nbsp;January 2021?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: "For example, Dyson, Silentnight or Panasonic."
+  errorMessage: {
+    text: "Select yes if the product was placed on the market before 1 January 2021"
   },
   items: [
     {
       value: "yes",
-      text: "Yes",
-      checked: true,
-      conditional: {
-        html: yesHtml
-      }
+      text: "Yes"
     },
     {
       value: "no",
       text: "No"
     },
     {
-      value: "unbranded",
-      text: "The product is unbranded"
+      value: "unknown",
+      text: "Unable to ascertain"
     }
   ]
 }) }}

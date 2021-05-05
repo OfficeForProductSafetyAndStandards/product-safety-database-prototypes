@@ -88,7 +88,6 @@ router.post('/add-product-v4/do-you-have-the-barcode-error-2', function (req, re
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   }
 })
-//************* end barcode
 
 //************* start search for existing product
 router.post('/add-product-v4/search-for-an-existing-product', function (req, res) {
@@ -109,7 +108,6 @@ router.post('/add-product-v4/search-for-an-existing-product-error', function (re
     return res.redirect('/add-product-v4/select-a-product')
   }
 })
-//*************************************************** ends
 
 //************* start select-a-product
 router.post('/add-product-v4/select-a-product', function (req, res) {
@@ -130,7 +128,6 @@ router.post('/add-product-v4/select-a-product-error', function (req, res) {
     return res.redirect('/add-product-v4/does-the-product-have-a-brand')
   }
 })
-//*************************************************** ends
 
 //************* start does-the-product-have-a-brand
 router.post('/add-product-v4/does-the-product-have-a-brand', function (req, res) {
@@ -169,7 +166,6 @@ router.post('/add-product-v4/does-the-product-have-a-brand-error-2', function (r
     return res.redirect('/add-product-v4/what-is-the-product-name')
   }
 })
-//*************************************************** ends
 
 //************* start search for existing product
 router.post('/add-product-v4/what-is-the-product-name', function (req, res) {
@@ -190,7 +186,6 @@ router.post('/add-product-v4/what-is-the-product-name-error', function (req, res
     return res.redirect('/add-product-v4/what-is-the-product-category')
   }
 })
-//*************************************************** ends
 
 //************* start what-is-the-product-category
 router.post('/add-product-v4/what-is-the-product-category', function (req, res) {
@@ -235,7 +230,95 @@ router.post('/add-product-v4/what-is-the-product-category-error-3', function (re
     return res.redirect('/add-product-v4/does-the-product-have-marking')
   }
 })
-//*************************************************** ends
+
+//************* start does-the-product-have-marking
+router.post('/add-product-v4/does-the-product-have-marking', function (req, res) {
+  var marking = req.session.data['marking']
+
+  if (marking == null) {
+    res.redirect('/add-product-v4/does-the-product-have-marking-error')
+  } else {
+    res.redirect('/add-product-v4/describe-the-product')
+  }
+})
+router.post('/add-product-v4/does-the-product-have-marking-error', function (req, res) {
+  var marking2 = req.session.data['marking']
+  var mark2 = req.session.data['mark']
+
+  if (marking2 == null) {
+    res.redirect('/add-product-v4/does-the-product-have-marking-error')
+  } else if ((marking2 == 'yes') && (mark2 == null)) {
+    res.redirect('/add-product-v4/does-the-product-have-marking-error-2')
+  } else {
+    res.redirect('/add-product-v4/describe-the-product')
+  }
+})
+router.post('/add-product-v4/does-the-product-have-marking-error-2', function (req, res) {
+  var marking3 = req.session.data['marking']
+  var mark3 = req.session.data['mark']
+
+  if ((marking3 == 'yes') && (mark3 == null)) {
+    res.redirect('/add-product-v4/does-the-product-have-marking-error-2')
+  } else {
+    res.redirect('/add-product-v4/describe-the-product')
+  }
+})
+
+//************* start describe-the-product
+router.post('/add-product-v4/describe-the-product', function (req, res) {
+  var description = req.session.data['description']
+
+  if (description.length > 1000) {
+    res.redirect('/add-product-v4/describe-the-product-error')
+  } else {
+    res.redirect('/add-product-v4/when-was-the-product-placed')
+  }
+})
+router.post('/add-product-v4/describe-the-product-error', function (req, res) {
+  var description2 = req.session.data['description']
+
+  if (description2.length > 1000) {
+    res.redirect('/add-product-v4/describe-the-product-error')
+  } else {
+    res.redirect('/add-product-v4/when-was-the-product-placed')
+  }
+})
+//************* start when-was-the-product-placed
+router.post('/add-product-v4/when-was-the-product-placed', function (req, res) {
+  var whenval = req.session.data['when']
+
+  if (whenval == null) {
+    res.redirect('/add-product-v4/when-was-the-product-placed-error')
+  } else {
+    res.redirect('/add-product-v4/upload-a-product-image')
+  }
+})
+router.post('/add-product-v4/when-was-the-product-placed-error', function (req, res) {
+  var whenval2 = req.session.data['when']
+
+  if (whenval2 == null) {
+    res.redirect('/add-product-v4/when-was-the-product-placed-error')
+  } else {
+    res.redirect('/add-product-v4/upload-a-product-image')
+  }
+})
+//************ start upload-a-product-image
+router.post('/add-product-v4/upload-a-product-image', function (req, res) {
+  var productimage = req.session.data['productimage']
+
+  if (productimage == null) {
+    res.redirect('/add-product-v4/upload-a-product-image-error')
+  }
+})
+router.post('/add-product-v4/upload-a-product-image-error', function (req, res) {
+  var productimage2 = req.session.data['productimage']
+
+  if (productimage2 == null) {
+    res.redirect('/add-product-v4/upload-a-product-image-error')
+  }else{
+    res.redirect('/add-product-v4/upload-a-product-image-error-2')
+  }
+})
 
 
 //************* routes for add-product-v4 ************* ends

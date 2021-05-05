@@ -1,0 +1,164 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Provide an image
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "when-was-the-product-placed"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Choose an image file to upload",
+      href: "#uploadfile"
+    },
+    {
+      text: "Enter a title for the image",
+      href: "#imagetitle"
+    },
+    {
+      text: "Enter a description of the image",
+      href: "#imagedesc"
+    },
+    {
+      text: "Enter a description of the image",
+      href: "#imagedesc"
+    },
+    {
+      text: "Choose a different image - image file types must end with .png, .jpg or .jpeg",
+      href: "#uploadfile"
+    },
+    {
+      text: "Change the image title - an image using this title already exists",
+      href: "#imagetitle"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="#" method="post" novalidate>
+
+{% set yesHtml %}
+
+    <div class="govuk-form-group govuk-!-margin-top-4 govuk-form-group--error">
+        <label class="govuk-label" for="uploadfile">
+            Upload the image file
+        </label>
+        <span id="uploadfile-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Choose an image file to upload
+        </span>
+        <div class="govuk-!-padding-top-1">
+            <input type="file" id="uploadfile" name="uploadfile" aria-describedby="uploadfile-error">
+        </div>
+    </div>
+
+    {{ govukInput({
+        label: {
+            text: "Provide a title",
+            isPageHeading: false
+        },
+        hint: {
+            classes: "govuk-!-font-size-16",
+            text: "For example, PlayStation 5 or Dyson Power Wave 3300."
+        },
+        errorMessage: {
+            text: "Enter a title for the image"
+        },
+        classes: "govuk-input--width-20",
+        id: "imagetitle",
+        name: "imagetitle",
+        attributes: {
+            maxlength: "250"
+        }
+    }) }}
+
+    {{ govukCharacterCount({
+        name: "imagedesc",
+        id: "imagedesc",
+        maxlength: 200,
+        label: {
+            text: "Describe what the image shows",
+            isPageHeading: false
+        },
+        hint: {
+            classes: "govuk-!-font-size-16",
+            text: "For example, an unboxed white Ikea FADO table lamp."
+        },
+        errorMessage: {
+            text: "Enter a description of the image"
+        }
+    }) }}
+
+    {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "another",
+        name: "another",
+        fieldset: {
+            legend: {
+            text: "Would you like to add another image after this one?"
+            }
+        },
+        items: [
+            {
+            value: "yes",
+            text: "Yes"
+            },
+            {
+            checked: true,
+            value: "no",
+            text: "No"
+            }
+        ]
+    }) }}
+
+{% endset -%}
+
+{{ govukRadios({
+    idPrefix: "productimage",
+    name: "productimage",
+    classes: "govuk-!-padding-top-3",
+    fieldset: {
+        legend: {
+            text: "Can you provide a product image?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    items: [
+    {
+        checked: true,
+        value: "yes",
+        text: "Yes",
+        conditional: {
+        html: yesHtml
+        }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

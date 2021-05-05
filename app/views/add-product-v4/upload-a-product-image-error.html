@@ -1,0 +1,137 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Provide an image
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "when-was-the-product-placed"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you can provide a product image",
+      href: "#productimage"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="#" method="post" novalidate>
+
+{% set yesHtml %}
+
+    <div class="govuk-form-group govuk-!-margin-top-4">
+        <label class="govuk-label" for="uploadfile">
+            Upload the image file
+        </label>
+        <div class="govuk-!-padding-top-1">
+            <input type="file" id="uploadfile" name="uploadfile">
+        </div>
+    </div>
+
+    {{ govukInput({
+        label: {
+            text: "Provide a title",
+            isPageHeading: false
+        },
+        hint: {
+            classes: "govuk-!-font-size-16",
+            text: "For example, PlayStation 5 or Dyson Power Wave 3300."
+        },
+        classes: "govuk-input--width-20",
+        id: "imagetitle",
+        name: "imagetitle",
+        attributes: {
+            maxlength: "250"
+        }
+    }) }}
+
+    {{ govukCharacterCount({
+        name: "imagedesc",
+        id: "imagedesc",
+        maxlength: 200,
+        label: {
+            text: "Describe what the image shows",
+            isPageHeading: false
+        },
+        hint: {
+            classes: "govuk-!-font-size-16",
+            text: "For example, an unboxed white Ikea FADO table lamp."
+        }
+    }) }}
+
+    {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "another",
+        name: "another",
+        fieldset: {
+            legend: {
+            text: "Would you like to add another image after this one?"
+            }
+        },
+        items: [
+            {
+            value: "yes",
+            text: "Yes"
+            },
+            {
+            checked: true,
+            value: "no",
+            text: "No"
+            }
+        ]
+    }) }}
+
+{% endset -%}
+
+{{ govukRadios({
+    idPrefix: "productimage",
+    name: "productimage",
+    classes: "govuk-!-padding-top-3",
+    fieldset: {
+        legend: {
+            text: "Can you provide a product image?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    errorMessage: {
+        text: "Select yes if you can provide a product image"
+    },
+    items: [
+    {
+        value: "yes",
+        text: "Yes",
+        conditional: {
+        html: yesHtml
+        }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
