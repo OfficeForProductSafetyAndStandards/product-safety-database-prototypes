@@ -27,6 +27,7 @@ To:
 5. Do you have the barcode number
 
 Clarify what we're doing on this page, so that if 'No' the next search page is more self explanitory.
+
 From: Barcode number will help us find all the products already reported in our database.
 To:   This number will help to confirm if the product already exists within our records.
 
@@ -125,11 +126,13 @@ WAS: Add details about the product not already provided. For example, colour, si
  What if you can't (as you don't have one)? Yes/No options provided.
 
  From: Upload a product image
- To: Can you provide a product image?     (Question for the yes/no)
+ To: Can you provide an image of the product?     (Question for the yes/no)
+
+ Hint: "Do not upload case images related to damage or incidents." follows the same logic as extra product information
 
 As all questions are related to the uploading of an "image", then one page makes sense.
 
 Don't ask what the image is named, as users may use the name already given to an image file copied from the web
 
-What does "Are there other product iamges to report?" mean? Is this, "Would you like to add another image after this one?" If so, we need a 'next' page, with different title, same form (not within the Yes/No image question wrapper form).
+What does "Are there other product iamges to report?" mean? Is this, "Would you like to add another image after this one?" If so, we need a 'next' page, with different title, same form (not within the Yes/No image question wrapper form).  TAKE OF PRESELECT
 

@@ -41,16 +41,33 @@ main.govuk-main-wrapper {
     max-width: 100%;
 }
 
-ul.opss-radio-list--borders {
+ul.opss-radio-list {
     li {
         padding: govuk-spacing(4) 0;
         display: inline-block;
         width: 100%;
-        border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
 
         .govuk-radios__item .govuk-radios__hint {
             padding-left: 2px;
         }
+    }
+}
+
+.opss-radio-list--borders {
+    li {
+        border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+    }
+}
+
+.opss-radio-list--no-top-border {
+    li:first-child {
+        border-top: none;
+    }
+}
+
+.opss-block--desktop {
+    @include govuk-media-query($from: desktop) {
+        display: block;
     }
 }
 
