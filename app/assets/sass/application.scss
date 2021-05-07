@@ -43,7 +43,7 @@ main.govuk-main-wrapper {
 
 ul.opss-radio-list {
     li {
-        padding: govuk-spacing(4) 0;
+        padding: govuk-spacing(1) 0;
         display: inline-block;
         width: 100%;
 
@@ -318,6 +318,18 @@ $opss-error-colour: #d4351c;
             }
         }
       }
+
+      &.opss-pagination-link--text {
+            text-align: center;
+            text-align: center;
+            xxxbackground: gold;
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            float: left;
+      }
+
+      &.opss-pagination-link--text {}
 
     }
 
