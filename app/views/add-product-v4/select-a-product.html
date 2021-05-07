@@ -14,111 +14,201 @@ select-a-product{% extends "layout-01.html" %}
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-margin-bottom-7">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-7">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Select your product</h1>
 
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Select the product</h1>
-
-            <div id="product-hint" class="govuk-hint">
-                Select your product if it appears in the list or add a new product to our records.
-            </div>
-
+        <div id="product-hint" class="govuk-hint">
+            If your product has already been reported you may be able to find it within these search results. Add a new product if your product has not already been added to our records.
+        </div>
     </div>
 </div>
 
 <div class="govuk-grid-row">
-    <section class="govuk-grid-column-two-thirds">
-
+    <section class="govuk-grid-column-two-thirds" role="region" aria-label="search-results-list">
         <div class="govuk-grid-row">
            <div class="govuk-grid-column-full govuk-!-margin-bottom-1">
-                <p class="govuk-body-s">
-                   <span id="opss-qty">19</span> products that match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>, have already been reported.
+                <p class="govuk-body">
+                   <span id="opss-qty">19</span> products match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>. <span class="govuk-visually-hidden">This page lists results 1 to 12.</span>
+                   <!-- There are no products which match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>. -->
                 </p>
            </div>
         </div>
 
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full" role="region" aria-label="matching-products-list">
-                <ul class="govuk-list opss-list--borders">
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Hyper Clean - Series 1000 masks</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Personal protective equipment (PPE), Face covering and UKCA, CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Dyson - Supersonic</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Lorem ipsum (SKKR), electricals and CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Honda - Red Stripe VII</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                           Motor vehicle (PPE), motorbikes, and UKCA, CE, EUXX marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Panasonic - Super Fast XD</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Electrical equipment (SKKR), Radios and CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Super Hyper Clean - Series 707 mask</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Personal protective equipment (PPE), Face covering and UKCA, CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Vax - Supersonic 100</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Lorem ipsum (SKKR), electricals and CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Dyson - Supersonic</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Lorem ipsum (SKKR), electricals and CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Honda - Red Stripe VII</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Motor vehicle (PPE), motorbikes, and UKCA, CE, EUXX marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Dyson - Supersonic</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                            Lorem ipsum (SKKR), electricals and CE marking.
-                        </div>
-                    </li>
-                    <li>
-                        <a href="how-many-units-are-affected" class="govuk-link govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-font-size-19  govuk-!-margin-bottom-1">Honda - Red Stripe VII</a>
-                        <div class="govuk-!-font-size-16 govuk-!-margin-bottom-1">
-                           Motor vehicle (PPE), motorbikes, and UKCA, CE, EUXX marking.
-                        </div>
-                    </li>
-                </ul>
+            <div class="govuk-grid-column-full">
 
-                <nav class="opss-pagination-link">
-                    <ul>
-                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
-                                <a href="" class="govuk-link govuk-link--no-visited-state">
-                                    <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                <form action="#" method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="product-hint">
+
+                            <ul class="govuk-list govuk-radios govuk-radios--small opss-radio-list opss-radio-list--borders opss-radio-list--no-top-border">
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-01" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-01-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-01">
+                                            <span class="opss-radio-list__number">1. </span>Hyper Clean - Series 1000 masks
+                                        </label>
+                                        <div id="product-item-01-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Personal protective equipment (PPE), Face covering with UKCA, CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-02" name="product-item" type="radio" value="government-gateway-02" aria-describedby="product-item-02-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-02">
+                                            <span class="opss-radio-list__number">2. </span>Dyson - Supersonic
+                                        </label>
+                                        <div id="product-item-02-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Lorem ipsum (SKKR), electricals with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-03" name="product-item" type="radio" value="government-gateway-03" aria-describedby="product-item-03-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-03">
+                                            <span class="opss-radio-list__number">3. </span>Honda - Red Stripe VII
+                                        </label>
+                                        <div id="product-item-03-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Motor vehicle (PPE), motorbikes, with UKCA, CE, EUXX marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-04" name="product-item" type="radio" value="government-gateway-04" aria-describedby="product-item-04-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-04">
+                                            <span class="opss-radio-list__number">4. </span>Panasonic - Super Fast XD
+                                        </label>
+                                        <div id="product-item-04-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Electrical equipment (SKKR), Radios with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-05" name="product-item" type="radio" value="government-gateway-05" aria-describedby="product-item-05-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-05">
+                                            <span class="opss-radio-list__number">5. </span>Super Hyper Clean - Series 707 mask
+                                        </label>
+                                        <div id="product-item-05-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Personal protective equipment (PPE), Face covering with UKCA, CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-06" name="product-item" type="radio" value="government-gateway-06" aria-describedby="product-item-06-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-06">
+                                            <span class="opss-radio-list__number">6. </span>Vax - Supersonic 100
+                                        </label>
+                                        <div id="product-item-06-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Lorem ipsum (SKKR), electricals with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-07" name="product-item" type="radio" value="government-gateway" aria-describedby="product-item-07-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-07">
+                                            <span class="opss-radio-list__number">7. </span>Super masks - V8000
+                                        </label>
+                                        <div id="product-item-07-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Personal protective equipment (PPE), Face covering with UKCA, CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-08" name="product-item" type="radio" value="government-gateway-08" aria-describedby="product-item-08-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-08">
+                                            <span class="opss-radio-list__number">8. </span>Sony - superfast
+                                        </label>
+                                        <div id="product-item-08-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Lorem ipsumiatica ipsum (SKKR), transport with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-09" name="product-item" type="radio" value="government-gateway-09" aria-describedby="product-item-09-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-09">
+                                            <span class="opss-radio-list__number">9. </span>Ford - evergreen mower
+                                        </label>
+                                        <div id="product-item-09-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Lawn mower, electrics, with CE, EUXX marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-10" name="product-item" type="radio" value="government-gateway-10" aria-describedby="product-item-10-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-10">
+                                            <span class="opss-radio-list__number">10. </span>Volvo - safer safes
+                                        </label>
+                                        <div id="product-item-10-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Hardwear, industrial with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-11" name="product-item" type="radio" value="government-gateway-11" aria-describedby="product-item-11-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-11">
+                                            <span class="opss-radio-list__number">11. </span>Easy ride pram - Series 300
+                                        </label>
+                                        <div id="product-item-11-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Prams and buggies, Child equipment with UKCA, CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div  class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="product-item-12" name="product-item" type="radio" value="government-gateway-12" aria-describedby="product-item-12-hint">
+                                        <label class="govuk-label govuk-radios__label" for="product-item-12">
+                                            <span class="opss-radio-list__number">12. </span>Wilkinson - Gold blade shave
+                                        </label>
+                                        <div id="product-item-12-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                            Lorem gold ipsum blades, Men's grooming with CE marking.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </fieldset>
+                    </div>
+
+                    <nav class="opss-pagination-link opss-pagination-link--no-top-space">
+                        <ul>
+                            <!--li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Previous</span><span class="govuk-visually-hidden">:</span> <span>Results 1 to 12</span>
                                 </a>
+                            </li-->
+                            <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                                Showing results 1 to 12
                             </li>
                             <li class="opss-pagination-link__wrap opss-pagination-link--next">
-                                <a href="" class="govuk-link govuk-link--no-visited-state">
-                                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Next</span><span class="govuk-visually-hidden">:</span> <span>Results 13 to 19</span>
                                 </a>
-                        </li>
-                    </ul>
-                </nav>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="govuk-button-group govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+
+                        <a class="govuk-link govuk-link--no-visited-state" href="search-for-an-existing-product.html">Search again</a>
+                    </div>
+
+                </form>
 
             </div>
         </div>
-
     </section>
 
     <section class="govuk-grid-column-one-third">
@@ -127,10 +217,6 @@ select-a-product{% extends "layout-01.html" %}
             <span class="opss-block--desktop">If you cannot find your product,</span> add your product to our records.
         </div>
         <a href="does-the-product-have-a-brand.html" class="govuk-button govuk-button--secondary">Add a product</a>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-        <p class="govuk-body-s">Or <a href="search-for-an-existing-product.html" class="govuk-link govuk-link--no-visited-state">search again</a></p>
     </section>
 </div>
 

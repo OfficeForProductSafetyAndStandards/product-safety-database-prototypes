@@ -116,7 +116,7 @@ router.post('/add-product-v4/select-a-product', function (req, res) {
   if (productitem == null) {
     return res.redirect('/add-product-v4/select-a-product-error')
   } else {
-    return res.redirect('/add-product-v4/does-the-product-have-a-brand')
+    return res.redirect('/add-product-v4/how-many-units-are-affected')
   }
 })
 router.post('/add-product-v4/select-a-product-error', function (req, res) {
@@ -125,7 +125,7 @@ router.post('/add-product-v4/select-a-product-error', function (req, res) {
   if (productitem2 == null) {
     return res.redirect('/add-product-v4/select-a-product-error')
   } else {
-    return res.redirect('/add-product-v4/does-the-product-have-a-brand')
+    return res.redirect('/add-product-v4/how-many-units-are-affected')
   }
 })
 

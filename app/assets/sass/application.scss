@@ -42,13 +42,19 @@ main.govuk-main-wrapper {
 }
 
 ul.opss-radio-list {
+    margin-bottom: 0;
+
     li {
-        padding: govuk-spacing(1) 0;
+        padding: govuk-spacing(2) 0;
         display: inline-block;
         width: 100%;
 
-        .govuk-radios__item .govuk-radios__hint {
-            padding-left: 2px;
+        .govuk-radios__item {
+            padding-left: govuk-spacing(7);
+
+            .govuk-radios__hint {
+                padding-left: 2px;
+            }
         }
     }
 }
@@ -63,6 +69,11 @@ ul.opss-radio-list {
     li:first-child {
         border-top: none;
     }
+}
+
+.opss-radio-list__number {
+    display: inline-block;
+    padding-right: govuk-spacing(2);
 }
 
 .opss-block--desktop {
@@ -176,10 +187,6 @@ $opss-error-colour: #d4351c;
         padding: govuk-spacing(4) 0 govuk-spacing(2) 0;
         border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
     }
-
-    & + .opss-pagination-link {
-        margin-top: - govuk-spacing(4);
-    }
 }
 
 *[class^="govuk-heading"] + .opss-summary-list {
@@ -268,6 +275,9 @@ $opss-error-colour: #d4351c;
       display: inline-block;
       width: auto;
 
+      position: relative;//for center txt
+      z-index: 1;
+
       .govuk-link {
         text-decoration: none;
         display: inline-block;
@@ -320,17 +330,53 @@ $opss-error-colour: #d4351c;
       }
 
       &.opss-pagination-link--text {
-            text-align: center;
-            text-align: center;
-            xxxbackground: gold;
-            width: 50%;
             display: block;
-            margin: 0 auto;
             float: left;
+            text-align: center;
+            width: 100%;
+
+            position: relative;
+            z-index: 0;
+            top: -65px;
+
+            @include govuk-media-query($from: desktop) {
+                top: - govuk-spacing(6);
+            }
       }
 
-      &.opss-pagination-link--text {}
+      &.opss-pagination-link--text:first-child {
+            margin-top: govuk-spacing(1);
+            position: inherit;
+
+            & + .opss-pagination-link--next {
+                @include govuk-media-query($from: desktop) {
+                    top: -55px;
+                }
+            }
+      }
 
     }
 
+    &.opss-pagination-link--no-top-space {
+        margin-top: - govuk-spacing(4);
+    }
+
 }
+
+
+                /*xwidth: 100% !important;
+                padding: govuk-spacing(4) 0 govuk-spacing(1) 0;
+                background: lime;
+                xposition: relative;
+                xtop: -100px;
+
+
+            @include govuk-media-query($from: desktop) {
+                margin-top: govuk-spacing(2);
+                xposition: initial !important;
+                xtop: initial;
+                padding: 0;
+                width: auto !important;
+float: left ; clear: left;
+                background: red;
+            }*/
