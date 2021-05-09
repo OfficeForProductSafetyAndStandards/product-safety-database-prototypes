@@ -28,16 +28,40 @@ router.post('/add-product-v4/reason-for-creating-case', function (req, res) {
   if (casereason == null) {
     res.redirect('/add-product-v4/reason-for-creating-case-error' )
   } else {
-    res.redirect('/add-product-v4/is-case-counterfeit' )
+    res.redirect('/add-product-v4/why-is-the-product-of-concern' )
   }
 })
 router.post('/add-product-v4/reason-for-creating-case-error', function (req, res) {
   const casereasonerror = req.session.data['reason']
 
   if (casereasonerror != null) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern' )
+  }
+})
+
+
+//*********************
+router.post('/add-product-v4/why-is-the-product-of-concern', function (req, res) {
+  const casereason = req.session.data['reason']
+
+  if (casereason == null) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern-error' )
+  } else {
     res.redirect('/add-product-v4/is-case-counterfeit' )
   }
 })
+router.post('/add-product-v4/why-is-the-product-of-concern-error', function (req, res) {
+  const casereasonerror = req.session.data['reason']
+
+  if (casereasonerror != null) {
+    res.redirect('/add-product-v4/is-case-counterfeit' )
+  }
+})
+//*******************
+
+
+
+
 
 router.post('/add-product-v4/is-case-counterfeit', function (req, res) {
   const counterfeit = req.session.data['counterfeit']
@@ -238,7 +262,7 @@ router.post('/add-product-v4/does-the-product-have-marking', function (req, res)
   if (marking == null) {
     res.redirect('/add-product-v4/does-the-product-have-marking-error')
   } else {
-    res.redirect('/add-product-v4/describe-the-product')
+    res.redirect('/add-product-v4/might-already-exist')
   }
 })
 router.post('/add-product-v4/does-the-product-have-marking-error', function (req, res) {
@@ -250,7 +274,7 @@ router.post('/add-product-v4/does-the-product-have-marking-error', function (req
   } else if ((marking2 == 'yes') && (mark2 == null)) {
     res.redirect('/add-product-v4/does-the-product-have-marking-error-2')
   } else {
-    res.redirect('/add-product-v4/describe-the-product')
+    res.redirect('/add-product-v4/might-already-exist')
   }
 })
 router.post('/add-product-v4/does-the-product-have-marking-error-2', function (req, res) {
@@ -260,9 +284,13 @@ router.post('/add-product-v4/does-the-product-have-marking-error-2', function (r
   if ((marking3 == 'yes') && (mark3 == null)) {
     res.redirect('/add-product-v4/does-the-product-have-marking-error-2')
   } else {
-    res.redirect('/add-product-v4/describe-the-product')
+    res.redirect('/add-product-v4/might-already-exist')
   }
 })
+
+// *********************** new
+
+//might-already-exist
 
 //************* start describe-the-product
 router.post('/add-product-v4/describe-the-product', function (req, res) {

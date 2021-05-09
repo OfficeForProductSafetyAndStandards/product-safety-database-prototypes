@@ -1,0 +1,113 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Why is this product of concern
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "reason-for-creating-case"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form class="form" action="#" method="post" novalidate>
+
+{% set unsafeformHtml %}
+    {{ govukSelect({
+        id: "primary-hazard",
+        name: "primary-hazard",
+        label: {
+            text: "What is the primary hazard?"
+        },
+        items: [
+            {
+            value: "hazard01",
+            text: "Lorem ipsum",
+            selected: true
+            },
+            {
+            value: "hazard02",
+            text: "Ipsum lorem"
+            },
+            {
+            value: "03",
+            text: "Ipusmi orem"
+            }
+        ]
+    })}}
+
+    {{ govukTextarea({
+    name: "why-unsafe",
+    id: "why-unsafe",
+    classes: "govuk-!-width-three-quarters",
+    label: {
+        text: "Why is the product unsafe?",
+        classes: "govuk-label",
+        isPageHeading: false
+    },
+    hint: {
+        classes: "govuk-!-font-size-16",
+        text: "If the product has been involved in an incident include this additional information."
+    }
+    }) }}
+{% endset -%}
+
+{% set noncompliantHtml %}
+    {{ govukTextarea({
+    name: "why-noncompliant",
+    id: "why-noncompliant",
+    classes: "govuk-!-width-three-quarters",
+    label: {
+        text: "Why is the product non-compliant?",
+        classes: "govuk-label",
+        isPageHeading: false
+    }
+    }) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "safety",
+  name: "safety",
+  classes: "govuk-!-padding-top-3",
+  fieldset: {
+    legend: {
+      text: "Why is the product of concern?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all options that apply."
+  },
+    items: [
+    {
+      value: "unsafeform",
+      text: "The product is unsafe (or suspected of being)",
+      conditional: {
+        html: unsafeformHtml
+      }
+    },
+    {
+      value: "noncompliantform",
+      text: "The product is non-compliant (or suspected of being)",
+      conditional: {
+        html: noncompliantHtml
+      }
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
