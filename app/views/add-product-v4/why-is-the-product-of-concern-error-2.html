@@ -12,6 +12,21 @@
 {% endblock %}
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter information as to why the product is unsafe",
+      href: "#why-unsafe"
+    },
+    {
+      text: "Enter information as to why the product is non-compliant",
+      href: "#why-noncompliant"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -50,6 +65,9 @@
         classes: "govuk-label",
         isPageHeading: false
     },
+    errorMessage: {
+      text: "Enter information as to why the product is unsafe"
+    },
     hint: {
         classes: "govuk-!-font-size-16",
         text: "If the product has been involved in an incident include this additional information."
@@ -66,6 +84,9 @@
         text: "Why is the product non-compliant?",
         classes: "govuk-label",
         isPageHeading: false
+    },
+    errorMessage: {
+      text: "Enter information as to why the product is non-compliant"
     }
     }) }}
 {% endset -%}
@@ -86,6 +107,7 @@
   },
     items: [
     {
+      checked: true,
       value: "unsafeform",
       text: "The product is unsafe (or suspected of being)",
       conditional: {
@@ -93,6 +115,7 @@
       }
     },
     {
+      checked: true,
       value: "noncompliantform",
       text: "The product is non-compliant (or suspected of being)",
       conditional: {

@@ -42,18 +42,29 @@ router.post('/add-product-v4/reason-for-creating-case-error', function (req, res
 
 //*********************
 router.post('/add-product-v4/why-is-the-product-of-concern', function (req, res) {
-  const casereason = req.session.data['reason']
+  const safety = req.session.data['safety']
 
-  if (casereason == null) {
+  if (safety == null) {
     res.redirect('/add-product-v4/why-is-the-product-of-concern-error' )
+  } else if ((safety != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern-error-2' )
   } else {
     res.redirect('/add-product-v4/is-case-counterfeit' )
   }
 })
 router.post('/add-product-v4/why-is-the-product-of-concern-error', function (req, res) {
-  const casereasonerror = req.session.data['reason']
-
-  if (casereasonerror != null) {
+  if ((req.session.data['safety'] == null)) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern-error' )
+  } else if ((safetyerror != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern-error-2' )
+  } else {
+    res.redirect('/add-product-v4/is-case-counterfeit' )
+  }
+})
+router.post('/add-product-v4/why-is-the-product-of-concern-error-2', function (req, res) {
+  if ((req.session.data['safety'] != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
+    res.redirect('/add-product-v4/why-is-the-product-of-concern-error-2' )
+  } else {
     res.redirect('/add-product-v4/is-case-counterfeit' )
   }
 })
@@ -318,7 +329,7 @@ router.post('/add-product-v4/when-was-the-product-placed', function (req, res) {
   if (whenval == null) {
     res.redirect('/add-product-v4/when-was-the-product-placed-error')
   } else {
-    res.redirect('/add-product-v4/upload-a-product-image')
+    res.redirect('/add-product-v4/can-you-provide-an-image')
   }
 })
 router.post('/add-product-v4/when-was-the-product-placed-error', function (req, res) {
@@ -327,24 +338,57 @@ router.post('/add-product-v4/when-was-the-product-placed-error', function (req, 
   if (whenval2 == null) {
     res.redirect('/add-product-v4/when-was-the-product-placed-error')
   } else {
+    res.redirect('/add-product-v4/can-you-provide-an-image')
+  }
+})
+//****************** can-you-provide-an-image
+router.post('/add-product-v4/can-you-provide-an-image', function (req, res) {
+  const productimage = req.session.data['productimage']
+
+  if (productimage == null) {
+    res.redirect('/add-product-v4/can-you-provide-an-image-error')
+  } else if (productimage == 'no') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  } else {
     res.redirect('/add-product-v4/upload-a-product-image')
   }
 })
+router.post('/add-product-v4/can-you-provide-an-image-error', function (req, res) {
+  const productimage2 = req.session.data['productimage']
+
+  if (productimage2 == null) {
+    res.redirect('/add-product-v4/can-you-provide-an-image-error')
+  } else if (productimage2 == 'no') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  }else{
+    res.redirect('/add-product-v4/upload-a-product-image')
+  }
+})
+
+
 //************ start upload-a-product-image
 router.post('/add-product-v4/upload-a-product-image', function (req, res) {
-  var productimage = req.session.data['productimage']
+  var imagetitle = req.session.data['imagetitle']
+  var imagedesc = req.session.data['imagedesc']
+  var another = req.session.data['another']
 
-  if (productimage == null) {
+  if ((imagetitle == '') || (imagedesc == '') || (another == null)){
     res.redirect('/add-product-v4/upload-a-product-image-error')
+  } else if (another == 'no') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  } else if (another == 'yes') {
+    res.redirect('/add-product-v4/upload-a-product-image?timestamp=here')
   }
 })
 router.post('/add-product-v4/upload-a-product-image-error', function (req, res) {
-  var productimage2 = req.session.data['productimage']
+  var imagetitle2 = req.session.data['imagetitle']
 
-  if (productimage2 == null) {
+  if ((imagetitle2 == '') || (imagedesc == '') || (another == null)){
     res.redirect('/add-product-v4/upload-a-product-image-error')
-  }else{
-    res.redirect('/add-product-v4/upload-a-product-image-error-2')
+  } else if (another == 'no') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  } else if (another == 'yes') {
+    res.redirect('/add-product-v4/upload-a-product-image?timestamp=here')
   }
 })
 

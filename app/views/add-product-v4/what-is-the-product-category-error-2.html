@@ -47,23 +47,20 @@
         name: "category",
         label: {
             text: "Product category",
-            classes: "govuk-label--m"
+            classes: "govuk-label--s"
         },
         hint: {
-            html: "Select a category. <br><span class='govuk-!-font-size-16'>(COVID-19 categories <abbr>PPE</abbr> and Hand sanitiser have now been added)</span>."
+            html: "Select a category. <br>(COVID-19 categories <abbr>PPE</abbr> and Hand sanitiser have now been added).",
+            classes: "govuk-!-font-size-16"
         },
         errorMessage: {
             text: "Select a product category"
         },
             items: [
                 {
-                value: "",
-                text: "",
-                selected: true
-                },
-                {
                 value: "val01",
-                text: "Lorem ipsum etc lorem"
+                text: "Lorem ipsum etc lorem iptu",
+                selected: true
                 },
                 {
                 value: "val02",
@@ -93,7 +90,7 @@
         {{ govukInput({
         label: {
             text: "Product subcategory",
-            classes: "govuk-label--m",
+            classes: "govuk-label--s",
             isPageHeading: false
         },
         classes: "govuk-input--width-10",
@@ -101,7 +98,8 @@
             text: "Enter a subcategory. For example, Face mask, or Hair dryer"
         },
         errorMessage: {
-            text: "Enter a product subcategory"
+            text: "Enter a product subcategory",
+            classes: "govuk-!-font-size-16"
         },
         id: "subcategory",
         name: "subcategory",

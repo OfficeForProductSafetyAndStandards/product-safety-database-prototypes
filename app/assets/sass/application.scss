@@ -82,6 +82,10 @@ ul.opss-radio-list {
     }
 }
 
+.govuk-character-count__message:after {
+    content: '.';
+}
+
 //span.govuk-error-message + input[class^="govuk-!-margin-top"].govuk-input--error {
 //    margin-top: 0;
 //}

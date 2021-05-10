@@ -12,6 +12,17 @@
 {% endblock %}
 
 {% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select the options which are reasons for concern",
+      href: "#safety"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -83,6 +94,9 @@
   },
   hint: {
     text: "Select all options that apply."
+  },
+  errorMessage: {
+    text: "Select the options which are reasons for concern"
   },
     items: [
     {
