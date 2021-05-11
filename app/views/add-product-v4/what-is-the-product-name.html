@@ -1,0 +1,54 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    What is the product name
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "does-the-product-have-a-brand"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <form action="#" method="post" novalidate>
+
+
+{{ govukInput({
+  formGroup: {
+    classes: "govuk-!-margin-bottom-5"
+  },
+  label: {
+    text: "What is the product name?",
+    classes: "govuk-label--l govuk-!-margin-bottom-2",
+    isPageHeading: true
+  },
+  hint: {
+    classes: "govuk-!-margin-bottom-6",
+    html: "Try to include a model number and model name. <br>For example, PlayStation 5 Console 9395003, or EH-NE83-K895 Power Air."
+  },
+  type: "text",
+  classes: "govuk-!-width-two-thirds",
+  id: "productname",
+  name: "productname"
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

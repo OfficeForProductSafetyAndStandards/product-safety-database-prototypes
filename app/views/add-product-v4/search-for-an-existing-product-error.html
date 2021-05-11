@@ -1,0 +1,68 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Search for an existing product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "do-you-have-the-barcode"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter keywords to search for the product",
+      href: "#keywords"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <form action="#" method="post" novalidate>
+
+
+{{ govukInput({
+  formGroup: {
+    classes: "govuk-!-margin-bottom-5"
+  },
+  label: {
+    text: "Search for the product",
+    classes: "govuk-label--l govuk-!-margin-bottom-2",
+    isPageHeading: true
+  },
+  errorMessage: {
+    text: "Enter keywords to search for the product"
+  },
+  hint: {
+    classes: "govuk-!-margin-bottom-6",
+    text: "Using keywords try to include the product name, model name and model number."
+  },
+  type: "search",
+  classes: "govuk-!-width-two-thirds",
+  id: "keywords",
+  name: "keywords"
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

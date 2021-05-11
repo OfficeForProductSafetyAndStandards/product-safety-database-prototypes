@@ -1,0 +1,138 @@
+1. covid related?:
+From: Is this case related to the coronavirus outbreak?
+To: Is this case related to the coronavirus pandemic?
+
+From: Yes, it is (or could be)
+To: Yes (or could be)
+
+From: No, this is business as usual
+To: No
+
+2. Removed, "Report an unsafe or non-compliant product" heading caption from all but the first page
+
+3.
+From: Reason for creating the case
+To: What is the reason for creating a case?
+
+Tried to make sense of the current v3 design using checkboxes instead of radios, and labels not answering the question irrationally
+
+Note: there is only one key question (as a header). Others are part of labels.
+
+Q: are the textarea fields Required (validation)?
+
+4. Is case counterfiet.
+From:
+To:
+
+5. Do you have the barcode number
+
+Clarify what we're doing on this page, so that if 'No' the next search page is more self explanitory.
+
+From: Barcode number will help us find all the products already reported in our database.
+To:   This number will help to confirm if the product already exists within our records.
+
+I assume barcode numbers can sometimes include letters and symbols?
+
+[The barcode number will help to find products already reported.]
+
+6. Search for the product ... feels like we're about to find the product on some list of ALL products
+From: "Find an existing product" why? To do what? Find any existing product (which one)?
+To: "Search for the product" used with the hint text, I think this is much clearer as to what is happening. "the" product refers to the product the user is concerned with. Following the previous page, it is more self-explanitory.
+
+Hint:
+From: We will find products that are already reported in our database to identify.*
+To:
+
+
+OLD To: text: "Before reporting a product, check that it does not already exist within our records."
+    text: "[Before creating a case,] check that the product does not already exist within our records."
+
+
+* "to identify" is confusing? This will be obvious once the results are served. The priority is for it to clarify the objective and to avoid unnecessary confusion.
+
+************* If no search results: DON'T go straight to the "what is the product name" page. Instead we still go to Select a product, but show (with message) that no records could be found and offer the "Add a new product" link. *****************
+
+
+
+7. Search for an existing product
+
+
+From: Include product name, model name and model number
+To: Try to include the product name, model name and model number.
+
+Not sure about the add another product being below the fold - could have search again and add new product at top of right col?
+or
+From "One or more products that match your search keyword(s) ... "
+To: a) "6 products that match your search keyword(s) ... "
+    b) "At least 12 products strongly matching your search keyword(s) ..." if 12 is the maximum we return
+
+and/or add a jumpto anchor link to the text "add a new product". (Does not repeat the label).
+
+Clicking Search again - prepopulate the search box again with the previous search?
+
+>>>>>>> Our product records do not have a match for your keyword(s) xxxx search. Please add the product to our records.
+
+What happens if they accidently choose a product which transpires to not be the same product?
+
+8. Designs: Do you know the product name AND Do you know the product brand? ... are back to front in the flow? Brands will likely be added in the 'product name' form if it is first? Logically, I would start with the brand, and drill/filter downwards?
+
+From: Do you know the product brand?
+To: Does the product have a brand?   (This caters for the Yes/No format. "Do you know" is an ambiguous personal question?)
+
+Moved hint text from revealed form to be seen before the users makes a choice.
+
+The green buttons are closer (to avoid dangers of being missed below fold).
+
+9. What is the product name?     (Added '?')
+From: Include the model name and model number, for example, PlayStation 5
+To: Try to include the model name and any model number. For example, PlayStation 5, or .
+
+Added 'Try to' in case they don't have both?!
+Added another example - most products seem to have the number first (swapped number and name around in hint)
+
+
+10. This page has problems: not clear one is select the next is type. Two questions suddenly? The weird COVID hint is update info, not 'hint' text?
+From: Product category and subcategory
+To: What is the product category and subcategory?
+
+From: COVID-19 categories added: 'PPE' and Hand sanitiser
+To: COVID-19 categories PPE and Hand sanitiser have now been added.
+
+11.
+From: Product marking
+To: Does the product have marking
+... to keep consistency with other pages
+
+12.
+From: Description of product
+To: Describe the product   (as we are asking the user to do something and continues previous pages)
+
+Don't need 2nd label - the "title" is the label.
+Moved character count to correct position and used correct GDS wording.
+
+From: Details about the product you haven't included above. For example, colour, size, packaging description. You don't need to include details of damage or incidents
+To: Enter additional information about the product. For example, colour and size or a description of the packaging. (Do not add case information about damage or incidents).
+
+WAS: Add details about the product not already provided. For example, colour, size and a description of the packaging. (Do not add case information about damage or incidents).
+
+(To add is to provide another of something. Additional is extraneous.)
+
+13. when-was-the-product-placed
+ "placed"? not "available"? Are placed and available potentially different meanings?
+
+ Used .govuk-grid-column-three-quarters not full width as the title wrapped at only the "2021" and looked odd.
+
+ 14. Upload an image
+ What if you can't (as you don't have one)? Yes/No options provided.
+
+ From: Upload a product image
+ To: Can you provide an image of the product?     (Question for the yes/no)
+
+ Hint: "Do not upload case images related to damage or incidents." follows the same logic as extra product information
+
+As all questions are related to the uploading of an "image", then one page makes sense.
+
+Don't ask what the image is named, as users may use the name already given to an image file copied from the web
+
+What does "Are there other product iamges to report?" mean? Is this, "Would you like to add another image after this one?" If so, we need a 'next' page, with different title, same form (not within the Yes/No image question wrapper form).  TAKE OF PRESELECT
+

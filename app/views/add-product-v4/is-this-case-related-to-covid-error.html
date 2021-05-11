@@ -13,9 +13,21 @@
 
 
 {% block content %}
+
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if the case is related to the coronavirus pandemic",
+      href: "#is-covid"
+    }
+  ]
+}) }}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
 
       <form action="#" method="post" novalidate>
         <span class="govuk-caption-l">Report a product</span>
@@ -33,7 +45,11 @@
     }
   },
   hint: {
+    classes: "govuk-!-margin-bottom-6",
     text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
+  },
+  errorMessage: {
+    text: "Select yes if the case is related to the coronavirus pandemic"
   },
   items: [
     {
