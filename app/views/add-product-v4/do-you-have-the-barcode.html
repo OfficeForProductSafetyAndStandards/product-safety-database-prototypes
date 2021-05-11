@@ -19,6 +19,7 @@
 
       <form action="#" method="post" novalidate>
 
+<!-- if returning to the page from select-a-product-barcode using the 'Change the barcode' link, the Yes radio should be pre-selected -->
 
 {% set yesHtml %}
 {{ govukInput({
@@ -27,7 +28,7 @@
   spellcheck: false,
   classes: "govuk-!-width-one-third",
   label: {
-    text: "Barcode number (GTIN, EAN or UPC)"
+    html: "Barcode number (<abbr>GTIN</abbr>, <abbr></abbr>EAN</abbr> or <abbr></abbr>UPC</abbr>)"
   },
   hint: {
       classes: "govuk-!-font-size-16",

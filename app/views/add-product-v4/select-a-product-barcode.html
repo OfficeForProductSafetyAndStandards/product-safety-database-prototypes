@@ -1,13 +1,13 @@
 select-a-product{% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Select a product
+    Select a product based on the barcode
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "search-for-an-existing-product"
+        href: "do-you-have-the-barcode"
     }) }}
 {% endblock %}
 
@@ -18,6 +18,10 @@ select-a-product{% extends "layout-01.html" %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Select your product</h1>
 
         <div id="product-hint" class="govuk-hint">
+            <!--We have listed products matching the barcode <span>123456789101</span> that were already reported. Choose matching product from the list or add aas a new product to our database.-->
+
+            <!-- If your product (with barcode <span class="govuk-!-font-weight-bold">123456789101</span>) has already been reported you may be able to find it within these search results. Add a new product if your product has not already been added to our records. -->
+
             If your product has already been reported you may be able to find it within these search results. Add a new product if your product has not already been added to our records.
         </div>
     </div>
@@ -28,10 +32,10 @@ select-a-product{% extends "layout-01.html" %}
         <div class="govuk-grid-row">
            <div class="govuk-grid-column-full govuk-!-margin-bottom-1">
                 <p class="govuk-body">
-                   <span id="opss-qty">19</span> products match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>. <span class="govuk-visually-hidden">This page lists results 1 to 12.</span>
+                   <span id="opss-qty">16</span> products are associated with barcode <span class="govuk-!-font-weight-bold">123456789101</span>. <span class="govuk-visually-hidden">This page lists results 1 to 12.</span>
 
                     <!--
-                       There are no products which match your search keyword(s) <span class="govuk-!-font-weight-bold">Honda, masks, hyper</span>.
+                       There are no products associated with barcode <span class="govuk-!-font-weight-bold">123456789101</span>.
                     -->
                 </p>
            </div>
@@ -194,7 +198,7 @@ select-a-product{% extends "layout-01.html" %}
                             </li>
                             <li class="opss-pagination-link__wrap opss-pagination-link--next">
                                 <a href="#" class="govuk-link govuk-link--no-visited-state">
-                                    <span>Next</span><span class="govuk-visually-hidden">:</span> <span>Results 13 to 19</span>
+                                    <span>Next</span><span class="govuk-visually-hidden">:</span> <span>Results 13 to 16</span>
                                 </a>
                             </li>
                         </ul>
@@ -205,7 +209,7 @@ select-a-product{% extends "layout-01.html" %}
                             Continue
                         </button>
 
-                        <a class="govuk-link govuk-link--no-visited-state" href="search-for-an-existing-product.html">Search again</a>
+                        <a class="govuk-link govuk-link--no-visited-state" href="do-you-have-the-barcode.html">Change the barcode</a>
                     </div>
 
                 </form>

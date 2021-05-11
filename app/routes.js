@@ -22,11 +22,14 @@ router.post('/add-product-v4/is-this-case-related-to-covid-error', function (req
   }
 })
 
+//********************* start reason-for-creating-case
 router.post('/add-product-v4/reason-for-creating-case', function (req, res) {
   const casereason = req.session.data['reason']
 
   if (casereason == null) {
     res.redirect('/add-product-v4/reason-for-creating-case-error' )
+  } else if (casereason == 'issafeoption') {
+      res.redirect('/add-product-v4/is-case-counterfeit' )
   } else {
     res.redirect('/add-product-v4/why-is-the-product-of-concern' )
   }
@@ -90,7 +93,7 @@ router.post('/add-product-v4/is-case-counterfeit-error', function (req, res) {
     res.redirect('/add-product-v4/do-you-have-the-barcode' )
   }
 })
-//************* start barcode
+//************* start do-you-have-the-barcode
 router.post('/add-product-v4/do-you-have-the-barcode', function (req, res) {
   var barcode = req.session.data['barcode']
   var barnumber = req.session.data['barnumber']
@@ -98,7 +101,7 @@ router.post('/add-product-v4/do-you-have-the-barcode', function (req, res) {
   if ((barcode == 'yes') && (barnumber == '')) {
     return res.redirect('/add-product-v4/do-you-have-the-barcode-error-2')
   } else if ((barcode == 'yes') && (barnumber != '')) {
-    return res.redirect('/add-product-v4/select-a-product-barCodeTxt')
+    return res.redirect('/add-product-v4/select-a-product-barcode')
   } else if (barcode == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   } else {
@@ -109,7 +112,7 @@ router.post('/add-product-v4/do-you-have-the-barcode-error', function (req, res)
   var barcode1 = req.session.data['barcode']
   var barnumber1 = req.session.data['barnumber']
   if ((barcode1 == 'yes') && (barnumber1 != '')) {
-    res.redirect('/add-product-v4/select-a-product-barCodeTxt')
+    res.redirect('/add-product-v4/select-a-product-barcode')
   } else if (barcode1 == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
   }
@@ -118,9 +121,28 @@ router.post('/add-product-v4/do-you-have-the-barcode-error-2', function (req, re
   var barcode2 = req.session.data['barcode']
   var barnumber2 = req.session.data['barnumber']
   if ((barcode2 == 'yes') && (barnumber2 != '')) {
-    return res.redirect('/add-product-v4/select-a-product-barCodeTxt')
+    return res.redirect('/add-product-v4/select-a-product-barcode')
   } else if (barcode2 == 'no') {
     return res.redirect('/add-product-v4/search-for-an-existing-product')
+  }
+})
+//************* start select-a-product-barcode
+router.post('/add-product-v4/select-a-product-barcode', function (req, res) {
+  var productitemB = req.session.data['product-item']
+
+  if (productitemB == null) {
+    return res.redirect('/add-product-v4/select-a-product-barcode-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected')
+  }
+})
+router.post('/add-product-v4/select-a-product-barcode-error', function (req, res) {
+  var productitemB2 = req.session.data['product-item']
+
+  if (productitemB2 == null) {
+    return res.redirect('/add-product-v4/select-a-product-barcode-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected')
   }
 })
 
