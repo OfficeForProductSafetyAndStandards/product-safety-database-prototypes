@@ -35,6 +35,29 @@ main.govuk-main-wrapper {
     }
 }
 
+.opss-radios__divider--title .govuk-radios__divider,
+.govuk-radios__divider.opss-radios__divider--title {
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+
+    @include govuk-media-query($from: tablet) {
+        margin-top: govuk-spacing(6);
+        margin-bottom: govuk-spacing(3);
+    }
+    /*@include govuk-media-query($from: desktop) {
+        //margin-left: (govuk-spacing(8) + govuk-spacing(1));
+        //font-size: 24px !important; font-size: 1.5rem !important; line-height: 1.25 !important; margin-top: govuk-spacing(7);
+        //margin-bottom: govuk-spacing(3);
+    }*/
+}
+
+.opss-radios__divider--title,
+.govuk-radios__divider.opss-radios__divider--title {
+    & > .govuk-radios__divider:first-child {
+        margin-top: govuk-spacing(0);
+    }
+}
 
 .opss-details-img {
     max-height: 300px;
@@ -99,8 +122,7 @@ ul.opss-radio-list {
 
 
 
-
-// new bespoke SCNP css styles, start here...
+// new bespoke .scnp css styles, start here...
 $opss-error-colour: #d4351c;
 
 .js-enabled {
@@ -364,5 +386,4 @@ $opss-error-colour: #d4351c;
     &.opss-pagination-link--no-top-space {
         margin-top: - govuk-spacing(4);
     }
-
 }
