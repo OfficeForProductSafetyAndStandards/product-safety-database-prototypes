@@ -58,7 +58,7 @@ router.post('/add-product-v4/why-is-the-product-of-concern', function (req, res)
 router.post('/add-product-v4/why-is-the-product-of-concern-error', function (req, res) {
   if ((req.session.data['safety'] == null)) {
     res.redirect('/add-product-v4/why-is-the-product-of-concern-error' )
-  } else if ((safetyerror != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
+  } else if ((req.session.data['safety'] != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
     res.redirect('/add-product-v4/why-is-the-product-of-concern-error-2' )
   } else {
     res.redirect('/add-product-v4/is-case-counterfeit' )
@@ -321,9 +321,29 @@ router.post('/add-product-v4/does-the-product-have-marking-error-2', function (r
   }
 })
 
-// *********************** new
+// *********************** start might-already-exist
+router.post('/add-product-v4/might-already-exist', function (req, res) {
+  var isit = req.session.data['isit']
 
-//might-already-exist
+  if (isit == null) {
+    res.redirect('/add-product-v4/might-already-exist-error')
+  } else if (isit == 'yes') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  } else if (isit == 'no') {
+    res.redirect('/add-product-v4/describe-the-product')
+  }
+})
+router.post('/add-product-v4/might-already-exist-error', function (req, res) {
+  var isit2 = req.session.data['isit']
+
+  if (isit2 == null) {
+    res.redirect('/add-product-v4/might-already-exist-error')
+  } else if (isit2 == 'yes') {
+    res.redirect('/add-product-v4/how-many-units-are-affected')
+  } else if (isit2 == 'no') {
+    res.redirect('/add-product-v4/describe-the-product')
+  }
+})
 
 //************* start describe-the-product
 router.post('/add-product-v4/describe-the-product', function (req, res) {
