@@ -424,12 +424,14 @@ router.post('/add-product-v4/upload-a-product-image', function (req, res) {
 })
 router.post('/add-product-v4/upload-a-product-image-error', function (req, res) {
   var imagetitle2 = req.session.data['imagetitle']
+  var imagedesc2 = req.session.data['imagedesc']
+  var another2 = req.session.data['another']
 
-  if ((imagetitle2 == '') || (imagedesc == '') || (another == null)){
+  if ((imagetitle2 == '') || (imagedesc2 == '') || (another2 == null)){
     res.redirect('/add-product-v4/upload-a-product-image-error')
-  } else if (another == 'no') {
+  } else if (another2 == 'no') {
     res.redirect('/add-product-v4/how-many-units-are-affected')
-  } else if (another == 'yes') {
+  } else if (another2 == 'yes') {
     res.redirect('/add-product-v4/upload-a-product-image?timestamp=here')
   }
 })
