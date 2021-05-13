@@ -1,1 +1,39 @@
-HOW MANY UNITS ARE AFFECTED page.
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    How many units are affected
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "upload-a-product-image"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    The product has been added to our records
+  </h3>
+  <p class="govuk-body">You can now continue creating your case using this product.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+      <h1 class="govuk-heading-l">How many units are affected?</h1>
+
+      <p class="govuk-body-m">Success banner appears above the H1 on this page. Continue the user flow ...</p>
+
+    </div>
+  </div>
+{% endblock %}
+

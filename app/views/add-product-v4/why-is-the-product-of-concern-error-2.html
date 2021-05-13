@@ -56,7 +56,7 @@
         ]
     })}}
 
-    {{ govukTextarea({
+    {{ govukCharacterCount({
     name: "why-unsafe",
     id: "why-unsafe",
     classes: "govuk-!-width-three-quarters",
@@ -68,18 +68,23 @@
     errorMessage: {
       text: "Enter information as to why the product is unsafe"
     },
+    maxlength: 1500,
     hint: {
         classes: "govuk-!-font-size-16",
         text: "If the product has been involved in an incident include this additional information."
+    },
+    countMessage: {
+        classes: "govuk-!-font-size-16"
     }
     }) }}
 {% endset -%}
 
 {% set noncompliantHtml %}
-    {{ govukTextarea({
+    {{ govukCharacterCount({
     name: "why-noncompliant",
     id: "why-noncompliant",
     classes: "govuk-!-width-three-quarters",
+    maxlength: 1500,
     label: {
         text: "Why is the product non-compliant?",
         classes: "govuk-label",
@@ -87,6 +92,9 @@
     },
     errorMessage: {
       text: "Enter information as to why the product is non-compliant"
+    },
+    countMessage: {
+        classes: "govuk-!-font-size-16"
     }
     }) }}
 {% endset -%}
