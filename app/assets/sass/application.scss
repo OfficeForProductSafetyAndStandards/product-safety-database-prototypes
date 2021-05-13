@@ -131,6 +131,32 @@ $opss-error-colour: #d4351c;
     }
 }
 
+.opss-minor-nav {
+    display: block;
+    width: 100%;
+    padding: govuk-spacing(1) 0;
+
+    #main-content & {
+        margin-top: - govuk-spacing(4);
+    }
+
+    @include govuk-media-query($from: tablet) {
+        #main-content & {
+            margin-top: - govuk-spacing(7);
+        }
+    }
+}
+
+.opss-list--inline {
+    width: 100%;
+    text-align: right;
+    li {
+        display: inline-block;
+        margin: 0;
+        padding-left: govuk-spacing(1);
+    }
+}
+
 .opss-skip-link {
     position: absolute;
     left: -10000px;
