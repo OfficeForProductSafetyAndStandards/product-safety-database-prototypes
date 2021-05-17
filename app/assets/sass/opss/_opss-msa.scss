@@ -1,6 +1,7 @@
 //These are the opss MSA/Cosmetics css styles: I recommend simply copy and pasting this entire code into your local opss-msa scss file.
 //Don't edit the local production copy as pasting this into it next/each time will overwrite your changes.
 //This is the simplest way to maintain the new opss MSA/Cosmetics css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
+//We can remove linting frmo this scss file - it won't run if there is a real problem anyway
 
 $opss-error-colour: #d4351c;
 $opss-search-icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABGCAMAAAD4pkrrAAAAM1BMVEX///////////////////////////////////////////////////////////8AAAD///8VtYL2AAAAEHRSTlMgsFDgkKAwcGCAwEDw0BAAV51l0wAAAYhJREFUeF7t192OhCAMBeBRlJ9S8Lz/027A7DTjkrSZhL3iXBmjflKbBl/Xf2VJn1nSkpa0pCUtaUn+KGgpZ54qZYLE7fOkA5/Z6hypEnroSIm4U6VOkTrEod5udDc1QTqe9UqNIquUczbauUHnhx0bFS1STdwrsFtrdz70AIANUi1AIWLg0CEPgOuIj7pU4HIDExBMDR6GJd1UKbzfMbYjJQXA4CIHQJWKrJv0RQGg8VLhNQmQJsKmSuOvGQBkVSIpN8ggpYGUTZL05/61FC2Sk0tOpC+/U7JI6T20MvAy9B6PT+u9VxnUqcwol5ZzOHheAIoqXZ7BZ0pFBpoy9tzQD4rUVUILH2yg3KAndhlR2iz3IaW9Xt5A7X8Ht+euq9LznqhQGx6l2huEapSEUstXS6Mo/z7oRE+pVknO2yi4I+SYOiuUXbJvWSRCmSV7IkPCqRahrJLd2nCntE2SUFP25bnldoWaIUnGlEhzKJorCcV+piSUQHMkoegJrb/PJS1pSUta0pJ+AIynqm4LtSuyAAAAAElFTkSuQmCC';
@@ -15,6 +16,85 @@ main.govuk-main-wrapper {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
     }
+}
+
+.opss-std-row {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    display: block;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    &.opss-std-row--bg-shade {
+        background-color: govuk-colour("light-grey");
+    }
+
+    &.opss-std-row--borders {
+        border-top: 1px solid darken(govuk-colour("light-grey"), 5%);
+        border-bottom: 1px solid darken(govuk-colour("light-grey"), 5%);
+        //border-bottom: 1px solid govuk-colour("mid-grey");
+
+        margin-bottom: govuk-spacing(2);
+        @include govuk-media-query($from: tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    .opss-top-nav {
+        padding: 0;
+        margin-bottom: 0;
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: govuk-spacing(2) govuk-spacing(1);
+            margin-right: govuk-spacing(2);
+            position: relative;
+
+            a {
+                font-weight: 700 !important;
+                @include govuk-font($size: 19);
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-thickness: max(0.2em);
+                    text-underline-offset: 0.1em;
+                    color: $govuk-link-colour;
+                }
+            }
+
+            &.opss-top-nav__item--active::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                top: 0;
+                right: 0;
+                border-bottom: 5px solid $govuk-link-colour;
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+        }
+
+    }
+
+}
+header.govuk-header + .govuk-width-container + .opss-std-row--borders {
+    margin-top: -1px;
+}
+header.govuk-header + .opss-std-row.opss-std-row--borders {
+    border-top: none;
 }
 
 .opss-minor-nav {

@@ -1,6 +1,7 @@
 //These are the opss PSD css styles: I recommend simply copy and pasting this entire code into your local opss-psd scss file.
 //Don't edit your local copy as pasting this into it next/each time will overwrite your changes.
 //This is the simplest way to maintain the new opss PSD css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
+//We can remove linting frmo this scss file - it won't run if there is a real problem anyway
 
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
