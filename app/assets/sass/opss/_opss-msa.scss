@@ -3,13 +3,31 @@
 //This is the simplest way to maintain the new opss MSA/Cosmetics css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
 //We can remove linting frmo this scss file - it won't run if there is a real problem anyway
 
+@mixin word-wrap() {
+  overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all;
+  word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
+}
+
 $opss-error-colour: #d4351c;
 $opss-search-icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABGCAMAAAD4pkrrAAAAM1BMVEX///////////////////////////////////////////////////////////8AAAD///8VtYL2AAAAEHRSTlMgsFDgkKAwcGCAwEDw0BAAV51l0wAAAYhJREFUeF7t192OhCAMBeBRlJ9S8Lz/027A7DTjkrSZhL3iXBmjflKbBl/Xf2VJn1nSkpa0pCUtaUn+KGgpZ54qZYLE7fOkA5/Z6hypEnroSIm4U6VOkTrEod5udDc1QTqe9UqNIquUczbauUHnhx0bFS1STdwrsFtrdz70AIANUi1AIWLg0CEPgOuIj7pU4HIDExBMDR6GJd1UKbzfMbYjJQXA4CIHQJWKrJv0RQGg8VLhNQmQJsKmSuOvGQBkVSIpN8ggpYGUTZL05/61FC2Sk0tOpC+/U7JI6T20MvAy9B6PT+u9VxnUqcwol5ZzOHheAIoqXZ7BZ0pFBpoy9tzQD4rUVUILH2yg3KAndhlR2iz3IaW9Xt5A7X8Ht+euq9LznqhQGx6l2huEapSEUstXS6Mo/z7oRE+pVknO2yi4I+SYOiuUXbJvWSRCmSV7IkPCqRahrJLd2nCntE2SUFP25bnldoWaIUnGlEhzKJorCcV+piSUQHMkoegJrb/PJS1pSUta0pJ+AIynqm4LtSuyAAAAAElFTkSuQmCC';
+
+.opss-text-align-right {
+    @include govuk-media-query($from: tablet) {
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.opss-text-underline-offset {
+    text-underline-offset: 0.1em;
+}
 
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
         min-height: 500px;
     }
+    @include govuk-clearfix;
 }
 
 .js-enabled {
@@ -18,11 +36,11 @@ main.govuk-main-wrapper {
     }
 }
 
+//*** top nav & std rows starts ***
 .opss-std-row {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    float: left;
     width: 100%;
     display: block;
 
@@ -51,12 +69,32 @@ main.govuk-main-wrapper {
         padding: 0;
         margin-bottom: 0;
         list-style: none;
+        width: 100%;
 
         li {
-            display: inline-block;
-            padding: govuk-spacing(2) govuk-spacing(1);
-            margin-right: govuk-spacing(2);
+            padding: govuk-spacing(2) 0;
             position: relative;
+            float: left;//mobile
+            clear: left;
+
+            &:first-child {
+                padding-top: 0;//mobile
+            }
+
+            &::before {
+                content: '-';
+                position: relative;
+                @include govuk-font($size: 24);
+                left: - govuk-spacing(1);
+                color: $govuk-link-colour;
+            }
+
+            &.opss-top-nav__item--active a {
+                text-decoration: underline;
+                text-decoration-thickness: max(0.2em);
+                text-underline-offset: 0.1em;
+                color: $govuk-link-colour;
+            }
 
             a {
                 font-weight: 700 !important;
@@ -71,22 +109,49 @@ main.govuk-main-wrapper {
                 }
             }
 
-            &.opss-top-nav__item--active::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                top: 0;
-                right: 0;
-                border-bottom: 5px solid $govuk-link-colour;
-            }
+            @include govuk-media-query($from: tablet) {
+                display: inline-block;
+                margin-right: govuk-spacing(2);
+                padding: govuk-spacing(2) govuk-spacing(1);
+                float: none;
 
-            &:first-child {
-                padding-left: 0;
-            }
+                &:first-child {
+                    padding-left: 0;
+                    padding-top: govuk-spacing(2);
+                }
 
+                &.opss-top-nav__item--active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    border-bottom-width: 5px;
+                    border-bottom-style: solid;
+                    border-color: $govuk-link-colour;
+                }
+
+                &::before {
+                    content: none !important;
+                }
+
+                &.opss-top-nav__item--active a {
+                    text-decoration: none;
+                }
+            }
         }
 
+    }
+
+    @include govuk-media-query($from: tablet) {
+        .opss-top-nav {
+            margin-top: 0;
+        }
+    }
+
+    & > .opss-std-row {
+        float: left;
     }
 
 }
@@ -96,11 +161,12 @@ header.govuk-header + .govuk-width-container + .opss-std-row--borders {
 header.govuk-header + .opss-std-row.opss-std-row--borders {
     border-top: none;
 }
+//*** top nav & std rows ends ***
 
 .opss-minor-nav {
     display: block;
     width: 100%;
-    padding: govuk-spacing(1) 0;
+    padding: (govuk-spacing(2) - 2) 0 govuk-spacing(2) 0;
 
     #main-content & {
         margin-top: - govuk-spacing(4);
@@ -195,7 +261,6 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
             top: 0;
         }
     }
-
 }
 
 .opss-list--borders {
@@ -203,6 +268,16 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
         padding: govuk-spacing(4) 0 govuk-spacing(2) 0;
         border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
     }
+
+    &.opss-list--borders-no-top {
+        li:first-child {
+            border-top: none;
+        }
+    }
+}
+
+.govuk-list *[class^="govuk-heading"] .govuk-link {
+    @include word-wrap;
 }
 
 *[class^="govuk-heading"] + .opss-summary-list {
@@ -216,6 +291,21 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
         font-weight: normal;
     }
 
+    .govuk-grid-column-full &.opss-summary-list--small {
+        .govuk-summary-list__key {
+            @include govuk-media-query($from: desktop) {
+                width: 20%;
+            }
+        }
+    }
+    .govuk-grid-column-two-thirds &.opss-summary-list--small {
+        .govuk-summary-list__key {
+            @include govuk-media-query($from: tablet) {
+                width: 40%;
+            }
+        }
+    }
+
     &.opss-summary-list--small {
         .govuk-summary-list__key,
         .govuk-summary-list__value {
@@ -227,11 +317,7 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
                 margin-bottom: 0;
             }
         }
-        .govuk-summary-list__key {
-            @include govuk-media-query($from: tablet) {
-                width: 40%;
-            }
-        }
+
         .govuk-summary-list__key,
         .govuk-summary-list__value {
             @include govuk-media-query($from: tablet) {
