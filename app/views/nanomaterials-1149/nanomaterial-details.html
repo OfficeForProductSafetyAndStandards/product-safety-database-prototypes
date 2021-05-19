@@ -1,12 +1,65 @@
 {% extends "layout-02-beta.html" %}
 
 {% block pageTitle %}
-    Nanomaterials details
+    Foraminifera
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
-        text: "Back",
-        href: ""
+      text: "Back",
+      href: "nanomaterials"
     }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row xxxgovuk-!-margin-top-6 xxxgovuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-m">
+             Foraminifera
+        </h1>
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        html: "<abbr>UK</abbr> nanomaterial number"
+      },
+      value: {
+        text: "UKN-658897565"
+      }
+    },
+    {
+      key: {
+        html: "Notified in the <abbr>UK</abbr>"
+      },
+      value: {
+        text: "5 January 2020"
+      }
+    },
+    {
+      key: {
+        html: "Notified in the <abbr>EU</abbr>"
+      },
+      value: {
+        html: "23 September 2017"
+      }
+    },
+    {
+      key: {
+        html: "<abbr>PDF</abbr> file"
+      },
+      value: {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state" download><span class="opss-download-link-m"></span>Foraminifera_formulation_EN_1.pdf</a>'
+      }
+    }
+  ]
+}) }}
+
+    </div>
+</div>
+
 {% endblock %}

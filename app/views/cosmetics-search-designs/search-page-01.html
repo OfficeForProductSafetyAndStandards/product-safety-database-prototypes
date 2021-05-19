@@ -212,7 +212,7 @@
            </div>
            <div class="govuk-grid-column-one-third">
                <div class="govuk-form-group opss-float-right">
-                   <form class="form" action="#" method="post">
+                   <form class="form" id="sort-form" action="#" method="post">
                         <label class="govuk-label govuk-body-s" for="results-sort">
                             Sort by
                         </label>
@@ -535,6 +535,12 @@
     </section>
 
 </div>
-
+<script>
+  document.getElementById("results-sort").addEventListener("change", function(){
+      //document.getElementById("sort-form").submit();
+      alert('form submitted event');
+    }
+  );
+</script>
 
 {% endblock %}
