@@ -1,0 +1,214 @@
+{% extends "layout-02-noacc.html" %}
+
+{% block pageTitle %}
+    Cosmetic products
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+              Your cosmetic products
+            </h1>
+          </div>
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+              Add a cosmetic product
+            </a>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+
+{% set errorsHtml %}
+<h2 class="govuk-heading-m">Errors</h2>
+{{ govukTable({
+  classes: "govuk-!-margin-bottom-8",
+  head: [
+    {
+      text: "Product"
+    },
+    {
+      text: "Upload error"
+    },
+    {
+      text: "Other"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Xeobia spray</a>'
+      },
+      {
+        text: "Yes"
+      },
+      {
+        html: '<span class="govuk-visually-hidden">No</span>'
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Zimm Nail gloss</a>'
+      },
+      {
+        text: "Yes"
+      },
+      {
+        html: '<span class="govuk-visually-hidden">No</span>'
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Reimer Hair hold</a>'
+      },
+      {
+        html: '<span class="govuk-visually-hidden">No</span>'
+      },
+      {
+        text: "Yes"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set incompleteHtml %}
+<h2 class="govuk-heading-m">Incomplete notifications</h2>
+{{ govukTable({
+  classes: "govuk-!-margin-bottom-8",
+  head: [
+    {
+      text: "Product"
+    },
+    {
+      text: "Last updated"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Tesco shower gel</a>'
+      },
+      {
+        text: "20 April 2021"
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Johnson&apos;s hair spray xc330</a>'
+      },
+      {
+        text: "13 May 2021"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set notifiedHtml %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Notified cosmetic products</h2>
+  </div>
+  <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right" download>
+      <span class="opss-download-link-sm"></span>Download a <abbr title="Comma-Separated Values">CSV</abbr> file of your notified products
+    </a>
+  </div>
+</div>
+
+{{ govukTable({
+  classes: "govuk-!-margin-bottom-8",
+  head: [
+    {
+      text: "Product"
+    },
+    {
+      html: "Notified in the <abbr>UK</abbr>"
+    },
+    {
+      html: "<abbr>UK</abbr> cosmetic product number"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Asda Summer tan lotion</a>'
+      },
+      {
+        text: "28 July 2020"
+      },
+      {
+        text: 'UKN-337475933'
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Segda fresh shampoo</a>'
+      },
+      {
+        text: "12 Feburary 2019"
+      },
+      {
+        text: 'UKN-229978799'
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Xero Tan removal</a>'
+      },
+      {
+        text: "3 October 2019"
+      },
+      {
+        text: 'UKN-445399100'
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+
+{{ govukTabs({
+  classes: "govuk-!-margin-bottom-8 opss-tabs-min-height",
+  items: [
+    {
+      label: "Errors (3)",
+      id: "errors-tab",
+      panel: {
+        html: errorsHtml
+      }
+    },
+    {
+      label: "Incomplete (0)",
+      id: "incomplete-tab",
+      panel: {
+        html: incompleteHtml
+      }
+    },
+    {
+      label: "Notified (3)",
+      id: "notified-tab",
+      panel: {
+        html: notifiedHtml
+      }
+    }
+  ]
+}) }}
+
+    </div>
+</div>
+
+{% endblock %}

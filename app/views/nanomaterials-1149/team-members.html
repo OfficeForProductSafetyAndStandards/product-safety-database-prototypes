@@ -1,0 +1,96 @@
+{% extends "layout-02-noacc.html" %}
+
+{% block pageTitle %}
+    Responsible person
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+              Team members
+            </h1>
+          </div>
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+              Invite another team member
+            </a>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+{{ govukTable({
+  caption: "The team members",
+  captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
+  classes: "opss-table opss-table--last-col-right",
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Email",
+      classes: 'govuk-!-width-one-half'
+    },
+    {
+      text: "Invited by"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Peter Suttonsworth"
+      },
+      {
+        html: '<a href="mailto:petersuttonsworth@gmail.co.uk" class="govuk-link govuk-link--no-visited-state">petersuttonsworth@gmail.co.uk</a>'
+      },
+      {
+        text: "John Smith"
+      }
+    ],
+    [
+      {
+        text: "Joan Briggs"
+      },
+      {
+        html: '<a href="mailto:joanbriggs@gmail.co.uk" class="govuk-link govuk-link--no-visited-state">joanbriggs@gmail.co.uk</a>'
+      },
+      {
+        text: "Peter Suttonsworth"
+      }
+    ],
+    [
+      {
+        text: "Jessica Weatherby-blyth"
+      },
+      {
+        html: '<a href="mailto:jessicacoalsworth" class="govuk-link govuk-link--no-visited-state">jessicacoalsworth@gmail.co.uk</a>'
+      },
+      {
+        text: "Joan Briggs"
+      }
+    ]
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+<p class="govuk-body-s">
+  For help managing team member accounts (including removing a member) please email <a class="govuk-link govuk-link--no-visited-state" href="mailto:opss.enquiries@beis.gov.uk">opss.enquiries@beis.gov.uk</a>.
+</p>
+
+    </div>
+</div>
+
+{% endblock %}
