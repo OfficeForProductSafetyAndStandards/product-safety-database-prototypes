@@ -13,6 +13,7 @@
   <h3 class="govuk-notification-banner__heading">
     Your product notification was submitted
   </h3>
+  <p class="govuk-body">Your product is now one of your notified cosmetic products.</p>
 {% endset %}
 {{ govukNotificationBanner({
   html: html,
@@ -24,8 +25,8 @@
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-              Your cosmetic products
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
+              Cosmetic products
             </h1>
           </div>
           <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
@@ -33,6 +34,13 @@
               Add a cosmetic product
             </a>
           </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p id="cosmetic-products-hint" class="govuk-hint govuk-!-font-size-16">
+                  Your notified cosmetic products.
+                </p>
+            </div>
         </div>
 
     </div>

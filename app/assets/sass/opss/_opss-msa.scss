@@ -331,6 +331,10 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
             border-top: none;
         }
     }
+
+    & + .opss-pagination-link {
+        margin-top: - govuk-spacing(4);
+    }
 }
 
 .govuk-list *[class^="govuk-heading"] .govuk-link {
