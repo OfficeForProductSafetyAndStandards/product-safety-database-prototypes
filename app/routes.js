@@ -145,6 +145,25 @@ router.post('/add-product-v4/select-a-product-barcode-error', function (req, res
     return res.redirect('/add-product-v4/how-many-units-are-affected')
   }
 })
+//************* start select-a-product-barcode pg2
+router.post('/add-product-v4/select-a-product-barcode-pg2', function (req, res) {
+  var productitemC = req.session.data['product-item']
+
+  if (productitemC == null) {
+    return res.redirect('/add-product-v4/select-a-product-barcode-pg2-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
+  }
+})
+router.post('/add-product-v4/select-a-product-barcode-pg2-error', function (req, res) {
+  var productitemC2 = req.session.data['product-item']
+
+  if (productitemC2 == null) {
+    return res.redirect('/add-product-v4/select-a-product-barcode-pg2-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
+  }
+})
 
 //************* start search for existing product
 router.post('/add-product-v4/search-for-an-existing-product', function (req, res) {
@@ -173,7 +192,7 @@ router.post('/add-product-v4/select-a-product', function (req, res) {
   if (productitem == null) {
     return res.redirect('/add-product-v4/select-a-product-error')
   } else {
-    return res.redirect('/add-product-v4/how-many-units-are-affected')
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
   }
 })
 router.post('/add-product-v4/select-a-product-error', function (req, res) {
@@ -182,7 +201,26 @@ router.post('/add-product-v4/select-a-product-error', function (req, res) {
   if (productitem2 == null) {
     return res.redirect('/add-product-v4/select-a-product-error')
   } else {
-    return res.redirect('/add-product-v4/how-many-units-are-affected')
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
+  }
+})
+//************* start select-a-product-pg2
+router.post('/add-product-v4/select-a-product-pg2', function (req, res) {
+  var productitem2 = req.session.data['product-item']
+
+  if (productitem2 == null) {
+    return res.redirect('/add-product-v4/select-a-product-pg2-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
+  }
+})
+router.post('/add-product-v4/select-a-product-pg2-error', function (req, res) {
+  var productitem2b = req.session.data['product-item']
+
+  if (productitem2b == null) {
+    return res.redirect('/add-product-v4/select-a-product-pg2-error')
+  } else {
+    return res.redirect('/add-product-v4/how-many-units-are-affected-std')
   }
 })
 
@@ -328,7 +366,7 @@ router.post('/add-product-v4/might-already-exist', function (req, res) {
   if (isit == null) {
     res.redirect('/add-product-v4/might-already-exist-error')
   } else if (isit == 'yes') {
-    res.redirect('/add-product-v4/how-many-units-are-affected')
+    res.redirect('/add-product-v4/how-many-units-are-affected-std')
   } else if (isit == 'no') {
     res.redirect('/add-product-v4/describe-the-product')
   }
@@ -339,7 +377,7 @@ router.post('/add-product-v4/might-already-exist-error', function (req, res) {
   if (isit2 == null) {
     res.redirect('/add-product-v4/might-already-exist-error')
   } else if (isit2 == 'yes') {
-    res.redirect('/add-product-v4/how-many-units-are-affected')
+    res.redirect('/add-product-v4/how-many-units-are-affected-std')
   } else if (isit2 == 'no') {
     res.redirect('/add-product-v4/describe-the-product')
   }

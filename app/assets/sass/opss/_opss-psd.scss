@@ -37,6 +37,15 @@ main.govuk-main-wrapper {
     width: 100%;
 }
 
+.opss-borders {
+    border: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+    border-radius: 5px;
+}
+
+.opss-borders--padding {
+    padding: govuk-spacing(6) govuk-spacing(5) govuk-spacing(5) govuk-spacing(6);
+}
+
 .opss-details-img {
     max-height: 300px;
     max-width: 100%;
@@ -115,6 +124,7 @@ ul.opss-radio-list {
     ul {
       padding: 0;
       width: 100%;
+      float: left;
     }
 
     .opss-pagination-link__wrap {

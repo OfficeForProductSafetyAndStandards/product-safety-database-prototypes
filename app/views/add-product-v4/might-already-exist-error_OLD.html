@@ -42,40 +42,38 @@
                         It appears that the product you are adding might already exist in our records?
                     </div>
 
-                    <div class="govuk-!-margin-top-6 opss-borders opss-borders--padding">
-                        <span class="govuk-visually-hidden">
-                            Following are the details and the description of the product that already exists in our records:
-                        </span>
-                        <h2 class="govuk-heading-s govuk-!-margin-bottom-0" id="the-product">
-                            Sony Xeria hair dryer 3300 series
-                        </h2>
-                        <p class="govuk-body-s govuk-!-margin-bottom-2">Product category, product subcategory. Barcode: 12345678910.</p>
-                        <p class="govuk-body-s govuk-!-margin-bottom-2">The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.</p>
-
-                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                            <summary class="govuk-details__summary">
-                                <span class="govuk-details__summary-text govuk-!-font-size-16">
-                                    Product image<span class="govuk-visually-hidden">: Sony Xeria hair dryer</span>
-                                </span>
-                            </summary>
-                            <div class="govuk-details__text">
-                                <img src="../public/images/hair-spray.jpg" class="opss-details-img" alt="Super Fast XD">
-                            </div>
-                        </details>
-                    </div>
-
-                    <span id="isit-error" class="govuk-error-message govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+                    <span id="isit-error" class="govuk-error-message">
                         <span class="govuk-visually-hidden">Error:</span> Select yes if this is your product
                     </span>
 
-                    <div class="govuk-radios govuk-!-margin-top-7 govuk-!-padding-bottom-1" data-module="govuk-radios">
+                    <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes" aria-describedby="the-product">
                             <label class="govuk-label govuk-radios__label" for="isit">
                                 Yes
                             </label>
                         </div>
+                        <div class="govuk-radios__conditional govuk-!-padding-bottom-8">
+                            <div class="govuk-form-group" id="the-product">
+                                <p class="govuk-heading-s govuk-!-margin-bottom-0">
+                                    Sony Xeria hair dryer 3300 series
+                                </p>
+                                <p class="govuk-body-s govuk-!-margin-bottom-2">Product category, product subcategory. Barcode: 12345678910.</p>
+                                <p class="govuk-body-s govuk-!-margin-bottom-2">The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.</p>
 
+                                <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text govuk-!-font-size-16">
+                                            Product image<span class="govuk-visually-hidden">: Sony Xeria hair dryer</span>
+                                        </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        <img src="../public/images/hair-spray.jpg" class="opss-details-img" alt="Super Fast XD">
+                                    </div>
+                                </details>
+
+                            </div>
+                        </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no">
                             <label class="govuk-label govuk-radios__label" for="isit-2">
