@@ -18,67 +18,69 @@
 
 
         <form class="form" action="#" method="post" novalidate>
+<div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-6 opss-radios__divider--title">
 
-{{ govukRadios({
-  idPrefix: "caseowner",
-  name: "caseowner",
-  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1 opss-radios__divider--title",
-  fieldset: {
-    legend: {
-      text: "Change the case owner",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "The current case owner is Jo Bernhard."
-  },
-  items: [
-    {
-      divider: "Your team"
-    },
-    {
-      checked: true,
-      value: "val01",
-      text: "Jo Bernard"
-    },
-    {
-      value: "val02",
-      text: "Someone in your team"
-    },
-    {
-      value: "val03",
-      text: "Southampton Council"
-    },
-    {
-      divider: "Other teams added to the case"
-    },
-    {
-      value: "val04",
-      html: "<abbr>OPSS</abbr> Enforcement"
-    },
-    {
-      value: "val05",
-      html: "<abbr>OPSS</abbr> Trading Standards Co-Ordination"
-    },
-    {
-      divider: "Other"
-    },
-    {
-      value: "val06",
-      html: "<abbr>OPSS</abbr> Incident management",
-      hint: {
-        html: "For reporting serious risks to OPSS.",
-        classes: "govuk-!-font-size-16"
-      }
-    },
-    {
-      value: "val07",
-      html: "<abbr>OPSS</abbr> Trading Standards Co-Ordination"
-    }
+        <div class="govuk-radios__divider opss-width-100">Your team</div>
 
-  ]
-}) }}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-2" name="caseowner" type="radio" value="val01" checked="">
+          <label class="govuk-label govuk-radios__label" for="caseowner-2">
+            Jo Bernard
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-3" name="caseowner" type="radio" value="val02">
+          <label class="govuk-label govuk-radios__label" for="caseowner-3">
+            Someone in your team
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-4" name="caseowner" type="radio" value="val03">
+          <label class="govuk-label govuk-radios__label" for="caseowner-4">
+            Southampton Council
+          </label>
+        </div>
+
+        <div class="govuk-radios__divider opss-width-100">Other teams added to the case</div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-6" name="caseowner" type="radio" value="val04">
+          <label class="govuk-label govuk-radios__label" for="caseowner-6">
+            <abbr>OPSS</abbr> Enforcement
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-7" name="caseowner" type="radio" value="val05">
+          <label class="govuk-label govuk-radios__label" for="caseowner-7">
+            <abbr>OPSS</abbr> Trading Standards Co-Ordination
+          </label>
+        </div>
+
+        <div class="govuk-radios__divider opss-width-100">Other</div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-9" name="caseowner" type="radio" value="val06" aria-describedby="caseowner-9-item-hint">
+          <label class="govuk-label govuk-radios__label" for="caseowner-9">
+            <abbr>OPSS</abbr> Incident management
+          </label>
+
+          <div id="caseowner-9-item-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+          For reporting serious risks to OPSS.
+        </div>
+
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="caseowner-10" name="caseowner" type="radio" value="val07">
+          <label class="govuk-label govuk-radios__label" for="caseowner-10">
+            <abbr>OPSS</abbr> Trading Standards Co-Ordination
+          </label>
+        </div>
+
+  </div>
 
 
 {{ govukButton({
