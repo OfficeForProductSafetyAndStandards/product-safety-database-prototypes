@@ -426,7 +426,8 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     display: block;
     text-align: right;
     border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
-    padding: govuk-spacing(6) 0;
+    padding: govuk-spacing(6) 0 0 0;
+    @include govuk-clearfix;
 
     ul {
       padding: 0;
