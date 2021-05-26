@@ -50,7 +50,7 @@
   </div>
 </div>
 {{ govukTable({
-  classes: "govuk-!-margin-bottom-8",
+  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
   head: [
     {
       text: "File"
@@ -62,7 +62,7 @@
       text: "Action"
     },
     {
-      text: "Dismiss"
+      html: '<span class="govuk-visually-hidden">Dismiss</span>'
     }
   ],
   rows: [
@@ -115,7 +115,7 @@
 {% set incompleteHtml %}
 <h2 class="govuk-heading-m">Incomplete notifications</h2>
 {{ govukTable({
-  classes: "govuk-!-margin-bottom-8",
+  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
   head: [
     {
       text: "Product"
@@ -124,30 +124,39 @@
       text: "Created"
     },
     {
-      text: "UK cosmetic product number"
+      html: '<abbr>UK</abbr> <span class="govuk-visually-hidden">cosmetic product </span>number'
+    },
+    {
+      html: '<span class="govuk-visually-hidden">Continue</span>'
     }
   ],
   rows: [
     [
       {
-        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Tesco shower gel</a>'
+        html: 'Tesco shower gel'
       },
       {
         text: "20 April 2021"
       },
       {
         text: 'UKCP-3459222'
+      },
+      {
+        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Tesco shower gel notification</span></a>'
       }
     ],
     [
       {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Johnson&apos;s hair spray xc330</a>'
+        html: 'Johnson&apos;s hair spray xc330'
       },
       {
         text: "13 May 2021"
       },
       {
         text: 'UKCP-8826113'
+      },
+      {
+        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Johnson&apos;s hair spray xc330 notification</span></a>'
       }
     ]
   ]
@@ -167,7 +176,7 @@
 </div>
 
 {{ govukTable({
-  classes: "govuk-!-margin-bottom-8",
+  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
   head: [
     {
       text: "Product"
@@ -176,41 +185,53 @@
       html: "Notified in the <abbr>UK</abbr>"
     },
     {
-      html: "<abbr>UK</abbr> cosmetic product number"
+      html: '<abbr>UK</abbr> <span class="govuk-visually-hidden">cosmetic product </span>number'
+    },
+    {
+      html: '<span class="govuk-visually-hidden">View</span>'
     }
   ],
   rows: [
     [
       {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Asda Summer tan lotion</a>'
+        text: "Asda Summer tan lotion"
       },
       {
         text: "28 July 2020"
       },
       {
         text: 'UKCP-337475933'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a>'
       }
     ],
     [
       {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Segda fresh shampoo</a>'
+        text: "Segda fresh shampoo"
       },
       {
         text: "12 Feburary 2019"
       },
       {
-        text: 'UKCP-229978799'
+        text: "UKCP-229978799"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a>'
       }
     ],
     [
       {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Xero Tan removal</a>'
+        text: "Xero Tan removal"
       },
       {
         text: "3 October 2019"
       },
       {
-        text: 'UKCP-445399100'
+        text: "UKCP-445399100"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a>'
       }
     ]
   ]
