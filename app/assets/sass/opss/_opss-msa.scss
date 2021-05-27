@@ -41,6 +41,13 @@ $opss-search-icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABGCAMAAA
     }
 }
 
+.opss-nojs-hide {
+    display: none;
+}
+body.js-enabled .opss-nojs-hide {
+    display: inline-block;
+}
+
 .opss-border-top, .opss-border-bottom {
     border-color: $govuk-border-colour;
     border-style: solid;
