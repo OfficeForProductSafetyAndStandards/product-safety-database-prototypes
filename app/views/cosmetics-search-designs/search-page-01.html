@@ -58,11 +58,11 @@
                             Product category
                         </label>
                         <select class="govuk-select" id="category" name="category">
-                            <option value="" selected>All</option>
-                            <option value="val01" >Hair and scalp products</option>
-                            <option value="val02" >Lorem ipsum</option>
-                            <option value="val03">Lorem ipsum</option>
-                            <option value="val04">Lorem ipsum</option>
+                            <option value="">All</option>
+                            <option value="val01">Option 1</option>
+                            <option value="val02">Option 2</option>
+                            <option value="val03" selected>Option 3</option>
+                            <option value="val04">Option 4</option>
                         </select>
                     </div>
 
@@ -196,7 +196,7 @@
                     Apply
                 </button>
 
-                <button type="reset" class="govuk-button opss-button-link" data-module="govuk-button">
+                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset" data-module="govuk-button">
                     Clear filters
                 </button>
             </div>
@@ -536,6 +536,15 @@
 
 </div>
 <script>
+    document.getElementById("opss-reset").addEventListener("click", function(){
+            var selects = document.getElementById("category");
+
+            selects.querySelector("[selected]").removeAttribute("selected");
+            selects[0].setAttribute("selected", "selected"); //classList.add('xxxxxxxxxxx')
+        }
+    );
+
+
   document.getElementById("results-sort").addEventListener("change", function(){
       //document.getElementById("sort-form").submit();
       alert('form submitted event');

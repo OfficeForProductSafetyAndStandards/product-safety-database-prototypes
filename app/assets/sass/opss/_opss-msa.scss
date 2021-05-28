@@ -19,14 +19,37 @@ abbr[title]{
     display: inline-block;
 }
 
+@function calculateRem($s) {
+  $remSize: $s / 16px;
+  @return #{$remSize}rem;
+}
+@mixin opss-font-size($s, $l) {
+    font-size: $s !important;
+    font-size: calculateRem($s) !important;
+    line-height: $l !important;
+}
+
+
 $opss-error-colour: #d4351c;
 $opss-search-icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABGCAMAAAD4pkrrAAAAM1BMVEX///////////////////////////////////////////////////////////8AAAD///8VtYL2AAAAEHRSTlMgsFDgkKAwcGCAwEDw0BAAV51l0wAAAYhJREFUeF7t192OhCAMBeBRlJ9S8Lz/027A7DTjkrSZhL3iXBmjflKbBl/Xf2VJn1nSkpa0pCUtaUn+KGgpZ54qZYLE7fOkA5/Z6hypEnroSIm4U6VOkTrEod5udDc1QTqe9UqNIquUczbauUHnhx0bFS1STdwrsFtrdz70AIANUi1AIWLg0CEPgOuIj7pU4HIDExBMDR6GJd1UKbzfMbYjJQXA4CIHQJWKrJv0RQGg8VLhNQmQJsKmSuOvGQBkVSIpN8ggpYGUTZL05/61FC2Sk0tOpC+/U7JI6T20MvAy9B6PT+u9VxnUqcwol5ZzOHheAIoqXZ7BZ0pFBpoy9tzQD4rUVUILH2yg3KAndhlR2iz3IaW9Xt5A7X8Ht+euq9LznqhQGx6l2huEapSEUstXS6Mo/z7oRE+pVknO2yi4I+SYOiuUXbJvWSRCmSV7IkPCqRahrJLd2nCntE2SUFP25bnldoWaIUnGlEhzKJorCcV+piSUQHMkoegJrb/PJS1pSUta0pJ+AIynqm4LtSuyAAAAAElFTkSuQmCC';
 
 .opss-float-right,
 .opss-text-align-right {
     @include govuk-media-query($from: tablet) {
-        //text-align: right; display: inline-block; width: 100%;
-        float: right;
+        text-align: right; display: inline-block; width: 100%;
+        //float: right;
+    }
+}
+
+.opss-nojs-hide {
+    display: none;
+}
+body.js-enabled .opss-nojs-hide {
+    display: inline-block;
+}
+.js-enabled {
+    .opss-js-enabled-hidden {
+        display: none;  /* @include govuk-visually-hidden; */
     }
 }
 
@@ -56,7 +79,7 @@ $opss-search-icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABGCAMAAA
 }
 .opss-download-link-m {
     @include down-load-link(rgba($govuk-link-colour, 0.9), 20);
-width: 17px;
+    width: 17px;
     height: 17px;
     margin-right: 5px;
 
@@ -64,17 +87,32 @@ width: 17px;
     top: 2px;
 }
 
+.opss-details--sm {
+    @include govuk-media-query($from: desktop) {
+        summary {
+            @include opss-font-size($s: 16px, $l: 1.25);
+            padding-left: govuk-spacing(3);
+
+            &::before {
+                border-width: 5px 0 7px 9px;
+            }
+        }
+
+        &[open] > summary::before {
+            border-width: 10px 6px 0px 6px !important;
+        }
+
+        margin-bottom: govuk-spacing(2);
+    }
+}
+
+
+
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
         min-height: 500px;
     }
     @include govuk-clearfix;
-}
-
-.js-enabled {
-    .opss-js-enabled-hidden {
-        display: none;  /* @include govuk-visually-hidden; */
-    }
 }
 
 //*** top nav & std rows starts ***
@@ -231,6 +269,14 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 .govuk-summary-list .govuk-link,
 .opss-table td a {
     @include word-wrap;
+}
+
+.opss-table {
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
 }
 
 .opss-table--last-col-right {
@@ -397,6 +443,10 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     }
 }
 
+.opss-accordian__open-remove > div:first-child {
+    @include govuk-visually-hidden;
+}
+
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
         border-left: 4px solid $opss-error-colour;
@@ -426,7 +476,8 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     display: block;
     text-align: right;
     border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
-    padding: govuk-spacing(6) 0;
+    padding: govuk-spacing(6) 0 0 0;
+    @include govuk-clearfix;
 
     ul {
       padding: 0;
