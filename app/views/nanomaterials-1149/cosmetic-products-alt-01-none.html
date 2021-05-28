@@ -25,7 +25,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <p id="cosmetic-products-hint" class="govuk-hint govuk-!-width-two-thirds">
-                  These are your notified cosmetic products.
+                  These are your notified products (and your incomplete notified product submissions).
                 </p>
             </div>
         </div>
@@ -36,137 +36,29 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-<!-- *** if a product has two upload errors, list it twice (repeated on two rows) ** -->
-
-{% set errorsHtml %}
+<!-- *************************************** incomplete starts ****************************************************** -->
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Errors</h2>
-  </div>
-  <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
-      Dismiss all error messages
-    </a>
+  <div class="govuk-grid-column-full opss-border-top opss-border-bottom govuk-!-padding-top-3 govuk-!-margin-bottom-8">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Incomplete notifications (0)
+    </h2>
+    <p class="govuk-body">
+      There are currently no incomplete notifications.
+    </p>
   </div>
 </div>
-{{ govukTable({
-  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
-  head: [
-    {
-      text: "File"
-    },
-    {
-      text: "Reason"
-    },
-    {
-      text: "Action"
-    },
-    {
-      html: '<span class="govuk-visually-hidden">Dismiss</span>'
-    }
-  ],
-  rows: [
-    [
-      {
-        html: 'lorem-ipsum'
-      },
-      {
-        text: "The uploaded file is not a ZIP file"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload again<span class="govuk-visually-hidden">: File lorem-ipsum</span></a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">: Error for lorem-ipsum</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'ipsos-ipsum-01'
-      },
-      {
-        text: "Wrong file type"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload again<span class="govuk-visually-hidden">: File ipsos-ipsum-01</span></a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">: Error for ipsos-ipsum-01</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'loremupton-ipsum'
-      },
-      {
-        text: "The uploaded file is not a ZIP file"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload again<span class="govuk-visually-hidden">: File loremupton-ipsum</span></a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">: Error for loremupton-ipsum</span></a>'
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
+<!-- *************************************** incomplete ends ****************************************************** -->
 
-{% set incompleteHtml %}
-<h2 class="govuk-heading-m">Incomplete notifications</h2>
-{{ govukTable({
-  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
-  head: [
-    {
-      text: "Product"
-    },
-    {
-      text: "Created"
-    },
-    {
-      html: '<abbr>UK</abbr> <span class="govuk-visually-hidden">cosmetic product </span>number'
-    },
-    {
-      html: '<span class="govuk-visually-hidden">Continue</span>'
-    }
-  ],
-  rows: [
-    [
-      {
-        html: 'Tesco shower gel'
-      },
-      {
-        text: "20 April 2021"
-      },
-      {
-        text: 'UKCP-3459222'
-      },
-      {
-        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Tesco shower gel notification</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'Johnson&apos;s hair spray xc330'
-      },
-      {
-        text: "13 May 2021"
-      },
-      {
-        text: 'UKCP-8826113'
-      },
-      {
-        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Johnson&apos;s hair spray xc330 notification</span></a>'
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
-{% set notifiedHtml %}
+<!-- *************************************** notified starts ****************************************************** -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Notified</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      <!--Notified products (131)-->
+      Product notifications (131)
+    </h2>
+    <p class="govuk-body govuk-!-margin-bottom-0">
+      There are currently 131 notified cosmetic products.
+    </p>
   </div>
   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
     <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right" download>
@@ -174,10 +66,11 @@
     </a>
   </div>
 </div>
-
 {{ govukTable({
-  classes: "govuk-!-margin-bottom-8 opss-table--last-col-right",
-  head: [
+  classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0 opss-table opss-table--last-col-right",
+  caption: "List of notified products",
+  captionClasses: "govuk-visually-hidden",
+    head: [
     {
       text: "Product"
     },
@@ -208,6 +101,48 @@
     ],
     [
       {
+        text: "Begda fresh shampoo"
+      },
+      {
+        text: "12 Feburary 2019"
+      },
+      {
+        text: "UKCP-229978799"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Cero Tan removal"
+      },
+      {
+        text: "3 October 2019"
+      },
+      {
+        text: "UKCP-445399100"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Asda Summer tan lotion"
+      },
+      {
+        text: "28 July 2020"
+      },
+      {
+        text: 'UKCP-337475933'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a>'
+      }
+    ],
+    [
+      {
         text: "Segda fresh shampoo"
       },
       {
@@ -232,6 +167,20 @@
       },
       {
         html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Asda Summer tan lotion"
+      },
+      {
+        text: "28 July 2020"
+      },
+      {
+        text: 'UKCP-337475933'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a>'
       }
     ],
     [
@@ -376,6 +325,20 @@
     ],
     [
       {
+        text: "Asda Summer tan lotion"
+      },
+      {
+        text: "28 July 2020"
+      },
+      {
+        text: 'UKCP-337475933'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a>'
+      }
+    ],
+    [
+      {
         text: "Segda fresh shampoo"
       },
       {
@@ -433,6 +396,48 @@
     [
       {
         text: "Xero Tan removal"
+      },
+      {
+        text: "3 October 2019"
+      },
+      {
+        text: "UKCP-445399100"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Xsda Summer tan lotion"
+      },
+      {
+        text: "28 July 2020"
+      },
+      {
+        text: 'UKCP-337475933'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Yegda fresh shampoo"
+      },
+      {
+        text: "12 Feburary 2019"
+      },
+      {
+        text: "UKCP-229978799"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a>'
+      }
+    ],
+    [
+      {
+        text: "Zero Tan removal"
       },
       {
         text: "3 October 2019"
@@ -446,35 +451,21 @@
     ]
   ]
 }) }}
-{% endset -%}
 
-
-{{ govukTabs({
-  classes: "govuk-!-margin-bottom-8 opss-tabs-min-height",
-  items: [
-    {
-      label: "Notified (3)",
-      id: "notified-tab",
-      panel: {
-        html: notifiedHtml
-      }
-    },
-    {
-      label: "Incomplete (2)",
-      id: "incomplete-tab",
-      panel: {
-        html: incompleteHtml
-      }
-    },
-    {
-      label: "Errors (3)",
-      id: "errors-tab",
-      panel: {
-        html: errorsHtml
-      }
-    }
-  ]
-}) }}
+      <nav class="opss-pagination-link">
+          <ul>
+              <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                      <a href="" class="govuk-link govuk-link--no-visited-state">
+                          <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                      </a>
+                  </li>
+                  <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                      <a href="" class="govuk-link govuk-link--no-visited-state">
+                          <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                      </a>
+              </li>
+          </ul>
+      </nav>
 
     </div>
 </div>
