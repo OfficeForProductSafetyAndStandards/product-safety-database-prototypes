@@ -7,8 +7,8 @@
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-top-4 govuk-!-margin-bottom-6">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -25,7 +25,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <p id="cosmetic-products-hint" class="govuk-hint govuk-!-width-two-thirds">
-                  These are your notified products (and your incomplete notified product submissions).
+                  These are your incomplete and notified cosmetic products.
                 </p>
             </div>
         </div>
@@ -37,8 +37,8 @@
     <div class="govuk-grid-column-full">
 
 <!-- *************************************** incomplete starts ****************************************************** -->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full opss-border-top opss-border-bottom govuk-!-padding-top-3 govuk-!-margin-bottom-8">
+
+  <div class="opss-border-top govuk-!-padding-top-3 govuk-!-margin-bottom-4">
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
       Incomplete notifications (0)
     </h2>
@@ -46,30 +46,123 @@
       There are currently no incomplete notifications.
     </p>
   </div>
-</div>
+
 <!-- *************************************** incomplete ends ****************************************************** -->
+
+<!-- *************************************** errors starts ****************************************************** -->
+{% set errorsTblHTML %}
+<div class="govuk-grid-column-full-width">
+  <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
+    Dismiss all errors
+  </a>
+</div>
+
+{{ govukTable({
+  classes: "govuk-!-margin-bottom-4 opss-table opss-table--last-col-right opss-table--first-col-normal",
+  caption: "List of notification errors",
+  captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "File"
+    },
+    {
+      text: "Reason"
+    },
+    {
+      text: "Action"
+    },
+    {
+      html: '<span class="govuk-visually-hidden">Dismiss</span>'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "Loremipsumipsum"
+      },
+      {
+        text: "The uploaded file is not a ZIP file"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the Loremipsumipsum zip file </span>again</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the Loremipsumipsum error</span></a>'
+      }
+    ],
+    [
+      {
+        html: 'ipsumlorem'
+      },
+      {
+        text: "The uploaded file is not a ZIP file"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the ipsumlorem zip file </span>again</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the ipsumlorem error</span></a>'
+      }
+    ],
+    [
+      {
+        html: 'Loremipsum'
+      },
+      {
+        text: "The uploaded file is not a ZIP file"
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the Loremipsum zip file </span>again</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the Loremipsum error</span></a>'
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  classes: "opss-accordian__open-remove govuk-!-margin-bottom-0",
+  items: [
+    {
+      heading: {
+        text: "Errors (3)"
+      },
+      summary: {
+        html: '<p class="govuk-body govuk-!-margin-bottom-1">There are currently 3 notification errors.</p>'
+      },
+      content: {
+        html: errorsTblHTML
+      }
+    }
+  ]
+}) }}
+<!-- *************************************** errors ends ****************************************************** -->
 
 <!-- *************************************** notified starts ****************************************************** -->
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-top-7">
     <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      <!--Notified products (131)-->
       Product notifications (131)
     </h2>
     <p class="govuk-body govuk-!-margin-bottom-0">
       There are currently 131 notified cosmetic products.
     </p>
   </div>
-  <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+  <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2 govuk-!-margin-top-7">
     <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right" download>
       <span class="opss-download-link-sm"></span>Download a <abbr title="Comma-Separated Values">CSV</abbr> file of your notified products
     </a>
   </div>
 </div>
 {{ govukTable({
-  classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0 opss-table opss-table--last-col-right",
+  classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-0 opss-table opss-table--last-col-right opss-table--first-col-normal",
   caption: "List of notified products",
   captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
     head: [
     {
       text: "Product"
@@ -455,14 +548,17 @@
       <nav class="opss-pagination-link">
           <ul>
               <li class="opss-pagination-link__wrap opss-pagination-link--prev">
-                      <a href="" class="govuk-link govuk-link--no-visited-state">
-                          <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
-                      </a>
-                  </li>
-                  <li class="opss-pagination-link__wrap opss-pagination-link--next">
-                      <a href="" class="govuk-link govuk-link--no-visited-state">
-                          <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
-                      </a>
+                  <a href="" class="govuk-link govuk-link--no-visited-state">
+                      <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                  </a>
+              </li>
+              <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                  Page 2
+              </li>
+              <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                  <a href="" class="govuk-link govuk-link--no-visited-state">
+                      <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                  </a>
               </li>
           </ul>
       </nav>

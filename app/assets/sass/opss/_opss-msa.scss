@@ -61,6 +61,9 @@ body.js-enabled .opss-nojs-hide {
 .opss-border-top {border-top-width: 1px; }
 .opss-border-bottom {border-bottom-width: 1px; }
 
+.govuk-accordion + .opss-border-top {border-top-width: 0; }
+.govuk-template__body:not(.js-enabled) .govuk-accordion + .opss-border-bottom {border-bottom-width: 0; }
+
 .opss-text-underline-offset {
     text-underline-offset: 0.1em;
 }
@@ -272,10 +275,12 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 }
 
 .opss-table {
-
     tbody tr:last-child th,
     tbody tr:last-child td {
         border-bottom: none;
+    }
+    tbody tr td:last-child a {
+        white-space: nowrap;
     }
 }
 
@@ -283,6 +288,11 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     thead tr .govuk-table__header:last-child,
     tbody tr .govuk-table__cell:last-child {
         text-align: right;
+    }
+}
+.opss-table--first-col-normal {
+    tbody tr th:first-child {
+        font-weight: normal;
     }
 }
 
@@ -443,7 +453,7 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     }
 }
 
-.opss-accordian__open-remove > div:first-child {
+.js-enabled .opss-accordian__open-remove > div:first-child {
     @include govuk-visually-hidden;
 }
 

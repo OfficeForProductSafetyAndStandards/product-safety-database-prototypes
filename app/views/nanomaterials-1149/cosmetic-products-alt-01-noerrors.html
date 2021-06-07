@@ -36,80 +36,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-<!-- *************************************** incomplete + errors starts ****************************************************** -->
-{% set errorsTblHTML %}
-<div class="govuk-grid-column-full-width">
-  <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
-    Dismiss all errors
-  </a>
-</div>
-
-{{ govukTable({
-  classes: "govuk-!-margin-bottom-4 opss-table opss-table--last-col-right opss-table--first-col-normal",
-  caption: "List of notification errors",
-  captionClasses: "govuk-visually-hidden",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "File"
-    },
-    {
-      text: "Reason"
-    },
-    {
-      text: "Action"
-    },
-    {
-      html: '<span class="govuk-visually-hidden">Dismiss</span>'
-    }
-  ],
-  rows: [
-    [
-      {
-        html: "Loremipsumipsum"
-      },
-      {
-        text: "The uploaded file is not a ZIP file"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the Loremipsumipsum zip file </span>again</a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the Loremipsumipsum error</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'ipsumlorem'
-      },
-      {
-        text: "The uploaded file is not a ZIP file"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the ipsumlorem zip file </span>again</a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the ipsumlorem error</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'Loremipsum'
-      },
-      {
-        text: "The uploaded file is not a ZIP file"
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the Loremipsum zip file </span>again</a>'
-      },
-      {
-        html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Dismiss<span class="govuk-visually-hidden">the Loremipsum error</span></a>'
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
-
+<!-- *************************************** incomplete starts ****************************************************** -->
 {% set incompleteTblHTML %}
 {{ govukTable({
   classes: "govuk-!-margin-bottom-4 opss-table opss-table--last-col-right opss-table--first-col-normal",
@@ -177,21 +104,21 @@
       content: {
         html: incompleteTblHTML
       }
-    },
-    {
-      heading: {
-        text: "Errors (3)"
-      },
-      summary: {
-        html: '<p class="govuk-body govuk-!-margin-bottom-1">There are currently 3 notification errors.</p>'
-      },
-      content: {
-        html: errorsTblHTML
-      }
     }
   ]
 }) }}
-<!-- *************************************** incomplete + errors ends ****************************************************** -->
+<!-- *************************************** incomplete ends ****************************************************** -->
+
+
+<!-- *************************************** errors starts ****************************************************** -->
+<div class="opss-border-top govuk-!-padding-top-3 opss-border-bottom ">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Errors (0)
+    </h2>
+    <p class="govuk-body">
+      There are currently no notification errors.
+    </p>
+  </div>
 
 <!-- *************************************** notified starts ****************************************************** -->
 <div class="govuk-grid-row">
