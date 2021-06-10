@@ -10,6 +10,23 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
+
+      <!-- only shown if there are errors - starts -->
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            There are 3 notification errors. <a class="govuk-notification-banner__link" href="#accordion-errors-heading-2">View errors</a>.
+          </p>
+        </div>
+      </div>
+      <!-- only shown if there are errors - ends -->
+
+
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
@@ -37,6 +54,60 @@
     <div class="govuk-grid-column-full">
 
 <!-- *************************************** incomplete + errors starts ****************************************************** -->
+{% set incompleteTblHTML %}
+{{ govukTable({
+  classes: "govuk-!-margin-bottom-4 opss-table opss-table--last-col-right opss-table--first-col-normal",
+  caption: "List of incomplete notified products",
+  captionClasses: "govuk-visually-hidden",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Product"
+    },
+    {
+      text: "Created"
+    },
+    {
+      html: '<abbr>UK</abbr> <span class="govuk-visually-hidden">cosmetic product </span>number'
+    },
+    {
+      html: '<span class="govuk-visually-hidden">Continue</span>'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: 'Tesco shower gel'
+      },
+      {
+        text: "20 April 2021"
+      },
+      {
+        text: 'UKCP-3459222'
+      },
+      {
+        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> Tesco shower gel notification</span></a>'
+      }
+    ],
+    [
+      {
+        html: 'Johnson&apos;s hair spray xc330'
+      },
+      {
+        text: "13 May 2021"
+      },
+      {
+        text: 'UKCP-8826113'
+      },
+      {
+        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Johnson&apos;s hair spray xc330 notification</span></a>'
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+<!-- accordian only shown if there are errors - starts -->
 {% set errorsTblHTML %}
 <div class="govuk-grid-column-full-width">
   <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
@@ -109,62 +180,10 @@
   ]
 }) }}
 {% endset -%}
-
-{% set incompleteTblHTML %}
-{{ govukTable({
-  classes: "govuk-!-margin-bottom-4 opss-table opss-table--last-col-right opss-table--first-col-normal",
-  caption: "List of incomplete notified products",
-  captionClasses: "govuk-visually-hidden",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Product"
-    },
-    {
-      text: "Created"
-    },
-    {
-      html: '<abbr>UK</abbr> <span class="govuk-visually-hidden">cosmetic product </span>number'
-    },
-    {
-      html: '<span class="govuk-visually-hidden">Continue</span>'
-    }
-  ],
-  rows: [
-    [
-      {
-        html: 'Tesco shower gel'
-      },
-      {
-        text: "20 April 2021"
-      },
-      {
-        text: 'UKCP-3459222'
-      },
-      {
-        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> Tesco shower gel notification</span></a>'
-      }
-    ],
-    [
-      {
-        html: 'Johnson&apos;s hair spray xc330'
-      },
-      {
-        text: "13 May 2021"
-      },
-      {
-        text: 'UKCP-8826113'
-      },
-      {
-        html: '<a href="#go-to-the-incomplete-product-page" class="govuk-link govuk-link--no-visited-state">Continue<span class="govuk-visually-hidden"> the Johnson&apos;s hair spray xc330 notification</span></a>'
-      }
-    ]
-  ]
-}) }}
-{% endset -%}
+<!-- accordian errors only shown if there are errors - ends -->
 
 {{ govukAccordion({
-  id: "accordion-default",
+  id: "accordion-errors",
   classes: "opss-accordian__open-remove govuk-!-margin-bottom-0",
   items: [
     {
