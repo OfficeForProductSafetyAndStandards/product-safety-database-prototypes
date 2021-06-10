@@ -3,6 +3,11 @@
 //This is the simplest way to maintain the new opss PSD css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
 //We can remove linting frmo this scss file - it won't run if there is a real problem anyway
 
+
+@import "opss/opss-search";
+@import "opss/opss-pagination";
+
+
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
         min-height: 500px;
@@ -99,117 +104,3 @@ ul.opss-radio-list {
 }*/
 
 
-
-// ************ pagination starts
-@mixin arrow-right($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="opss-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
-@mixin arrow-left($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="opss-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
-
-.opss-pagination-link { //Description: single links pagination with arrow
-    width: 100%;
-    display: block;
-    text-align: right;
-    border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
-    padding: govuk-spacing(6) 0 0 0;
-    @include govuk-clearfix;
-
-    ul {
-      padding: 0;
-      width: 100%;
-      float: left;
-    }
-
-    .opss-pagination-link__wrap {
-      font-size: inherit;
-      display: inline-block;
-      width: auto;
-
-      position: relative;//for center txt
-      z-index: 1;
-
-      .govuk-link {
-        text-decoration: none;
-        display: inline-block;
-
-        &:hover {
-          text-decoration: underline;
-        }
-        &:focus {
-          outline: 0 solid $govuk-focus-colour;
-          outline-offset: 0;
-        }
-
-        span {
-          display: block;
-          @include govuk-font($size: 16);
-        }
-        span:first-child {
-          @include govuk-font($size: 19);
-        }
-      }
-
-      &.opss-pagination-link--next {
-        .govuk-link {
-            padding: 0 govuk-spacing(7) 0 0;
-            @include arrow-right(rgba($govuk-link-colour, 0.9));
-            background-position: right center;
-            background-repeat: no-repeat;
-            text-align: right;
-
-            &:hover, &:focus {
-                @include arrow-right(rgba($govuk-link-hover-colour, 0.9));
-            }
-        }
-      }
-
-      &.opss-pagination-link--prev {
-        float: left;
-
-        .govuk-link {
-            padding: 0 0 0 govuk-spacing(7);
-            @include arrow-left(rgba($govuk-link-colour, 0.9));
-            background-position: left center;
-            background-repeat: no-repeat;
-            text-align: left;
-
-            &:hover, &:focus {
-                @include arrow-left(rgba($govuk-link-hover-colour, 0.9));
-            }
-        }
-      }
-
-      &.opss-pagination-link--text {
-            display: block;
-            float: left;
-            text-align: center;
-            width: 100%;
-
-            position: relative;
-            z-index: 0;
-            top: -65px;
-
-            @include govuk-media-query($from: desktop) {
-                top: - govuk-spacing(6);
-            }
-      }
-
-      &.opss-pagination-link--text:first-child {
-            margin-top: govuk-spacing(1);
-            position: inherit;
-
-            & + .opss-pagination-link--next {
-                @include govuk-media-query($from: desktop) {
-                    top: -55px;
-                }
-            }
-      }
-
-    }
-
-    &.opss-pagination-link--no-top-space {
-        margin-top: - govuk-spacing(4);
-    }
-}
