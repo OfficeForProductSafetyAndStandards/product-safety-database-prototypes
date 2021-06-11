@@ -1,8 +1,9 @@
 //These are the opss MSA/Cosmetics css styles: I recommend simply copy and pasting this entire code into your local opss-msa scss file.
+//And include - copy over - the imported files in the same directory (listed at the top of this file).
 //Don't edit the local production copy as pasting this into it next/each time will overwrite your changes.
-//This is the simplest way to maintain the new opss MSA/Cosmetics css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
 //We can remove linting frmo this scss file - it won't run if there is a real problem anyway
 
+@import "opss/opss-shared";
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
@@ -33,8 +34,6 @@ abbr[title]{
 }
 
 
-$opss-error-colour: #d4351c;
-
 
 .opss-float-right,
 .opss-text-align-right {
@@ -64,8 +63,7 @@ body.js-enabled .opss-nojs-hide {
 .opss-border-top {border-top-width: 1px; }
 .opss-border-bottom {border-bottom-width: 1px; }
 
-.govuk-accordion + .opss-border-top {border-top-width: 0; }
-.govuk-template__body:not(.js-enabled) .govuk-accordion + .opss-border-bottom {border-bottom-width: 0; }
+/*.govuk-accordion + .opss-border-top {border-top-width: 0; }.govuk-template__body:not(.js-enabled) .govuk-accordion + .opss-border-bottom {border-bottom-width: 0; }*/
 
 .opss-text-underline-offset {
     text-underline-offset: 0.1em;
@@ -437,17 +435,9 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
-        border-left: 4px solid $opss-error-colour;
+        border-left: 4px solid govuk-colour("red");
     }
     .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {//helps with smooth loading
         display: block !important;
     }
 }
-
-
-
-
-
-
-
-

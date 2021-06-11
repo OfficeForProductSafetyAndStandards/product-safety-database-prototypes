@@ -1,9 +1,9 @@
 //These are the opss PSD css styles: I recommend simply copy and pasting this entire code into your local opss-psd scss file.
+//And include - copy over - the imported files in the same directory (listed at the top of this file).
 //Don't edit your local copy as pasting this into it next/each time will overwrite your changes.
-//This is the simplest way to maintain the new opss PSD css styles. You won't have check anything. Just paste this whole thing into your opss psd scss file each time.
-//We can remove linting frmo this scss file - it won't run if there is a real problem anyway
+//We can remove linting from this scss file - it won't run if there is a real problem anyway
 
-
+@import "opss/opss-shared";
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
@@ -103,4 +103,87 @@ ul.opss-radio-list {
     @include govuk-clearfix;
 }*/
 
+.opss-table-items {
 
+    thead th:nth-child(2) {width: auto; }
+    thead th:nth-child(3) {width: auto; }
+    thead th:nth-child(4) {width: auto; }
+
+    @include govuk-media-query($from: tablet) {
+        thead th:nth-child(2) {width: 20%; }
+    }
+
+    thead th:last-child,
+    tbody td:last-child,
+    tfoot th:last-child {
+        text-align: right;
+    }
+
+    tbody td:last-child::first-letter {text-transform: uppercase; }
+
+    thead th,
+    tfoot th {
+        @include govuk-font($size: 16);
+        font-weight: 700;
+    }
+    tbody td {
+        @include govuk-font($size: 16);
+    }
+    /*tbody tr:last-child td a {
+        @include govuk-font($size: 16);
+    }*/
+    /*tbody tr:not(:first-child):not(:last-child) td, tbody tr:not(:first-child):not(:last-child) th, */
+    tbody tr:nth-child(2) th, tbody tr:nth-child(2) td {
+        padding-top: govuk-spacing(0);
+        padding-bottom: govuk-spacing(1);
+    }
+    tbody tr:nth-child(3) th, tbody tr:nth-child(3) td {
+        padding-top: govuk-spacing(1);
+        padding-bottom: govuk-spacing(2);
+    }
+    tbody tr:nth-child(4) th, tbody tr:nth-child(4) td {
+        padding-top: govuk-spacing(0);
+    }
+    /*th[colspan="3"], tfoot th {padding-top: govuk-spacing(7); }*/
+    tbody tr:first-child th,
+    tbody tr:not(:last-child) > * {
+        border-bottom: 0 none;
+    }
+
+}
+
+
+.opss-tag {
+    @include govuk-font($size: 14);
+    font-weight: 700;
+    display: inline-block;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: 1px 5px 0 5px;
+    margin-bottom: govuk-spacing(1);
+    @include govuk-media-query($from: tablet) {
+        margin-bottom: 0;
+    }
+
+    td & {
+        margin-left: govuk-spacing(1);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.opss-tag--risk1 {
+    border-color: govuk-colour("red");
+    color: govuk-colour("red");
+}
+.opss-tag--risk2 {
+    border-color: govuk-colour("dark-grey");
+    color: govuk-colour("dark-grey");
+}
+.opss-tag--covid {
+    background-color: govuk-colour("pink");
+    border-color: govuk-colour("pink");
+    color: govuk-colour("white");
+    text-transform: none;
+}
