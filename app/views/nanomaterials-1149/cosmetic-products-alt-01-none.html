@@ -20,7 +20,7 @@
         </div>
         <div class="govuk-notification-banner__content">
           <p class="govuk-notification-banner__heading">
-            There are 3 notification errors. <a class="govuk-notification-banner__link" href="#accordion-errors-heading-1">View errors</a>.
+            There are 3 notification errors. <a class="govuk-notification-banner__link" href="#accordion-opss-heading-1">View errors</a>.
           </p>
         </div>
       </div>
@@ -53,19 +53,6 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-<!-- *************************************** incomplete starts ****************************************************** -->
-
-  <div class="opss-border-top govuk-!-padding-top-3 govuk-!-margin-bottom-4">
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-      Incomplete notifications (0)
-    </h2>
-    <p class="govuk-body">
-      There are currently no incomplete notifications.
-    </p>
-  </div>
-
-<!-- *************************************** incomplete ends ****************************************************** -->
 
 <!-- *************************************** errors starts ****************************************************** -->
 {% set errorsTblHTML %}
@@ -142,7 +129,7 @@
 {% endset -%}
 
 {{ govukAccordion({
-  id: "accordion-errors",
+  id: "accordion-opss",
   classes: "opss-accordian__open-remove govuk-!-margin-bottom-0",
   items: [
     {
@@ -158,9 +145,20 @@
     }
   ]
 }) }}
-<!-- *************************************** errors ends ****************************************************** -->
 
-<!-- *************************************** notified starts ****************************************************** -->
+<!-- *************************************** incomplete starts ****************************************************** -->
+
+  <div class="opss-border-top govuk-!-padding-top-3 govuk-!-margin-bottom-4 opss-border-bottom">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Incomplete notifications (0)
+    </h2>
+    <p class="govuk-body">
+      There are currently no incomplete notifications.
+    </p>
+  </div>
+
+<!-- *************************************** incomplete ends ****************************************************** -->
+
     <section role="region" aria-label="Notified products">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-top-7">
