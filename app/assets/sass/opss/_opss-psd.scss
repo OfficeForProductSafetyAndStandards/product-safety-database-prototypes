@@ -146,21 +146,33 @@ ul.opss-radio-list {
     }
     /*th[colspan="3"], tfoot th {padding-top: govuk-spacing(7); }*/
     tbody tr:first-child th,
-    tbody tr:not(:last-child) > * {
+    tbody tr:not(:last-child) > *,
+    tfoot tr th {
         border-bottom: 0 none;
     }
 
+    tbody th, tbody td {
+        transition: all 0.5s ease;
+        background-color: transparent;
+    }
+    tbody.opss-bg th, tbody.opss-bg td {
+        background-color: govuk-colour("light-grey");
+    }
+    /*tbody:nth-child(odd) th, tbody:nth-child(odd) td {
+      background-color: govuk-colour("light-grey");
+    }*/
+
 }
 
-
 .opss-tag {
-    @include govuk-font($size: 14);
+    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
     display: inline-block;
     text-transform: uppercase;
     border-width: 2px;
     border-style: solid;
-    padding: 1px 5px 0 5px;
+    padding: 2px 5px;
     margin-bottom: govuk-spacing(1);
     @include govuk-media-query($from: tablet) {
         margin-bottom: 0;

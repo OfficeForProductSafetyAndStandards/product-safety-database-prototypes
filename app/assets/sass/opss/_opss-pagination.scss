@@ -110,4 +110,8 @@
     &.opss-pagination-link--no-top-space {
         margin-top: - govuk-spacing(4);
     }
+
+    &.opss-pagination-link--no-top-border {
+      border-top: 0 none;
+    }
 }
