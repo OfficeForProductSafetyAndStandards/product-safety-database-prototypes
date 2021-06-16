@@ -54,12 +54,7 @@ abbr[title]{
 
 
 
-main.govuk-main-wrapper {
-    @include govuk-media-query($from: desktop) {
-        min-height: 500px;
-    }
-    @include govuk-clearfix;
-}
+
 
 //*** top nav & std rows starts ***
 .opss-std-row {

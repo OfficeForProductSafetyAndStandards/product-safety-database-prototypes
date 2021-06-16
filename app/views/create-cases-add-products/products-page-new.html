@@ -1,16 +1,31 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    Cases page
+    Products page
 {% endblock %}
 
 
 
 {% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+        </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+            The product has been added
+        </h3>
+        <p class="govuk-body">You can now <a href="#item-01" class="govuk-notification-banner__link">create a case for this product</a>.</p>
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            Cases
+            Products
         </h1>
 
         <!--div class="govuk-hint">
@@ -20,22 +35,22 @@
         <details class="govuk-details opss-details--sm" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                    Help with the cases page
+                    Help with the products page
                 </span>
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body-s">
-                    <span id="search-hint">You can search for a case using the keywords that describe it and by filtering the results.</span> You can also filter all case records without a keyword search.
+                    <span id="search-hint">You can search for products using keywords from the name and model or by using a barcode.</span>
                 </p>
                 <p class="govuk-body-s">
-                    You can create a new case or add a product to an existing case.
+                    You can also create a case for a product or add a product if it doesn't already exist<!-- within our records-->.
                 </p>
             </div>
         </details>
     </div>
     <div class="govuk-grid-column-one-third govuk-!-margin-top-8">
         <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
-            Create a case
+            Add a product
         </a>
     </div>
 </div>
@@ -46,16 +61,36 @@
         <form class="form" action="#" method="post" novalidate>
             <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2">
 
-                <label class="govuk-label" for="cases-search">
-                    Keywords search
+                <label class="govuk-label" for="products-search">
+                    Search for a product
                 </label>
 
                 <div class="govuk-input__wrapper opss-search__wrapper">
-                    <input class="govuk-input govuk-!-width-one-half" type="search" id="cases-search" name="cases-search" aria-describedby="search-hint">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
                     <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
                         <span class="govuk-visually-hidden">Search</span>
                     </button>
                 </div>
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-visually-hidden">
+                        Is your search using keywords or a barcode?
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="keywords" name="searchtype" type="radio" value="keywords" checked="checked">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="keywords">
+                                Using keywords
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="barcode" name="searchtype" type="radio" value="barcode">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="barcode">
+                                Using a barcode
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
 
             </div>
         </form>
@@ -67,20 +102,92 @@
 
     <section class="govuk-grid-column-one-quarter">
         <form class="form" action="#" method="post" novalidate>
+
+            <h2 class="govuk-heading-m">
+                Filter options<span class="govuk-visually-hidden">:</span>
+            </h2>
+
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h2 class="govuk-fieldset__heading">
-                            Filter options<span class="govuk-visually-hidden">:</span>
-                        </h2>
+                    <legend class="govuk-fieldset__legend">
+                        Products
                     </legend>
-
-                    <div class="govuk-form-group">
-                        <p class="govuk-body-m">Filter forms go here...</p>
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="linked-to-case" name="linked-to-case" type="radio" value="all" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="linked-to-case">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="linked-to-case-2" name="linked-to-case" type="radio" value="with">
+                            <label class="govuk-label govuk-radios__label" for="linked-to-case-2">
+                                With cases
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="linked-to-case-3" name="linked-to-case" type="radio" value="without">
+                            <label class="govuk-label govuk-radios__label" for="linked-to-case-3">
+                                Without cases
+                            </label>
+                        </div>
                     </div>
+                </fieldset>
+            </div>
 
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">
+                        Added by
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-by" name="added-by" type="radio" value="any" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="added-by">
+                                Anyone
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-by-2" name="added-by" type="radio" value="me">
+                            <label class="govuk-label govuk-radios__label" for="added-by-2">
+                                Me
+                            </label>
+                        </div>
+                        <!--div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-by-3" name="added-by" type="radio" value="team">
+                            <label class="govuk-label govuk-radios__label" for="added-by-3">
+                                My team
+                            </label>
+                        </div-->
+                    </div>
+                </fieldset>
+            </div>
 
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">
+                        Added
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-when" name="added-when" type="radio" value="anytime" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="added-when">
+                                Anytime
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-when-2" name="added-when" type="radio" value="6mths">
+                            <label class="govuk-label govuk-radios__label" for="added-when-2">
+                                Within 6 months
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="added-when-3" name="added-when" type="radio" value="12mths">
+                            <label class="govuk-label govuk-radios__label" for="added-when-3">
+                                Within 12 months
+                            </label>
+                        </div>
+                    </div>
                 </fieldset>
             </div>
 
@@ -89,19 +196,20 @@
                     Apply
                 </button>
 
-                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset" data-module="govuk-button">
-                    Clear filters
+                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide govuk-!-font-size-16" id="opss-reset" data-module="govuk-button">
+                    Reset filters
                 </button>
             </div>
 
         </form>
+
     </section>
 
     <section class="govuk-grid-column-three-quarters">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full" role="region" aria-label="Case lists">
+            <div class="govuk-grid-column-full" role="region" aria-label="Product lists">
 
-                <table id="table-items" class="govuk-table opss-table-items">
+                <table id="table-items" class="govuk-table opss-table-items opss-table-items--new-item">
                     <caption class="govuk-visually-hidden">
                         Cases data: The table features three columns and each product is described across corresponding rows within one table body.
                     </caption>
@@ -113,7 +221,16 @@
                             <th id="updated" scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </thead>
+
+<!-- ***** special newly added product tbody with extra TR (with "headers" attr & colspan 4) starts. ***** -->
                     <tbody class="govuk-table__body">
+
+                        <tr class="govuk-table__row">
+                            <th headers="item-01" colspan="4" scope="colgroup" class="govuk-table__header">
+                                New product added
+                            </th>
+                        </tr>
+
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Product
@@ -137,24 +254,15 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-01" id="status-01" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-01 status-01" colspan="3" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-01" id="actions-01" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-01 actions-01" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 2021-1001</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 2021-11</span></a>
                             </td>
                         </tr>
                     </tbody>
+<!-- ***** special newly added product tbody with extra row ends ***** -->
 
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
@@ -180,19 +288,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-02" id="status-02" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-02 status-02" colspan="3" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-02" id="actions-02" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-02 actions-02" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 20-2120</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 20-2120</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -221,19 +321,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-03" id="status-03" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-03 status-03" colspan="3" class="govuk-table__cell">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-03" id="actions-03" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-03 actions-03" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 2104-21000</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 2104-21000</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -262,19 +354,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-04" id="status-04" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-04 status-04" colspan="3" class="govuk-table__cell">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-04" id="actions-04" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-04 actions-04" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 2007-37001</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 2007-37001</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -303,19 +387,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-05" id="status-05" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-05 status-05" colspan="3" class="govuk-table__cell">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-05" id="actions-05" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-05 actions-05" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 1007-27002</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 1007-27002</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -344,19 +420,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-06" id="status-06" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-06 status-06" colspan="3" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-06" id="actions-06" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-06 actions-06" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 45001-70000</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 45001-70000</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -385,19 +453,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-07" id="status-07" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-07 status-07" colspan="3" class="govuk-table__cell">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-07" id="actions-07" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-07 actions-07" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 25022-21010</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 25022-21010</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -426,19 +486,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-08" id="status-08" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-08 status-08" colspan="3" class="govuk-table__cell">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-08" id="actions-08" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-08 actions-08" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 2221-70003</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 2221-70003</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -467,21 +519,11 @@
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th headers="item-09" id="status-09" class="govuk-visually-hidden">
-                                Status
-                            </th>
-                            <td headers="item-09 status-09" colspan="3" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <th headers="item-09" id="actions-09" class="govuk-visually-hidden">
                                 Actions
                             </th>
                             <td headers="item-09 actions-09" colspan="3" class="govuk-table__cell">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Add a product <span class="govuk-visually-hidden">to case allegation 21-23341</span></a>
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 21-23341</span></a>
                             </td>
                         </tr>
                     </tbody>
@@ -516,5 +558,18 @@
     </section>
 
 </div>
+
+<!--script>
+    var tbody = document.getElementById("table-items").querySelectorAll(".govuk-table__body");
+
+    tbody.forEach(function(tobj) {
+        tobj.addEventListener("mouseover", function() {
+            tobj.classList.add('opss-bg');
+        });
+        tobj.addEventListener("mouseout", function() {
+            tobj.classList.remove('opss-bg');
+        });
+    });
+</script-->
 
 {% endblock %}
