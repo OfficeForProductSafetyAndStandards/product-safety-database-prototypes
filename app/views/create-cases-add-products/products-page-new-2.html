@@ -7,6 +7,21 @@
 
 
 {% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+        </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+            The product has been added
+        </h3>
+        <p class="govuk-body">You can now <a href="#item-01" class="govuk-notification-banner__link">create a case for this product</a>.</p>
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
@@ -25,7 +40,7 @@
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body-s">
-                    <span id="search-hint">You can search for products using keywords from the name and model or by using a barcode. A barcode is normally 13 digits, although older products may have a 12 digit number.</span>
+                    <span id="search-hint">You can search for products using keywords from the name and model or by using a barcode.</span>
                 </p>
                 <p class="govuk-body-s">
                     You can also create a case for a product or add a product if it doesn't already exist<!-- within our records-->.
@@ -34,7 +49,7 @@
         </details>
     </div>
     <div class="govuk-grid-column-one-third govuk-!-margin-top-8">
-        <a href="/add-product-v4/does-the-product-have-a-brand" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
             Add a product
         </a>
     </div>
@@ -120,28 +135,6 @@
                 </fieldset>
             </div>
 
-            <!--div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend">
-                        Linked to a case
-                    </legend>
-                    <div class="govuk-checkboxes govuk-checkboxes--small">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="linked-to-product" name="linked-to-product" type="checkbox" value="yes" checked="checked">
-                            <label class="govuk-label govuk-checkboxes__label" for="linked-to-product">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="linked-to-product-2" name="linked-to-product" type="checkbox" value="no" checked="checked">
-                            <label class="govuk-label govuk-checkboxes__label" for="linked-to-product-2">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
-            </div-->
-
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend">
@@ -210,202 +203,13 @@
 
         </form>
 
-
-        <!--form class="form" action="#" method="post" novalidate>
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h2 class="govuk-fieldset__heading">
-                            Filter options<span class="govuk-visually-hidden">:</span>
-                        </h2>
-                    </legend>
-
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="category">
-                            Product category
-                        </label>
-                        <select class="govuk-select" id="category" name="category">
-                            <option value="">All</option>
-                            <option value="val01">Option 1</option>
-                            <option value="val02">Option 2</option>
-                            <option value="val03" selected>Option 3</option>
-                            <option value="val04">Option 4</option>
-                        </select>
-                    </div>
-
-                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
-
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date" data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
-                            <label class="govuk-label govuk-radios__label" for="by-date">
-                                Date
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-1">
-                            <div class="govuk-form-group">
-
-                                <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
-                                    The date notified. <br>
-                                    For example, 14 08 2019.
-                                </div>
-
-                                <div class="govuk-date-input" id="by-date">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
-                            <label class="govuk-label govuk-radios__label" for="by-date-range">
-                                Date range
-                            </label>
-                        </div>
-
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-2">
-                            <div class="govuk-form-group">
-
-                                <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
-                                    The dates notified within a date range. For example, from <span class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09 2020</span>.
-                                </div>
-                                <div class="govuk-hint govuk-!-font-size-16">
-                                    From<span class="govuk-visually-hidden">:</span>
-                                </div>
-
-                                <div class="govuk-date-input" id="by-date-from">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-day" name="by-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-month" name="by-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-from-year" name="by-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                </div>
-
-                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
-                                    To<span class="govuk-visually-hidden">:</span>
-                                </div>
-
-                                <div class="govuk-date-input" id="by-date-to">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-month" name="by-date-to-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </fieldset>
-            </div>
-
-            <div class="govuk-button-group">
-                <button type="submit" class="govuk-button" data-module="govuk-button">
-                    Apply
-                </button>
-
-                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset" data-module="govuk-button">
-                    Clear filters
-                </button>
-            </div>
-
-        </form-->
     </section>
 
     <section class="govuk-grid-column-three-quarters">
-
-        <div class="govuk-grid-row">
-           <div class="govuk-grid-column-two-thirds">
-               <p class="govuk-body">
-                    <span id="opss-qty">22</span> products matching keyword(s)
-                    <span class="govuk-!-font-weight-bold">hair, dye, lotion</span>,<span id="opss-filter-txt" class="opss-filter-txt"> using the current filters,</span> were found.
-
-                    <!--span id="opss-qty">22</span> products matching or closely matching the barcode
-                    <span class="govuk-!-font-weight-bold">BSA-100553BB</span>,<span id="opss-filter-txt" class="opss-filter-txt"> using the current filters,</span> were found.</p-->
-                </p>
-               </div>
-           <div class="govuk-grid-column-one-third">
-               <div class="govuk-form-group opss-float-right">
-                   <form class="form" id="sort-form" action="#" method="post">
-                        <label class="govuk-label govuk-body-s" for="results-sort">
-                            Sort by
-                        </label>
-                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
-                            <option value="relevance" selected="">Relevance</option>
-                            <option value="updated">Newly updated</option>
-                        </select>
-                        <button class="govuk-button opss-js-enabled-hidden" data-module="govuk-button">
-                            Sort
-                        </button>
-                    </form>
-                </div>
-           </div>
-        </div>
-
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Product lists">
 
-                <table id="table-items" class="govuk-table opss-table-items">
+                <table id="table-items" class="govuk-table opss-table-items xyz">
                     <caption class="govuk-visually-hidden">
                         Cases data: The table features three columns and each product is described across corresponding rows within one table body.
                     </caption>
@@ -417,7 +221,16 @@
                             <th id="updated" scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </thead>
+
+<!-- ***** special newly added product tbody with extra TR (with "headers" attr & colspan 4) starts. ***** -->
                     <tbody class="govuk-table__body">
+
+                        <tr class="govuk-table__row">
+                            <th headers="item-01" colspan="4" scope="colgroup" class="govuk-table__header">
+                                New product added
+                            </th>
+                        </tr>
+
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Product
@@ -449,6 +262,7 @@
                             </td>
                         </tr>
                     </tbody>
+<!-- ***** special newly added product tbody with extra row ends ***** -->
 
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">

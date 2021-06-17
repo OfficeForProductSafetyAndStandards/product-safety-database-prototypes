@@ -1,0 +1,80 @@
+{% extends "layout-routes-01.html" %}
+
+{% block pageTitle %}
+    Find the product
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases-page"
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if the case is product related",
+      href: "#related"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="#" method="post" novalidate>
+
+
+{{ govukRadios({
+  idPrefix: "related",
+  name: "related",
+  classes: "govuk-!-padding-top-3",
+
+  fieldset: {
+    legend: {
+      text: "Is the case product related?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  errorMessage: {
+    text: "Select yes if the case is product related"
+  },
+
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      hint: {
+        classes: "govuk-!-font-size-16 govuk-!-margin-bottom-4",
+        text: "The product may already exist within our records. On the products page you can search for it or add a new product. You can then create a case directly from the product."
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      hint: {
+        classes: "govuk-!-font-size-16",
+        text: "The case might not relate to a product or the product details aren't available yet. You can add a product to a case later from the cases page."
+      }
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,32 +1,34 @@
-{% extends "layout-01.html" %}
+{% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    Reason for creating the case
+    Find the product
 {% endblock %}
+
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "is-this-case-related-to-covid"
+        href: "cases-page"
     }) }}
 {% endblock %}
 
 
+
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
         <form class="form" action="#" method="post" novalidate>
 
 
 {{ govukRadios({
-  idPrefix: "reason",
-  name: "reason",
+  idPrefix: "related",
+  name: "related",
   classes: "govuk-!-padding-top-3",
 
   fieldset: {
     legend: {
-      text: "What is the reason for creating a case?",
+      text: "Is the case product related?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -34,19 +36,19 @@
 
   items: [
     {
-      value: "unsafeoption",
-      text: "The product is unsafe or non-compliant",
+      value: "yes",
+      text: "Yes",
       hint: {
         classes: "govuk-!-font-size-16 govuk-!-margin-bottom-4",
-        text: "The product is either unsafe, non-compliant or is suspected of being."
+        text: "The product may already exist within our records. On the products page you can search for it or add a new product. You can then create a case directly from the product."
       }
     },
     {
-      value: "issafeoption",
-      text: "The product is safe and compliant",
+      value: "no",
+      text: "No",
       hint: {
         classes: "govuk-!-font-size-16",
-        text: "The product is safe and compliant but a case will help others avoid testing the same product again."
+        text: "The case might not relate to a product or the product details aren't available yet. You can add a product to a case later from the cases page."
       }
     }
   ]

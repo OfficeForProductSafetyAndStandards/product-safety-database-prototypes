@@ -5,20 +5,26 @@ const router = express.Router()
 
 //************* routes for /create-cases-add-products ************* starts
 
-router.post('/is-this-case-related-to-covid', function (req, res) {
-  const iscovid = req.session.data['covid-related']
+router.post('/find-the-product', function (req, res) {
+  const isrelated = req.session.data['related']
 
-  if (iscovid == null) {
-    res.redirect('/create-cases-add-products/is-this-case-related-to-covid-error' )
-  } else {
-    res.redirect('/create-cases-add-productsreason-for-creating-case' )
+  if (isrelated == null) {
+    res.redirect('/create-cases-add-products/find-the-product-error')
+  } else if (isrelated == 'yes') {
+      res.redirect('/create-cases-add-products/products-page')
+  } else if (isrelated == 'no') {
+    res.redirect('/add-product-v4/is-this-case-related-to-covid')
   }
 })
-router.post('/is-this-case-related-to-covid-error', function (req, res) {
-  const iscoviderror = req.session.data['covid-related']
+router.post('/find-the-product-error', function (req, res) {
+  const isrelatederror = req.session.data['related']
 
-  if (iscoviderror != null) {
-    res.redirect('/create-cases-add-products/reason-for-creating-case' )
+  if (isrelatederror == null) {
+    res.redirect('/create-cases-add-products/find-the-product-error')
+  } else if (isrelatederror == 'yes') {
+      res.redirect('/create-cases-add-products/products-page')
+  } else if (isrelatederror == 'no') {
+    res.redirect('/add-product-v4/is-this-case-related-to-covid')
   }
 })
 
