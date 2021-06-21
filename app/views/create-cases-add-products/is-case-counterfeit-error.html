@@ -1,26 +1,25 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Is this case related to coronavirus
+    Is this case a counterfeit product
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "products-page"
+        href: "why-is-the-product-of-concern"
     }) }}
 {% endblock %}
 
 
 {% block content %}
 
-
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Select yes if the case is related to the coronavirus pandemic",
-      href: "#is-covid"
+      text: "Select yes if the case is related to a counterfeit product",
+      href: "#counterfeit"
     }
   ]
 }) }}
@@ -29,36 +28,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+
       <form action="#" method="post" novalidate>
-        <span class="govuk-caption-l">Create a case</span>
 
 
 {{ govukRadios({
-  idPrefix: "is-covid",
-  name: "covid-related",
+  idPrefix: "counterfeit",
+  name: "counterfeit",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Is this case related to the coronavirus pandemic?",
+      text: "Is this case related to a counterfeit product?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    classes: "govuk-!-margin-bottom-6",
-    text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
-  },
   errorMessage: {
-    text: "Select yes if the case is related to the coronavirus pandemic"
+    text: "Select yes if the case is related to a counterfeit product"
   },
   items: [
     {
       value: "yes",
-      text: "Yes (or could be)"
+      text: "Yes"
     },
     {
       value: "no",
       text: "No"
+    },
+    {
+      value: "unsure",
+      text: "Unsure"
     }
   ]
 }) }}
