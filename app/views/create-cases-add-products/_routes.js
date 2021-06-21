@@ -13,7 +13,7 @@ router.post('/find-the-product', function (req, res) {
   } else if (isrelated == 'yes') {
       res.redirect('/create-cases-add-products/products-page')
   } else if (isrelated == 'no') {
-    res.redirect('/add-product-v4/is-this-case-related-to-covid')
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
   }
 })
 router.post('/find-the-product-error', function (req, res) {
@@ -24,7 +24,7 @@ router.post('/find-the-product-error', function (req, res) {
   } else if (isrelatederror == 'yes') {
       res.redirect('/create-cases-add-products/products-page')
   } else if (isrelatederror == 'no') {
-    res.redirect('/add-product-v4/is-this-case-related-to-covid')
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
   }
 })
 

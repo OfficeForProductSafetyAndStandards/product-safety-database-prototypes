@@ -1,0 +1,121 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Create cases from the products page
+      </h1>
+
+
+
+      <p class="govuk-body">The Alternative v2 design flow: </p>
+
+      <a href="cases-page.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start &nbsp;<span style="font-weight: normal;"></span>
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <p class="govuk-body-l">For the error messages to work reliably, you may occasionally have to use the 'Clear data' option (in the footer).</p>
+
+      <ol class="govuk-list govuk-list--number">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="cases-page.html">Cases page: choose to Create a case</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="find-the-product">Find the product link page: different versions for different audience</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="find-the-product-2">Find the product link page: v2 content WIP</a></li>
+
+
+      </ol>
+
+
+
+      <hr>
+
+      <ol class="govuk-list govuk-list--number">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="is-this-case-related-to-covid.html">is-this-case-related-to-covid</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="reason-for-creating-case.html">reason-for-creating-case</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="why-is-the-product-of-concern.html">why-is-the-product-of-concern</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="is-case-counterfeit.html">is-case-counterfeit</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="do-you-have-the-barcode.html">do-you-have-the-barcode</a>
+          <ul>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="select-a-product-barcode.html">select-a-product-barcode</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="select-a-product-barcode-pg2.html">select-a-product-barcode page 2</a></li>
+          </ul>
+        </li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="search-for-an-existing-product.html">search-for-an-existing-product</a>
+          <ul>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="select-a-product.html">select-a-product</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="select-a-product-pg2.html">select-a-product page 2</a></li>
+          </ul>
+        </li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="does-the-product-have-a-brand.html">does-the-product-have-a-brand</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="what-is-the-product-name.html">what-is-the-product-name</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="what-is-the-product-category.html">what-is-the-product-category</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="does-the-product-have-marking.html">does-the-product-have-marking</a>
+          <ul>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="might-already-exist.html">might-already-exist</a></li>
+          </ul>
+        </li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="describe-the-product.html">describe-the-product</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="when-was-the-product-placed.html">when-was-the-product-placed</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="can-you-provide-an-image.html">can-you-provide-an-image</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="upload-a-product-image.html">upload-a-product-image</a>
+          <ul>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="upload-a-product-image-success.html">upload-a-product-image-success</a></li>
+          </ul>
+        </li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="how-many-units-are-affected.html">how-many-units-are-affected</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="how-many-units-are-affected-std.html">how-many-units-are-affected-std</a></li>
+      </ol>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <!--aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside-->
+
+    </div>
+  </div>
+{% endblock %}
