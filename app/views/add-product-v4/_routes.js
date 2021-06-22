@@ -369,8 +369,10 @@ router.post('/might-already-exist-error', function (req, res) {
 router.post('/describe-the-product', function (req, res) {
   var description = req.session.data['description']
 
-  if (description.length > 1000) {
-    res.redirect('/add-product-v4/describe-the-product-error')
+  if (description.length == 0) {
+    res.redirect('/create-cases-add-products/describe-the-product-error')
+  } else if (description.length > 1000) {
+    res.redirect('/create-cases-add-products/describe-the-product-error')
   } else {
     res.redirect('/add-product-v4/when-was-the-product-placed')
   }

@@ -1,0 +1,93 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Does the product have a brand
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "products-page"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if the product has a brand",
+      href: "#branded"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <form action="#" method="post" novalidate>
+        <span class="govuk-caption-l">Add a product</span>
+
+{% set yesHtml %}
+{{ govukInput({
+  id: "brand",
+  name: "brand",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Product brand"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "branded",
+  name: "branded",
+  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+  fieldset: {
+    legend: {
+      text: "Does the product have a brand?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, Dyson, Silentnight or Panasonic."
+  },
+  errorMessage: {
+    text: "Select yes if the product has a brand"
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "unbranded",
+      text: "The product is unbranded"
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
