@@ -57,16 +57,22 @@
 
                     <div class="govuk-radios govuk-!-margin-top-7 govuk-!-padding-bottom-1" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes">
+                            <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes" aria-describedby="yes-hint">
                             <label class="govuk-label govuk-radios__label" for="isit">
                                 Yes
                             </label>
+                            <div class="govuk-hint govuk-radios__hint govuk-!-font-size-16" id="yes-hint">
+                                Go to the products page to create a case for the product already in our records.
+                            </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no">
+                            <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no" aria-describedby="no-hint">
                             <label class="govuk-label govuk-radios__label" for="isit-2">
-                                No (continue adding a product)
+                                No
                             </label>
+                            <div class="govuk-hint govuk-radios__hint govuk-!-font-size-16" id="no-hint">
+                                Continue to add a new product.
+                            </div>
                         </div>
                     </div>
                 </fieldset>

@@ -8,18 +8,16 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Success
-        </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-            The product has been added
-        </h3>
-        <p class="govuk-body">You can now <a href="#item-01" class="govuk-notification-banner__link">create a case for this product</a>.</p>
-    </div>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">The product you were adding already exists within our records.</p>
+    <p class="govuk-body">You can <a href="#item-01" class="govuk-notification-banner__link">create a case for this product</a>.</p>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
@@ -209,7 +207,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Product lists">
 
-                <table id="table-items" class="govuk-table opss-table-items opss-table-items--new">
+                <table id="table-items" class="govuk-table opss-table-items opss-table-items--found">
                     <caption class="govuk-visually-hidden">
                         Products data: The table features three columns and each product is described across corresponding rows within each table body.
                     </caption>
@@ -227,7 +225,7 @@
 
                         <tr class="govuk-table__row">
                             <th headers="item-01" colspan="4" scope="colgroup" class="govuk-table__header">
-                                New product added
+                                This product already existed within our records - you can create a case for it
                             </th>
                         </tr>
 
