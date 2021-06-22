@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Is this case related to coronavirus
+    Does the product have a brand
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,31 +18,49 @@
 
 
       <form action="#" method="post" novalidate>
-        <span class="govuk-caption-l">Create a case for product psd-503</span>
+        <span class="govuk-caption-l">Add a product</span>
 
+{% set yesHtml %}
+{{ govukInput({
+  id: "brand",
+  name: "brand",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Product brand"
+  }
+}) }}
+{% endset -%}
 
 {{ govukRadios({
-  idPrefix: "is-covid",
-  name: "covid-related",
+  idPrefix: "branded",
+  name: "branded",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Is this case related to the coronavirus pandemic?",
+      text: "Does the product have a brand?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
+    text: "For example, a manufacturer’s brand like Dyson, Silentnight or Panasonic."
   },
   items: [
     {
       value: "yes",
-      text: "Yes (or could be)"
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
     },
     {
       value: "no",
       text: "No"
+    },
+    {
+      value: "unbranded",
+      text: "The product is unbranded"
     }
   ]
 }) }}

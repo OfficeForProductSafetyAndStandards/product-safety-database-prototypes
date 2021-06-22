@@ -1,0 +1,115 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    What is the product category and subcategory
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "what-is-the-product-name"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select a product category",
+      href: "#category"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">What is the product category and subcategory?</h1>
+    </div>
+  </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      <form action="#" method="post" novalidate>
+
+        {{ govukSelect({
+        formGroup: {
+            classes: "govuk-!-margin-bottom-5"
+        },
+        id: "category",
+        name: "category",
+        label: {
+            text: "Product category",
+            classes: "govuk-label--s"
+        },
+        hint: {
+            html: "Select a category. <br>(COVID-19 categories <abbr>PPE</abbr> and Hand sanitiser have now been added).",
+            classes: "govuk-!-font-size-16"
+        },
+        errorMessage: {
+            text: "Select a product category"
+        },
+            items: [
+                {
+                value: "val01",
+                text: "Electrical appliances and equipment",
+                selected: true
+                },
+                {
+                value: "val02",
+                text: "Cosmetics"
+                },
+                {
+                value: "val03",
+                text: "Childcare articles and children’s equipment"
+                },
+                {
+                value: "val04",
+                text: "Lorem ipsum etc lorem"
+                },
+                {
+                value: "val05",
+                text: "Ipsum Lorem ipsum etc"
+                },
+                {
+                value: "val06",
+                text: "Lorem lorem ipsoipsum"
+                }
+            ]
+
+
+        }) }}
+
+        {{ govukInput({
+        label: {
+            text: "Product subcategory",
+            classes: "govuk-label--s",
+            isPageHeading: false
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+            text: "Enter a subcategory. For example, Washing machine, Shampoo or Highchair.",
+            classes: "govuk-!-font-size-16"
+        },
+        value: "The user entered value(s) ... ",
+        id: "subcategory",
+        name: "subcategory",
+        spellcheck: false,
+        classes: "govuk-!-width-one-third"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

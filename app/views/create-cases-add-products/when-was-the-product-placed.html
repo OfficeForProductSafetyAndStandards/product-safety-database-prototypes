@@ -1,48 +1,47 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Is this case related to coronavirus
+    When was the product placed
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "products-page"
+        href: "describe-the-product"
     }) }}
 {% endblock %}
 
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
+    <div class="govuk-grid-column-three-quarters">
 
       <form action="#" method="post" novalidate>
-        <span class="govuk-caption-l">Create a case for product psd-503</span>
-
 
 {{ govukRadios({
-  idPrefix: "is-covid",
-  name: "covid-related",
+  idPrefix: "when",
+  name: "when",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Is this case related to the coronavirus pandemic?",
+      html: "Was the product placed on the market before 1&nbsp;January 2021?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
-  },
+
   items: [
     {
       value: "yes",
-      text: "Yes (or could be)"
+      text: "Yes"
     },
     {
       value: "no",
       text: "No"
+    },
+    {
+      value: "unknown",
+      text: "Unable to ascertain"
     }
   ]
 }) }}

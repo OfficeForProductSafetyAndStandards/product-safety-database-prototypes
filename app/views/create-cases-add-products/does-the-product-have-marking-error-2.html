@@ -1,0 +1,107 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Does the product have marking
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "what-is-the-product-category"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select the marking",
+      href: "#mark"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+
+
+{% set yesHtml %}
+    {{ govukCheckboxes({
+    idPrefix: "mark",
+    name: "mark",
+    fieldset: {
+        legend: {
+        text: "Select the marking which applies",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend"
+        }
+    },
+    errorMessage: {
+        text: "Select the marking"
+    },
+    items: [
+        {
+        value: "ukca",
+        html: "<abbr>UKCA</abbr>"
+        },
+        {
+        value: "ukni",
+        html: "<abbr>UKNI</abbr>"
+        },
+        {
+        value: "ce",
+        html: "<abbr>CE</abbr>"
+        }
+    ]
+    }) }}
+{% endset -%}
+
+{{ govukRadios({
+    idPrefix: "marking",
+    name: "marking",
+    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+    fieldset: {
+        legend: {
+            text: "Does the product have any marking?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    hint: {
+        html: "This includes the <abbr>UKCA</abbr>, <abbr>UKNI</abbr> or <abbr>CE</abbr> marking."
+    },
+    items: [
+    {
+        value: "yes",
+        text: "Yes",
+        checked: true,
+        conditional: {
+        html: yesHtml
+        }
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "unknown",
+      text: "Unknown"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

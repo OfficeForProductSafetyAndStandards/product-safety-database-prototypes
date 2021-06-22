@@ -1,13 +1,13 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Is this case related to coronavirus
+    Is this case a counterfeit product
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "products-page"
+        href: "why-is-the-product-of-concern"
     }) }}
 {% endblock %}
 
@@ -18,31 +18,32 @@
 
 
       <form action="#" method="post" novalidate>
-        <span class="govuk-caption-l">Create a case for product psd-503</span>
 
 
 {{ govukRadios({
-  idPrefix: "is-covid",
-  name: "covid-related",
+  idPrefix: "counterfeit",
+  name: "counterfeit",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Is this case related to the coronavirus pandemic?",
+      text: "Is this case related to a counterfeit product?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
-  },
+
   items: [
     {
       value: "yes",
-      text: "Yes (or could be)"
+      text: "Yes"
     },
     {
       value: "no",
       text: "No"
+    },
+    {
+      value: "unsure",
+      text: "Unsure"
     }
   ]
 }) }}

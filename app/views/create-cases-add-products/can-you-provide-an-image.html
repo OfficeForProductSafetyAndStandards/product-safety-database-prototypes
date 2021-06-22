@@ -1,0 +1,57 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Can you provide an image of the product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "when-was-the-product-placed"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+
+{{ govukRadios({
+    idPrefix: "productimage",
+    name: "productimage",
+    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+    fieldset: {
+        legend: {
+            html: "Can you provide an image of the product? <br><span style='color:darkred;'>New design WIP</span>",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    hint: {
+      text: "Select yes to upload an image and add it to the product record."
+    },
+    items: [
+    {
+        value: "yes",
+        text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
