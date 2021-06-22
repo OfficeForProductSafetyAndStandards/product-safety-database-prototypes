@@ -9,17 +9,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-9">
-      <h1 class="govuk-heading-l">
+      <!--h1 class="govuk-heading-l">
         PSD Prototype
-      </h1>{{releaseVersion | log }}
+      </h1-->{{releaseVersion | log }}
 
-      <ol class="govuk-list govuk-list--number">
+      <!--ol class="govuk-list govuk-list--number">
         <li><a class="govuk-link govuk-link--no-visited-state" href="/add-product/counterfeit">Add Product</a></li>
         <li><a class="govuk-link govuk-link--no-visited-state" href="/product-categoriser">Product Categoriser</a></li>
-      </ol>
+      </ol-->
 
 
-      <span class="govuk-caption-m">Design changes from Nov 2020 onwards </span>
+      <!--span class="govuk-caption-m">Design changes from Nov 2020 onwards </span>
       <ol class="govuk-list govuk-list--number">
         <li><a class="govuk-link govuk-link--no-visited-state" href="#"></a> WIP 1</li>
         <li><a class="govuk-link govuk-link--no-visited-state" href="#"></a> WIP 2</li>
@@ -29,7 +29,10 @@
 
       <h1 class="govuk-heading-l">Darren &hellip;</h1>
 
-      <p class="govuk-body">Additional <b>CSS/SASS</b> styles: app/assets/sass/application.scss</p>
+      <p class="govuk-body">Additional <b>CSS/SASS</b> styles: app/assets/sass/application.scss</p-->
+
+      <h1 class="govuk-heading-l">PSD / SCNP prototype demos:</h1>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="margin-bottom: 140px;">
 
       <h2 class="govuk-heading-l govuk-!-margin-top-9"><abbr>PSD</abbr> designs</h2>
 
@@ -43,7 +46,7 @@
       <h3 class="govuk-heading-m">Add product - flow</h3>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="govuk-link govuk-link--no-visited-state" href="/add-product-v4/start.html"><b>Start flow</b>: Add Product v4.1 designs (updating v3)</a>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/add-product-v4/start.html" target="_blank"><b>Start flow v1</b>: Add Product v4.1 designs (updating v3)</a></li>
 
           <!--ul class="govuk-list govuk-list--bullet">
             <li><a class="govuk-link govuk-link--no-visited-state strike" href="/add-product-v4/choose-a-product-list-01.html">Choose a product list 01 (without images)</a></li>
@@ -53,12 +56,29 @@
             <li><a class="govuk-link govuk-link--no-visited-state strike" href="/add-product-v4/select-a-product-old.html">Select a product (old)</a></li>
             <li><a class="govuk-link govuk-link--no-visited-state strike" href="/add-product-v4/select-a-product-links.html">Select a product (as links)</a></li>
           </ul-->
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/start" target="_blank"><b>Start flow v2</b>: Alternative user flow</a>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/cases-page.html" target="_blank">Cases page</a>
+                <ul>
+                  <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/find-the-product.html" target="_blank">Find the product link page</a></li>
+                </ul>
+
+              </li>
+              <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/products-page.html" target="_blank">Products page</a>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/products-page-results.html" target="_blank">Products page - after search</a></li>
+                  <!--li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/products-page-new.html" target="_blank">Products page - new product</a></li-->
+                  <li><a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/products-page-new-product.html" target="_blank">Products page - new product</a></li>
+                </ul>
+              </li>
+            </ul>
 
           </li>
 
       </ul>
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" style="margin-bottom: 100px;">
 
       <h2 class="govuk-heading-l"><abbr>SCNP</abbr>/Cosmetics designs</h2>
 
@@ -77,10 +97,13 @@
       <h3 class="govuk-heading-m">Nanomaterials</h3>
       <p class="govuk-body-s">For these flat HTML files the nav active state is set to the nanomaterials page.</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products.html" target="_blank">Cosmetic products</a>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01.html" target="_blank">Cosmetic products</a>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01.html" target="_blank">Cosmetic products alt 01</a></li>
-            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01-none.html" target="_blank">Cosmetic products alt 01 (0 incomplete)</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01-none.html" target="_blank">Cosmetic products (0 incomplete, 3 errors example)</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01-none-noerrors.html" target="_blank">Cosmetic products (0 incomplete, 0 errors example).</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01-noerrors.html" target="_blank">Cosmetic products (2 incomplete, 0 errors example).</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/cosmetic-products-alt-01-refresh.html" target="_blank">Cosmetic products (with errors and Refresh message). <br>Continued temporary use.</a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state strike govuk-body-s" href="/nanomaterials-1149/cosmetic-products.html" target="_blank">Old - Cosmetic products</a></li>
           </ul>
         </li>
         <li><a class="govuk-link govuk-link--no-visited-state" href="/nanomaterials-1149/nanomaterials.html" target="_blank">Nanomaterials</a>

@@ -11,10 +11,10 @@ if any filters have been set, the results will incorporate the filter settings a
 The span (id, opss-filters-txt) stating "using the current filters," will also be included in the results overview text (and not included when filters are empty).
 
 #####
-If the user selects the “clear filters” link (coded as a form button*) this returns the filters form back to its original state (with radios unselected and collapsed) and does not include the span (id, opss-filters-txt) in the results overview text. The clicking the filters apply button, the page resubmits/refreshs without the filters effecting the results.
+If the user selects the “Reset form” link (coded as a form button*) this returns the filters form back to its original state (with radios unselected and collapsed) and does not include the span (id, opss-filters-txt) in the results overview text. The clicking the filters apply button, the page resubmits/refreshs without the filters effecting the results.
 
-*If you need the "clear filters" button to be a text link instead - replace the button with this HTML:
-<a class="govuk-link govuk-link--no-visited-state" id="dates-clear" href="#">Clear filters</a>
+*If you need the "Reset form" button to be a text link instead - replace the button with this HTML:
+<a class="govuk-link govuk-link--no-visited-state" id="dates-clear" href="#">Reset form</a>
 
 #####
 The standard browser behaviour is for the values of dates, in either of the two date forms to be maintained if clicking between the two forms (opening and closing them by selecting the partent radios). This is correct.

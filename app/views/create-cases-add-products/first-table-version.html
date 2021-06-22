@@ -1,0 +1,509 @@
+{% extends "layout-routes-01.html" %}
+
+{% block pageTitle %}
+    Products page
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Products
+        </h1>
+        <div class="govuk-hint govuk-!-font-size-16">
+            From this page you can also create a case for a product or add a new product if it hasn't already been added to our records. <span id="search-hint">You can search for a product by using keywords from its name and model or by using a barcode.</span>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+            x
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form class="form" action="#" method="post" novalidate>
+            <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2">
+
+                <label class="govuk-label govuk-label--s" for="products-search">
+                    Search for a product
+                </label>
+
+                <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
+                    <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Search</span>
+                    </button>
+                </div>
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-visually-hidden">
+                        Is your search using keywords or a barcode?
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="keywords" name="searchtype" type="radio" value="keywords" checked="checked">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="keywords">
+                                Using keywords
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="barcode" name="searchtype" type="radio" value="barcode">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="barcode">
+                                Using a barcode
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <section class="govuk-grid-column-one-quarter">
+        <form class="form" action="#" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h2 class="govuk-fieldset__heading">
+                            Filter the results by<span class="govuk-visually-hidden">:</span>
+                        </h2>
+                    </legend>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="category">
+                            Product category
+                        </label>
+                        <select class="govuk-select" id="category" name="category">
+                            <option value="">All</option>
+                            <option value="val01">Option 1</option>
+                            <option value="val02">Option 2</option>
+                            <option value="val03" selected>Option 3</option>
+                            <option value="val04">Option 4</option>
+                        </select>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date" data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
+                            <label class="govuk-label govuk-radios__label" for="by-date">
+                                Date
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-1">
+                            <div class="govuk-form-group">
+
+                                <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
+                                    The date notified. <br>
+                                    For example, 14 08 2019.
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
+                            <label class="govuk-label govuk-radios__label" for="by-date-range">
+                                Date range
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-2">
+                            <div class="govuk-form-group">
+
+                                <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
+                                    The dates notified within a date range. For example, from <span class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09 2020</span>.
+                                </div>
+                                <div class="govuk-hint govuk-!-font-size-16">
+                                    From<span class="govuk-visually-hidden">:</span>
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date-from">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-day" name="by-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-month" name="by-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-from-year" name="by-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                </div>
+                                </div>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                                    To<span class="govuk-visually-hidden">:</span>
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date-to">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-month" name="by-date-to-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Apply
+                </button>
+
+                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset" data-module="govuk-button">
+                    Reset form
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Cases list">
+
+                <table class="govuk-table opss-table-items">
+                    <caption class="govuk-visually-hidden">
+                        Cases data: The table features three columns and each product is described across corresponding rows within one table body.
+                    </caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th id="allegation" scope="col" class="govuk-table__header">Allegation</th>
+                            <th id="caseowner" scope="col" class="govuk-table__header">Case owner</th>
+                            <th id="updated" scope="col" class="govuk-table__header">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th id="item-01" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Hair bleach – chemical hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-01 allegation" class="govuk-table__cell">
+                                2021-11
+                            </td>
+                            <td headers="item-01 caseowner" class="govuk-table__cell">
+                                David Willis
+                            </td>
+                            <td headers="item-01 updated" class="govuk-table__cell">
+                                about 6 hours ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-01" id="status-01" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-01 status-01" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th id="item-02" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">And another product title here</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-02 allegation" class="govuk-table__cell">
+                                20-2120
+                            </td>
+                            <td headers="item-02 caseowner" class="govuk-table__cell">
+                                Gavin Williamson
+                            </td>
+                            <td headers="item-02 updated" class="govuk-table__cell">
+                                about 2 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-02" id="status-02" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-02 status-02" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th id="item-03" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Electrical appliances and equipment – electric shock hazard (no product specified)</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-03 allegation" class="govuk-table__cell">
+                                2104-21000
+                            </td>
+                            <td headers="item-03 caseowner" class="govuk-table__cell">
+                                Renfrewshire Council
+                            </td>
+                            <td headers="item-03 updated" class="govuk-table__cell">
+                                21 days ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-03" id="status-03" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-03 status-03" colspan="2" class="govuk-table__cell">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Washing machine – burns hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-04 allegation" class="govuk-table__cell">
+                                2007-37001
+                            </td>
+                            <td headers="item-04 caseowner" class="govuk-table__cell">
+                                Toby Huges
+                            </td>
+                            <td headers="item-04 updated" class="govuk-table__cell">
+                                3 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-04" id="status-04" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-04 status-04" colspan="2" class="govuk-table__cell">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-05" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Large Phone Charger Battery, Portable battery – electric shock hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-05 allegation" class="govuk-table__cell">
+                                1007-27002
+                            </td>
+                            <td headers="item-05 caseowner" class="govuk-table__cell">
+                                Warwickshire Council
+                            </td>
+                            <td headers="item-05 updated" class="govuk-table__cell">
+                                6 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-05" id="status-05" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-05 status-05" colspan="2" class="govuk-table__cell">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-06" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Washer 3000, Washing machine – electric shock hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-06 allegation" class="govuk-table__cell">
+                                45001-70000
+                            </td>
+                            <td headers="item-06 caseowner" class="govuk-table__cell">
+                                Gary Harrison
+                            </td>
+                            <td headers="item-06 updated" class="govuk-table__cell">
+                                4 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-06" id="status-06" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-06 status-06" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Asda bleach, Bleach – chemical hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-07 allegation" class="govuk-table__cell">
+                                25022-21010
+                            </td>
+                            <td headers="item-07 caseowner" class="govuk-table__cell">
+                                Greater London authority
+                            </td>
+                            <td headers="item-07 updated" class="govuk-table__cell">
+                                about 3 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="status-07" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-07 status-07" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">BOSA face masks - fabric fail</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-07 allegation" class="govuk-table__cell">
+                                2221-70003
+                            </td>
+                            <td headers="item-07 caseowner" class="govuk-table__cell">
+                                Flintshire Council
+                            </td>
+                            <td headers="item-07 updated" class="govuk-table__cell">
+                                about 7 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="status-07" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-07 status-07" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td headers="item-07 allegation" class="govuk-table__cell">
+                                21-23341
+                            </td>
+                            <td headers="item-07 caseowner" class="govuk-table__cell">
+                                Ian Weatherby-Blyth
+                            </td>
+                            <td headers="item-07 updated" class="govuk-table__cell">
+                                2 weeks ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="status-07" scope="row" class="govuk-table__header">
+                                <span class="govuk-visually-hidden">Status</span>
+                            </th>
+                            <td headers="item-07 status-07" colspan="2" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Allegation</th>
+                            <th scope="col" class="govuk-table__header">Case owner</th>
+                            <th scope="col" class="govuk-table__header">Updated</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

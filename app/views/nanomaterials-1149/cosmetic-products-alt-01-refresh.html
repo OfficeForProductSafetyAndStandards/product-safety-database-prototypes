@@ -12,6 +12,7 @@
 
 
       <!-- only shown if there are errors - starts. (And only show errors accordian if there are errors) -->
+      <!-- if, in the current functionality we redirect here, we add the second refresh line (url points to self) -->
       <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -22,6 +23,7 @@
           <p class="govuk-notification-banner__heading">
             There are 3 notification errors. <a class="govuk-notification-banner__link" href="#accordion-opss-heading-1">View errors</a>.
           </p>
+          <p class="govuk-body">You may need to <a href="#" class="govuk-notification-banner__link">refresh</a> this page to view the latest errors or incomplete notifications.</p>
         </div>
       </div>
       <!-- only shown if there are errors - ends -->
@@ -145,6 +147,7 @@
     }
   ]
 }) }}
+<!-- *************************************** errors ends ****************************************************** -->
 
 <!-- *************************************** incomplete starts ****************************************************** -->
 
@@ -159,6 +162,7 @@
 
 <!-- *************************************** incomplete ends ****************************************************** -->
 
+<!-- *************************************** notified starts ****************************************************** -->
     <section role="region" aria-label="Notified products">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-top-7">
