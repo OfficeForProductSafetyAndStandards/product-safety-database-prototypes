@@ -1,7 +1,7 @@
 //These are the opss MSA/Cosmetics css styles: I recommend simply copy and pasting this entire code into your local opss-msa scss file.
 //And include - copy over - the imported files in the same directory (listed at the top of this file).
 //Don't edit the local production copy as pasting this into it next/each time will overwrite your changes.
-//We can remove linting frmo this scss file - it won't run if there is a real problem anyway
+//We can remove linting from this scss file - it won't run if there is a real problem
 
 @import "opss/opss-shared";
 @import "opss/opss-search";
@@ -16,10 +16,6 @@ abbr[title]{
   word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
 }
 
-
-
-
-
 .opss-float-right,
 .opss-text-align-right {
     @include govuk-media-query($from: tablet) {
@@ -27,8 +23,6 @@ abbr[title]{
         //float: right;
     }
 }
-
-
 
 .opss-border-top, .opss-border-bottom {
     border-color: $govuk-border-colour;
@@ -50,11 +44,6 @@ abbr[title]{
         cursor: text;
     }
 }
-
-
-
-
-
 
 //*** top nav & std rows starts ***
 .opss-std-row {
@@ -199,13 +188,17 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 
 .opss-list--inline {
     width: 100%;
-    text-align: right;
+
     li {
         display: inline-block;
         margin: 0;
         padding-left: govuk-spacing(1);
     }
 }
+.opss-list--right {
+    text-align: right;
+}
+
 /*tbody th  {-webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }*/
 .govuk-summary-list .govuk-link,
 .opss-table td a {
@@ -353,3 +346,4 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
         display: block !important;
     }
 }
+
