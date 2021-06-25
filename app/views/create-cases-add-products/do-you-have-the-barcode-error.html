@@ -1,13 +1,13 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    Does the product have a brand
+    Do you have the barcode number
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "do-you-have-the-barcode"
+        href: "products-page"
     }) }}
 {% endblock %}
 
@@ -18,8 +18,8 @@
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Enter the product brand",
-      href: "#brand"
+      text: "Select yes if you have the product barcode number",
+      href: "#barcode"
     }
   ]
 }) }}
@@ -27,43 +27,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
       <form action="#" method="post" novalidate>
+        <span class="govuk-caption-l">Add a product</span>
 
 {% set yesHtml %}
 {{ govukInput({
-  id: "brand",
-  name: "brand",
+  id: "barnumber",
+  name: "barnumber",
   spellcheck: false,
   classes: "govuk-!-width-one-third",
   label: {
-    text: "Product brand"
+    html: "Enter the barcode number (<abbr>GTIN</abbr>, <abbr></abbr>EAN</abbr> or <abbr></abbr>UPC</abbr>)"
   },
-  errorMessage: {
-    text: "Enter the product brand"
+  hint: {
+      classes: "govuk-!-font-size-16",
+      text: "It is normally 13 digits, although older products may have a 12 digit number."
   }
 }) }}
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "branded",
-  name: "branded",
+  idPrefix: "barcode",
+  name: "barcode",
   classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
   fieldset: {
     legend: {
-      text: "Does the product have a brand?",
+      text: "Do you have the product barcode number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: "For example, Dyson, Silentnight or Panasonic."
+  errorMessage: {
+    text: "Select yes if you have the product barcode number"
   },
   items: [
     {
       value: "yes",
       text: "Yes",
-      checked: true,
       conditional: {
         html: yesHtml
       }
@@ -71,10 +71,6 @@
     {
       value: "no",
       text: "No"
-    },
-    {
-      value: "unbranded",
-      text: "The product is unbranded"
     }
   ]
 }) }}
