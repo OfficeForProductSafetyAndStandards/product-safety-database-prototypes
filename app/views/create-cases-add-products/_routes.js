@@ -108,6 +108,78 @@ router.post('/is-case-counterfeit-error', function (req, res) {
     res.redirect('/create-cases-add-products/how-many-units-are-affected-std' )
   }
 })
+//************* start do-you-have-the-barcode
+router.post('/do-you-have-the-barcode', function (req, res) {
+  var barcode = req.session.data['barcode']
+  var barnumber = req.session.data['barnumber']
+
+  if (barcode == null) {
+    return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error')
+  } else if ((barcode == 'yes') && (barnumber == '')) {
+    return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error-2')
+  } else if ((barcode == 'yes') && (barnumber == '6666667777777')) {
+    return res.redirect('/create-cases-add-products/might-already-exist-bc')
+  } else if ((barcode == 'yes') && (barnumber != '')) {
+    return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  } else if (barcode == 'no') {
+    return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  }
+})
+router.post('/do-you-have-the-barcode-error', function (req, res) {
+  var barcode1 = req.session.data['barcode']
+  var barnumber1 = req.session.data['barnumber']
+
+  if (barcode1 == null) {
+    return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error')
+  } else if ((barcode1 == 'yes') && (barnumber1 == '6666667777777')) {
+    return res.redirect('/create-cases-add-products/might-already-exist-bc')
+  } else if ((barcode1 == 'yes') && (barnumber1 == '')) {
+    res.redirect('/create-cases-add-products/do-you-have-the-barcode-error-2')
+  } else if ((barcode1 == 'yes') && (barnumber1 != '')) {
+    res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  } else if (barcode1 == 'no') {
+    return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  }
+})
+router.post('/do-you-have-the-barcode-error-2', function (req, res) {
+  var barcode2 = req.session.data['barcode']
+  var barnumber2 = req.session.data['barnumber']
+
+  if (barcode2 == null) {
+    return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error')
+  } else if ((barcode2 == 'yes') && (barnumber2 == '6666667777777')) {
+    return res.redirect('/create-cases-add-products/might-already-exist-bc')
+  } else if ((barcode2 == 'yes') && (barnumber2 == '')) {
+    res.redirect('/create-cases-add-products/do-you-have-the-barcode-error-2')
+  } else if ((barcode2 == 'yes') && (barnumber2 != '')) {
+    res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  } else if (barcode2 == 'no') {
+    return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  }
+})
+// *********************** start might-already-exist-bc
+router.post('/might-already-exist-bc', function (req, res) {
+  var isit = req.session.data['isit']
+
+  if (isit == null) {
+    res.redirect('/create-cases-add-products/might-already-exist-bc-error')
+  } else if (isit == 'yes') {
+    res.redirect('/create-cases-add-products/products-page-we-found-it')
+  } else if (isit == 'no') {
+    res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  }
+})
+router.post('/might-already-exist-bc-error', function (req, res) {
+  var isit2 = req.session.data['isit']
+
+  if (isit2 == null) {
+    res.redirect('/create-cases-add-products/might-already-exist-bc-error')
+  } else if (isit2 == 'yes') {
+    res.redirect('/create-cases-add-products/products-page-we-found-it')
+  } else if (isit2 == 'no') {
+    res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
+  }
+})
 //************* start does-the-product-have-a-brand
 router.post('/does-the-product-have-a-brand', function (req, res) {
   var branded = req.session.data['branded']

@@ -1,29 +1,18 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    Is this your product
+    Is this your product?
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "does-the-product-have-marking"
+        href: "products-page"
     }) }}
 {% endblock %}
 
 
 {% block content %}
-
-{{ govukErrorSummary({
-  titleText: "There is a problem",
-  errorList: [
-    {
-      text: "Select yes if this is your product",
-      href: "#isit"
-    }
-  ]
-}) }}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -59,7 +48,7 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
-                            <dd class="govuk-summary-list__value">12345678910</dd>
+                            <dd class="govuk-summary-list__value">666-6667-77777-7</dd>
                         </div>
                     </dl>
 
@@ -91,25 +80,33 @@
                     <span class="govuk-caption-m">The product you are adding</span>
 
                     <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
-                        Sony Hair Dryer 3000
+                        <span class="govuk-visually-hidden">No product name provided yet</span>&nbsp;
                     </h2>
 
                     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Brand </dt>
-                            <dd class="govuk-summary-list__value">Sony</dd>
+                            <dd class="govuk-summary-list__value">
+                                <span class="govuk-visually-hidden">No product name provided yet</span>&nbsp;
+                            </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Category </dt>
-                            <dd class="govuk-summary-list__value">Hair dryer</dd>
+                            <dd class="govuk-summary-list__value">
+                                <span class="govuk-visually-hidden">No product name provided yet</span>&nbsp;
+                            </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Subcategory </dt>
-                            <dd class="govuk-summary-list__value">Electricals</dd>
+                            <dd class="govuk-summary-list__value">
+                                <span class="govuk-visually-hidden">No product name provided yet</span>&nbsp;
+                            </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
-                            <dd class="govuk-summary-list__value"> <span class="govuk-visually-hidden">Not available</span> </dd>
+                            <dd class="govuk-summary-list__value">
+                                6666667777777
+                            </dd>
                         </div>
                     </dl>
 

@@ -88,7 +88,9 @@ router.post('/do-you-have-the-barcode', function (req, res) {
   var barcode = req.session.data['barcode']
   var barnumber = req.session.data['barnumber']
 
-  if ((barcode == 'yes') && (barnumber == '')) {
+  if (barcode == '') {
+    return res.redirect('/add-product-v4/do-you-have-the-barcode-error')
+  } else if ((barcode == 'yes') && (barnumber == '')) {
     return res.redirect('/add-product-v4/do-you-have-the-barcode-error-2')
   } else if ((barcode == 'yes') && (barnumber != '')) {
     return res.redirect('/add-product-v4/select-a-product-barcode')
