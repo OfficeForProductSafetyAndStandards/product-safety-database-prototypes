@@ -110,18 +110,18 @@ router.post('/is-case-counterfeit-error', function (req, res) {
 })
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
-  var barcode = req.session.data['barcode']
+  var barcodexxx = req.session.data['barcode']
   var barnumber = req.session.data['barnumber']
 
-  if (barcode == null) {
+  if (barcodexxx == null) {
     return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error')
-  } else if ((barcode == 'yes') && (barnumber == '')) {
+  } else if ((barcodexxx == 'yes') && (barnumber == '')) {
     return res.redirect('/create-cases-add-products/do-you-have-the-barcode-error-2')
-  } else if ((barcode == 'yes') && (barnumber == '6666667777777')) {
+  } else if ((barcodexxx == 'yes') && (barnumber == '6666667777777')) {
     return res.redirect('/create-cases-add-products/might-already-exist-bc')
-  } else if ((barcode == 'yes') && (barnumber != '')) {
+  } else if ((barcodexxx == 'yes') && (barnumber != '')) {
     return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
-  } else if (barcode == 'no') {
+  } else if (barcodexxx == 'no') {
     return res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
   }
 })
