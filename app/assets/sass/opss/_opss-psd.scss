@@ -58,7 +58,7 @@ main.govuk-main-wrapper {
     }
 
     &.opss-borders--padding-l {
-        @include govuk-media-query($from: desktop) {
+        @include govuk-media-query($from: tablet) {
             padding-left: govuk-spacing(6);
         }
     }
@@ -140,10 +140,6 @@ main.govuk-main-wrapper {
         }
     }
 }
-.opss-details-img {
-    max-height: 300px;
-    max-width: 100%;
-}
 
 ul.opss-radio-list {
     margin-bottom: 0;
@@ -220,6 +216,12 @@ ul.opss-radio-list {
     tfoot th {
         @include govuk-font($size: 16);
         font-weight: 700;
+    }
+    thead th {
+        vertical-align: bottom;
+    }
+    tfoot th {
+        vertical-align: top;
     }
     tbody td {
         @include govuk-font($size: 16);
@@ -298,18 +300,31 @@ ul.opss-radio-list {
             margin-bottom: 0;
         }
     }
+
+    &.opss-tag--risk1 {
+        border-color: govuk-colour("red");
+        color: govuk-colour("red");
+    }
+    &.opss-tag--risk2 {
+        border-color: govuk-colour("dark-grey");
+        color: govuk-colour("dark-grey");
+    }
+    &.opss-tag--covid {
+        background-color: govuk-colour("pink");
+        border-color: govuk-colour("pink");
+        color: govuk-colour("white");
+        text-transform: none;
+    }
+    &.opss-tag--std {
+        @include opss-font-size($s: 14px, $l: 1.3);
+        text-transform: none;
+        font-weight: normal;
+        color: govuk-colour("dark-grey");
+        border: 1px solid govuk-colour("mid-grey");
+        float: left;
+        margin-left: 0;
+        min-width: 64px;
+        text-align: center;
+    }
 }
-.opss-tag--risk1 {
-    border-color: govuk-colour("red");
-    color: govuk-colour("red");
-}
-.opss-tag--risk2 {
-    border-color: govuk-colour("dark-grey");
-    color: govuk-colour("dark-grey");
-}
-.opss-tag--covid {
-    background-color: govuk-colour("pink");
-    border-color: govuk-colour("pink");
-    color: govuk-colour("white");
-    text-transform: none;
-}
+

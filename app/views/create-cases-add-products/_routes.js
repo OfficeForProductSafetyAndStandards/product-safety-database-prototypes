@@ -399,45 +399,66 @@ router.post('/can-you-provide-an-image-error', function (req, res) {
 })
 //************ start upload-a-product-image
 router.post('/upload-a-product-image', function (req, res) {
-  var imagetitle = req.session.data['imagetitle']
-  var imagedesc = req.session.data['imagedesc']
-  var another = req.session.data['another']
-
-  if ((imagetitle == '') || (imagedesc == '') || (another == null)) {
+  if ((req.session.data['imagetitle'] == '') || (req.session.data['imagedesc'] == '')) {
     res.redirect('/create-cases-add-products/upload-a-product-image-error')
-  } else if (another == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
-  } else if (another == 'yes') {
+  } else {
     res.redirect('/create-cases-add-products/upload-a-product-image-success')
   }
 })
 router.post('/upload-a-product-image-error', function (req, res) {
-  var imagetitle2 = req.session.data['imagetitle']
-  var imagedesc2 = req.session.data['imagedesc']
-  var another2 = req.session.data['another']
-
-  if ((imagetitle2 == '') || (imagedesc2 == '') || (another2 == null)){
+  if ((req.session.data['imagetitle'] == '') || (req.session.data['imagedesc'] == '')){
     res.redirect('/create-cases-add-products/upload-a-product-image-error')
-  } else if (another2 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
-  } else if (another2 == 'yes') {
+  } else {
     res.redirect('/create-cases-add-products/upload-a-product-image-success')
   }
 })
 //************ start upload-a-product-image-success
 router.post('/upload-a-product-image-success', function (req, res) {
-  var imagetitle2 = req.session.data['imagetitle']
-  var imagedesc2 = req.session.data['imagedesc']
-  var another2 = req.session.data['another']
+  const valanother = req.session.data['another']
 
-  if ((imagetitle2 == '') || (imagedesc2 == '') || (another2 == null)){
-    res.redirect('/create-cases-add-products/upload-a-product-image-error')
-  } else if (another2 == 'no') {
+  if (valanother == null) {
+    res.redirect('/create-cases-add-products/upload-a-product-image-success-error')
+  } else if (valanother == 'yes') {
+    res.redirect('/create-cases-add-products/upload-a-product-image')
+  } else if (valanother == 'no') {
     res.redirect('/create-cases-add-products/products-page-new-product')
-  } else if (another2 == 'yes') {
-    res.redirect('/create-cases-add-products/upload-a-product-image-success')
   }
 })
+router.post('/upload-a-product-image-success-error', function (req, res) {
+  const another4 = req.session.data['another']
+
+  if (another4 == null) {
+    res.redirect('/create-cases-add-products/upload-a-product-image-success-error')
+  } else if (another4 == 'yes') {
+    res.redirect('/create-cases-add-products/upload-a-product-image')
+  } else if (another4 == 'no') {
+    res.redirect('/create-cases-add-products/products-page-new-product')
+  }
+})
+//************ start remove-a-product-image-success
+router.post('/remove-a-product-image-success', function (req, res) {
+  const valanother2 = req.session.data['another']
+
+  if (valanother2 == null) {
+    res.redirect('/create-cases-add-products/remove-a-product-image-success-error')
+  } else if (valanother2 == 'yes') {
+    res.redirect('/create-cases-add-products/upload-a-product-image')
+  } else if (valanother2 == 'no') {
+    res.redirect('/create-cases-add-products/products-page-new-product')
+  }
+})
+router.post('/remove-a-product-image-success-error', function (req, res) {
+  const another5 = req.session.data['another']
+
+  if (another5 == null) {
+    res.redirect('/create-cases-add-products/remove-a-product-image-success-error')
+  } else if (another5 == 'yes') {
+    res.redirect('/create-cases-add-products/upload-a-product-image')
+  } else if (another5 == 'no') {
+    res.redirect('/create-cases-add-products/products-page-new-product')
+  }
+})
+
 
 
 
