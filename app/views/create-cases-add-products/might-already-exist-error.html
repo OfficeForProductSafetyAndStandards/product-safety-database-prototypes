@@ -117,12 +117,16 @@
         </section>
 
         <form class="form" action="#" method="post" novalidate>
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="isit-hint">
+            <div class="govuk-form-group govuk-form-group--error">
+                <fieldset class="govuk-fieldset" aria-describedby="isit-hint isit-error">
 
                     <legend class="govuk-visually-hidden">
                             Do you want to stop adding a new product and go to the products page?
                     </legend>
+
+                    <span id="isit-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Select yes if this is your product
+                    </span>
 
                     <div class="govuk-radios govuk-!-padding-bottom-1" data-module="govuk-radios">
                         <div class="govuk-radios__item">
