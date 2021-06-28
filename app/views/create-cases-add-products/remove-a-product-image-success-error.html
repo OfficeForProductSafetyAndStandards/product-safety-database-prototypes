@@ -1,7 +1,7 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    The image was uploaded successfully
+    Error - The image was removed successfully
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,17 +14,14 @@
 
 {% block content %}
 
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    The image was uploaded
-  </p>
-
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you want to add another image?",
+      href: "#another"
+    }
+  ]
 }) }}
 
 <div class="govuk-grid-row opss-equal-height-container">
@@ -67,25 +64,12 @@
     <section class="govuk-grid-column-one-third opss-equal-height__col">
         <div class="govuk-!-margin-left-4 opss-borders opss-borders--left opss-borders--padding-l opss-borders--height-100">
 
+        <!-- show this ... -->
+            <!--p class="govuk-hint govuk-!-font-size-16">There are currently no images.</p-->
+
+        <!-- or ... -->
             <h2 class="govuk-visually-hidden">The images you have added</h2>
             <dl class="govuk-summary-list govuk-!-font-size-14 opss-summary-list-aside">
-                <dt>
-                    <span class="govuk-visually-hidden">Title: </span>Sony hair dryer 3000
-                </dt>
-                <dd>
-                    <span class="govuk-visually-hidden">File name: </span>sony-hair-dryer-3000.jpg
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">Alternative image text: </span>A sony hair dryer 3000
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">The image: </span><img src="../public/images/hair-dryer.jpg" alt="Sony hair dryer 3000">
-                </dd>
-                <dd>
-                    <a href="/create-cases-add-products/remove-a-product-image-success" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14">
-                        Remove<span class="govuk-visually-hidden">image Sony hair dryer 3000</span>
-                    </a>
-                </dd>
 
                 <dt>
                     <span class="govuk-visually-hidden">Title: </span>Sony hair dryer 3000 with plug

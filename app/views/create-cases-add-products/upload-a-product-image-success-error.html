@@ -1,7 +1,7 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    The image was uploaded successfully
+    Error - The image was uploaded successfully
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,17 +14,14 @@
 
 {% block content %}
 
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    The image was uploaded
-  </p>
-
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you want to add another image",
+      href: "#another"
+    }
+  ]
 }) }}
 
 <div class="govuk-grid-row opss-equal-height-container">
@@ -44,7 +41,9 @@
       classes: "govuk-fieldset__legend--l"
     }
   },
-
+  errorMessage: {
+    text: "Select yes if you want to add another image"
+  },
   items: [
     {
       value: "yes",
@@ -67,6 +66,10 @@
     <section class="govuk-grid-column-one-third opss-equal-height__col">
         <div class="govuk-!-margin-left-4 opss-borders opss-borders--left opss-borders--padding-l opss-borders--height-100">
 
+        <!-- show this ... -->
+            <!--p class="govuk-hint govuk-!-font-size-16">There are currently no images.</p-->
+
+        <!-- or ... -->
             <h2 class="govuk-visually-hidden">The images you have added</h2>
             <dl class="govuk-summary-list govuk-!-font-size-14 opss-summary-list-aside">
                 <dt>
