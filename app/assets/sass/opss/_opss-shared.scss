@@ -33,7 +33,9 @@ main.govuk-main-wrapper {
 .govuk-heading-m {
     @include word-wrap;
 }
-
+.opss-no-wrap {
+  white-space: nowrap;
+}
 .opss-nojs-hide {
     display: none;
 }
@@ -43,6 +45,13 @@ body.js-enabled .opss-nojs-hide {
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
+    }
+}
+.opss-br-desktop {
+    display: none;
+
+    @include govuk-media-query($from: desktop) {
+        display: block;
     }
 }
 

@@ -11,11 +11,14 @@ abbr[title]{
     text-decoration: none;
 }
 
-.opss-float-right,
+.govuk-form-group.opss-float-right {//used for sort selects
+    @include govuk-media-query($from: tablet) {
+       text-align: right; display: inline-block; width: 100%;//yes this is text align
+    }
+}
 .opss-text-align-right {
     @include govuk-media-query($from: tablet) {
-        text-align: right; display: inline-block; width: 100%;
-        //float: right;
+        float: right;//yes this is float
     }
 }
 
@@ -236,11 +239,6 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     height: 1px;
     overflow: hidden;
 }
-
-.opss-no-wrap {
-  white-space: nowrap;
-}
-
 
 
 .opss-float-left {
