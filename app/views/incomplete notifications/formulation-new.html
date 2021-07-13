@@ -1,0 +1,51 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Exact concentrations required
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <section class="govuk-grid-column-full">
+
+        <form class="form" action="#" method="post" novalidate>
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="products-search">
+                        Search cosmetic products
+                    </label>
+                </h1>
+                <div id="search-hint" class="govuk-hint">
+                    Use one or more keywords to search for product notifications.
+                </div>
+
+                <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
+                    <button class="govuk-button" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Search</span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </section>
+</div>
+
+<div class="govuk-grid-row">
+
+
+</div>
+
+
+{% endblock %}
