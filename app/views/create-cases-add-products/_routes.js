@@ -164,7 +164,7 @@ router.post('/might-already-exist-bc', function (req, res) {
   if (isit == null) {
     res.redirect('/create-cases-add-products/might-already-exist-bc-error')
   } else if (isit == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
   }
@@ -175,7 +175,7 @@ router.post('/might-already-exist-bc-error', function (req, res) {
   if (isit2 == null) {
     res.redirect('/create-cases-add-products/might-already-exist-bc-error')
   } else if (isit2 == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit2 == 'no') {
     res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
   }
@@ -318,7 +318,7 @@ router.post('/might-already-exist', function (req, res) {
   if (isit == null) {
     res.redirect('/create-cases-add-products/might-already-exist-error')
   } else if (isit == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/create-cases-add-products/describe-the-product')
   }
@@ -329,7 +329,7 @@ router.post('/might-already-exist-error', function (req, res) {
   if (isit2 == null) {
     res.redirect('/create-cases-add-products/might-already-exist-error')
   } else if (isit2 == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit2 == 'no') {
     res.redirect('/create-cases-add-products/describe-the-product')
   }
@@ -415,6 +415,29 @@ router.post('/success-product-added-error', function (req, res) {
   if (createcase2 == null) {
     res.redirect('/create-cases-add-products/success-product-added-error')
   } else if (createcase2 == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  }else{
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
+  }
+})
+//****************** it-was-your-product
+router.post('/it-was-your-product', function (req, res) {
+  const createcaseT = req.session.data['createcase']
+
+  if (createcaseT == null) {
+    res.redirect('/create-cases-add-products/it-was-your-product-error')
+  } else if (createcaseT == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  } else {
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
+  }
+})
+router.post('/it-was-your-product-error', function (req, res) {
+  const createcase2T = req.session.data['createcase']
+
+  if (createcase2T == null) {
+    res.redirect('/create-cases-add-products/it-was-your-product-error')
+  } else if (createcase2T == 'no') {
     res.redirect('/create-cases-add-products/products-page')
   }else{
     res.redirect('/create-cases-add-products/is-this-case-related-to-covid')

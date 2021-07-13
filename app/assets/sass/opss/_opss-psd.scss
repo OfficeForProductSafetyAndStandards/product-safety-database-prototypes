@@ -267,7 +267,7 @@ ul.opss-radio-list {
     tbody.opss-bg th, tbody.opss-bg td {
         background-color: govuk-colour("light-grey");
     }
-
+    /*
     &.opss-table-items--new,
     &.opss-table-items--found {
         tbody:first-of-type {
@@ -289,7 +289,7 @@ ul.opss-radio-list {
     }
     &.opss-table-items--new tbody:first-of-type tr:first-child th {color: $govuk-success-colour; }
     &.opss-table-items--found tbody:first-of-type tr:first-child th {color: govuk-colour("dark-blue"); }
-
+    */
 }
 
 .opss-tag {
