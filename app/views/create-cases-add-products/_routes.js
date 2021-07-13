@@ -493,7 +493,29 @@ router.post('/remove-a-product-image-success-error', function (req, res) {
     res.redirect('/create-cases-add-products/success-product-added')
   }
 })
+//****************** success-case-created
+router.post('/success-case-created', function (req, res) {
+  const casecreated = req.session.data['casecreated']
 
+  if (casecreated == null) {
+    res.redirect('/create-cases-add-products/success-case-created-error')
+  } else if (casecreated == 'no') {
+    res.redirect('/create-cases-add-products/cases-page')
+  } else {
+    res.redirect('/create-cases-add-products/add-product-to-case')
+  }
+})
+router.post('/success-case-created-error', function (req, res) {
+  const casecreated2 = req.session.data['casecreated']
+
+  if (casecreated2 == null) {
+    res.redirect('/create-cases-add-products/success-case-created-error')
+  } else if (casecreated2 == 'no') {
+    res.redirect('/create-cases-add-products/cases-page')
+  }else{
+    res.redirect('/create-cases-add-products/add-product-to-case')
+  }
+})
 
 
 
