@@ -1,0 +1,108 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Drafts page
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "draft-1_pt-1"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Add a cosmetic product
+        </h1>
+
+        {% include "drafts-gui/opss-add-cosmetics-hint_inc.html" %}
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body govuk-!-margin-top-9 govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: You have completed 1 of 4 sections.
+        </p>
+
+        <ol class="app-task-list">
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Create the product
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-1.html" class="govuk-link--no-visited-state" aria-describedby="product-status">
+                                Create the product
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="product-status">Completed</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Product details
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-2.html" class="govuk-link--no-visited-state" aria-describedby="product-details-status">
+                                Product details
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Not started</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Category and formation
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Category and formation
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">4. </span> Accept and submit
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Accept and submit
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

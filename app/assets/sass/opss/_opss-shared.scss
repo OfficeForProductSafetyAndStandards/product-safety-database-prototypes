@@ -28,6 +28,7 @@ main.govuk-main-wrapper {
     @include govuk-clearfix;
 }
 
+h1, h2, h3, h4,
 .govuk-heading-xl,
 .govuk-heading-l,
 .govuk-heading-m {
@@ -69,6 +70,10 @@ body.js-enabled .opss-nojs-hide {
 
     position: relative;
     top: 2px;
+}
+
+.opss-secondary-text {
+    color: $govuk-secondary-text-colour;
 }
 
 .opss-details--sm {

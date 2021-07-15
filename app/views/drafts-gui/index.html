@@ -1,0 +1,41 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Drafts page
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Add a cosmetic product - drafts pages
+        </h1>
+
+        <!--div class="govuk-hint">
+            <span id="search-hint"></span>
+        </div-->
+
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-8">
+            <li><a href="draft-1_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">
+                Draft pg 1</a>: shows the 'Add Cosmetic Product' drafting page
+            </li>
+
+        </ul>
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}
