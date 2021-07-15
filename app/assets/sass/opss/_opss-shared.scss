@@ -31,7 +31,9 @@ main.govuk-main-wrapper {
 h1, h2, h3, h4,
 .govuk-heading-xl,
 .govuk-heading-l,
-.govuk-heading-m {
+.govuk-heading-m,
+.app-task-list li,
+.app-task-list li a {
     @include word-wrap;
 }
 .opss-no-wrap {

@@ -1,13 +1,13 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Drafts page
+    Drafts page template
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "draft-1_pt-1"
+        href: "index"
     }) }}
 {% endblock %}
 
@@ -32,7 +32,7 @@
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
+                            <a href="draft-1_step-1.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
                                 Create the product
                             </a>
                         </span>
@@ -41,9 +41,52 @@
                     </li>
                 </ul>
             </li>
+            <li class="opss-task-sub">
+                <h3 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Nanomaterials
+                </h3>
+
+                <ul class="app-task-list__items opss-task-sub__list">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
+                                Consectetur adipiscing
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="nano-01-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-02-status">
+                                Phasellus
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="nano-02-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
+                                Pellentesque
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="nano-03-status">Not started</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-1_step-2.html" class="govuk-link govuk-link--no-visited-state">
+                                Add <span class="govuk-visually-hidden">another nanomaterial</span>
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+
+            </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">2. </span> Product details
+                    <span class="app-task-list__section-number">3. </span> Product details
                 </h2>
 
                 <ul class="app-task-list__items">

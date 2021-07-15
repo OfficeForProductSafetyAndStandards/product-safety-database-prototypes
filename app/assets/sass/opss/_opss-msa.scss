@@ -346,3 +346,43 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     }
 }
 
+
+li.opss-task-sub {
+
+    @include govuk-media-query($from: tablet) {
+        /*h3 {@include opss-font-size($s: 19px, $l: 1.25); }*/
+        li span {
+            @include opss-font-size($s: 16px, $l: 1.5);//1.0
+        }
+        /*li b {@include opss-font-size($s: 12px, $l: 0.9); }*/
+
+        ul.opss-task-sub__list {
+            @include govuk-responsive-margin(6, "left");
+            margin-bottom: govuk-spacing(0);
+
+            li {
+                border-top: none;
+                border-bottom-color: rgba(76, 115, 141, 0.3);//#b1b4b6
+                padding-top: 7px;
+                padding-bottom: 6px;
+
+                span {
+                    max-width: 75%;
+                }
+            }
+
+            li:last-child {
+                border-bottom: none;
+
+                span {
+                    width: 100%;
+                    max-width: none;
+                    display: inline-block;
+                    text-align: right;
+                }
+            }
+        }
+
+    }
+}
+
