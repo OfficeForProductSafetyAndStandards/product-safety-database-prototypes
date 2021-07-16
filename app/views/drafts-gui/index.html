@@ -16,15 +16,15 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            Add a cosmetic product - drafts pages
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-8">
+            Add a cosmetic product - Draft
         </h1>
 
         <!--div class="govuk-hint">
             <span id="search-hint"></span>
         </div-->
 
-        <p class="govuk-body-m">Each of the following drafts versions provide click-through examples for adding different kinds of cosmetic products.</p>
+        <p class="govuk-body-m">Each of the following user-flow versions provide click-through examples for adding different kinds of cosmetic products.</p>
 
         <p class="govuk-body-m">Clicking one of these links is the equivalent to clicking the current 'Add cosmetic products' button.</p>
 
@@ -32,11 +32,15 @@
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-8">
             <li>Add a simple product (with no multipule items or nanomaterials).<br><a href="draft-1_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Version 1</a></li>
 
+            <li>Add a product (with 3 nanomaterials).<br><a href="draft-2_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Version 2</a></li>
+
         </ul>
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-        <p class="govuk-body-m">A key technical consideration is the ability for the user to click any task already completed and redo it. On completion this will potentially update and change the status of the tasks list. If the user re-runs the first task and adds nanomaterials or a multi-item kit, this will update the task list – requiring the draft page to check for these settings by default whenever it is launched, and if the tasks for any items/nanomaterials are not yet completed the status of the following tasks are ‘Cannot start yet’. (Users are warned when rerunning tasks – that items/nanomaterials will be deleted etc, if changing their status none).</p>
+        <p class="govuk-body-m">A key technical consideration is the ability for the user to click any task already completed and redo it. On completion this will potentially update and change the status of the tasks list. If the user re-runs the first task and adds nanomaterials or a multi-item kit, this will update the task list – requiring the draft page to check for these settings by default whenever it is launched, and if the tasks for any items/nanomaterials are not yet completed the status of the following tasks are ‘Cannot start yet’. (Users are warned when rerunning tasks – that items/nanomaterials will be deleted etc, if changing their status to no/none).</p>
+
+        <p class="govuk-body-m">For development ease, we keep tasks linear, so that they can't be started before the previous <b>section</b> is completed. (A future featue could be, for single products, to complete section 3 before 2, and 4 before completing any nanomaterials, etc).</p>
 
         <p class="govuk-body-s"><i>The back link (at the top of the page) in the real service will return the user to the Cosmetic Products page.</i></p>
 

@@ -348,17 +348,15 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 
 
 li.opss-task-sub {
-
     @include govuk-media-query($from: tablet) {
         /*h3 {@include opss-font-size($s: 19px, $l: 1.25); }*/
+        /*li b {@include opss-font-size($s: 12px, $l: 0.9); }*/
         li span {
             @include opss-font-size($s: 16px, $l: 1.5);//1.0
         }
-        /*li b {@include opss-font-size($s: 12px, $l: 0.9); }*/
 
         ul.opss-task-sub__list {
             @include govuk-responsive-margin(6, "left");
-            margin-bottom: govuk-spacing(0);
 
             li {
                 border-top: none;
@@ -370,19 +368,34 @@ li.opss-task-sub {
                     max-width: 75%;
                 }
             }
+        }
+    }
 
-            li:last-child {
-                border-bottom: none;
+    ul.opss-task-sub__list {
+        margin-bottom: govuk-spacing(0);
 
-                span {
-                    width: 100%;
-                    max-width: none;
-                    display: inline-block;
-                    text-align: right;
-                }
+        li:last-child {
+            border-bottom: none;
+            /*span {width: 100%; max-width: none; display: inline-block; text-align: right; }*/
+
+            & > span {
+                width: auto;
+                max-width: none;
+                display: block;
+                float: right;
             }
         }
+    }
 
+    .opss-task-sub__pipe {
+        display: inline-block;
+        margin-left: govuk-spacing(1);
+        margin-right: govuk-spacing(1);
+        color: rgba(76, 115, 141, 0.5);//#b1b4b6
     }
 }
+.app-task-list__section-number {
+    display: inline-block;//bug fix for mobile
+}
+
 
