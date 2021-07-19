@@ -372,18 +372,18 @@ li.opss-task-sub {
     }
 
     ul.opss-task-sub__list {
-        margin-bottom: govuk-spacing(0);
+        margin-bottom: govuk-spacing(7);
+    }
 
-        li:last-child {
-            border-bottom: none;
-            /*span {width: 100%; max-width: none; display: inline-block; text-align: right; }*/
+    li.opss-task-sub__last {
+        border-bottom: none;
+        margin-bottom: - govuk-spacing(5) !important;
 
-            & > span {
-                width: auto;
-                max-width: none;
-                display: block;
-                float: right;
-            }
+        & > span {
+            width: auto;
+            max-width: none;
+            display: block;
+            float: right;
         }
     }
 
@@ -394,8 +394,9 @@ li.opss-task-sub {
         color: rgba(76, 115, 141, 0.5);//#b1b4b6
     }
 }
-.app-task-list__section-number {
-    display: inline-block;//bug fix for mobile
+.app-task-list__section-number {//bug fix for mobile
+    display: inline-block;
+    min-width: govuk-spacing(5);
 }
 
 

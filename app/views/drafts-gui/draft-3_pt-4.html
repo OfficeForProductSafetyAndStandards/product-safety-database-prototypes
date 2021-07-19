@@ -7,9 +7,10 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "draft-2_pt-1"
+        href: "draft-3_pt-3"
     }) }}
 {% endblock %}
+
 
 {% block content %}
 
@@ -19,7 +20,7 @@
     <section class="govuk-grid-column-three-quarters" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-top-9 govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 2 of 5 sections have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 2 of 6 sections have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -48,7 +49,7 @@
                 <ul class="app-task-list__items opss-task-sub__list">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-2_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
+                            <a href="draft-3_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
                                 Consectetur adipiscing
                             </a>
                         </span>
@@ -57,7 +58,7 @@
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-2_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-02-status">
+                            <a href="draft-3_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-02-status">
                                 Phasellus
                             </a>
                         </span>
@@ -66,12 +67,21 @@
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-2_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
+                            <a href="draft-3_step-2.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
                                 Pellentesque
                             </a>
                         </span>
 
                         <b class="govuk-tag app-task-list__tag" id="nano-03-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-3_step-3.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-04-status">
+                                Proin rutrum odio
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="nano-04-status">Completed</b>
                     </li>
                     <li class="app-task-list__item opss-task-sub__last">
                         <span class="app-task-list__task-name">
@@ -89,24 +99,54 @@
             </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">3. </span> Product details
+                    <span class="app-task-list__section-number">3. </span> Multi-item kit
                 </h2>
 
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-2_step-3.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-details-status">
-                                Product details
+                            <a href="draft-3_step-4.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="multi-item-status">
+                                Multi-item kit
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Not started</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="multi-item-status">Not started</b>
                     </li>
                 </ul>
             </li>
+            <li class="opss-task-sub">
+                <h3 class="app-task-list__section">
+                    <span class="app-task-list__section-number">4. </span> Multi-items
+                </h3>
+
+                <ul class="app-task-list__items opss-task-sub__list">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Multi-item 1
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-01-status">Cannot start yet</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Multi-item 2
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-02-status">Cannot start yet</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Multi-item 3
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-03-status">Cannot start yet</b>
+                    </li>
+                </ul>
+
+            </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Category and formation
+                    <span class="app-task-list__section-number">5. </span> Category and formation
                 </h2>
 
                 <ul class="app-task-list__items">
@@ -121,7 +161,7 @@
             </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">5. </span> Accept and submit
+                    <span class="app-task-list__section-number">6. </span> Accept and submit
                 </h2>
 
                 <ul class="app-task-list__items">

@@ -3,15 +3,14 @@
         {% include "drafts-gui/inc_opss-link-pg-css.html" %}
     </head>
     <body>
-
+        <p>The <u>Remove</u> link only appears if the Nanomaterials section appears (and there are nanomaterials in the draft).</p>
         <p>The user is served a page/form showing all the nanomaterials (which are part of this draft) with checkboxes: </p>
         <p>A Help/Hint text confirms that if all nanomaterials are removed then the user is required to complete task 1 again to add nanomaterials.</p>
-        <p>The page title is: &quot;Choose which nanomaterial(s) you want to remove&quot;.</p>
+        <p>The page title is: &quot;Choose which nanomaterials you want to remove&quot;.</p>
         <p>A Cancel link allows the user to return to the draft page, but a green Continue button takes the user to a new page.</p>
 
 <hr>
         <p>On the new page a Success banner confirms that the &quot;nanomaterial(s) have been removed&quot;. </p>
-        <p>The remaining nanomaterials are shown (without checkboxes).</p>
         <p>A green Continue button returns the user back to the draft page.</p>
 
 <hr>
@@ -23,7 +22,7 @@
 
 
 
-        <p><a href="draft-2_pt-2.html">Return</a> to previous draft state (or use your back button).</p>
+        <p><a href="#" onclick="history.go(-1);return false;">Return</a> to previous draft state (or use your back button).</p>
 
     </body>
 </html>

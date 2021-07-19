@@ -1,0 +1,39 @@
+<html>
+    <head>
+        {% include "drafts-gui/inc_opss-link-pg-css.html" %}
+    </head>
+    <body>
+
+        <p>The user can select which nanomaterials (via a list of checkboxes) are used in this item or select 'No nanomaterials are used in this item', to continue with the individual items task journey.</p>
+
+        <p>1: if the product <em>does</em> use nanomaterials and the user has <em>not</em> previously added any nanomaterials to the draft they are instructed to return to the first task and add them. The status of 'This' current task, and all items returns to being 'Cannot start yet' until the nanomaterials list is completed.</p>
+
+        <p>2: if a user has failed to add a specific nanomaterial to their nanomatials list which is now required, they are instructed to return to the draft page and add it (via the nanomaterials Add link). The status of items which have not yet been completed return to 'Cannot start yet' until the nanomatials list is completed.</p>
+
+        <p>When adding a new item: The user goes straight to the first page of the individual items task (journey).</p>
+
+        <p>This logic keeps the functionality requirements for Add/Remove in the nanomaterials section to a minimum.</p>
+
+        <!-- but they could just rerun the individual item task later and select the nanomaterial? this is another option for the user -->
+
+        <hr>
+
+        <p>The last page of the items task journey asks the user if they want to complete the next item (if there is one) or return to the draft page.</p>
+
+        <hr>
+
+        <p>The <u>Add</u> link only appears when the status of these tasks are not 'Cannot start yet'. (<i>The Add link obviously only appears if a multi-item status exists and the section of items links appears</i>.)</p>
+
+
+
+        <hr>
+
+        <p>When returning to the draft page after completing the individual item task/journey, the new item is shown appended to the items list (with a completed status). The list remains in its original order.</p>
+
+
+
+
+        <p><a href="#" onclick="history.go(-1);return false;">Return</a> to previous draft state (or use your back button).</p>
+
+    </body>
+</html>
