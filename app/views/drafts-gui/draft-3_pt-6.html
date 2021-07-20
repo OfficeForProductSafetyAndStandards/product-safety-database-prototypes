@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "draft-3_pt-5"
+        href: "draft-3_pt-6"
     }) }}
 {% endblock %}
 
@@ -20,7 +20,7 @@
     <section class="govuk-grid-column-three-quarters" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-top-9 govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 4 of 6 sections have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 5 of 6 sections have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -116,14 +116,14 @@
             </li>
             <li class="opss-task-sub">
                 <h3 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Multi-items
+                    <span class="app-task-list__section-number">4. </span> Multi-item details
                 </h3>
 
                 <ul class="app-task-list__items opss-task-sub__list">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-3_step-5.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-01-status">
-                               Quisque rhoncus
+                            <a href="draft-3_step-5a.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-01-status">
+                                Morbi ultricies
                             </a>
                         </span>
 
@@ -131,8 +131,8 @@
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-3_step-5.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-02-status">
-                                Donec egestas
+                            <a href="draft-3_step-5b.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-02-status">
+                                Nullam gravida
                             </a>
                         </span>
 
@@ -140,8 +140,8 @@
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-3_step-5.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-03-status">
-                                Pellentesque
+                            <a href="draft-3_step-5b.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-03-status">
+                                Maecenas
                             </a>
                         </span>
 
@@ -161,20 +161,38 @@
                 </ul>
 
             </li>
-            <li>
+            <li class="opss-task-sub">
                 <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">5. </span> Category and formation
                 </h2>
 
-                <ul class="app-task-list__items">
+                <ul class="app-task-list__items opss-task-sub__list">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-3_step-6.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="formation-details-status">
-                                Category and formation
+                            <a href="draft-3_step-6.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="formation-01-status">
+                                <span class="govuk-visually-hidden">Categorise</span> Morbi ultricies
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="formation-details-status">Not started</b>
+                        <b class="govuk-tag app-task-list__tag" id="formation-01-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-3_step-6.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="formation-02-status">
+                                <span class="govuk-visually-hidden">Categorise</span> Nullam gravida
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="formation-02-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="draft-3_step-6.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="formation-03-status">
+                                <span class="govuk-visually-hidden">Categorise</span> Maecenas
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="formation-03-status">Completed</b>
                     </li>
                 </ul>
             </li>
@@ -186,10 +204,12 @@
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Accept and submit
+                            <a href="draft-3_step-7.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="accept-status">
+                                Accept and submit
+                            </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="accept-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="accept-status">Not started</b>
                     </li>
                 </ul>
             </li>

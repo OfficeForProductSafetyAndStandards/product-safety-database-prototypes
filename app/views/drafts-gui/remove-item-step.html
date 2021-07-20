@@ -3,25 +3,25 @@
         {% include "drafts-gui/inc_opss-link-pg-css.html" %}
     </head>
     <body>
-        <p>The <u>Remove</u> link only appears if the multi-item section appears (and there are items in the draft).</p>
-        <p>The user is served a page/form showing all the items (which are part of this draft) with checkboxes: </p>
-        <p>A Help/Hint text confirms that if all items are removed then the user is required to complete task 1 again to add a multi-item kit. (And the system would remove the multi-item kit product status and set it as a single product).</p>
-        <p>The page title is: &quot;Choose which items you want to remove&quot;.</p>
-        <p>A Cancel link allows the user to return to the draft page, but a green Continue button takes the user to a new page.</p>
+
+        <ul>
+            <li>The Remove link only appears if the multi-item section appears (and there are items in the draft)</li>
+            <li>The user is served a page/form showing all the items (which are part of this draft) with checkboxes:
+                <ol>
+                    <li>The page title is: &quot;Choose which items you want to remove&quot;</li>
+                    <li>A Help/Hint text confirms that if all items are removed then the user is required to complete task 1 again to add a multi-item kit. (And the system would remove the multi-item kit product status and set it as a single product)</li>
+                    <li>When removing an item, its corresponding entry in the Categories and formulation section is also removed (the user is warned of this also)</li>
+                </ol>
+            </li>
+            <li>A Cancel link allows the user to return to the draft page, but a green Continue button takes the user to a new page</li>
+        </ul>
 
 <hr>
         <p>On the new page a Success banner confirms that the &quot;item(s) have been removed&quot;. </p>
         <p>A green Continue button returns the user back to the draft page.</p>
 
-<hr>
 
-        <p>The system would also delete the associated category/formulation data as well?</p>
-
-
-
-
-
-        <p><a href="#" onclick="history.go(-1);return false;">Return</a> to previous draft state (or use your back button).</p>
+        <p><a href="#" onclick="history.go(-1);return false;">Return</a> to previous draft state.</p>
 
     </body>
 </html>
