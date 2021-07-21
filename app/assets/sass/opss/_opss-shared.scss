@@ -36,6 +36,12 @@ h1, h2, h3, h4,
 .app-task-list li a {
     @include word-wrap;
 }
+/*.opss-secondary-text-colour {color: $govuk-secondary-text-colour; }
+.opss-weight-normal {font-weight: normal;
+    *[class^="govuk-heading"] & {
+        font-weight: 400;
+    }
+}*/
 .opss-no-wrap {
   white-space: nowrap;
 }
