@@ -1,0 +1,161 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Drafts page
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">You cannot notify products containing <a href="#blocked" class="govuk-notification-banner__link">Aliquam faucibus</a>.</p>
+  </div>
+</div>
+
+{% include "drafts-gui/inc_opss-header-section.html" %}
+
+<div class="govuk-grid-row">
+    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9" role="region" aria-label="Tasks">
+
+        <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 5 sections have been completed.
+        </p>
+
+        <ol class="app-task-list">
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Create the product
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
+                                Create the product
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="product-status">Completed</b>
+                    </li>
+                </ul>
+            </li>
+            <li class="opss-task-sub">
+                <h3 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Nanomaterials
+                </h3>
+
+                <ul class="app-task-list__items opss-task-sub__list">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
+                                Aenean
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag app-task-list__tag" id="nano-01-status">Completed</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name" id="blocked">
+
+                                Aliquam faucibus
+
+                        </span>
+
+                        <b class="govuk-tag opss-tag--red app-task-list__tag" id="nano-02-status">Blocked</b>
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
+                                Nanomaterial 3
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="nano-03-status">Not started</b>
+                    </li>
+                    <li class="app-task-list__item opss-task-sub__last">
+                        <span class="app-task-list__task-name">
+                            <a href="add-nano-step.html" class="govuk-link govuk-link--no-visited-state">
+                                Add <span class="govuk-visually-hidden">another nanomaterial</span>
+                            </a>
+                            <span class="opss-task-sub__pipe">|</span>
+                            <a href="remove-nano-step.html" class="govuk-link govuk-link--no-visited-state">
+                                Remove <span class="govuk-visually-hidden">a nanomaterial</span>
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Product details
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                                Product details
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">4. </span> Category and formation
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Category and formation
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="formation-details-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">5. </span> Accept and submit
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Accept and submit
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="accept-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+
+    </section>
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-top-9">
+        <a href="view-draft.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+            View draft
+        </a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
