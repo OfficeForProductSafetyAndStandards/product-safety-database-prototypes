@@ -1,0 +1,67 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Drafts page
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-8">
+            Add a cosmetic product - Draft
+        </h1>
+
+        <!--div class="govuk-hint">
+            <span id="search-hint"></span>
+        </div-->
+
+        <p class="govuk-body-m">Each of the following user-flow versions provide click-through examples for adding different kinds of cosmetic products.</p>
+
+        <p class="govuk-body-m">Clicking one of these links is the equivalent to clicking the current 'Add cosmetic products' button.</p>
+
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-8">
+            <li>Add a simple product (with no multipule items or nanomaterials).<br><a href="draft-1_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Version 1</a></li>
+
+            <li>Add a product (with 3x nanomaterials).<br><a href="draft-2_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Version 2</a></li>
+
+            <li>Add a product (with with 4x nanomaterials as a multi-item kit - featuring 3x items).<br><a href="draft-3_pt-1" class="govuk-link govuk-link--no-visited-state" target="_blank">Version 3</a></li>
+
+            <li>Blocked page (You cannot notify this product until you have notified <em>the</em> nanomaterial).<br><a href="blocked-01" class="govuk-link govuk-link--no-visited-state" target="_blank">Blocked 1</a></li>
+
+            <li>Blocked page (You cannot notify products containing <em>this</em> nanomaterial).<br><a href="blocked-02" class="govuk-link govuk-link--no-visited-state" target="_blank">Blocked 2</a></li>
+
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <p class="govuk-body-m">A key technical consideration is the ability for the user to click any task already completed and redo it. On completion this will potentially update and change the status of the tasks list. If the user re-runs the first task and adds nanomaterials or changes the product to a multi-item kit, this will update the task list – requiring the draft page to check for these settings by default whenever it is launched. (Users are warned when rerunning tasks – that items/nanomaterials will be deleted etc, if changing their status to no/none - as in flow diagram).</p>
+
+        <p class="govuk-body-m">If re-running the first task after several nanomaterials have already been added, the 'Does the product contain Nanomaterials?' page is updated by removing the option to change the quantity. i.e, the quanity input is only offered if the product does not already have a number of nanomaterials associated with it. (The user can use the Add/Remove nanomaterials options via the tasks page).</p>
+
+        <p class="govuk-body-m">If re-running the first task after already setting the product status to a multi-item kit, the 'Yes or No, Multi-tem kit' page is updated by removing the option to change the quantity. i.e, the quanity input is only offered if the product does not already have a number of items associated with it. (The user can use the Add/Remove items options via the tasks page).</p>
+
+        <p class="govuk-body-m">The logic is for what happens in what tasks is prioritised for most instances by the user wanting to see the full list of tasks as early as possible (to avoid it growing or changing after the initial section sets it up). Keeping some pages out of a task also allows it to be easily updated and changed by the user again later (making the task independent).</p>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <p class="govuk-body-m">For development ease, we keep tasks linear, so that they can't be started before the previous <b>section</b> is completed. (A future featue could be the option, for single products, to complete section 3 before 2, and 4 before completing any nanomaterials, or the corresponding Category immediately after the multi-item item, etc). Future behaviour might also include the ability to leave a task halfway through and when clicking the task again on the draft page the user restarts the task where they left off? (A GDS 'In progress' tab status - pale blue - already exists).</p>
+
+        <p class="govuk-body-s"><i>The back link (at the top of the page) in the real service will return the user to the Cosmetic Products page.</i></p>
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}

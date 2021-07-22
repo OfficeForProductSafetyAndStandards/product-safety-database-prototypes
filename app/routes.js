@@ -12,6 +12,8 @@ router.use('/add-product-v4', require('./views/add-product-v4/_routes'));
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/create-cases-add-products', require('./views/create-cases-add-products/_routes'));
 
+router.use('/drafts-gui', require('./views/drafts-gui/_routes'));
+
 
 // **** End folder specific routes
 

@@ -164,7 +164,7 @@ router.post('/might-already-exist-bc', function (req, res) {
   if (isit == null) {
     res.redirect('/create-cases-add-products/might-already-exist-bc-error')
   } else if (isit == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
   }
@@ -175,7 +175,7 @@ router.post('/might-already-exist-bc-error', function (req, res) {
   if (isit2 == null) {
     res.redirect('/create-cases-add-products/might-already-exist-bc-error')
   } else if (isit2 == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit2 == 'no') {
     res.redirect('/create-cases-add-products/does-the-product-have-a-brand')
   }
@@ -318,7 +318,7 @@ router.post('/might-already-exist', function (req, res) {
   if (isit == null) {
     res.redirect('/create-cases-add-products/might-already-exist-error')
   } else if (isit == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/create-cases-add-products/describe-the-product')
   }
@@ -329,7 +329,7 @@ router.post('/might-already-exist-error', function (req, res) {
   if (isit2 == null) {
     res.redirect('/create-cases-add-products/might-already-exist-error')
   } else if (isit2 == 'yes') {
-    res.redirect('/create-cases-add-products/products-page-we-found-it')
+    res.redirect('/create-cases-add-products/it-was-your-product')
   } else if (isit2 == 'no') {
     res.redirect('/create-cases-add-products/describe-the-product')
   }
@@ -381,7 +381,7 @@ router.post('/can-you-provide-an-image', function (req, res) {
   if (productimage == null) {
     res.redirect('/create-cases-add-products/can-you-provide-an-image-error')
   } else if (productimage == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   } else {
     res.redirect('/create-cases-add-products/upload-a-product-image')
   }
@@ -392,9 +392,55 @@ router.post('/can-you-provide-an-image-error', function (req, res) {
   if (productimage2 == null) {
     res.redirect('/create-cases-add-products/can-you-provide-an-image-error')
   } else if (productimage2 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }else{
     res.redirect('/create-cases-add-products/upload-a-product-image')
+  }
+})
+//****************** success-product-added
+router.post('/success-product-added', function (req, res) {
+  const createcase = req.session.data['createcase']
+
+  if (createcase == null) {
+    res.redirect('/create-cases-add-products/success-product-added-error')
+  } else if (createcase == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  } else {
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
+  }
+})
+router.post('/success-product-added-error', function (req, res) {
+  const createcase2 = req.session.data['createcase']
+
+  if (createcase2 == null) {
+    res.redirect('/create-cases-add-products/success-product-added-error')
+  } else if (createcase2 == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  }else{
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
+  }
+})
+//****************** it-was-your-product
+router.post('/it-was-your-product', function (req, res) {
+  const createcaseT = req.session.data['createcase']
+
+  if (createcaseT == null) {
+    res.redirect('/create-cases-add-products/it-was-your-product-error')
+  } else if (createcaseT == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  } else {
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
+  }
+})
+router.post('/it-was-your-product-error', function (req, res) {
+  const createcase2T = req.session.data['createcase']
+
+  if (createcase2T == null) {
+    res.redirect('/create-cases-add-products/it-was-your-product-error')
+  } else if (createcase2T == 'no') {
+    res.redirect('/create-cases-add-products/products-page')
+  }else{
+    res.redirect('/create-cases-add-products/is-this-case-related-to-covid')
   }
 })
 //************ start upload-a-product-image
@@ -421,7 +467,7 @@ router.post('/upload-a-product-image-success', function (req, res) {
   } else if (valanother == 'yes') {
     res.redirect('/create-cases-add-products/upload-a-product-image-with-imgs')
   } else if (valanother == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }
 })
 router.post('/upload-a-product-image-success-error', function (req, res) {
@@ -432,7 +478,7 @@ router.post('/upload-a-product-image-success-error', function (req, res) {
   } else if (another4 == 'yes') {
     res.redirect('/create-cases-add-products/upload-a-product-image-with-imgs')
   } else if (another4 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }
 })
 //************ upload-a-product-image-with-imgs
@@ -444,7 +490,7 @@ router.post('/upload-a-product-image-with-imgs', function (req, res) {
   } else if (val2 == 'yes') {
     res.redirect('/create-cases-add-products/upload-a-product-image-with-imgs')
   } else if (val2 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }
 })
 //************ start remove-a-product-image-success
@@ -456,7 +502,7 @@ router.post('/remove-a-product-image-success', function (req, res) {
   } else if (valanother2 == 'yes') {
     res.redirect('/create-cases-add-products/upload-a-product-image')
   } else if (valanother2 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }
 })
 router.post('/remove-a-product-image-success-error', function (req, res) {
@@ -467,10 +513,32 @@ router.post('/remove-a-product-image-success-error', function (req, res) {
   } else if (another5 == 'yes') {
     res.redirect('/create-cases-add-products/upload-a-product-image')
   } else if (another5 == 'no') {
-    res.redirect('/create-cases-add-products/products-page-new-product')
+    res.redirect('/create-cases-add-products/success-product-added')
   }
 })
+//****************** success-case-created
+router.post('/success-case-created', function (req, res) {
+  const casecreated = req.session.data['casecreated']
 
+  if (casecreated == null) {
+    res.redirect('/create-cases-add-products/success-case-created-error')
+  } else if (casecreated == 'no') {
+    res.redirect('/create-cases-add-products/cases-page')
+  } else {
+    res.redirect('/create-cases-add-products/add-product-to-case')
+  }
+})
+router.post('/success-case-created-error', function (req, res) {
+  const casecreated2 = req.session.data['casecreated']
+
+  if (casecreated2 == null) {
+    res.redirect('/create-cases-add-products/success-case-created-error')
+  } else if (casecreated2 == 'no') {
+    res.redirect('/create-cases-add-products/cases-page')
+  }else{
+    res.redirect('/create-cases-add-products/add-product-to-case')
+  }
+})
 
 
 

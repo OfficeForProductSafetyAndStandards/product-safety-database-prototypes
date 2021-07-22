@@ -13,11 +13,64 @@
 
 
 {% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">What is the product name?</h1>
+
+        <div class="govuk-hint">
+          Sometimes the brand and model name can form part of the full product name. For example, the Dyson Small Ball Animal 2, is an upright vaccum cleaner.
+        </div>
+
+        <div class="govuk-hint govuk-!-margin-bottom-8">
+          Provide and categorise what information you can.
+        </div>
+
+
+
+    </div>
+  </div>
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-
+    <div class="govuk-grid-column-two-thirds">
       <form action="#" method="post" novalidate>
+
+{{ govukInput({
+  formGroup: {
+    classes: "govuk-!-margin-bottom-5"
+  },
+  label: {
+    text: "What is the full product name?"
+  },
+  hint: {
+    classes: "govuk-hint govuk-!-font-size-16",
+    html: "For example, Dyson Small Ball Animal 2."
+  },
+  type: "text",
+  id: "productname",
+  name: "productname"
+
+}) }}
+
+        <div class="opss-sub-form-group govuk-!-margin-bottom-4">
+
+{{ govukInput({
+  formGroup: {
+    classes: "govuk-!-margin-bottom-5"
+  },
+  label: {
+    text: "What is the specific product name?"
+  },
+  hint: {
+    classes: "govuk-hint govuk-!-font-size-16",
+    html: "For example, Small Ball."
+  },
+  type: "text",
+  classes: " govuk-input--width-20",
+  id: "modelname",
+  name: "modelname"
+
+}) }}
 
 
 {{ govukInput({
@@ -25,24 +78,42 @@
     classes: "govuk-!-margin-bottom-5"
   },
   label: {
-    text: "What is the product name?",
-    classes: "govuk-label--l govuk-!-margin-bottom-2",
-    isPageHeading: true
+    text: "What is the model name?"
   },
   hint: {
-    classes: "govuk-!-margin-bottom-6",
-    html: "Try to include a model number and model name. <br>For example, PlayStation 5 Console 9395003, or EH-NE83-K895 Power Air."
+    classes: "govuk-hint govuk-!-font-size-16",
+    html: "For example, Animal 2."
   },
   type: "text",
-  classes: "govuk-!-width-two-thirds",
-  id: "productname",
-  name: "productname"
+  classes: " govuk-input--width-20",
+  id: "modelname",
+  name: "modelname"
+
 }) }}
 
+        </div>
 
+{{ govukInput({
+  formGroup: {
+    classes: "govuk-!-margin-bottom-5"
+  },
+  label: {
+    text: "What is the model number?"
+  },
+  hint: {
+    classes: "govuk-hint govuk-!-font-size-16",
+    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <br class="opss-br-desktop">Numbers in a product name usually form part of the product or model <em>name</em>.'
+  },
+  type: "text",
+  classes: " govuk-input--width-10",
+  id: "modelnumber",
+  name: "modelnumber"
+
+}) }}
 
 {{ govukButton({
-  text: "Continue"
+  text: "Continue",
+  classes: "govuk-!-margin-top-6"
 }) }}
 
       </form>

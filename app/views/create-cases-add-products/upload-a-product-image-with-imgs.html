@@ -35,7 +35,7 @@
                             Do not upload case images related to damage or incidents.
                         </p>
                         <p class="govuk-body-s">
-                            In addition to general product images try to add images of key details, such as plugs on electrical products or safety information on packaging.
+                            In addition to general product images try to add images of key details, such as plugs on electrical products or safety informations on packaging.
                         </p>
                     </div>
                 </details>
@@ -101,9 +101,13 @@
                 }
             }) }}
 
-            {{ govukButton({
-                text: "Continue"
-            }) }}
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                                            <!-- the previous page -->
+                <a class="govuk-link govuk-link--no-visited-state" href="/create-cases-add-products/upload-a-product-image-success">Go back</a>
+            </div>
         </form>
     </section>
 

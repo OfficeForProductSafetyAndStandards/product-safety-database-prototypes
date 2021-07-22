@@ -58,6 +58,10 @@
                             <dd class="govuk-summary-list__value">Domestic electricals</dd>
                         </div>
                         <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
+                            <dd class="govuk-summary-list__value"><span class="govuk-visually-hidden">No model number provided</span>&nbsp;</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
                             <dd class="govuk-summary-list__value">666-6667-77777-7</dd>
                         </div>
@@ -114,6 +118,12 @@
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
+                            <dd class="govuk-summary-list__value">
+                                <span class="govuk-visually-hidden">No model number provided yet</span>&nbsp;
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
                             <dd class="govuk-summary-list__value">
                                 6666667777777
@@ -129,31 +139,25 @@
                 <fieldset class="govuk-fieldset" aria-describedby="isit-hint isit-error">
 
                     <legend class="govuk-visually-hidden">
-                            Do you want to stop adding a new product and go to the products page?
+                            Do you want to stop adding a new product?
                     </legend>
 
                     <span id="isit-error" class="govuk-error-message">
                         <span class="govuk-visually-hidden">Error:</span> Select yes if this is your product
                     </span>
 
-                    <div class="govuk-radios govuk-!-padding-bottom-1" data-module="govuk-radios">
+                    <div class="govuk-radios govuk-!-padding-bottom-1">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes" aria-describedby="yes-hint">
+                            <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes">
                             <label class="govuk-label govuk-radios__label" for="isit">
                                 Yes
                             </label>
-                            <div class="govuk-hint govuk-radios__hint govuk-!-font-size-16" id="yes-hint">
-                                Go to the products page to view the product that already exists in our records.
-                            </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no" aria-describedby="no-hint">
+                            <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no">
                             <label class="govuk-label govuk-radios__label" for="isit-2">
-                                No
+                                No - Continue to add the new product
                             </label>
-                            <div class="govuk-hint govuk-radios__hint govuk-!-font-size-16" id="no-hint">
-                                Continue to add the new product.
-                            </div>
                         </div>
                     </div>
 

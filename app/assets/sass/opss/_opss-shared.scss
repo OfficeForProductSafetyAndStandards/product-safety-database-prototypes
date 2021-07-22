@@ -28,12 +28,23 @@ main.govuk-main-wrapper {
     @include govuk-clearfix;
 }
 
+h1, h2, h3, h4,
 .govuk-heading-xl,
 .govuk-heading-l,
-.govuk-heading-m {
+.govuk-heading-m,
+.app-task-list li,
+.app-task-list li a {
     @include word-wrap;
 }
-
+/*.opss-secondary-text-colour {color: $govuk-secondary-text-colour; }
+.opss-weight-normal {font-weight: normal;
+    *[class^="govuk-heading"] & {
+        font-weight: 400;
+    }
+}*/
+.opss-no-wrap {
+  white-space: nowrap;
+}
 .opss-nojs-hide {
     display: none;
 }
@@ -43,6 +54,13 @@ body.js-enabled .opss-nojs-hide {
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
+    }
+}
+.opss-br-desktop {
+    display: none;
+
+    @include govuk-media-query($from: desktop) {
+        display: block;
     }
 }
 
@@ -60,6 +78,10 @@ body.js-enabled .opss-nojs-hide {
 
     position: relative;
     top: 2px;
+}
+
+.opss-secondary-text {
+    color: $govuk-secondary-text-colour;
 }
 
 .opss-details--sm {
