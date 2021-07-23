@@ -1,0 +1,130 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Responsible Person address
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            <abbr>UK</abbr> Responsible Person details
+        </h1>
+
+        <details class="govuk-details opss-details--sm govuk-!-margin-top-4" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the Responsible Person details
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <p class="govuk-body-s">
+                    A Responsible Person can be a business, in the law this is called a 'legal person'. A Responsible Person can also be a living person, in the law this is called a 'natural person'.
+                </p>
+
+                <p class="govuk-body-s">
+                    The Responsible Person must be a legal entity in the <abbr>UK</abbr>.
+                </p>
+
+                <p class="govuk-body-s">
+                    The Responsible Person must provide a <abbr>UK</abbr> address.
+                </p>
+
+                <p class="govuk-body-s">
+                    A Responsible Person is legally bound by the obligations in the Cosmetics Regulation.
+                </p>
+
+            </div>
+        </details>
+
+        <div class="govuk-warning-text govuk-!-margin-top-7 govuk-!-margin-bottom-6">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The <abbr>UK</abbr> address provided must not be a <abbr title="Post Office">PO</abbr> box or mail forwarding address. These are not <abbr>UK</abbr> established addresses that comply with the regulation.
+            </strong>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="#" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="responsible_persons_details_form_name">
+                    Business name
+                </label>
+
+                <input class="govuk-input govuk-!-width-two-thirds" id="responsible_persons_details_form_name" name="responsible_persons_details_form[name]" type="text">
+            </div>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h2 class="govuk-fieldset__heading">
+                        <abbr>UK</abbr> business address
+                    </h2>
+                </legend>
+
+                <div class="govuk-form-group govuk-!-margin-bottom-5">
+                    <label class="govuk-label" for="responsible_persons_details_form_address_line_1">
+                        Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                    </label>
+                    <input class="govuk-input govuk-!-width-three-quarters" id="responsible_persons_details_form_address_line_1" name="responsible_persons_details_form[address_line_1]" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="responsible_persons_details_form_address_line_2">
+                        <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                    </label>
+                    <input class="govuk-input govuk-!-width-three-quarters" id="responsible_persons_details_form_address_line_2" name="responsible_persons_details_form[address_line_2]" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="responsible_persons_details_form_city">
+                        Town or city
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="responsible_persons_details_form_city" name="responsible_persons_details_form_city" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="responsible_persons_details_form_county">
+                        County
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="responsible_persons_details_form_county" name="responsible_persons_details_form[county]" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="responsible_persons_details_form_postal_code">
+                        Postcode
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="responsible_persons_details_form_postal_code" name="responsible_persons_details_form[postal_code]" type="text">
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+            </fieldset>
+
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock %}
