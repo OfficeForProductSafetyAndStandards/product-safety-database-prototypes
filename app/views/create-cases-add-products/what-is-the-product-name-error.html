@@ -19,10 +19,55 @@
   errorList: [
     {
       text: "Enter a full product name",
-      href: "#productname"
+      href: "#fullproductname"
+    },
+    {
+      text: "Select yes if the product has a manufacturer's brand name",
+      href: "#brand"
     }
   ]
 }) }}
+
+
+
+{% set brandHtml %}
+{{ govukInput({
+  id: "brandName",
+  name: "brandName",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-input--width-20",
+  label: {
+    text: "Brand name"
+  }
+}) }}
+{% endset -%}
+
+{% set productHtml %}
+{{ govukInput({
+  id: "fullproductName",
+  name: "fullproductName",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-input--width-20",
+  label: {
+    text: "Product name"
+  }
+}) }}
+{% endset -%}
+
+{% set modelHtml %}
+{{ govukInput({
+  id: "modelName",
+  name: "modelName",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-input--width-20",
+  label: {
+    text: "Model name"
+  }
+}) }}
+{% endset -%}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -61,51 +106,102 @@
     text: "Enter a full product name"
   },
   type: "text",
-  id: "productname",
-  name: "productname"
+  id: "fullproductname",
+  name: "fullproductname"
 
 }) }}
 
         <div class="opss-sub-form-group govuk-!-margin-bottom-4">
 
-{{ govukInput({
-  formGroup: {
-    classes: "govuk-!-margin-bottom-5"
-  },
-  label: {
-    text: "What is the specific product name?"
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "brand",
+  name: "brand",
+  fieldset: {
+    legend: {
+      text: "Does the product have a manufacturer's brand name?"
+    }
   },
   hint: {
     classes: "govuk-hint govuk-!-font-size-16",
-    html: "For example, Small Ball."
+    text: "For example, Dyson."
   },
-  type: "text",
-  classes: " govuk-input--width-20",
-  id: "modelname",
-  name: "modelname"
-
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: brandHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ],
+  errorMessage: {
+    text: "Select yes if the product has a manufacturer's brand name"
+  }
 }) }}
 
-
-{{ govukInput({
-  formGroup: {
-    classes: "govuk-!-margin-bottom-5"
-  },
-  label: {
-    text: "What is the model name?"
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "product",
+  name: "product",
+  fieldset: {
+    legend: {
+      text: "Does the product have a specific product name?"
+    }
   },
   hint: {
     classes: "govuk-hint govuk-!-font-size-16",
-    html: "For example, Animal 2."
+    text: "For example, Small Ball."
   },
-  type: "text",
-  classes: " govuk-input--width-20",
-  id: "modelname",
-  name: "modelname"
-
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: productHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
 }) }}
 
-      </div>
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "model",
+  name: "model",
+  fieldset: {
+    legend: {
+      text: "Does the product have a model name?"
+    }
+  },
+  hint: {
+    classes: "govuk-hint govuk-!-font-size-16",
+    text: "For example, Animal 2."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: modelHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+        </div>
 
 {{ govukInput({
   formGroup: {
@@ -116,7 +212,7 @@
   },
   hint: {
     classes: "govuk-hint govuk-!-font-size-16",
-    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <br class="opss-br-desktop">Numbers in a product name usually form part of the product or model <em>name</em>.'
+    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.'
   },
   type: "text",
   classes: " govuk-input--width-10",
@@ -124,7 +220,6 @@
   name: "modelnumber"
 
 }) }}
-
 
 {{ govukButton({
   text: "Continue",
