@@ -226,14 +226,15 @@ router.post('/what-is-the-product-name', function (req, res) {
   //var brandName = req.session.data['brandName']
 
 
-  if ((fullproductname != '') || (brandp == 'yes')) {
+  if ((fullproductname == '') || (brandp == null)) {
     return res.redirect('/create-cases-add-products/what-is-the-product-name-error')
   } else {
     return res.redirect('/create-cases-add-products/what-is-the-product-category')
   }
 })
+
 router.post('/what-is-the-product-name-error', function (req, res) {
-  var fullproductname2 = req.session.data['fullproductname']
+  //var fullproductname2 = req.session.data['fullproductname']
   var brandp2 = req.session.data['brand']
   var brandName2 = req.session.data['brandName']
 
