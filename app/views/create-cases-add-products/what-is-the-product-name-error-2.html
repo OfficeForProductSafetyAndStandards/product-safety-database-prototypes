@@ -1,7 +1,7 @@
 {% extends "layout-routes-01.html" %}
 
 {% block pageTitle %}
-    What is the product name
+    Error - What is the product name
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,6 +14,17 @@
 
 {% block content %}
 
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter a brand name",
+      href: "#brandName"
+    }
+  ]
+}) }}
+
+
 
 {% set brandHtml %}
 {{ govukInput({
@@ -24,14 +35,17 @@
   classes: "govuk-input--width-20",
   label: {
     text: "Brand name"
+  },
+  errorMessage: {
+    text: "Enter a brand name"
   }
 }) }}
 {% endset -%}
 
 {% set productHtml %}
 {{ govukInput({
-  id: "productName",
-  name: "productName",
+  id: "fullproductName",
+  name: "fullproductName",
   type: "text",
   spellcheck: false,
   classes: "govuk-input--width-20",
@@ -66,12 +80,15 @@
           Provide and categorise what information you can.
         </p>
 
+
+
     </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="#" method="post" novalidate>
+
 
 {{ govukInput({
   formGroup: {
@@ -86,7 +103,8 @@
   },
   type: "text",
   id: "fullproductname",
-  name: "fullproductname"
+  name: "fullproductname",
+  value: "some value you've entered ..."
 
 }) }}
 
@@ -110,6 +128,7 @@
     {
       value: "yes",
       text: "Yes",
+      checked: checked,
       conditional: {
         html: brandHtml
       }
@@ -118,7 +137,10 @@
       value: "no",
       text: "No"
     }
-  ]
+  ],
+  errorMessage: {
+
+  }
 }) }}
 
 {{ govukRadios({
@@ -188,7 +210,7 @@
   },
   hint: {
     classes: "govuk-hint govuk-!-font-size-16",
-    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.'
+    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.'
   },
   type: "text",
   classes: " govuk-input--width-10",
@@ -208,4 +230,3 @@
     </div>
   </div>
 {% endblock %}
-
