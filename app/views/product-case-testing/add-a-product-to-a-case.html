@@ -1,0 +1,34 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Find the product
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases-page"
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Allegation 20-2120</span>
+        <h1 class="govuk-heading-l">Add a product to the case</h1>
+
+        <p class="govuk-body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum quam distinctio vero harum animi consequuntur labore voluptatibus voluptates, provident voluptate eius aliquam id exercitationem! Quod fugiat laudantium blanditiis qui magnam.
+        </p>
+        <p class="govuk-body">
+            The Allergation or Enquiry reference number is: <b>20-2120</b>. Find the product using <a href="#" class="govuk-link govuk-link--no-visited-state">the products page</a> and [choose add to case, where you can enter the reference number (we confirm if it is the correct case before saving).] (Copy to clip-board).
+        </p>
+
+
+    </div>
+  </div>
+{% endblock %}

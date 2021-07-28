@@ -1,0 +1,71 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Error - Can you provide an image of the product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "when-was-the-product-placed"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you can provide an image of the product",
+      href: "#branded"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+
+{{ govukRadios({
+    idPrefix: "productimage",
+    name: "productimage",
+    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+    fieldset: {
+        legend: {
+            text: "Can you provide an image of the product?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    hint: {
+      text: "Select yes to upload an image file."
+    },
+    errorMessage: {
+      text: "Select yes if you can provide an image of the product"
+    },
+    items: [
+    {
+        value: "yes",
+        text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Success - you found your product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "might-already-exist"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if you want to create a case for this product now",
+      href: "#createcase"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+
+{{ govukRadios({
+    idPrefix: "createcase",
+    name: "createcase",
+    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+    fieldset: {
+        legend: {
+            html: "Do you want to create a case for this product now?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+        }
+    },
+    errorMessage: {
+      text: "Select yes if you want to create a case for this product now"
+    },
+    items: [
+    {
+        value: "yes",
+        text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No - return to the products page"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+
