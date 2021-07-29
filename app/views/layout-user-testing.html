@@ -32,8 +32,10 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
     .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; cursor: default; }
+    .govuk-error-message, .govuk-error-message, .govuk-error-summary__list li {display: none; }
   </style>
 {% endblock %}
 
@@ -64,8 +66,6 @@
     ]
   }) }}
 {% endblock %}
-
-{% include "includes/testing-menu.html" %}
 
 {% set mainClasses = mainClasses | default("") %} <!-- govuk-main-wrapper govuk-main-wrapper--auto-spacing -->
 
