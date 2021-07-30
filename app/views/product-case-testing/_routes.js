@@ -99,52 +99,27 @@ router.post('/is-case-counterfeit-error', function (req, res) {
 })
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
-  var barcodexxx = req.session.data['barcode']
-  var barnumber = req.session.data['barnumber']
+  var theBarCode = req.session.data['barcode']
 
-  if (barcodexxx == null) {
-    return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
-  } else if ((barcodexxx == 'yes') && (barnumber == '')) {
-    return res.redirect('/product-case-testing/do-you-have-the-barcode-error-2')
-  } else if ((barcodexxx == 'yes') && (barnumber == '6666667777777')) {
-    return res.redirect('/product-case-testing/might-already-exist-bc')
-  } else if ((barcodexxx == 'yes') && (barnumber != '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-name')
-  } else if (barcodexxx == 'no') {
-    return res.redirect('/product-case-testing/what-is-the-product-name')
-  }
-})
-router.post('/do-you-have-the-barcode-error', function (req, res) {
-  var barcode1 = req.session.data['barcode']
-  var barnumber1 = req.session.data['barnumber']
+  /*  if (barcodexxx == null) {
+      return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
+    } else if ((barcodexxx == 'yes') && (barnumber == '')) {
+      return res.redirect('/product-case-testing/do-you-have-the-barcode-error-2')
+    } else if ((barcodexxx == 'yes') && (barnumber == '6666667777777')) {
+      return res.redirect('/product-case-testing/might-already-exist-bc')
+    } else if ((barcodexxx == 'yes') && (barnumber != '')) {
+      return res.redirect('/product-case-testing/what-is-the-product-name')
+    } else if (barcodexxx == 'no') {
+      return res.redirect('/product-case-testing/what-is-the-product-name')
+    }
+  })*/
 
-  if (barcode1 == null) {
-    return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
-  } else if ((barcode1 == 'yes') && (barnumber1 == '6666667777777')) {
-    return res.redirect('/product-case-testing/might-already-exist-bc')
-  } else if ((barcode1 == 'yes') && (barnumber1 == '')) {
-    res.redirect('/product-case-testing/do-you-have-the-barcode-error-2')
-  } else if ((barcode1 == 'yes') && (barnumber1 != '')) {
+  if (theBarCode == 'yes') {
+      res.redirect('/product-case-testing/what-is-the-product-name')
+  } else if (theBarCode == 'no') {
     res.redirect('/product-case-testing/what-is-the-product-name')
-  } else if (barcode1 == 'no') {
-    return res.redirect('/product-case-testing/what-is-the-product-name')
   }
-})
-router.post('/do-you-have-the-barcode-error-2', function (req, res) {
-  var barcode2 = req.session.data['barcode']
-  var barnumber2 = req.session.data['barnumber']
 
-  if (barcode2 == null) {
-    return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
-  } else if ((barcode2 == 'yes') && (barnumber2 == '6666667777777')) {
-    return res.redirect('/product-case-testing/might-already-exist-bc')
-  } else if ((barcode2 == 'yes') && (barnumber2 == '')) {
-    res.redirect('/product-case-testing/do-you-have-the-barcode-error-2')
-  } else if ((barcode2 == 'yes') && (barnumber2 != '')) {
-    res.redirect('/product-case-testing/what-is-the-product-name')
-  } else if (barcode2 == 'no') {
-    return res.redirect('/product-case-testing/what-is-the-product-name')
-  }
 })
 // *********************** start might-already-exist-bc
 router.post('/might-already-exist-bc', function (req, res) {

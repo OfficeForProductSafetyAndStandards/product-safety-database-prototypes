@@ -35,7 +35,24 @@
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
     .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; cursor: default; }
-    .govuk-error-message, .govuk-error-message, .govuk-error-summary__list li {display: none; }
+    .govuk-error-summary,
+    .govuk-error-message,
+    .govuk-error-summary__list li {display: none; }
+
+    .govuk-form-group--error > fieldset > .govuk-error-message,
+    .govuk-radios__conditional .govuk-form-group--error .govuk-error-message {display: block; }
+
+
+    .test-errors-1, .test-errors-2, .test-errors-3, .test-errors-4, .test-errors-5, .test-errors-6 {display: block !important; }
+    .test-errors-1 ul li:nth-child(1),
+    .test-errors-2 ul li:nth-child(2),
+    .test-errors-3 ul li:nth-child(3),
+    .test-errors-4 ul li:nth-child(4),
+    .test-errors-5 ul li:nth-child(5),
+    .test-errors-6 ul li:nth-child(6) {display: block !important; }
+
+
+
   </style>
 {% endblock %}
 
