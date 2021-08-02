@@ -100,6 +100,7 @@ router.post('/is-case-counterfeit-error', function (req, res) {
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
   var theBarCode = req.session.data['barcode']
+  var theBarNumberP = req.session.data['barnumber'].replace(/\D/g,'');
 
   /*  if (barcodexxx == null) {
       return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
@@ -115,7 +116,15 @@ router.post('/do-you-have-the-barcode', function (req, res) {
   })*/
 
   if (theBarCode == 'yes') {
-      res.redirect('/product-case-testing/what-is-the-product-name')
+
+
+      if(theBarNumberP == '123456789'){
+        res.redirect('/product-case-testing/might-already-exist-bc')
+      }else{
+        res.redirect('/product-case-testing/what-is-the-product-name')
+      }
+
+
   } else if (theBarCode == 'no') {
     res.redirect('/product-case-testing/what-is-the-product-name')
   }
@@ -185,19 +194,19 @@ router.post('/does-the-product-have-a-brand-error-2', function (req, res) {
 router.post('/what-is-the-product-name', function (req, res) {
   var fullproductname = req.session.data['fullproductname']
   var brandp = req.session.data['brand']
-  //var productp = req.session.data['product']
-  //var modelp = req.session.data['model']
+  var productp = req.session.data['product']
+  var modelp = req.session.data['model']
   //var brandName = req.session.data['brandName']
 
 
-  if ((fullproductname == '') || (brandp == null)) {
+  /*if ((fullproductname == '') || (brandp == null)) {
     return res.redirect('/product-case-testing/what-is-the-product-name-error')
   } else {
     return res.redirect('/product-case-testing/what-is-the-product-category')
-  }
+  }*/
 })
 
-router.post('/what-is-the-product-name-error', function (req, res) {
+/*router.post('/what-is-the-product-name-error', function (req, res) {
   //var fullproductname2 = req.session.data['fullproductname']
   var brandp2 = req.session.data['brand']
   var brandName2 = req.session.data['brandName']
@@ -207,9 +216,9 @@ router.post('/what-is-the-product-name-error', function (req, res) {
   } else {
     return res.redirect('/product-case-testing/what-is-the-product-category')
   }
-})
+})*/
 
-router.post('/what-is-the-product-name-error-2', function (req, res) {
+/*router.post('/what-is-the-product-name-error-2', function (req, res) {
   var brandName3 = req.session.data['brandName']
 
   if (brandName3 == '') {
@@ -217,7 +226,7 @@ router.post('/what-is-the-product-name-error-2', function (req, res) {
   } else {
     return res.redirect('/product-case-testing/what-is-the-product-category')
   }
-})
+})*/
 //************* start what-is-the-product-category
 router.post('/what-is-the-product-category', function (req, res) {
   var category = req.session.data['category']

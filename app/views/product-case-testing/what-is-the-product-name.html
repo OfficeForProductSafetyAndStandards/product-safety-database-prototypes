@@ -14,45 +14,37 @@
 
 {% block content %}
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
 
-{% set brandHtml %}
-{{ govukInput({
-  id: "brandName",
-  name: "brandName",
-  type: "text",
-  spellcheck: false,
-  classes: "govuk-input--width-20",
-  label: {
-    text: "Brand name"
-  }
-}) }}
-{% endset -%}
-
-{% set productHtml %}
-{{ govukInput({
-  id: "productName",
-  name: "productName",
-  type: "text",
-  spellcheck: false,
-  classes: "govuk-input--width-20",
-  label: {
-    text: "Product name"
-  }
-}) }}
-{% endset -%}
-
-{% set modelHtml %}
-{{ govukInput({
-  id: "modelName",
-  name: "modelName",
-  type: "text",
-  spellcheck: false,
-  classes: "govuk-input--width-20",
-  label: {
-    text: "Model name"
-  }
-}) }}
-{% endset -%}
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#fullproductname">1 Enter a full product name</a>
+      </li>
+      <li>
+        <a href="#brand">2 Select yes if the product has a manufacturer's brand name</a>
+      </li>
+      <li>
+        <a href="#brandName">3 Enter a brand name</a>
+      </li>
+      <li>
+        <a href="#product">4 Select yes if the product has a specific product name</a>
+      </li>
+      <li>
+        <a href="#productName">5 Enter a product name</a>
+      </li>
+      <li>
+        <a href="#model">6 Select yes if the product have a model name</a>
+      </li>
+      <li>
+        <a href="#modelName">7 Enter a model name</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -71,141 +63,283 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="#" method="post" novalidate>
+      <form id="test-form" action="#" method="post" novalidate>
 
-{{ govukInput({
-  formGroup: {
-    classes: "govuk-!-margin-bottom-5"
-  },
-  label: {
-    text: "What is the full product name?"
-  },
-  hint: {
-    classes: "govuk-hint govuk-!-font-size-16",
-    html: "For example, Dyson Small Ball Animal 2."
-  },
-  type: "text",
-  id: "fullproductname",
-  name: "fullproductname"
 
-}) }}
+
+<div class="govuk-form-group govuk-!-margin-bottom-5" data-test-for="input" data-test-ele-name="fullproductname">
+  <label class="govuk-label" for="fullproductname">
+    What is the full product name?
+  </label>
+
+
+
+  <div id="fullproductname-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+    For example, Dyson Small Ball Animal 2.
+  </div>
+
+  <span id="fullproductname-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a full product name
+  </span>
+
+  <input class="govuk-input" id="fullproductname" name="fullproductname" type="text" aria-describedby="fullproductname-hint">
+</div>
+
 
         <div class="opss-sub-form-group govuk-!-margin-bottom-4">
 
+            <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="brand">
 
-{{ govukRadios({
-  classes: "govuk-radios--small",
-  idPrefix: "brand",
-  name: "brand",
-  fieldset: {
-    legend: {
-      text: "Does the product have a manufacturer's brand name?"
-    }
-  },
-  hint: {
-    classes: "govuk-hint govuk-!-font-size-16",
-    text: "For example, Dyson."
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: brandHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+              <fieldset class="govuk-fieldset" aria-describedby="brand-hint">
 
-{{ govukRadios({
-  classes: "govuk-radios--small",
-  idPrefix: "product",
-  name: "product",
-  fieldset: {
-    legend: {
-      text: "Does the product have a specific product name?"
-    }
-  },
-  hint: {
-    classes: "govuk-hint govuk-!-font-size-16",
-    text: "For example, Small Ball."
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: productHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+              <legend class="govuk-fieldset__legend">
 
-{{ govukRadios({
-  classes: "govuk-radios--small",
-  idPrefix: "model",
-  name: "model",
-  fieldset: {
-    legend: {
-      text: "Does the product have a model name?"
-    }
-  },
-  hint: {
-    classes: "govuk-hint govuk-!-font-size-16",
-    text: "For example, Animal 2."
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      conditional: {
-        html: modelHtml
-      }
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+                Does the product have a manufacturer&#39;s brand name?
+
+              </legend>
+
+
+              <div id="brand-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+                For example, Dyson.
+              </div>
+
+              <span id="brand-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if the product has a manufacturer's brand name
+              </span>
+
+              <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+
+
+
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="brand" name="brand" type="radio" value="yes" data-aria-controls="conditional-brand">
+                      <label class="govuk-label govuk-radios__label" for="brand">
+                    Yes
+                  </label>
+
+                    </div>
+
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-brand">
+
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="brandName">
+                Brand name
+              </label>
+
+              <span id="brandName-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a brand name
+              </span>
+
+              <input class="govuk-input govuk-input--width-20" id="brandName" name="brandName" type="text" spellcheck="false">
+            </div>
+
+
+                      </div>
+
+
+
+
+
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="brand-2" name="brand" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="brand-2">
+                    No
+                  </label>
+
+                    </div>
+
+
+
+
+              </div>
+
+
+            </fieldset>
+
+
+            </div>
+
+            <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="product">
+
+              <fieldset class="govuk-fieldset" aria-describedby="product-hint">
+
+              <legend class="govuk-fieldset__legend">
+
+                Does the product have a specific product name?
+
+              </legend>
+
+
+              <div id="product-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+                For example, Small Ball.
+              </div>
+
+             <span id="brand-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if the product has a specific product name
+              </span>
+
+
+
+              <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+
+
+
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="product" name="product" type="radio" value="yes" data-aria-controls="conditional-product">
+                      <label class="govuk-label govuk-radios__label" for="product">
+                    Yes
+                  </label>
+
+                    </div>
+
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-product">
+
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="productName">
+                Product name
+              </label>
+
+              <span id="productName-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a product name
+              </span>
+
+              <input class="govuk-input govuk-input--width-20" id="productName" name="productName" type="text" spellcheck="false">
+            </div>
+
+
+                      </div>
+
+
+
+
+
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="product-2" name="product" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="product-2">
+                    No
+                  </label>
+
+                    </div>
+
+
+
+
+              </div>
+
+
+            </fieldset>
+
+
+            </div>
+
+            <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="model">
+
+              <fieldset class="govuk-fieldset" aria-describedby="model-hint">
+
+              <legend class="govuk-fieldset__legend">
+
+                Does the product have a model name?
+
+              </legend>
+
+
+              <div id="model-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+                For example, Animal 2.
+              </div>
+
+              <span id="brand-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if the product has a model name
+              </span>
+
+
+              <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="model" name="model" type="radio" value="yes" data-aria-controls="conditional-model">
+                      <label class="govuk-label govuk-radios__label" for="model">
+                        Yes
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-model">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="modelName">
+                          Model name
+                        </label>
+
+                        <span id="modelName-error" class="govuk-error-message">
+                          <span class="govuk-visually-hidden">Error:</span> Enter a model name
+                        </span>
+
+                        <input class="govuk-input govuk-input--width-20" id="modelName" name="modelName" type="text" spellcheck="false">
+                      </div>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="model-2" name="model" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="model-2">
+                        No
+                      </label>
+                    </div>
+
+              </div>
+
+
+            </fieldset>
+
+
+            </div>
+
 
         </div>
 
-{{ govukInput({
-  formGroup: {
-    classes: "govuk-!-margin-bottom-5"
-  },
-  label: {
-    text: "What is the model number?"
-  },
-  hint: {
-    classes: "govuk-hint govuk-!-font-size-16",
-    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.'
-  },
-  type: "text",
-  classes: " govuk-input--width-10",
-  id: "modelnumber",
-  name: "modelnumber"
 
-}) }}
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-top-6"
-}) }}
+<div class="govuk-form-group govuk-!-margin-bottom-5">
+  <label class="govuk-label" for="modelnumber">
+    What is the model number?
+  </label>
+
+
+
+  <div id="modelnumber-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+    Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.
+  </div>
+
+<input class="govuk-input  govuk-input--width-10" id="modelnumber" name="modelnumber" type="text" aria-describedby="modelnumber-hint">
+</div>
+
+
+
+
+
+
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+  Continue
+</button>
+
 
       </form>
 
 
     </div>
   </div>
+
 {% endblock %}
 
