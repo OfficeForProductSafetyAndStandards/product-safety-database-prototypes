@@ -13,79 +13,216 @@
 
 
 {% block content %}
-  <div class="govuk-grid-row">
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#marking">Select yes if the product has any marking</a>
+
+      </li>
+    <li>
+
+        <a href="#mark">Select the marking</a>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
+        <form id="test-form" action="#" method="post" novalidate>
 
 
-{% set yesHtml %}
-    {{ govukCheckboxes({
-    idPrefix: "mark",
-    name: "mark",
-    fieldset: {
-        legend: {
-        text: "Select all the marking which applies",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend"
-        }
-    },
-    items: [
-        {
-        value: "ukca",
-        html: "<abbr>UKCA</abbr>"
-        },
-        {
-        value: "ukni",
-        html: "<abbr>UKNI</abbr>"
-        },
-        {
-        value: "ce",
-        html: "<abbr>CE</abbr>"
-        }
-    ]
-    }) }}
-{% endset -%}
+<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="marking">
 
-{{ govukRadios({
-    idPrefix: "marking",
-    name: "marking",
-    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
-    fieldset: {
-        legend: {
-            text: "Does the product have any marking?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-        }
-    },
-    hint: {
-        html: "This includes the <abbr>UKCA</abbr>, <abbr>UKNI</abbr> or <abbr>CE</abbr> marking."
-    },
-    items: [
-    {
-        value: "yes",
-        text: "Yes",
-        conditional: {
-        html: yesHtml
-        }
-    },
-    {
-      value: "no",
-      text: "No"
-    },
-    {
-      value: "unknown",
-      text: "Unknown"
-    }
-  ]
-}) }}
+  <fieldset class="govuk-fieldset" aria-describedby="marking-hint">
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      Does the product have any marking?
+    </h1>
+
+  </legend>
+
+
+  <div id="marking-hint" class="govuk-hint">
+    This includes the <abbr>UKCA</abbr>, <abbr>UKNI</abbr> or <abbr>CE</abbr> marking.
+  </div>
+
+  <span id="marking-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select yes if the product has any marking
+  </span>
+
+  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1 govuk-radios--conditional" data-module="govuk-radios">
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="marking" name="marking" type="radio" value="yes" data-aria-controls="conditional-marking">
+          <label class="govuk-label govuk-radios__label" for="marking">
+        Yes
+      </label>
+
+        </div>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marking">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+
+    Select all the marking which applies
+
+  </legend>
+
+  <span id="mark-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select the marking
+  </span>
+  <div class="govuk-checkboxes">
+
+
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="mark" name="mark" type="checkbox" value="ukca">
+          <label class="govuk-label govuk-checkboxes__label" for="mark">
+        <abbr>UKCA</abbr>
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="mark-2" name="mark" type="checkbox" value="ukni">
+          <label class="govuk-label govuk-checkboxes__label" for="mark-2">
+        <abbr>UKNI</abbr>
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="mark-3" name="mark" type="checkbox" value="ce">
+          <label class="govuk-label govuk-checkboxes__label" for="mark-3">
+        <abbr>CE</abbr>
+      </label>
+
+        </div>
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="marking-2" name="marking" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="marking-2">
+        No
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="marking-3" name="marking" type="radio" value="unknown">
+          <label class="govuk-label govuk-radios__label" for="marking-3">
+        Unknown
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
         </form>
 
     </div>
   </div>
+
 {% endblock %}

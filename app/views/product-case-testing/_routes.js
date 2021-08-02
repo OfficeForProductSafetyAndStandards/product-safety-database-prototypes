@@ -192,116 +192,26 @@ router.post('/does-the-product-have-a-brand-error-2', function (req, res) {
 })*/
 //************* what is the product name
 router.post('/what-is-the-product-name', function (req, res) {
-  var fullproductname = req.session.data['fullproductname']
-  var brandp = req.session.data['brand']
-  var productp = req.session.data['product']
-  var modelp = req.session.data['model']
-  //var brandName = req.session.data['brandName']
-
-
-  /*if ((fullproductname == '') || (brandp == null)) {
-    return res.redirect('/product-case-testing/what-is-the-product-name-error')
-  } else {
     return res.redirect('/product-case-testing/what-is-the-product-category')
-  }*/
 })
 
-/*router.post('/what-is-the-product-name-error', function (req, res) {
-  //var fullproductname2 = req.session.data['fullproductname']
-  var brandp2 = req.session.data['brand']
-  var brandName2 = req.session.data['brandName']
 
-  if ((brandp2 == 'yes') && (brandName2 == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-name-error-2')
-  } else {
-    return res.redirect('/product-case-testing/what-is-the-product-category')
-  }
-})*/
-
-/*router.post('/what-is-the-product-name-error-2', function (req, res) {
-  var brandName3 = req.session.data['brandName']
-
-  if (brandName3 == '') {
-    return res.redirect('/product-case-testing/what-is-the-product-name-error-2')
-  } else {
-    return res.redirect('/product-case-testing/what-is-the-product-category')
-  }
-})*/
 //************* start what-is-the-product-category
 router.post('/what-is-the-product-category', function (req, res) {
-  var category = req.session.data['category']
-  var subcategory = req.session.data['subcategory']
-
-  if ((category == '') && (subcategory == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-2')
-  } else if ((category == '') && (subcategory != '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error')
-  } else if ((category != '') && (subcategory == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-3')
-  } else {
-    return res.redirect('/product-case-testing/does-the-product-have-marking')
-  }
-})
-router.post('/what-is-the-product-category-error', function (req, res) {
-  var category1 = req.session.data['category']
-  var subcategory1 = req.session.data['subcategory']
-
-  if ((category1 == '') && (subcategory1 == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-2')
-  } else if ((category1 == '') && (subcategory1 != '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error')
-  } else if ((category1 != '') && (subcategory1 == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-3')
-  } else {
-    return res.redirect('/product-case-testing/does-the-product-have-marking')
-  }
-})
-router.post('/what-is-the-product-category-error-3', function (req, res) {
-  var category3 = req.session.data['category']
-  var subcategory3 = req.session.data['subcategory']
-
-  if ((category3 == '') && (subcategory3 == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-2')
-  } else if ((category3 == '') && (subcategory3 != '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error')
-  } else if ((category3 != '') && (subcategory3 == '')) {
-    return res.redirect('/product-case-testing/what-is-the-product-category-error-3')
-  } else {
-    return res.redirect('/product-case-testing/does-the-product-have-marking')
-  }
+  return res.redirect('/product-case-testing/does-the-product-have-marking')
 })
 //************* start does-the-product-have-marking
 router.post('/does-the-product-have-marking', function (req, res) {
   var marking = req.session.data['marking']
 
-  if (marking == null) {
+  /*if (marking == null) {
     res.redirect('/product-case-testing/does-the-product-have-marking-error')
   } else {
     res.redirect('/product-case-testing/might-already-exist')
-  }
+  }*/
 })
-router.post('/does-the-product-have-marking-error', function (req, res) {
-  var marking2 = req.session.data['marking']
-  var mark2 = req.session.data['mark']
 
-  if (marking2 == null) {
-    res.redirect('/product-case-testing/does-the-product-have-marking-error')
-  } else if ((marking2 == 'yes') && (mark2 == null)) {
-    res.redirect('/product-case-testing/does-the-product-have-marking-error-2')
-  } else {
-    res.redirect('/product-case-testing/might-already-exist')
-  }
-})
-router.post('/does-the-product-have-marking-error-2', function (req, res) {
-  var marking3 = req.session.data['marking']
-  var mark3 = req.session.data['mark']
 
-  if ((marking3 == 'yes') && (mark3 == null)) {
-    res.redirect('/product-case-testing/does-the-product-have-marking-error-2')
-  } else {
-    res.redirect('/product-case-testing/might-already-exist')
-  }
-})
 // *********************** start might-already-exist
 router.post('/might-already-exist', function (req, res) {
   var isit = req.session.data['isit']
