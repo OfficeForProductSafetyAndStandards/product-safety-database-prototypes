@@ -1,0 +1,73 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Error - When was the product placed
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "describe-the-product"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if the product was placed on the market before 1 January 2021",
+      href: "#when"
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form action="#" method="post" novalidate>
+
+{{ govukRadios({
+  idPrefix: "when",
+  name: "when",
+  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
+  fieldset: {
+    legend: {
+      html: "Was the product placed on the market before 1&nbsp;January 2021?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  errorMessage: {
+    text: "Select yes if the product was placed on the market before 1 January 2021"
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "unknown",
+      text: "Unable to ascertain"
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}
+

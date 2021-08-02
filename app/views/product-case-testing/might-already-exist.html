@@ -1,0 +1,152 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Is this your product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "does-the-product-have-marking"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Is this your product?
+        </h1>
+
+        <div class="govuk-hint" id="isit-hint">
+            It appears that the product you are adding might already exist in our records? <span class="govuk-visually-hidden">Compare it to the product you are adding.</span>
+        </div>
+
+        <section class="govuk-grid-row opss-panels">
+            <section class="govuk-grid-column-one-half-from-desktop opss-panels__pair opss-panels__pair--left">
+
+                    <span class="govuk-caption-m">The product in our records</span>
+
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
+                        Sony 3000 hair dryer (x3000rpm)
+                    </h2>
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Brand </dt>
+                            <dd class="govuk-summary-list__value">Sony</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Category </dt>
+                            <dd class="govuk-summary-list__value">Hair dryer</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Subcategory </dt>
+                            <dd class="govuk-summary-list__value">Domestic electricals</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
+                            <dd class="govuk-summary-list__value"><span class="govuk-visually-hidden">No model number provided</span>&nbsp;</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Barcode </dt>
+                            <dd class="govuk-summary-list__value">12345678910</dd>
+                        </div>
+                    </dl>
+
+                    <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Product description
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.
+                        </div>
+                    </details>
+
+                    <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Product image<span class="govuk-visually-hidden">: Sony Xeria hair dryer</span>
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <img src="../public/images/hair-dryer.jpg" class="opss-details-img" alt="Sony hair dryer">
+                        </div>
+                    </details>
+
+            </section>
+            <section class="govuk-grid-column-one-half-from-desktop opss-panels__pair opss-panels__pair--right">
+
+                    <span class="govuk-caption-m">The product you are adding</span>
+
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
+                        Sony Hair Dryer 3000
+                    </h2>
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Brand </dt>
+                            <dd class="govuk-summary-list__value">Sony</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Category </dt>
+                            <dd class="govuk-summary-list__value">Hair dryer</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Subcategory </dt>
+                            <dd class="govuk-summary-list__value">Electricals</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
+                            <dd class="govuk-summary-list__value">
+                                <span class="govuk-visually-hidden">No model number provided yet</span>&nbsp;
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Barcode </dt>
+                            <dd class="govuk-summary-list__value"> <span class="govuk-visually-hidden">Not available</span> </dd>
+                        </div>
+                    </dl>
+
+            </section>
+        </section>
+
+        <form class="form" action="#" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="isit-hint">
+
+                    <legend class="govuk-visually-hidden">
+                        Do you want to stop adding a new product?
+                    </legend>
+
+                    <div class="govuk-radios govuk-!-padding-bottom-1">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="isit" name="isit" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="isit">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="isit-2" name="isit" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="isit-2">
+                                No - Continue to add the new product
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
