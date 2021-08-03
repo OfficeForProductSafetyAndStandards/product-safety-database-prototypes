@@ -1,6 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+const strFullproductname = "Sony Vector 8000xc";
+const strBrandName = "Sony";
+const strProductName = "Vector 8000xc";
+//const strModelName = "";
+//const strCategory = "Electrical appliances and equipment";
+const strModelNumber = '001-600006';
+const strBarcode = 'EIN-12345334-44';
+const strImageMain = '../public/images/hair-dryer.jpg';
+
 
 
 //************* routes for /product-case-testing ************* starts
@@ -99,21 +108,11 @@ router.post('/is-case-counterfeit-error', function (req, res) {
 })
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
+
+
+
   var theBarCode = req.session.data['barcode']
   var theBarNumberP = req.session.data['barnumber'].replace(/\D/g,'');
-
-  /*  if (barcodexxx == null) {
-      return res.redirect('/product-case-testing/do-you-have-the-barcode-error')
-    } else if ((barcodexxx == 'yes') && (barnumber == '')) {
-      return res.redirect('/product-case-testing/do-you-have-the-barcode-error-2')
-    } else if ((barcodexxx == 'yes') && (barnumber == '6666667777777')) {
-      return res.redirect('/product-case-testing/might-already-exist-bc')
-    } else if ((barcodexxx == 'yes') && (barnumber != '')) {
-      return res.redirect('/product-case-testing/what-is-the-product-name')
-    } else if (barcodexxx == 'no') {
-      return res.redirect('/product-case-testing/what-is-the-product-name')
-    }
-  })*/
 
   if (theBarCode == 'yes') {
 
@@ -202,19 +201,43 @@ router.post('/what-is-the-product-category', function (req, res) {
 })
 //************* start does-the-product-have-marking
 router.post('/does-the-product-have-marking', function (req, res) {
-  var marking = req.session.data['marking']
+  //var marking = req.session.data['marking']
 
-  /*if (marking == null) {
-    res.redirect('/product-case-testing/does-the-product-have-marking-error')
-  } else {
-    res.redirect('/product-case-testing/might-already-exist')
-  }*/
+  var fullproductnameOurProduct = strFullproductname; //.toLowerCase().replace(/\s/g, '')
+  var brandNameOurProduct = strBrandName;
+  var productNameOurProduct = strProductName;
+  //var modelNameOurProduct = strModelName;
+  //var categoryOurProduct = strCategory;
+  var modelnumberOurProduct = strModelNumber.replace(/\D/g,'');
+
+  var fullproductname1 = req.session.data['fullproductname']  //.toLowerCase().replace(/\s/g, '')
+  var brandName1 = req.session.data['brandName']
+  var productName1 = req.session.data['productName']
+  //var modelName1 = req.session.data['modelName']
+  //var categoryText = req.session.data['category']
+  var modelnumber1 = req.session.data['modelnumber'].replace(/\D/g,'');
+
+
+  if (fullproductname1 == fullproductnameOurProduct){
+    return res.redirect('/product-case-testing/might-already-exist')
+  }else if((brandName1 == brandNameOurProduct) && (productName1 == productNameOurProduct)){
+    return res.redirect('/product-case-testing/might-already-exist')
+  }else if(modelnumber1 == modelnumberOurProduct){
+    return res.redirect('/product-case-testing/might-already-exist')
+  }else{
+    return res.redirect('/product-case-testing/describe-the-product')
+  }
+
 })
 
 
 // *********************** start might-already-exist
+router.get('/might-already-exist', function (req, res) {
+  res.render('product-case-testing/might-already-exist', { thisFullproductname: strFullproductname, thisBrand: strBrandName, thisCategory: 'Electrical appliances and equipment', thisSubcategory: 'Domestic electricals', thisModelNumber: strModelNumber, thisBarcode: strBarcode, thisDescription: 'The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.', thisImage: strImageMain })
+})
+
 router.post('/might-already-exist', function (req, res) {
-  var isit = req.session.data['isit']
+  /*var isit = req.session.data['isit']
 
   if (isit == null) {
     res.redirect('/product-case-testing/might-already-exist-error')
@@ -222,9 +245,9 @@ router.post('/might-already-exist', function (req, res) {
     res.redirect('/product-case-testing/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/product-case-testing/describe-the-product')
-  }
+  }*/
 })
-router.post('/might-already-exist-error', function (req, res) {
+/*router.post('/might-already-exist-error', function (req, res) {
   var isit2 = req.session.data['isit']
 
   if (isit2 == null) {
@@ -234,11 +257,11 @@ router.post('/might-already-exist-error', function (req, res) {
   } else if (isit2 == 'no') {
     res.redirect('/product-case-testing/describe-the-product')
   }
-})
+})*/
 //************* start describe-the-product
 router.post('/describe-the-product', function (req, res) {
   var description = req.session.data['description']
-
+/*
   if (description.length == 0) {
     res.redirect('/product-case-testing/describe-the-product-error')
   } else if (description.length > 1000) {
@@ -254,7 +277,7 @@ router.post('/describe-the-product-error', function (req, res) {
     res.redirect('/product-case-testing/describe-the-product-error')
   } else {
     res.redirect('/product-case-testing/when-was-the-product-placed')
-  }
+  }*/
 })
 //************* start when-was-the-product-placed
 router.post('/when-was-the-product-placed', function (req, res) {

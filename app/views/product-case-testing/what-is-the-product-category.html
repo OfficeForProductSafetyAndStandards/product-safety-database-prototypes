@@ -38,7 +38,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-      <form id="test-form" action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
 
 
@@ -55,42 +55,42 @@
 
 
   <select class="govuk-select" id="category" name="category" aria-describedby="category-hint">
-<option value="v0" selected>Personal protective equipment (PPE)</option>
-<option value="v1">Hand sanitiser</option>
-<option value="v2">Chemical products</option>
-<option value="v3">Childcare articles and children’s equipment</option>
-<option value="v4">Clothing, textiles and fashion items</option>
-<option value="v5">Communication and media equipment</option>
-<option value="v6">Construction products</option>
-<option value="v7">Cosmetics</option>
-<option value="v8">Decorative articles</option>
-<option value="v9">Eco-design</option>
-<option value="v10">Electrical appliances and equipment</option>
-<option value="v11">Explosive atmospheres equipment</option>
-<option value="v12">Food-imitating products</option>
-<option value="v13">Furniture</option>
-<option value="v14">Gadgets</option>
-<option value="v15">Gas appliances and components</option>
-<option value="v16">Hand tools</option>
-<option value="v17">Hobby / sports equipment</option>
-<option value="v18">Jewellery</option>
-<option value="v19">Kitchen / cooking accessories</option>
-<option value="v20">Laser pointers</option>
-<option value="v21">Lifts</option>
-<option value="v22">Lighters</option>
-<option value="v23">Lighting chains</option>
-<option value="v24">Lighting equipment</option>
-<option value="v25">Machinery</option>
-<option value="v26">Measuring instruments</option>
-<option value="v27">Motor vehicles (including spare parts)</option>
-<option value="v28">Pressure equipment / vessels</option>
-<option value="v29">Pyrotechnic articles</option>
-<option value="v30">Rail and guided transport</option>
-<option value="v31">Recreational crafts</option>
-<option value="v32">Stationery</option>
-<option value="v33">Toys</option>
-<option value="v34">Waste</option>
-<option value="v35">Other</li>
+<option value="Personal protective equipment (PPE)" selected>Personal protective equipment (PPE)</option>
+<option value="Hand sanitiser">Hand sanitiser</option>
+<option value="Chemical products">Chemical products</option>
+<option value="Childcare articles and children’s equipment">Childcare articles and children’s equipment</option>
+<option value="Clothing, textiles and fashion items">Clothing, textiles and fashion items</option>
+<option value="Communication and media equipment">Communication and media equipment</option>
+<option value="Construction products">Construction products</option>
+<option value="Cosmetics">Cosmetics</option>
+<option value="Decorative articles">Decorative articles</option>
+<option value="Eco-design">Eco-design</option>
+<option value="Electrical appliances and equipment">Electrical appliances and equipment</option>
+<option value="Explosive atmospheres equipment">Explosive atmospheres equipment</option>
+<option value="Food-imitating products">Food-imitating products</option>
+<option value="Furniture">Furniture</option>
+<option value="Gadgets">Gadgets</option>
+<option value="Gas appliances and components">Gas appliances and components</option>
+<option value="Hand tools">Hand tools</option>
+<option value="Hobby / sports equipment">Hobby / sports equipment</option>
+<option value="Jewellery">Jewellery</option>
+<option value="Kitchen / cooking accessories">Kitchen / cooking accessories</option>
+<option value="Laser pointers">Laser pointers</option>
+<option value="Lifts">Lifts</option>
+<option value="Lighters">Lighters</option>
+<option value="Lighting chains">Lighting chains</option>
+<option value="Lighting equipment">Lighting equipment</option>
+<option value="Machinery">Machinery</option>
+<option value="Measuring instruments">Measuring instruments</option>
+<option value="Motor vehicles (including spare parts)">Motor vehicles (including spare parts)</option>
+<option value="Pressure equipment / vessels">Pressure equipment / vessels</option>
+<option value="Pyrotechnic articles">Pyrotechnic articles</option>
+<option value="Rail and guided transport">Rail and guided transport</option>
+<option value="Recreational crafts">Recreational crafts</option>
+<option value="Stationery">Stationery</option>
+<option value="Toys">Toys</option>
+<option value="Waste">Waste</option>
+<option value="Other">Other</li>
 </select>
 </div>
 
@@ -134,5 +134,24 @@
     </div>
   </div>
 
+
 {% endblock %}
 
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
+{% endblock %}

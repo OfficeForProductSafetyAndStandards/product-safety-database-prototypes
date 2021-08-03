@@ -13,39 +13,76 @@
 
 
 {% block content %}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
         <form action="#" method="post" novalidate>
 
-{{ govukCharacterCount({
-  name: "description",
-  id: "description",
-  formGroup: {
-    classes: "govuk-!-margin-bottom-5"
-  },
-  maxlength: 1000,
-  label: {
-    text: "Describe the product",
-    classes: "govuk-label--l govuk-!-margin-bottom-2",
-    isPageHeading: true
-  },
-  hint: {
-    classes: "govuk-!-margin-bottom-6",
-    text: "Enter additional information about the product. For example, colour and size or a description of the packaging. (Do not add case information about damage or incidents)."
-  },
-  countMessage: {
-      classes: "govuk-!-font-size-16"
-  }
-}) }}
 
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+
+
+<div class="govuk-form-group govuk-!-margin-bottom-5">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l govuk-!-margin-bottom-2" for="description">
+      Describe the product
+    </label>
+    </h1>
+
+
+
+  <div id="description-hint" class="govuk-hint govuk-!-margin-bottom-6">
+    Enter additional information about the product. For example, colour and size or a description of the packaging. (Do not add case information about damage or incidents).
+  </div>
+
+
+  <textarea class="govuk-textarea govuk-js-character-count" id="description" name="description" rows="5" aria-describedby="description-info description-hint"></textarea>
+</div>
+
+  <div id="description-info" class="govuk-hint govuk-character-count__message govuk-!-font-size-16" aria-live="polite">
+  You can enter up to 1000 characters
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
         </form>
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
 {% endblock %}

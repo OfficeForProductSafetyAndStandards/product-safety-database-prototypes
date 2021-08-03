@@ -41,17 +41,8 @@
     <div class="govuk-grid-column-full">
 
 
-      <form id="test-form" action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
         <span class="govuk-caption-l">Add a product</span>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -154,12 +145,24 @@
     </div>
   </div>
 
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
 <script>
   jQuery(document).ready(function(){
 
     setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
 
   });
 </script>
-{% endblock %}
 
+{% endblock %}

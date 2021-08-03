@@ -63,7 +63,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form id="test-form" action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
 
 
@@ -343,3 +343,22 @@
 
 {% endblock %}
 
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
+{% endblock %}
