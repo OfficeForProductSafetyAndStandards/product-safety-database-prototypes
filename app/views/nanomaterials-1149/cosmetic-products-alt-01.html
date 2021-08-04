@@ -6,7 +6,6 @@
 
 
 {% block content %}
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
@@ -146,7 +145,7 @@
         html: '<a href="#" class="govuk-link govuk-link--no-visited-state">Upload <span class="govuk-visually-hidden">the Loremipsumipsum zip file </span>again</a>'
       },
       {
-        html: '<input type="submit" name="commit" value="Dismiss" class="govuk-button opss-button-link" role="link" data-disable-with="Dismiss">'
+        html: '<input type="button" name="commit" value="Dismiss" class="govuk-button opss-button-link" role="link" data-disable-with="Dismiss">'
       }
     ],
     [
@@ -199,7 +198,9 @@
     },
     {
       heading: {
-        text: "Incomplete notifications (2)"
+        html: '<button type="button" id="incomplete-notifications-heading-1" aria-controls="incomplete-notifications-content-1" class="govuk-accordion__section-button" aria-describedby="incomplete-notifications-summary-1" aria-expanded="true">
+            Incomplete notifications (108)
+            <span class="govuk-accordion__icon" aria-hidden="true"></span></button>'
       },
       summary: {
         html: '<p class="govuk-body govuk-!-margin-bottom-1">There are currently 2 incomplete notifications.</p>'
@@ -639,5 +640,17 @@
 
     </div>
 </div>
+
+<script>
+  //incomplete-notifications-content-1
+
+  //document.addEventListener('DOMContentLoaded', function() {
+      //alert('fired');
+      //localStorage.removeItem('accordion-opss-content-2');
+      //localStorage.setItem('accordion-opss-content-2', false);
+      //localStorage.setItem('mytest', false);
+  //}, false);
+
+</script>
 
 {% endblock %}

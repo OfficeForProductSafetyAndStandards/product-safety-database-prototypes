@@ -13,6 +13,23 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#description">The additional information must be 1000 characters or fewer</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
 
 
   <div class="govuk-grid-row">
@@ -26,7 +43,7 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
 
 
-<div class="govuk-form-group govuk-!-margin-bottom-5">
+<div class="govuk-form-group govuk-!-margin-bottom-5" data-test-for="textarea" data-test-ele-name="description">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--l govuk-!-margin-bottom-2" for="description">
       Describe the product
@@ -39,6 +56,9 @@
     Enter additional information about the product. For example, colour and size or a description of the packaging. (Do not add case information about damage or incidents).
   </div>
 
+  <span id="description-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> The additional information must be 1000 characters or fewer
+  </span>
 
   <textarea class="govuk-textarea govuk-js-character-count" id="description" name="description" rows="5" aria-describedby="description-info description-hint"></textarea>
 </div>

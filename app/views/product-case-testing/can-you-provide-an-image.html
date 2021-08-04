@@ -13,40 +13,111 @@
 
 
 {% block content %}
-  <div class="govuk-grid-row">
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#productimage">Select yes if you can provide an image of the product</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
         <form action="#" method="post" novalidate>
 
-{{ govukRadios({
-    idPrefix: "productimage",
-    name: "productimage",
-    classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
-    fieldset: {
-        legend: {
-            html: "Can you provide an image of the product? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-        }
-    },
-    hint: {
-      text: "Select yes to upload an image and add it to the product record."
-    },
-    items: [
-    {
-        value: "yes",
-        text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+
+
+
+
+
+
+
+
+<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="productimage">
+
+  <fieldset class="govuk-fieldset" aria-describedby="productimage-hint">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      Can you provide an image of the product?
+    </h1>
+
+  </legend>
+
+
+  <div id="productimage-hint" class="govuk-hint">
+    Select yes to upload an image and add it to the product record.
+  </div>
+
+
+  <span id="productimage-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select yes if you can provide an image of the product
+  </span>
+
+  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="productimage" name="productimage" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="productimage">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="productimage-2" name="productimage" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="productimage-2">
+        No
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
       </form>
 
@@ -55,3 +126,21 @@
   </div>
 {% endblock %}
 
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
+{% endblock %}

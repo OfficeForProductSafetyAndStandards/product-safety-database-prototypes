@@ -109,8 +109,6 @@ router.post('/is-case-counterfeit-error', function (req, res) {
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
 
-
-
   var theBarCode = req.session.data['barcode']
   var theBarNumberP = req.session.data['barnumber'].replace(/\D/g,'');
 
@@ -237,134 +235,45 @@ router.get('/might-already-exist', function (req, res) {
 })
 
 router.post('/might-already-exist', function (req, res) {
-  /*var isit = req.session.data['isit']
+  var isit = req.session.data['isit']
 
-  if (isit == null) {
-    res.redirect('/product-case-testing/might-already-exist-error')
-  } else if (isit == 'yes') {
+  if (isit == 'yes') {
     res.redirect('/product-case-testing/it-was-your-product')
   } else if (isit == 'no') {
     res.redirect('/product-case-testing/describe-the-product')
-  }*/
-})
-/*router.post('/might-already-exist-error', function (req, res) {
-  var isit2 = req.session.data['isit']
-
-  if (isit2 == null) {
-    res.redirect('/product-case-testing/might-already-exist-error')
-  } else if (isit2 == 'yes') {
-    res.redirect('/product-case-testing/it-was-your-product')
-  } else if (isit2 == 'no') {
-    res.redirect('/product-case-testing/describe-the-product')
   }
-})*/
+})
 //************* start describe-the-product
 router.post('/describe-the-product', function (req, res) {
-  var description = req.session.data['description']
-/*
-  if (description.length == 0) {
-    res.redirect('/product-case-testing/describe-the-product-error')
-  } else if (description.length > 1000) {
-    res.redirect('/product-case-testing/describe-the-product-error')
-  } else {
-    res.redirect('/product-case-testing/when-was-the-product-placed')
-  }
-})
-router.post('/describe-the-product-error', function (req, res) {
-  var description2 = req.session.data['description']
-
-  if (description2.length > 1000) {
-    res.redirect('/product-case-testing/describe-the-product-error')
-  } else {
-    res.redirect('/product-case-testing/when-was-the-product-placed')
-  }*/
+  res.redirect('/product-case-testing/when-was-the-product-placed')
 })
 //************* start when-was-the-product-placed
 router.post('/when-was-the-product-placed', function (req, res) {
-  var whenval = req.session.data['when']
-
-  if (whenval == null) {
-    res.redirect('/product-case-testing/when-was-the-product-placed-error')
-  } else {
-    res.redirect('/product-case-testing/can-you-provide-an-image')
-  }
+  res.redirect('/product-case-testing/can-you-provide-an-image')
 })
-router.post('/when-was-the-product-placed-error', function (req, res) {
-  var whenval2 = req.session.data['when']
 
-  if (whenval2 == null) {
-    res.redirect('/product-case-testing/when-was-the-product-placed-error')
-  } else {
-    res.redirect('/product-case-testing/can-you-provide-an-image')
-  }
-})
 //****************** can-you-provide-an-image
 router.post('/can-you-provide-an-image', function (req, res) {
-  const productimage = req.session.data['productimage']
-
-  if (productimage == null) {
-    res.redirect('/product-case-testing/can-you-provide-an-image-error')
-  } else if (productimage == 'no') {
-    res.redirect('/product-case-testing/success-product-added')
+  if (req.session.data['productimage'] == 'yes') {
+    res.redirect('/product-case-testing/upload-a-product-image')
   } else {
-    res.redirect('/product-case-testing/upload-a-product-image')
-  }
-})
-router.post('/can-you-provide-an-image-error', function (req, res) {
-  const productimage2 = req.session.data['productimage']
-
-  if (productimage2 == null) {
-    res.redirect('/product-case-testing/can-you-provide-an-image-error')
-  } else if (productimage2 == 'no') {
     res.redirect('/product-case-testing/success-product-added')
-  }else{
-    res.redirect('/product-case-testing/upload-a-product-image')
   }
 })
 //****************** success-product-added
 router.post('/success-product-added', function (req, res) {
-  const createcase = req.session.data['createcase']
-
-  if (createcase == null) {
-    res.redirect('/product-case-testing/success-product-added-error')
-  } else if (createcase == 'no') {
-    res.redirect('/product-case-testing/products-page')
+  if (req.session.data['createcase'] == 'yes') {
+    res.redirect('/product-case-testing/is-this-case-related-to-covid')
   } else {
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')
-  }
-})
-router.post('/success-product-added-error', function (req, res) {
-  const createcase2 = req.session.data['createcase']
-
-  if (createcase2 == null) {
-    res.redirect('/product-case-testing/success-product-added-error')
-  } else if (createcase2 == 'no') {
     res.redirect('/product-case-testing/products-page')
-  }else{
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')
   }
 })
 //****************** it-was-your-product
 router.post('/it-was-your-product', function (req, res) {
-  const createcaseT = req.session.data['createcase']
-
-  if (createcaseT == null) {
-    res.redirect('/product-case-testing/it-was-your-product-error')
-  } else if (createcaseT == 'no') {
-    res.redirect('/product-case-testing/products-page')
+  if (req.session.data['createcase'] == 'yes') {
+    res.redirect('/product-case-testing/is-this-case-related-to-covid')
   } else {
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')
-  }
-})
-router.post('/it-was-your-product-error', function (req, res) {
-  const createcase2T = req.session.data['createcase']
-
-  if (createcase2T == null) {
-    res.redirect('/product-case-testing/it-was-your-product-error')
-  } else if (createcase2T == 'no') {
     res.redirect('/product-case-testing/products-page')
-  }else{
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')
   }
 })
 //************ start upload-a-product-image

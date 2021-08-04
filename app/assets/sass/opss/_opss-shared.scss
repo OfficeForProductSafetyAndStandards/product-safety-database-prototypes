@@ -36,6 +36,10 @@ h1, h2, h3, h4,
 .app-task-list li a {
     @include word-wrap;
 }
+h1.govuk-fieldset__heading,
+h1.govuk-label-wrapper label.govuk-label--l {
+    overflow-wrap: normal; word-wrap: normal; word-break: normal; hyphens: unset;
+}
 /*.opss-secondary-text-colour {color: $govuk-secondary-text-colour; }
 .opss-weight-normal {font-weight: normal;
     *[class^="govuk-heading"] & {
