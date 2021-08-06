@@ -43,7 +43,8 @@
     .govuk-form-group--error > fieldset > .govuk-error-message,
     .govuk-form-group--error[data-test-for=textarea] > .govuk-error-message,
     .govuk-radios__conditional .govuk-form-group--error .govuk-error-message,
-    .govuk-form-group--error[data-test-for=input] .govuk-error-message {display: block; }
+    .govuk-form-group--error[data-test-for=input] .govuk-error-message,
+    .govuk-form-group--error[data-test-for=upload] .govuk-error-message {display: block; }
 
     .test-errors-1, .test-errors-2, .test-errors-3, .test-errors-4,
     .test-errors-5, .test-errors-6, .test-errors-7, .test-errors-8 {display: block !important; }
@@ -56,6 +57,18 @@
     .test-errors-6 ul li:nth-child(6),
     .test-errors-7 ul li:nth-child(7),
     .test-errors-8 ul li:nth-child(8) {display: block !important; }
+
+    .imagearea0, .imagearea1 {
+      max-height: 140px;
+      max-width: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .none0[style] + .none1 {
+      border-top: 1px solid #b1b4b6;
+      margin-top: 20px;
+      padding-top: 20px;
+    }
   </style>
 {% endblock %}
 

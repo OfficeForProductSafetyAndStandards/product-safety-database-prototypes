@@ -13,7 +13,23 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
 
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#another">Select yes if you want to add another image</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
 
   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
@@ -46,7 +62,7 @@
 
 
 
-<div class="govuk-form-group">
+<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="another">
 
   <fieldset class="govuk-fieldset">
 
@@ -58,6 +74,9 @@
 
   </legend>
 
+<span id="another-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select yes if you want to add another image
+  </span>
 
   <div class="govuk-radios govuk-!-padding-top-3">
 
@@ -183,32 +202,7 @@
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
 
-    var img0 = new Image();
-    img0.src = localStorage.theImage0;
-    img0.name = localStorage.theImageName0;
-    img0.title = localStorage.theImageTitle0;
-    img0.desc = localStorage.theImageDesc0;
-
-    if(localStorage.getItem('theImageName0') !== null){
-        $('#noImages').hide();
-
-        $('.imagearea0').html(img0);
-        $('#fileName0').text(img0.name);
-        $('#imageTitle0').text(img0.title);
-        $('#imageDesc0').text(img0.desc);
-
-        var myImagesID = $('#myImages');
-        myImagesID.find('.none0').show();
-        myImagesID.find('.none0 .govuk-link').click(function(e){
-            e.preventDefault();
-            localStorage.removeItem('theImage0');
-            localStorage.removeItem('theImageName0');
-            localStorage.removeItem('theImageTitle0');
-            localStorage.removeItem('imageDesc0');
-            window.location.assign($(this).attr('href'));
-        });
-    }
-
+    getAndDisplayImages();
 
   });
 </script>

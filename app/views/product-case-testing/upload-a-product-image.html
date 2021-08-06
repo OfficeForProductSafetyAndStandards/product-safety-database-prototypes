@@ -13,6 +13,25 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#uploadfile">Choose an image file to upload</a>
+            </li>
+            <li>
+                <a href="#imagetitle">Enter a title for the image</a>
+            </li>
+            <li>
+                <a href="#imagedesc">Enter a description of the image</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-bottom-6">
 
@@ -49,13 +68,17 @@
 
     <section class="govuk-grid-column-two-thirds opss-equal-height__col" role="region" aria-label="Add image form">
         <form action="#" method="post" novalidate>
-            <div class="govuk-form-group">
+            <div class="govuk-form-group" data-test-for="upload" data-test-ele-name="uploadfile">
                 <label class="govuk-label govuk-label--s" for="uploadfile">
                     Upload the image file
                 </label>
                 <div id="uploadfile-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-width-two-thirds">
                     The supported file types are: <abb>png</abb>, <abbr>jpg</abbr>, <abbr>jpeg</abbr> and <abbr>webp</abbr>.
                 </div>
+
+                <span id="uploadfile-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Choose an image file to upload
+                </span>
 
                 <div class="govuk-!-padding-top-1">
                     <input type="file" id="uploadfile" class="govuk-file-upload" name="uploadfile" aria-describedby="uploadfile-hint">
@@ -64,7 +87,7 @@
 
 
 
-<div class="govuk-form-group">
+<div class="govuk-form-group" data-test-for="input" data-test-ele-name="imagetitle">
   <label class="govuk-label govuk-label--s" for="imagetitle">
     Provide a title
   </label>
@@ -74,6 +97,10 @@
   <div id="imagetitle-hint" class="govuk-hint govuk-!-font-size-16">
     For example, PlayStation 5 Console or Dyson Power Wave 3300.
   </div>
+
+  <span id="imagetitle-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a title for the image
+  </span>
 
 <input class="govuk-input govuk-input--width-20" id="imagetitle" name="imagetitle" type="text" aria-describedby="imagetitle-hint" maxlength="250">
 </div>
@@ -85,7 +112,7 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
 
 
-<div class="govuk-form-group">
+<div class="govuk-form-group" data-test-for="textarea" data-test-ele-name="imagedesc">
   <label class="govuk-label govuk-label--s" for="imagedesc">
     Describe what the image shows <span class="govuk-visually-hidden">for the alternative image text</span>
   </label>
@@ -96,6 +123,9 @@
     For example, an unboxed white Ikea TATO table lamp, or the on-off cable switch.
   </div>
 
+  <span id="imagedesc-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a description of the image
+  </span>
 
   <textarea class="govuk-textarea govuk-js-character-count" id="imagedesc" name="imagedesc" rows="5" aria-describedby="imagedesc-info imagedesc-hint" autocomplete="off"></textarea>
 </div>
@@ -132,7 +162,7 @@
                         <span class="govuk-visually-hidden">Title: </span><span id="imageTitle0"></span>
                     </dt>
                     <dd>
-                        <span class="govuk-visually-hidden">File name: </span><span id="fileName0"></span>
+                        <span class="govuk-visually-hidden">File name: </span><span id="fileName"></span>
                     </dd>
                     <dd>
                         <span class="govuk-visually-hidden">Alternative image text: </span><span id="imageDesc0"></span>
@@ -184,90 +214,51 @@
   {% endblock %}
 
 <script>
-    /*function showname(f) {
-        var name = f;
-        return f.files.item(0).name;
-        //alert('Selected file: ' + name.files.item(0).name);
-        //alert('Selected file: ' + name.files.item(0).size);
-        //alert('Selected file: ' + name.files.item(0).type);
-    };*/
-
   jQuery(document).ready(function(){
 
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
 
-
-
-
-
-    var img0 = new Image();
-    img0.src = localStorage.theImage0;
-    img0.name = localStorage.theImageName0;
-    img0.title = localStorage.theImageTitle0;
-    img0.desc = localStorage.theImageDesc0;
-
-    if(localStorage.getItem('theImageName0') !== null){
-        $('#noImages').hide();
-
-        $('.imagearea0').html(img0);
-        $('#fileName0').text(img0.name);
-        $('#imageTitle0').text(img0.title);
-        $('#imageDesc0').text(img0.desc);
-
-        var myImagesID = $('#myImages');
-        myImagesID.find('.none').add(myImagesID.find('.none0')).show();
-        myImagesID.find('.none0 .govuk-link').click(function(e){
-            e.preventDefault();
-            localStorage.removeItem('theImage0');
-            localStorage.removeItem('theImageName0');
-            localStorage.removeItem('theImageTitle0');
-            localStorage.removeItem('imageDesc0');
-            window.location.assign($(this).attr('href'));
-        });
-    }
-
-
+    getAndDisplayImages();
 
     $("body").on("change",".govuk-file-upload",function(){
-        var fileInput0 = $(this)[0];//returns a HTML DOM object by putting the [0] since it's really an associative array.
-        var file0 = fileInput0.files[0]; //there is only '1' file since they are not multiple type.
-        var fileName0 = fileInput0.files.item(0).name;
 
-        var reader0 = new FileReader();
-        reader0.onload = function(e) {
-            var img0 = new Image();// Create a new image
-            img0.src = reader0.result;
+        var fileInput = $(this)[0];//returns a HTML DOM object by putting the [0] since it's really an associative array.
+        var file = fileInput.files[0]; //there is only '1' file since they are not multiple type.
+        var fileName = fileInput.files.item(0).name;
+        var reader = new FileReader();
 
-            localStorage.theImage0 = reader0.result; //stores the image to localStorage
-            localStorage.theImageName0 = fileName0;
+        if(localStorage.getItem('theImageName0') === null){
+            reader.onload = function(e) {
+                var img = new Image();// Create a new image
+                img.src = reader.result;
 
+                localStorage.theImage0 = img.src;//reader.result; //stores the image to localStorage
+                localStorage.theImageName0 = fileName;
+            }
+            $('#imageBtn').click(function(){
+                localStorage.theImageTitle0 = $('#imagetitle').val();
+                localStorage.theImageDesc0 = $('#imagedesc').val();
+            });
+            reader.readAsDataURL(file);//attempts to read the file in question.
+        }else if(localStorage.getItem('theImageName1') === null){
+            reader.onload = function(e) {
+                var img = new Image();// Create a new image
+                img.src = reader.result;
+
+                localStorage.theImage1 = img.src;//reader.result; //stores the image to localStorage
+                localStorage.theImageName1 = fileName;
+            }
+            $('#imageBtn').click(function(){
+                localStorage.theImageTitle1 = $('#imagetitle').val();
+                localStorage.theImageDesc1 = $('#imagedesc').val();
+            });
+            reader.readAsDataURL(file);//attempts to read the file in question.
+        }else{
+             window.location.assign('blank-no-more-images.html');
         }
-        reader0.readAsDataURL(file0);//attempts to read the file in question.
-
-        $('#imageBtn').click(function(){
-            localStorage.theImageTitle0 = $('#imagetitle').val();
-            localStorage.theImageDesc0 = $('#imagedesc').val();
-        });
-
-
 
     });
-
-
-
-
-    //$('#uploadfile').change(function(){
-        //showname();
-        /*bannerImage = document.getElementById('uploadfile');
-        imgData = getBase64Image(bannerImage);
-        localStorage.setItem("imgData", imgData);*/
-
-        /*var dataImage = localStorage.getItem('imgData');
-        bannerImg = document.getElementById('tableBanner');
-        bannerImg.src = "data:image/png;base64," + dataImage;*/
-    //});
-
 
   });
 </script>
