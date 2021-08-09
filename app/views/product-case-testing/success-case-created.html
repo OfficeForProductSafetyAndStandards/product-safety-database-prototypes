@@ -4,15 +4,25 @@
     Success - the case has been created
 {% endblock %}
 
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "how-many-units-are-affected-std"
-    }) }}
-{% endblock %}
+
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" style="display: none;">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#casecreated">Select yes if you want to add a product to this case now</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
 
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
@@ -24,7 +34,8 @@
         <h3 class="govuk-notification-banner__heading">
             The case has been created
         </h3>
-        <p class="govuk-body">You can now add products to this case when required.</p>
+        <p class="govuk-body showV1">You can now add products to this case when required.</p>
+        <p class="govuk-body showV2">You can add more products to this case if required.</p>
     </div>
 </div>
 
@@ -32,26 +43,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-            <form action="#" method="post" novalidate>
+            <p class="govuk-body govuk-!-margin-bottom-6">For the purposes of this user testing, we have skipped several pages for creating a case.</p>
 
-                <div class="govuk-form-group">
+            <form class="showV1" action="#" method="post" novalidate>
+                <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="casecreated">
                     <fieldset class="govuk-fieldset">
 
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                             Do you want to add a product to this case now?
                         </legend>
 
+                        <span class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Select yes if you want to add a product to this case now
+                        </span>
 
                         <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="casecreated" name="casecreated" type="radio" value="yes" disabled>
+                                <input class="govuk-radios__input" id="casecreated" name="casecreated" type="radio" value="yes">
                                 <label class="govuk-label govuk-radios__label" for="createcase">
-                                    <span style="opacity: 0.6;">Yes</span>
+                                    Yes
                                 </label>
                             </div>
 
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="casecreated-2" name="casecreated" type="radio" value="no" checked>
+                                <input class="govuk-radios__input" id="casecreated-2" name="casecreated" type="radio" value="no">
                                 <label class="govuk-label govuk-radios__label" for="casecreated-2">
                                     No - return to the cases page
                                 </label>
@@ -61,14 +76,49 @@
                     </fieldset>
                 </div>
 
-            {{ govukButton({
-            text: "Continue"
-            }) }}
-
+                <button class="govuk-button" data-module="govuk-button">
+                Continue
+                </button>
             </form>
 
+            <p class="govuk-body-l showV2">
+                Go to the <a href="products-page.html" class="govuk-link govuk-link--no-visited-state">products page</a> or return to the <a href="cases-page.html" class="govuk-link govuk-link--no-visited-state">cases page</a>.
+            </p>
 
     </div>
   </div>
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+    const addCaseToProduct = localStorage.getItem('addCaseToProduct');
+    if(addCaseToProduct == 'yes'){
+        $('body').addClass('showV2');
+    }else if(addCaseToProduct == 'no'){
+        $('body').addClass('showV1');
+    }
+
+    //window.addEventListener('beforeunload', function (e) {
+        //localStorage.removeItem('addCaseToProduct');
+    //});
+
+
+
+  });
+</script>
+
 {% endblock %}
 

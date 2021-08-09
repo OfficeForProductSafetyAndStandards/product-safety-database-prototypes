@@ -1099,10 +1099,27 @@
     });
 </script-->
 
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
 <script>
   jQuery(document).ready(function(){
 
     setMenuState('products');
+    localStorage.removeItem('addCaseToProduct');
+    //validateTheForm($("#main-content").find('form'));
+
+    $('#table-items').find('td .govuk-link').click(function(){
+        localStorage.setItem('addCaseToProduct', 'yes');
+    });
 
   });
 </script>

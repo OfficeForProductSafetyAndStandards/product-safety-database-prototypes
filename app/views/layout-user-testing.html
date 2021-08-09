@@ -34,17 +34,23 @@
   {% include "includes/head.html" %}
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
-    .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; cursor: default; }
+    .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; }
     .govuk-error-summary,
     .govuk-error-message,
     .govuk-error-summary__list li,
     .none, .none0, .none1 {display: none; }
 
+    body .showV1,
+    body .showV2 {display: none; }
+    body.showV1 .showV1,
+    body.showV2 .showV2 {display: block;}
+
     .govuk-form-group--error > fieldset > .govuk-error-message,
     .govuk-form-group--error[data-test-for=textarea] > .govuk-error-message,
     .govuk-radios__conditional .govuk-form-group--error .govuk-error-message,
     .govuk-form-group--error[data-test-for=input] .govuk-error-message,
-    .govuk-form-group--error[data-test-for=upload] .govuk-error-message {display: block; }
+    .govuk-form-group--error[data-test-for=upload] .govuk-error-message,
+    .govuk-character-count .govuk-form-group--error .govuk-error-message {display: block; }
 
     .test-errors-1, .test-errors-2, .test-errors-3, .test-errors-4,
     .test-errors-5, .test-errors-6, .test-errors-7, .test-errors-8 {display: block !important; }

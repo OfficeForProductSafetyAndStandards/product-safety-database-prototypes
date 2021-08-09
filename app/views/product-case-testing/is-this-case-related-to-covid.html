@@ -13,6 +13,25 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#is-covid">Select yes if the case is related to the coronavirus pandemic</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -21,41 +40,112 @@
         <span class="govuk-caption-l">Create a case</span>
 
 
-{{ govukRadios({
-  idPrefix: "is-covid",
-  name: "covid-related",
-  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
-  fieldset: {
-    legend: {
-      text: "Is this case related to the coronavirus pandemic?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "For example, cases relating to hand sanitiser or personal protective equipmnet (PPE)."
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes (or could be)"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
 
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+
+
+
+
+
+
+
+<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="covid-related">
+
+  <fieldset class="govuk-fieldset" aria-describedby="is-covid-hint">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      Is this case related to the coronavirus pandemic?
+    </h1>
+
+  </legend>
+
+
+  <div id="is-covid-hint" class="govuk-hint">
+    For example, cases relating to hand sanitiser or personal protective equipmnet (<abbr title="Personal protective equipment">PPE</abbr>).
+  </div>
+
+  <span id="is-covid-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select yes if the case is related to the coronavirus pandemic
+  </span>
+
+
+  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="is-covid" name="covid-related" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="is-covid">
+        Yes (or could be)
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="is-covid-2" name="covid-related" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="is-covid-2">
+        No
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
       </form>
 
 
     </div>
   </div>
+
 {% endblock %}
 
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
+{% endblock %}

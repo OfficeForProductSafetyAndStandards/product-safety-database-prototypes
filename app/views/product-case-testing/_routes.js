@@ -23,88 +23,29 @@ router.post('/find-the-product', function (req, res) {
     res.redirect('/product-case-testing/is-this-case-related-to-covid')
   }
 })
-
-
 //************* is-this-case-related-to-covid ************* starts
 router.post('/is-this-case-related-to-covid', function (req, res) {
-  const iscovid = req.session.data['covid-related']
-
-  if (iscovid == null) {
-    res.redirect('/product-case-testing/is-this-case-related-to-covid-error' )
-  } else {
-    res.redirect('/product-case-testing/reason-for-creating-case' )
-  }
-})
-router.post('/is-this-case-related-to-covid-error', function (req, res) {
-  const iscoviderror = req.session.data['covid-related']
-
-  if (iscoviderror != null) {
-    res.redirect('/product-case-testing/reason-for-creating-case' )
-  }
+  res.redirect('/product-case-testing/reason-for-creating-case')
 })
 //********************* start reason-for-creating-case
 router.post('/reason-for-creating-case', function (req, res) {
   const casereason = req.session.data['reason']
 
-  if (casereason == null) {
-    res.redirect('/product-case-testing/reason-for-creating-case-error' )
-  } else if (casereason == 'issafeoption') {
+if (casereason == 'unsafeoption') {
       res.redirect('/product-case-testing/is-case-counterfeit' )
   } else {
     res.redirect('/product-case-testing/why-is-the-product-of-concern' )
   }
 })
-router.post('/reason-for-creating-case-error', function (req, res) {
-  const casereasonerror = req.session.data['reason']
-
-  if (casereasonerror != null) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern' )
-  }
-})
 //********************* why is the product of concern
 router.post('/why-is-the-product-of-concern', function (req, res) {
-  const safety = req.session.data['safety']
+  res.redirect('/product-case-testing/is-case-counterfeit' )
+})
 
-  if (safety == null) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern-error' )
-  } else if ((safety != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern-error-2' )
-  } else {
-    res.redirect('/product-case-testing/is-case-counterfeit' )
-  }
-})
-router.post('/why-is-the-product-of-concern-error', function (req, res) {
-  if ((req.session.data['safety'] == null)) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern-error' )
-  } else if ((req.session.data['safety'] != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern-error-2' )
-  } else {
-    res.redirect('/product-case-testing/is-case-counterfeit' )
-  }
-})
-router.post('/why-is-the-product-of-concern-error-2', function (req, res) {
-  if ((req.session.data['safety'] != null) && (req.session.data['why-unsafe'] == '') && (req.session.data['why-noncompliant'] == '')) {
-    res.redirect('/product-case-testing/why-is-the-product-of-concern-error-2' )
-  } else {
-    res.redirect('/product-case-testing/is-case-counterfeit' )
-  }
-})
 //******************* is-case-counterfeit
 router.post('/is-case-counterfeit', function (req, res) {
-  const counterfeit = req.session.data['counterfeit']
-
-  if (counterfeit == null) {
-    res.redirect('/product-case-testing/is-case-counterfeit-error' )
-  } else {
-    res.redirect('/product-case-testing/how-many-units-are-affected-std' )
-  }
-})
-router.post('/is-case-counterfeit-error', function (req, res) {
-  const counterfeiterror = req.session.data['counterfeit']
-
-  if (counterfeiterror != null) {
-    res.redirect('/product-case-testing/how-many-units-are-affected-std' )
-  }
+  //res.redirect('/product-case-testing/how-many-units-are-affected-std' )
+  res.redirect('/product-case-testing/success-case-created' )
 })
 //************* start do-you-have-the-barcode
 router.post('/do-you-have-the-barcode', function (req, res) {
@@ -304,26 +245,11 @@ router.post('/remove-a-product-image-success', function (req, res) {
 router.post('/success-case-created', function (req, res) {
   const casecreated = req.session.data['casecreated']
 
-  if (casecreated == null) {
-    res.redirect('/product-case-testing/success-case-created-error')
-  } else if (casecreated == 'no') {
+  if (casecreated == 'no') {
     res.redirect('/product-case-testing/cases-page')
   } else {
-    res.redirect('/product-case-testing/add-product-to-case')
+    res.redirect('/product-case-testing/add-a-product-to-a-case?ref=20-2120')
   }
 })
-router.post('/success-case-created-error', function (req, res) {
-  const casecreated2 = req.session.data['casecreated']
-
-  if (casecreated2 == null) {
-    res.redirect('/product-case-testing/success-case-created-error')
-  } else if (casecreated2 == 'no') {
-    res.redirect('/product-case-testing/cases-page')
-  }else{
-    res.redirect('/product-case-testing/add-product-to-case')
-  }
-})
-
-
 
 module.exports = router
