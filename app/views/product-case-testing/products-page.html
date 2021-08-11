@@ -43,8 +43,8 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
-            <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2">
+        <form id="searchForm" action="#" method="post" novalidate>
+            <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2" data-test-for="input" data-test-ele-name="products-search">
 
                 <label class="govuk-label" for="products-search">
                     Search for a product
@@ -86,7 +86,8 @@
 <div class="govuk-grid-row">
 
     <section class="govuk-grid-column-one-quarter">
-        <form action="#" method="post" novalidate>
+
+        <form action="#" method="post" style="visibility: hidden;" novalidate>
 
             <h2 class="govuk-heading-m">
                 Filter options<span class="govuk-visually-hidden">:</span>
@@ -120,7 +121,7 @@
                 </fieldset>
             </div>
 
-            <!--div class="govuk-form-group">
+            <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend">
                         Linked to a case
@@ -140,7 +141,7 @@
                         </div>
                     </div>
                 </fieldset>
-            </div-->
+            </div>
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -160,12 +161,12 @@
                                 Me
                             </label>
                         </div>
-                        <!--div class="govuk-radios__item">
+                        <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="added-by-3" name="added-by" type="radio" value="team">
                             <label class="govuk-label govuk-radios__label" for="added-by-3">
                                 My team
                             </label>
-                        </div-->
+                        </div>
                     </div>
                 </fieldset>
             </div>
@@ -395,666 +396,6 @@
                         </tr>
                     </thead>
 
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-01" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Sony 3000 hair dryer (x3000rpm)</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-01" id="meta-01" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-01 meta-01" class="govuk-table__cell">
-                                psd-503
-                            </td>
-                            <td headers="caseowner item-01 meta-01" class="govuk-table__cell">
-                                Washing machine
-                            </td>
-                            <td headers="updated item-01 meta-01" class="govuk-table__cell">
-                                Personal protective equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-01" id="actions-01" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-01 actions-01" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-503</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-02" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">And another product title here</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-02" id="meta-02" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-02 meta-02" class="govuk-table__cell">
-                                psd-440
-                            </td>
-                            <td headers="caseowner item-02 meta-02" class="govuk-table__cell">
-                                Hair dryer
-                            </td>
-                            <td headers="updated item-02 meta-02" class="govuk-table__cell">
-                                Electrical goods
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-02" id="actions-02" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-02 actions-02" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-440</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-03" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Electrical appliances and equipment – electric shock hazard (no product specified)</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-03" id="meta-03" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-03 meta-03" class="govuk-table__cell">
-                                psd-350
-                            </td>
-                            <td headers="caseowner item-03 meta-03" class="govuk-table__cell">
-                                Something something
-                            </td>
-                            <td headers="updated item-03 meta-03" class="govuk-table__cell">
-                                Motor bikes
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-03" id="actions-03" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-03 actions-03" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-350</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Washing machine – burns hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-04" id="meta-04" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-04 meta-04" class="govuk-table__cell">
-                                psd-660
-                            </td>
-                            <td headers="caseowner item-04 meta-04" class="govuk-table__cell">
-                                Shampoo
-                            </td>
-                            <td headers="updated item-04 meta-04" class="govuk-table__cell">
-                                Hair cosmetics
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-04" id="actions-04" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-04 actions-04" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-660</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-05" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Large Phone Charger Battery, Portable battery – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-05" id="meta-05" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-05 meta-05" class="govuk-table__cell">
-                                psd-489
-                            </td>
-                            <td headers="caseowner item-05 meta-05" class="govuk-table__cell">
-                                Mobile phone
-                            </td>
-                            <td headers="updated item-05 meta-05" class="govuk-table__cell">
-                                Telecoms equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-05" id="actions-05" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-05 actions-05" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-489</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-06" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Washer 3000, Washing machine – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-06" id="meta-06" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-06 meta-06" class="govuk-table__cell">
-                                psd-746
-                            </td>
-                            <td headers="caseowner item-06 meta-06" class="govuk-table__cell">
-                                Washing machine
-                            </td>
-                            <td headers="updated item-06 meta-06" class="govuk-table__cell">
-                                Domestic electrical goods
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-06" id="actions-06" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-06 actions-06" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-746</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Asda bleach, Bleach – chemical hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-07" id="meta-07" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-07 meta-07" class="govuk-table__cell">
-                                psd-279
-                            </td>
-                            <td headers="caseowner item-07 meta-07" class="govuk-table__cell">
-                                Domestic products
-                            </td>
-                            <td headers="updated item-07 meta-07" class="govuk-table__cell">
-                                Domestic chemicals
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-07" id="actions-07" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-07 actions-07" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-279</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-08" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">BOSA face masks - fabric fail</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-08" id="meta-08" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-08 meta-08" class="govuk-table__cell">
-                                psd-509
-                            </td>
-                            <td headers="caseowner item-08 meta-08" class="govuk-table__cell">
-                                Face masks
-                            </td>
-                            <td headers="updated item-08 meta-08" class="govuk-table__cell">
-                                Protective medical equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-08" id="actions-08" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-08 actions-08" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-509</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-09" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-09" id="meta-09" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-09 meta-09" class="govuk-table__cell">
-                                psd-280
-                            </td>
-                            <td headers="caseowner item-09 meta-09" class="govuk-table__cell">
-                                Medical gloves
-                            </td>
-                            <td headers="updated item-09 meta-09" class="govuk-table__cell">
-                                Protective medical equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-09" id="actions-09" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-09 actions-09" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-280</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-10" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Hair bleach – chemical hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-10" id="meta-10" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-10 meta-10" class="govuk-table__cell">
-                                psd-503
-                            </td>
-                            <td headers="caseowner item-10 meta-10" class="govuk-table__cell">
-                                Washing machine
-                            </td>
-                            <td headers="updated item-10 meta-10" class="govuk-table__cell">
-                                Personal protective equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-10" id="actions-10" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-10 actions-10" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-503</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-11" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">And another product title here</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-11" id="meta-11" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-11 meta-11" class="govuk-table__cell">
-                                psd-440
-                            </td>
-                            <td headers="caseowner item-11 meta-11" class="govuk-table__cell">
-                                Hair dryer
-                            </td>
-                            <td headers="updated item-11 meta-11" class="govuk-table__cell">
-                                Electrical goods
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-11" id="actions-11" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-11 actions-11" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-440</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-12" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Electrical appliances and equipment – electric shock hazard (no product specified)</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-12" id="meta-12" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-12 meta-12" class="govuk-table__cell">
-                                psd-350
-                            </td>
-                            <td headers="caseowner item-12 meta-12" class="govuk-table__cell">
-                                Something something
-                            </td>
-                            <td headers="updated item-12 meta-12" class="govuk-table__cell">
-                                Motor bikes
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-12" id="actions-12" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-12 actions-12" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-350</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-13" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Sony TV flat 50"</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-13" id="meta-13" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-13 meta-13" class="govuk-table__cell">
-                                psd-455
-                            </td>
-                            <td headers="caseowner item-13 meta-13" class="govuk-table__cell">
-                                Televsions
-                            </td>
-                            <td headers="updated item-13 meta-13" class="govuk-table__cell">
-                                Domestic electric appliances
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-13" id="actions-13" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-13 actions-13" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-455</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-14" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Washing machine – burns hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-14" id="meta-14" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-14 meta-14" class="govuk-table__cell">
-                                psd-638
-                            </td>
-                            <td headers="caseowner item-14 meta-14" class="govuk-table__cell">
-                                Shampoo
-                            </td>
-                            <td headers="updated item-14 meta-14" class="govuk-table__cell">
-                                Hair cosmetics
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-14" id="actions-14" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-14 actions-14" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-638</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-15" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Large Phone Charger Battery, Portable battery – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-15" id="meta-15" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-15 meta-15" class="govuk-table__cell">
-                                psd-422
-                            </td>
-                            <td headers="caseowner item-15 meta-15" class="govuk-table__cell">
-                                Mobile phone
-                            </td>
-                            <td headers="updated item-15 meta-15" class="govuk-table__cell">
-                                Telecoms equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-15" id="actions-15" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-15 actions-15" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-422</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-16" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Washer 3000, Washing machine – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-16" id="meta-16" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-16 meta-16" class="govuk-table__cell">
-                                psd-798
-                            </td>
-                            <td headers="caseowner item-16 meta-16" class="govuk-table__cell">
-                                Washing machine
-                            </td>
-                            <td headers="updated item-16 meta-16" class="govuk-table__cell">
-                                Domestic electrical goods
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-16" id="actions-16" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-16 actions-16" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-798</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-17" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Asda bleach, Bleach – chemical hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-17" id="meta-17" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-17 meta-17" class="govuk-table__cell">
-                                psd-233
-                            </td>
-                            <td headers="caseowner item-17 meta-17" class="govuk-table__cell">
-                                Domestic products
-                            </td>
-                            <td headers="updated item-17 meta-17" class="govuk-table__cell">
-                                Domestic chemicals
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-17" id="actions-17" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-17 actions-17" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-233</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-18" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">BOSA face masks - fabric fail</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-18" id="meta-18" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-18 meta-18" class="govuk-table__cell">
-                                psd-521
-                            </td>
-                            <td headers="caseowner item-18 meta-18" class="govuk-table__cell">
-                                Face masks
-                            </td>
-                            <td headers="updated item-18 meta-18" class="govuk-table__cell">
-                                Protective medical equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-18" id="actions-18" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-18 actions-18" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-521</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-19" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-19" id="meta-19" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-19 meta-19" class="govuk-table__cell">
-                                psd-251
-                            </td>
-                            <td headers="caseowner item-19 meta-19" class="govuk-table__cell">
-                                Medical gloves
-                            </td>
-                            <td headers="updated item-19 meta-19" class="govuk-table__cell">
-                                Protective medical equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-19" id="actions-19" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-19 actions-19" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for 251</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Product
-                            </th>
-                            <th id="item-20" colspan="3" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Nespresso coffee max machine 990</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-20" id="meta-20" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="psd-ref item-20 meta-20" class="govuk-table__cell">
-                                psd-489
-                            </td>
-                            <td headers="caseowner item-20 meta-20" class="govuk-table__cell">
-                                Coffee machines
-                            </td>
-                            <td headers="updated item-20 meta-20" class="govuk-table__cell">
-                                Domestic electric equipment
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-20" id="actions-20" class="govuk-visually-hidden">
-                                Actions
-                            </th>
-                            <td headers="item-20 actions-20" colspan="3" class="govuk-table__cell">
-                                <a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-489</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-
                     <tfoot class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
@@ -1066,7 +407,7 @@
 
                 </table>
 
-                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                <!--nav class="opss-pagination-link opss-pagination-link--no-top-border">
                     <ul>
                         <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
                             Page 1
@@ -1077,7 +418,7 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav-->
 
 
             </div>
@@ -1110,18 +451,106 @@
     {% endblock %}
   {% endblock %}
 
+
+
+
+
+
 <script>
+function buildHTML(val, o, c){
+    o += '<tr class="govuk-table__row">';
+    o += '<th class="govuk-visually-hidden">Product</th>';
+    o += '<th id="item-'+val.id+'" colspan="3" scope="colgroup" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">'+ val.product_name +'</a></th>';
+    o += '</tr><tr class="govuk-table__row">';
+    o += '<th headers="item-'+val.id+'" id="meta-'+val.id+'" class="govuk-visually-hidden">Metadata</th>';
+    o += '<td headers="psd-ref item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
+    o += '<td headers="caseowner item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.product_type +'</td>';
+    o += '<td headers="updated item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.product_category +'</td>';
+    o += '</tr><tr class="govuk-table__row">';
+    o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
+    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="3" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-'+val.id+'</span></a></td>';
+    o += '</tr>';
+    if(c%2 == 0){
+    o += '</tbody><tbody class="govuk-table__body">'
+    }else{
+        o += '</tbody>';
+    }
+
+    return o;
+}
+
+
+
   jQuery(document).ready(function(){
 
     setMenuState('products');
     localStorage.removeItem('addCaseToProduct');
-    //validateTheForm($("#main-content").find('form'));
+    $('#products-search').val('');// autocomplete="off"
 
-    $('#table-items').find('td .govuk-link').click(function(){
-        localStorage.setItem('addCaseToProduct', 'yes');
-    });
 
-  });
+    var data = [
+    {"id":"503","product_name":"Sony 3000 hair dryer (x3000rpm)","product_type":"Hair dryer","product_category":"Electrical goods","product_image":"image_1.png"},
+    {"id":"466","product_name":"Dyson Animal 2","product_type":"Vaccum cleaner","product_category":"63","product_image":"image_2.png"},
+    {"id":"108","product_name":"Ashton Cox","product_type":"86000","product_category":"66","product_image":"image_3.png"},
+    {"id":"660","product_name":"Cedric Kelly","product_type":"433060","product_category":"22","product_image":"image_4.png"},
+    {"id":"278","product_name":"Airi Satou","product_type":"162700","product_category":"33","product_image":"image_5.png"},
+    {"id":"396","product_name":"Brielle Williamson","product_type":"372000","product_category":"61","product_image":"image_6.png"},
+    {"id":"119","product_name":"Herrod Chandler","product_type":"137500","product_category":"59","product_image":"image_7.png"},
+    {"id":"448","product_name":"Rhona Davidson","product_type":"327900","product_category":"55","product_image":"image_8.png"},
+    {"id":"402","product_name":"Colleen Hurst","product_type":"205500","product_category":"39","product_image":"image_9.png"},
+    {"id":"459","product_name":"Sonya Frost","product_type":"103600","product_category":"23","product_image":"image_10.png"}
+    ];//var data = $.getJSON( '/public/javascripts/products.js');
+
+        function getResults(searchField){
+
+            var tableItems = $('#table-items');
+            tableItems.find('tbody').remove();
+
+            var regex = new RegExp(searchField, "i");
+            var output = '<tbody class="govuk-table__body">';
+            var count = 1;
+
+			if(searchField === ''){//show all products
+
+                $.each(data, function(key, val) {
+                    output =  buildHTML(val, output, count);
+                    count++;
+                });
+
+			} else {//search input has a value
+
+                $.each(data, function(key, val){
+                    if ((val.product_type.search(regex) != -1) || (val.product_name.search(regex) != -1)) {
+                        output =  buildHTML(val, output, count);
+                        count++;
+                    }
+                });
+
+                if(count <= 1){
+                    //tableItems.addClass('hidden');
+                    output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="3">There are no products matching your search.</td></tr></tbody>';
+                    count++;
+                }
+            }
+
+            $(output).insertAfter(tableItems.find('thead'));//INSERT IN PAGE
+
+            tableItems.find('td .govuk-link').on('click', function(e){
+                e.preventDefault();
+                localStorage.setItem('addCaseToProduct', 'yes');
+                window.location.assign($(this).attr('href'));
+            });
+        }
+
+        $('#searchForm').find('button').click(function(e) {
+            e.preventDefault();
+            var txt = $('#products-search').val();
+            getResults(txt);
+        });
+
+        getResults();//onload
+
+});
 </script>
 
 {% endblock %}

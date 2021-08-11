@@ -22,6 +22,12 @@ abbr[title]{
     }
 }
 
+.govuk-accordion__section-content .govuk-grid-column-full > .govuk-link.opss-text-align-right {
+    @include govuk-media-query($from: tablet) {
+        margin-right: - govuk-spacing(3);//small dismiss link on notifications Errors accordion
+    }
+}
+
 .opss-text-align-center {
     text-align: center;
 }

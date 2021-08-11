@@ -41,18 +41,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="govuk-form-group" data-test-for="checkbox" data-test-ele-name="safety">
 
   <fieldset class="govuk-fieldset" aria-describedby="safety-hint">
@@ -78,11 +66,6 @@
 
 
 
-
-
-
-
-
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="safety" name="safety" type="checkbox" value="unsafeform" data-aria-controls="conditional-safety">
           <label class="govuk-label govuk-checkboxes__label" for="safety">
@@ -93,32 +76,37 @@
 
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-safety">
 
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="primary-hazard">
+                What is the primary hazard?
+              </label>
 
-
-<div class="govuk-form-group">
-  <label class="govuk-label" for="primary-hazard">
-    What is the primary hazard?
-  </label>
-
-
-  <select class="govuk-select" id="primary-hazard" name="primary-hazard">
-
-
-      <option value="hazard01" selected>Lorem ipsum</option>
-
-
-
-      <option value="hazard02">Ipsum lorem</option>
-
-
-
-      <option value="hazard03">Ipusmi orem</option>
-
-
-  </select>
-</div>
-
-
+              <select class="govuk-select" id="primary-hazard" name="primary-hazard">
+                  <option value="Asphyxiation" selected>Asphyxiation</option>
+                  <option value="Burns">Burns</option>
+                  <option value="Chemical">Chemical</option>
+                  <option value="Choking">Choking</option>
+                  <option value="Cuts">Cuts</option>
+                  <option value="Damage to hearing">Damage to hearing</option>
+                  <option value="Damage to sight">Damage to sight</option>
+                  <option value="Disturbance">Disturbance</option>
+                  <option value="Drowning">Drowning</option>
+                  <option value="Electric shock">Electric shock</option>
+                  <option value="Electromagnetic">Electromagnetic</option>
+                  <option value="Energy consumption">Energy consumption</option>
+                  <option value="Entrapment">Entrapment</option>
+                  <option value="Environment">Environment</option>
+                  <option value="Fire">Fire</option>
+                  <option value="Health risk">Health risk</option>
+                  <option value="Incorrect measurement">Incorrect measurement</option>
+                  <option value="Injuries">Injuries</option>
+                  <option value="Microbiological">Microbiological</option>
+                  <option value="Security">Security</option>
+                  <option value="Strangulation">Strangulation</option>
+                  <option value="Suffocation">Suffocation</option>
+                  <option value="Other">Other</option>
+              </select>
+            </div>
 
 
 

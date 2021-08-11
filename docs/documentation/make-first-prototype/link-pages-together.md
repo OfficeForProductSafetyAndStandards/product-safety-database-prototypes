@@ -16,7 +16,7 @@ Go to [http://localhost:3000/start](http://localhost:3000/start) and select the 
 ## Link question 1 to question 2
 
 1. Open `juggling-balls.html` in your `app/views` folder.
-2. Find the line `<form class="form" action="/url/of/next/page" method="post">`.
+2. Find the line `<form action="/url/of/next/page" method="post">`.
 3. Change the value of the `action` attribute from `/url/of/next/page` to `/juggling-trick`.
 
 Go to [http://localhost:3000/juggling-balls](http://localhost:3000/juggling-balls) and select **Continue** to check the link works.
@@ -24,7 +24,7 @@ Go to [http://localhost:3000/juggling-balls](http://localhost:3000/juggling-ball
 ## Link question 2 to your 'Check your answers' page
 
 1. Open `juggling-trick.html` in your `app/views` folder.
-2. Find the line `<form class="form" action="/url/of/next/page" method="post">`.
+2. Find the line `<form action="/url/of/next/page" method="post">`.
 3. Change the value of the `action` attribute from `/url/of/next/page` to `/check-your-answers`.
 
 Go to [http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) and select **Continue** to check the link works.
