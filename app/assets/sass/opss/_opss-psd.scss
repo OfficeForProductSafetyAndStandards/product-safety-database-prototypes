@@ -211,6 +211,7 @@ ul.opss-radio-list {
     thead th:nth-child(2) {width: auto; }
     thead th:nth-child(3) {width: auto; }
     thead th:nth-child(4) {width: auto; }
+    thead th:nth-child(5) {width: auto; }
 
     @include govuk-media-query($from: tablet) {
         thead th:nth-child(2) {width: 20%; }
@@ -222,7 +223,7 @@ ul.opss-radio-list {
         text-align: right;
     }
 
-    tbody td:last-child::first-letter {text-transform: uppercase; }
+    tbody td:nth-child(4)::first-letter {text-transform: uppercase; }
 
     thead th,
     tfoot th {

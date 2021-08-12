@@ -63,13 +63,13 @@
                     </legend>
                     <div class="govuk-radios govuk-radios--inline govuk-radios--small">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="keywords" name="searchtype" type="radio" value="keywords" checked="checked">
+                            <input class="govuk-radios__input" id="searchtype" name="searchtype" type="radio" value="keywords" checked="checked">
                             <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="keywords">
                                 Using keywords
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="barcode" name="searchtype" type="radio" value="barcode">
+                            <input class="govuk-radios__input" id="searchtype-2" name="searchtype" type="radio" value="barcode">
                             <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="barcode">
                                 Using a barcode
                             </label>
@@ -379,7 +379,20 @@
         </form-->
     </section>
 
-    <section class="govuk-grid-column-three-quarters">
+    <section id="results-area" class="govuk-grid-column-three-quarters">
+
+        <div class="govuk-grid-row">
+           <div class="govuk-grid-column-full">
+               <p id="results-msg" class="govuk-body">
+                    <span id="opss-qty"></span> products matching <span id="search-type">keyword(s)</span> <span id="the-keywords" class="govuk-!-font-weight-bold"></span> were found.
+
+                    <!--span id="opss-qty">22</span> products matching or closely matching the barcode
+                    <span class="govuk-!-font-weight-bold">BSA-100553BB</span>,<span id="opss-filter-txt" class="opss-filter-txt"> using the current filters,</span> were found.</p-->
+                </p>
+            </div>
+
+        </div>
+
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Product lists">
 
@@ -390,9 +403,10 @@
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
-                            <th id="psd-ref" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
-                            <th id="caseowner" scope="col" class="govuk-table__header">Product type</th>
-                            <th id="updated" scope="col" class="govuk-table__header">Category</th>
+                            <th id="psd" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
+                            <th id="type" scope="col" class="govuk-table__header">Product type</th>
+                            <th id="cat" scope="col" class="govuk-table__header">Category</th>
+                            <th id="bar" scope="col" class="govuk-table__header">Barcode</th>
                         </tr>
                     </thead>
 
@@ -402,6 +416,7 @@
                             <th scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
                             <th scope="col" class="govuk-table__header">Product type</th>
                             <th scope="col" class="govuk-table__header">Category</th>
+                            <th scope="col" class="govuk-table__header">Barcode</th>
                         </tr>
                     </tfoot>
 
@@ -451,24 +466,20 @@
     {% endblock %}
   {% endblock %}
 
-
-
-
-
-
 <script>
 function buildHTML(val, o, c){
     o += '<tr class="govuk-table__row">';
     o += '<th class="govuk-visually-hidden">Product</th>';
-    o += '<th id="item-'+val.id+'" colspan="3" scope="colgroup" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">'+ val.product_name +'</a></th>';
+    o += '<th id="item-'+val.id+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">'+ val.prod_name +'</a></th>';
     o += '</tr><tr class="govuk-table__row">';
     o += '<th headers="item-'+val.id+'" id="meta-'+val.id+'" class="govuk-visually-hidden">Metadata</th>';
-    o += '<td headers="psd-ref item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
-    o += '<td headers="caseowner item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.product_type +'</td>';
-    o += '<td headers="updated item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.product_category +'</td>';
+    o += '<td headers="psd item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
+    o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_type +'</td>';
+    o += '<td headers="cat item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
+    o += '<td headers="bar item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
     o += '</tr><tr class="govuk-table__row">';
     o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
-    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="3" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-'+val.id+'</span></a></td>';
+    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="4" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-'+val.id+'</span></a></td>';
     o += '</tr>';
     if(c%2 == 0){
     o += '</tbody><tbody class="govuk-table__body">'
@@ -479,78 +490,100 @@ function buildHTML(val, o, c){
     return o;
 }
 
-
-
   jQuery(document).ready(function(){
 
     setMenuState('products');
     localStorage.removeItem('addCaseToProduct');
     $('#products-search').val('');// autocomplete="off"
 
-
-    var data = [
-    {"id":"503","product_name":"Sony 3000 hair dryer (x3000rpm)","product_type":"Hair dryer","product_category":"Electrical goods","product_image":"image_1.png"},
-    {"id":"466","product_name":"Dyson Animal 2","product_type":"Vaccum cleaner","product_category":"63","product_image":"image_2.png"},
-    {"id":"108","product_name":"Ashton Cox","product_type":"86000","product_category":"66","product_image":"image_3.png"},
-    {"id":"660","product_name":"Cedric Kelly","product_type":"433060","product_category":"22","product_image":"image_4.png"},
-    {"id":"278","product_name":"Airi Satou","product_type":"162700","product_category":"33","product_image":"image_5.png"},
-    {"id":"396","product_name":"Brielle Williamson","product_type":"372000","product_category":"61","product_image":"image_6.png"},
-    {"id":"119","product_name":"Herrod Chandler","product_type":"137500","product_category":"59","product_image":"image_7.png"},
-    {"id":"448","product_name":"Rhona Davidson","product_type":"327900","product_category":"55","product_image":"image_8.png"},
-    {"id":"402","product_name":"Colleen Hurst","product_type":"205500","product_category":"39","product_image":"image_9.png"},
-    {"id":"459","product_name":"Sonya Frost","product_type":"103600","product_category":"23","product_image":"image_10.png"}
-    ];//var data = $.getJSON( '/public/javascripts/products.js');
+    //var matchedIDs = new Array();
+    //if (!!data) {alert('exists');} //jQuery.isEmptyObject(data)
 
         function getResults(searchField){
 
+            var resultsArea = $('#results-area');
+            resultsArea.hide();
             var tableItems = $('#table-items');
             tableItems.find('tbody').remove();
-
-            var regex = new RegExp(searchField, "i");
             var output = '<tbody class="govuk-table__body">';
             var count = 1;
 
-			if(searchField === ''){//show all products
-
-                $.each(data, function(key, val) {
-                    output =  buildHTML(val, output, count);
-                    count++;
-                });
-
-			} else {//search input has a value
-
-                $.each(data, function(key, val){
-                    if ((val.product_type.search(regex) != -1) || (val.product_name.search(regex) != -1)) {
+                if(searchField === ''){//show all products
+                    $('#results-msg').addClass('hidden');
+                    $.each(data, function(key, val) {
                         output =  buildHTML(val, output, count);
                         count++;
+                    });
+
+                } else {//search input has a value
+
+                    var mywords = searchField.split(/\s+/);
+                    var arrayLength = mywords.length;
+                    var matchedIDs = new Array();
+                    $('#results-msg').removeClass('hidden');
+                    for (var i = 0; i < arrayLength; i++) {
+
+                                var regex = new RegExp(mywords[i], "i");//mywords[i] was searchField
+
+                                if( $('#searchtype').prop("checked") == true ){//search keywords
+                                    $.each(data, function(key, val){
+                                        if ((val.prod_type.search(regex) != -1) || (val.prod_name.search(regex) != -1)) {
+
+                                            if(!matchedIDs.includes(val.id)){
+                                                output =  buildHTML(val, output, count);
+                                                count++;
+                                            }
+                                            matchedIDs.push(String(val.id));
+                                        }
+                                    });
+                                }else{//search with barcode
+                                    $.each(data, function(key, val){
+                                        if (val.prod_barcode.search(regex) != -1) {
+                                            output =  buildHTML(val, output, count);
+                                            count++;
+                                        }
+                                    });
+                                }
                     }
+                    if(count <= 1){
+                        output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="4">There are no products matching your search.</td></tr></tbody>';
+                        count = 0;
+                    }
+                }
+
+                $(output).insertAfter(tableItems.find('thead'));//INSERT IN PAGE
+
+                if(count == 0){
+                    $('#opss-qty').text('No');
+                }else{
+                    $('#opss-qty').text(count -1);
+                }
+                $('#the-keywords').text(searchField);
+                if( $('#searchtype').prop("checked") == true ){
+                    $('#search-type').text('keyword(s)');
+                }else{
+                    $('#search-type').text('barcode');
+                }
+
+                resultsArea.fadeIn(200);
+
+                tableItems.find('td .govuk-link').on('click', function(e){
+                    e.preventDefault();
+                    localStorage.setItem('addCaseToProduct', 'yes');
+                    window.location.assign($(this).attr('href'));
                 });
 
-                if(count <= 1){
-                    //tableItems.addClass('hidden');
-                    output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="3">There are no products matching your search.</td></tr></tbody>';
-                    count++;
-                }
-            }
 
-            $(output).insertAfter(tableItems.find('thead'));//INSERT IN PAGE
-
-            tableItems.find('td .govuk-link').on('click', function(e){
-                e.preventDefault();
-                localStorage.setItem('addCaseToProduct', 'yes');
-                window.location.assign($(this).attr('href'));
-            });
         }
 
         $('#searchForm').find('button').click(function(e) {
             e.preventDefault();
-            var txt = $('#products-search').val();
+            var txt = $('#products-search').val().trim();
             getResults(txt);
         });
+        getResults('');
 
-        getResults();//onload
 
 });
 </script>
-
 {% endblock %}

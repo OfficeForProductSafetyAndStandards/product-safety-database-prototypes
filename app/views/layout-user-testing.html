@@ -32,6 +32,20 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  <script>
+    var data = [
+    {"id":"503","prod_name":"Sony 3000 hair dryer (x3000rpm)","brand":"Sony","prod_type":"Hair dryer","prod_category":"electrical goods","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_1.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"466","prod_name":"Dyson Animal 2","brand":"Sony","prod_type":"Vaccum cleaner","prod_category":"63","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298", "prod_img":"image_2.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"108","prod_name":"Darren Harridence","brand":"Sony","prod_type":"86000","prod_category":"66","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_3.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"660","prod_name":"Dan Harridence","brand":"Sony","prod_type":"433060","prod_category":"22","Subcategory":"Domestic electricals","prod_barcode":"2021-08121969","prod_img":"image_4.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"278","prod_name":"Darren Harris","brand":"Sony","prod_type":"162700","prod_category":"33","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_5.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"396","prod_name":"Brielle Williamson","brand":"Sony","prod_type":"372000","prod_category":"61","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_6.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"119","prod_name":"Herrod Chandler","brand":"Sony","prod_type":"137500","prod_category":"59","Subcategory":"Domestic electricals","prod_barcode":"EIT-6666-08121869","prod_img":"image_7.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"448","prod_name":"Rhona Davidson","brand":"Sony","prod_type":"327900","prod_category":"55","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_8.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"402","prod_name":"Colleen Hurst","brand":"Sony","prod_type":"205500","prod_category":"39","Subcategory":"Domestic electricals","prod_barcode":"2993-2765298","prod_img":"image_9.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"459","prod_name":"Sonya Frost","brand":"Sony","prod_type":"103600","prod_category":"23","Subcategory":"Domestic electricals","prod_barcode":"6666-08121869","prod_img":"image_10.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ];//var data = $.getJSON( '/public/javascripts/products.js');
+  </script>
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
     .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; }
@@ -76,7 +90,7 @@
       padding-top: 20px;
     }
 
-    /*.hidden {visibility: hidden; }*/
+    .hidden {visibility: hidden; }
     td.opss-temp-td {text-align: center !important; padding: 40px 10px; font-size: 1.4rem !important; }
   </style>
 {% endblock %}

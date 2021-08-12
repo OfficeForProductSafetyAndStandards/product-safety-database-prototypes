@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const strFullproductname = "Sony Vector 8000xc";
+/*const strFullproductname = "Sony Vector 8000xc";
 const strBrandName = "Sony";
 const strProductName = "Vector 8000xc";
 //const strModelName = "";
 //const strCategory = "Electrical appliances and equipment";
 const strModelNumber = '001-600006';
 const strBarcode = 'EIN-12345334-44';
-const strImageMain = '../public/images/hair-dryer.jpg';
+const strImageMain = '../public/images/hair-dryer.jpg';*/
 
 
 
@@ -51,17 +51,16 @@ router.post('/is-case-counterfeit', function (req, res) {
 router.post('/do-you-have-the-barcode', function (req, res) {
 
   var theBarCode = req.session.data['barcode']
-  var theBarNumberP = req.session.data['barnumber'].replace(/\D/g,'');
+  //var theBarNumberP = req.session.data['barnumber'].replace(/\D/g,'');
+  var didItMatch = req.session.data['checkMatch']
 
   if (theBarCode == 'yes') {
 
-
-      if(theBarNumberP == '123456789'){
+      if(didItMatch == 'yes'){
         res.redirect('/product-case-testing/might-already-exist-bc')
       }else{
         res.redirect('/product-case-testing/what-is-the-product-name')
       }
-
 
   } else if (theBarCode == 'no') {
     res.redirect('/product-case-testing/what-is-the-product-name')
@@ -142,12 +141,12 @@ router.post('/what-is-the-product-category', function (req, res) {
 router.post('/does-the-product-have-marking', function (req, res) {
   //var marking = req.session.data['marking']
 
-  var fullproductnameOurProduct = strFullproductname; //.toLowerCase().replace(/\s/g, '')
+  /*var fullproductnameOurProduct = strFullproductname; //.toLowerCase().replace(/\s/g, '')
   var brandNameOurProduct = strBrandName;
   var productNameOurProduct = strProductName;
   //var modelNameOurProduct = strModelName;
   //var categoryOurProduct = strCategory;
-  var modelnumberOurProduct = strModelNumber.replace(/\D/g,'');
+  var modelnumberOurProduct = strModelNumber.replace(/\D/g,'');*/
 
   var fullproductname1 = req.session.data['fullproductname']  //.toLowerCase().replace(/\s/g, '')
   var brandName1 = req.session.data['brandName']

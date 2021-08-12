@@ -42,6 +42,9 @@
 
 
       <form action="#" method="post" novalidate>
+
+        <input id="checkMatch" name="checkMatch" type="hidden" value="no">
+
         <span class="govuk-caption-l">Add a product</span>
 
 
@@ -161,6 +164,24 @@
 
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
+    $('#checkMatch').val('no');
+    $('#barnumber').val('');
+
+    $('#barnumber').blur(function(e){
+      var bnumbers = $('#barnumber').val().replace(/[^0-9]/g, '');//remove all except numbers
+      var fromTheProducts = '';
+      if(bnumbers != ''){
+
+          $.each(data, function(key, val) {
+              fromTheProducts = val.prod_barcode.replace(/[^0-9]/g, '');
+              if(bnumbers == fromTheProducts){
+                $('#checkMatch').val('yes');//change input val to yes because it matched a product barcode
+                return false;
+              }
+          });
+
+      }
+    });
 
   });
 </script>
