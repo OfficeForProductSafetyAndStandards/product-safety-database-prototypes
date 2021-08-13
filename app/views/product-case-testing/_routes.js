@@ -131,48 +131,32 @@ router.post('/does-the-product-have-a-brand-error-2', function (req, res) {
 router.post('/what-is-the-product-name', function (req, res) {
     return res.redirect('/product-case-testing/what-is-the-product-category')
 })
-
-
 //************* start what-is-the-product-category
 router.post('/what-is-the-product-category', function (req, res) {
   return res.redirect('/product-case-testing/does-the-product-have-marking')
 })
 //************* start does-the-product-have-marking
 router.post('/does-the-product-have-marking', function (req, res) {
-  //var marking = req.session.data['marking']
 
-  /*var fullproductnameOurProduct = strFullproductname; //.toLowerCase().replace(/\s/g, '')
-  var brandNameOurProduct = strBrandName;
-  var productNameOurProduct = strProductName;
-  //var modelNameOurProduct = strModelName;
-  //var categoryOurProduct = strCategory;
-  var modelnumberOurProduct = strModelNumber.replace(/\D/g,'');*/
+  var checkMatch1 = req.session.data['checkMatch']
+  var theMatch1 = req.session.data['theMatch']
 
-  var fullproductname1 = req.session.data['fullproductname']  //.toLowerCase().replace(/\s/g, '')
-  var brandName1 = req.session.data['brandName']
-  var productName1 = req.session.data['productName']
-  //var modelName1 = req.session.data['modelName']
-  //var categoryText = req.session.data['category']
-  var modelnumber1 = req.session.data['modelnumber'].replace(/\D/g,'');
-
-
-  if (fullproductname1 == fullproductnameOurProduct){
-    return res.redirect('/product-case-testing/might-already-exist')
-  }else if((brandName1 == brandNameOurProduct) && (productName1 == productNameOurProduct)){
-    return res.redirect('/product-case-testing/might-already-exist')
-  }else if(modelnumber1 == modelnumberOurProduct){
+  if (checkMatch1 == 'yes'){
     return res.redirect('/product-case-testing/might-already-exist')
   }else{
     return res.redirect('/product-case-testing/describe-the-product')
   }
 
 })
-
-
 // *********************** start might-already-exist
-router.get('/might-already-exist', function (req, res) {
+/*router.get('/might-already-exist', function (req, res) {
+  var thisFullproductname = "blah";
   res.render('product-case-testing/might-already-exist', { thisFullproductname: strFullproductname, thisBrand: strBrandName, thisCategory: 'Electrical appliances and equipment', thisSubcategory: 'Domestic electricals', thisModelNumber: strModelNumber, thisBarcode: strBarcode, thisDescription: 'The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.', thisImage: strImageMain })
 })
+
+and then in the page just use {{ thisBrand }} as normal. And this for an image in the HTML...
+<img src={%raw%}"{%endraw%}{{ thisImage }}{%raw%}"{%endraw%} class="opss-details-img" alt="Sony hair dryer">
+*/
 
 router.post('/might-already-exist', function (req, res) {
   var isit = req.session.data['isit']

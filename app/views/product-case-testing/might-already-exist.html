@@ -43,30 +43,38 @@
 
                     <span class="govuk-caption-m">The product in our records</span>
 
-                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
-                        {{ thisFullproductname }}
+                    <h2 id="productName" class="govuk-heading-m govuk-!-margin-bottom-3" data-id="{{ data['theMatch'] }}">
+                        this is the ID
                     </h2>
 
                     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Brand </dt>
-                            <dd class="govuk-summary-list__value">{{ thisBrand }}</dd>
+                            <dd id="brandName" class="govuk-summary-list__value"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Name </dt>
+                            <dd id="nameName" class="govuk-summary-list__value"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model </dt>
+                            <dd id="modelName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Category </dt>
-                            <dd class="govuk-summary-list__value">{{ thisCategory }}</dd>
+                            <dd id="categoryName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Subcategory </dt>
-                            <dd class="govuk-summary-list__value">{{ thisSubcategory }}</dd>
+                            <dd id="subcategoryName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
-                            <dd class="govuk-summary-list__value">{{ thisModelNumber }}</dd>
+                            <dd id="modelNumber" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
-                            <dd class="govuk-summary-list__value">{{ thisBarcode }}</dd>
+                            <dd id="barNumber" class="govuk-summary-list__value"></dd>
                         </div>
                     </dl>
 
@@ -76,20 +84,16 @@
                                 Product description
                             </span>
                         </summary>
-                        <div class="govuk-details__text">
-                            {{ thisDescription }}
-                        </div>
+                        <div id="descriptionTxt" class="govuk-details__text"></div>
                     </details>
 
                     <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Product image<span class="govuk-visually-hidden">: {{ thisFullTitle }}</span>
+                                Product image
                             </span>
                         </summary>
-                        <div class="govuk-details__text">
-                            <img src={%raw%}"{%endraw%}{{ thisImage }}{%raw%}"{%endraw%} class="opss-details-img" alt="Sony hair dryer">
-                        </div>
+                        <div id="imageURL" class="govuk-details__text"></div>
                     </details>
 
             </section>
@@ -107,6 +111,14 @@
                             <dd class="govuk-summary-list__value">{{ data['brandName'] }}</dd>
                         </div>
                         <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Name </dt>
+                            <dd class="govuk-summary-list__value">{{ data['productName'] }}</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model </dt>
+                            <dd class="govuk-summary-list__value">{{ data['modelName'] }}</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Category </dt>
                             <dd class="govuk-summary-list__value">{{ data['category'] }}</dd>
                         </div>
@@ -118,14 +130,12 @@
                             <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
                             <dd class="govuk-summary-list__value">
                                 {{ data['modelnumber'] }}
-                                <!--span class="govuk-visually-hidden">No model number provided yet</span>&nbsp;-->
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
                             <dd class="govuk-summary-list__value">
                                 {{ data['barnumber'] }}
-                                <!--span class="govuk-visually-hidden">Not available</span-->
                             </dd>
                         </div>
                     </dl>
@@ -193,6 +203,26 @@
 
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
+
+        var theID = $('#productName').data("id");
+        var fromTheProducts = '';
+
+        $.each(data, function(key, val) {
+            fromTheProducts = val.id;
+            if(theID == fromTheProducts){
+                $('#productName').text(val.prod_name);
+                $('#brandName').text(val.brand);
+                $('#nameName').text(val.name);
+                $('#modelName').text(val.model);
+                $('#categoryName').text(val.prod_category);
+                $('#subcategoryName').text(val.prod_subcategory);
+                $('#modelNumber').text(val.prod_modelno);
+                $('#barNumber').text(val.prod_barcode);
+                $('#descriptionTxt').text(val.description);
+                $('#imageURL').html('<img src="../public/images/products/'+val.prod_img+'" class="opss-details-img" alt="Product image">');
+                return false;
+            }
+        });
 
   });
 </script>

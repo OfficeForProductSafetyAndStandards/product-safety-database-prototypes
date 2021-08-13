@@ -42,7 +42,10 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
+        <form action="#" method="post" data-fullproductname="{{ data['fullproductname'] }}" data-name="{{ data['productName'] }}" data-model="{{ data['modelName'] }}"  data-modelno="{{ data['modelnumber'] }}" novalidate>
+
+          <input id="checkMatch" name="checkMatch" type="hidden" value="no">
+          <input id="theMatch" name="theMatch" type="hidden" value="">
 
 <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="marking">
 
@@ -67,31 +70,14 @@
 
   <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1 govuk-radios--conditional" data-module="govuk-radios">
 
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="marking" name="marking" type="radio" value="yes" data-aria-controls="conditional-marking">
           <label class="govuk-label govuk-radios__label" for="marking">
-        Yes
-      </label>
-
+            Yes
+          </label>
         </div>
 
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marking">
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="govuk-form-group">
 
@@ -108,13 +94,6 @@
   </span>
   <div class="govuk-checkboxes">
 
-
-
-
-
-
-
-
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="mark" name="mark" type="checkbox" value="ukca">
           <label class="govuk-label govuk-checkboxes__label" for="mark">
@@ -123,14 +102,6 @@
 
         </div>
 
-
-
-
-
-
-
-
-
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="mark-2" name="mark" type="checkbox" value="ukni">
           <label class="govuk-label govuk-checkboxes__label" for="mark-2">
@@ -138,14 +109,6 @@
       </label>
 
         </div>
-
-
-
-
-
-
-
-
 
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="mark-3" name="mark" type="checkbox" value="ce">
@@ -167,13 +130,6 @@
 
 
           </div>
-
-
-
-
-
-
-
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="marking-2" name="marking" type="radio" value="no">
           <label class="govuk-label govuk-radios__label" for="marking-2">
@@ -181,14 +137,7 @@
       </label>
 
         </div>
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
+       <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="marking-3" name="marking" type="radio" value="unknown">
           <label class="govuk-label govuk-radios__label" for="marking-3">
         Unknown
@@ -237,8 +186,50 @@
 <script>
   jQuery(document).ready(function(){
 
+    var theForm = $('#main-content').find('form');
+
     setMenuState('products');
-    validateTheForm($("#main-content").find('form'));
+    validateTheForm(theForm);
+
+    $('#checkMatch').val('no');
+    $('#theMatch').val('');
+    var v1 = theForm.data("fullproductname");
+    if(!v1){v1 = '----'; }
+    var v2 = theForm.data("name");
+    if(!v2){v2 = '----'; }
+    var v3 = theForm.data("model");
+    if(!v3){v3 = '----'; }
+    var v4 = theForm.data("modelno");
+    if(!v4){v4 = '----'; }
+
+    var regex = new RegExp(v1, "i");
+    var regex2 = new RegExp(v2, "i");
+    var regex3 = new RegExp(v3, "i");
+    var regex4 = new RegExp(v4, "i");
+
+    function itmatched(id){
+      $('#checkMatch').val('yes');
+      $('#theMatch').val(id);
+    }
+
+    $('#main-content').find('.govuk-radios__input').click(function(){
+
+      $.each(data, function(key, val) {
+
+          if (val.prod_name.search(regex) != -1) {
+            itmatched(val.id);
+            return false;
+          } else if ((val.name.search(regex2) != -1) || (val.model.search(regex3) != -1)) {
+            itmatched(val.id);
+            return false;
+          } else if (val.prod_modelno.search(regex4) != -1) {
+            itmatched(val.id);
+            return false;
+          }
+
+      });
+
+    });
 
   });
 </script>
