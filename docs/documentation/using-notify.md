@@ -35,7 +35,7 @@ file in your prototype (where `xxxxxxx` is the key you’ve copied from
 Notify):
 ```shell
 NOTIFYAPIKEY=xxxxxxx
-```   
+```
 Your prototype will load the key from your `.env` file. If you don’t
 have a `.env` file then run your prototype (with the `npm start`
 command) and it will create one for you.
@@ -81,7 +81,7 @@ example:
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" method="post">
+      <form  method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="email-address">

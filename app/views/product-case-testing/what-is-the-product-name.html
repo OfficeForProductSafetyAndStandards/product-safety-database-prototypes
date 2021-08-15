@@ -22,25 +22,25 @@
 
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#fullproductname">1 Enter a full product name</a>
+        <a href="#fullproductname">Enter a full product name</a>
       </li>
       <li>
-        <a href="#brand">2 Select yes if the product has a manufacturer's brand name</a>
+        <a href="#brand">Select yes if the product has a manufacturer's brand name</a>
       </li>
       <li>
-        <a href="#brandName">3 Enter a brand name</a>
+        <a href="#brandName">Enter a brand name</a>
       </li>
       <li>
-        <a href="#product">4 Select yes if the product has a specific product name</a>
+        <a href="#product">Select yes if the product has a specific product name</a>
       </li>
       <li>
-        <a href="#productName">5 Enter a product name</a>
+        <a href="#productName">Enter a product name</a>
       </li>
       <li>
-        <a href="#model">6 Select yes if the product have a model name</a>
+        <a href="#model">Select yes if the product have a model name</a>
       </li>
       <li>
-        <a href="#modelName">7 Enter a model name</a>
+        <a href="#modelName">Enter a model name</a>
       </li>
     </ul>
   </div>
@@ -63,27 +63,24 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form id="test-form" action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
 
+        <div class="govuk-form-group govuk-!-margin-bottom-5" data-test-for="input" data-test-ele-name="fullproductname">
+          <label class="govuk-label" for="fullproductname">
+            What is the full product name?
+          </label>
 
-<div class="govuk-form-group govuk-!-margin-bottom-5" data-test-for="input" data-test-ele-name="fullproductname">
-  <label class="govuk-label" for="fullproductname">
-    What is the full product name?
-  </label>
+          <div id="fullproductname-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+            For example, Dyson Small Ball Animal 2.
+          </div>
 
+          <span id="fullproductname-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a full product name
+          </span>
 
-
-  <div id="fullproductname-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
-    For example, Dyson Small Ball Animal 2.
-  </div>
-
-  <span id="fullproductname-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a full product name
-  </span>
-
-  <input class="govuk-input" id="fullproductname" name="fullproductname" type="text" aria-describedby="fullproductname-hint">
-</div>
+          <input class="govuk-input" id="fullproductname" name="fullproductname" type="text" aria-describedby="fullproductname-hint">
+        </div>
 
 
         <div class="opss-sub-form-group govuk-!-margin-bottom-4">
@@ -93,9 +90,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="brand-hint">
 
               <legend class="govuk-fieldset__legend">
-
                 Does the product have a manufacturer&#39;s brand name?
-
               </legend>
 
 
@@ -109,42 +104,29 @@
 
               <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
 
-
-
-
-
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="brand" name="brand" type="radio" value="yes" data-aria-controls="conditional-brand">
                       <label class="govuk-label govuk-radios__label" for="brand">
-                    Yes
-                  </label>
+                        Yes
+                      </label>
 
                     </div>
 
                       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-brand">
 
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="brandName">
+                            Brand name
+                          </label>
 
+                          <span id="brandName-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Enter a brand name
+                          </span>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="brandName">
-                Brand name
-              </label>
-
-              <span id="brandName-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a brand name
-              </span>
-
-              <input class="govuk-input govuk-input--width-20" id="brandName" name="brandName" type="text" spellcheck="false">
-            </div>
-
+                          <input class="govuk-input govuk-input--width-20" id="brandName" name="brandName" type="text" spellcheck="false">
+                        </div>
 
                       </div>
-
-
-
-
-
-
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="brand-2" name="brand" type="radio" value="no">
@@ -153,9 +135,6 @@
                   </label>
 
                     </div>
-
-
-
 
               </div>
 
@@ -170,9 +149,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="product-hint">
 
               <legend class="govuk-fieldset__legend">
-
                 Does the product have a specific product name?
-
               </legend>
 
 
@@ -184,14 +161,7 @@
                 <span class="govuk-visually-hidden">Error:</span> Select yes if the product has a specific product name
               </span>
 
-
-
               <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
-
-
-
-
-
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="product" name="product" type="radio" value="yes" data-aria-controls="conditional-product">
                       <label class="govuk-label govuk-radios__label" for="product">
@@ -202,28 +172,20 @@
 
                       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-product">
 
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="productName">
+                            Product name
+                          </label>
 
+                          <span id="productName-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Enter a product name
+                          </span>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="productName">
-                Product name
-              </label>
-
-              <span id="productName-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a product name
-              </span>
-
-              <input class="govuk-input govuk-input--width-20" id="productName" name="productName" type="text" spellcheck="false">
-            </div>
+                          <input class="govuk-input govuk-input--width-20" id="productName" name="productName" type="text" spellcheck="false">
+                        </div>
 
 
                       </div>
-
-
-
-
-
-
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="product-2" name="product" type="radio" value="no">
@@ -232,11 +194,7 @@
                   </label>
 
                     </div>
-
-
-
-
-              </div>
+             </div>
 
 
             </fieldset>
@@ -322,14 +280,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
 <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
   Continue
 </button>
@@ -343,3 +293,24 @@
 
 {% endblock %}
 
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+
+
+  });
+</script>
+
+{% endblock %}

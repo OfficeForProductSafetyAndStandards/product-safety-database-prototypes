@@ -38,7 +38,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" id="test-form" action="#" method="post" novalidate>
+        <form action="#" method="post" novalidate>
 
 
 
@@ -74,7 +74,7 @@
             Create your case from the product.
           </div-->
           <div id="related-item-hint2" class="govuk-hint govuk-radios__hint govuk-!-font-size-16 govuk-!-margin-bottom-4">
-            Create your case from the product. Find the product - or add it to our records - and then create your case from there.
+            Create your case from the product: Find the product - or add it to our records - and then create your case from there.
           </div>
         </div>
 
@@ -126,11 +126,31 @@
   </div>
 
 
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
 <script>
   jQuery(document).ready(function(){
 
     setMenuState('cases');
+    validateTheForm($("#main-content").find('form'));
+    localStorage.removeItem('addCaseToProduct');
+
+    $("#main-content").find('.govuk-button').click(function(){
+      if($('#related-2').is(':checked')) {
+        localStorage.setItem('addCaseToProduct', 'no');
+      }
+      return false;
+    });
 
   });
 </script>
+
 {% endblock %}

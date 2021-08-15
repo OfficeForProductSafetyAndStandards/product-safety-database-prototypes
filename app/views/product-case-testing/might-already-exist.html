@@ -13,7 +13,21 @@
 
 
 {% block content %}
-  <div class="govuk-grid-row">
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#isit">Select yes if this is your product</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
@@ -29,30 +43,38 @@
 
                     <span class="govuk-caption-m">The product in our records</span>
 
-                    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
-                        Sony 3000 hair dryer (x3000rpm)
+                    <h2 id="productName" class="govuk-heading-m govuk-!-margin-bottom-3" data-id="{{ data['theMatch'] }}">
+                        this is the ID
                     </h2>
 
                     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Brand </dt>
-                            <dd class="govuk-summary-list__value">Sony</dd>
+                            <dd id="brandName" class="govuk-summary-list__value"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Name </dt>
+                            <dd id="nameName" class="govuk-summary-list__value"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model </dt>
+                            <dd id="modelName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Category </dt>
-                            <dd class="govuk-summary-list__value">Hair dryer</dd>
+                            <dd id="categoryName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Subcategory </dt>
-                            <dd class="govuk-summary-list__value">Domestic electricals</dd>
+                            <dd id="subcategoryName" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
-                            <dd class="govuk-summary-list__value"><span class="govuk-visually-hidden">No model number provided</span>&nbsp;</dd>
+                            <dd id="modelNumber" class="govuk-summary-list__value"></dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
-                            <dd class="govuk-summary-list__value">12345678910</dd>
+                            <dd id="barNumber" class="govuk-summary-list__value"></dd>
                         </div>
                     </dl>
 
@@ -62,20 +84,16 @@
                                 Product description
                             </span>
                         </summary>
-                        <div class="govuk-details__text">
-                            The product description lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat quam sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in libero urna. Nulla ut rhoncus magna, sagittis dapibus justo. Nullam blandit lacus et dui scelerisque, vel pretium lectus vulputate. In et ultrices sapien. Quisque pharetra, tortor scelerisque accumsan rhoncus, sem quam fermentum dui, non ornare neque mi ac justo.
-                        </div>
+                        <div id="descriptionTxt" class="govuk-details__text"></div>
                     </details>
 
                     <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Product image<span class="govuk-visually-hidden">: Sony Xeria hair dryer</span>
+                                Product image
                             </span>
                         </summary>
-                        <div class="govuk-details__text">
-                            <img src="../public/images/hair-dryer.jpg" class="opss-details-img" alt="Sony hair dryer">
-                        </div>
+                        <div id="imageURL" class="govuk-details__text"></div>
                     </details>
 
             </section>
@@ -84,44 +102,58 @@
                     <span class="govuk-caption-m">The product you are adding</span>
 
                     <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
-                        Sony Hair Dryer 3000
+                        {{ data['fullproductname'] }}
                     </h2>
 
                     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-3">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Brand </dt>
-                            <dd class="govuk-summary-list__value">Sony</dd>
+                            <dd class="govuk-summary-list__value">{{ data['brandName'] }}</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Name </dt>
+                            <dd class="govuk-summary-list__value">{{ data['productName'] }}</dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Model </dt>
+                            <dd class="govuk-summary-list__value">{{ data['modelName'] }}</dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Category </dt>
-                            <dd class="govuk-summary-list__value">Hair dryer</dd>
+                            <dd class="govuk-summary-list__value">{{ data['category'] }}</dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Subcategory </dt>
-                            <dd class="govuk-summary-list__value">Electricals</dd>
+                            <dd class="govuk-summary-list__value">{{ data['subcategory'] }}</dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Model <span class="opss-numero" title="Number">&numero;</span> </dt>
                             <dd class="govuk-summary-list__value">
-                                <span class="govuk-visually-hidden">No model number provided yet</span>&nbsp;
+                                {{ data['modelnumber'] }}
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
-                            <dd class="govuk-summary-list__value"> <span class="govuk-visually-hidden">Not available</span> </dd>
+                            <dd class="govuk-summary-list__value">
+                                {{ data['barnumber'] }}
+                            </dd>
                         </div>
                     </dl>
 
             </section>
         </section>
 
-        <form class="form" action="#" method="post" novalidate>
-            <div class="govuk-form-group">
+        <form action="#" method="post" novalidate>
+            <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="isit">
                 <fieldset class="govuk-fieldset" aria-describedby="isit-hint">
 
                     <legend class="govuk-visually-hidden">
                         Do you want to stop adding a new product?
                     </legend>
+
+                    <span id="isit-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Select yes if this is your product
+                    </span>
 
                     <div class="govuk-radios govuk-!-padding-bottom-1">
                         <div class="govuk-radios__item">
@@ -141,12 +173,58 @@
                 </fieldset>
             </div>
 
-            {{ govukButton({
-            text: "Continue"
-            }) }}
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
         </form>
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+        var theID = $('#productName').data("id");
+        var fromTheProducts = '';
+
+        $.each(data, function(key, val) {
+            fromTheProducts = val.id;
+            if(theID == fromTheProducts){
+                $('#productName').text(val.prod_name);
+                $('#brandName').text(val.brand);
+                $('#nameName').text(val.name);
+                $('#modelName').text(val.model);
+                $('#categoryName').text(val.prod_category);
+                $('#subcategoryName').text(val.prod_subcategory);
+                $('#modelNumber').text(val.prod_modelno);
+                $('#barNumber').text(val.prod_barcode);
+                $('#descriptionTxt').text(val.description);
+                $('#imageURL').html('<img src="../public/images/products/'+val.prod_img+'" class="opss-details-img" alt="Product image">');
+                return false;
+            }
+        });
+
+  });
+</script>
+
 {% endblock %}

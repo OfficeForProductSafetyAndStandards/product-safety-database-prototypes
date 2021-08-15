@@ -13,6 +13,25 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#counterfeit">Select yes if the case is related to a counterfeit product</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -20,43 +39,89 @@
       <form action="#" method="post" novalidate>
 
 
-{{ govukRadios({
-  idPrefix: "counterfeit",
-  name: "counterfeit",
-  classes: "govuk-!-padding-top-3 govuk-!-padding-bottom-1",
-  fieldset: {
-    legend: {
-      text: "Is this case related to a counterfeit product?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
+<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="counterfeit">
 
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    },
-    {
-      value: "unsure",
-      text: "Unsure"
-    }
-  ]
-}) }}
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Is this case related to a counterfeit product?
+    </h1>
+  </legend>
+
+  <span id="counterfeit-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select yes if the case is related to a counterfeit product
+  </span>
+
+  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
 
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="counterfeit" name="counterfeit" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="counterfeit">
+        Yes
+      </label>
+
+        </div>
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="counterfeit-2" name="counterfeit" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="counterfeit-2">
+        No
+      </label>
+
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="counterfeit-3" name="counterfeit" type="radio" value="unsure">
+          <label class="govuk-label govuk-radios__label" for="counterfeit-3">
+        Unsure
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
 
       </form>
 
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
 {% endblock %}
 

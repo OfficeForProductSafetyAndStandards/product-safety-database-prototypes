@@ -13,6 +13,25 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#uploadfile">Choose an image file to upload</a>
+            </li>
+            <li>
+                <a href="#imagetitle">Enter a title for the image</a>
+            </li>
+            <li>
+                <a href="#imagedesc">Enter a description of the image</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-bottom-6">
 
@@ -49,7 +68,7 @@
 
     <section class="govuk-grid-column-two-thirds opss-equal-height__col" role="region" aria-label="Add image form">
         <form action="#" method="post" novalidate>
-            <div class="govuk-form-group">
+            <div class="govuk-form-group" data-test-for="upload" data-test-ele-name="uploadfile">
                 <label class="govuk-label govuk-label--s" for="uploadfile">
                     Upload the image file
                 </label>
@@ -57,109 +76,191 @@
                     The supported file types are: <abb>png</abb>, <abbr>jpg</abbr>, <abbr>jpeg</abbr> and <abbr>webp</abbr>.
                 </div>
 
+                <span id="uploadfile-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Choose an image file to upload
+                </span>
+
                 <div class="govuk-!-padding-top-1">
                     <input type="file" id="uploadfile" class="govuk-file-upload" name="uploadfile" aria-describedby="uploadfile-hint">
                 </div>
             </div>
 
-            {{ govukInput({
-                label: {
-                    text: "Provide a title",
-                    isPageHeading: false,
-                    classes: "govuk-label--s"
-                },
-                hint: {
-                    classes: "govuk-!-font-size-16",
-                    text: "For example, PlayStation 5 Console or Dyson Power Wave 3300."
-                },
-                classes: "govuk-input--width-20",
-                id: "imagetitle",
-                name: "imagetitle",
-                attributes: {
-                    maxlength: "250"
-                }
-            }) }}
 
-            {{ govukCharacterCount({
-                name: "imagedesc",
-                id: "imagedesc",
-                maxlength: 100,
-                label: {
-                    html: 'Describe what the image shows <span class="govuk-visually-hidden">for the alternative image text</span>',
-                    isPageHeading: false,
-                    classes: "govuk-label--s"
-                },
-                hint: {
-                    classes: "govuk-!-font-size-16",
-                    text: "For example, an unboxed white Ikea TATO table lamp, or the on-off cable switch."
-                },
-                countMessage: {
-                    classes: "govuk-!-font-size-16"
-                },
-                attributes: {
-                    autocomplete: "off"
-                }
-            }) }}
+
+<div class="govuk-form-group" data-test-for="input" data-test-ele-name="imagetitle">
+  <label class="govuk-label govuk-label--s" for="imagetitle">
+    Provide a title
+  </label>
+
+
+
+  <div id="imagetitle-hint" class="govuk-hint govuk-!-font-size-16">
+    For example, PlayStation 5 Console or Dyson Power Wave 3300.
+  </div>
+
+  <span id="imagetitle-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a title for the image
+  </span>
+
+<input class="govuk-input govuk-input--width-20" id="imagetitle" name="imagetitle" type="text" aria-describedby="imagetitle-hint" maxlength="250">
+</div>
+
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+
+
+<div class="govuk-form-group" data-test-for="textarea" data-test-ele-name="imagedesc">
+  <label class="govuk-label govuk-label--s" for="imagedesc">
+    Describe what the image shows <span class="govuk-visually-hidden">for the alternative image text</span>
+  </label>
+
+
+
+  <div id="imagedesc-hint" class="govuk-hint govuk-!-font-size-16">
+    For example, an unboxed white Ikea TATO table lamp, or the on-off cable switch.
+  </div>
+
+  <span id="imagedesc-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a description of the image
+  </span>
+
+  <textarea class="govuk-textarea govuk-js-character-count" id="imagedesc" name="imagedesc" rows="5" aria-describedby="imagedesc-info imagedesc-hint" autocomplete="off"></textarea>
+</div>
+
+  <div id="imagedesc-info" class="govuk-hint govuk-character-count__message govuk-!-font-size-16" aria-live="polite">
+  You can enter up to 100 characters
+</div>
+
+</div>
+
 
             <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
+                <button id="imageBtn" class="govuk-button" data-module="govuk-button">
                     Continue
                 </button>
                                             <!-- the previous page -->
-                <a class="govuk-link govuk-link--no-visited-state" href="/product-case-testing/can-you-provide-an-image">Go back</a>
+                <a class="govuk-link govuk-link--no-visited-state opss-nojs-hide" href="javascript:history.go(-1)">Go back</a>
             </div>
         </form>
     </section>
 
-    <section class="govuk-grid-column-one-third opss-equal-height__col">
+    <section id="myImages" class="govuk-grid-column-one-third opss-equal-height__col">
         <div class="govuk-!-margin-left-4 opss-borders opss-borders--left opss-borders--padding-l opss-borders--height-100">
 
         <!-- show this ... -->
-            <p class="govuk-hint govuk-!-font-size-16">There are currently no images.</p>
+            <p id="noImages" class="govuk-hint govuk-!-font-size-16">There are currently no images.</p>
 
         <!-- or ... -->
-            <!--h2 class="govuk-visually-hidden">The images you have added</h2>
-            <dl class="govuk-summary-list govuk-!-font-size-14 opss-summary-list-aside">
-                <dt>
-                    <span class="govuk-visually-hidden">Title: </span>Sony hair dryer 3000
-                </dt>
-                <dd>
-                    <span class="govuk-visually-hidden">File name: </span>sony-hair-dryer-3000.jpg
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">Alternative image text: </span>A sony hair dryer 3000
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">The image: </span><img src="../public/images/hair-dryer.jpg" alt="Sony hair dryer 3000">
-                </dd>
-                <dd>
-                    <a href="/product-case-testing/remove-a-product-image-success" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14">
-                        Remove<span class="govuk-visually-hidden">image Sony hair dryer 3000</span>
-                    </a>
-                </dd>
 
-                <dt>
-                    <span class="govuk-visually-hidden">Title: </span>Sony hair dryer 3000 with plug
-                </dt>
-                <dd>
-                    <span class="govuk-visually-hidden">File name: </span>sony-hair-dryer-3000-plug.jpg
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">Alternative image text: </span>Sony hair dryer with cable and plug
-                </dd>
-                <dd>
-                    <span class="govuk-visually-hidden">The image: </span><img src="../public/images/hair-dryer-with-plug.jpg" alt="Sony hair dryer 3000 with plug">
-                </dd>
-                <dd>
-                    <a href="/product-case-testing/remove-a-product-image-success" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14">
-                        Remove<span class="govuk-visually-hidden"> image Sony hair dryer 3000 with plug</span>
-                    </a>
-                </dd>
-            </dl-->
+            <h2 class="govuk-visually-hidden none">The images you have added</h2>
+            <dl class="govuk-summary-list govuk-!-font-size-14 opss-summary-list-aside">
+                <div class="none0">
+                    <dt>
+                        <span class="govuk-visually-hidden">Title: </span><span id="imageTitle0"></span>
+                    </dt>
+                    <dd>
+                        <span class="govuk-visually-hidden">File name: </span><span id="fileName"></span>
+                    </dd>
+                    <dd>
+                        <span class="govuk-visually-hidden">Alternative image text: </span><span id="imageDesc0"></span>
+                    </dd>
+                    <dd>
+                        <span class="govuk-visually-hidden">The image: </span><div class="imagearea0"></div>
+                    </dd>
+                    <dd>
+                        <a href="/product-case-testing/remove-a-product-image-success" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14">
+                            Remove<span class="govuk-visually-hidden"> image 1</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="none1">
+                    <dt>
+                        <span class="govuk-visually-hidden">Title: </span><span id="imageTitle1"></span>
+                    </dt>
+                    <dd>
+                        <span class="govuk-visually-hidden">File name: </span><span id="fileName1"></span>
+                    </dd>
+                    <dd>
+                        <span class="govuk-visually-hidden">Alternative image text: </span><span id="imageDesc1"></span>
+                    </dd>
+                    <dd>
+                        <span class="govuk-visually-hidden">The image: </span><div class="imagearea1"></div>
+                    </dd>
+                    <dd>
+                        <a href="/product-case-testing/remove-a-product-image-success" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14">
+                            Remove<span class="govuk-visually-hidden"> image 2</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
 
         </div>
     </section>
 
 </div>
+{% endblock %}
+
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('products');
+    validateTheForm($("#main-content").find('form'));
+
+    getAndDisplayImages();
+
+    $("body").on("change",".govuk-file-upload",function(){
+
+        var fileInput = $(this)[0];//returns a HTML DOM object by putting the [0] since it's really an associative array.
+        var file = fileInput.files[0]; //there is only '1' file since they are not multiple type.
+        var fileName = fileInput.files.item(0).name;
+        var reader = new FileReader();
+
+        if(localStorage.getItem('theImageName0') === null){
+            reader.onload = function(e) {
+                var img = new Image();// Create a new image
+                img.src = reader.result;
+
+                localStorage.theImage0 = img.src;//reader.result; //stores the image to localStorage
+                localStorage.theImageName0 = fileName;
+            }
+            $('#imageBtn').click(function(){
+                localStorage.theImageTitle0 = $('#imagetitle').val();
+                localStorage.theImageDesc0 = $('#imagedesc').val();
+            });
+            reader.readAsDataURL(file);//attempts to read the file in question.
+        }else if(localStorage.getItem('theImageName1') === null){
+            reader.onload = function(e) {
+                var img = new Image();// Create a new image
+                img.src = reader.result;
+
+                localStorage.theImage1 = img.src;//reader.result; //stores the image to localStorage
+                localStorage.theImageName1 = fileName;
+            }
+            $('#imageBtn').click(function(){
+                localStorage.theImageTitle1 = $('#imagetitle').val();
+                localStorage.theImageDesc1 = $('#imagedesc').val();
+            });
+            reader.readAsDataURL(file);//attempts to read the file in question.
+        }else{
+             window.location.assign('blank-no-more-images.html');
+        }
+
+    });
+
+  });
+</script>
 
 {% endblock %}

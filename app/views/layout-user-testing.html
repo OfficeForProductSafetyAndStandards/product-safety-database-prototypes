@@ -32,16 +32,39 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  <script>
+    var data = [
+    {"id":"503","prod_name":"Sony 3000 hair dryer (x3000rpm)","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"Hair dryer","prod_category":"electrical goods","prod_modelno":"0001-2993","prod_barcode":"2993-2765298","prod_img":"image_1.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"466","prod_name":"Dyson Animal 2","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"Vaccum cleaner","prod_category":"63","prod_modelno":"27998-2x","prod_barcode":"2993-2765298", "prod_img":"image_2.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"108","prod_name":"Darren Harridence","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"86000","prod_category":"66","prod_modelno":"MB88279","prod_barcode":"2993-2765298","prod_img":"image_3.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"660","prod_name":"Dan Harridence","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"433060","prod_category":"22","prod_modelno":"8990-1-02","prod_barcode":"2021-08121969","prod_img":"image_4.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"278","prod_name":"Darren Harris","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"162700","prod_category":"33","prod_modelno":"TXM-220-3-4000","prod_barcode":"2993-2765298","prod_img":"image_5.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"396","prod_name":"Brielle Williamson","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"372000","prod_category":"61","prod_modelno":"9086-34-126","prod_barcode":"2993-2765298","prod_img":"image_6.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"119","prod_name":"Herrod Chandler","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"137500","prod_category":"59","prod_modelno":"7685-3325-1241","prod_barcode":"EIT-6666-08121869","prod_img":"img-hair-dryer.jpg","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"448","prod_name":"Rhona Davidson","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"327900","prod_category":"55","prod_modelno":"0020-5231-7778xc","prod_barcode":"2993-2765298","prod_img":"image_8.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"666","prod_name":"Rohan Bags","brand":"Rohan","name":"Bags","model":"Standard cotton","prod_subcategory":"Trousers","prod_category":"Clothing, textiles and fashion items","prod_modelno":"bags-501-00","prod_barcode":"23355-657-200","prod_img":"image_9.png","description":"The product description - cotton trousers - lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+    {"id":"459","prod_name":"Sonya Frost","brand":"Sony","name":"Voom ball","model":"Animal 2","prod_subcategory":"103600","prod_category":"23","prod_modelno":"27664889-6223","prod_barcode":"6666-08121869","prod_img":"image_10.png","description":"The product description lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ];//var data = $.getJSON( '/public/javascripts/products.js');
+  </script>
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
-    .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; cursor: default; }
+    .govuk-header__navigation-item--active .govuk-header__link {text-decoration: underline; }
     .govuk-error-summary,
     .govuk-error-message,
-    .govuk-error-summary__list li {display: none; }
+    .govuk-error-summary__list li,
+    .none, .none0, .none1 {display: none; }
+
+    body .showV1,
+    body .showV2 {display: none; }
+    body.showV1 .showV1,
+    body.showV2 .showV2 {display: block;}
 
     .govuk-form-group--error > fieldset > .govuk-error-message,
+    .govuk-form-group--error[data-test-for=textarea] > .govuk-error-message,
     .govuk-radios__conditional .govuk-form-group--error .govuk-error-message,
-    .govuk-form-group--error[data-test-for=input] .govuk-error-message {display: block; }
+    .govuk-form-group--error[data-test-for=input] .govuk-error-message,
+    .govuk-form-group--error[data-test-for=upload] .govuk-error-message,
+    .govuk-character-count .govuk-form-group--error .govuk-error-message {display: block; }
 
     .test-errors-1, .test-errors-2, .test-errors-3, .test-errors-4,
     .test-errors-5, .test-errors-6, .test-errors-7, .test-errors-8 {display: block !important; }
@@ -54,6 +77,24 @@
     .test-errors-6 ul li:nth-child(6),
     .test-errors-7 ul li:nth-child(7),
     .test-errors-8 ul li:nth-child(8) {display: block !important; }
+
+    .imagearea0, .imagearea1 {
+      max-height: 140px;
+      max-width: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .none0[style] + .none1 {
+      border-top: 1px solid #b1b4b6;
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+
+    .hidden {visibility: hidden; }
+    td.opss-temp-td {text-align: center !important; padding: 40px 10px; font-size: 1.4rem !important; }
+
+    .opss-panels__pair .govuk-summary-list__row dt,
+    .opss-panels__pair .govuk-summary-list__row dd {padding: 3px 0 !important;}
   </style>
 {% endblock %}
 
@@ -106,14 +147,3 @@
   {% endblock %}
 {% endif %}
 
-
-
-
-{% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts-testing.html" %}
-    {% block pageScripts %}
-    {% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
-{% endblock %}
