@@ -217,7 +217,7 @@
         $.each(data, function(key, val) {
             fromTheProducts = val.prod_barcode.replace(/[^0-9]/g, '');
             if(barno == fromTheProducts){
-                $('#productName').text(val.prod_name);
+                $('#productName').text(val.full_prod_name);
                 $('#brandName').text(val.brand);
                 $('#nameName').text(val.name);
                 $('#modelName').text(val.model);

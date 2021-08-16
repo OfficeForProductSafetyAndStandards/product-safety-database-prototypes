@@ -216,7 +216,7 @@
 
       $.each(data, function(key, val) {
 
-          if (val.prod_name.search(regex) != -1) {
+          if (val.full_prod_name.search(regex) != -1) {
             itmatched(val.id);
             return false;
           } else if ((val.name.search(regex2) != -1) || (val.model.search(regex3) != -1)) {

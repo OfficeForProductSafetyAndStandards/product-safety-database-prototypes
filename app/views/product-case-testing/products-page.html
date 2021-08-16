@@ -25,7 +25,7 @@
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body-s">
-                    <span id="search-hint">You can search for products using keywords from the name and model or by using a barcode. A barcode is normally 13 digits, although older products may have a 12 digit number.</span>
+                    <span id="search-hint">You can search for products using keywords from the product name or by using a barcode. A barcode is normally 13 digits, although older products may have a 12 digit number.</span>
                 </p>
                 <p class="govuk-body-s">
                     You can also create a case for a product or add a product if it doesn't already exist<!-- within our records-->.
@@ -64,13 +64,13 @@
                     <div class="govuk-radios govuk-radios--inline govuk-radios--small">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="searchtype" name="searchtype" type="radio" value="keywords" checked="checked">
-                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="keywords">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="searchtype">
                                 Using keywords
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="searchtype-2" name="searchtype" type="radio" value="barcode">
-                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="barcode">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="searchtype-2">
                                 Using a barcode
                             </label>
                         </div>
@@ -404,8 +404,8 @@
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th id="psd" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
-                            <th id="type" scope="col" class="govuk-table__header">Product type</th>
-                            <th id="cat" scope="col" class="govuk-table__header">Category</th>
+                            <th id="type" scope="col" class="govuk-table__header">Category</th>
+                            <th id="cat" scope="col" class="govuk-table__header">Subcategory</th>
                             <th id="bar" scope="col" class="govuk-table__header">Barcode</th>
                         </tr>
                     </thead>
@@ -414,8 +414,8 @@
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
-                            <th scope="col" class="govuk-table__header">Product type</th>
                             <th scope="col" class="govuk-table__header">Category</th>
+                            <th scope="col" class="govuk-table__header">Subcategory</th>
                             <th scope="col" class="govuk-table__header">Barcode</th>
                         </tr>
                     </tfoot>
@@ -470,16 +470,16 @@
 function buildHTML(val, o, c){
     o += '<tr class="govuk-table__row">';
     o += '<th class="govuk-visually-hidden">Product</th>';
-    o += '<th id="item-'+val.id+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">'+ val.prod_name +'</a></th>';
+    o += '<th id="item-'+val.id+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">'+ val.full_prod_name +'</a></th>';
     o += '</tr><tr class="govuk-table__row">';
     o += '<th headers="item-'+val.id+'" id="meta-'+val.id+'" class="govuk-visually-hidden">Metadata</th>';
     o += '<td headers="psd item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
-    o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_type +'</td>';
     o += '<td headers="cat item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
+    o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
     o += '<td headers="bar item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
     o += '</tr><tr class="govuk-table__row">';
     o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
-    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="4" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden"> for psd-'+val.id+'</span></a></td>';
+    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="4" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden">for psd-'+val.id+'</span></a></td>';
     o += '</tr>';
     if(c%2 == 0){
     o += '</tbody><tbody class="govuk-table__body">'
@@ -527,7 +527,7 @@ function buildHTML(val, o, c){
 
                                 if( $('#searchtype').prop("checked") == true ){//search keywords
                                     $.each(data, function(key, val){
-                                        if ((val.prod_type.search(regex) != -1) || (val.prod_name.search(regex) != -1)) {
+                                        if ((val.prod_subcategory.search(regex) != -1) || (val.full_prod_name.search(regex) != -1)) {
 
                                             if(!matchedIDs.includes(val.id)){
                                                 output =  buildHTML(val, output, count);
