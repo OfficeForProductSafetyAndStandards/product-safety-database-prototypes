@@ -1,0 +1,49 @@
+{% extends "layout-user-testing.html" %}
+
+{% block pageTitle %}
+    Find the product
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases-page"
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-l">Welcome</h1>
+
+        <p class="govuk-body-m">This is a simple home page for you to start your task from...</p>
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('home');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
+{% endblock %}

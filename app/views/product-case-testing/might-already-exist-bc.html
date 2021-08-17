@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "products-page"
+        href: "do-you-have-the-barcode"
     }) }}
 {% endblock %}
 
@@ -79,6 +79,10 @@
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Barcode </dt>
                             <dd id="barNumber" class="govuk-summary-list__value"></dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Identifier(s) </dt>
+                            <dd id="identifier" class="govuk-summary-list__value"></dd>
                         </div>
                     </dl>
 
@@ -152,6 +156,12 @@
                                 {{ data['barnumber'] }}
                             </dd>
                         </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">Identifier(s) </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{ data['identifier'] }}
+                            </dd>
+                        </div>
                     </dl>
 
             </section>
@@ -211,13 +221,13 @@
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
 
-        var barno = $('#productName').data("product-barcode").replace(/[^0-9]/g, '');
+        var barno = $('#productName').data("product-barcode").toString().replace(/[^0-9]/g, '');
         var fromTheProducts = '';
 
         $.each(data, function(key, val) {
             fromTheProducts = val.prod_barcode.replace(/[^0-9]/g, '');
             if(barno == fromTheProducts){
-                $('#productName').text(val.prod_name);
+                $('#productName').text(val.full_prod_name);
                 $('#brandName').text(val.brand);
                 $('#nameName').text(val.name);
                 $('#modelName').text(val.model);
@@ -225,6 +235,7 @@
                 $('#subcategoryName').text(val.prod_subcategory);
                 $('#modelNumber').text(val.prod_modelno);
                 $('#barNumber').text(val.prod_barcode);
+                $('#identifier').text(val.identifier);
                 $('#descriptionTxt').text(val.description);
                 $('#imageURL').html('<img src="../public/images/products/'+val.prod_img+'" class="opss-details-img" alt="Product image">');
                 return false;

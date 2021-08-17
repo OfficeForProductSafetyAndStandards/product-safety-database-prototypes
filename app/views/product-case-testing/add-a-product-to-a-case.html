@@ -18,17 +18,44 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">Allegation 20-2120</span>
-        <h1 class="govuk-heading-l">Add a product to the case</h1>
+        <span class="govuk-caption-l">Allegation <!--20-2120--></span>
+        <h1 class="govuk-heading-l">Add a product to this case</h1>
 
-        <p class="govuk-body">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum quam distinctio vero harum animi consequuntur labore voluptatibus voluptates, provident voluptate eius aliquam id exercitationem! Quod fugiat laudantium blanditiis qui magnam.
+        <p class="govuk-body-m">Thank you: For the purposes of this user-testing we do not require users to add products to pre-existing or newly created cases.</p>
+        <p class="govuk-body button">&#x3c; <a href="javascript:history.go(-1)">Go back</a></p>
+
+        <!--p class="govuk-body">
+            Add [another/a] product to this case (Allegation or Enquiry): use the button to easilly add this case once you locate the product.
         </p>
-        <p class="govuk-body">
-            The Allergation or Enquiry reference number is: <b>20-2120</b>. Find the product using <a href="#" class="govuk-link govuk-link--no-visited-state">the products page</a> and [choose add to case, where you can enter the reference number (we confirm if it is the correct case before saving).] (Copy to clip-board).
-        </p>
+
+        <p class="govuk-body-m"><a href="products-page.html?caseno=20-2120" class="govuk-button">Add a product to Allegation 20-2120</a></p-->
+
+        <!-- clicking the 'Add to a case' link on the products page offers a text imput on the next page for the case number - and checks if this is your case? Using the button follows the same logic but skips the manual entry as we use a querystring or hidden input to instantly check if this is your case? We offer the user the option to confirm or cancel. "If this is not your case, go to the <a>Cases page</a> and first locate the case you wish to add this product to, and follow its 'Add a product' link.". -->
+
+        <!--p class="govuk-body">
+            The Allergation or Enquiry reference number is: <b>20-2120</b>. Find the product using <a href="products-page.html" class="govuk-link govuk-link--no-visited-state">the products page</a> and [select 'Add to a case', where you can enter the reference number (we confirm if it is the correct case before saving).] (Copy to clip-board).
+        </p-->
 
 
     </div>
   </div>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% block scripts %}
+    {% include "includes/scripts-testing.html" %}
+    {% block pageScripts %}
+    {% endblock %}
+  {% endblock %}
+
+<script>
+  jQuery(document).ready(function(){
+
+    setMenuState('cases');
+    validateTheForm($("#main-content").find('form'));
+
+  });
+</script>
+
 {% endblock %}
