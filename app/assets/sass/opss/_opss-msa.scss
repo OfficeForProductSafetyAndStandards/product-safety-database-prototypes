@@ -221,6 +221,11 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     tbody tr td:last-child a {
         white-space: nowrap;
     }
+
+    tfoot th {
+        border-top: 1px solid $govuk-border-colour;
+        border-bottom: none 0;
+    }
 }
 
 .opss-table--last-col-right {

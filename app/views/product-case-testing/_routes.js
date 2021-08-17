@@ -207,8 +207,11 @@ router.post('/upload-a-product-image', function (req, res) {
 //************ start upload-a-product-image-success
 router.post('/upload-a-product-image-success', function (req, res) {
   const valanother = req.session.data['another']
+  const valmax = req.session.data['max']
 
-  if (valanother == 'anotherimage') {
+  if (valmax == 'yes') {
+    res.redirect('/product-case-testing/blank-no-more-images')
+  } else if (valanother == 'anotherimage') {
     res.redirect('/product-case-testing/upload-a-product-image')
   } else if (valanother == 'no') {
     res.redirect('/product-case-testing/success-product-added')

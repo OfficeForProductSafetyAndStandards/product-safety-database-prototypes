@@ -188,7 +188,7 @@
   },
   hint: {
     classes: "govuk-hint govuk-!-font-size-16",
-    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.'
+    html: 'Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <!--br class="opss-br-desktop">Be aware that retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.-->'
   },
   type: "text",
   classes: " govuk-input--width-10",
@@ -197,10 +197,20 @@
 
 }) }}
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-top-6"
-}) }}
+<div class="govuk-form-group govuk-!-margin-bottom-5">
+  <label class="govuk-label" for="identifyingnumber">
+    Are there any general identifying numbers?
+  </label>
+  <div id="identifyingnumber-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
+    General product identifiers might include an <abbr title="Stock Keeping Unit">SKU</abbr>, eBay or <abbr title="Amazon Standard Identification Number">ASIN</abbr> (Amazon) number.
+    <br class="opss-br-desktop">To add multipul number codes seperate each one from the next with a comma.
+  </div>
+  <input class="govuk-input  govuk-input--width-10" id="identifyingnumber" name="identifyingnumber" type="text" aria-describedby="identifyingnumber-hint">
+</div>
+
+<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+  Continue
+</button>
 
       </form>
 
