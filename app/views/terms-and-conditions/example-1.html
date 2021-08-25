@@ -1,0 +1,60 @@
+{% extends "layout-02-noacc.html" %}
+
+{% block pageTitle %}
+    Declaration - Product Safety Database - GOV.UK
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="/declaration/accept" accept-charset="UTF-8" method="post" novalidate>
+            <input type="hidden" name="authenticity_token" value="L8m5uNsrBdQwGA7NeJt4UfOEJGINdY5YAdNaXdwIMaI4W0RiGSk4V+q9si0xZ8D4f3hk6Sa3UL/tBwJ9q4iYuQ==" />
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-l">Declaration</h1>
+
+                    <p>By continuing you agree:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>to the <a target="_blank" href="/help/terms-and-conditions" class="govuk-link govuk-link--no-visited-state">terms and conditions<span class="govuk-visually-hidden"> (opens in a new tab)</span></a> and <a target="_blank" href="/help/privacy-notice" class="govuk-link govuk-link--no-visited-state">privacy policy<span class="govuk-visually-hidden"> (opens a in new tab)</span></a></li>
+                        <li>not to share information from the Product Safety Database outside your organisation</li>
+                        <li>that you have the right to share the information you enter</li><li>that the information you provide is correct to the best of your knowledge.</li>
+                    </ul>
+
+                    <div class="govuk-form-group">
+                        <div class="govuk-checkboxes">
+                            <input name="agree" type="hidden" value="0" />
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="checked" autocomplete="off" />
+                                <label class="govuk-label govuk-checkboxes__label " for="agree">I agree</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <input type="submit" name="commit" value="Agree and continue" class="govuk-button" data-disable-with="Continue" />
+        </form>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Need help?</h2>
+
+        <p class="govuk-body">
+            Email <a href="mailto:opss.enquiries@beis.gov.uk?subject=Help%20requested%20from%20the%20declaration%20page" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">the enquiries team at </span>opss.enquiries@beis.gov.uk</a> if you have queries or suggestions.
+        </p>
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
