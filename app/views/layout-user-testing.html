@@ -99,6 +99,286 @@
 
 
     ];//var data = $.getJSON( '/public/javascripts/products.js');
+
+    function setMenuState(active){
+    const pgtitles = ["home", "cases", "businesses", "products"];
+    var title = active;//document.getElementsByTagName("title")[0].innerHTML.toLowerCase().trim();
+
+    if(title == 'off'){
+        $('#navigation').hide();
+    }else{
+        var nav = $('#navigation').find('li');
+
+        pgtitles.forEach(function (item, index) {
+            if(item == title){
+                nav.eq(index).addClass('govuk-header__navigation-item--active');
+            }
+        });
+    }
+}
+
+function getAndDisplayImages(){
+    function setRemovalLink(i){
+        $('#noImages').hide();
+
+        var myImagesID = $('#myImages');
+        myImagesID.find('.none').add(myImagesID.find('.none'+i)).show();
+        myImagesID.find('.none'+i+' .govuk-link').click(function(e){
+            e.preventDefault();
+            localStorage.removeItem('theImage'+String(i));
+            localStorage.removeItem('theImageName'+String(i));
+            localStorage.removeItem('theImageTitle'+String(i));
+            localStorage.removeItem('imageDesc'+String(i));
+            window.location.assign($(this).attr('href'));
+        });
+
+        if((localStorage.getItem('theImageName0') === null)&&(localStorage.getItem('theImageName1') !== null)){
+            localStorage.theImage0 = localStorage.theImage1;
+            localStorage.theImageName0 = localStorage.theImageName1;
+            localStorage.theImageTitle0 = localStorage.theImageTitle1;
+            localStorage.theImageDesc0 = localStorage.theImageDesc1;
+            localStorage.removeItem('theImage1');
+            localStorage.removeItem('theImageName1');
+            localStorage.removeItem('theImageTitle1');
+            localStorage.removeItem('imageDesc1');
+        }
+
+    }
+    if(localStorage.getItem('theImageName0') !== null){
+        var img0 = new Image();
+        img0.id = "img0";
+        img0.src = localStorage.theImage0;
+        img0.thename = localStorage.theImageName0;
+        img0.title = localStorage.theImageTitle0;
+        img0.desc = localStorage.theImageDesc0;
+        $('.imagearea0').html(img0);
+        $('#fileName0').text(img0.thename);
+        $('#imageTitle0').text(img0.title);
+        $('#imageDesc0').text(img0.desc);
+        setRemovalLink(0);
+    }
+    if(localStorage.getItem('theImageName1') !== null){
+        var img1 = new Image();
+        img1.id = "img1";
+        img1.src = localStorage.theImage1;
+        img1.thename = localStorage.theImageName1;
+        img1.title = localStorage.theImageTitle1;
+        img1.desc = localStorage.theImageDesc1;
+        $('.imagearea1').html(img1);
+        $('#fileName1').text(img1.thename);
+        $('#imageTitle1').text(img1.title);
+        $('#imageDesc1').text(img1.desc);
+        setRemovalLink(1);
+    }
+}
+
+
+//if (document.getElementById("test-clear")) {
+    //$('#test-clear').css('border','2px solid red');
+    //@param   {string}   req Express Request object
+    //@param   {string}   res Express Response object
+
+        //$('#test-clear').click(function(){
+            //alert('clicked');
+        //});
+
+    // Clear all data in session if you open /prototype-admin/clear-data
+    /*app.post('/prototype-admin/clear-data', function (req, res) {
+    req.session.data = {}
+    res.render('prototype-admin/clear-data-success')
+    })*/
+//}
+
+$.getFirst = function(selector) {
+    if ('querySelector' in document){
+        return $(document.querySelector(selector));
+    }else{
+        return $(selector).first();
+    }
+}
+
+function addSummaryClass(s,n){
+    s.addClass('test-errors-'+n).focus();
+}
+
+function removeSummaryClass(s,n){
+        s.removeClass('test-errors-'+n);
+}
+
+function validateTheForm(theForm){
+    var v1, v2, i, inputVal, theID, conOpen, theChecks, txtArea;
+    //var theForm = $("#test-form");
+    var theButton = theForm.find('.govuk-button');//assuming there is only one in the form
+    theForm.find("input.govuk-radios__input").add(theForm.find('input.govuk-checkboxes__input')).attr("autocomplete", "off");//stops preselections
+    var theSummary = $.getFirst('.govuk-error-summary');
+
+    theButton.click(function(e){
+        e.preventDefault();
+
+        var x = theForm.find('.govuk-form-group[data-test-for]');//only validate elements with validation
+        var y = x.add(x.find('.govuk-form-group'));//the nested hidden checkboxes/text inputs
+
+        y.each(function(i){//each govuk-form-group that has a data-test-for attribute //[data-test-for]
+
+            v1 = $(this).data("test-for");//radio, input
+            v2 = $(this).data("test-ele-name");//form element names
+            i++;
+
+            if(v1 == "radio"){
+
+                if (theForm.find("input[name='"+ v2 +"']:checked").val()) {//radio IS selected
+                    removeSummaryClass(theSummary,i);
+                    $(this).removeClass('govuk-form-group--error');
+
+
+                        /* *** if there are conditional text boxes start *** */
+                        theID = $(this).find('input[type=radio]:checked').attr('id');//the checked radio
+                        if($(this).find('#'+theID+'[aria-expanded=true]').length){//add errors
+
+                            i++;
+                            conOpen = $(this).find('input.govuk-input').attr('aria-expanded', true);//the text input! not radio!
+
+                            if (conOpen.length){//std text inputs - conOpen establishes their existence
+                                if(conOpen.val() == ''){//has NO value
+                                    conOpen.parent('.govuk-form-group').addClass('govuk-form-group--error').find('.govuk-input').addClass('govuk-input--error');
+                                    addSummaryClass(theSummary,i);
+
+                                }else{//not empty - has a value
+                                    conOpen.parent('.govuk-form-group').removeClass('govuk-form-group--error').find('.govuk-input').removeClass('govuk-input--error');
+                                    removeSummaryClass(theSummary,i);
+
+                                }
+                            }else{//checkboxes
+                                conOpen = $(this).find('input.govuk-checkboxes__input');//the checkboxes
+
+                                if(!conOpen.is(":checked")){//are NOT checked
+                                    conOpen.closest('.govuk-form-group').addClass('govuk-form-group--error');
+                                    addSummaryClass(theSummary,i);
+
+                                }else{
+                                    conOpen.closest('.govuk-form-group').removeClass('govuk-form-group--error');
+                                    removeSummaryClass(theSummary,i);
+
+                                }
+                            }
+
+                        }else{//remove errors
+                            i++;
+                            removeSummaryClass(theSummary,i);
+                            $(this).find('.govuk-form-group--error').removeClass('govuk-form-group--error');
+
+                        }
+                        /* *** if there are conditional text boxes end *** */
+
+                } else {//empty - no radios selected
+
+                    addSummaryClass(theSummary,i);
+                    $(this).addClass('govuk-form-group--error');
+
+                }
+
+                theButton.blur();
+
+            } else if(v1 == "input"){
+
+                inputVal = theForm.find("input[name='"+ v2 +"']").val();
+
+                if($.trim(inputVal).length){//not empty
+                    removeSummaryClass(theSummary,i);
+                    $(this).removeClass('govuk-form-group--error').find('.govuk-input').removeClass('govuk-input--error');
+
+
+                }else{//empty
+
+                    addSummaryClass(theSummary,i);
+                    $(this).addClass('govuk-form-group--error').find('.govuk-input').addClass('govuk-input--error');
+
+                }
+
+                theButton.blur();
+
+            } else if(v1 == "checkbox"){
+
+                inputVal = theForm.find("input[name='"+ v2 +"']:checked");
+
+                if(inputVal.length){//not empty
+                    removeSummaryClass(theSummary,i);
+                    $(this).removeClass('govuk-form-group--error');
+
+                            theChecks = $(this).find('input.govuk-checkboxes__input[aria-expanded=true]');
+
+                            theChecks.each(function(){
+                                i++;
+                                txtArea = theChecks.parent('.govuk-checkboxes__item').next('.govuk-checkboxes__conditional').find('.govuk-textarea');
+
+                                if(txtArea.val() == ''){
+                                    txtArea.parent('.govuk-form-group').addClass('govuk-form-group--error');
+                                    addSummaryClass(theSummary,i);
+                                }else{
+                                    txtArea.parent('.govuk-form-group').removeClass('govuk-form-group--error');
+                                    removeSummaryClass(theSummary,i);
+                                }
+                            });
+
+                }else{//empty
+
+                    addSummaryClass(theSummary,i);
+                    $(this).addClass('govuk-form-group--error');
+
+                }
+
+                theButton.blur();
+
+            } else if(v1 == "textarea"){
+
+                inputVal = theForm.find("textarea[name='"+ v2 +"']").val();
+
+                if($.trim(inputVal).length){//not empty
+
+                    removeSummaryClass(theSummary,i);
+                    $(this).removeClass('govuk-form-group--error');
+
+
+                }else{//empty
+
+                    addSummaryClass(theSummary,i);
+                    $(this).addClass('govuk-form-group--error');
+
+                }
+
+                theButton.blur();
+
+            } else if(v1 == "upload"){//make sure name and id on the upload input are the same
+
+                if( document.getElementById(''+v2+'').files.length == 0 ){
+                    addSummaryClass(theSummary,i);
+                    $(this).addClass('govuk-form-group--error');
+                }else{//empty
+                    removeSummaryClass(theSummary,i);
+                    $(this).removeClass('govuk-form-group--error');
+                }
+            }
+
+        });
+
+        if(!theSummary.is('[class*="test-errors-"]')) {//no test errors on summary - then submit!
+            $('#main-content').css('visibility','hidden');//helps with visual glitch of errors disapearing before pg reload
+            theForm.submit();
+        }
+
+    });
+}
+
+
+
+//jQuery(document).ready(function(){
+
+    //if (document.getElementById("test-form")) {
+
+    //}
+
+//});
+
   </script>
   <script src="/public/javascripts/jquery-1.11.3.js"></script>
   <style>
