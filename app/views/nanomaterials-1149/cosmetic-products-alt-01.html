@@ -108,10 +108,12 @@
 
 <!-- accordian only shown if there are errors - starts -->
 {% set errorsTblHTML %}
-<div class="govuk-grid-column-full">
-  <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
-    Dismiss all errors
-  </a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-align-right">
+      Dismiss all errors
+    </a>
+  </div>
 </div>
 
 {{ govukTable({
