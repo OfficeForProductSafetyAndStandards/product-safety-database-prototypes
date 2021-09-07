@@ -1,0 +1,542 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Width demo
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+        Cases
+    </h1>
+  </div>
+
+  <div class="govuk-grid-column-one-third" style="text-align:right">
+    <a class="govuk-button govuk-!-margin-bottom-3" role="button" href="/cases/new">Open a new case</a>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
+  <div class="govuk-!-margin-bottom-0">
+    <form action="/cases/search" accept-charset="UTF-8" method="get">
+
+      <div class="search-box">
+        <div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="q">Keywords</label><input class="govuk-input " id="q" name="q" type="text"></div>
+        <input type="submit" value="Search" class="search-box--submit" data-disable-with="Search">
+      </div>
+
+      <a class="govuk-skip-link " href="#results">Skip to results</a>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-form-group"><div class="govuk-checkboxes govuk-checkboxes--small"><input name="coronavirus_related_only" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="coronavirus_related_only" name="coronavirus_related_only" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="coronavirus_related_only">Coronavirus cases only</label></div><input name="serious_and_high_risk_level_only" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="serious_and_high_risk_level_only" name="serious_and_high_risk_level_only" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="serious_and_high_risk_level_only">Serious and high risk cases only</label></div></div></div>
+
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Case owner</legend><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"><input name="case_owner_is_me" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="case_owner_is_me" name="case_owner_is_me" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="case_owner_is_me">Me</label></div><input name="case_owner_is_my_team" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="case_owner_is_my_team" name="case_owner_is_my_team" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="case_owner_is_my_team">My team</label></div><input name="case_owner_is_someone_else" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="case_owner_is_someone_else" name="case_owner_is_someone_else" type="checkbox" value="true" aria-controls="conditional-case_owner_is_someone_else" aria-expanded="false"><label class="govuk-label govuk-checkboxes__label " for="case_owner_is_someone_else">Other person or team</label></div><div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-case_owner_is_someone_else"><div class="govuk-form-group"><label class="govuk-label" for="case_owner_is_someone_else_id">Name</label><div><div><div class="autocomplete__wrapper"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="case_owner_is_someone_else_id__status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="case_owner_is_someone_else_id__status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="case_owner_is_someone_else_id__listbox" aria-autocomplete="both" aria-describedby="case_owner_is_someone_else_id__assistiveHint" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="case_owner_is_someone_else_id" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="case_owner_is_someone_else_id__listbox" role="listbox"></ul><span id="case_owner_is_someone_else_id__assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span></div></div><select class="govuk-select " id="case_owner_is_someone_else_id-select" name="case_owner_is_someone_else_id" style="display: none;"><option selected=""></option><option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"></option><option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Khan-TS (Birmingham trading standards)</option><option value="4a1f0721-32a3-47ae-b183-a7a2fbaa01fc">Toby Hughes</option><option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński</option><option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (Renfrewshire Council)</option><option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O'Kane</option><option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland</option><option value="f2ad277a-0070-4b4e-923b-980e2028eff2">Nasir (Birmingham trading standards)</option><option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley</option><option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option><option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option><option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley (Renfrewshire Council)</option><option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O'Kane (Renfrewshire Council)</option><option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek</option><option value="f8be3c51-32b6-4cb4-ba6d-6f6a9311d310">Toby Hughes (Renfrewshire Council)</option><option value="ff17f024-3f7d-4aff-ae3f-6001862a7211">Luis Morrison</option><option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe (Renfrewshire Council)</option><option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Khan</option><option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier</option><option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson (Renfrewshire Council)</option><option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon</option><option value="5eb58cce-70a0-494c-9f3a-09336495808e">Darren Harridence (Renfrewshire Council)</option><option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option><option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option><option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option><option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option><option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option><option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option><option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option><option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option><option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option><option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option><option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option><option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option><option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option><option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option><option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option><option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option></select></div><script>
+//<![CDATA[
+window.callAutocompleteWhenReady("case_owner_is_someone_else_id", {showAllValues: ""});
+//]]>
+</script></div></div></div></fieldset></div>
+
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Teams added to case</legend><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"><input name="teams_with_access[my_team]" type="hidden" value=""><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="teams_with_access_my_team_" name="teams_with_access[my_team]" type="checkbox" value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e"><label class="govuk-label govuk-checkboxes__label " for="teams_with_access_my_team_">My team</label></div><input name="teams_with_access[other_team_with_access]" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="teams_with_access_other_team_with_access_" name="teams_with_access[other_team_with_access]" type="checkbox" value="true" aria-controls="conditional-teams_with_access_other_team_with_access_" aria-expanded="false"><label class="govuk-label govuk-checkboxes__label " for="teams_with_access_other_team_with_access_">Other team</label></div><div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-teams_with_access_other_team_with_access_"><div class="govuk-form-group"><label class="govuk-label" for="teams_with_access_id_">Name</label><div><div><div class="autocomplete__wrapper"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="teams_with_access_id___status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="teams_with_access_id___status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="teams_with_access_id___listbox" aria-autocomplete="both" aria-describedby="teams_with_access_id___assistiveHint" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="teams_with_access_id_" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="teams_with_access_id___listbox" role="listbox"></ul><span id="teams_with_access_id___assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span></div></div><select class="govuk-select " id="teams_with_access_id_-select" name="teams_with_access[id][]" style="display: none;"><option></option><option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option><option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option><option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option><option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option><option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option><option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option><option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option><option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option><option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option><option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option><option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option><option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option><option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option><option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option><option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option></select></div><script>
+//<![CDATA[
+window.callAutocompleteWhenReady("teams_with_access_id_", {showAllValues: ""});
+//]]>
+</script></div></div></div></fieldset></div>
+
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Created by</legend><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"><input name="created_by[me]" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="created_by_me_" name="created_by[me]" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="created_by_me_">Me</label></div><input name="created_by[my_team]" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="created_by_my_team_" name="created_by[my_team]" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="created_by_my_team_">My team</label></div><input name="created_by[someone_else]" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="created_by_someone_else_" name="created_by[someone_else]" type="checkbox" value="true" aria-controls="conditional-created_by_someone_else_" aria-expanded="false"><label class="govuk-label govuk-checkboxes__label " for="created_by_someone_else_">Other person or team</label></div><div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-created_by_someone_else_"><div class="govuk-form-group"><label class="govuk-label" for="created_by_id_">Name</label><div><div><div class="autocomplete__wrapper"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="created_by_id___status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="created_by_id___status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="created_by_id___listbox" aria-autocomplete="both" aria-describedby="created_by_id___assistiveHint" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="created_by_id_" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="created_by_id___listbox" role="listbox"></ul><span id="created_by_id___assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span></div></div><select class="govuk-select " id="created_by_id_-select" name="created_by[id]" style="display: none;"><option></option><option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"></option><option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Khan-TS (Birmingham trading standards)</option><option value="4a1f0721-32a3-47ae-b183-a7a2fbaa01fc">Toby Hughes</option><option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński</option><option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (Renfrewshire Council)</option><option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O'Kane</option><option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland</option><option value="f2ad277a-0070-4b4e-923b-980e2028eff2">Nasir (Birmingham trading standards)</option><option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley</option><option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option><option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option><option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley (Renfrewshire Council)</option><option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O'Kane (Renfrewshire Council)</option><option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek</option><option value="f8be3c51-32b6-4cb4-ba6d-6f6a9311d310">Toby Hughes (Renfrewshire Council)</option><option value="ff17f024-3f7d-4aff-ae3f-6001862a7211">Luis Morrison</option><option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe (Renfrewshire Council)</option><option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Khan</option><option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier</option><option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson (Renfrewshire Council)</option><option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon</option><option value="5eb58cce-70a0-494c-9f3a-09336495808e">Darren Harridence (Renfrewshire Council)</option><option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option><option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option><option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option><option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option><option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option><option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option><option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option><option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option><option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option><option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option><option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option><option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option><option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option><option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option><option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option><option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option></select></div><script>
+//<![CDATA[
+window.callAutocompleteWhenReady("created_by_id_", {showAllValues: ""});
+//]]>
+</script></div></div></div></fieldset></div>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Type</legend><div class="govuk-checkboxes govuk-checkboxes--small"><input name="allegation" type="hidden" value="unchecked"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="allegation" name="allegation" type="checkbox" value="checked"><label class="govuk-label govuk-checkboxes__label " for="allegation">Allegation</label></div><input name="enquiry" type="hidden" value="unchecked"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="enquiry" name="enquiry" type="checkbox" value="checked"><label class="govuk-label govuk-checkboxes__label " for="enquiry">Enquiry</label></div><input name="project" type="hidden" value="unchecked"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="project" name="project" type="checkbox" value="checked"><label class="govuk-label govuk-checkboxes__label " for="project">Project</label></div></div></fieldset></div>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend><div class="govuk-checkboxes govuk-checkboxes--small"><input name="status_open" type="hidden" value="off"><div class="govuk-checkboxes__item"><input checked="" class="govuk-checkboxes__input" id="status_open" name="status_open" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="status_open">Open</label></div><input name="status_closed" type="hidden" value="off"><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="status_closed" name="status_closed" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="status_closed">Closed</label></div></div></fieldset></div>
+
+
+        <input value="relevant" type="hidden" name="override_sort_by" id="override_sort_by">
+
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Sort by</legend><div class="govuk-radios govuk-radios--small"><div class="govuk-radios__item"><input checked="" class="govuk-radios__input" id="sort_by_recent" name="sort_by" type="radio" value="recent"><label class="govuk-label govuk-radios__label " for="sort_by_recent">Most recently updated</label></div><div class="govuk-radios__item"><input class="govuk-radios__input" id="sort_by_oldest" name="sort_by" type="radio" value="oldest"><label class="govuk-label govuk-radios__label " for="sort_by_oldest">Least recently updated</label></div><div class="govuk-radios__item"><input class="govuk-radios__input" id="sort_by_newest" name="sort_by" type="radio" value="newest"><label class="govuk-label govuk-radios__label " for="sort_by_newest">Most recently created</label></div></div></fieldset></div>
+
+      <input type="submit" value="Apply filters" class="govuk-button" data-disable-with="Apply filters">
+</form>  </div>
+</div>
+
+
+  <div id="results" class="govuk-grid-column-three-quarters">
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1904-0003
+    </span>
+    <span>
+      <a href="/cases/1904-0003">hjl, bjhlk – chemical exposure hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1903-0065
+    </span>
+    <span>
+      <a href="/cases/1903-0065">test, test – chemical exposure hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1903-0062
+    </span>
+    <span>
+      <a href="/cases/1903-0062">test, Test – asphyxiation hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1812-0024
+    </span>
+    <span>
+      <a href="/cases/1812-0024">, Magic Gel,  – chemical exposure hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1812-0008
+    </span>
+    <span>
+      <a href="/cases/1812-0008">Personal protective equipment (PPE) – blunt force hazard (no product specified)</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1812-0023
+    </span>
+    <span>
+      <a href="/cases/1812-0023">Supertoys, Magic Gel, HT67 – chemical exposure hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1903-0016
+    </span>
+    <span>
+      <a href="/cases/1903-0016">Personal protective equipment (PPE) – fire/burn hazard (no product specified)</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Enquiry: 1812-0021
+    </span>
+    <span>
+      <a href="/cases/1812-0021">Test question 6</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1902-0005
+    </span>
+    <span>
+      <a href="/cases/1902-0005">Personal protective equipment (PPE) – other hazard type hazard (no product specified)</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+  <div class="govuk-grid-row psd-case-card psd-case-card--restricted psd-case-card--restricted-access ">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Enquiry: 1902-0004
+    </span>
+    <span>
+      Enquiry restricted
+    </span>
+      <div class="psd-case-card__status-area">
+
+        <span class="hmcts-badge app-badge--restricted app-tag--nowrap psd-case-card__badge">Restricted case</span>
+
+
+  </div>
+
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-case-card psd-case-card--restricted psd-case-card--restricted-access ">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1901-0016
+    </span>
+    <span>
+      Allegation restricted
+    </span>
+      <div class="psd-case-card__status-area">
+
+        <span class="hmcts-badge app-badge--restricted app-tag--nowrap psd-case-card__badge">Restricted case</span>
+
+
+  </div>
+
+  </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1812-0001
+    </span>
+    <span>
+      <a href="/cases/1812-0001">2 products – other hazard type hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Enquiry: 1812-0003
+    </span>
+    <span>
+      <a href="/cases/1812-0003">Fire Alarm not tested</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1903-0061
+    </span>
+    <span>
+      <a href="/cases/1903-0061">test, Test – blunt force hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1902-0055
+    </span>
+    <span>
+      <a href="/cases/1902-0055">segoijgseoi, Lipstick – asphyxiation hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1902-0040
+    </span>
+    <span>
+      <a href="/cases/1902-0040">test, test – blunt force hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1902-0024
+    </span>
+    <span>
+      <a href="/cases/1902-0024">FancyDress 2000, Dress - fancy – asphyxiation hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1812-0006
+    </span>
+    <span>
+      <a href="/cases/1812-0006">Personal protective equipment (PPE) – other hazard type hazard (no product specified)</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1902-0014
+    </span>
+    <span>
+      <a href="/cases/1902-0014">Powermatic 8975x, Battery – other hazard type hazard</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row psd-case-card card_classes">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Allegation: 1903-0037
+    </span>
+    <span>
+      <a href="/cases/1903-0037">njkl, bjkl</a>
+    </span>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+    <span>
+      OPSS Enforcement
+    </span>
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+      <span>6 days ago</span>
+    </div>
+</div>
+
+
+      <div role="navigation" aria-label="Pagination" class="pagination"><span class="previous_page disabled" aria-disabled="true">← Previous</span> <em class="current" aria-label="Page 1" aria-current="page">1</em> <a rel="next" aria-label="Page 2" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=2&amp;project=unchecked">2</a> <a aria-label="Page 3" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=3&amp;project=unchecked">3</a> <a aria-label="Page 4" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=4&amp;project=unchecked">4</a> <a aria-label="Page 5" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=5&amp;project=unchecked">5</a> <a aria-label="Page 6" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=6&amp;project=unchecked">6</a> <a aria-label="Page 7" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=7&amp;project=unchecked">7</a> <a aria-label="Page 8" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=8&amp;project=unchecked">8</a> <a aria-label="Page 9" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=9&amp;project=unchecked">9</a> <span class="gap">…</span> <a aria-label="Page 39" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=39&amp;project=unchecked">39</a> <a aria-label="Page 40" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=40&amp;project=unchecked">40</a> <a class="next_page" rel="next" href="/cases?allegation=unchecked&amp;enquiry=unchecked&amp;page=2&amp;project=unchecked">Next →</a></div>
+
+  </div>
+</div>
+{% endblock %}
