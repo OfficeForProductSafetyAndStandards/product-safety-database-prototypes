@@ -87,6 +87,16 @@
     outline: none; background-color:none; box-shadow: none; text-decoration: none
   }
 }
+
+.govuk-width-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.app-identity-bar {
+  padding-top: 20px;
+  margin-top: -10px;
+}
+
 </style>
 {% endblock %}
 
@@ -176,6 +186,16 @@
     </div>
   </div>
 </header>
+<div class="hmcts-identity-bar app-identity-bar">
+    <div class="hmcts-identity-bar__container govuk-width-container">
+      <div class="hmcts-identity-bar__details app-identity-bar__details">
+        <span class="hmcts-identity-bar__title app-identity-bar__title"><span class="app-identity-bar__case-id">1903-0065</span> test, test – chemical exposure hazard</span>
+      </div>
+      <div class="hmcts-identity-bar__actions">
+          <a class="govuk-button app-menu__item app-button--case-bar-secondary" role="button" draggable="false" href="/cases/1903-0065/activity/comment/new">Add comment</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("") %} <!-- govuk-main-wrapper govuk-main-wrapper--auto-spacing -->
@@ -229,4 +249,11 @@
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+
+  <script>
+    if ($('#hideGreyBar').length > 0) {//just for demo prototype tests
+      $('body > .app-identity-bar').remove();
+    }
+  </script>
+
 {% endblock %}
