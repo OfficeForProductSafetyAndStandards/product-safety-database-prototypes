@@ -1,0 +1,113 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Width demo
+{% endblock %}
+
+
+
+{% block content %}
+
+  <nav class="hmcts-sub-navigation">
+  <ul class="hmcts-sub-navigation__list">
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Overview_id" href="/cases/1904-0003">
+          Overview
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Products_id" href="/cases/1904-0003/products">
+          Products (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Businesses_id" href="/cases/1904-0003/businesses">
+          Businesses (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Images_id" href="/cases/1904-0003/images">
+          Images (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" aria-current="page" id="Supporting information_id" href="/cases/1904-0003/supporting-information">
+          Supporting information (2)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Activity_id" href="/cases/1904-0003/activity">
+          Activity
+</a>      </li>
+  </ul>
+</nav>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <span class="govuk-caption-l">Allegation: 1904-0003</span>
+    <h1 class="govuk-heading-l">Supporting information</h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--l">
+  </div>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">Documents</h2>
+
+      <form action="/cases/1904-0003/supporting-information" accept-charset="UTF-8" method="get">
+  <div class="govuk-form-group govuk-!-display-inline force-inline"><label class="govuk-label govuk-!-display-inline govuk-!-margin-right-1" for="sort_by">Sort by</label><select class="govuk-select app-!-max-width-one-third govuk-!-display-inline" id="sort_by" name="sort_by"><option value="date_of_activity">Date of activity</option><option selected="" value="date_added">Date added</option><option value="title">Title</option></select></div>
+  <div class="govuk-form-group govuk-!-display-inline">
+    <button class="govuk-button govuk-!-display-inline">Sort</button>
+  </div>
+</form>
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <thead class="govuk-table__head">
+          <tr><th class="govuk-table__header">Title</th>
+          <th class="govuk-table__header">Type</th>
+          <th class="govuk-table__header">Date of activity</th>
+          <th class="govuk-table__header">Date added</th>
+        </tr></thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+  <td class="govuk-table__cell">
+    <a href="/cases/1904-0003/corrective-actions/31">njhl: hjl</a>
+
+  </td>
+  <td class="govuk-table__cell">
+    Corrective action
+  </td>
+  <td class="govuk-table__cell app-table__cell--nowrap">
+    1 January 0001
+  </td>
+  <td class="govuk-table__cell app-table__cell--nowrap">
+    2 April 2019
+  </td>
+</tr>
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">
+    <a href="/cases/1904-0003/corrective-actions/30">njhl: hjl</a>
+
+  </td>
+  <td class="govuk-table__cell">
+    Corrective action
+  </td>
+  <td class="govuk-table__cell app-table__cell--nowrap">
+    1 January 0001
+  </td>
+  <td class="govuk-table__cell app-table__cell--nowrap">
+    2 April 2019
+  </td>
+</tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+
+
+
+{% endblock %}
