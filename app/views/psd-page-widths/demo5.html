@@ -1,0 +1,427 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Width demo
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row" id="hideGreyBar">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+        Products
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
+    <div class="govuk-!-margin-bottom-0">
+      <form action="/products" accept-charset="UTF-8" method="get">
+        <input value="relevance" type="hidden" name="sort" id="sort">
+
+        <div class="search-box">
+          <div class="govuk-form-group"><label class="govuk-label govuk-label--s" for="q">Keywords</label><input class="govuk-input " id="q" name="q" type="text"></div>
+          <input type="submit" value="Search" class="search-box--submit" data-disable-with="Search">
+        </div>
+
+        <div class="govuk-form-group"><label class="govuk-label" for="hazard_type">Hazard type</label><div><div><div class="autocomplete__wrapper"><div style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><div id="hazard_type__status--A" role="status" aria-atomic="true" aria-live="polite"></div><div id="hazard_type__status--B" role="status" aria-atomic="true" aria-live="polite"></div></div><input aria-expanded="false" aria-owns="hazard_type__listbox" aria-autocomplete="both" aria-describedby="hazard_type__assistiveHint" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="hazard_type" name="" placeholder="" type="text" role="combobox"><ul class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden" id="hazard_type__listbox" role="listbox"></ul><span id="hazard_type__assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span></div></div><select class="govuk-select " id="hazard_type-select" name="hazard_type" style="display: none;"><option selected=""></option><option value="Asphyxiation">Asphyxiation</option><option value="Burns">Burns</option><option value="Chemical">Chemical</option><option value="Choking">Choking</option><option value="Cuts">Cuts</option><option value="Damage to hearing">Damage to hearing</option><option value="Damage to sight">Damage to sight</option><option value="Disturbance">Disturbance</option><option value="Drowning">Drowning</option><option value="Electric shock">Electric shock</option><option value="Electromagnetic">Electromagnetic</option><option value="Energy consumption">Energy consumption</option><option value="Entrapment">Entrapment</option><option value="Environment">Environment</option><option value="Fire">Fire</option><option value="Health risk">Health risk</option><option value="Incorrect measurement">Incorrect measurement</option><option value="Injuries">Injuries</option><option value="Microbiological">Microbiological</option><option value="Security">Security</option><option value="Strangulation">Strangulation</option><option value="Suffocation">Suffocation</option><option value="Other">Other</option></select></div><script>
+//<![CDATA[
+window.callAutocompleteWhenReady("hazard_type", {showAllValues: ""});
+//]]>
+</script></div>
+
+        <input type="submit" value="Apply filters" class="govuk-button" data-disable-with="Apply filters">
+</form>    </div>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+      <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/514">boot hand cream</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">hand cream</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Cosmetics</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/513">SN236377</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">washing machine</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Electrical appliances and equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/512">Summer heat shampoo</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">shampoo</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Chemical products</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/511">The hot cuts chainsaw 3000</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Chain saw disc</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Machinery</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/510">Test</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Test product category</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Communication and media equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/509">qyu4w73i</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">ytukilu</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Hand sanitiser</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/508">test product</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">test</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Communication and media equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/507">test  product1</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">test</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Childcare articles and children’s equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/506">test</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">test</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Childcare articles and children’s equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/505">Crochet</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Child's jumper</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Childcare articles and children’s equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/504">sadgfhnghdg</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Washing machine</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Chemical products</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/503">dfgsdfg</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">dsfasdf</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Personal protective equipment (PPE)</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/502">Test product1</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">test</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Childcare articles and children’s equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/501">Real Tartan Paint</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Tartan Paint</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Construction products</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/500">test</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">test</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Childcare articles and children’s equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/499">Bosch</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Walkie Talkie </span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Communication and media equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/498">Bosh</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Walkie talkie </span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Communication and media equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/497">Face shield - Boots</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">face shield</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Personal protective equipment (PPE)</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/496">Macbook charging port</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">charing port</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Electrical appliances and equipment</span>
+    </div>
+  </div>
+</div>
+
+  <div class="govuk-grid-row psd-product-card">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m govuk-!-font-size-16">
+      Product
+    </span>
+    <span><a href="/products/495">shampoo TM</a></span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Product Type</span>
+      <span class="govuk-!-font-weight-regular">Washing machine</span>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <span class="govuk-caption-m govuk-!-font-size-16">Category</span>
+      <span class="govuk-!-font-weight-regular">Stationery</span>
+    </div>
+  </div>
+</div>
+
+
+
+    <div role="navigation" aria-label="Pagination" class="pagination"><span class="previous_page disabled" aria-disabled="true">← Previous</span> <em class="current" aria-label="Page 1" aria-current="page">1</em> <a rel="next" aria-label="Page 2" href="/products?page=2">2</a> <a aria-label="Page 3" href="/products?page=3">3</a> <a aria-label="Page 4" href="/products?page=4">4</a> <a aria-label="Page 5" href="/products?page=5">5</a> <a aria-label="Page 6" href="/products?page=6">6</a> <a aria-label="Page 7" href="/products?page=7">7</a> <a aria-label="Page 8" href="/products?page=8">8</a> <a aria-label="Page 9" href="/products?page=9">9</a> <span class="gap">…</span> <a aria-label="Page 25" href="/products?page=25">25</a> <a aria-label="Page 26" href="/products?page=26">26</a> <a class="next_page" rel="next" href="/products?page=2">Next →</a></div>
+
+  </div>
+</div>
+
+
+{% endblock %}
