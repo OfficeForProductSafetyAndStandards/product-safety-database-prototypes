@@ -511,9 +511,15 @@ function buildHTML(val, o, c){
                 if(searchField === ''){//show all products
                     $('#results-msg').addClass('hidden');
                     $.each(data, function(key, val) {
-                        output =  buildHTML(val, output, count);
-                        count++;
+                        if(val.id != '210'){//1. hides the 'EMANBA Electric Scooter' from search results
+                            output =  buildHTML(val, output, count);
+                            count++;
+                        }
                     });
+
+                } else if(searchField.includes('emanba') || searchField.includes('EMANBA')){//2. hides the 'EMANBA Electric Scooter' from search results
+                        output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="4">There are no products matching your search.</td></tr></tbody>';
+                        count = 0;
 
                 } else {//search input has a value
 

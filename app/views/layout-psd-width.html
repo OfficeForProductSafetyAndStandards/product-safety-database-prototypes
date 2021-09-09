@@ -45,6 +45,13 @@
   .govuk-width-container {/*this "override" reinstates the normal width*/
     max-width: 960px !important;
   }
+  .govuk-header {
+    border-bottom: 10px solid #1d70b8; /* $govuk-brand-colour */
+    padding-bottom: 10px;
+  }
+  .govuk-header__container {
+    border-bottom: none 0;
+  }
   .govuk-header__logo {
     width: 80% !important;
   }
@@ -93,16 +100,16 @@
     width: 50%;
     padding-right: 0;
   }
+  .app-identity-bar {
+    padding-top: 10px;
+    margin-top: 0;
+  }
 }
-
 .govuk-width-container {
   padding-left: 15px;
   padding-right: 15px;
 }
-.app-identity-bar {
-  padding-top: 20px;
-  margin-top: -10px;
-}
+
 /*********** temporary override CSS for std GDS widths: ENDS ***************/
 </style>
 {% endblock %}

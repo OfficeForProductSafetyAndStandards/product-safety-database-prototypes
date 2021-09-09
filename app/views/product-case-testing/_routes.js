@@ -133,10 +133,6 @@ router.post('/what-is-the-product-name', function (req, res) {
 })
 //************* start what-is-the-product-category
 router.post('/what-is-the-product-category', function (req, res) {
-  return res.redirect('/product-case-testing/does-the-product-have-marking')
-})
-//************* start does-the-product-have-marking
-router.post('/does-the-product-have-marking', function (req, res) {
 
   var checkMatch1 = req.session.data['checkMatch']
   var theMatch1 = req.session.data['theMatch']
@@ -144,9 +140,13 @@ router.post('/does-the-product-have-marking', function (req, res) {
   if (checkMatch1 == 'yes'){
     return res.redirect('/product-case-testing/might-already-exist')
   }else{
-    return res.redirect('/product-case-testing/describe-the-product')
+    return res.redirect('/product-case-testing/does-the-product-have-marking')
   }
 
+})
+//************* start does-the-product-have-marking
+router.post('/does-the-product-have-marking', function (req, res) {
+  return res.redirect('/product-case-testing/describe-the-product')
 })
 // *********************** start might-already-exist
 /*router.get('/might-already-exist', function (req, res) {
@@ -164,7 +164,7 @@ router.post('/might-already-exist', function (req, res) {
   if (isit == 'yes') {
     res.redirect('/product-case-testing/it-was-your-product')
   } else if (isit == 'no') {
-    res.redirect('/product-case-testing/describe-the-product')
+    res.redirect('/product-case-testing/does-the-product-have-marking')
   }
 })
 //************* start describe-the-product
