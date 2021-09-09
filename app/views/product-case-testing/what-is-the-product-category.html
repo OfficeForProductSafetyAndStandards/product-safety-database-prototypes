@@ -38,8 +38,11 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-      <form action="#" method="post" novalidate>
 
+        <form action="#" method="post" data-fullproductname="{{ data['fullproductname'] }}" data-name="{{ data['productName'] }}" data-model="{{ data['modelName'] }}"  data-modelno="{{ data['modelnumber'] }}" novalidate>
+
+          <input id="checkMatch" name="checkMatch" type="hidden" value="no">
+          <input id="theMatch" name="theMatch" type="hidden" value="">
 
 
 <div class="govuk-form-group govuk-!-margin-bottom-5">
@@ -146,8 +149,54 @@
 <script>
   jQuery(document).ready(function(){
 
+    var theForm = $('#main-content').find('form');
+
     setMenuState('products');
-    validateTheForm($("#main-content").find('form'));
+    validateTheForm(theForm);
+
+    $('#checkMatch').val('no');
+    $('#theMatch').val('');
+    var v1 = theForm.data("fullproductname");
+    if(!v1){v1 = '----'; }
+    var v2 = theForm.data("name");
+    if(!v2){v2 = '----'; }
+    var v3 = theForm.data("model");
+    if(!v3){v3 = '----'; }
+    var v4 = theForm.data("modelno");
+    if(!v4){v4 = '----'; }
+
+    var regex = new RegExp(v1, "i");
+    var regex2 = new RegExp(v2, "i");
+    var regex3 = new RegExp(v3, "i");
+    var regex4 = new RegExp(v4, "i");
+
+    function itmatched(id){
+      $('#checkMatch').val('yes');
+      $('#theMatch').val(id);
+    }
+
+    $('#main-content').find('.govuk-select').click(function(){
+
+      $.each(data, function(key, val) {
+
+          if (val.full_prod_name.search(regex) != -1) {
+            itmatched(val.id);
+            return false;
+          } else if ((val.name.search(regex2) != -1) || (val.model.search(regex3) != -1)) {
+            itmatched(val.id);
+            return false;
+          } else if (val.prod_modelno.search(regex4) != -1) {
+            itmatched(val.id);
+            return false;
+          }
+
+      });
+
+    });
+
+
+
+
 
   });
 </script>

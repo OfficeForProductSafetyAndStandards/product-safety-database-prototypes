@@ -26,10 +26,10 @@
       </h2>
 
       <p class="govuk-body govuk-visually-hidden">Add a product that has a matching barcode</p>
-
-      <p class="govuk-body">Upon investigating a Podium Sports Drinking Bottle you identify that the product poses a risk of choking as there is a small silicone valve in the affected caps (with date codes H19063 or H19175).</p>
+      <!-- Podium Sports Drinking Bottle -->
+      <p class="govuk-body">Upon investigating a drinks container by Podium-sports - which sports people can refill and carry the bottle - you identify that the product poses a risk of choking as there is a small silicone valve in the affected caps (with date codes H19063 or H19175).</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>The valve could release while drinking posing a potential choking hazard</li>
+        <li>The valve could release while drinking, posing a potential choking hazard</li>
         <li>The product does not comply with the requirements of the General Product Safety Regulations 2005</li>
         <li>The barcode labelled on the product is 886798014739.</li>
       </ul>
@@ -55,8 +55,8 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>There was a potential that poor connection between the plug and socket which could lead to overheating within the product</li>
         <li>The product was not marked with the required product markings or accompanied with safety instructions</li>
-        <li>The product does not comply with the Electrical Equipment (Safety) Regulations 2016. The barcode on the product is MC00058303.
-</li>
+        <li>The product does not comply with the Electrical Equipment (Safety) Regulations 2016</li>
+        <li>The barcode on the product is MC00058303.</li>
       </ul>
       <p class="govuk-body">You must notify OPSS about this product.</p>
 <!--
@@ -72,7 +72,7 @@ FYI for scenario 3 I just tweaked some existing product info, so no need to make
 
 
 
-      <!--p class="govuk-body-l">The next page will open in a new tab:</p-->
+      <p class="govuk-body-l">The next page will open in a new tab - <br>please start each new task by clicking this Start button:</p>
 
       <a href="cases-page.html" id="test-clear" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
         Start now
@@ -117,7 +117,8 @@ FYI for scenario 3 I just tweaked some existing product info, so no need to make
       sessionStorage.clear();
       window.localStorage.clear();
 
-      window.location.assign('home.html');
+      //window.location.assign('home.html');
+      window.open('home.html', '_blank').focus();
     });
 
 

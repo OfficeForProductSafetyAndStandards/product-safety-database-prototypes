@@ -5,28 +5,58 @@
 {% endblock %}
 
 
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "cases-page"
-    }) }}
-{% endblock %}
-
-
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<style>
+  .app-banner {padding: 20px; margin-top: 15px; margin-bottom: 40px; border-width: 5px; border-style: solid; color: #1d70b8; }
+  .app-banner__message p, .app-banner__message a {color: inherit; font-weight: 700; font-size: 24px; font-size: 1.5rem; line-height: 1.25; }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" %="">
+    <div class="app-banner"><div class="app-banner__message">
+      <p>Coronavirus (COVID-19): OPSS is urging all market surveillance authorities to prioritise coronavirus-related cases above other work.</p>
 
+      <p>
+        <a href="https://www.gov.uk/guidance/opss-coronavirus-covid-19-guidance-for-business-and-local-authorities">
+          Read more<span class="govuk-visually-hidden"> about the coronavirus guidance for local authorities</span> on GOV.UK
+</a>      </p>
+</div></div>  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Product Safety Database</h1>
 
-        <h1 class="govuk-heading-l">Welcome</h1>
-
-        <p class="govuk-body-m">This is a simple home page for you to start your task from...</p>
-
-
-
-    </div>
+    <p class="govuk-body-l">
+      Report, track and share product safety information.
+    </p>
+    <a class="govuk-button govuk-button--start" role="button" draggable="false" href="/product-case-testing/find-the-product">Open a new case</a>
   </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
+<div class="govuk-grid-row">
+  <!--div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link govuk-link--no-visited-state" href="/product-case-testing/cases-page">Your cases</a>
+    </h2>
+
+    <p class="govuk-body">Cases you own or created.</p>
+  </div-->
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link govuk-link--no-visited-state" href="/product-case-testing/cases-page">All cases</a>
+    </h2>
+
+    <p class="govuk-body">All cases in the Product Safety Database.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link govuk-link--no-visited-state" href="/product-case-testing/blank-01">How to use the Product Safety Database</a>
+    </h2>
+
+    <p class="govuk-body">How and when to use this service.</p>
+  </div>
+</div>
 {% endblock %}
 
 {% block bodyEnd %}
