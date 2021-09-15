@@ -140,18 +140,7 @@ main.govuk-main-wrapper {
         }
     }
 }
-@include govuk-media-query($from: desktop) {
-    .opss-equal-height-container {
-        display: -webkit-flex;
-        display: flex;
 
-        .opss-equal-height__col {
-            -webkit-flex: 1 auto;
-            -ms-flex: 1 auto;
-            flex: 1 auto;
-        }
-    }
-}
 
 ul.opss-radio-list {
     margin-bottom: 0;

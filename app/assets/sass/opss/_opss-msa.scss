@@ -7,10 +7,6 @@
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
-abbr[title]{
-    text-decoration: none;
-}
-
 .opss-text-align-right {
     @include govuk-media-query($from: tablet) {
         text-align: right; display: inline-block; width: 100%;
@@ -21,15 +17,16 @@ abbr[title]{
     text-align: center;
 }
 
-.opss-border-top, .opss-border-bottom {
+.opss-border-top, .opss-border-bottom, .opss-border-left, .opss-border-right, .opss-border-all {
     border-color: $govuk-border-colour;
     border-style: solid;
     border-width: 0;
 }
 .opss-border-top {border-top-width: 1px; }
 .opss-border-bottom {border-bottom-width: 1px; }
-
-/*.govuk-accordion + .opss-border-top {border-top-width: 0; }.govuk-template__body:not(.js-enabled) .govuk-accordion + .opss-border-bottom {border-bottom-width: 0; }*/
+.opss-border-left {border-left-width: 1px; }
+.opss-border-right {border-right-width: 1px; }
+.opss-border-all {border-width: 1px; }
 
 .opss-text-underline-offset {
     text-underline-offset: 0.1em;
@@ -330,6 +327,11 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     }
 }
 /* .opss-summary-list ends */
+
+.opss-summary-list-mixed > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
+    display: table;
+    width: 100%;
+}
 
 .js-enabled .opss-accordian__open-remove > div:first-child {
     @include govuk-visually-hidden;
