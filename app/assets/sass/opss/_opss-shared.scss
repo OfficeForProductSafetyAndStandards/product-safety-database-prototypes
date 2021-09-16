@@ -221,9 +221,9 @@ dl.opss-summary-list-aside {
             background-color: govuk-colour("white");
             display: inline-block;
             margin: 0;
-            padding: 0 govuk-spacing(3);
+            padding: 0 govuk-spacing(2);
             position: relative;
-            left: govuk-spacing(2);
+            left: - govuk-spacing(2);
             top: - govuk-spacing(3);
         }
         .opss-grouping__heading-l {
