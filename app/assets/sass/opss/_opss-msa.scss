@@ -331,6 +331,15 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 .opss-summary-list-mixed > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
     display: table;
     width: 100%;
+
+    .govuk-grid-column-three-quarters & {
+        dt {
+            width: 40%;
+        }
+        dt + dd {
+            min-width: 40%;
+        }
+    }
 }
 
 .js-enabled .opss-accordian__open-remove > div:first-child {
