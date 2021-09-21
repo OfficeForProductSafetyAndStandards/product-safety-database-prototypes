@@ -368,6 +368,9 @@ dl.opss-summary-list-aside {
         tbody tr:nth-child(2) th, tbody tr:nth-child(2) td {
             padding-bottom: govuk-spacing(1);
         }
+        tbody tr:last-child th, tbody tr:last-child td {
+            padding-bottom: govuk-spacing(3);
+        }
     }
 }
 
