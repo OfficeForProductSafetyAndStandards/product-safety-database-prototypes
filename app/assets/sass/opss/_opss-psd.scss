@@ -249,8 +249,8 @@ ul.opss-radio-list {
             .govuk-radios--small,
             .govuk-checkboxes--small {
                 label {
-                    @include opss-font-size($s: 16px, $l: 1.2);
-                    //@include opss-font-size($s: 17px, $l: 1.2);
+                    //@include opss-font-size($s: 16px, $l: 1.2);
+                    @include opss-font-size($s: 17px, $l: 1.2);
                     margin-top: 0;
                     padding-right: 1px;
                     padding-bottom: govuk-spacing(1);
