@@ -243,6 +243,23 @@ ul.opss-radio-list {
     }
 }
 
+.opss-form-group {
+    @include govuk-media-query($from: desktop) {
+        &.opss-form-group--sm-labels {
+            .govuk-radios--small,
+            .govuk-checkboxes--small {
+                label {
+                    @include opss-font-size($s: 16px, $l: 1.2);
+                    //@include opss-font-size($s: 17px, $l: 1.2);
+                    margin-top: 0;
+                    padding-right: 1px;
+                    padding-bottom: govuk-spacing(1);
+                }
+            }
+        }
+    }
+}
+
 .opss-sub-form-group {
     @include govuk-media-query($from: tablet) {
         background-color: govuk-colour("light-grey");
