@@ -1,7 +1,7 @@
-//These are the opss MSA/Cosmetics css styles: I recommend simply copy and pasting this entire code into your local opss-msa scss file.
-//And include - copy over - the imported files in the same directory (listed at the top of this file).
-//Don't edit the local production copy as pasting this into it next/each time will overwrite your changes.
-//We can remove linting from this scss file - it won't run if there is a real problem
+//COSMETICS master css/scss styles: simply copy this content into your local COS scss file (and update the @import URLs if required).
+//Add the listed @import scss files (below) to your directory.
+//Don't edit your local copy to avoid it unsyncing with these versions.
+//We can remove linting from these scss files - they won't build if there is a real problem.
 
 @import "opss/opss-shared";
 @import "opss/opss-search";

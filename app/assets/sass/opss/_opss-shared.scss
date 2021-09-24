@@ -127,6 +127,13 @@ abbr[title]{
     }
 }
 
+.opss-details--plain {
+    & > div {
+        padding: govuk-spacing(3) 0;
+        border-left: none;
+    }
+}
+
 .opss-button-link {
     background-color: transparent !important;
     border-bottom: none !important;
@@ -367,6 +374,9 @@ dl.opss-summary-list-aside {
         }
         tbody tr:nth-child(2) th, tbody tr:nth-child(2) td {
             padding-bottom: govuk-spacing(1);
+        }
+        tbody tr:last-child th, tbody tr:last-child td {
+            padding-bottom: govuk-spacing(2) + 2;
         }
     }
 }
