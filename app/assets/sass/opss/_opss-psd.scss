@@ -1,7 +1,7 @@
-//These are the opss PSD css styles: I recommend simply copy and pasting this entire code into your local opss-psd scss file.
-//And include - copy over - the imported files in the same directory (listed at the top of this file).
-//Don't edit your local copy as pasting this into it next/each time will overwrite your changes.
-//We can remove linting from this scss file - it won't run if there is a real problem
+//PSD master css/scss styles: simply copy this content into your local psd scss file (and update the @import URLs if required).
+//Add the listed @import scss files (below) to your directory.
+//Don't edit your local copy to avoid it unsyncing  with these versions.
+//We can remove linting from these scss files - they won't build if there is a real problem.
 
 @import "opss/opss-shared";
 @import "opss/opss-search";
@@ -224,6 +224,11 @@ ul.opss-radio-list {
         border-color: govuk-colour("dark-grey");
         color: govuk-colour("dark-grey");
     }
+    &.opss-tag--risk3 {
+        border-color: govuk-colour("black");
+        background-color: govuk-colour("black");
+        color: govuk-colour("white");
+    }
     &.opss-tag--covid {
         background-color: govuk-colour("pink");
         border-color: govuk-colour("pink");
@@ -241,6 +246,22 @@ ul.opss-radio-list {
         min-width: 64px;
         text-align: center;
     }
+}
+
+.opss-cross-through {
+    background:
+         linear-gradient(to top left,
+             rgba(0,0,0,0) 0%,
+             rgba(0,0,0,0) calc(50% - 1px),
+             $govuk-border-colour 50%,
+             rgba(0,0,0,0) calc(50% + 1px),
+             rgba(0,0,0,0) 100%),
+         linear-gradient(to top right,
+             rgba(0,0,0,0) 0%,
+             rgba(0,0,0,0) calc(50% - 1px),
+             $govuk-border-colour 50%,
+             rgba(0,0,0,0) calc(50% + 1px),
+             rgba(0,0,0,0) 100%);
 }
 
 .opss-form-group {

@@ -119,29 +119,38 @@
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         Case owner
                     </legend>
-                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <input name="case_owner_is_me" type="hidden" value="off" />
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="case_owner_is_me" name="case_owner_is_me" type="checkbox" value="true">
-                            <label class="govuk-label govuk-checkboxes__label" for="case_owner_is_me" checked="">
+
+                    <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+                        <input name="case_owner_is_me" type="hidden" value="off">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case_owner_is_me" name="case_owner" type="radio" value="case_owner_is_me" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="case_owner_is_me">
                                 Me
                             </label>
                         </div>
                         <input name="case_owner_is_my_team" type="hidden" value="off">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="case_owner_is_my_team" name="case_owner_is_my_team" type="checkbox" value="true">
-                            <label class="govuk-label govuk-checkboxes__label" for="case_owner_is_my_team">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case_owner_is_my_team" name="case_owner" type="radio" value="case_owner_is_my_team">
+                            <label class="govuk-label govuk-radios__label" for="case_owner_is_my_team">
                                 My team
                             </label>
                         </div>
                         <input name="case_owner_is_someone_else" type="hidden" value="off">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="case_owner_is_someone_else" name="case_owner_is_someone_else" type="checkbox" value="true" aria-controls="conditional-case_owner_is_someone_else" aria-expanded="false">
-                            <label class="govuk-label govuk-checkboxes__label" for="case_owner_is_someone_else">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case_owner_is_someone_else" name="case_owner" type="radio" value="case_owner_is_someone_else">
+                            <label class="govuk-label govuk-radios__label" for="case_owner_is_someone_else">
+                                Me and my team
+                            </label>
+                        </div>
+
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case_owner_is_other" name="case_owner" type="radio" value="case_owner_is_other"  data-aria-controls="conditional-case_owner_is_other">
+                            <label class="govuk-label govuk-radios__label" for="case_owner_is_other">
                                 Others
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-case_owner_is_someone_else">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-case_owner_is_other">
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="case_owner_is_someone_else_id">
                                     Person or team name
@@ -200,6 +209,8 @@
                                 </script>
                             </div>
                         </div>
+
+                    </div>
 
                 </fieldset>
             </div>
@@ -674,9 +685,9 @@
                     Apply
                 </button>
 
-                <!--button type="reset" class="govuk-button opss-button-link opss-nojs-hide govuk-!-font-size-16" id="opss-reset" data-module="govuk-button">
+                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide govuk-!-font-size-16" id="opss-reset" data-module="govuk-button">
                     Reset form
-                </button-->
+                </button>
             </div>
 
         </form>
@@ -685,7 +696,7 @@
     <section class="govuk-grid-column-three-quarters">
         <div class="govuk-grid-row">
            <div class="govuk-grid-column-two-thirds">
-                <p class="govuk-body-s">9 cases matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, Consectetur</span>,<span class="opss-filter-txt"> using the current filters,</span> were found.
+                <p class="govuk-body">9 cases matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, Consectetur</span>,<span class="opss-filter-txt"> using the current filters,</span> were found.
                 </p>
            </div>
            <div class="govuk-grid-column-one-third">
@@ -776,7 +787,7 @@
                                 20-2120
                             </td>
                             <td headers="caseowner item-02 meta-02" class="govuk-table__cell">
-                                Gavin Williamson
+                                OPSS Enforcement
                             </td>
                             <td headers="updated item-02 meta-02" class="govuk-table__cell">
                                 about 2 months ago
@@ -877,7 +888,7 @@
                                 1007-27002
                             </td>
                             <td headers="caseowner item-05 meta-05" class="govuk-table__cell">
-                                Warwickshire Council
+                                Birmingham Trading Standards
                             </td>
                             <td headers="updated item-05 meta-05" class="govuk-table__cell">
                                 6 months ago
@@ -956,7 +967,9 @@
                                 Type
                             </th>
                             <td headers="item-07 status-07" colspan="3" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Enquiry</span>
+                                <span class="opss-tag opss-tag--std opss-cross-through">Enquiry</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk3">Case closed</span>
                             </td>
                         </tr>
                     </tbody>
