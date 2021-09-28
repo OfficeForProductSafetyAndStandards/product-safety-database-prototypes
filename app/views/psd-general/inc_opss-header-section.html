@@ -1,0 +1,60 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Cases
+        </h1>
+
+        <!--div class="govuk-hint">
+            <span id="search-hint"></span>
+        </div-->
+
+        <details class="govuk-details opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the cases page
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p class="govuk-body-s">
+                    Cases are used to record findings of investigations and to notify the <abbr title="Office for Product Safety and Standards">OPSS</abbr> about unsafe and non-compliant products.
+                </p>
+
+                <p class="govuk-body-s">
+                    <span id="search-hint">You can search for a case using the keywords that describe it and by filtering the results.</span> You can also filter all case records without a keyword search.
+                </p>
+                <!--p class="govuk-body-s">
+                    You can create a new case or add a product to an existing case.
+                </p-->
+            </div>
+        </details>
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-8">
+        <a href="find-the-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+            Create a case
+        </a>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+            <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2">
+
+                <label class="govuk-label" for="cases-search">
+                    Keywords search
+                </label>
+
+                <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="cases-search" name="cases-search" aria-describedby="search-hint">
+                    <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Search</span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>
