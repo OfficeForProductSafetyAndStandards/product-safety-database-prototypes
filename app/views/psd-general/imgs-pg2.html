@@ -1,0 +1,119 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Images
+{% endblock %}
+
+
+
+{% block content %}
+<nav class="hmcts-sub-navigation">
+  <ul class="hmcts-sub-navigation__list">
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Overview_id" href="/cases/2109-0007">
+          Overview
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Products_id" href="/cases/2109-0007/products">
+          Products (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Businesses_id" href="/cases/2109-0007/businesses">
+          Businesses (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" aria-current="page" id="Images_id" href="/cases/2109-0007/images">
+          Images (2) (3)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Supporting information_id" href="/cases/2109-0007/supporting-information">
+          Supporting information (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Activity_id" href="/cases/2109-0007/activity">
+          Activity
+</a>      </li>
+  </ul>
+</nav>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <span class="govuk-caption-l">Allegation: 2109-0007</span>
+    <h1 class="govuk-heading-l">Images</h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--l">
+  </div>
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Case and product images
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#opss-case-images">
+            Case images (2)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#opss-product-images">
+            Product images (3)
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="opss-case-images">
+        <h2 class="govuk-heading-m">Case images</h2>
+
+        case images here - check on staging what more than one looks like...
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="opss-product-images">
+        <h2 class="govuk-heading-m">Product images</h2>
+
+        products images here - emulate how current design stacks images, but requires HR and sub title for multiple products
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div class="govuk-grid-row govuk-!-padding-bottom-6">
+  <div class="govuk-grid-column-one-quarter">
+
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGNFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--110295faaf0096d6d221774f790d2b4401c407a0/hair-dryer-with-plug.jpg"><img class="app-image" alt="hair-dryer-with-plug.jpg" src="https://staging.product-safety-database.service.gov.uk/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGNFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--110295faaf0096d6d221774f790d2b4401c407a0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2QzNKbGMybDZaVWtpRERNd01IZ3lNREFHT3daVU9oQmhkWFJ2WDI5eWFXVnVkRlE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7fd025dd046a263a4a9249b895d4186e9672cf8e/hair-dryer-with-plug.jpg">
+              <span class="govuk-visually-hidden">(opens in new tab)</span>
+              </a>
+          </div>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">hair-dryer-with-plug.jpg</h2>
+    <span class="govuk-hint govuk-!-font-size-16">
+      Updated 23 September 2021
+    </span>
+
+    <p class="govuk-body"></p><p></p><p></p>
+
+      <a class="govuk-link app-block-link govuk-!-margin-right-3" target="_blank" rel="noopener" href="/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGNFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--110295faaf0096d6d221774f790d2b4401c407a0/hair-dryer-with-plug.jpg">View image<span class="govuk-visually-hidden"> (hair-dryer-with-plug.jpg, opens in new tab)</span>
+</a>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
