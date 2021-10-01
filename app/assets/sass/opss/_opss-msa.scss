@@ -171,39 +171,6 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     text-align: right;
 }
 
-/*tbody th  {-webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }*/
-.govuk-summary-list .govuk-link,
-.opss-table td a {
-    @include word-wrap;
-}
-
-.opss-table {
-    tbody tr:last-child th,
-    tbody tr:last-child td {
-        border-bottom: none;
-    }
-    tbody tr td:last-child a {
-        white-space: nowrap;
-    }
-
-    tfoot th {
-        border-top: 1px solid $govuk-border-colour;
-        border-bottom: none 0;
-    }
-}
-
-.opss-table--last-col-right {
-    thead tr .govuk-table__header:last-child,
-    tbody tr .govuk-table__cell:last-child {
-        text-align: right;
-    }
-}
-.opss-table--first-col-normal {
-    tbody tr th:first-child {
-        font-weight: normal;
-    }
-}
-
 .opss-tabs-min-height {
     .govuk-tabs__panel {
         min-height: 284px;
