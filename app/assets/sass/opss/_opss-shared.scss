@@ -51,6 +51,7 @@ h1.govuk-fieldset__heading,
 h1.govuk-label-wrapper label.govuk-label--l {
     overflow-wrap: normal; word-wrap: normal; word-break: normal; hyphens: unset;
 }
+
 /*.opss-secondary-text-colour {color: $govuk-secondary-text-colour; }
 .opss-weight-normal {font-weight: normal;
     *[class^="govuk-heading"] & {
@@ -60,17 +61,21 @@ h1.govuk-label-wrapper label.govuk-label--l {
 .opss-no-wrap {
   white-space: nowrap;
 }
+
 .opss-nojs-hide {
     display: none;
 }
+
 body.js-enabled .opss-nojs-hide {
     display: inline-block;
 }
+
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
     }
 }
+
 .opss-br-desktop {
     display: none;
 
@@ -78,6 +83,7 @@ body.js-enabled .opss-nojs-hide {
         display: block;
     }
 }
+
 abbr[title]{
     text-decoration: none;
 
@@ -88,12 +94,27 @@ abbr[title]{
     }
 }
 
+.opss-text-align-center {
+    text-align: center;
+}
+
+.opss-text-align-right {
+    @include govuk-media-query($from: tablet) {
+        text-align: right; display: inline-block; width: 100%;
+    }
+}
+
+.opss-text-underline-offset {
+    text-underline-offset: 0.1em;
+}
+
 .opss-download-link-sm {
     @include down-load-link(rgba($govuk-link-colour, 0.9), 16);
     width: 10px;
     height: 10px;
     margin-right: 5px;
 }
+
 .opss-download-link-m {
     @include down-load-link(rgba($govuk-link-colour, 0.9), 20);
     width: 17px;
@@ -107,6 +128,17 @@ abbr[title]{
 .opss-secondary-text {
     color: $govuk-secondary-text-colour;
 }
+
+.opss-border-top, .opss-border-bottom, .opss-border-left, .opss-border-right, .opss-border-all {
+    border-color: $govuk-border-colour;
+    border-style: solid;
+    border-width: 0;
+}
+.opss-border-top {border-top-width: 1px; }
+.opss-border-bottom {border-bottom-width: 1px; }
+.opss-border-left {border-left-width: 1px; }
+.opss-border-right {border-right-width: 1px; }
+.opss-border-all {border-width: 1px; }
 
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
@@ -300,6 +332,22 @@ dl.opss-summary-list-aside {
     }
 }
 
+@include govuk-media-query($from: desktop) {
+    .opss-full-height {
+        display: flex;
+        flex-direction: row;
+
+        .opss-full-height__col {
+            display: flex;
+            flex-direction: column;
+
+                & > .opss-full-height__col--bottom {
+                    margin-top: auto;
+                }
+        }
+    }
+}
+
 .opss-table-items {
 
     thead th:nth-child(2) {width: auto; }
@@ -391,4 +439,37 @@ dl.opss-summary-list-aside {
     .opss-desktop-padding-left-0 {
         padding-left: 0;
     }
+    .opss-desktop-padding-bottom-8 {
+        padding-bottom: govuk-spacing(8);
+    }
+    .opss-desktop-margin-bottom-218px {
+        margin-bottom: 218px !important; /* aligns bottom of tbody */
+    }
 }
+
+.opss-icon--tick {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABQUlEQVQ4jZXSMWhTURTG8V/SYkrpEwkiHZyapU4dOwkd8hydrLNL1xZ08EIo4iC8FkRwsODoLILzDbh0a8dCFaFooZuIcKGVIKVDEgivT5Kc7X7nfv/zcTgzpqisyJcb7dZeo9362euenEFtCjN8wRou8QHP61MEeDwwQx1PcDBRgqzI5/ENd0ut95Mm6FSY/6AzFpAV+RKeVrRepBB/TZLgDeZK2hHe0V/GcFKzYvoDPKyAbqUQ/8HM4OMj7DfarWaj3TrsdU8usiK/gc+4XTJ/TCHuDh+1rMhv4RiLA+03XmEBL0vmc9xLIZ4OhVnsjJihidcVsWFn1Ex/B3X9yxpXP7BbFuspxA2sYn8M4FkK8e81AKQQD3Ef64NJ5eriUxX12ilnRT6HTf3ru4keVlKIXycCjIDuYBvfU4hv//fvCi1WUVpTllRdAAAAAElFTkSuQmCC');
+}
+.opss-icon--alert {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA4klEQVQ4jaXTP0oDQRgF8B/DFlaeQYJYiIhnkFxFPImEYB1yjBwgKLZbppBgl9ZSJAQJQQu/hGV2lvXPg9fse9/33sywtHGCO9R4DdYYYVDwH1CF6QOfHdxiHN7W8Cwzb/Ac3GTaLF8yLqQtGvqioN/vxdOo9tsFW5wl3JbO9ANUuEkY/mF4j2HS8zQ9GKR/DENKWHWJOA52Ba0qPOGyIF7grafBI5xjp/1Ma1wH3wv6LkLApGCoG0l1QZ80qxxhXkgY+f6x8oYPMSNfMu04TnPptDTcxFXUW8Y9rPES31qX/QVUY2XWKh7oRgAAAABJRU5ErkJggg==');
+}
+
+.opss-icon {
+
+    background-position: center center;
+    background-size: contain;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: govuk-spacing(1);
+
+    &.opss-icon--16sm {
+        width: 16px;
+        height: 16px;
+        margin-bottom: -2px;
+        margin-right: govuk-spacing(1) - 2;
+    }
+
+}
+
+

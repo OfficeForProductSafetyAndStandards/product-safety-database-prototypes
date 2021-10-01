@@ -10,7 +10,7 @@
 
 {% include "psd-general/inc_opss-header-section.html" %}
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row opss-full-height">
 
     {% include "psd-general/inc_opss-filters-section.html" %}
 
@@ -20,8 +20,8 @@
 
 <script>
   document.getElementById("results-sort").addEventListener("change", function(){
-      //document.getElementById("sort-form").submit();
-      alert('form submitted event');
+      document.getElementById("sort-form").submit();
+      //alert('form submitted event');
     }
   );
 </script>

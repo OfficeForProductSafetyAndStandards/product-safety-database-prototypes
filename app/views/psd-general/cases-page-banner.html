@@ -1,0 +1,44 @@
+{% extends "layout-auto-complete.html" %}
+
+{% block pageTitle %}
+    Cases page
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      The <abbr title="Comma-Separated Values">CSV</abbr> file is being created
+    </h3>
+    <p class="govuk-body">You will receive an email when the cases export is ready to download.</p>
+  </div>
+</div>
+
+{% include "psd-general/inc_opss-header-section.html" %}
+
+<div class="govuk-grid-row opss-full-height">
+
+    {% include "psd-general/inc_opss-filters-section.html" %}
+
+    {% include "psd-general/inc_opss-results-section.html" %}
+
+</div>
+
+<script>
+  document.getElementById("results-sort").addEventListener("change", function(){
+      document.getElementById("sort-form").submit();
+      //alert('form submitted event');
+    }
+  );
+</script>
+
+
+{% endblock %}
