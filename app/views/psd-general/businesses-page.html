@@ -1,0 +1,248 @@
+{% extends "layout-auto-complete.html" %}
+
+{% block pageTitle %}
+    Businesses page
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Businesses
+        </h1>
+
+        <details class="govuk-details opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the Businesses page
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p class="govuk-body-s">
+                    <span id="search-hint">You can search for one or more businesses using the keywords that describe them.</span> You can also sort the ordering of the search results.
+                </p>
+            </div>
+        </details>
+    </div>
+    <!--div class="govuk-grid-column-one-third govuk-!-margin-top-8">
+        &nbsp;
+    </div-->
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" method="post" novalidate>
+            <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-7"> <!-- opss-border-bottom -->
+
+                <label class="govuk-label" for="businesses-search">
+                    Keywords search
+                </label>
+
+                <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" aria-describedby="search-hint">
+                    <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Search</span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <!--div class="govuk-grid-column-one-third-from-desktop">&nbsp;</div-->
+
+    <section class="govuk-grid-column-three-quarters"><!-- govuk-grid-column-two-thirds-from-desktop -->
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+              <p class="govuk-body">12 businesses matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>.</p>
+              <!--p class="govuk-body">There are currently 248 businesses .......... ?</p-->
+
+              <!-- Company registration number -->
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group opss-text-align-right">
+                <form id="sort-form" action="#" method="post">
+                      <label class="govuk-label govuk-body-s" for="results-sort">
+                          Sort by
+                      </label>
+                      <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
+                          <option value="relevance" selected="selected">Relevance</option>
+                          <option value="newly">Newly added</option>
+                          <option value="most">Most cases</option>
+                      </select>
+                      <button class="govuk-button opss-js-enabled-hidden">
+                          Sort
+                      </button>
+                  </form>
+              </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" role="region" aria-label="Businesses">
+
+
+              <table class="govuk-table opss-table opss-table--last-col-right">
+                <caption class="govuk-table__caption govuk-visually-hidden">Businesses: a simple data table.</caption>
+
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Name</th>
+                    <th scope="col" class="govuk-table__header">Company number</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      098872
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      889235
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      0299987
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      022875
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      098872
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      889235
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      0299987
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      022875
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      098872
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      889235
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      0299987
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                    </th>
+                    <td class="govuk-table__cell">
+                      022875
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tfoot class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Name</th>
+                    <th scope="col" class="govuk-table__header">Company number</th>
+                  </tr>
+                </tfoot>
+
+              </table>
+
+              <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                  <ul>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">
+                              <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                          </a>
+                      </li>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                          Page 2
+                      </li>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">
+                              <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                          </a>
+                      </li>
+                  </ul>
+              </nav>
+
+
+          </div>
+      </div>
+
+    </section>
+
+</div>
+
+<script>
+  document.getElementById("results-sort").addEventListener("change", function(){
+      document.getElementById("sort-form").submit();
+      //alert('form submitted event');
+    }
+  );
+</script>
+
+
+{% endblock %}
