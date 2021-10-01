@@ -7,19 +7,8 @@
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
-.opss-text-align-right {
-    @include govuk-media-query($from: tablet) {
-        text-align: right; display: inline-block; width: 100%;
-    }
-}
 
-.opss-text-align-center {
-    text-align: center;
-}
 
-.opss-text-underline-offset {
-    text-underline-offset: 0.1em;
-}
 .opss-tel-number {
     @include govuk-media-query($from: desktop) {
         color: govuk-colour("black") !important;

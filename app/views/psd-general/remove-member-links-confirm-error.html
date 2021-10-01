@@ -1,0 +1,86 @@
+{% extends "layout-routes-01.html" %}
+
+{% block pageTitle %}
+    Error: Confirm removal of team member
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "remove-member-links"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+
+        <a href="#remove">Select yes if you want to remove the team member from your team</a>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="#" method="post" novalidate>
+
+          <div class="govuk-form-group govuk-form-group--error">
+
+            <fieldset class="govuk-fieldset" aria-describedby="remove-error">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you want to remove John Smith from your team?
+              </h1>
+            </legend>
+
+
+            <span id="remove-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select yes if you want to remove the team member from your team
+            </span>
+
+            <div class="govuk-radios govuk-!-padding-top-3">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove" name="remove" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="remove">Yes</label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove-2" name="remove" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="remove-2">No</label>
+                  </div>
+
+            </div>
+
+
+          </fieldset>
+
+
+          </div>
+
+          <button class="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+<!-- The product may already exist within our records. On the products page you can search for it or add a new product. You can then <span class="govuk-!-font-weight-bold">create a case</span> directly from the product. -->
+
+<!-- The case might not relate to a product, or the product details aren't yet available. You can add a product to a case later from the cases page. -->
