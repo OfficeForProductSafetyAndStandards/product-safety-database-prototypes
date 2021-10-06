@@ -15,7 +15,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
         <form action="#" method="post" novalidate>
 
@@ -32,7 +32,9 @@
       classes: "govuk-fieldset__legend--l"
     }
   },
-
+  hint: {
+    text: "John Smith will no longer be able to access the Product Safety Database. Any cases assigned to or owned by this member will be re-assigned to the team. This cannot be undone."
+  },
   items: [
     {
       value: "yes",
