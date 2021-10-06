@@ -134,6 +134,20 @@ abbr[title]{
     top: 2px;
 }
 
+.opss-list {
+    @include govuk-media-query($from: tablet) {
+        &.opss-list--inline {
+            li {
+                display: inline-block;
+                margin-left: govuk-spacing(1);
+            }
+            li:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
 .opss-secondary-text {
     color: $govuk-secondary-text-colour;
 }
