@@ -87,6 +87,12 @@ body.js-enabled .opss-nojs-hide {
     }
 }
 
+.opss-skip-link:focus {
+    &.opss-skip-link--mb {
+        margin-bottom: govuk-spacing(4) !important;
+    }
+}
+
 abbr[title]{
     text-decoration: none;
 
