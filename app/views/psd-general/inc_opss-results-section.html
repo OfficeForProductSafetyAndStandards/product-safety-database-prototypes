@@ -11,7 +11,8 @@
                             Sort by
                         </label>
                         <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
-                            <option value="recent" selected="selected">Recent updates</option>
+                            <option value="relevance" selected="selected">Relevance</option><!-- this option may be contextual? -->
+                            <option value="recent">Recent updates</option>
                             <option value="oldest">Oldest updates</option>
                             <option value="newest">Newest cases</option>
                         </select>
@@ -26,7 +27,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Cases">
 
-                <table id="table-items" class="govuk-table opss-table-items opss-table-items--sm">
+                <table id="results" class="govuk-table opss-table-items opss-table-items--sm">
                     <caption class="govuk-visually-hidden">
                         Cases data: 4 columns with each case described across rows within each table body.
                     </caption>

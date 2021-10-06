@@ -1,0 +1,250 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/index.html",
+    serviceName: "Prototype",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("") %} <!-- govuk-main-wrapper govuk-main-wrapper--auto-spacing -->
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ]
+      }
+    }) }}
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+
+  <!-- *** DO NOT INCLUDE THIS SCRIPT IN PROD HTML: starts *** -->
+  <script>
+
+    //if (window.openDatabase) {
+        //Create the database the parameters are 1. the database name 2. version number 3. a description 4. the size of the database (in bytes) 1024 x 1024 = 1MB
+        var mydb = openDatabase("products_db1", "1.1", "My products database", 1024 * 1024);
+
+        //create the products table using SQL for the database using a transaction
+        mydb.transaction(function (t) {
+            t.executeSql("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY ASC, products_name TEXT, internal_ref TEXT)");
+        });
+    //} //else {
+        //alert("WebSQL is not supported by this browser - Try a recent version of Chrome.");
+    //}
+
+//function to output the list of products in the database
+function updateCarList(transaction, results) {
+    //initialise the listitems variable
+    var listitems = "";
+    //get the car list holder ul
+    var listholder = document.getElementById("carlist");
+
+    //clear products list ul
+    listholder.innerHTML = "";
+
+    var i;
+    //Iterate through the results
+    for (i = 0; i < results.rows.length; i++) {
+        //Get the current row
+        var row = results.rows.item(i);
+
+        listholder.innerHTML += "<li>" + row.products_name + " - " + row.internal_ref + " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
+    }
+
+}
+
+//function to get the list of products from the database
+
+function outputproducts() {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the products from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function (t) {
+            t.executeSql("SELECT * FROM products", [], updateCarList);
+        });
+    } else {
+        alert("db not found, your browser might not support webSQL - try a recent version of Chrome.");
+    }
+}
+
+//function to add the car to the database
+
+function addCar() {
+  //get the values text inputs
+  var products_name = document.getElementById("carmake").value;
+  var internal_ref = document.getElementById("carmodel").value;
+
+  //Test to ensure that the user has entered both a products_name and internal_ref
+  if (products_name !== "" && internal_ref !== "") {
+      //Insert the user entered details into the products table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
+      mydb.transaction(function (t) {
+          t.executeSql("INSERT INTO products (products_name, internal_ref) VALUES (?, ?)", [products_name, internal_ref]);
+          outputproducts();
+      });
+  } else {
+      alert("You must enter both values.");
+  }
+
+}
+
+function updateRow() {
+  var products_name = document.getElementById("updateRowInput").value;
+  //var internal_ref = document.getElementById("carmodel").value;
+
+  mydb.transaction(function (t) {
+      t.executeSql('UPDATE products SET products_name=? where id=?', [products_name, 1]);
+      outputproducts();
+  });
+}
+
+
+//function to remove a car from the database, passed the row id as it's only parameter
+
+function deleteCar(id) {
+    //check to ensure the mydb object has been created
+    if (mydb) {
+        //Get all the products from the database with a select statement, set outputCarList as the callback function for the executeSql command
+        mydb.transaction(function (t) {
+            t.executeSql("DELETE FROM products WHERE id=?", [id], outputproducts);
+        });
+    }
+}
+
+outputproducts();
+
+/////////////////////////////////////////////////////////////////////
+/*
+    function createDB (){
+      var myDB = openDatabase('addProductDB', '1.0', 'Adding products prototype', 2 * 1024 * 1024);
+      return myDB;
+    }
+
+    function createTblProducts(){
+      var db = createDB();
+
+      db.transaction(function(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS PRODUCTS (id unique, log)');
+        tx.executeSql('INSERT INTO PRODUCTS (id, log) VALUES (5, "foobar")');
+        tx.executeSql('INSERT INTO PRODUCTS (id, log) VALUES (6, "logmsg")');
+      });
+
+    }
+
+    function insertIntoTbl(){
+       var db = createDB();
+
+      db.transaction(function (tx) {
+        //tx.executeSql('CREATE TABLE IF NOT EXISTS PRODUCTS (id unique, log)');
+        tx.executeSql('INSERT INTO PRODUCTS (id, log) VALUES (3, "new one")');
+        tx.executeSql('INSERT INTO PRODUCTS (id, log) VALUES (4, "new two")');
+      });
+
+      db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM PRODUCTS', [], function (tx, results) {
+               var len = results.rows.length, i;
+               msg = "<p>Found rows: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+
+               for (i = 0; i < len; i++) {
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+         });
+    }
+*/
+    jQuery(document).ready(function(){
+
+      $('#createTblProducts').click(function(){
+        createTblProducts();
+      });
+
+/*const request = indexedDB.open("library");
+let db;
+
+request.onupgradeneeded = function() {
+  // The database did not previously exist, so create object stores and indexes.
+  const db = request.result;
+  const store = db.createObjectStore("books", {keyPath: "isbn"});
+  const titleIndex = store.createIndex("by_title", "title", {unique: true});
+  const authorIndex = store.createIndex("by_author", "author");
+
+  // Populate with initial data.
+  store.put({title: "Quarry Memories", author: "Fred", isbn: 123456});
+  store.put({title: "Water Buffaloes", author: "Fred", isbn: 234567});
+  store.put({title: "Bedrock Nights", author: "Barney", isbn: 345678});
+};
+
+request.onsuccess = function() {
+  db = request.result;
+};*/
+
+
+    });
+
+
+
+
+  </script>
+  <!-- *** DO NOT INCLUDE THIS SCRIPT IN PROD HTML: ends *** -->
+
+
+{% endblock %}
+

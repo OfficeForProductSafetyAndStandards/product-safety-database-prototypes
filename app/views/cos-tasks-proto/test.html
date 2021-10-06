@@ -1,0 +1,64 @@
+{% extends "layout-cos-tasks-proto.html" %}
+
+{% block pageTitle %}
+    Prototype
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Test
+        </h1>
+
+        <!--button id="createTblProducts">Create tbl</button>
+        <br><br>
+        <button id="populateTblProducts">Populate Create tbl</button>
+
+
+        <div id="status" style="padding: 100px;"></div>
+
+        <hr-->
+
+<div id="controls">
+    <label>Make:</label>
+    <input type="text" id="carmake" />
+    <br />
+    <label>Model:</label>
+    <input type="text" id="carmodel" />
+    <br />
+    <button type="button" id="addcar" onclick="addCar();">Add Car</button>
+    <br /><br /><br /><br />
+    <label>Update this row:</label>
+    <input type="text" id="updateRowInput" /><br />
+    <button type="button" id="updaterow" onclick="updateRow();">Update Row</button>
+</div>
+<div id="carlistholder">
+     <h3>Your Cars</h3>
+
+    <ul id="carlist"></ul>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

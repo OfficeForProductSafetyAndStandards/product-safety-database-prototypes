@@ -240,8 +240,8 @@ ul.opss-radio-list {
         @include opss-font-size($s: 14px, $l: 1.3);
         text-transform: none;
         font-weight: normal;
-        color: govuk-colour("dark-grey");
-        border: 1px solid govuk-colour("mid-grey");
+        color: $govuk-text-colour;
+        border: 1px solid $govuk-border-colour;
         float: left;
         margin-left: 0;
         min-width: 64px;
