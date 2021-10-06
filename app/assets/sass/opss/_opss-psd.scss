@@ -215,6 +215,11 @@ ul.opss-radio-list {
         &:last-child {
             margin-bottom: 0;
         }
+            @include govuk-media-query($from: desktop) {
+            &:nth-of-type(n+11) {
+                margin-top: govuk-spacing(1);
+            }
+        }
     }
 
     &.opss-tag--risk1 {
