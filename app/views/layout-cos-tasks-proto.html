@@ -31,7 +31,12 @@
 
 
 {% block head %}
-  {% include "includes/head.html" %}
+<!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<style>/* prototype styles only ... */
+body.newpage:before, body.oldpage:before {content: 'This is a new page (new HTML)'; border: 1px solid #b1b4b6; color: #b1b4b6; display: block; width: fit-content; height: fit-content; font-size: 12px; font-family: 'GDS Transport'; position: absolute; top: 0; right: 0; padding: 2px; }
+body.oldpage:before {content: 'This is an old page (reused HTML)'; }
+</style>
 {% endblock %}
 
 
@@ -211,6 +216,12 @@ outputproducts();
     }
 */
     jQuery(document).ready(function(){
+
+      if(document.getElementById("oldpage")){
+        $('body').addClass('oldpage');
+      }else{
+        $('body').addClass('newpage');
+      }
 
       $('#createTblProducts').click(function(){
         createTblProducts();
