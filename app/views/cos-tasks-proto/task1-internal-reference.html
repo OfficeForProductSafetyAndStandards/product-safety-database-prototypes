@@ -1,0 +1,63 @@
+{% extends "layout-cos-tasks-proto.html" %}
+
+{% block pageTitle %}
+    What is the product called?
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<form action="#" accept-charset="UTF-8" method="post" id="oldpage">
+  <input name="utf8" type="hidden" value="&#x2713;">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="WMlvJh4VfPM+nvhiCyy38dCDMEKdVtFaZOAyJM9C4aDUtKthb+I1vwjAXmK2ETLRSNNyZjS6GQp07dnQWxTb+A==">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Internal reference</h1>
+
+        <p>You can use this to identify your products. Only people in your organisation can see this reference.</p>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-label--m">Do you want to add an internal reference?</legend>
+
+            <div class="govuk-radios  govuk-radios--conditional" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notification_add_internal_reference_yes" name="notification_add_internal_reference" type="radio" value="yes" aria-controls="conditional-notification_add_internal_reference_yes" aria-expanded="false">
+                <label class="govuk-label govuk-radios__label " for="notification_add_internal_reference_yes">Yes</label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-notification_add_internal_reference_yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="notification_industry_reference">Internal reference</label>
+                  <input class="govuk-input " id="notification_industry_reference" name="notification[industry_reference]" type="text">
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notification_add_internal_reference_no" name="notification_add_internal_reference" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label " for="notification_add_internal_reference_no">No</label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button ">Continue</button>
+
+    </div>
+  </div></form>
+
+{% endblock %}

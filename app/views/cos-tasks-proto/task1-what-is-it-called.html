@@ -7,13 +7,29 @@
 
 
 {% block content %}
+
 <div class="govuk-grid-row" id="oldpage">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">whats it called</h1>
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <form action="#" accept-charset="UTF-8" method="post">
+      <input name="utf8" type="hidden" value="&#x2713;">
+      <input type="hidden" name="_method" value="put">
+      <input type="hidden" name="authenticity_token" value="v5u+dzZoVS9hBcnZdvMIFWpkt4DPNyvER103NsiAitYz5nowR58cY1dbb9nLzo018jT1pGbb45RXUNzCXNawjg==">
 
 
+
+      <h1 class="govuk-heading-l">What’s the product called?</h1>
+
+      <p class="govuk-body">Include the trade mark or brand, the product line and the specific name of the product as it appears on the packaging. Include the type of product (for example, ‘shower gel’) unless it’s included in the product name.</p>
+
+      <div class="govuk-form-group"><label class="govuk-label govuk-label--m" for="notification_product_name">Product name</label><span class="govuk-hint " id="notification_product_name-hint">For example, ‘SkinSoft body fresh with aloe vera, shower gel’.</span><input aria-describedby="notification_product_name-hint" class="govuk-input " id="notification_product_name" name="notification_product_name" type="text"></div>
+
+      <button class="govuk-button ">Continue</button>
+
+  </form>
 </div>
 </div>
+
 
 
 {% endblock %}

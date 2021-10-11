@@ -6,6 +6,10 @@ const router = express.Router()
 
 // **** Start folder specific routes
 
+
+//COS drafts/tasks prototype
+router.use('/cos-tasks-proto', require('./views/cos-tasks-proto/_routes'));
+
 // old add-product-v4
 router.use('/add-product-v4', require('./views/add-product-v4/_routes'));
 
@@ -18,3 +22,6 @@ router.use('/product-case-testing', require('./views/product-case-testing/_route
 // **** End folder specific routes
 
 module.exports = router
+
+
+
