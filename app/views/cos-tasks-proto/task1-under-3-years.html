@@ -1,0 +1,50 @@
+{% extends "layout-cos-tasks-proto.html" %}
+
+{% block pageTitle %}
+    What is the product called?
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="#" accept-charset="UTF-8" method="post" id="oldpage">
+  <input name="utf8" type="hidden" value="&#x2713;">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="Wp/XL5at7j395Ay8UYNiiDEXYku66WY+gT+gpzsytaDW4hNo51qnccu6qrzsvueoqUcgbxMFrm6RMktTr2SP+A==">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Is the product intended to be used on children under 3 years old?</h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notification_under_three_years_true" name="notification_under_three_years" type="radio" value="true">
+                <label class="govuk-label govuk-radios__label " for="notification_under_three_years_true">Yes</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notification_under_three_years_false" name="notification_under_three_years" type="radio" value="false">
+                <label class="govuk-label govuk-radios__label " for="notification_under_three_years_false">No</label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button ">Continue</button>
+
+    </div>
+  </div>
+</form>
+
+{% endblock %}

@@ -28,9 +28,12 @@ main.govuk-main-wrapper {
     @include govuk-clearfix;
 }
 
-h1, h2, h3, h4,
-.govuk-heading-xl,
-.govuk-heading-l,
+#main-content > div > div div {
+    .govuk-heading-xl,
+    .govuk-heading-l {
+      @include word-wrap;
+    }
+}
 .govuk-heading-m,
 .govuk-heading-s,
 .govuk-heading-l a,

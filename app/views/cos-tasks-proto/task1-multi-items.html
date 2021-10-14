@@ -1,0 +1,41 @@
+{% extends "layout-cos-tasks-proto.html" %}
+
+{% block pageTitle %}
+    Multi-items
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "task1-does-it-contain-nanomaterials"
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="#" accept-charset="UTF-8" method="post" id="oldpage">
+  <input name="utf8" type="hidden" value="&#x2713;">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="Wp/XL5at7j395Ay8UYNiiDEXYku66WY+gT+gpzsytaDW4hNo51qnccu6qrzsvueoqUcgbxMFrm6RMktTr2SP+A==">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Multi item kits Y or N</h1>
+            </legend>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button">Continue</button>
+
+    </div>
+  </div>
+</form>
+
+{% endblock %}
