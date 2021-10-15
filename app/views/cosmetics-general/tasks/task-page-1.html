@@ -1,0 +1,81 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Add a product tasks list
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+{% include "cosmetics-general/tasks/inc_opss-header-section-landing.html" %}
+
+<div class="govuk-grid-row">
+    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9" role="region" aria-label="Tasks">
+
+        <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 0 of 3 tasks have been completed.
+        </p>
+
+        <ol class="app-task-list">
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> Create the product
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
+                                Create the product
+                            </a>
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-status">Not started</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> Product details
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Product details
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Accept and submit
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Accept and submit
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="accept-status">Cannot start yet</b>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+
+    </section>
+</div>
+
+
+{% endblock %}
