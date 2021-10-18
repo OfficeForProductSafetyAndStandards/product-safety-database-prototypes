@@ -445,6 +445,12 @@ dl.opss-summary-list-aside {
     }
     tbody td {
         @include govuk-font($size: 19);
+
+        mark {
+            font-weight: bold;
+            background: none;
+            color: $govuk-text-colour;
+        }
     }
     /*tbody tr:last-child td a {
         @include govuk-font($size: 16);
