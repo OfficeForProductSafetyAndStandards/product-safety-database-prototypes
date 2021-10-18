@@ -1,0 +1,37 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Cases page - restricted view
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- required only for this demo page -->
+<style>
+  .hmcts-identity-bar {display: none; }
+  header.govuk-header {border-bottom: none; padding-bottom: 0; }
+</style>
+<!-- ends -->
+
+{% include "psd-general/inc_opss-old-header.html" %}
+
+<div class="govuk-grid-row">
+
+    {% include "psd-general/inc_opss-old-filters.html" %}
+
+    {% include "psd-general/inc_opss-results-section-restricted.html" %}
+
+</div>
+
+<script>
+  document.getElementById("results-sort").addEventListener("change", function(){
+      //document.getElementById("sort-form").submit();
+      alert('form submitted event');
+    }
+  );
+</script>
+
+
+{% endblock %}
