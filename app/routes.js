@@ -8,7 +8,7 @@ const router = express.Router()
 
 
 //COS drafts/tasks prototype
-router.use('/cos-tasks-proto', require('./views/cos-tasks-proto/_routes'));
+//router.use('/cos-tasks-proto', require('./views/cos-tasks-proto/_routes'));
 
 // old add-product-v4
 router.use('/add-product-v4', require('./views/add-product-v4/_routes'));

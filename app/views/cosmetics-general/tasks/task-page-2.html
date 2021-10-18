@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Drafts page
+    Add a product tasks list
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,13 @@
 
 {% block content %}
 
-{% include "drafts-gui/inc_opss-header-section-landing.html" %}
+{% include "cosmetics-general/tasks/inc_opss-header-section.html" %}
 
 <div class="govuk-grid-row">
     <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 0 of 4 sections have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 3 tasks have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -32,12 +32,12 @@
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="draft-3_step-1.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-status">
                                 Create the product
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-status">Not started</b>
+                        <b class="govuk-tag app-task-list__tag" id="product-status">Completed</b>
                     </li>
                 </ul>
             </li>
@@ -49,31 +49,18 @@
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Product details
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-details-status">
+                                Product details
+                            </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Not started</b>
                     </li>
                 </ul>
             </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">3. </span> Category and formulation
-                </h2>
-
-                <ul class="app-task-list__items">
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            Category and formulation
-                        </span>
-
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="formation-details-status">Cannot start yet</b>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Accept and submit
+                    <span class="app-task-list__section-number">3. </span> Accept and submit
                 </h2>
 
                 <ul class="app-task-list__items">
@@ -90,9 +77,12 @@
 
 
     </section>
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-top-9">
+        <a href="view-draft.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+            View draft
+        </a>
+    </div>
 </div>
-
-
 
 
 {% endblock %}
