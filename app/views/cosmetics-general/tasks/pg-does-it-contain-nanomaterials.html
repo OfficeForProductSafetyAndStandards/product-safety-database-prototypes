@@ -1,0 +1,75 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Add a product tasks list
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form action="#">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Does the product contain nanomaterials?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nano" name="nano" type="radio" value="yes" data-aria-controls="conditional-nano">
+                <label class="govuk-label govuk-radios__label" for="nano">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nano">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="nano-qty">
+                    How many?
+                  </label>
+                    <div id="nano-number-hint" class="govuk-hint">
+                      Enter a number.
+                    </div>
+                  <input class="govuk-input govuk-input--width-5 govuk-!-font-size-16" id="nano-qty" name="nano-qty" type="number" aria-describedby="nano-number-hint" spellcheck="false" pattern="[0-50]*" inputmode="numeric">
+              </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nano-2" name="nano" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="nano-2">
+                  No
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nano-3" name="nano" type="radio" value="dontknow">
+                <label class="govuk-label govuk-radios__label" for="nano-3">
+                  Don't know
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button ">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
