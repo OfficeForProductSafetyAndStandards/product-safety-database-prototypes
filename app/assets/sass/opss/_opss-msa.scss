@@ -348,13 +348,26 @@ li.opss-task-sub {
         color: rgba(76, 115, 141, 0.5);//#b1b4b6
     }
 }
+
 .app-task-list__section-number {//bug fix for mobile
     display: inline-block;
     min-width: govuk-spacing(5);
 }
 
+@include govuk-media-query($from: tablet) {
+    .opss-switch-cols {
+        display: flex;
+
+        .opss-switch-cols__left {
+            order: 1;
+        }
+        .opss-switch-cols__right {
+            order: 2;
+        }
+    }
+}
+
 .opss-tag--red {
     background-color: $govuk-error-colour;
 }
-
 
