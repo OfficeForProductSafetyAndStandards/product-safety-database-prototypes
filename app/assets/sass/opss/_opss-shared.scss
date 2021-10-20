@@ -47,6 +47,7 @@ main.govuk-main-wrapper {
 /*tbody th  {-webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }*/
 .govuk-summary-list .govuk-link,
 .opss-table td a,
+.opss-table tbody tr th:first-child,
 tbody th.govuk-table__header,
 tbody th.govuk-table__header a,
 tbody td a[href^="mailto:"] {
@@ -397,6 +398,7 @@ dl.opss-summary-list-aside {
         thead tr th:first-child,
         tbody tr th:first-child {
             width: auto;
+            max-width: $govuk-page-width / 2;
         }
     }
 }
