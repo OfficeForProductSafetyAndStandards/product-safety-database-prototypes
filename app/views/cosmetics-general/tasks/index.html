@@ -45,7 +45,7 @@
                 </li>
                 <li>
                     <a class="govuk-label govuk-link govuk-link--no-visited-state" href="task-page-2" target="_blank">Tasks list page 2</a>
-                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' link now appears.
+                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' and 'Delete draft' links now appear.
                 </li>
                 <li>
                     <a class="govuk-label govuk-link govuk-link--no-visited-state" href="task-page-3" target="_blank">Tasks list page 3</a>
@@ -66,7 +66,7 @@
                 </li>
                 <li>
                     <a class="govuk-label govuk-link govuk-link--no-visited-state" href="task-page-2b" target="_blank">Tasks list page 2b</a>
-                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' link now appears.<br><br>
+                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' and 'Delete draft' links now appear.<br><br>
                     In task 1 the user defined the product to have 3x nanomaterials. An extra task ('Nanomaterials') has now been inserted into task position 2, and shows 3x nanomaterial holding places (with an Add and Remove link).
                 </li>
                 <li>
@@ -94,7 +94,7 @@
                 </li>
                 <li>
                     <a class="govuk-label govuk-link govuk-link--no-visited-state" href="task-page-2c" target="_blank">Tasks list page 2c</a>
-                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' link now appears.<br><br>
+                    The user has completed the 'Create the product' task. The task list page now looks like this: The sub title has now updated and the main title has now changed to the product name. The header hint text has now also updated. The 'View draft' and 'Delete draft' links now appear.<br><br>
                     In task 1 the user defined the product to have 3x nanomaterials and 3x items in a multi-item kit. A Nanomaterials task has now been inserted into the task list, and shows 3x nanomaterial holding places (with an Add and Remove link).
                     <br><br>
                     A multi-kit task and 3x items tasks <b>replace</b> the 'Product details' task, and have now also been inserted into the list. The list now has 5 tasks.
@@ -128,9 +128,12 @@
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
                     <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-delete-draft" target="_blank">Delete draft</a><br>
-                    to be uploaded: ... are you sure you want to delete this draft? ... page refreshes with confirmation and link offering to return back to the Cosmetic products page.
+                    This is the "Delete draft" page. Yes or No. (Error message would state: "Select yes if you want to delete this draft"). The Cancel link is a hyperlink linking back to the draft page. The hint text includes the product name. Choosing No, returns the user back to the same product draft page. Yes, deletes the draft and the user goes to ...
                 </li>
-
+                <li>
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-delete-draft-success" target="_blank">Delete success</a><br>
+                    This page confirms the deletion. A hyperlink provides a direct route back to the Cosmetic products page. There is no Back link on this page (and a '<code>govuk-main-wrapper--auto-spacing</code>' class is added to the <code>&lt;main&gt;</code> element if possible).
+                </li>
             </ul>
         </div>
 
