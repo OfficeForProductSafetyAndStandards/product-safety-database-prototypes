@@ -111,10 +111,8 @@
                     <a class="govuk-label govuk-link govuk-link--no-visited-state " href="task-page-4c" target="_blank">Tasks list page 3d</a>
                     The user has completed the 'Multi-item kit' task. Each item in the 'Multi-item details' can now be started.
                 </li>
-
-
                 <li>
-                    <a class="govuk-label govuk-link govuk-link--no-visited-state " href="task-page-4b" target="_blank">Tasks list page 4b</a>
+                    <a class="govuk-label govuk-link govuk-link--no-visited-state " href="task-page-4d" target="_blank">Tasks list page 4d</a>
                     The user has completed the 'Multi-item details' tasks. (As each item task was completed, the corresponding 'Not started' tag changed to 'Completed'). The items list now shows/uses each item name.
                     <br><br>
                     The user can now start the final task.
@@ -122,23 +120,61 @@
             </ul>
         </div>
 
-        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-            <li>
-                pipelines, reservoirs, water mains, wells, sewers, industrial plant and installations for purposes of land drainage, coast protection or defence
-            </li>
-            <li>
-                installing heating, lighting, air-conditioning, ventilation, power supply, drainage, sanitation, water supply or fire protection systems in any building or structure
-            </li>
-            <li>
-                internal cleaning of buildings and structures, so far as carried out in the course of their construction, alteration, repair, extension or restoration
-            </li>
-            <li>
-                painting or decorating the inside or the external surfaces of any building or structure
-            </li>
-            <li>
-                services which form an integral part of, or are part of the preparation or completion of the services described above - including site clearance, earth-moving, excavation, tunnelling and boring, laying of foundations, erection of scaffolding, site restoration, landscaping and the provision of roadways and other access works
-            </li>
-        </ul>
+        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+            <h2 class="govuk-heading-s">
+                Delete draft pages
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-delete-draft" target="_blank">Delete draft</a><br>
+                    to be uploaded: ... are you sure you want to delete this draft? ... page refreshes with confirmation and link offering to return back to the Cosmetic products page.
+                </li>
+
+            </ul>
+        </div>
+
+
+        <h2 class="govuk-heading-s">More pages are coming...</h2>
+
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body">Latest <abbr>CSS</abbr> for prototyping: <a href="https://opss-html.herokuapp.com/public/stylesheets/application.css" class="govuk-link govuk-link--no-visited-state" target="_blank">application.css</a>.</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    This functionality has been removed from the designs
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+                    <h2 class="govuk-heading-s" style="text-decoration:line-through;">
+                        Does it contain nanomaterials?
+                    </h2>
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                        <li style="text-decoration:line-through;">
+                            <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-does-it-contain-nanomaterials" target="_blank">Does it contain nanomaterials?</a><br>
+                            This is a revised version of the nanomaterials question now in task 1. As the user completes task 1 they are asked here about nanomaterials and, if yes, how many. But they are also able to choose 'Don't know'. (This was agreed with Nasir to avoid users dropping out of the task if they didn't know the nanomaterials answer.
+                        </li>
+                        <li style="text-decoration:line-through;">
+                            <a class="govuk-label govuk-link govuk-link--no-visited-state" href="task-page-nanomaterials" target="_blank">Task list page, showing nanomaterials question</a>
+                            In task 1, where the user is asked "Does the product contain nanomaterials?" And they can answer Yes (+ quantity), No or Don't know. If they answer 'Don't know' the user continues with the standard user-flow, but when they are eventually returned back to the Task list page, there is task 1 (completed) and a new task 2 displaying:  "About nanomaterials". This new task 2 gives the user a chance to source the answers. But they must do task 2 before they can continue).
+                        </li>
+                        <li style="text-decoration:line-through;">
+                            <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-does-it-contain-nanomaterials-short" target="_blank">Does it contain nanomaterials? (short version)</a><br>
+                            From task 2 (the About nanomaterials task) the user goes to this page (with only two options and a Cancel link). Afterwards, the user is returned back to the task list page as normal and as if they had answered the nanomaterials question in the original task 1 (making the task list <a href="task-page-2b" class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" target="_blank">look like this</a> if they had entered 3x, for example).
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </details>
 
 
     </div>

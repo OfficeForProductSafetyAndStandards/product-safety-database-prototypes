@@ -16,8 +16,14 @@
 
 {% include "cosmetics-general/tasks/inc_opss-header-section-landing.html" %}
 
-<div class="govuk-grid-row">
-    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9" role="region" aria-label="Tasks">
+<div class="govuk-grid-row opss-switch-cols">
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-top-9 opss-switch-cols__right">
+        <!-- no View draft link on this page -->
+
+        {% include "cosmetics-general/tasks/help/inc_products-task1.html" %}
+    </div>
+
+    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9 opss-switch-cols__left" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
             <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 0 of 3 tasks have been completed.

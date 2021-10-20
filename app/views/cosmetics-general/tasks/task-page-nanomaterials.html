@@ -14,21 +14,13 @@
 
 {% block content %}
 
-{% include "cosmetics-general/tasks/inc_opss-header-section.html" %}
+{% include "cosmetics-general/tasks/inc_opss-header-section-landing.html" %}
 
-<div class="govuk-grid-row opss-switch-cols">
-    <div class="govuk-grid-column-one-quarter govuk-!-padding-top-9 opss-switch-cols__right">
-        <a href="view-draft.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
-            View draft
-        </a>
-
-        {% include "cosmetics-general/tasks/help/inc_products-task2.html" %}
-    </div>
-
-    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9 opss-switch-cols__left" role="region" aria-label="Tasks">
+<div class="govuk-grid-row">
+    <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 3 tasks have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 4 tasks have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -51,18 +43,33 @@
             </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">2. </span> Product details
+                    <span class="app-task-list__section-number">2. </span> About nanomaterials
                 </h2>
 
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="product-details-status">
-                                Product details
+                            <a href="pg-does-it-contain-nanomaterials-short.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-details-status">
+                                About nanomaterials
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Not started</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="nano-details-status">Not started</b>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Product details
+                </h2>
+
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            Product details
+                        </span>
+
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
                     </li>
                 </ul>
             </li>
@@ -85,6 +92,11 @@
 
 
     </section>
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-top-9">
+        <a href="view-draft.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+            View draft
+        </a>
+    </div>
 </div>
 
 
