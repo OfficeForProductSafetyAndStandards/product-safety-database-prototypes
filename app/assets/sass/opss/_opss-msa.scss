@@ -354,20 +354,22 @@ li.opss-task-sub {
     min-width: govuk-spacing(5);
 }
 
-@include govuk-media-query($from: tablet) {
+@media only screen and (max-width: 859px) {//browser window is 859px wide or less
+    .opss-switch-cols {
+        width: auto;
+        .govuk-grid-column-three-quarters.opss-switch-cols__left {width: 100%; }
+        .govuk-grid-column-one-quarter.opss-switch-cols__right {width: auto; padding-top: govuk-spacing(5) !important;
+        }
+    }
+}
+@media only screen and (min-width: 860px) {//browser window is 860px wide or more
     .opss-switch-cols {
         display: flex;
-
-        .opss-switch-cols__left {
-            order: 1;
-        }
-        .opss-switch-cols__right {
-            order: 2;
-        }
+        .opss-switch-cols__left {order: 1; }
+        .opss-switch-cols__right {order: 2; }
     }
 }
 
 .opss-tag--red {
     background-color: $govuk-error-colour;
 }
-
