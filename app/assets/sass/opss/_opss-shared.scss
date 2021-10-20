@@ -104,6 +104,7 @@ abbr[title]{
         .opss-switch-cols &,
         .govuk-summary-list__row & {
             border-bottom: 1px dotted $govuk-secondary-text-colour;
+            cursor: help;
         }
     }
 }
