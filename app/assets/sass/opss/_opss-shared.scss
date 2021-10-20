@@ -100,7 +100,7 @@ abbr[title]{
     text-decoration: none;
 
     @include govuk-media-query($from: desktop) {
-        .opss-border-all &,
+        .opss-switch-cols &,
         .govuk-summary-list__row & {
             border-bottom: 1px dotted $govuk-secondary-text-colour;
         }
