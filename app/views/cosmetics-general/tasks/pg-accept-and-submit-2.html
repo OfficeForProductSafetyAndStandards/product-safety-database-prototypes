@@ -21,30 +21,35 @@
         Accept and submit
       </h1>
 
+      <p class="govuk-body opss-secondary-text">Accept and submit the product notification for [product name here].</p>
 
     </div>
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
-      <div style="width: 100%; height: 300px; background: #b1b4b6; padding: 40px; margin-top: 40px; margin-bottom: 40px;">
-        <p class="govuk-body-l">Declaration here ...</p>
-      </div>
+        <section class="govuk-!-margin-top-9">
+            <h2 class="govuk-heading-m">Declaration</h2>
 
+            <form action="pg-accept-and-submit-success" method="post" novalidate>
+                <p class="govuk-body">
+                    By submitting this cosmetic product notification, you confirm that the details you provide are correct to the best of your knowledge.
+                </p>
 
-      <form action="pg-accept-and-submit-2">
-        <div class="govuk-form-group">
-          <div class="govuk-button-group">
-            <button class="govuk-button ">Accept and submit</button>
+                <input name="utf8" type="hidden" value="&#x2713;">
+                <input type="hidden" name="authenticity_token" value="o04ePIb64m8oHykjJA6C+qMp9ZVF8cxX8h6wQBsZljA/uTyx9NpEZEFApSymoUurKjGAV/YWDqAX0Ab0W/VF+A==">
 
-            <a href="#" class="govuk-link govuk-link--no-visited-state">Go back to the task list page</a>
-          </div>
-        </div>
-      </form>
+                <div class="govuk-button-group govuk-!-margin-top-6">
+                    <button class="govuk-button">Accept and submit</button>
+
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Return to the tasks list page</a>
+                </div>
+            </form>
+
+        </section>
 
     </div>
   </div>
-
 
 {% endblock %}
