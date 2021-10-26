@@ -10,15 +10,7 @@
                         <label class="govuk-label govuk-body-s" for="results-sort">
                             Sort by
                         </label>
-                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
-                            <option value="relevance" selected="selected">Relevance</option><!-- this option may be contextual? -->
-                            <option value="recent">Recent updates</option>
-                            <option value="oldest">Oldest updates</option>
-                            <option value="newest">Newest cases</option>
-                        </select>
-                        <button class="govuk-button opss-js-enabled-hidden">
-                            Sort
-                        </button>
+                        {% include "psd-general/inc_opss-sorting.html" %}
                     </form>
                 </div>
            </div>
