@@ -285,6 +285,8 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
             min-width: 40%;
         }
     }
+
+    & > span.govuk-summary-list__actions {display: none; }/* protects against rogue legacy psd invalid html */
 }
 
 .js-enabled .opss-accordian__open-remove > div:first-child {

@@ -694,14 +694,7 @@
                         <label class="govuk-label govuk-body-s" for="results-sort">
                             Sort by
                         </label>
-                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
-                            <option value="recent" selected="selected">Recent updates</option>
-                            <option value="oldest">Oldest updates</option>
-                            <option value="newest">Newest cases</option>
-                        </select>
-                        <button class="govuk-button opss-js-enabled-hidden" data-module="govuk-button">
-                            Sort
-                        </button>
+                        {% include "psd-general/inc_opss-sorting.html" %}
                     </form>
                 </div>
            </div>

@@ -1,18 +1,24 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Add a product tasks list
-{% endblock %}
-
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "index"
-    }) }}
+    You cannot notify this product
 {% endblock %}
 
 
 {% block content %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">You cannot notify this product until you have notified <a href="#blocked" class="govuk-notification-banner__link">Aliquam faucibus </a><span class="govuk-visually-hidden"> via the nanomaterials page</span>.</p>
+
+    <!-- once it is notified, this page would load with the Aliquam faucibus status set to Not started (with hyperlink)? -->
+  </div>
+</div>
 
 {% include "cosmetics-general/tasks/inc_opss-header-section.html" %}
 
@@ -22,13 +28,12 @@
             View this draft
         </a>
 
-        {% include "cosmetics-general/tasks/help/inc_products-task2b.html" %}
+        {% include "cosmetics-general/tasks/help/inc_products-task-blocked1.html" %}
     </div>
-
     <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9 opss-switch-cols__left" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 5 tasks have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 1 of 5 sections have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -57,25 +62,25 @@
                 <ul class="app-task-list__items opss-task-sub__list">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="pg-nanomaterial-name.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
-                                Nanomaterial 1
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-01-status">
+                                Aenean
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="nano-01-status">Not started</b>
+                        <b class="govuk-tag app-task-list__tag" id="nano-01-status">Completed</b>
                     </li>
                     <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            <a href="pg-nanomaterial-name.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-02-status">
-                                Nanomaterial 2
-                            </a>
+                        <span class="app-task-list__task-name" id="blocked">
+
+                                Aliquam faucibus
+
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="nano-02-status">Not started</b>
+                        <b class="govuk-tag opss-tag--red app-task-list__tag" id="nano-02-status">Blocked</b>
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            <a href="pg-nanomaterial-name.html" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="nano-03-status">
                                 Nanomaterial 3
                             </a>
                         </span>
@@ -98,48 +103,33 @@
             </li>
             <li>
                 <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">3. </span> Multi-item kit
+                    <span class="app-task-list__section-number">3. </span> Product details
                 </h2>
 
                 <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                                Multi-item kit
+                                Product details
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="multi-item-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="product-details-status">Cannot start yet</b>
                     </li>
                 </ul>
             </li>
-            <li class="opss-task-sub">
-                <h3 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span> Multi-item details
-                </h3>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">4. </span> Category and formulation
+                </h2>
 
-                <ul class="app-task-list__items opss-task-sub__list">
+                <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Item 1
+                            Category and formulation
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-01-status">Cannot start yet</b>
-                    </li>
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            Item 2
-                        </span>
-
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-02-status">Cannot start yet</b>
-                    </li>
-                    <li class="app-task-list__item">
-                        <span class="app-task-list__task-name">
-                            Item 3
-                        </span>
-
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-03-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="formation-details-status">Cannot start yet</b>
                     </li>
                 </ul>
-
             </li>
             <li>
                 <h2 class="app-task-list__section">
@@ -161,6 +151,8 @@
 
     </section>
 </div>
+
+
 
 
 {% endblock %}
