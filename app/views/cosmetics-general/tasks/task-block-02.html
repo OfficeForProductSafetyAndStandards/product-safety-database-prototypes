@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    You cannot notify this product yet
+    You cannot notify this product
 {% endblock %}
 
 
@@ -14,9 +14,7 @@
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">You cannot notify this product until you have notified <a href="#blocked" class="govuk-notification-banner__link">Aliquam faucibus </a><span class="govuk-visually-hidden"> via the nanomaterials page</span>.</p>
-
-    <!-- once it is notified, this page would load with the Aliquam faucibus status set to Not started (with hyperlink)? -->
+    <p class="govuk-notification-banner__heading">You cannot notify products containing <a href="#blocked" class="govuk-notification-banner__link">Lormipsum</a>.</p>
   </div>
 </div>
 
@@ -28,7 +26,7 @@
             View this draft
         </a>
 
-        {% include "cosmetics-general/tasks/help/inc_products-task-blocked1.html" %}
+        {% include "cosmetics-general/tasks/help/inc_products-task-blocked2.html" %}
     </div>
     <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9 opss-switch-cols__left" role="region" aria-label="Tasks">
 
@@ -72,7 +70,7 @@
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name" id="blocked">
 
-                                Aliquam faucibus
+                                Loremipsum
 
                         </span>
 

@@ -1,0 +1,83 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Which nanomaterials does the item include?
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="nano-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Which nanomaterials are included in this item?
+                        </h1>
+                    </legend>
+
+                    <div id="nano-hint" class="govuk-hint govuk-!-width-three-quarters">
+                        If the nanomaterial you require is not shown, return to the tasks list page and add it. You can then begin this item task again.
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-top-7">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="checkbox" name="checkbox" type="checkbox" value="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label" for="checkbox">
+                                Nanomaterial name
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="checkbox-2" name="checkbox" type="checkbox" value="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label" for="checkbox-2">
+                                Another nanomaterial name
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="checkbox-3" name="checkbox" type="checkbox" value="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label" for="checkbox-3">
+                                This nanomaterial
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="checkbox-4" name="checkbox" type="checkbox" value="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label" for="checkbox-4">
+                                Name of the nanomaterial
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="checkbox-5" name="checkbox" type="checkbox" value="checkbox">
+                            <label class="govuk-label govuk-checkboxes__label" for="checkbox-5">
+                                Yet another nanomaterial name
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                    Continue
+                </button>
+
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
