@@ -122,6 +122,24 @@
 
         <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
             <h2 class="govuk-heading-s">
+                Blocked notifications - task list states
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="task-block-01" target="_blank">Must notify nanomaterial first</a><br>
+                    This page shows the task list state with a notification banner of "You cannot notify this product until you have notified [the nanomaterial name]". The full task <b>cannot</b> be completed. <br><br>On the current "You cannot notify this product until you have notified [name]" page, we need to <b>add a hyperlink</b> which returns the user back to the tasks list page, and this is what they see. They can continue tasks for other nanomaterials. (Bruce to source a hyperlink to a page - which we can add to the help section here - explaining how to notify a nanomaterial - opens in a new tab).
+                </li>
+                <li>
+                    <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="task-block-02" target="_blank">You cannot notify products containing [name]</a><br>
+                    This version is for the complete stop to adding the product. The task is blocked and cannot be completed.
+                    <br><br>On the current "You cannot notify products containing [name]" page, we need to <b>add a hyperlink</b> which returns the user back to the tasks list page, and this is what they see. (Bruce to provide link to explain why the process was blocked - opens in a new tab).
+                </li>
+            </ul>
+        </div>
+
+        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+            <h2 class="govuk-heading-s">
                 Delete draft pages
             </h2>
 
@@ -144,12 +162,48 @@
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-nanomaterial-name" target="_blank">What is the nanomaterial <abbr>INCI</abbr> name</a> <br>This is the new page to start the individual nanomaterial tasks. On this page we Save and continue (so that the name is instantly assigned to the nanomaterial instance in the task list, even if the task is not completed) and the new name is used on the task list. If the user does the task again, or restarts the task - for a nanomaterial - this input 'value' will be the name the user provided (and is obviously editable). Only completing the task does the task become flagged as Complete. The form error message will be "Enter the nanomaterial <abbr>INCI</abbr> name" - with <abbr>INCI</abbr> inside plain <code>abbr</code> tags if possible.
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-nanomaterial-name" target="_blank">What is the nanomaterial <abbr>INCI</abbr> name</a> <br>This is the new page to start the individual nanomaterial tasks. On this page we Save and continue (so that the name is instantly assigned to the nanomaterial instance in the task list, even if the task is not completed) and the new name is used in the task list (but the task status tag remains as 'Not started'). If the user does the task again, or restarts the task - for a nanomaterial - this input 'value' will be the name the user provided (and is obviously editable). Only completing the task does the task become flagged as Complete. The form error message will be "Enter the nanomaterial <abbr>INCI</abbr> name" - with <abbr>INCI</abbr> inside plain <code>abbr</code> tags if possible.
                 </li>
                 <li>
-                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="task-block-01" target="_blank">You cannot notify this product until you have notified [nanomaterial name]</a> <br>If the user has not 'submitted a notification about the nanomaterial in <abbr>GB</abbr> since 1 Jan 2021' they see the same page(s) as currently used, but we add a link on the back BACK to the task list page looking like this. (They can continue tasks for other nanomaterials).
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New feature:</span> Add (a nanomaterial)<br>
+                    The <u>Add</u> link simply goes to the first page of the new nanomaterials task ("What is the nanomaterial INCI name?"), and on completion adds the nanomaterial to <b>top</b> of the nanomaterial list as 'Completed'.
+                </li>
+                <li>
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-remove-nanomaterial" target="_blank">Remove (nanomaterials)</a> <br>
+                    "Select which nanomaterial(s) to remove" - This is the new page to remove one or more nanomaterials: the user selects from a checkbox list of the nanomaterial names (even if they are still "Nanomaterial 1, 2, etc" and a 'Delete and continue' button returns the user to the task list page with the list updated. (No standalone confirmation page required and a green button is fine). The page includes hint text advising that if all nanomaterials are deleted they must complete the first task again to add nanomaterials. The Cancel link returns the user back to the Tasks list page.
                 </li>
             </ul>
+        </div>
+
+        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+            <h2 class="govuk-heading-s">
+                Complete product / Multi-item details
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-item-name" target="_blank">What is the item called?</a> <br>This is the new page that <b>only</b> appears at the start of the penultimate task (Multi-item details) if the product is a multi-item kit (as the user begins the individual tasks of defining each item). On this page we Save and continue (so that the name is instantly assigned to the item instance in the task list, even if the task is not completed) and the new name is used in the task list (but  the status tag remains 'Not started').
+                </li>
+                <li>
+                   <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-which-nanomaterials" target="_blank">Select which nanomaterials are included in the item</a> <br>This is the next new page in the flow (after 'What is the item called?', above) and <b>only</b> appears if the product has nanomaterials defined. A 'Cancel' link - next to the Continue button, is a hyperlink linking back to the task list page.
+                </li>
+                <li>
+                    Note: the next page in the flow ("Is the product intended to be rinsed off or left on?") is not a new page but it also only appears if the product has nanomaterials defined.
+                </li>
+            </ul>
+        </div>
+
+        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+            <h2 class="govuk-heading-s">
+                View this draft
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    *** TO DO ***<span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-view-draft" target="_blank">View this draft</a><br>
+                    This is the new page which the user can open to view the details of their draft notification so far. A 'Go back to the tasks list page link is offered.
+                </li>
+             </ul>
         </div>
 
         <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
@@ -169,13 +223,13 @@
                 </li>
                 <li>
                     <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-accept-and-submit-success" target="_blank">Accept and submit success</a><br>
-                    After accepting and submitting the user is presented with this page. (There is no Back link). It features a notification reference number (the number now associated with this product/notification)? Some simple text explains what happens next (to be agreed): How long? Who? How will they know? How can they check?
+                    After accepting and submitting the user is presented with this page. (There is no Back link). It features a notification reference number (the number now associated with this product/notification)? Bruce to provide some copy for this page.
                 </li>
             </ul>
         </div>
 
 
-        <h2 class="govuk-heading-s">More pages are coming...</h2>
+
 
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -207,6 +261,7 @@
                         <li style="text-decoration:line-through;">
                             <span class="govuk-!-font-weight-bold govuk-!-display-inline">New page:</span> <a class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" href="pg-does-it-contain-nanomaterials-short" target="_blank">Does it contain nanomaterials? (short version)</a><br>
                             From task 2 (the About nanomaterials task) the user goes to this page (with only two options and a Cancel link). Afterwards, the user is returned back to the task list page as normal and as if they had answered the nanomaterials question in the original task 1 (making the task list <a href="task-page-2b" class="govuk-label govuk-link govuk-link--no-visited-state govuk-!-display-inline" target="_blank">look like this</a> if they had entered 3x, for example).
+
                         </li>
 
                     </ul>
