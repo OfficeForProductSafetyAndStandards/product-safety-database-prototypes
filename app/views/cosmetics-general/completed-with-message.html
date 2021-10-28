@@ -1,0 +1,248 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    SCNP search page design
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              <span class="govuk-caption-l">Notified product: </span>
+                Vestibulum eyedrops
+            </h1>
+          </div>
+
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-7">
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+              Delete this incomplete notification
+            </a>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+                <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        You have 7 days from the date you submitted your notification to delete it. You should only do this if your notification contains wrong information.
+                    </strong>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <article class="govuk-grid-column-three-quarters">
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-5 govuk-!-margin-bottom-4 opss-summary-list-mixed">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <abbr>UK</abbr> cosmetic product number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    UKCP-49874470
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Internal reference number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    099-3361
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <abbr>UK</abbr> notified
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    12 August 2021
+                </dd>
+            </div>
+        </dl>
+
+        <section id="product-table" class="govuk-!-margin-top-7">
+            <h2 class="govuk-visually-hidden">The product</h2>
+
+            <dl class="govuk-summary-list opss-summary-list-mixed">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Product name</dt>
+                    <dd class="govuk-summary-list__value">Vestibulum eyedrops</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Internal reference number</dt>
+                    <dd class="govuk-summary-list__value">099-3361</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">For children under 3</dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Number of items</dt>
+                    <dd class="govuk-summary-list__value">1</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Shades</dt>
+                    <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                clear white
+                            </li>
+                            <li>
+                                clear white +2
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Label image</dt>
+                    <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">vestibulum-eyedrops-bottle.jpg</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">vestibulum-eyedrops-box.jpg</a></li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Are the items mixed?</dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="aliquam-in-placerat-est" class="govuk-!-margin-top-9 opss-grouping">
+            <h3 class="govuk-heading-m opss-grouping__heading-m">
+                Details
+            </h3>
+
+            <dl class="govuk-summary-list opss-summary-list-mixed">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Nanomaterials</dt>
+                    <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                Mauris quis accumsan
+                            </li>
+                            <li>
+                                Donec eu faucibus purus
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Application instruction</dt>
+                    <dd class="govuk-summary-list__value">Inhalation</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exposure condition</dt>
+                    <dd class="govuk-summary-list__value">Left on</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Category of product</dt>
+                    <dd class="govuk-summary-list__value">Hair and scalp products</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Category of hair and scalp product</dt>
+                    <dd class="govuk-summary-list__value">Hair colouring products</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Category of hair colouring product</dt>
+                    <dd class="govuk-summary-list__value">Non-oxidative hair colour products</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Formulation given as</dt>
+                    <dd class="govuk-summary-list__value">Frame formulation</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Frame formulation</dt>
+                    <dd class="govuk-summary-list__value">Tonic, Cosmetic Water</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Physical form</dt>
+                    <dd class="govuk-summary-list__value">Spray</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Special applicator</dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Acute poisoning information</dt>
+                    <dd class="govuk-summary-list__value"><!-- ? --></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Contains ingredients <abbr title="National Poisons Information Service">NPIS</abbr> needs to know about</dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key"><abbr title="Power of hydrogen">pH</abbr> range</dt>
+                    <dd class="govuk-summary-list__value">13.0 to 14.0</dd>
+                </div>
+            </dl>
+
+        </section>
+
+    </article>
+
+    <aside class="govuk-grid-column-one-quarter opss-desktop-padding-left-0"> <!--  opss-desktop-sticky -->
+        <div class="opss-border-all govuk-!-padding-top-2 govuk-!-padding-right-2 govuk-!-padding-bottom-2 govuk-!-padding-left-2 govuk-!-margin-top-4 govuk-!-margin-bottom-4">
+            <h2 class="govuk-heading-s">Responsible Person</h2>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-vertical">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-display-block govuk-!-font-size-16">Name</dt>
+                    <dd class="govuk-summary-list__value govuk-!-display-block govuk-!-font-size-16">Smith &amp; Son</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Address</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">
+                        100 Acacia Ave<span class="govuk-visually-hidden">, </span><br>
+                        London<span class="govuk-visually-hidden">, </span><br>
+                        England<span class="govuk-visually-hidden">, </span><br>
+                        SE11 4SJ
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div class="opss-border-all govuk-!-padding-top-2 govuk-!-padding-right-2 govuk-!-padding-bottom-2 govuk-!-padding-left-2 govuk-!-margin-top-4 govuk-!-margin-bottom-4">
+            <h2 class="govuk-heading-s">Assigned contact</h2>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-vertical">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Name</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">Darren Harridence</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Email</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">name@thisexample.com</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Telephone</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">020 7947 6330</dd>
+                </div>
+            </dl>
+        </div>
+    </aside>
+</div>
+
+
+
+{% endblock %}

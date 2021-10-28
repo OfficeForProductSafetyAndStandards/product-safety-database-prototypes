@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Which nanomaterials does the item include?
+    Remove nanomaterials
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,12 +23,12 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Select which nanomaterials are included in the item
+                            Select which nanomaterials to remove
                         </h1>
                     </legend>
 
                     <div id="nano-hint" class="govuk-hint govuk-!-width-three-quarters">
-                        If a nanomaterial you require is not shown, return to the tasks list page and add it. You can then start this item task again.
+                        The selected nanomaterial(s) will be deleted from this draft. If all nanomaterials are deleted you can complete the first task again to add nanomaterials.
                     </div>
 
                     <div class="govuk-checkboxes govuk-!-margin-top-7">
@@ -68,7 +68,7 @@
             </div>
             <div class="govuk-button-group">
                 <button class="govuk-button">
-                    Continue
+                    Delete and continue
                 </button>
 
                 <a class="govuk-link" href="#">Cancel</a>
