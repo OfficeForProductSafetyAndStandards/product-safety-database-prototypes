@@ -1,0 +1,33 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    A multi-item kit cannot have fewer than two items
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-7">A multi-item kit product must include 2 or more items</h1>
+
+        <p class="govuk-body">This product notification draft has defined the product as being a multi-item kit and currently includes 2 items. A product including only 1 item (or component) is classified as a single item product and not as a multi-item kit.</p>
+
+        <p class="govuk-body">You can add more items and then remove items.</p>
+
+        <p class="govuk-body">If this product is not a multi-item kit, please <a href="pg-delete-draft" class="govuk-link govuk-link--no-visited-state">delete this draft</a> and start again.</p>
+
+        <p class="govuk-body">Return to the <a href="#" class="govuk-link govuk-link--no-visited-state">tasks list page</a>.</p>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -287,6 +287,10 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
         }
     }
 
+    dd {
+        overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; /*no adding hypens*/
+    }
+
     & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
 }
 

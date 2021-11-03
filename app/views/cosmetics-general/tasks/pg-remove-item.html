@@ -1,0 +1,83 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Remove item
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="#" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="item-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Select which item to remove
+                        </h1>
+                    </legend>
+
+                    <div id="item-hint" class="govuk-hint govuk-!-width-three-quarters">
+                        The item will be removed and deleted from this draft.
+                    </div>
+
+                    <div class="govuk-radios govuk-!-margin-top-7">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item" name="item" type="radio" value="name1">
+                            <label class="govuk-label govuk-radios__label" for="item">
+                                Item name
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-2" name="item" type="radio" value="name2">
+                            <label class="govuk-label govuk-radios__label" for="item-2">
+                                Another item name
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-3" name="item" type="radio" value="name3">
+                            <label class="govuk-label govuk-radios__label" for="item-3">
+                                This item
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-4" name="item" type="radio" value="name4">
+                            <label class="govuk-label govuk-radios__label" for="item-4">
+                                Name of the item
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="item-5" name="item" type="radio" value="name5">
+                            <label class="govuk-label govuk-radios__label" for="item-5">
+                                Yet another item name
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                    Delete and continue
+                </button>
+
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

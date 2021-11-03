@@ -1,18 +1,30 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Add a product tasks list
-{% endblock %}
-
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "index"
-    }) }}
+    Success - item removed
 {% endblock %}
 
 
 {% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            The item was deleted
+          </h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 {% include "cosmetics-general/tasks/inc_opss-header-section.html" %}
 
@@ -22,13 +34,13 @@
             View this draft
         </a>
 
-        {% include "cosmetics-general/tasks/help/inc_products-task4.html" %}
+        {% include "cosmetics-general/tasks/help/inc_products-task2.html" %}
     </div>
 
     <section class="govuk-grid-column-three-quarters govuk-!-padding-top-9 opss-switch-cols__left" role="region" aria-label="Tasks">
 
         <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-display-block opss-text-align-center">
-            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 2 of 5 tasks have been completed.
+            <span class="govuk-visually-hidden">The task list is </span><span class="govuk-!-font-weight-bold">Incomplete</span>: 3 of 5 tasks have been completed.
         </p>
 
         <ol class="app-task-list">
@@ -109,7 +121,7 @@
                             </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="multi-item-status">Not started</b>
+                        <b class="govuk-tag app-task-list__tag" id="multi-item-status">Completed</b>
                     </li>
                 </ul>
             </li>
@@ -121,24 +133,41 @@
                 <ul class="app-task-list__items opss-task-sub__list">
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Item 1
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-01-status">
+                                Item 1
+                            </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-01-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-01-status">Not started</b>
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Item 2
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-02-status">
+                                Item 2
+                            </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-02-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-02-status">Not started</b>
                     </li>
                     <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                            Item 3
+                            <a href="#" class="govuk-link govuk-link--no-visited-state" aria-describedby="item-03-status">
+                                Item 3
+                            </a>
                         </span>
 
-                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-03-status">Cannot start yet</b>
+                        <b class="govuk-tag govuk-tag--grey app-task-list__tag" id="item-03-status">Not started</b>
+                    </li>
+                    <li class="app-task-list__item opss-task-sub__last">
+                        <span class="app-task-list__task-name">
+                            <a href="add-item-step.html" class="govuk-link govuk-link--no-visited-state">
+                                Add <span class="govuk-visually-hidden">another item</span>
+                            </a>
+                            <span class="opss-task-sub__pipe">|</span>
+                            <a href="pg-remove-item.html" class="govuk-link govuk-link--no-visited-state">
+                                Remove <span class="govuk-visually-hidden">an item</span>
+                            </a>
+                        </span>
                     </li>
                 </ul>
 
