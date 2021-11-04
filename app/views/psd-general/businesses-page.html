@@ -36,7 +36,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
+        <form action="#" method="post" role="search" novalidate>
             <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-7"> <!-- opss-border-bottom -->
 
                 <label class="govuk-label" for="businesses-search">
@@ -44,7 +44,7 @@
                 </label>
 
                 <div class="govuk-input__wrapper opss-search__wrapper">
-                    <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" aria-describedby="search-hint">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" spellcheck="false" aria-describedby="search-hint">
                     <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
                         <span class="govuk-visually-hidden">Search</span>
                     </button>
@@ -75,7 +75,7 @@
                       <label class="govuk-label govuk-body-s" for="results-sort">
                           Sort by
                       </label>
-                      <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
+                      <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
                           <option value="" selected="selected"></option>
                           <option value="newly">Newly added</option>
                           <option value="most">Most cases</option>
