@@ -300,7 +300,7 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
 
 .govuk-radios--small.govuk-radios--conditional {
     .govuk-radios__conditional.govuk-form-group--error {
-        border-left: 4px solid govuk-colour("red");
+        border-left: 4px solid $govuk-error-colour;
     }
     .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {//helps with smooth loading
         display: block !important;
