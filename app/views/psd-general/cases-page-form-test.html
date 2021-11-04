@@ -8,10 +8,10 @@
 
 {% block content %}
 <style>
-  form {display: block; border: 2px solid red; }
+  form {display: block; border: 2px solid red; }/* do not include this STYLE block in the build! */
 </style>
 
-<form action="#" method="post">
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
 
@@ -38,12 +38,10 @@
                     <span id="search-hint">You can search for a case using the keywords that describe it and by filtering the results.</span> You can also filter all case records without a keyword search.
                 </p>
 
-                <!--p class="govuk-body-s"> CONTEXTUAL MSG
-                    You can request search results as a downloadable <abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> spreadsheet file.
-                </p-->
-                <!--p class="govuk-body-s">
-                    You can create a new case or add a product to an existing case.
-                </p-->
+                <p class="govuk-body-s govuk-visually-hidden">
+                  Search results appear within the following <code>form</code> and within the <code>role = region</code>.
+                </p>
+
             </div>
         </details>
     </div>
@@ -53,6 +51,8 @@
         </a>
     </div>
 </div>
+
+<form action="#" method="post" novalidate>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
