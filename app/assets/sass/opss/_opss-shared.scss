@@ -89,7 +89,9 @@ body.js-enabled .opss-nojs-hide {
         margin-bottom: govuk-spacing(4) !important;
     }
 }
-
+.opss-error-colour {
+    color: $govuk-error-colour;
+}
 abbr[title]{
     text-decoration: none;
 
