@@ -31,14 +31,21 @@
                         <p class="govuk-body opss-secondary-text">
                             The selected nanomaterial(s) will be removed and deleted from this draft. If you delete all of them you can add nanomaterials to the draft by completing the first task again.
                         </p>
+
+                        <p class="govuk-body opss-secondary-text">
+                            You can complete individual item tasks again to include nanomaterials you have created.
+                        </p>
                     </div>
 
                     <div class="govuk-checkboxes govuk-!-margin-top-7">
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nano" name="nano" type="checkbox" value="name1">
+                            <input class="govuk-checkboxes__input" id="nano" name="nano" type="checkbox" value="name1" aria-describedby="nano-item-hint">
                             <label class="govuk-label govuk-checkboxes__label" for="nano">
                                 Nanomaterial name
                             </label>
+                            <div id="nano-item-hint" class="govuk-hint govuk-checkboxes__hint govuk-!-font-size-16">
+                                Included in item(s): Ipsumsorium, Vermisiuss.
+                            </div>
                         </div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="nano-2" name="nano" type="checkbox" value="name2">
@@ -47,22 +54,31 @@
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nano-3" name="nano" type="checkbox" value="name3">
+                            <input class="govuk-checkboxes__input" id="nano-3" name="nano" type="checkbox" value="name3" aria-describedby="nano-3-item-hint">
                             <label class="govuk-label govuk-checkboxes__label" for="nano-3">
                                 This nanomaterial
                             </label>
+                            <div id="nano-3-item-hint" class="govuk-hint govuk-checkboxes__hint govuk-!-font-size-16">
+                                Included in item(s): Beniousquim, Vermisiuss, Ellium.
+                            </div>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nano-4" name="nano" type="checkbox" value="name4">
+                            <input class="govuk-checkboxes__input" id="nano-4" name="nano" type="checkbox" value="name4" aria-describedby="nano-4-item-hint">
                             <label class="govuk-label govuk-checkboxes__label" for="nano-4">
                                 Name of the nanomaterial
                             </label>
+                            <div id="nano-4-item-hint" class="govuk-hint govuk-checkboxes__hint govuk-!-font-size-16">
+                                Included in item(s): Beniousquim, Ellium, Soapriuumtimus.
+                            </div>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nano-5" name="nano" type="checkbox" value="name5">
+                            <input class="govuk-checkboxes__input" id="nano-5" name="nano" type="checkbox" value="name5" aria-describedby="nano-5-item-hint">
                             <label class="govuk-label govuk-checkboxes__label" for="nano-5">
                                 Yet another nanomaterial name
                             </label>
+                            <div id="nano-5-item-hint" class="govuk-hint govuk-checkboxes__hint govuk-!-font-size-16">
+                                Included in item(s): Ipsumsorium, Vermisiuss.
+                            </div>
                         </div>
                     </div>
 

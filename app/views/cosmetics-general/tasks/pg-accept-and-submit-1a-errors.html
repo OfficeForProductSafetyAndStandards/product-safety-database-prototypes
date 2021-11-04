@@ -1,0 +1,466 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Accept and submit - errors
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+
+    <p class="govuk-body">You cannot Accept and submit the draft because:</p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-error-summary__list govuk-!-margin-bottom-5">
+      <li>
+        [Nanomaterial name] is not included in any items
+      </li>
+      <li>
+        [Another nanomaterial name] is not included in any items.
+      </li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-bottom-1">You can include the nanomaterial(s) in an item or remove them. <br class="opss-br-desktop">Return to the <a href="#" class="govuk-link govuk-link--no-visited-state">tasks list page</a>.</p>
+
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Accept and submit - review
+      </h1>
+
+      <p class="govuk-body opss-secondary-text">
+        Review the draft product notification. You can still make changes by completing individual tasks again.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+<!-- *************** draft ******************* -->
+
+<div class="govuk-grid-row">
+    <article class="govuk-grid-column-three-quarters">
+
+      <section id="product-table" class="govuk-!-margin-top-7">
+          <h2 class="govuk-visually-hidden">The product</h2>
+
+          <dl class="govuk-summary-list opss-summary-list-mixed">
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Product name</dt>
+                  <dd class="govuk-summary-list__value">Browns Shampoo</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Internal reference number</dt>
+                  <dd class="govuk-summary-list__value">abc-123</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">For children under 3</dt>
+                  <dd class="govuk-summary-list__value">No</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Number of items</dt>
+                  <dd class="govuk-summary-list__value">2</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Shades</dt>
+                  <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>
+                              green
+                          </li>
+                          <li>
+                              brown
+                          </li>
+                          <li>
+                              orange
+                          </li>
+                      </ul>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Label image</dt>
+                  <dd class="govuk-summary-list__value">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">Add product images</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Change<span class="govuk-visually-hidden"> the image label</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Are the items mixed?</dt>
+                  <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Minimum <abbr title="Power of hydrogen">pH</abbr> value</dt>
+                  <dd class="govuk-summary-list__value">12.0</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Maximum <abbr title="Power of hydrogen">pH</abbr> value</dt>
+                  <dd class="govuk-summary-list__value">13.0</dd>
+              </div>
+          </dl>
+      </section>
+
+      <section id="lorem-ipsum-title" class="govuk-!-margin-top-9 opss-grouping">
+          <h3 class="govuk-heading-m opss-grouping__heading-m">Item 1: Lorem ipsum title</h3>
+
+          <dl class="govuk-summary-list opss-summary-list-mixed">
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Shades</dt>
+                  <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>
+                              green
+                          </li>
+                          <li>
+                              brown
+                          </li>
+                          <li>
+                              orange
+                          </li>
+                      </ul>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      Contains <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                  </dt>
+                  <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>
+                              nanomaterial_01
+                          </li>
+                          <li>
+                              Name of nanomaterial_02
+                          </li>
+                          <li>
+                              A third nanomaterial_03
+                          </li>
+                      </ul>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Application instruction</dt>
+                  <dd class="govuk-summary-list__value">Oral</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Exposure condition</dt>
+                  <dd class="govuk-summary-list__value">Rinsed off</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Category of product</dt>
+                  <dd class="govuk-summary-list__value">Oral hygiene products</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Category of oral hygiene product</dt>
+                  <dd class="govuk-summary-list__value">Mouth wash / breath spray</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Formulation given as</dt>
+                  <dd class="govuk-summary-list__value">Concentration ranges</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Frame formulation</dt>
+                  <dd class="govuk-summary-list__value"><!-- ? --></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Formulation</dt>
+                  <dd class="govuk-summary-list__value">
+                      <a class="govuk-link govuk-link--no-visited-state" href="../mypdf.pdf">mypdf.pdf</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Change<span class="govuk-visually-hidden"> the Lorem ipsum title formulation document</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Physical form</dt>
+                  <dd class="govuk-summary-list__value">Cream or paste</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Special applicator</dt>
+                  <dd class="govuk-summary-list__value">No</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Acute poisoning information</dt>
+                  <dd class="govuk-summary-list__value"><!-- ? --></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><abbr>pH</abbr> range</dt>
+                  <dd class="govuk-summary-list__value">13.0 to 14.0</dd>
+              </div>
+          </dl>
+      </section>
+
+      <section id="ipsoniuum-title" class="govuk-!-margin-top-9 opss-grouping">
+          <h3 class="govuk-heading-m opss-grouping__heading-m">
+              Item 2: Ipsoniuum name
+          </h3>
+
+          <dl class="govuk-summary-list opss-summary-list-mixed">
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Shades</dt>
+                  <dd class="govuk-summary-list__value">None</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      Contains <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                  </dt>
+                  <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>
+                              Substance one, 200-21-1, 799-772-7
+                          </li>
+                          <li>
+                              Substance two, 233-88-1, 777-787-7
+                          </li>
+                      </ul>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Nanomaterials</dt>
+                  <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                          <li>
+                              Nanomaterials name one
+                          </li>
+                          <li>
+                              Second nanomaterial name
+                          </li>
+                      </ul>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Application instruction</dt>
+                  <dd class="govuk-summary-list__value">Inhalation</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Exposure condition</dt>
+                  <dd class="govuk-summary-list__value">Left on</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Category of product</dt>
+                  <dd class="govuk-summary-list__value">Hair and scalp products</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Category of hair and scalp product</dt>
+                  <dd class="govuk-summary-list__value">Hair colouring products</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Category of hair colouring product</dt>
+                  <dd class="govuk-summary-list__value">Non-oxidative hair colour products</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Formulation given as</dt>
+                  <dd class="govuk-summary-list__value">Concentration ranges</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Frame formulation</dt>
+                  <dd class="govuk-summary-list__value"><!-- ? --></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Exposure condition</dt>
+                  <dd class="govuk-summary-list__value">Left on</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Formulation</dt>
+                  <dd class="govuk-summary-list__value">
+                      <a class="govuk-link govuk-link--no-visited-state" href="../mypdf-1.pdf">mypdf-1.pdf</a>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Change<span class="govuk-visually-hidden"> the ipsoniuum title formulation document</span>
+                      </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Physical form</dt>
+                  <dd class="govuk-summary-list__value">Liquid</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Special applicator</dt>
+                  <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Applicator type</dt>
+                  <dd class="govuk-summary-list__value">Encapsulated</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Acute poisoning information</dt>
+                  <dd class="govuk-summary-list__value"><!-- ? --></dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"><abbr title="Power of hydrogen">pH</abbr> range</dt>
+                  <dd class="govuk-summary-list__value">13.0 to 14.0</dd>
+              </div>
+          </dl>
+
+      </section>
+
+      <section id="hair-dye-paste" class="govuk-!-margin-top-9 opss-grouping">
+        <h3 class="govuk-heading-m opss-grouping__heading-m">Item 3: Hair dye paste</h3>
+
+        <dl class="govuk-summary-list govuk-summary-list opss-summary-list-mixed">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Shades</dt>
+                <dd class="govuk-summary-list__value ">
+                    <ul class="govuk-list govuk-list--bullet">
+                            <li>Brown</li>
+                            <li>Natural Black</li>
+                    </ul>
+                </dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Contains <abbr title="Carcinogenic, mutagenic, reprotoxic">CMR</abbr> substances</dt>
+                <dd class="govuk-summary-list__value ">No</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Nanomaterials</dt>
+                <dd class="govuk-summary-list__value ">  None</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Category of product</dt>
+                <dd class="govuk-summary-list__value ">Hair and scalp products</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Category of hair and scalp product</dt>
+                <dd class="govuk-summary-list__value ">Hair colouring products</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Category of hair colouring product</dt>
+                <dd class="govuk-summary-list__value ">Other hair colouring products</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Formulation given as</dt>
+                <dd class="govuk-summary-list__value ">Concentration ranges</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Formulation</dt>
+                <dd class="govuk-summary-list__value ">
+                    <a class="govuk-link govuk-link--no-visited-state" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2a14bcb37a6d8dcdafb51da20d31252407d30482/Ingredients_test%20(1)%20(1).pdf">Ingredients_test (1) (1).pdf</a>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link govuk-link--no-visited-state" href="/responsible_persons/2/notifications/59917298/components/50/formulation/edit">Change <span class="govuk-visually-hidden">formulation document</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Physical form</dt>
+                <dd class="govuk-summary-list__value ">Cream or paste</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Special applicator</dt>
+                <dd class="govuk-summary-list__value ">No</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key ">Acute poisoning information</dt>
+                <dd class="govuk-summary-list__value "></dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key "><abbr title="Power of hydrogen">pH</abbr> range</dt>
+                <dd class="govuk-summary-list__value ">11.0 to 12.0</dd>
+                <span class="govuk-summary-list__actions"></span>
+            </div>
+        </dl>
+      </section>
+
+        <section class="govuk-!-margin-top-7">
+          <div class="govuk-button-group">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">Return to the tasks list page</a>
+          </div>
+        </section>
+
+    </article>
+
+    <aside class="govuk-grid-column-one-quarter opss-desktop-padding-left-0"> <!--  opss-desktop-sticky -->
+        <div class="opss-border-all govuk-!-padding-top-2 govuk-!-padding-right-2 govuk-!-padding-bottom-2 govuk-!-padding-left-2 govuk-!-margin-top-4 govuk-!-margin-bottom-4">
+            <h2 class="govuk-heading-s">Responsible Person</h2>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-vertical">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-display-block govuk-!-font-size-16">Name</dt>
+                    <dd class="govuk-summary-list__value govuk-!-display-block govuk-!-font-size-16">Smith &amp; Son</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Address</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">
+                        100 Acacia Ave<span class="govuk-visually-hidden">, </span><br>
+                        London<span class="govuk-visually-hidden">, </span><br>
+                        England<span class="govuk-visually-hidden">, </span><br>
+                        SE11 4SJ
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div class="opss-border-all govuk-!-padding-top-2 govuk-!-padding-right-2 govuk-!-padding-bottom-2 govuk-!-padding-left-2 govuk-!-margin-top-4 govuk-!-margin-bottom-4">
+            <h2 class="govuk-heading-s">Assigned contact</h2>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-vertical">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Name</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">Darren Harridence</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Email</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">name@thisexample.com</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-size-16">Telephone</dt>
+                    <dd class="govuk-summary-list__value govuk-!-font-size-16">020 7947 6330</dd>
+                </div>
+            </dl>
+        </div>
+    </aside>
+</div>
+
+
+<!-- *************** draft ends ************** -->
+
+    </div>
+  </div>
+
+
+{% endblock %}

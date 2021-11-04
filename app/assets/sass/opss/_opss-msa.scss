@@ -312,7 +312,8 @@ li.opss-task-sub {
     @include govuk-media-query($from: tablet) {
         /*h3 {@include opss-font-size($s: 19px, $l: 1.25); }*/
         /*li b {@include opss-font-size($s: 12px, $l: 0.9); }*/
-        li span {
+        li span,
+        .opss-button-link {
             @include opss-font-size($s: 16px, $l: 1.5);//1.0
         }
 
@@ -345,6 +346,11 @@ li.opss-task-sub {
             max-width: none;
             display: block;
             float: right;
+        }
+
+        .opss-button-link {
+            margin-bottom: 0;
+            top: -2px;
         }
     }
 
