@@ -57,10 +57,7 @@
 </div>
 
 <div class="govuk-grid-row">
-
-    <!--div class="govuk-grid-column-one-third-from-desktop">&nbsp;</div-->
-
-    <section class="govuk-grid-column-three-quarters"><!-- govuk-grid-column-two-thirds-from-desktop -->
+    <section class="govuk-grid-column-three-quarters">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -91,8 +88,7 @@
       <div class="govuk-grid-row">
           <div class="govuk-grid-column-full" role="region" aria-label="Businesses">
 
-
-              <table class="govuk-table opss-table opss-table--last-col-right">
+              <table id="results" class="govuk-table opss-table opss-table--last-col-right">
                 <caption class="govuk-table__caption govuk-visually-hidden">Businesses: a simple data table.</caption>
 
                 <thead class="govuk-table__head">
@@ -233,13 +229,12 @@
       </div>
 
     </section>
-
 </div>
 
 <script>
   document.getElementById("results-sort").addEventListener("change", function(){
-      document.getElementById("sort-form").submit();
-      //alert('form submitted event');
+      //document.getElementById("sort-form").submit();
+      alert('form submitted event');
     }
   );
 </script>
