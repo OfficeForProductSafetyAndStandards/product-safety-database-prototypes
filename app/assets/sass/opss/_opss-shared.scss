@@ -50,7 +50,8 @@ main.govuk-main-wrapper {
 .opss-table tbody tr th:first-child,
 tbody th.govuk-table__header,
 tbody th.govuk-table__header a,
-tbody td a[href^="mailto:"] {
+tbody td a[href^="mailto:"],
+.govuk-list *[class^="govuk-heading"] .govuk-link {
     @include word-wrap;
 }
 h1.govuk-fieldset__heading,
@@ -505,6 +506,12 @@ dl.opss-summary-list-aside {
         }
         tbody tr:last-child th, tbody tr:last-child td {
             padding-bottom: govuk-spacing(2) + 2;
+        }
+    }
+
+    &.opss-table-items--first-col-33 {
+        @include govuk-media-query($from: tablet) {
+            thead th:nth-child(2) {width: 33%; }
         }
     }
 }

@@ -7,7 +7,9 @@
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
-
+.govuk-list *[class^="govuk-heading"] .govuk-link {
+    @include word-wrap;
+}
 
 .opss-tel-number {
     @include govuk-media-query($from: desktop) {
@@ -194,7 +196,7 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     float: right;
 }
 
-.opss-list--borders {
+/*.opss-list--borders {
     li {
         padding: govuk-spacing(4) 0 govuk-spacing(2) 0;
         border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
@@ -209,13 +211,11 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     & + .opss-pagination-link {
         margin-top: - govuk-spacing(4);
     }
-}
-
-.govuk-list *[class^="govuk-heading"] .govuk-link {
-    @include word-wrap;
-}
+}*/
 
 /* .opss-summary-list starts ... */
+/*
+
 *[class^="govuk-heading"] + .opss-summary-list {
     margin-top: - govuk-spacing(1);
 }
@@ -266,11 +266,11 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
                 padding-bottom: 0;
             }
         }
-        @include govuk-media-query($from: desktop) {
-            padding-left: govuk-spacing(6);
-        }
+
     }
 }
+
+*/
 /* .opss-summary-list ends */
 
 .opss-summary-list-mixed > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
@@ -385,4 +385,20 @@ li.opss-task-sub {
 
 .opss-tag--red {
     background-color: $govuk-error-colour;
+}
+
+@include govuk-media-query($from: tablet) {
+    .govuk-radios--small.govuk-radios--conditional.opss-radios--tight {
+        .govuk-radios__conditional {
+            padding-left: govuk-spacing(2);
+
+            .govuk-date-input__item {
+                margin-right: govuk-spacing(1);
+
+                .govuk-label {
+                    @include opss-font-size($s: 16px, $l: 1.5);//1.0
+                }
+            }
+        }
+    }
 }
