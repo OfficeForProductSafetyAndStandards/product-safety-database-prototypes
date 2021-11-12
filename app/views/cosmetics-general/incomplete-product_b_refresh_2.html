@@ -24,9 +24,8 @@
             </div>
             <div class="govuk-notification-banner__content">
                 <h3 class="govuk-notification-banner__heading">
-                    The file is being uploaded
+                    One or more files were uploaded successfully
                 </h3>
-                <p class="govuk-body">This may take a few minutes to complete. You can check below if the upload was successful by refreshing this page.</p>
             </div>
         </div>
 
@@ -120,7 +119,9 @@
 
                         <ul class="govuk-list govuk-list--bullet">
                             <li>
-                                a_new_test_document_to_upload.pdf
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">
+                                    a_new_test_document_to_upload.pdf
+                                </a>
                             </li>
                             <li>
                                 <a class="govuk-link govuk-link--no-visited-state" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcnNWIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cf2eb27c27beeb937bf26e86c5653b44e248a14f/page1-unsafe-product-report-week-25.pdf">
@@ -128,11 +129,6 @@
                                 </a>
                             </li>
                         </ul>
-
-                        <a id="refresh-1" class="govuk-link govuk-link--no-visited-state govuk-!-display-inline-block" href="/responsible_persons/628/notifications/67816230/edit">
-                            <span class="govuk-!-font-weight-bold">Refresh label image(s)</span>
-                        </a>
-                        <span class="govuk-visually-hidden">by refreshing the page</span>
 
                     </dd>
                     <dd class="govuk-summary-list__actions">
@@ -451,24 +447,14 @@
                     <input name="utf8" type="hidden" value="✓">
                     <input type="hidden" name="authenticity_token" value="H8rIjYlGgKBCZk3tEVIWgUuqFfvKLRMSx09kb2PVGNaTtwzK+LHJ7HQ46+2sb5Oh0/pX32PB20LXQo+b94Mijg==">
 
-                    <!--p class="govuk-body">
+                    <p class="govuk-body">
                         By submitting this cosmetic product notification, you confirm that the details you provide are correct to the best of your knowledge.
-                    </p-->
-                    <div class="govuk-warning-text">
-                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                        <strong class="govuk-warning-text__text">
-                            <span class="govuk-warning-text__assistive">Warning</span>
-                            You cannot Accept and submit this notification until you have <br class="opss-br-desktop"><a href="#refresh-1" class="govuk-link govuk-link--no-visited-state">refreshed the label list</a>. This will confirm if the files have successfully uploaded.
-                        </strong>
-                    </div>
+                    </p>
 
                     <div class="govuk-button-group">
-                        <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled">
+                        <button class="govuk-button">
                             Accept and submit
                         </button>
-                        <!--button class="govuk-button ">
-                            Accept and submit
-                        </button-->
 
                         <a class="govuk-link govuk-link--no-visited-state" href="/responsible_persons/628/notifications?tab=incomplete">Return to Cosmetic products</a>
                     </div>
