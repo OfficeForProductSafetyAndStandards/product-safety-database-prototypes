@@ -67,6 +67,11 @@ h1.govuk-label-wrapper label.govuk-label--l {
 .opss-no-wrap {
   white-space: nowrap;
 }
+@include govuk-media-query($from: desktop) {
+    .opss-no-wrap-desktop {
+        white-space: nowrap;
+    }
+}
 .opss-nojs-hide {
     display: none;
 }
@@ -85,6 +90,7 @@ body.js-enabled .opss-nojs-hide {
         display: block;
     }
 }
+
 .opss-skip-link:focus {
     &.opss-skip-link--mb {
         margin-bottom: govuk-spacing(4) !important;
