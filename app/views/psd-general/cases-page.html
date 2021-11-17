@@ -26,6 +26,29 @@
       return false;
     }
   );
+
+
+  var myLinksSort = document.getElementById("opss-results-sort");
+  var myLinksSortHeight = (parseFloat(getComputedStyle(myLinksSort, null).height.replace("px", "")) * 2) - 10;
+  //var myLinksSortDDs = myLinksSort.getElementsByTagName("dd").length;
+  //var howMuchMargin = (myLinksSortHeight * 2) - 10; // 10 = borders of DL and top of table
+
+  myLinksSort.addEventListener("click", function(e){
+      //e.preventDefault();
+
+      myLinksSort.classList.remove("opss-dl-select--closed");
+      myLinksSort.style.marginBottom = "-"+ myLinksSortHeight +"px";
+
+      myLinksSort.addEventListener("mouseleave", function(){
+        myLinksSort.classList.add("opss-dl-select--closed");
+        myLinksSort.removeAttribute('style');
+      });
+
+
+      //window.location.replace(mySort.value);
+      //return false;
+    }
+  );
 </script>
 
 
