@@ -90,6 +90,12 @@ body.js-enabled .opss-nojs-hide {
         display: block;
     }
 }
+.opss-float-left {
+    float: left;
+}
+.opss-float-right {
+    float: right;
+}
 
 .opss-skip-link:focus {
     &.opss-skip-link--mb {
