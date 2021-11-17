@@ -290,3 +290,85 @@ ul.opss-radio-list {
         background: govuk-colour("white");
     }
 }
+
+
+
+
+.opss-dl-select, .opss-dl-select:before, .opss-dl-select:after {
+  box-sizing: inherit;
+}
+
+.opss-dl-select  {
+
+    $dl-select-height: govuk-spacing(6) + govuk-spacing(1);
+    background-color: govuk-colour("white");
+    position: relative;
+    z-index: 1;
+
+    & dt, & dd {
+        padding: 0; margin: 0;
+    }
+
+    border: 2px solid $govuk-input-border-colour;
+    margin-top: govuk-spacing(6);
+    margin-bottom: govuk-spacing(1);
+    min-width: 165px;
+    overflow-x: clip;
+    box-shadow: 0px 4px 12px -3px rgba(0,0,0,0.5);
+
+    dt {
+        margin-top: - (govuk-spacing(6) + 2);
+        padding-bottom: govuk-spacing(1);
+        border-bottom: 2px solid $govuk-input-border-colour;
+    }
+
+    dt + dd {
+        overflow: clip;
+    }
+
+    dd {
+        width: 100% !important;
+
+        a {
+            padding: 0 0 0 govuk-spacing(2) - 2;
+            line-height: inherit;
+            display: inline-block;
+            text-align: left;
+            cursor: default;
+            width: 100%;
+        }
+
+        a, a:visited, a:active, a:focus {
+            color: $govuk-text-colour;
+            text-decoration: none;
+        }
+
+        a:hover,
+        &.opss-dl-select__show a {
+            color: govuk-colour("white");
+            background-color: $govuk-link-colour;
+        }
+    }
+
+    &.opss-dl-select--closed {
+        height: $dl-select-height;
+        box-shadow: none;
+
+        dd {
+            display: none;
+        }
+
+        dd.opss-dl-select__show {
+            display: block;
+            pointer-events: none;
+            line-height: 2;
+
+            a {
+                color: $govuk-text-colour;
+                background-color: transparent;
+            }
+        }
+    }
+
+/* focus states ! */
+}

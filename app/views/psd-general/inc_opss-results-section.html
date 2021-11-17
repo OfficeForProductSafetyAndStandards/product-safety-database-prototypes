@@ -6,14 +6,86 @@
            </div>
            <div class="govuk-grid-column-one-third">
                <div class="govuk-form-group opss-text-align-right">
-                   <!--form id="sort-form" action="#" method="post"-->
-                   <fieldset class="opss-border-none govuk-!-padding-0">
+                    <!--form id="sort-form" action="#" method="post"-->
+                    <fieldset class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
                         <label class="govuk-label govuk-body-s" for="results-sort">
-                            Sort by
+                            Sort <span class="govuk-visually-hidden">the results</span> by
                         </label>
-                        {% include "psd-general/inc_opss-sorting.html" %}
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
+                            <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=relevance">Relevance</option>
+                            <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=recent" selected="selected">Recent updates</option>
+                            <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=oldest">Oldest updates</option>
+                            <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=newest">Newest cases</option>
+                            <option value="https://www.bbc.co.uk/">DEMO</option>
+                        </select>
                     </fieldset>
                     <!--/form-->
+
+
+                    <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden" style="box-shadow: none; margin-bottom: 0;">
+                        <dt>
+                            Sort <span class="govuk-visually-hidden">the results</span> by
+                        </dt>
+                        <dd>
+                            <a href="blah?sort=relevance">Relevance</a>
+                        </dd>
+                        <dd>
+                            <a href="blah?sort=recent">Recent updates</a>
+                        </dd>
+                        <dd class="opss-dl-select__show">
+                            <a href="blah?sort=oldest"><span class="govuk-visually-hidden">Active:</span> Oldest updates</a>
+                        </dd>
+                        <dd>
+                            <a href="blah?sort=newest">Newest cases</a>
+                        </dd>
+                    </dl>
+
+
+
+                    <!--dl id="opss-results-sort" class="govuk-list opss-float-right opss-dl-select opss-dl-select--closed">
+                        <dt>
+                            Sort <span class="govuk-visually-hidden">the results</span> by
+                        </dt>
+                        <dd>
+                            <a href="blah?sort=relevance">Relevance</a>
+                        </dd>
+                        <dd>
+                            <a href="blah?sort=recent">Recent updates</a>
+                        </dd>
+                        <dd class="opss-dl-select__show">
+                            <a href="blah?sort=oldest">Oldest updates</a>
+                        </dd>
+                        <dd>
+                            <a href="blah?sort=newest">Newest cases</a>
+                        </dd>
+                    </dl>
+
+                    <dl class="govuk-list opss-js-enabled-hidden">
+                        <dt>
+                            Sort <span class="govuk-visually-hidden">the results</span> by
+                        </dt>
+                        <dd>
+                            <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="blah?sort=relevance">Relevance</a>
+                        </dd>
+                        <dd>
+                            <span class="govuk-!-font-weight-bold">
+                                <span class="govuk-visually-hidden">Currently active: </span>
+                                <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="blah?sort=recent">Recent updates</a>
+                            </span>
+                        </dd>
+                        <dd>
+
+                        </dd>
+                        <dd>
+                            <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="blah?sort=oldest">Oldest updates</a>
+                        </dd>
+                        <dd>
+                            <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="blah?sort=newest">Newest cases</a>
+                        </dd>
+                    </dl-->
+
+
                 </div>
            </div>
         </div>
