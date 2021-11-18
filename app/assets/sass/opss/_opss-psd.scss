@@ -291,20 +291,7 @@ ul.opss-radio-list {
     }
 }
 
-
-
-
-.opss-dl-select, .opss-dl-select:before, .opss-dl-select:after {
-  box-sizing: inherit;
-}
-
-.opss-dl-select  {
-
-    $dl-select-height: govuk-spacing(6) + govuk-spacing(1);
-    background-color: govuk-colour("white");
-    position: relative;
-    z-index: 1;
-
+.opss-dl-select {/* non-js select */
     & dt, & dd {
         padding: 0; margin: 0;
     }
@@ -314,20 +301,15 @@ ul.opss-radio-list {
     margin-bottom: govuk-spacing(1);
     min-width: 165px;
     overflow-x: clip;
-    box-shadow: 0px 4px 12px -3px rgba(0,0,0,0.5);
 
     dt {
-        margin-top: - (govuk-spacing(6) + 2);
+        margin-top: - govuk-spacing(6);
         padding-bottom: govuk-spacing(1);
-        border-bottom: 2px solid $govuk-input-border-colour;
-    }
-
-    dt + dd {
-        overflow: clip;
     }
 
     dd {
         width: 100% !important;
+        overflow: clip;
 
         a {
             padding: 0 0 0 govuk-spacing(2) - 2;
@@ -344,31 +326,18 @@ ul.opss-radio-list {
         }
 
         a:hover,
-        &.opss-dl-select__show a {
+        &.opss-dl-select__active a {
             color: govuk-colour("white");
             background-color: $govuk-link-colour;
         }
-    }
 
-    &.opss-dl-select--closed {
-        height: $dl-select-height;
-        box-shadow: none;
-
-        dd {
-            display: none;
-        }
-
-        dd.opss-dl-select__show {
-            display: block;
-            pointer-events: none;
-            line-height: 2;
-
-            a {
-                color: $govuk-text-colour;
-                background-color: transparent;
-            }
+        a:focus,
+        .opss-dl-select__active a:focus {
+            box-shadow: none;
+            outline: none;
+            font-weight: bold;
+            color: $govuk-text-colour;
+            background-color: $govuk-focus-colour;
         }
     }
-
-/* focus states ! */
 }
