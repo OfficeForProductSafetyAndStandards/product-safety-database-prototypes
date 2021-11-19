@@ -22,7 +22,7 @@
   var mySort = document.getElementById("results-sort");
   mySort.addEventListener("change", function(e){
       e.preventDefault();
-      window.location.replace(mySort.value);
+      window.location.assign(mySort.value);//window.location.replace(mySort.value);
       return false;
     }
   );
