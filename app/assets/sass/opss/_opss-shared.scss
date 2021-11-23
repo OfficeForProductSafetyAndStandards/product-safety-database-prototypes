@@ -105,6 +105,35 @@ body.js-enabled .opss-nojs-hide {
 .opss-error-colour {
     color: $govuk-error-colour;
 }
+
+@include govuk-media-query($from: desktop) {
+    .opss-right-box-arrow {
+        position: relative;
+        background-color: govuk-colour("light-grey");
+        margin-right: govuk-spacing(5) !important;
+        border-radius: 5px;
+        padding-left: govuk-spacing(2);
+
+        .govuk-grid-column-one-quarter > & {
+            margin-right: govuk-spacing(7) + govuk-spacing(1) !important;
+        }
+    }
+
+    .opss-right-box-arrow:after {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-left-color: govuk-colour("light-grey");
+        border-width: 40px;
+        margin-top: -40px;
+    }
+}
+
 abbr[title]{
     text-decoration: none;
 
@@ -541,8 +570,11 @@ dl.opss-summary-list-aside {
     .opss-desktop-padding-bottom-8 {
         padding-bottom: govuk-spacing(8);
     }
-    .opss-desktop-margin-bottom-218px {
-        margin-bottom: 218px !important; /* aligns bottom of tbody */
+    .opss-desktop-margin-bottom-240px {
+        margin-bottom: 240px !important;/* aligns bottom of tbody */
+    }
+    .opss-desktop-margin-bottom-220px {
+        margin-bottom: 220px !important;/* aligns bottom of tbody */
     }
 }
 
