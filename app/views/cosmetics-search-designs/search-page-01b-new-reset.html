@@ -197,7 +197,7 @@
                     Apply
                 </button>
 
-                <button type="reset" class="govuk-button govuk-!-font-size-16 opss-button-link opss-nojs-hide" id="opss-reset">
+                <button type="reset" class="govuk-button govuk-!-font-size-16 opss-button-link" id="opss-reset">
                     Reset
                 </button>
             </div>
@@ -445,21 +445,16 @@
 </script>
 
 
-<!--script>
-    document.getElementById("opss-reset").addEventListener("click", function(){
-            var selects = document.getElementById("category");
 
+
+
+<!--script>document.getElementById("opss-reset").addEventListener("click", function(){
+            var selects = document.getElementById("category");
             selects.querySelector("[selected]").removeAttribute("selected");
             selects[0].setAttribute("selected", "selected"); //classList.add('xxxxxxxxxxx')
-        }
-    );
-
-
+        });
   document.getElementById("results-sort").addEventListener("change", function(){
       //document.getElementById("sort-form").submit();
       alert('form submitted event');
-    }
-  );
-</script-->
-
+    });</script-->
 {% endblock %}
