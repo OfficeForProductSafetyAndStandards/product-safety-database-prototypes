@@ -8,15 +8,17 @@
 
 {% block content %}
 
-{% include "psd-general/inc_opss-header-section.html" %}
+  {% include "psd-general/inc_opss-header-section.html" %}
 
-<div class="govuk-grid-row opss-full-height">
+  <div class="govuk-grid-row opss-full-height">
 
-    {% include "psd-general/inc_opss-filters-section.html" %}
+      {% include "psd-general/inc_opss-filters-section.html" %}
 
-    {% include "psd-general/inc_opss-results-section.html" %}
+      {% include "psd-general/inc_opss-results-section.html" %}
 
-</div>
+  </div>
+
+
 
 <script>
   var mySort = document.getElementById("results-sort");
@@ -26,6 +28,29 @@
       return false;
     }
   );
+
+
+  //****** js for reset filters starts ******
+  function findAncestor (el, sel) {//to support ie11 (can't use closest)
+      while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,sel)));
+      return el;
+  }
+  var myReset = document.getElementById("opss-reset");
+  var mySection = findAncestor(myReset,"section");
+
+  myReset.addEventListener("click", function(){
+      var checkedRadios = mySection.querySelectorAll(".govuk-radios__input[checked]");
+      Array.prototype.forEach.call(checkedRadios, function(el, i){
+        el.removeAttribute('checked');
+      });
+
+      var radioGroups = mySection.querySelectorAll(".govuk-radios");
+      Array.prototype.forEach.call(radioGroups, function(el, i){
+        el.querySelector(".govuk-radios__input").setAttribute("checked", "checked");
+      });
+    }
+  );
+  //****** js for reset fitlers ends ******
 
 
   /*var myLinksSort = document.getElementById("opss-results-sort");
@@ -50,6 +75,4 @@
     }
   );*/
 </script>
-
-
 {% endblock %}
