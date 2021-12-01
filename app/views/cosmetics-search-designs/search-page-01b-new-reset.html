@@ -58,10 +58,10 @@
                         <label class="govuk-label" for="category">
                             Product category
                         </label>
-                        <select class="govuk-select" id="category" name="category">
+                        <select class="govuk-select" id="notification_search_form_category" name="category">
                             <option value="" selected="selected">All</option>
                             <option value="val01">Option 1</option>
-                            <option value="val02">Option 2</option>
+                            <option value="val02" selected="selected">Option 2</option>
                             <option value="val03">Option 3</option>
                             <option value="val04">Option 4</option>
                         </select>
@@ -433,13 +433,24 @@
     var filterForm = document.getElementById('new_notification_search_form_filters');
     var ele1 = filterForm.querySelectorAll('.govuk-radios__conditional');
     var ele2 = filterForm.querySelectorAll('.govuk-radios--conditional .govuk-radios__input');
+    var ele3 = filterForm.querySelectorAll('.govuk-radios--conditional .govuk-date-input__input');
+    var prodSelect = document.getElementById('notification_search_form_category');
 
     document.getElementById('opss-reset').addEventListener('click', function () {//click the filter's form reset link/button
+        prodSelect.querySelectorAll('option').forEach(function(s){//all options
+            s.removeAttribute('selected');
+        });
+        prodSelect.querySelector('option').setAttribute('selected', 'selected');//the first option
+
         ele1.forEach(function(e1) {
             e1.classList.add('govuk-radios__conditional--hidden');
         });
         ele2.forEach(function(e2) {
             e2.setAttribute('aria-expanded', false);
+            e2.removeAttribute('checked');
+        });
+        ele3.forEach(function(e3) {
+            e3.setAttribute('value', '');
         });
     }, false);
 </script>

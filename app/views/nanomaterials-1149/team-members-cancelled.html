@@ -7,6 +7,17 @@
 
 {% block content %}
 
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    The invitation was cancelled
+  </h3>
+{% endset %}
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
@@ -101,19 +112,6 @@
       },
       {
         text: "Joan Briggs"
-      }
-    ],
-    [
-      {
-        html: '<span class="govuk-!-font-weight-regular">Graham Coals<span class="govuk-visually-hidden">:</span> <br><span class="govuk-!-font-size-16">Awaiting confirmation</span></span>'
-      },
-      {
-        html: '<a href="mailto:jessicacoalsworth" class="govuk-link govuk-link--no-visited-state">gc-office@gmail.co.uk</a>
-        <span class="govuk-visually-hidden"> | </span><br>
-        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-bold govuk-!-margin-right-2">Resend invitation<span class="govuk-visually-hidden"> to Graham Coals</span></a><span class="govuk-visually-hidden"> | </span><a href="/cosmetics-general/cancel-invitation" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-bold opss-no-wrap">Cancel invitation<span class="govuk-visually-hidden"> to Graham Coals</span></a>'
-      },
-      {
-        html: 'Joan Briggs'
       }
     ]
   ]

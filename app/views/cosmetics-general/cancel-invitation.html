@@ -1,0 +1,61 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Cancel invitation
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form action="/nanomaterials-1149/team-members-cancelled" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="cancel-invite-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you want to cancel the invitation?
+              </h1>
+            </legend>
+
+            <div id="cancel-invite-hint" class="govuk-hint">
+                Invitation emails already sent to the user will not work if you cancel the invitation.
+            </div>
+
+            <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cancel-invite" name="cancel-invite" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="cancel-invite">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cancel-invite-2" name="cancel-invite" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="cancel-invite-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button ">Save and continue</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
