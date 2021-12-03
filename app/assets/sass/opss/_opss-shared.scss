@@ -109,7 +109,7 @@ body.js-enabled .opss-nojs-hide {
 .opss-grey-bg {
     background-color: govuk-colour("light-grey");
 }
-/*@include govuk-media-query($from: desktop) {//use on
+@include govuk-media-query($from: desktop) {//use on
     .opss-right-box-arrow {
         position: relative;
         background-color: govuk-colour("light-grey");
@@ -135,7 +135,7 @@ body.js-enabled .opss-nojs-hide {
         border-width: 40px;
         margin-top: -40px;
     }
-}*/
+}
 
 abbr[title]{
     text-decoration: none;
