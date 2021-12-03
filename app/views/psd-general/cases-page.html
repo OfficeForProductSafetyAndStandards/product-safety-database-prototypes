@@ -37,12 +37,16 @@
   }
   var myReset = document.getElementById("opss-reset");
   var mySection = findAncestor(myReset,"section");
-  var checkedRadios = document.querySelectorAll('.govuk-radios__input');
+  var checkedRadios = mySection.querySelectorAll('.govuk-radios__input');
   var radioGroups = mySection.querySelectorAll(".govuk-radios");
+  var expandedDivs = mySection.querySelectorAll(".govuk-radios__conditional");
 
   myReset.addEventListener("click", function(){
       Array.prototype.forEach.call(checkedRadios, function(el, i) {
         el.checked = false;
+      });
+      Array.prototype.forEach.call(expandedDivs, function(el, i) {
+        el.classList.add("govuk-radios__conditional--hidden");
       });
       Array.prototype.forEach.call(radioGroups, function(el, i){
         el.querySelector(".govuk-radios__input").checked = true;
