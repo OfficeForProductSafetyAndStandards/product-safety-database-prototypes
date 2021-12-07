@@ -23,7 +23,7 @@
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body-s govuk-!-margin-bottom-1">
-                    <span id="search-hint">You can search for one or more businesses using the keywords that describe them.</span> You can also sort the ordering of the search results.
+                    <span id="search-hint">You can search for one or more businesses using the keywords that describe them or search for a specific business by using its company number.</span> You can also sort the ordering of the search results.
                 </p>
                 <p class="govuk-body-s govuk-visually-hidden">
                   Search results appear within the following <code>form</code> and within the <code>role = region</code>.
@@ -37,222 +37,238 @@
 </div>
 
 <form action="#" accept-charset="UTF-8" method="get" role="search" novalidate>
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
 
-          <form action="#" method="post" role="search" novalidate>
-              <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-7"> <!-- opss-border-bottom -->
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
 
-                  <label class="govuk-label" for="businesses-search">
-                      Keywords search
-                  </label>
+              <form action="#" method="post" role="search" novalidate>
+                  <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-7"> <!-- opss-border-bottom -->
 
-                  <div class="govuk-input__wrapper opss-search__wrapper">
-                      <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" spellcheck="false" aria-describedby="search-hint">
-                      <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
-                          <span class="govuk-visually-hidden">Search</span>
-                      </button>
+                      <label class="govuk-label" for="businesses-search">
+                          Keywords search
+                      </label>
+
+                      <div class="govuk-input__wrapper opss-search__wrapper">
+                          <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" spellcheck="false" aria-describedby="search-hint">
+                          <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                              <span class="govuk-visually-hidden">Search</span>
+                          </button>
+                      </div>
+
                   </div>
+              </form>
+
+          </div>
+      </div>
+
+      <div class="govuk-grid-row opss-full-height">
+
+        <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+            <!--a href="#results" class="govuk-skip-link opss-skip-link opss-skip-link--mb">
+                Skip to results
+            </a-->
+
+            <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
+                <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+                    Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="govuk-grid-column-three-quarters">
+
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">12 businesses matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, were found.</p>
+                    <!--p class="govuk-body">There are currently 248 businesses .......... ?</p-->
+
+                    <!-- Company registration number -->
+              </div>
+              <div class="govuk-grid-column-one-third">
+                      <div class="govuk-form-group opss-text-align-right">
+
+                            <fieldset class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
+                                <label class="govuk-label govuk-body-s" for="results-sort">
+                                    Sort <span class="govuk-visually-hidden">the results</span> by
+                                </label>
+
+                              <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
+                                    <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1" selected="selected">Recently added</option>
+                                    <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">Name A&ndash;Z</option>
+                                    <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">Name Z&ndash;A</option>
+                                </select>
+                            </fieldset>
+
+                            <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
+                                <dt>
+                                    Sort <span class="govuk-visually-hidden">the results</span> by
+                                </dt>
+                                <dd>
+                                    <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</a>
+                                </dd>
+                                <dd>
+                                    <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
+                                      <span class="govuk-visually-hidden">Active: </span>Option 2
+                                    </a>
+                                </dd>
+                                <dd class="opss-dl-select__active">
+                                    <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
+                                        Option 3
+                                    </a>
+                                </dd>
+                            </dl>
+                      </div>
 
               </div>
-          </form>
+          </div>
+
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full" role="region" aria-label="Businesses">
+
+                  <table id="results" class="govuk-table opss-table opss-table--last-col-right">
+                    <caption class="govuk-table__caption govuk-visually-hidden">Businesses: a simple data table.</caption>
+
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Company number</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                    </tbody>
+
+                    <tfoot class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Company number</th>
+                      </tr>
+                    </tfoot>
+
+                  </table>
+
+                  <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                      <ul>
+                          <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                  <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                              </a>
+                          </li>
+                          <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                              Page 2
+                          </li>
+                          <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                  <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </nav>
+
+              </div>
+          </div>
+
+        </section>
 
       </div>
-  </div>
-
-  <div class="govuk-grid-row">
-      <section class="govuk-grid-column-three-quarters">
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-                <p class="govuk-body">12 businesses matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, were found.</p>
-                <!--p class="govuk-body">There are currently 248 businesses .......... ?</p-->
-
-                <!-- Company registration number -->
-          </div>
-          <div class="govuk-grid-column-one-third">
-              <div class="govuk-form-group opss-text-align-right">
-
-                        <fieldset class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
-                            <label class="govuk-label govuk-body-s" for="results-sort">
-                                Sort <span class="govuk-visually-hidden">the results</span> by
-                            </label>
-
-                          <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
-                                <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1" selected="selected">Name A&ndash;Z</option>
-                                <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">Name Z&ndash;A</option>
-                            </select>
-                        </fieldset>
-
-                        <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
-                            <dt>
-                                Sort <span class="govuk-visually-hidden">the results</span> by
-                            </dt>
-                            <dd>
-                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</a>
-                            </dd>
-                            <dd>
-                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
-                                  <span class="govuk-visually-hidden">Active: </span>Option 2
-                                </a>
-                            </dd>
-                            <dd class="opss-dl-select__active">
-                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
-                                    Option 3
-                                </a>
-                            </dd>
-                        </dl>
-                  </div>
-
-                </div>
-          </div>
-        </div>
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters" role="region" aria-label="Businesses">
-
-                <table id="results" class="govuk-table opss-table opss-table--last-col-right">
-                  <caption class="govuk-table__caption govuk-visually-hidden">Businesses: a simple data table.</caption>
-
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">Name</th>
-                      <th scope="col" class="govuk-table__header">Company number</th>
-                    </tr>
-                  </thead>
-
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        098872
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        889235
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        0299987
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        022875
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        098872
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        889235
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        0299987
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        022875
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        098872
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        889235
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        0299987
-                      </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
-                      </th>
-                      <td class="govuk-table__cell">
-                        022875
-                      </td>
-                    </tr>
-                  </tbody>
-
-                  <tfoot class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">Name</th>
-                      <th scope="col" class="govuk-table__header">Company number</th>
-                    </tr>
-                  </tfoot>
-
-                </table>
-
-                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
-                    <ul>
-                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">
-                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
-                            </a>
-                        </li>
-                        <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
-                            Page 2
-                        </li>
-                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">
-                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-
-            </div>
-        </div>
-
-      </section>
-  </div>
 </form>
 
 <script>
