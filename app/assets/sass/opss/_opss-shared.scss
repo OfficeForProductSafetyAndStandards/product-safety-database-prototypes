@@ -97,7 +97,28 @@ body.js-enabled .opss-nojs-hide {
 .opss-float-right {
     float: right;
 }
-
+@include govuk-media-query($from: desktop) {
+    .opss-float-left-desktop {
+        float: left;
+    }
+    .opss-float-right-desktop {
+        float: right;
+    }
+}
+.opss-responsive-margin-bottom-6 {
+    @include govuk-responsive-margin(6, "bottom");
+}
+.opss-responsive-margin-bottom-9 {
+    @include govuk-responsive-margin(9, "bottom");
+}
+.opss-skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
 .opss-skip-link:focus {
     &.opss-skip-link--mb {
         margin-bottom: govuk-spacing(4) !important;
@@ -336,6 +357,41 @@ dl.opss-summary-list-aside {
         }
         div:first-of-type dt {
             margin-top: govuk-spacing(0);
+        }
+    }
+}
+
+.opss-summary-list-mixed > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
+    display: table;
+    width: 100%;
+
+    .govuk-grid-column-three-quarters & {
+        dt {
+            width: 40%;
+        }
+        dt + dd {
+            min-width: 40%;
+            width: auto; /* 1. protects against rogue legacy psd invalid html */
+        }
+    }
+    dd {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word; /*no adding hypens*/
+    }
+    & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
+}
+
+@include govuk-media-query($from: desktop) {
+    .opss-summary-list-mixed.opss-summary-list-mixed--sm {/*a narrow and small font version */
+        dt {
+            width: 25% !important;
+        }
+        dt, dd {
+            @include opss-font-size($s: 16px, $l: 1.2);
+            padding-bottom: govuk-spacing(0);
         }
     }
 }
