@@ -105,6 +105,12 @@ body.js-enabled .opss-nojs-hide {
         float: right;
     }
 }
+.opss-responsive-margin-top-6 {
+    @include govuk-responsive-margin(6, "top");
+}
+.opss-responsive-margin-top-9 {
+    @include govuk-responsive-margin(9, "top");
+}
 .opss-responsive-margin-bottom-6 {
     @include govuk-responsive-margin(6, "bottom");
 }
@@ -130,6 +136,44 @@ body.js-enabled .opss-nojs-hide {
 .opss-grey-bg {
     background-color: govuk-colour("light-grey");
 }
+
+.opss-document-icon {    /*   A CSS FOR ICON ON MOBILE - REQUIRES DESKTOP ONLY CSS TO SNAP IN FULL SIZE DIMS   */
+    position: relative;
+    width: 99px;
+    height: 140px;
+    padding: 2px;
+    margin: 0;
+    vertical-align: top;
+    background: govuk-colour("mid-grey");
+
+    .opss-document-icon img {
+        display: block;
+        width: 100%;
+    }
+
+    .opss-document-icon__filetype {
+        visibility: hidden;
+    }
+
+    @include govuk-media-query($from: desktop) {
+        .opss-document-icon__filetype {
+            visibility: visible;
+            position: absolute;
+            top: 18px;
+            left: 13px;
+            width: 75px;
+            height: 30px;
+            color: govuk-colour("white");
+            font-family: inherit;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 700;
+            @include opss-font-size($s: 19px, $l: 1.2);
+            text-align: center;
+        }
+    }
+}
+
 @include govuk-media-query($from: desktop) {//use on
     .opss-right-box-arrow {
         position: relative;
@@ -361,27 +405,45 @@ dl.opss-summary-list-aside {
     }
 }
 
-.opss-summary-list-mixed > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
-    display: table;
-    width: 100%;
+.opss-summary-list-mixed {
+    & > div {/* std summary list but allows for a mixture of 2 & 3 cols in 1 list */
+        display: table;
+        width: 100%;
 
-    .govuk-grid-column-three-quarters & {
+        .govuk-grid-column-three-quarters & {
+            dt {
+                width: 40%;
+            }
+            dt + dd {
+                min-width: 40%;
+                width: auto; /* 1. protects against rogue legacy psd invalid html */
+            }
+        }
+
+        dd {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -ms-word-break: break-all;
+            word-break: break-all;
+            word-break: break-word; /*no adding hypens*/
+        }
+        & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
+    }
+
+    &.opss-summary-list-mixed--narrow-dt > div {
         dt {
-            width: 40%;
+            width: 20%;
         }
         dt + dd {
-            min-width: 40%;
-            width: auto; /* 1. protects against rogue legacy psd invalid html */
+            min-width: 50%;
         }
     }
-    dd {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -ms-word-break: break-all;
-        word-break: break-all;
-        word-break: break-word; /*no adding hypens*/
+
+    @-moz-document url-prefix() {/*firefox only: align 1st dd (without a 2nd) correctly */
+        .govuk-summary-list__row dd:last-child {
+            width: inherit;
+        }
     }
-    & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
 }
 
 @include govuk-media-query($from: desktop) {

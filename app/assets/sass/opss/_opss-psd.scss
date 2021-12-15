@@ -7,6 +7,15 @@
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
+@include govuk-media-query($from: desktop) {
+    .govuk-width-container > main.govuk-main-wrapper {
+        padding-top: govuk-spacing(8);
+    }
+    .govuk-width-container > .govuk-breadcrumbs + main.govuk-main-wrapper,
+    .govuk-width-container > .govuk-back-link + main.govuk-main-wrapper {
+        padding-top: govuk-spacing(2);
+    }
+}
 
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
@@ -350,6 +359,8 @@ ul.opss-radio-list {
     }
 
     .opss-two-col-flow {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
         column-count: 2;
         column-gap: govuk-spacing(8);
 
@@ -362,6 +373,18 @@ ul.opss-radio-list {
 
             dt {
                 width: 36% !important;
+            }
+        }
+    }
+
+    @-moz-document url-prefix() {/*firefox only: col flow bug */
+        .opss-two-col-flow {
+            .govuk-summary-list {
+                display: unset;
+            }
+            .govuk-summary-list__row {
+                display: table;
+                width: 100%;
             }
         }
     }
