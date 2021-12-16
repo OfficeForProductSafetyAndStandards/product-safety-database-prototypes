@@ -19,100 +19,39 @@
     <div class="govuk-grid-column-full">
 
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l">
-              <span class="govuk-caption-l">Allergation: 2101-0008 </span>
-                Allergation: 2101-0008
-            </h1>
-          </div>
-
-
-
+            <div class="govuk-grid-column-three-quarters">
+                <span class="govuk-caption-l">Allergation: 2101-0008 </span>
+                <h1 class="govuk-heading-l">
+                    Risk level
+                </h1>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+                <div class="opss-text-align-right">
+                    <a href="find-the-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                        Add an assessment
+                    </a>
+                </div>
+            </div>
         </div>
 
     </div>
 </div>
-
-<div class="govuk-grid-row">
-    <section class="govuk-grid-column-full opss-two-col-flow opss-responsive-margin-bottom-6 govuk-!-padding-bottom-6 opss-border-bottom">
-        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-mixed opss-summary-list-mixed--sm">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Status</dt>
-                <dd class="govuk-summary-list__value">Open</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change<span class="govuk-visually-hidden"> this case</span>
-                    </a><!-- or, "re-open" -->
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Coronavirus related</dt>
-                <dd class="govuk-summary-list__value">
-                    Not coronavirus related
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change<span class="govuk-visually-hidden"> coronavirus status</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Case owner
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Darren Harridence &ndash; Renfrewshire Council
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change<span class="govuk-visually-hidden"> case owner</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Added teams</dt>
-                <dd class="govuk-summary-list__value">Renfrewshire Council</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change <span class="govuk-visually-hidden">teams added to the case</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key ">Case restriction</dt>
-                <dd class="govuk-summary-list__value ">Unrestricted</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change <span class="govuk-visually-hidden">case restriction</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Case risk level</dt>
-                <dd class="govuk-summary-list__value">Medium risk</dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state opss-no-wrap">
-                        Change<span class="govuk-visually-hidden"> risk level</span>
-                    </a>
-                </dd>
-            </div>
-        </dl>
-    </section>
-</div>
-
+<!--
+{% include "psd-revised-flow/inc_top_nav.html" %}
+-->
 <div class="govuk-grid-row">
     <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
 
-        <a href="#main-content" class="govuk-skip-link opss-skip-link">
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
             Skip to the main content
         </a>
 
         <ul class="govuk-list opss-left-nav">
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">The Case</a>
+                <a href="case.html" class="govuk-link govuk-link--no-visited-state">Case</a>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Products</a>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Products (2)</a>
 
                 <ul class="govuk-list">
                     <li>
@@ -128,7 +67,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Businesses</a>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Businesses (2)</a>
 
                 <ul class="govuk-list">
                     <li>
@@ -144,7 +83,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Images</a>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Images (7)</a>
 
                 <ul class="govuk-list">
                     <li>
@@ -160,7 +99,7 @@
                 </ul>
             </li>
             <li class="opss-left-nav__active">
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Risk level</a>
+                <a href="#page-content" class="govuk-link govuk-link--no-visited-state">Risk level</a>
 
                 <ul class="govuk-list">
                     <li>
@@ -176,7 +115,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Supporting information</a>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Supporting information (5)</a>
             </li>
             <li>
                 <a href="#" class="govuk-link govuk-link--no-visited-state">Activity</a>
@@ -184,11 +123,11 @@
         </ul>
     </nav>
 
-    <section id="main-content" role="region" class="govuk-grid-column-three-quarters govuk-!-padding-top-1">
+    <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-        <h2 class="govuk-heading-m">Risk level</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Risk level and risk assessments</h2>
 
-        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
+        <dl class="govuk-summary-list opss-summary-list-mixed">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Case risk level
@@ -209,12 +148,27 @@
         </dl>
 
         <section class="govuk-!-margin-top-9 opss-grouping">
-            <h3 id="assessment-1" class="govuk-heading-m opss-grouping__heading-m">Risk assessment 1 &ndash; Renfrewshire Council</h3>
+            <h3 id="assessment-1" class="govuk-heading-m opss-grouping__heading-m">
+                Risk assessment 1 <span class="govuk-!-font-weight-regular">&ndash;</span> Renfrewshire Council
+            </h3>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <p class="govuk-body-s opss-secondary-text">Added 13 December 2021</p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16">
+                            Edit<span class="govuk-visually-hidden"> assessment 1</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <dl class="govuk-summary-list opss-summary-list-mixed">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Date of assessment
+                        Date assessed
                     </dt>
                     <dd class="govuk-summary-list__value">
                         31 January 2020
@@ -241,7 +195,7 @@
                         Product assessed
                     </dt>
                     <dd class="govuk-summary-list__value">
-                       <a href="#" class="govuk-link govuk-link--no-visited-state">
+                       <a href="../products#product-1" class="govuk-link govuk-link--no-visited-state">
                            Tesco 2k hand cream
                         </a>
                     </dd>
@@ -256,134 +210,106 @@
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Attachment
+                        Assessment document
 
-                        <div class="opss-document-icon govuk-!-margin-top-2 govuk-!-margin-right-2" aria-hidden="true">
-                            <span class="opss-document-icon__filetype">
-                                <span class="govuk-visually-hidden">File type: </span><abbr>PDF</abbr>
-                            </span>
-                            <img src="../public/images/icon-document.png" alt=".">
-                        </div>
+
                     </dt>
                     <dd class="govuk-summary-list__value">
-                       <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state">
                            page6-PSD_Unsafe_Product_Report_-_Week_24.pdf
                         </a>
+
+                        <figure class="opss-document-icon-std govuk-!-margin-top-2 govuk-!-margin-right-2" aria-hidden="true">
+                            <img src="../public/images/icon-document.png" alt=".">
+                            <figcaption class="opss-document-icon-std__filetype">
+                                <span class="govuk-visually-hidden">File type: </span><abbr>PDF</abbr>
+                            </figcaption>
+                        </figure>
+
                     </dd>
                 </div>
-
             </dl>
         </section>
 
         <section class="govuk-!-margin-top-9 opss-grouping">
-            <h3 id="assessment-2" class="govuk-heading-m opss-grouping__heading-m">Risk assessment 2 &ndash; Oxford trading standards</h3>
+            <h3 id="assessment-2" class="govuk-heading-m opss-grouping__heading-m">
+                Risk assessment 2 <span class="govuk-!-font-weight-regular">&ndash;</span> Watford Trading Standards
+            </h3>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <p class="govuk-body-s opss-secondary-text">Added 21 December 2021</p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16">
+                            Edit<span class="govuk-visually-hidden"> assessment 2</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <dl class="govuk-summary-list opss-summary-list-mixed">
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Shades</dt>
-                    <dd class="govuk-summary-list__value">None</dd>
+                    <dt class="govuk-summary-list__key">
+                        Date assessed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        2 March 2021
+                    </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Contains <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                        Risk level
                     </dt>
-                    <dd class="govuk-summary-list__value">Yes</dd>
+                    <dd class="govuk-summary-list__value">
+                        Medium risk
+                    </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        <abbr title="Carcinogenic, mutagenic, or toxic for reproduction">CMR</abbr> substances
+                        Assessed by
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li>
-                                Substance one, 200-21-1, 799-772-7
-                            </li>
-                            <li>
-                                Substance two, 233-88-1, 777-787-7
-                            </li>
-                        </ul>
+                        Watford Trading Standards office
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Nanomaterials</dt>
+                    <dt class="govuk-summary-list__key">
+                        Product assessed
+                    </dt>
                     <dd class="govuk-summary-list__value">
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li>
-                                Nanomaterials name one
-                            </li>
-                            <li>
-                                Second nanomaterial name
-                            </li>
-                        </ul>
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Application instruction</dt>
-                    <dd class="govuk-summary-list__value">Inhalation</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exposure condition</dt>
-                    <dd class="govuk-summary-list__value">Left on</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Category of product</dt>
-                    <dd class="govuk-summary-list__value">Hair and scalp products</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Category of hair and scalp product</dt>
-                    <dd class="govuk-summary-list__value">Hair colouring products</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Category of hair colouring product</dt>
-                    <dd class="govuk-summary-list__value">Non-oxidative hair colour products</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Formulation given as</dt>
-                    <dd class="govuk-summary-list__value">Concentration ranges</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Frame formulation</dt>
-                    <dd class="govuk-summary-list__value"></dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Exposure condition</dt>
-                    <dd class="govuk-summary-list__value">Left on</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Formulation</dt>
-                    <dd class="govuk-summary-list__value">
-                        <a class="govuk-link govuk-link--no-visited-state" href="../mypdf-1.pdf">mypdf-1.pdf</a>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">
-                            Change<span class="govuk-visually-hidden"> the ipsoniuum title formulation document</span>
+                       <a href="../products#product-1" class="govuk-link govuk-link--no-visited-state">
+                           Tesco 2k hand cream
                         </a>
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Physical form</dt>
-                    <dd class="govuk-summary-list__value">Liquid</dd>
+                    <dt class="govuk-summary-list__key">
+                        Further details
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, vero maxime pariatur repellat illo possimus nam eaque ullam! Repudiandae odio animi ut nostrum earum quis recusandae, laborum atque praesentium ducimus.
+                    </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Special applicator</dt>
-                    <dd class="govuk-summary-list__value">Yes</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Applicator type</dt>
-                    <dd class="govuk-summary-list__value">Encapsulated</dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Acute poisoning information</dt>
-                    <dd class="govuk-summary-list__value"></dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key"><abbr title="Power of hydrogen">pH</abbr> range</dt>
-                    <dd class="govuk-summary-list__value">13.0 to 14.0</dd>
+                    <dt class="govuk-summary-list__key">
+                        Assessment document
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state">
+                           tesco-cream-watford-trading-stds.pdf
+                        </a>
+                        <figure class="opss-document-icon-std govuk-!-margin-top-2 govuk-!-margin-right-2" aria-hidden="true">
+                            <img src="../public/images/icon-document.png" alt=".">
+                            <figcaption class="opss-document-icon-std__filetype">
+                                <span class="govuk-visually-hidden">File type: </span><abbr>PDF</abbr>
+                            </figcaption>
+                        </figure>
+                    </dd>
                 </div>
             </dl>
-
         </section>
-
 
     </section>
 
