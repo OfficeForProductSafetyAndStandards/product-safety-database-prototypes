@@ -45,7 +45,7 @@
 
         <ul class="govuk-list opss-left-nav">
             <li class="opss-left-nav__active">
-                <a href="case.html" class="govuk-link govuk-link--no-visited-state">Case</a>
+                <a href="case.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Case</a>
             </li>
             <li>
                 <a href="#" class="govuk-link govuk-link--no-visited-state">Products (2)</a>
@@ -120,71 +120,7 @@
         </ul>
     </nav>
 
-    <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
-
-        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
-
-        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Case name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    New feature - readable case names
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16">
-                        Edit<span class="govuk-visually-hidden"> case name</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Description
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Dyson vacuum cleaner, washing machine – electric shock hazard
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Date created</dt>
-                <dd class="govuk-summary-list__value">13 December 2021</dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Last updated</dt>
-                <dd class="govuk-summary-list__value">About 8 hours ago</dd>
-            </div>
-            <!--div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Notifying country</dt>
-                <dd class="govuk-summary-list__value"><i>Do we still need this?</i></dd>
-            </div-->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Summary
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero sunt voluptatum cumque illo voluptates officia quasi, libero facilis quidem nulla placeat quas aliquid dolore, saepe hic sit exercitationem? Veniam.
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16">
-                        Edit<span class="govuk-visually-hidden"> summary</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Created by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Darren Harridence – Renfrewshire Council
-                </dd>
-            </div>
-
-
-
-        </dl>
-
-    </section>
+    {% include "psd-revised-flow/inc_case_content_1.html" %}
 
 </div>
 
