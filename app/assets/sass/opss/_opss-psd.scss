@@ -377,7 +377,7 @@ ul.opss-radio-list {
     }
 
     .opss-summary-list__row--split {
-        margin-top: 80px;
+        margin-top: govuk-spacing(9);
     }
 
     .opss-2-col-flow {
@@ -395,9 +395,9 @@ ul.opss-radio-list {
                 @include word-wrap;
             }
 
-            dt + dd {
+            /*dt + dd {    //FF dosen't like
                 text-align: center;
-            }
+            }*/
         }
     }
     .opss-3-col-flow {
@@ -411,7 +411,7 @@ ul.opss-radio-list {
             margin-bottom: 0;
 
             dt {
-                width: auto !important;
+                width: inherit !important;
                 @include word-wrap;
 
                 span {
