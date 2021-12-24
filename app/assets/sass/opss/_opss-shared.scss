@@ -287,7 +287,7 @@ kbd {
 .opss-border-left {border-left-width: 1px; }
 .opss-border-right {border-right-width: 1px; }
 .opss-border-all {border-width: 1px; }
-.opss-border-none {border-width: 0;}
+.opss-border-none {border-width: 0; }
 
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
@@ -442,10 +442,18 @@ dl.opss-summary-list-aside {
 
     &.opss-summary-list-mixed--narrow-dt > div {
         dt {
-            width: 20%;
+            width: 25%;
         }
         dt + dd {
             min-width: 50%;
+        }
+    }
+
+    .opss-grouping & {
+        &.opss-summary-list-mixed--narrow-dt {
+            dt {
+                width: 24%;
+            }
         }
     }
 
