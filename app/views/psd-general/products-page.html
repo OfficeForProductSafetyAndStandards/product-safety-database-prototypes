@@ -377,6 +377,28 @@
       return false;
     }
   );
+
+//****** js for reset filters starts ******
+  /*function getPathFromUrl(url) {
+    return url.split("hazard_type")[0];
+  }
+
+  document.getElementById("opss-reset").addEventListener("click", function(e){
+      var urlDomain = window.location.origin;
+      var urlPath = getPathFromUrl(window.location.pathname);
+      window.history.pushState(urlDomain, document.title, urlPath);//replaceState
+
+
+      var hazardSelect = document.getElementById("hazard_type-select");
+      var hazardOptions = hazardSelect.querySelectorAll("option");
+      Array.prototype.forEach.call(hazardOptions, function(el, i) {
+        el.removeAttribute("selected");
+      });
+
+
+    }
+  );*/
+//****** js for reset fitlers ends ******
 </script>
 
 
