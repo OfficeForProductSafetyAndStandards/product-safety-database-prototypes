@@ -415,8 +415,7 @@ ul.opss-radio-list {
 
                 span {
                     @include opss-font-size($s: 14px, $l: 1.2);
-                    position: relative;
-                    top: -1px;
+                    /*position: relative; top: -1px;*/
                 }
             }
         }
@@ -442,7 +441,11 @@ ul.opss-radio-list {
     li {
         margin-bottom: 0;
         padding: govuk-spacing(2) 0;
-        @include opss-font-size($s: 16px, $l: 1.2);
+        @include opss-font-size($s: 17px, $l: 1.2);
+
+        a span {
+            font-size: 90%;
+        }
 
         ul {
             padding-left: govuk-spacing(4);
@@ -450,6 +453,7 @@ ul.opss-radio-list {
 
             li {
                 padding-bottom: 0;
+                @include opss-font-size($s: 16px, $l: 1.2);
 
                 &:before {
                     content: "—";

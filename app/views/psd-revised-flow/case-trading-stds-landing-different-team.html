@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Case landing page - OPSS - Enquiry
+    Case landing page - Trading Stds - different team
 {% endblock %}
 
 
@@ -10,7 +10,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <span class="govuk-caption-l">Enquiry: 2101-0009 </span>
+        <span class="govuk-caption-l">Allergation: 2101-0008 </span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Case
         </h1>
@@ -19,24 +19,13 @@
     </div>
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
-            <a href="close-case.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-                Close case
-            </a><!-- or, Re-open case -->
+            <a href="activity.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Add a comment
+            </a>
         </div>
     </div>
-    <!--div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
 
-        <ul class="govuk-list opss-float-right-desktop opss-text-align-right">
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Close case</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change Case owner</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Restrict this Case</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change risk level</a></li>
-        </ul>
-
-    </div-->
 </div>
-
-
 
 <div class="govuk-grid-row">
     <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
@@ -53,11 +42,6 @@
                     <li>
                         <a href="#safety" class="govuk-link govuk-link--no-visited-state">
                             Safety and compliance
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#source" class="govuk-link govuk-link--no-visited-state">
-                            Enquiry source
                         </a>
                     </li>
                 </ul>
@@ -152,8 +136,6 @@
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-        {% include "psd-revised-flow/inc_top_nav_2.html" %}
-
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
 <!--
         <div class="govuk-warning-text">
@@ -170,22 +152,17 @@
                     Case name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Enquiries are already asked to create a case name
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the case name</span>
-                    </a>
+                    New feature - readable case names
                 </dd>
             </div>
-            <!--div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Reference <span class="opss-numero" title="Number">&numero;</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    12345-1882
+                    12345_ts300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading standards reference</span>
                 </dd>
-            </div-->
+            </div>
             <div class="govuk-summary-list__row govuk-visually-hidden">
                 <dt class="govuk-summary-list__key">
                     Allergation
@@ -207,12 +184,8 @@
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero sunt voluptatum cumque illo voluptates officia quasi, libero facilis quidem nulla placeat quas aliquid dolore, saepe hic sit exercitationem? Veniam. <!-- opss user: what is being alleged, shows here on current service -->
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the summary</span>
-                    </a>
+                    Product reported because it is unsafe.
+                    <!-- opss user: what is being alleged, shows here on current service -->
                 </dd>
             </div>
             <div class="govuk-summary-list__row opss-summary-list__row--split">
@@ -221,11 +194,6 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Open
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Close<span class="govuk-visually-hidden"> this case</span>
-                    </a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -259,11 +227,6 @@
                 <dd class="govuk-summary-list__value">
                     Darren Harridence - Renfrewshire Council
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the case owner</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -279,11 +242,6 @@
                         </li>
                     </ul>
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the teams added</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -291,39 +249,33 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Unrestricted
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the case restriction</span>
-                    </a>
+                    <!-- OR
+                    <span class="opss-tag opss-tag--risk2 opss-tag--lrg"><span class="govuk-visually-hidden">This case is </span>Restricted
+                    -->
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Case risk level</dt>
                 <dd class="govuk-summary-list__value">
-                    Medium risk
+                    <span class="opss-tag opss-tag--risk1 opss-tag--lrg">
+                        <span class="govuk-visually-hidden">This case is a</span>Serious risk
+                    </span>
 
                     <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
                         <span class="govuk-visually-hidden"> - </span>Not validated
                     </span>
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the risk level</span>
-                    </a>
-                </dd>
             </div>
+            <!--div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Risk level validated</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     COVID-19
                 </dt>
                 <dd class="govuk-summary-list__value">
                     <span class="opss-tag opss-tag--covid opss-tag--lrg"><span class="govuk-visually-hidden">This case is </span>COVID-19 related</span>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the coronavirus status</span>
-                    </a>
                 </dd>
             </div>
         </dl>
@@ -338,71 +290,27 @@
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Not provided
+                    Unsafe
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the reported safety</span>
-                    </a>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Primary hazard
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Electric shock
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Hazard description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
                 </dd>
             </div>
         </dl>
 
-        <section class="govuk-!-margin-top-9 opss-grouping">
-            <h3 id="source" class="govuk-heading-m opss-grouping__heading-m">
-                Enquiry source
-            </h3>
-
-            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Source type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        Consumer
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Received
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        3 March 2018
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Received by
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        Telephone
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                            <li>
-                                Mr Peter Richardson
-                            </li>
-                            <li>
-                                Telephone: 09923 897889      <!-- we should have the tel and email status from the form -->
-                            </li>
-                            <li>
-                                Email: <a href="mailto:prichardson@gmail.com" class="govuk-link govuk-link--no-visited-state">prichardson@gmail.com</a>
-                            </li>
-                            <li>
-                                And other details lorem ipsum, dolor sit amet consectetur adipisicing elit. Et tenetur ab quasi culpa voluptate adipisci ad.
-                            </li>
-                        </ul>
-                    </dd>
-                </div>
-            </dl>
-
-            <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">Only teams added to the case can view allegation contact details</p>
-        </section>
 
     </section>
 
