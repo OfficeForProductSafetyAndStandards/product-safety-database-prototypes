@@ -78,6 +78,7 @@ h1.govuk-label-wrapper label.govuk-label--l {
 body.js-enabled .opss-nojs-hide {
     display: inline;
 }
+
 .js-enabled {
     .opss-js-enabled-hidden {
         display: none;  /* @include govuk-visually-hidden; */
