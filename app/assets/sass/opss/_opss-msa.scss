@@ -364,3 +364,15 @@ li.opss-task-sub {
         }
     }
 }
+
+/* used on the search page - starts */
+body.js-enabled .govuk-radios__conditional--hidden.opss-nojs-hide {
+    height: 0; overflow: hidden; float: left; margin: 0;
+}
+body:not(.js-enabled) .govuk-radios__conditional--hidden.opss-nojs-hide {
+    display: none;
+}
+body.js-enabled .govuk-radios__conditional.opss-nojs-hide {
+    display: block;
+}
+/* used on the search page - ends */
