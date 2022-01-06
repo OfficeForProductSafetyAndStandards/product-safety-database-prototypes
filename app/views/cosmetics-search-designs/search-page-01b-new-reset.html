@@ -55,27 +55,26 @@
                     </legend>
 
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="category">
+                        <label class="govuk-label" for="notification_search_form_category">
                             Product category
                         </label>
                         <select class="govuk-select" id="notification_search_form_category" name="category">
                             <option value="" selected="selected">All</option>
                             <option value="val01">Option 1</option>
-                            <option value="val02" selected="selected">Option 2</option>
+                            <option value="val02">Option 2</option>
                             <option value="val03">Option 3</option>
                             <option value="val04">Option 4</option>
                         </select>
                     </div>
-
                     <div class="govuk-radios govuk-radios--small govuk-radios--conditional opss-radios--tight" data-module="govuk-radios">
 
-                        <div class="govuk-radios__item">
+                        <div class="govuk-radios__item opss-nojs-hide">
                             <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date" data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date">
                                 Date
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden opss-nojs-hide" id="conditional-date-block-1">
                             <div class="govuk-form-group">
 
                                 <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
@@ -83,37 +82,37 @@
                                     For example, 14 08 2019.
                                 </div>
 
-                                <div class="govuk-date-input" id="by-date">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                <div class="govuk-date-input" id="by-date-exact">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
 
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
+                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint" checked>
                             <label class="govuk-label govuk-radios__label" for="by-date-range">
                                 Date range
                             </label>
@@ -331,16 +330,16 @@
                         </th>
                     </tr>
                     <tr class="govuk-table__row">
-                        <th headers="item-04" id="meta-04" class="govuk-visually-hidden">
+                        <th headers="item-04" id="meta-04b" class="govuk-visually-hidden">
                             Metadata
                         </th>
-                        <td headers="uknotified item-04 meta-04" class="govuk-table__cell">
+                        <td headers="uknotified item-04 meta-04b" class="govuk-table__cell">
                             4 May 2020
                         </td>
-                        <td headers="ukcosprodnumber item-04 meta-04" class="govuk-table__cell">
+                        <td headers="ukcosprodnumber item-04 meta-04b" class="govuk-table__cell">
                             UKCP-675630988
                         </td>
-                        <td headers="eurefnumber item-04 meta-04" class="govuk-table__cell">
+                        <td headers="eurefnumber item-04 meta-04b" class="govuk-table__cell">
                             7768-998-23
                         </td>
                     </tr>
@@ -351,21 +350,21 @@
                         <th class="govuk-visually-hidden">
                             Name
                         </th>
-                        <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                        <th id="item-04b" colspan="3" scope="colgroup" class="govuk-table__header">
                             <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
                         </th>
                     </tr>
                     <tr class="govuk-table__row">
-                        <th headers="item-04" id="meta-04" class="govuk-visually-hidden">
+                        <th headers="item-04b" id="meta-04" class="govuk-visually-hidden">
                             Metadata
                         </th>
-                        <td headers="uknotified item-04 meta-04" class="govuk-table__cell">
+                        <td headers="uknotified item-04b meta-04" class="govuk-table__cell">
                             27 September 2020
                         </td>
-                        <td headers="ukcosprodnumber item-04 meta-04" class="govuk-table__cell">
+                        <td headers="ukcosprodnumber item-04b meta-04" class="govuk-table__cell">
                             UKCP-895536243
                         </td>
-                        <td headers="eurefnumber item-04 meta-04" class="govuk-table__cell">
+                        <td headers="eurefnumber item-04b meta-04" class="govuk-table__cell">
                             002-473885-12995
                         </td>
                     </tr>
@@ -428,8 +427,16 @@
 
 </div>
 
+<script>
+    /* hide first filter for non js - start */
+    if(document.getElementById('by-date-range')){
+        if (!window.location.search) {// = no querystring
+            document.getElementById('by-date-range').removeAttribute('checked');
+        }
+    }
+    /* hide first filter for non js - end */
 
-<script>/* clear filters reset */
+    /* clear filters reset - start */
     var filterForm = document.getElementById('new_notification_search_form_filters');
     var ele1 = filterForm.querySelectorAll('.govuk-radios__conditional');
     var ele2 = filterForm.querySelectorAll('.govuk-radios--conditional .govuk-radios__input');
@@ -453,6 +460,13 @@
             e3.setAttribute('value', '');
         });
     }, false);
+    /* clear filters reset - end */
+
+
+        /*function clearRadiosHasJs(ele){
+        ele.removeAttribute('checked');
+    }
+    clearRadiosHasJs(document.getElementById('by-date-range'));*/
 </script>
 
 
