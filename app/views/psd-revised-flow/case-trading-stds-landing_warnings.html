@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Case landing page - OPSS - Enquiry
+    Case landing page - Trading Stds - with warning texts
 {% endblock %}
 
 
@@ -10,7 +10,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <span class="govuk-caption-l">Enquiry: 2101-0009 </span>
+        <span class="govuk-caption-l">Allergation: 2101-0008 </span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Case
         </h1>
@@ -21,7 +21,7 @@
         <div class="opss-text-align-right">
             <a href="close-case.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
                 Close case
-            </a><!-- or, Re-open case -->
+            </a>
         </div>
     </div>
 
@@ -36,30 +36,36 @@
             Skip to the main content
         </a>
 
-        {% include "psd-revised-flow/inc_left_nav_1_opss.html" %}
+        {% include "psd-revised-flow/inc_left_nav_1_empty.html" %}
     </nav>
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-        {% include "psd-revised-flow/inc_top_nav_2.html" %}
 
-        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
-<!--
-        <div class="govuk-warning-text">
+        <!-- if a trading stds user - start -->
+        <div class="govuk-warning-text govuk-!-display-inline-block">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
-                0 products have been added to this case.
+                0 Products, Businesses, or Risk assessments have been added to this case.
             </strong>
         </div>
--->
+        <!-- if a trading stds user - end -->
+
+        {% include "psd-revised-flow/inc_top_nav_2_empty.html" %}
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
+
+
+
+
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Case name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Enquiries are already asked to create a case name
+                    New feature - readable case name
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -69,20 +75,20 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Enquiry
+                    Allergation   <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    2101-0009
+                    2101-0008
                 </dd>
             </div>
-            <!--div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Reference <span class="opss-numero" title="Number">&numero;</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    12345-1882
+                    12345_ts300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading standards reference</span>
                 </dd>
-            </div-->
+            </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Description
@@ -96,7 +102,8 @@
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero sunt voluptatum cumque illo voluptates officia quasi, libero facilis quidem nulla placeat quas aliquid dolore, saepe hic sit exercitationem? Veniam. <!-- opss user: what is being alleged, shows here on current service -->
+                    Product reported because it is unsafe.
+                    <!-- opss user: what is being alleged, shows here on current service -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -180,6 +187,9 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Unrestricted
+                    <!-- OR
+                    <span class="opss-tag opss-tag--risk2 opss-tag--lrg"><span class="govuk-visually-hidden">This case is </span>Restricted
+                    -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -190,7 +200,9 @@
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Case risk level</dt>
                 <dd class="govuk-summary-list__value">
-                    Medium risk
+                    <span class="opss-tag opss-tag--risk1 opss-tag--lrg">
+                        <span class="govuk-visually-hidden">This case is a</span>Serious risk
+                    </span>
 
                     <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
                         <span class="govuk-visually-hidden"> - </span>Not validated
@@ -202,6 +214,10 @@
                     </a>
                 </dd>
             </div>
+            <!--div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Risk level validated</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     COVID-19
@@ -227,71 +243,41 @@
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Not provided
+                    Unsafe
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    <a href="safety-and-compliance.html" class="govuk-link govuk-link--no-visited-state">
                         Change<span class="govuk-visually-hidden"> the reported safety</span>
                     </a>
                 </dd>
             </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Primary hazard
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Electric shock
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Change<span class="govuk-visually-hidden"> the primary hazard</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Hazard description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Change<span class="govuk-visually-hidden"> the hazard description</span>
+                    </a>
+                </dd>
+            </div>
         </dl>
-
-        <section class="govuk-!-margin-top-9 opss-grouping">
-            <h3 id="source" class="govuk-heading-m opss-grouping__heading-m">
-                Case source
-            </h3>
-
-            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Source type
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        Consumer
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Received
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        3 March 2018
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Received by
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        Telephone
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                            <li>
-                                Mr Peter Richardson
-                            </li>
-                            <li>
-                                Telephone: 09923 897889      <!-- we should have the tel and email status from the form -->
-                            </li>
-                            <li>
-                                Email: <a href="mailto:prichardson@gmail.com" class="govuk-link govuk-link--no-visited-state">prichardson@gmail.com</a>
-                            </li>
-                            <li>
-                                And other details lorem ipsum, dolor sit amet consectetur adipisicing elit. Et tenetur ab quasi culpa voluptate adipisci ad.
-                            </li>
-                        </ul>
-                    </dd>
-                </div>
-            </dl>
-
-            <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">Only teams added to the case can view allegation contact details</p>
-        </section>
 
     </section>
 
