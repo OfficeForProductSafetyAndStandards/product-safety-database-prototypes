@@ -34,8 +34,7 @@
 
             <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="createcase">
 
-              <fieldset class="govuk-fieldset">
-
+              <!--fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
                   Do you want to create a case for this product now?
@@ -67,9 +66,42 @@
                       </div>
 
                 </div>
+            </fieldset-->
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                Do you want to add this product to your case?
+
+              </legend>
+
+              <span id="createcase-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to create a case for this product now
+              </span>
+
+              <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
 
 
-            </fieldset>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="createcase" name="createcase" type="radio" value="yes" disabled>
+                      <label class="govuk-label govuk-radios__label" for="createcase">
+                        Yes
+                      </label>
+
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="createcase-2" name="createcase" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="createcase-2">
+                        No - return to the products page
+                      </label>
+
+                    </div>
+
+              </div>
+          </fieldset>
+
 
 
             </div>

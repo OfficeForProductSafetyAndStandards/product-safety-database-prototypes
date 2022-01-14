@@ -47,7 +47,7 @@
             <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-2" data-test-for="input" data-test-ele-name="products-search">
 
                 <label class="govuk-label" for="products-search">
-                    Search for a product
+                    Keywords search
                 </label>
 
                 <div class="govuk-input__wrapper opss-search__wrapper">
@@ -57,7 +57,7 @@
                     </button>
                 </div>
 
-                <fieldset class="govuk-fieldset">
+                <!--fieldset class="govuk-fieldset">
                     <legend class="govuk-visually-hidden">
                         Is your search using keywords or a barcode?
                     </legend>
@@ -75,7 +75,7 @@
                             </label>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset-->
 
             </div>
         </form>
@@ -477,10 +477,11 @@ function buildHTML(val, o, c){
     o += '<td headers="cat item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
     o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
     o += '<td headers="bar item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
-    o += '</tr><tr class="govuk-table__row">';
-    o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
-    o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="4" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden">for psd-'+val.id+'</span></a></td>';
     o += '</tr>';
+    //o += '<tr class="govuk-table__row">';
+    //o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
+    //o += '<td headers="item-'+val.id+' actions-'+val.id+'" colspan="4" class="govuk-table__cell"><a href="/product-case-testing/is-this-case-related-to-covid" class="govuk-link govuk-link--no-visited-state">Create a case <span class="govuk-visually-hidden">for psd-'+val.id+'</span></a></td>';
+    //o += '</tr>';
     if(c%2 == 0){
     o += '</tbody><tbody class="govuk-table__body">'
     }else{
