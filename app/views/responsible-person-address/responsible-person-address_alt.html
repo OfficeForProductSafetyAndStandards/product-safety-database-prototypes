@@ -18,7 +18,7 @@
 
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            <abbr>UK</abbr> Responsible Person details
+            <abbr>UK</abbr> Responsible Person details 
         </h1>
 
         <details class="govuk-details opss-details--sm govuk-!-margin-top-4" data-module="govuk-details">
@@ -60,6 +60,25 @@
     <div class="govuk-grid-column-two-thirds">
 
         <form action="#" method="post" novalidate>
+
+            <div class="govuk-form-group govuk-!-margin-top-6">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">        
+                        Is the <abbr>UK</abbr> Responsible Person a business or an individual?
+                    </legend>
+                    
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="responsible_person_account_type_business" name="responsible_person[account_type]" type="radio" value="business" checked="checked">
+                            <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_business">Limited company or Limited Liability Partnership (<abbr>LLP</abbr>)</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="responsible_person_account_type_individual" name="responsible_person[account_type]" type="radio" value="individual">
+                            <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_individual">Individual or sole trader</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
 
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="responsible_persons_details_form_name">
