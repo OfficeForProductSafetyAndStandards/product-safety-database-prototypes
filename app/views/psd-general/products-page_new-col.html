@@ -23,7 +23,7 @@
             </summary>
             <div class="govuk-details__text">
                 <p class="govuk-body-s">
-                    <span id="search-hint">You can search for one or more products by using the keywords that describe them.</span> You can also sort the ordering of the search results.
+                    <span id="search-hint">You can search for one or more products by using the keywords that describe them or their <abbr>PSD</abbr> reference number.</span> You can also sort the ordering of the search results.
                 </p>
                 <p class="govuk-body-s govuk-!-margin-bottom-1">
                     You can filter the results by hazard type.
@@ -186,13 +186,14 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Products">
 
-              <table id="results" class="govuk-table opss-table-items opss-table-items--first-col-33 opss-table-items--sm">
+              <table id="results" class="govuk-table opss-table-items opss-table-items--sm">
                   <caption class="govuk-visually-hidden">
-                      Products: 4 columns with each case described across rows within each table body.
+                      Products: 5 columns with each case described across rows within each table body.
                   </caption>
                   <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
                           <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th id="psdref" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
                           <th id="prodtype" scope="col" class="govuk-table__header">Product type</th>
                           <th id="haztype" scope="col" class="govuk-table__header">Hazard type</th>
                           <th id="cat" scope="col" class="govuk-table__header">Category</th>
@@ -204,7 +205,7 @@
                           <th class="govuk-visually-hidden">
                               Product
                           </th>
-                          <th id="item-1" colspan="3" scope="colgroup" class="govuk-table__header">
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
                               <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco kettle 100v</a>
                           </th>
                       </tr>
@@ -212,6 +213,9 @@
                           <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
                               Metadata
                           </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-9873
+                          </td>                          
                           <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
                             Electrical appliance	
                           </td>
@@ -229,7 +233,7 @@
                         <th class="govuk-visually-hidden">
                             Product
                         </th>
-                        <th id="item-2" colspan="3" scope="colgroup" class="govuk-table__header">
+                        <th id="item-2" colspan="4" scope="colgroup" class="govuk-table__header">
                             <a href="#" class="govuk-link govuk-link--no-visited-state">Nevica skis</a>
                         </th>
                     </tr>
@@ -237,6 +241,9 @@
                         <th headers="item-2" id="meta-2" class="govuk-visually-hidden">
                             Metadata
                         </th>
+                        <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                          psd-7
+                        </td>                          
                         <td headers="prodtype item-2 meta-2" class="govuk-table__cell">
                           Skiing
                         </td>
@@ -254,7 +261,7 @@
                       <th class="govuk-visually-hidden">
                           Product
                       </th>
-                      <th id="item-3" colspan="3" scope="colgroup" class="govuk-table__header">
+                      <th id="item-3" colspan="4" scope="colgroup" class="govuk-table__header">
                           <a href="#" class="govuk-link govuk-link--no-visited-state">Llaboriosam Nostrum Minus 3000kw</a>
                       </th>
                   </tr>
@@ -262,6 +269,9 @@
                       <th headers="item-3" id="meta-3" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-227
+                      </td>                        
                       <td headers="prodtype item-3 meta-3" class="govuk-table__cell">
                         Nostrum minus
                       </td>
@@ -287,6 +297,9 @@
                       <th headers="item-4" id="meta-4" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-23
+                      </td>                        
                       <td headers="prodtype item-4 meta-4" class="govuk-table__cell">
                         Facere tempora
                       </td>
@@ -312,6 +325,9 @@
                       <th headers="item-5" id="meta-5" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-98
+                      </td>                        
                       <td headers="prodtype item-5 meta-5" class="govuk-table__cell">
                         Laudantium abium
                       </td>
@@ -337,6 +353,9 @@
                       <th headers="item-6" id="meta-6" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-4116
+                      </td>                        
                       <td headers="prodtype item-6 meta-6" class="govuk-table__cell">
                         Consequuntur
                       </td>
@@ -362,6 +381,9 @@
                       <th headers="item-7" id="meta-7" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-678
+                      </td>                        
                       <td headers="prodtype item-7 meta-7" class="govuk-table__cell">
                         Facere tempora
                       </td>
@@ -387,6 +409,9 @@
                       <th headers="item-8" id="meta-8" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-88
+                      </td>                        
                       <td headers="prodtype item-8 meta-8" class="govuk-table__cell">
                         Magnam voluptas
                       </td>
@@ -412,6 +437,9 @@
                       <th headers="item-9" id="meta-9" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-7582
+                      </td>                        
                       <td headers="prodtype item-9 meta-9" class="govuk-table__cell">
                         Adipisicing
                       </td>
@@ -437,6 +465,9 @@
                       <th headers="item-10" id="meta-10" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-3268
+                      </td>                        
                       <td headers="prodtype item-10 meta-10" class="govuk-table__cell">
                         Adipisicing
                       </td>
@@ -462,6 +493,9 @@
                       <th headers="item-11" id="meta-11" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-9925
+                      </td>                        
                       <td headers="prodtype item-11 meta-11" class="govuk-table__cell">
                         Adipisicing
                       </td>
@@ -487,6 +521,9 @@
                       <th headers="item-12" id="meta-12" class="govuk-visually-hidden">
                           Metadata
                       </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-837
+                      </td>                        
                       <td headers="prodtype item-12 meta-12" class="govuk-table__cell">
                         Nostrum minus
                       </td>
@@ -502,6 +539,7 @@
                   <tfoot class="govuk-table__head">
                       <tr class="govuk-table__row">
                           <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
                           <th scope="col" class="govuk-table__header">Product type</th>
                           <th scope="col" class="govuk-table__header">Hazard type</th>
                           <th scope="col" class="govuk-table__header">Category</th>
