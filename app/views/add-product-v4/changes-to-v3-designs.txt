@@ -128,7 +128,7 @@ WAS: Add details about the product not already provided. For example, colour, si
  From: Upload a product image
  To: Can you provide an image of the product?     (Question for the yes/no)
 
- Hint: "Do not upload case images related to damage or incidents." follows the same logic as extra product information
+ Hint: "Do not upload case images related to damage or incidents. (Those are evidence images used for adding to a case)." follows the same logic as extra product information
 
 As all questions are related to the uploading of an "image", then one page makes sense.
 

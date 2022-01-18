@@ -1,0 +1,86 @@
+{% extends "layout-02-noacc.html" %}
+
+{% block pageTitle %}
+    Responsible person
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="responsible-person-hint">
+              Responsible Person
+            </h1>
+          </div>
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+            <!--*** link text is "Add a Responsible Person" if there aren't any ***-->
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
+              Change the Responsible Person
+            </a>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p id="responsible-person-hint" class="govuk-hint govuk-!-width-two-thirds">
+                    The Responsible Person can be a business, individual or sole trader and has an assigned contact.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!--
+      1. Removed empty spans
+      2. Removed last DDs .govuk-summary-list__actions
+      2. Added new div block at end of this DL: the DT and DD have class "opss-border-none" added
+    -->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">Name</dt>
+        <dd class="govuk-summary-list__value ">Smith &amp; Son</dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          100 Acacia Ave<span class="govuk-visually-hidden">,</span><br>London<span class="govuk-visually-hidden">,</span><br>England<span class="govuk-visually-hidden">,</span><br>SE11 4SJ
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">Business type</dt>
+        <dd class="govuk-summary-list__value ">Individual or sole trader</dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key opss-border-none">
+          <span class="govuk-visually-hidden">Edit this information</span>
+        </dt>
+
+        <dd class="govuk-summary-list__actions opss-border-none">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">
+            Edit<span class="govuk-visually-hidden"> the Responsible Person details</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Assigned contact</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key ">Name</dt><dd class="govuk-summary-list__value ">David Smith</dd><dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="/responsible_persons/628/contact_persons/604/edit?field=name">Edit <span class="govuk-visually-hidden">the name</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key ">Email</dt><dd class="govuk-summary-list__value ">dh.takingpart@gmail.co.uk</dd><dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="/responsible_persons/628/contact_persons/604/edit?field=email_address">Edit <span class="govuk-visually-hidden">email address</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key ">Telephone</dt><dd class="govuk-summary-list__value ">0344 411 1444</dd><dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="/responsible_persons/628/contact_persons/604/edit?field=phone_number">Edit <span class="govuk-visually-hidden">the telephone number</span></a></dd></div></dl>
+
+
+  </div>
+</div>
+
+{% endblock %}
