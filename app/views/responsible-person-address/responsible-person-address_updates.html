@@ -18,7 +18,30 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
         
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Edit the <abbr>UK</abbr> Responsible Person address</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Edit the <abbr>UK</abbr> Responsible Person details</h1>
+
+        <details class="govuk-details opss-details--sm govuk-!-margin-top-4" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                  Help with the <abbr>UK</abbr> Responsible Person details
+              </span>
+          </summary>
+          <div class="govuk-details__text">
+
+              <p class="govuk-body-s">
+                  A Responsible Person can be a business - in the law this is called a 'legal person'. Or a Responsible Person can be a living person - in the law this is called a 'natural person'.
+              </p>
+
+              <p class="govuk-body-s">
+                  The Responsible Person - the legal person or natural person - is a legal entity that must be established in the <abbr>UK</abbr>. The address provided must be that of the legal entity named as the Responsible Person. The Responsible Person must provide a <abbr>UK</abbr> address, which cannot be a <abbr title="Post Office">PO</abbr> box or mail forwarding address.
+              </p>
+
+              <p class="govuk-body-s">
+                  A Responsible Person is legally bound by the obligations in the Cosmetics Regulation.
+              </p>
+
+          </div>
+      </details>        
     
         <div class="govuk-warning-text govuk-!-margin-top-7 govuk-!-margin-bottom-6">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -28,16 +51,40 @@
             </strong>
 
             <strong class="govuk-warning-text__text govuk-!-font-size-16">
-                <span class="govuk-warning-text__assistive">Warning</span> The <abbr>UK</abbr> address provided must not be a <abbr>PO</abbr> box or mail forwarding address. These are not UK established addresses that comply with the regulation.
+                <span class="govuk-warning-text__assistive">Warning</span> The <abbr>UK</abbr> address provided must not be a <abbr>PO</abbr> box or mail forwarding address. These are not <abbr>UK</abbr> established addresses that comply with the regulation.
             </strong>            
         </div>
 
       </div>
     </div>
     
+    
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form class="edit_responsible_person" id="edit_responsible_person_628" novalidate="novalidate" action="/responsible_persons/628" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="TCpoCjZp7kg5xfD1U8w2Gu/IDQWKZqTJyxK25yzi3UW6QVDbb5oH/U86v2VpSU8cpTk18uGu3vVxb/zbnpDBqQ==">
+        <form class="edit_responsible_person" id="edit_responsible_person_628" novalidate="novalidate" action="/responsible_persons/628" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="authenticity_token" value="TCpoCjZp7kg5xfD1U8w2Gu/IDQWKZqTJyxK25yzi3UW6QVDbb5oH/U86v2VpSU8cpTk18uGu3vVxb/zbnpDBqQ==">
+
+
+          <div class="govuk-form-group govuk-!-margin-top-6">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">        
+                    Is the <abbr>UK</abbr> Responsible Person a business or an individual?
+                </legend>
+                
+                <div class="govuk-radios govuk-radios--small">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="responsible_person_account_type_business" name="responsible_person[account_type]" type="radio" value="business" checked="checked">
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_business">Limited company or Limited Liability Partnership (<abbr>LLP</abbr>)</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="responsible_person_account_type_individual" name="responsible_person[account_type]" type="radio" value="individual">
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_individual">Individual or sole trader</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
           <fieldset class="govuk-fieldset ">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
