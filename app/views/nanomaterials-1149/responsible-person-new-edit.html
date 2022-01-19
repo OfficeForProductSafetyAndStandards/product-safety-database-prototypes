@@ -40,38 +40,35 @@
 
     <!--
       1. Removed empty spans
-      2. Removed last DDs .govuk-summary-list__actions
-      2. Added new div block at end of this DL: the DT and DD have class "opss-border-none" added
+      2. Added opss-summary-list-mixed to DL
     -->
+    <dl class="govuk-summary-list opss-summary-list-mixed govuk-!-margin-bottom-8">
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key ">Name</dt>
-        <dd class="govuk-summary-list__value ">Smith &amp; Son</dd>
-
+          <dt class="govuk-summary-list__key">Name</dt>
+          <dd class="govuk-summary-list__value">Smith &amp; Son</dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Address</dt>
-        <dd class="govuk-summary-list__value">
-          100 Acacia Ave<span class="govuk-visually-hidden">,</span><br>London<span class="govuk-visually-hidden">,</span><br>England<span class="govuk-visually-hidden">,</span><br>SE11 4SJ
-        </dd>
-
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">
+            100 Acacia Ave<span class="govuk-visually-hidden">,</span><br>London<span class="govuk-visually-hidden">,</span><br>England<span class="govuk-visually-hidden">,</span><br>SE11 4SJ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              Edit<span class="govuk-visually-hidden"> the address</span>
+            </a>
+          </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key ">Business type</dt>
-        <dd class="govuk-summary-list__value ">Individual or sole trader</dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key opss-border-none">
-          <span class="govuk-visually-hidden">Edit this information</span>
-        </dt>
-
-        <dd class="govuk-summary-list__actions opss-border-none">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">
-            Edit<span class="govuk-visually-hidden"> the Responsible Person details</span>
-          </a>
-        </dd>
+          <dt class="govuk-summary-list__key">Business type</dt>
+          <dd class="govuk-summary-list__value">
+            Individual or sole trader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              Edit<span class="govuk-visually-hidden"> the business type</span>
+            </a>
+          </dd>
       </div>
     </dl>
 
