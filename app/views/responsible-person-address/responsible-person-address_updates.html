@@ -1,0 +1,115 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Edit the Responsible Person address
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+        
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Edit the <abbr>UK</abbr> Responsible Person details</h1>
+
+        <details class="govuk-details opss-details--sm govuk-!-margin-top-4" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                  Help with the <abbr>UK</abbr> Responsible Person details
+              </span>
+          </summary>
+          <div class="govuk-details__text">
+
+              <p class="govuk-body-s">
+                  A Responsible Person can be a business - in the law this is called a 'legal person'. Or a Responsible Person can be a living person - in the law this is called a 'natural person'.
+              </p>
+
+              <p class="govuk-body-s">
+                  The Responsible Person - the legal person or natural person - is a legal entity that must be established in the <abbr>UK</abbr>. The address provided must be that of the legal entity named as the Responsible Person. The Responsible Person must provide a <abbr>UK</abbr> address, which cannot be a <abbr title="Post Office">PO</abbr> box or mail forwarding address.
+              </p>
+
+              <p class="govuk-body-s">
+                  A Responsible Person is legally bound by the obligations in the Cosmetics Regulation.
+              </p>
+
+          </div>
+      </details>        
+    
+        <div class="govuk-warning-text govuk-!-margin-top-7 govuk-!-margin-bottom-6">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            
+            <strong class="govuk-warning-text__text govuk-!-font-size-16 govuk-!-margin-bottom-4">
+                <span class="govuk-warning-text__assistive">Warning</span> You must update your cosmetic product labels with your new address. Any cosmetic products you have notified will be associated with the new address. You will not need to submit a new notification.
+            </strong>
+
+            <strong class="govuk-warning-text__text govuk-!-font-size-16">
+                <span class="govuk-warning-text__assistive">Warning</span> The <abbr>UK</abbr> address provided must not be a <abbr>PO</abbr> box or mail forwarding address. These are not <abbr>UK</abbr> established addresses that comply with the regulation.
+            </strong>            
+        </div>
+
+      </div>
+    </div>
+    
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="edit_responsible_person" id="edit_responsible_person_628" novalidate="novalidate" action="/responsible_persons/628" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="authenticity_token" value="TCpoCjZp7kg5xfD1U8w2Gu/IDQWKZqTJyxK25yzi3UW6QVDbb5oH/U86v2VpSU8cpTk18uGu3vVxb/zbnpDBqQ==">
+
+
+          <div class="govuk-form-group govuk-!-margin-top-6">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">        
+                    Is the <abbr>UK</abbr> Responsible Person a business or an individual?
+                </legend>
+                
+                <div class="govuk-radios govuk-radios--small">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="responsible_person_account_type_business" name="responsible_person[account_type]" type="radio" value="business" checked="checked">
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_business">Limited company or Limited Liability Partnership (<abbr>LLP</abbr>)</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="responsible_person_account_type_individual" name="responsible_person[account_type]" type="radio" value="individual">
+                        <label class="govuk-label govuk-radios__label govuk-!-padding-bottom-0" for="responsible_person_account_type_individual">Individual or sole trader</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+          <fieldset class="govuk-fieldset ">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                Address
+              </h2>
+            </legend>
+            <div id="address-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-6 govuk-!-width-three-quarters">
+              The address of the legal entity named as the Responsible Person.
+            </div>
+    
+            <div class="govuk-form-group"><label class="govuk-label" for="address_line_1">Building and street <span class="govuk-visually-hidden">line 1 of 2</span></label><input aria-describedby="address-hint" class="govuk-input govuk-!-width-three-quarters" id="address_line_1" name="responsible_person[address_line_1]" type="text" value="100 Acacia Ave"></div>
+    
+            <div class="govuk-form-group"><label class="govuk-label" for="address_line_2"><span class="govuk-visually-hidden">Building and street line 2 of 2</span></label><input class="govuk-input govuk-!-width-three-quarters" id="address_line_2" name="responsible_person[address_line_2]" type="text" value=""></div>
+    
+            <div class="govuk-form-group"><label class="govuk-label" for="city">Town or city</label><input class="govuk-input govuk-input govuk-!-width-two-thirds" id="city" name="responsible_person[city]" type="text" value="London"></div>
+            <div class="govuk-form-group"><label class="govuk-label" for="county">County</label><input class="govuk-input govuk-input govuk-!-width-two-thirds" id="county" name="responsible_person[county]" type="text" value="England"></div>
+            <div class="govuk-form-group"><label class="govuk-label" for="postal_code">Postcode</label><input class="govuk-input govuk-input--width-10" id="postal_code" name="responsible_person[postal_code]" type="text" value="SE11 4SJ"></div>
+    
+            <div class="govuk-form-group">
+              <button class="govuk-button ">Save and continue</button>
+            </div>
+          </fieldset>
+    </form>  </div>
+    </div>
+    
+
+
+{% endblock %}

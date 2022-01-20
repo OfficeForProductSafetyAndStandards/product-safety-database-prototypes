@@ -1,0 +1,611 @@
+{% extends "layout-auto-complete.html" %}
+
+{% block pageTitle %}
+    Products page
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> <!-- govuk-grid-column-three-quarters govuk-!-margin-bottom-7 -->
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Products
+        </h1>
+
+        <details class="govuk-details opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the Products page
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p class="govuk-body-s">
+                    <span id="search-hint">You can search for one or more products by using the keywords that describe them or use a single <abbr>PSD</abbr> reference number to find a specific product record.</span> You can also sort the ordering of the search results.
+                </p>
+                <p class="govuk-body-s govuk-!-margin-bottom-1">
+                    You can filter the results by hazard type.
+                </p>
+                <p class="govuk-body-s govuk-visually-hidden">
+                  Search results appear within the following <code>form</code> and within the <code>role = region</code>.
+                </p>
+            </div>
+        </details>
+    </div>
+    <!--div class="govuk-grid-column-one-third govuk-!-margin-top-8">
+        &nbsp;
+    </div-->
+</div>
+
+<form action="#" accept-charset="UTF-8" method="get" role="search" novalidate>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+              <div class="govuk-form-group govuk-!-padding-top-4 govuk-!-padding-bottom-7"> <!-- opss-border-bottom -->
+
+                  <label class="govuk-label" for="businesses-search">
+                      Keywords search
+                  </label>
+
+                  <div class="govuk-input__wrapper opss-search__wrapper">
+                      <input class="govuk-input govuk-!-width-one-half" type="search" id="businesses-search" name="businesses-search" spellcheck="false" aria-describedby="search-hint">
+                      <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                          <span class="govuk-visually-hidden">Search</span>
+                      </button>
+                  </div>
+
+              </div>
+
+
+      </div>
+  </div>
+
+  <div class="govuk-grid-row opss-full-height">
+
+      <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+        <h2 class="govuk-heading-m">
+            Filters<span class="govuk-visually-hidden">:</span>
+        </h2>
+
+        <a href="#results" class="govuk-skip-link opss-skip-link opss-skip-link--mb">
+            Skip to results
+        </a>
+
+          <!--input value="relevance" type="hidden" name="sort" id="sort" /--> <!-- ? from the current page ? -->
+
+          <div class="govuk-form-group govuk-!-margin-right-1">
+            <label class="govuk-label" for="hazard_type">Hazard type</label>
+            <!--div id="hazard-hint" class="govuk-hint govuk-!-font-size-16">Start typing to find a hazard type.</div-->
+            <select class="govuk-select" id="hazard_type" name="hazard_type"><!--  aria-describedby="hazard-hint" -->
+              <option selected=""></option>
+              <option value="Asphyxiation">Asphyxiation</option>
+              <option value="Burns">Burns</option>
+              <option value="Chemical">Chemical</option>
+              <option value="Choking">Choking</option>
+              <option value="Cuts">Cuts</option>
+              <option value="Damage to hearing">Damage to hearing</option>
+              <option value="Damage to sight">Damage to sight</option>
+              <option value="Disturbance">Disturbance</option>
+              <option value="Drowning">Drowning</option>
+              <option value="Electric shock">Electric shock</option>
+              <option value="Electromagnetic">Electromagnetic</option>
+              <option value="Energy consumption">Energy consumption</option>
+              <option value="Entrapment">Entrapment</option>
+              <option value="Environment">Environment</option>
+              <option value="Fire">Fire</option>
+              <option value="Health risk">Health risk</option>
+              <option value="Incorrect measurement">Incorrect measurement</option>
+              <option value="Injuries">Injuries</option>
+              <option value="Microbiological">Microbiological</option>
+              <option value="Security">Security</option>
+              <option value="Strangulation">Strangulation</option>
+              <option value="Suffocation">Suffocation</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <script>
+              //<![CDATA[
+              window.callAutocompleteWhenReady("hazard_type", {showAllValues: ""});
+              //]]>
+            </script>
+          </div>
+
+          <!--input type="submit" value="Apply filters" class="govuk-button" data-disable-with="Apply filters"-->
+          <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Apply
+              </button>
+
+              <button type="reset" class="govuk-button opss-button-link govuk-!-font-size-16 opss-nojs-hide" id="opss-reset" data-module="govuk-button">
+                  Reset
+              </button>
+          </div>
+
+
+        <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
+            <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+                Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+            </p>
+        </div>
+        <!--div class="govuk-!-padding-top-3 govuk-!-padding-right-2 govuk-!-padding-bottom-2 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-grey-bg">
+            <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+                Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+            </p>
+        </div-->
+
+      </section>
+      <section class="govuk-grid-column-three-quarters">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">12 products matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, were found.</p>
+                <!--p class="govuk-body">There are currently 248 products</p-->
+                <!--p class="govuk-body">1 product matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, was found.</p-->
+                <!--p class="govuk-body">0 products matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, were found.</p-->
+                <!--p class="govuk-body">12 products matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, using the current filter, were found.</p-->
+          </div>
+          <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group opss-text-align-right">
+                      <fieldset class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
+                          <label class="govuk-label govuk-body-s" for="results-sort">
+                              Sort <span class="govuk-visually-hidden">the results</span> by
+                          </label>
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort">
+                              <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</option>
+                              <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2" selected="selected">Option 2</option>
+                              <option value="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">Option 3</option>
+                          </select>
+                      </fieldset>
+
+                      <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
+                          <dt>
+                              Sort <span class="govuk-visually-hidden">the results</span> by
+                          </dt>
+                          <dd>
+                              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</a>
+                          </dd>
+                          <dd>
+                              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
+                                <span class="govuk-visually-hidden">Active: </span>Option 2
+                              </a>
+                          </dd>
+                          <dd class="opss-dl-select__active">
+                              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
+                                  Option 3
+                              </a>
+                          </dd>
+                      </dl>
+                </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Products">
+
+              <table id="results" class="govuk-table opss-table-items opss-table-items--sm">
+                  <caption class="govuk-visually-hidden">
+                      Products: 5 columns with each case described across rows within each table body.
+                  </caption>
+                  <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th id="psdref" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
+                          <th id="prodtype" scope="col" class="govuk-table__header">Product type</th>
+                          <th id="haztype" scope="col" class="govuk-table__header">Hazard type</th>
+                          <th id="cat" scope="col" class="govuk-table__header">Category</th>
+                      </tr>
+                  </thead>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">
+                              Product
+                          </th>
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco kettle 100v</a>
+                          </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                              Metadata
+                          </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-9873
+                          </td>                          
+                          <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                            Electrical appliance	
+                          </td>
+                          <td headers="haztype item-1 meta-1" class="govuk-table__cell">
+                            Electric shock
+                          </td>
+                          <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                            Electrical
+                          </td>
+                      </tr>
+                  </tbody>
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Product
+                        </th>
+                        <th id="item-2" colspan="4" scope="colgroup" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Nevica skis</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-2" id="meta-2" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                          psd-7
+                        </td>                          
+                        <td headers="prodtype item-2 meta-2" class="govuk-table__cell">
+                          Skiing
+                        </td>
+                        <td headers="haztype item-2 meta-2" class="govuk-table__cell">
+                          Cuts
+                        </td>
+                        <td headers="cat item-2 meta-2" class="govuk-table__cell">
+                          Sports equipment
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-3" colspan="4" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Llaboriosam Nostrum Minus 3000kw</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-3" id="meta-3" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-227
+                      </td>                        
+                      <td headers="prodtype item-3 meta-3" class="govuk-table__cell">
+                        Nostrum minus
+                      </td>
+                      <td headers="haztype item-3 meta-3" class="govuk-table__cell">
+                        Laudantium
+                      </td>
+                      <td headers="cat item-3 meta-3" class="govuk-table__cell">
+                        Blanditiis
+                      </td>
+                  </tr>
+                </tbody>  
+              
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-4" colspan="4" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Dolorem ipsum dolor</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-4" id="meta-4" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-23
+                      </td>                        
+                      <td headers="prodtype item-4 meta-4" class="govuk-table__cell">
+                        Facere tempora
+                      </td>
+                      <td headers="haztype item-4 meta-4" class="govuk-table__cell">
+                        Nesciunt
+                      </td>
+                      <td headers="cat item-4 meta-4" class="govuk-table__cell">
+                        Consectetur
+                      </td>
+                  </tr>
+                </tbody>
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-5" colspan="5" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Ipsum possimus amet</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-5" id="meta-5" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-98
+                      </td>                        
+                      <td headers="prodtype item-5 meta-5" class="govuk-table__cell">
+                        Laudantium abium
+                      </td>
+                      <td headers="haztype item-5 meta-5" class="govuk-table__cell">
+                        Harum sequi commodi
+                      </td>
+                      <td headers="cat item-5 meta-5" class="govuk-table__cell">
+                        Reiciendis
+                      </td>
+                  </tr>
+                </tbody>   
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-6" colspan="6" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Necessitatibus adipisicing elit - Dignissimos</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-6" id="meta-6" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-4116
+                      </td>                        
+                      <td headers="prodtype item-6 meta-6" class="govuk-table__cell">
+                        Consequuntur
+                      </td>
+                      <td headers="haztype item-6 meta-6" class="govuk-table__cell">
+                        Adipisicing elit
+                      </td>
+                      <td headers="cat item-6 meta-6" class="govuk-table__cell">
+                        Dignissimos
+                      </td>
+                  </tr>
+                </tbody> 
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-7" colspan="7" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Neque eum</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-7" id="meta-7" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-678
+                      </td>                        
+                      <td headers="prodtype item-7 meta-7" class="govuk-table__cell">
+                        Facere tempora
+                      </td>
+                      <td headers="haztype item-7 meta-7" class="govuk-table__cell">
+                        Quibusdam eaque
+                      </td>
+                      <td headers="cat item-7 meta-7" class="govuk-table__cell">
+                        Blanditiis natus atque
+                      </td>
+                  </tr>
+                </tbody> 
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-8" colspan="8" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Molestias voluptas tempora</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-8" id="meta-8" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-88
+                      </td>                        
+                      <td headers="prodtype item-8 meta-8" class="govuk-table__cell">
+                        Magnam voluptas
+                      </td>
+                      <td headers="haztype item-8 meta-8" class="govuk-table__cell">
+                        Facere tempora
+                      </td>
+                      <td headers="cat item-8 meta-8" class="govuk-table__cell">
+                        Adipisicing elit
+                      </td>
+                  </tr>
+                </tbody>
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-9" colspan="9" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Amet temporibus</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-9" id="meta-9" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-7582
+                      </td>                        
+                      <td headers="prodtype item-9 meta-9" class="govuk-table__cell">
+                        Adipisicing
+                      </td>
+                      <td headers="haztype item-9 meta-9" class="govuk-table__cell">
+                        Dignissimos
+                      </td>
+                      <td headers="cat item-9 meta-9" class="govuk-table__cell">
+                        Blanditiis natus atque
+                      </td>
+                  </tr>
+                </tbody> 
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-10" colspan="10" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Minima sapiente adipisicing sapiente</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-10" id="meta-10" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-3268
+                      </td>                        
+                      <td headers="prodtype item-10 meta-10" class="govuk-table__cell">
+                        Adipisicing
+                      </td>
+                      <td headers="haztype item-10 meta-10" class="govuk-table__cell">
+                        Adipisicing elit
+                      </td>
+                      <td headers="cat item-10 meta-10" class="govuk-table__cell">
+                        Blanditiis
+                      </td>
+                  </tr>
+                </tbody> 
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-11" colspan="11" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Minima sapiente</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-11" id="meta-11" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-9925
+                      </td>                        
+                      <td headers="prodtype item-11 meta-11" class="govuk-table__cell">
+                        Adipisicing
+                      </td>
+                      <td headers="haztype item-11 meta-11" class="govuk-table__cell">
+                        Adipisicing elit
+                      </td>
+                      <td headers="cat item-11 meta-11" class="govuk-table__cell">
+                        Blanditiis
+                      </td>
+                  </tr>
+                </tbody> 
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <th class="govuk-visually-hidden">
+                          Product
+                      </th>
+                      <th id="item-12" colspan="12" scope="colgroup" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Llaboriosam</a>
+                      </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <th headers="item-12" id="meta-12" class="govuk-visually-hidden">
+                          Metadata
+                      </th>
+                      <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                        psd-837
+                      </td>                        
+                      <td headers="prodtype item-12 meta-12" class="govuk-table__cell">
+                        Nostrum minus
+                      </td>
+                      <td headers="haztype item-12 meta-12" class="govuk-table__cell">
+                        Quisquam voluptas
+                      </td>
+                      <td headers="cat item-12 meta-12" class="govuk-table__cell">
+                        Facere tempora
+                      </td>
+                  </tr>
+                </tbody>                 
+
+                  <tfoot class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
+                          <th scope="col" class="govuk-table__header">Product type</th>
+                          <th scope="col" class="govuk-table__header">Hazard type</th>
+                          <th scope="col" class="govuk-table__header">Category</th>
+                      </tr>
+                  </tfoot>
+
+              </table>              
+
+              <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                  <ul>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">
+                              <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                          </a>
+                      </li>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                          Page 2
+                      </li>
+                      <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">
+                              <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                          </a>
+                      </li>
+                  </ul>
+              </nav>
+
+
+            </div>
+        </div>
+
+      </section>
+
+  </div>
+</form>
+
+<script>
+  var mySort = document.getElementById("results-sort");
+  mySort.addEventListener("change", function(e){
+      e.preventDefault();
+      window.location.assign(mySort.value);
+      return false;
+    }
+  );
+
+//****** js for reset filters starts ******
+  /*function getPathFromUrl(url) {
+    return url.split("hazard_type")[0];
+  }
+
+  document.getElementById("opss-reset").addEventListener("click", function(e){
+      var urlDomain = window.location.origin;
+      var urlPath = getPathFromUrl(window.location.pathname);
+      window.history.pushState(urlDomain, document.title, urlPath);//replaceState
+
+
+      var hazardSelect = document.getElementById("hazard_type-select");
+      var hazardOptions = hazardSelect.querySelectorAll("option");
+      Array.prototype.forEach.call(hazardOptions, function(el, i) {
+        el.removeAttribute("selected");
+      });
+
+
+    }
+  );*/
+//****** js for reset fitlers ends ******
+</script>
+
+
+{% endblock %}
