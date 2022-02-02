@@ -1,0 +1,81 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Page designs for revised PSD create a case journey
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+    li i {
+        font-size: 60%; 
+    }
+
+
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+                        <abbr>PSD</abbr> Cases area
+                    </h1>
+
+                    <p class="govuk-body opss-secondary-text">
+                        'My cases', 'Team cases' and 'All cases search': 3x page designs showing two new pages and all 3 with new left-hand sub-nav.
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                My cases:
+            </h2>
+
+            <p class="govuk-body">When the user selects the "Cases" option from the top level navigation, the user now lands on the "My cases" page.</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/my-cases.html" target="_blank">My cases </a> 
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/no-cases-example-1.html" target="_blank">My cases - no cases</a>
+                        </li>
+                      
+                    </ul>
+                </li>
+            </ul> 
+
+            <p class="govuk-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ab maiores repudiandae, modi ea amet temporibus magnam esse cupiditate blanditiis voluptates nostrum doloribus voluptate harum quibusdam non? Iste, dignissimos autem?</p>
+
+        </div>
+            
+
+    </div>
+</div>
+
+{% endblock %}
