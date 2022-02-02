@@ -515,3 +515,25 @@ ul.opss-radio-list {
     }    
 
 }
+
+/*
+.opss-list-counter {
+    padding-left: govuk-spacing(0); 
+    counter-reset: item;
+
+    li {
+        counter-increment: item; 
+        display: inline-block;
+        padding-right: govuk-spacing(4);
+    }
+
+    li:before {
+        margin-right: 10px;
+        content: counter(item)":";
+        display: inline-block; 
+        color: $govuk-secondary-text-colour; 
+        font-size: 90%;
+    }
+
+}
+*/
