@@ -23,13 +23,13 @@
         <details class="govuk-details opss-details--sm" data-module="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                    Help with the all cases search page
+                    Help with the cases search
                 </span>
             </summary>
             <div class="govuk-details__text">
-                <p class="govuk-body-s">
+                <!--p class="govuk-body-s">
                     Cases are used to record findings of investigations and to notify the <abbr title="Office for Product Safety and Standards">OPSS</abbr> about unsafe and non-compliant products.
-                </p>
+                </p-->
 
                 <p class="govuk-body-s govuk-!-margin-bottom-1">
                     <span id="search-hint">You can search for a case using a case number or the keywords that describe it and by filtering the results.</span> You can also filter all case records without a keyword search.
@@ -52,16 +52,16 @@
 
 <form id="cases-search-form" action="/cases/search" role="search" accept-charset="UTF-8" novalidate>
 
-    <div class="govuk-grid-row opss-full-height govuk-!-margin-top-4 govuk-!-padding-top-9">
+    <div class="govuk-grid-row opss-full-height govuk-!-padding-top-9">
 
         <!--XXXXXXXXXX filters section starts XXXXXXXXXXX -->
         <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
 
+            <a href="#page-content" class="govuk-skip-link opss-skip-link">
+                Skip to the main content
+            </a>
+
             <nav aria-label="Secondary">
-                <a href="#page-content" class="govuk-skip-link opss-skip-link">
-                    Skip to the main content
-                </a>
-        
                 <ul class="govuk-list opss-left-nav">
                     <li>
                         <a href="/psd-cases-area/my-cases.html" class="govuk-link govuk-link--no-visited-state">My cases</a>
@@ -70,7 +70,7 @@
                         <a href="/psd-cases-area/team-cases.html" class="govuk-link govuk-link--no-visited-state">Team cases</a>
                     </li>
                     <li class="opss-left-nav__active">
-                        <a href="/psd-cases-area/all-cases.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">All cases &ndash; Search</a>
+                        <a href="/psd-cases-area/all-cases-2.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">All cases &ndash; Search</a>
                     </li>
                 </ul>
             </nav>
@@ -490,7 +490,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     
-                    <div class="govuk-form-group govuk-!-padding-bottom-5"> <!-- opss-border-bottom -->
+                    <div class="govuk-form-group govuk-!-padding-bottom-2"> 
 
                         <label class="govuk-label" for="cases-search">
                             Keywords search
