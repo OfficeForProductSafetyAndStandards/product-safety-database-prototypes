@@ -8,6 +8,22 @@
 
 
 {% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+    li i {
+        font-size: 60%; 
+    }
+
+
+</style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
@@ -33,48 +49,91 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-top-7">
-        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8">
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
             <h2 class="govuk-heading-s">
-                Landing Case pages:
+                Case (pages):
             </h2>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing.html" target="_blank">Trading Standards landing page (Admin)</a><br>
-                    Admin users and team members have all editing rights - if the product owner is on your team you have editing rights
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing.html" target="_blank">Trading Standards - CASE page </a> (Admin). <i>Admin users and team members have all editing rights - if the product owner is on your team you have editing rights</i>
 
                     <ul class="govuk-list govuk-list--bullet">
                         <li class="strike">
-                            <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-non-admin.html" target="_blank">Trading Standards landing page (Non-Admin)</a>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-non-admin.html" target="_blank">Trading Standards - Case page</a> (Non-Admin)
                         </li>
                         <li>
-                            <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-different-team.html" target="_blank">Trading Standards landing page (different team)</a>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-different-team.html" target="_blank">Trading Standards = Case page</a> (different team)
                         </li>
                         <li>
-                            <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Trading Standards landing page (Admin): after case creation</a>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Trading Standards Case page</a> (Admin): after case creation
                         </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing.html" target="_blank">
+                                OPSS - CASE page</a> (Allegation)
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing-team-not-added-to-case.html" target="_blank">
+                                OPSS - CASE page</a> (Allegation) - a team not added to the case, view. <i>2x classes removed from DL</i>.
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing-team-added-to-case.html" target="_blank">
+                                OPSS - CASE page</a> (Allegation) - a team added to the case but without editing rights, view. <i>2x classes removed from DL + sentence at footer</i>.
+                        </li>                                                
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing__enquiry.html" target="_blank">
+                                OPSS - CASE page</a> (Enquiry)
+                        </li>                        
                     </ul>
                 </li>
-                <li>
-                    <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing.html" target="_blank">OPSS landing page (Allegation)</a>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, corporis sed? Fuga aut veritatis architecto exercitationem quae voluptas quisquam blanditiis ab doloribus quas! Repellendus quidem quia qui nemo, a cumque.
+            </ul> 
 
-                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <p class="govuk-body">In the left navigation: "Case admin" only appears for the case owner.</p>
+
+            <p class="govuk-body-l">OPSS</p>
+            <p class="govuk-body">In the Case source section is the statement: "Only teams added to the case can view case source contact details" which is shown if the OPSS user is in the team that owns this case</p>
+
+            <!-- is it correct? ...
+            1. 
+            -->
+
+        </div>
+            
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">            
+            <h2 class="govuk-heading-s">
+                Products (pages):
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products.html" target="_blank">Trading Standards - PRODUCTS page</a> 
+                    
+                    
+                    <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            <a class="govuk-label govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing__enquiry.html" target="_blank">OPSS landing page (Enquiry)</a>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-2-products.html" target="_blank">Trading Standards - Products x2 page </a> <i>Showing two products linked to the one case.</i>                    
                         </li>
                     </ul>
                 </li>
             </ul>
+            <p class="govuk-body">The "Edit this product" link(s) only appear if the user is in the product record owner team or the product record has no owner.</p>
+            <p class="govuk-body">Within the tabbed areas, the statements "To edit the [details/images/attachments] for this product go to the full [product name] product record page" only appear if the user is in the product record owner team or the product record has no owner. Alternatively, we serve this statement instead: "Only the product record owner ([Owner name]) can edit these [details/images/attachments]".</p>
         </div>
 
-        <div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5">
+
+        <!--div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5">
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-        </div>
+        </div-->
+
+
+
+
+we shouldn't search for or get results for products in the cases search, should we?
+
+
 
 
     </div>

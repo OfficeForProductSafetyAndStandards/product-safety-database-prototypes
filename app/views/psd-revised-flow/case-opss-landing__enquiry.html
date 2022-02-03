@@ -30,7 +30,7 @@
 
 
 <div class="govuk-grid-row">
-    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
 
         <a href="#page-content" class="govuk-skip-link opss-skip-link">
             Skip to the main content
@@ -132,6 +132,11 @@
                 <dd class="govuk-summary-list__value">
                     <!--i class="govuk-body-s opss-secondary-text"> --- Omit if no value or UK ---</i-->
                 </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Change<span class="govuk-visually-hidden"> the notifying country</span>
+                    </a>
+                </dd>                 
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -290,7 +295,7 @@
                 </div>
             </dl>
 
-            <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">Only teams added to the case can view allegation contact details</p>
+            <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">Only teams added to the case can view case source contact details</p>
         </section>
 
     </section>

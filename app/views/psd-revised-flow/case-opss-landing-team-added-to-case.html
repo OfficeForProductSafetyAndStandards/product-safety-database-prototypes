@@ -50,30 +50,15 @@
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-        {% include "psd-revised-flow/inc_top_nav_2.html" %}
-
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
-<!--
-        <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                0 products have been added to this case.
-            </strong>
-        </div>
--->
-        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
+
+        <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Case name
                 </dt>
                 <dd class="govuk-summary-list__value">
                     New feature - readable case name
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the case name</span>
-                    </a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -84,14 +69,6 @@
                     2101-0008
                 </dd>
             </div>
-            <!--div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Reference <span class="opss-numero" title="Number">&numero;</span>
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    12345-1882
-                </dd>
-            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Description
@@ -107,11 +84,6 @@
                 <dd class="govuk-summary-list__value">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero sunt voluptatum cumque illo voluptates officia quasi, libero facilis quidem nulla placeat quas aliquid dolore, saepe hic sit exercitationem? Veniam. <!-- opss user: what is being alleged, shows here on current service -->
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the summary</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row opss-summary-list__row--split">
                 <dt class="govuk-summary-list__key">
@@ -119,11 +91,6 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Open
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Close<span class="govuk-visually-hidden"> this case</span>
-                    </a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -139,13 +106,8 @@
                     Notifying country
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    <!--i class="govuk-body-s opss-secondary-text"> --- Omit if no value or UK ---</i-->
+
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the notifying country</span>
-                    </a>
-                </dd>                 
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -162,11 +124,6 @@
                 <dd class="govuk-summary-list__value">
                     Darren Harridence - Renfrewshire Council
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the case owner</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -182,11 +139,6 @@
                         </li>
                     </ul>
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the teams added</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -194,11 +146,6 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Unrestricted
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the case restriction</span>
-                    </a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -210,11 +157,6 @@
                         <span class="govuk-visually-hidden"> - </span>Validated
                     </span>
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the risk level</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -223,11 +165,6 @@
                 <dd class="govuk-summary-list__value">
                     <span class="opss-tag opss-tag--covid opss-tag--lrg"><span class="govuk-visually-hidden">This case is </span>COVID-19 related</span>
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the coronavirus status</span>
-                    </a>
-                </dd>
             </div>
         </dl>
 
@@ -235,18 +172,13 @@
             Safety and compliance
         </h3>
 
-        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
+        <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Unsafe
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the reported safety</span>
-                    </a>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -256,11 +188,6 @@
                 <dd class="govuk-summary-list__value">
                     Electric shock
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the primary hazard</span>
-                    </a>
-                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -269,66 +196,15 @@
                 <dd class="govuk-summary-list__value">
                     Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the hazard description</span>
-                    </a>
-                </dd>
             </div>
         </dl>
-<!-- this appears when this information is available and the anchor link appears in the nav 
-        <h3 id="product-info-1" class="govuk-heading-m govuk-!-margin-top-9">
-            Case specific product information
-        </h3>
 
-        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Batch numbers
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    B2669-233 
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the Batch numbers</span>
-                    </a>
-                </dd>                
-            </div>  
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Customs codes
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the Customs codes</span>
-                    </a>
-                </dd>                
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Units affected
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the units affected</span>
-                    </a>
-                </dd>                
-            </div>              
-        </dl>           
--->
         <section class="govuk-!-margin-top-9 opss-grouping">
             <h3 id="source" class="govuk-heading-m opss-grouping__heading-m">
                 Case source
             </h3>
 
-            <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Source type
@@ -359,9 +235,9 @@
                     </dd>
                 </div>
             </dl>
-
-            <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">Only teams added to the case can view case source contact details</p>
         </section>
+
+        <p class="govuk-body-s govuk-!-margin-top-7 govuk-!-margin-bottom-2 opss-secondary-text">Only teams added to the case with editing rights can edit the case.</p>
 
     </section>
 
