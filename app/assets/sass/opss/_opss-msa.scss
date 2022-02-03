@@ -19,6 +19,16 @@
     }
 }
 
+.opss-warning-text--s {
+    strong {
+        @include opss-font-size($s: 16px, $l: 1.3); 
+    }
+
+    & + .opss-warning-text--s > span {
+        display: none; 
+    }
+}
+
 //*** top nav & std rows starts ***
 .opss-std-row {
     margin: 0;
