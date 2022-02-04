@@ -440,7 +440,7 @@ ul.opss-radio-list {
 
     li {
         margin-bottom: 0;
-        padding: govuk-spacing(2) 0;
+        padding: 8px 0 5px 0;
         @include opss-font-size($s: 17px, $l: 1.2);
 
         a span {
@@ -481,7 +481,7 @@ ul.opss-radio-list {
     }
 
     & > li:first-child {
-        padding-top: 3px; 
+        padding-top: 5px;
     }
 
     .opss-left-nav__active {
