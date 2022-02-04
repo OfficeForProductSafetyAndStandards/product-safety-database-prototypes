@@ -26,21 +26,25 @@
     <div class="govuk-grid-column-full">
         <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
 
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
+
 
 
                     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
                         <abbr>PSD</abbr> Cases area
                     </h1>
 
-                    <p class="govuk-body opss-secondary-text">
-                        'My cases', 'Team cases' and 'All cases': 3x page designs showing two new pages and all 3 with new left-hand sub-nav. The user will be able to 'Create a case' from any of the pages.
+                    <p class="govuk-body-l">
+                        Pages: My cases, Team cases and All cases - Search: <br>
                     </p>
 
+                    <p class="govuk-body">
+                        3x page designs showing two new pages with all 3 incorporating an <b>additional left-hand sub-nav</b>. When the user selects the "Cases" option from the top level navigation, the user now lands on the "My cases" page. (The parent nav "Cases" active state remains active for all 3 pages). 
+                        The user will still be able to 'Create a case' from any of the pages.
+                    </p>
 
-                </div>
-            </div>
+                     
+
+
 
         </div>
     </div>
@@ -53,61 +57,81 @@
                 1. My cases:
             </h2>
 
-            <p class="govuk-body">When the user selects the "Cases" option from the top level navigation, the user now lands on the "My cases" page. <i>(This can soon be revised with the addition of an actual Cases landing page).</i> The "Cases" active state remains active for all 3 pages. The list of open cases are automatically ordered by most recently created.</p>
-
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/my-cases.html" target="_blank">My cases</a>
+                <li>The page automatically loads displaying all the <b>open</b> cases owned by the user</li>
+                <li>The list of <b>open</b> cases are automatically ordered by most recently created</li>
+                <li>If there are 12 or more cases. The 'Sort by' option is added to the page. <br>(There is a new sorting option of Oldest cases)</li>
+                <li>The center table column now displays the case created date</li>
+                <li>As before: Pagination for 20 or more cases. Table footer included for 12 or more cases. (New <abbr>ID</abbr> added to content area and removed from parent table tag on this page).</li>
+            </ul>
 
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/no-cases-example.html" target="_blank">My cases - no cases</a>
-                        </li>
-                      
-                    </ul>
+            <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/my-cases.html" target="_blank">My cases</a> page (without sorting)
                 </li>
-            </ul> 
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/my-cases-sorting.html" target="_blank">My cases</a> page (with sorting)
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/no-cases-example.html" target="_blank">My cases</a> page (with no cases)
+                </li>
+            </ol> 
 
             <h2 class="govuk-heading-s">
-                2. Team cases:
+                2. Team cases: (functionality as 'My cases')
             </h2>
 
-            <p class="govuk-body">As 'My cases' with different H1 title and H1 hint text.</p>
-
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/team-cases.html" target="_blank">Team cases</a>
+                <li>The page automatically loads displaying all the <b>open</b> cases owned by the team</li>
+                <li>The list of <b>open</b> cases are automatically ordered by most recently created</li>
+                <li>If there are 12 or more cases. The 'Sort by' option is added to the page. <br>(There is a new sorting option of Oldest cases)</li>
+                <li>The center table column now displays the case created date</li>
+                <li>As before: Pagination for 20 or more cases. Table footer included for 12 or more cases. (New <abbr>ID</abbr> added to content area and removed from parent table tag on this page).</li>
+            </ul>
 
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/no-team-cases-example.html" target="_blank">Team cases - no cases</a> 
-                        </li>
-                      
-                    </ul>                    
+            <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
+                <li>
+                    Team cases page (without sorting): see 'My cases' example
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/team-cases.html" target="_blank">Team cases</a> page (with sorting)
                 </li>
-            </ul>             
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/no-team-cases-example.html" target="_blank">Team cases</a> page (with no cases)
+                </li>                
+            </ol>             
 
             <h2 class="govuk-heading-s">
                 3. All cases - Search:
             </h2>  
 
-            <p class="govuk-body">This is the current Cases seach page (no change in functionality); updates have been made to the H1 title and 'help' link text, the main hint text, and help text has been updated. (Keywords moved to new row, margin/padding and input width classes changed, new <abbr>ID</abbr> "page-content" added to main section. Changes to styling on the Filters title and "sub-titles"). </p>
-            
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-                <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases.html" target="_blank">All cases - Search</a>. 
-
+                <li>No change to the current functionality</li>
+                <li>Add 'Oldest cases' to the sorting options to match the two new pages</li>
+                <li>There is new content for the drop-down help text. The second paragraph (spreadsheet advice) is contextual, as like the download link elsewhere in the page</li>
+                <li>Design changes: 
                     <ul class="govuk-list govuk-list--bullet">
-                        <li>
-                            <a style="text-decoration: line-through;" class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases-1.html" target="_blank">All cases - Search: Alternative design</a>
-                        </li>
+                        <li>Updates to the H1 title and 'help' link text</li>
+                        <li>New main hint text below the H1</li>
+                        <li>Keywords input field moved to new row, margin/padding and input width classes changed</li>
+                        <li>Additional <abbr>ID</abbr> "page-content" added to main section (for skip nav)</li>
+                        <li>Changes to the classes/styling on the 'Filters' header and the legends for the filter groups</li>
                     </ul>
                 </li>
-            </ul> 
+            </ul>            
+            
+            <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases.html" target="_blank">All cases - Search</a>. 
+                </li>
+                <!--li>
+                    <a style="text-decoration: line-through;" class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases-1.html" target="_blank">All cases - Search: Alternative design</a>
+                </li-->                
+            </ol> 
             
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-            <p class="govuk-body">All pages/lists/tables follow the same established logic: 20 items per list, table footers only when there are 12 or more items, pagination when there are 20 or more items, etc. 
+            <p class="govuk-body">Dev notes: Sub-nav has 'aria-current' on active hyperlink.</p>
 
         </div>
             
