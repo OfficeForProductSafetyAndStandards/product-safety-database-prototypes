@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Page designs for revised PSD create a case journey
+    All cases - Search
 {% endblock %}
 
 
@@ -52,16 +52,16 @@
 
 <form id="cases-search-form" action="/cases/search" role="search" accept-charset="UTF-8" novalidate>
 
-    <div class="govuk-grid-row opss-full-height govuk-!-margin-top-4 govuk-!-padding-top-9">
+    <div class="govuk-grid-row opss-full-height govuk-!-padding-top-9">
 
         <!--XXXXXXXXXX filters section starts XXXXXXXXXXX -->
         <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
 
+            <a href="#page-content" class="govuk-skip-link opss-skip-link">
+                Skip to the main content
+            </a>
+
             <nav aria-label="Secondary">
-                <a href="#page-content" class="govuk-skip-link opss-skip-link">
-                    Skip to the main content
-                </a>
-        
                 <ul class="govuk-list opss-left-nav">
                     <li>
                         <a href="/psd-cases-area/my-cases.html" class="govuk-link govuk-link--no-visited-state">My cases</a>
@@ -77,7 +77,7 @@
 
             <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
 
-            <h2 class="govuk-heading-s">
+            <h2 class="govuk-heading-m">
                 Filters<span class="govuk-visually-hidden">:</span>
             </h2>
 
@@ -87,7 +87,7 @@
 
             <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         Case priority
                     </legend>
 
@@ -125,7 +125,7 @@
 
             <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         Case owner
                     </legend>
 
@@ -232,7 +232,7 @@
 
                     <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 Teams added to cases
                             </legend>
 
@@ -297,7 +297,7 @@
 
                     <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 Created by
                             </legend>
 
@@ -395,7 +395,7 @@
 
                     <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 Case type
                             </legend>
 
@@ -432,7 +432,7 @@
 
                     <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 Case status
                             </legend>
 
@@ -488,8 +488,7 @@
         <section class="govuk-grid-column-three-quarters" id="page-content">
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    
+                <div class="govuk-grid-column-full">
                     <div class="govuk-form-group govuk-!-padding-bottom-5"> <!-- opss-border-bottom -->
 
                         <label class="govuk-label" for="cases-search">
@@ -497,16 +496,21 @@
                         </label>
         
                         <div class="govuk-input__wrapper opss-search__wrapper">
-                            <input class="govuk-input govuk-!-width-full" type="search" id="cases-search" name="cases-search" spellcheck="false" aria-describedby="search-hint">
+                            <input class="govuk-input govuk-!-width-two-thirds" type="search" id="cases-search" name="cases-search" spellcheck="false" aria-describedby="search-hint">
                             <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
                                 <span class="govuk-visually-hidden">Search</span>
                             </button>
                         </div>
         
                     </div>
+                </div>
+            </div>
 
-                </div>                    
-
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                        <p class="govuk-body">9 cases matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, Consectetur</span>,<span class="opss-filter-txt"> using the current filters,</span> were found.
+                        </p>
+                </div>
                 <div class="govuk-grid-column-one-third">
                     <div class="govuk-form-group opss-text-align-right">
 
@@ -545,14 +549,6 @@
 
                         </div>
                 </div>
-            </div>
-
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                        <p class="govuk-body">9 cases matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, Consectetur, Etilee</span>,<span class="opss-filter-txt"> using the current filters,</span> were found.
-                        </p>
-                </div>
-
             </div>
 
             <div class="govuk-grid-row">
