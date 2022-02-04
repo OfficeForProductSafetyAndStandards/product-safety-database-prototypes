@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-    Page designs for revised PSD create a case journey
+    Team cases
 {% endblock %}
 
 
@@ -11,11 +11,11 @@
     <div class="govuk-grid-column-two-thirds"> 
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            My cases 
+            Team cases 
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-            You are the case owner of these open cases.
+            The Renfrewshire Council team are the case owners of 86 open cases.
         </p>
 
     </div>
@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<div class="govuk-grid-row opss-full-height govuk-!-padding-top-9">
+<div class="govuk-grid-row opss-full-height govuk-!-margin-top-7 govuk-!-padding-top-9">
 
     <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
 
@@ -38,23 +38,19 @@
 
         <nav aria-label="Secondary">
             <ul class="govuk-list opss-left-nav">
+                <li>
+                    <a href="/psd-cases-area/my-cases.html" class="govuk-link govuk-link--no-visited-state">My cases</a>
+                </li>
                 <li class="opss-left-nav__active">
-                    <a href="/psd-cases-area/my-cases.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">My cases</a>
+                    <a href="/psd-cases-area/team-cases.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Team cases</a>
                 </li>
                 <li>
-                    <a href="/psd-cases-area/team-cases.html" class="govuk-link govuk-link--no-visited-state">Team cases</a>
-                </li>
-                <li>
-                    <a href="/psd-cases-area/all-cases-2.html" class="govuk-link govuk-link--no-visited-state">All cases &ndash; Search</a>
+                    <a href="/psd-cases-area/all-cases.html" class="govuk-link govuk-link--no-visited-state">All cases &ndash; Search</a>
                 </li>
             </ul>
         </nav>
 
-        <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
-            <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
-                Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
-            </p>
-        </div>        
+      
 
     </section>
 
@@ -63,7 +59,8 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" role="region" aria-label="Cases">
 
-                <table id="results" class="govuk-table opss-table-items opss-table-items--sm">
+
+                <table class="govuk-table opss-table-items opss-table-items--sm">
                     <caption class="govuk-visually-hidden">
                         Cases data: 4 columns with each case described across rows within each table body.
                     </caption>
@@ -71,7 +68,7 @@
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th id="allegation" scope="col" class="govuk-table__header">Case number</th>
-                            <th id="caseowner" scope="col" class="govuk-table__header">Case owner</th>
+                            <th id="casecreated" scope="col" class="govuk-table__header">Case created</th>
                             <th id="updated" scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </thead>
@@ -91,8 +88,8 @@
                             <td headers="allegation item-1 meta-1" class="govuk-table__cell">
                                 2021-11
                             </td>
-                            <td headers="caseowner item-1 meta-1" class="govuk-table__cell">
-                                David Willis
+                            <td headers="casecreated item-1 meta-1" class="govuk-table__cell">
+                                6 January 2022
                             </td>
                             <td headers="updated item-1 meta-1" class="govuk-table__cell">
                                 about 6 hours ago
@@ -128,8 +125,8 @@
                             <td headers="allegation item-2 meta-2" class="govuk-table__cell">
                                 20-2120
                             </td>
-                            <td headers="caseowner item-2 meta-2" class="govuk-table__cell">
-                                OPSS Enforcement
+                            <td headers="casecreated item-2 meta-2" class="govuk-table__cell">
+                                18 December 2021
                             </td>
                             <td headers="updated item-2 meta-2" class="govuk-table__cell">
                                 about 2 months ago
@@ -163,8 +160,8 @@
                             <td headers="allegation item-3 meta-3" class="govuk-table__cell">
                                 2104-21000
                             </td>
-                            <td headers="caseowner item-3 meta-3" class="govuk-table__cell">
-                                Renfrewshire Council
+                            <td headers="casecreated item-3 meta-3" class="govuk-table__cell">
+                                2 December 2021
                             </td>
                             <td headers="updated item-3 meta-3" class="govuk-table__cell">
                                 21 days ago
@@ -196,8 +193,8 @@
                             <td headers="allegation item-4 meta-4" class="govuk-table__cell">
                                 2007-37001
                             </td>
-                            <td headers="caseowner item-4 meta-4" class="govuk-table__cell">
-                                Toby Huges
+                            <td headers="casecreated item-4 meta-4" class="govuk-table__cell">
+                                30 November 2021
                             </td>
                             <td headers="updated item-4 meta-4" class="govuk-table__cell">
                                 3 months ago
@@ -229,8 +226,8 @@
                             <td headers="allegation item-5 meta-5" class="govuk-table__cell">
                                 1007-27002
                             </td>
-                            <td headers="caseowner item-5 meta-5" class="govuk-table__cell">
-                                Birmingham Trading Standards
+                            <td headers="casecreated item-5 meta-5" class="govuk-table__cell">
+                                11 November 2021
                             </td>
                             <td headers="updated item-5 meta-5" class="govuk-table__cell">
                                 6 months ago
@@ -262,8 +259,8 @@
                             <td headers="allegation item-6 meta-6" class="govuk-table__cell">
                                 45001-70000
                             </td>
-                            <td headers="caseowner item-6 meta-6" class="govuk-table__cell">
-                                Gary Harrison
+                            <td headers="casecreated item-6 meta-6" class="govuk-table__cell">
+                                23 October 2021
                             </td>
                             <td headers="updated item-6 meta-6" class="govuk-table__cell">
                                 4 months ago
@@ -297,8 +294,8 @@
                             <td headers="allegation item-7 meta-7" class="govuk-table__cell">
                                 25022-21010
                             </td>
-                            <td headers="caseowner item-7 meta-7" class="govuk-table__cell">
-                                Greater London authority
+                            <td headers="casecreated item-7 meta-7" class="govuk-table__cell">
+                                15 October 2021
                             </td>
                             <td headers="updated item-7 meta-7" class="govuk-table__cell">
                                 about 3 months ago
@@ -330,8 +327,8 @@
                             <td headers="allegation item-8 meta-8" class="govuk-table__cell">
                                 2221-70003
                             </td>
-                            <td headers="caseowner item-8 meta-8" class="govuk-table__cell">
-                                Flintshire Council
+                            <td headers="casecreated item-8 meta-8" class="govuk-table__cell">
+                                11 October 2021
                             </td>
                             <td headers="updated item-8 meta-8" class="govuk-table__cell">
                                 about 7 months ago
@@ -363,8 +360,8 @@
                             <td headers="allegation item-9 meta-9" class="govuk-table__cell">
                                 21-23341
                             </td>
-                            <td headers="caseowner item-9 meta-9" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
+                            <td headers="casecreated item-9 meta-9" class="govuk-table__cell">
+                                2 September 2021
                             </td>
                             <td headers="updated item-9 meta-9" class="govuk-table__cell">
                                 2 weeks ago
@@ -400,8 +397,8 @@
                             <td headers="allegation item-10 meta-10" class="govuk-table__cell">
                                 2021-11
                             </td>
-                            <td headers="caseowner item-10 meta-10" class="govuk-table__cell">
-                                David Willis
+                            <td headers="casecreated item-10 meta-10" class="govuk-table__cell">
+                                18 August 2021
                             </td>
                             <td headers="updated item-10 meta-10" class="govuk-table__cell">
                                 about 6 hours ago
@@ -437,8 +434,8 @@
                             <td headers="allegation item-11 meta-11" class="govuk-table__cell">
                                 20-2120
                             </td>
-                            <td headers="caseowner item-11 meta-11" class="govuk-table__cell">
-                                OPSS Enforcement
+                            <td headers="casecreated item-11 meta-11" class="govuk-table__cell">
+                                13 August 2021
                             </td>
                             <td headers="updated item-11 meta-11" class="govuk-table__cell">
                                 about 2 months ago
@@ -472,8 +469,8 @@
                             <td headers="allegation item-12 meta-12" class="govuk-table__cell">
                                 2104-21000
                             </td>
-                            <td headers="caseowner item-12 meta-12" class="govuk-table__cell">
-                                Renfrewshire Council
+                            <td headers="casecreated item-12 meta-12" class="govuk-table__cell">
+                                1 July 2021
                             </td>
                             <td headers="updated item-12 meta-12" class="govuk-table__cell">
                                 21 days ago
@@ -505,8 +502,8 @@
                             <td headers="allegation item-13 meta-13" class="govuk-table__cell">
                                 2007-37001
                             </td>
-                            <td headers="caseowner item-13 meta-13" class="govuk-table__cell">
-                                Toby Huges
+                            <td headers="casecreated item-13 meta-13" class="govuk-table__cell">
+                                15 June 2021
                             </td>
                             <td headers="updated item-13 meta-13" class="govuk-table__cell">
                                 3 months ago
@@ -538,8 +535,8 @@
                             <td headers="allegation item-14 meta-14" class="govuk-table__cell">
                                 1007-27002
                             </td>
-                            <td headers="caseowner item-14 meta-14" class="govuk-table__cell">
-                                Birmingham Trading Standards
+                            <td headers="casecreated item-14 meta-14" class="govuk-table__cell">
+                                11 June 2021
                             </td>
                             <td headers="updated item-14 meta-14" class="govuk-table__cell">
                                 6 months ago
@@ -571,8 +568,8 @@
                             <td headers="allegation item-15 meta-15" class="govuk-table__cell">
                                 45001-70000
                             </td>
-                            <td headers="caseowner item-15 meta-15" class="govuk-table__cell">
-                                Gary Harrison
+                            <td headers="casecreated item-15 meta-15" class="govuk-table__cell">
+                                24 May 2021
                             </td>
                             <td headers="updated item-15 meta-15" class="govuk-table__cell">
                                 4 months ago
@@ -606,8 +603,8 @@
                             <td headers="allegation item-16 meta-16" class="govuk-table__cell">
                                 25022-21010
                             </td>
-                            <td headers="caseowner item-16 meta-16" class="govuk-table__cell">
-                                Greater London authority
+                            <td headers="casecreated item-16 meta-16" class="govuk-table__cell">
+                                14 May 2021
                             </td>
                             <td headers="updated item-16 meta-16" class="govuk-table__cell">
                                 about 3 months ago
@@ -639,8 +636,8 @@
                             <td headers="allegation item-17 meta-17" class="govuk-table__cell">
                                 2221-70003
                             </td>
-                            <td headers="caseowner item-17 meta-17" class="govuk-table__cell">
-                                Flintshire Council
+                            <td headers="casecreated item-17 meta-17" class="govuk-table__cell">
+                                7 April 2021
                             </td>
                             <td headers="updated item-17 meta-17" class="govuk-table__cell">
                                 about 7 months ago
@@ -672,8 +669,8 @@
                             <td headers="allegation item-18 meta-18" class="govuk-table__cell">
                                 21-23341
                             </td>
-                            <td headers="caseowner item-18 meta-18" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
+                            <td headers="casecreated item-18 meta-18" class="govuk-table__cell">
+                                28 March 2021
                             </td>
                             <td headers="updated item-18 meta-18" class="govuk-table__cell">
                                 2 weeks ago
@@ -707,8 +704,8 @@
                             <td headers="allegation item-19 meta-19" class="govuk-table__cell">
                                 21-23341
                             </td>
-                            <td headers="caseowner item-19 meta-19" class="govuk-table__cell">
-                                Dave Brown
+                            <td headers="casecreated item-19 meta-19" class="govuk-table__cell">
+                                3 March 2021
                             </td>
                             <td headers="updated item-19 meta-19" class="govuk-table__cell">
                                 2 weeks ago
@@ -720,7 +717,6 @@
                             </th>
                             <td headers="item-19 status-19" colspan="3" class="govuk-table__cell">
                                 <span class="opss-tag opss-tag--std">Allegation</span>
-
                             </td>
                         </tr>
                     </tbody>
@@ -741,8 +737,8 @@
                             <td headers="allegation item-20 meta-20" class="govuk-table__cell">
                                 21-23341
                             </td>
-                            <td headers="caseowner item-20 meta-20" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
+                            <td headers="casecreated item-20 meta-20" class="govuk-table__cell">
+                                4 February 2021
                             </td>
                             <td headers="updated item-20 meta-20" class="govuk-table__cell">
                                 2 weeks ago
@@ -766,7 +762,7 @@
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th scope="col" class="govuk-table__header">Case number</th>
-                            <th scope="col" class="govuk-table__header">Case owner</th>
+                            <th scope="col" class="govuk-table__header">Case created</th>
                             <th scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </tfoot>
