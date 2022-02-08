@@ -365,6 +365,12 @@ ul.opss-radio-list {
 }
 
 @include govuk-media-query($from: desktop) {
+    .opss-desktop-min-height--s {
+        min-height: 180px; 
+    }
+    .opss-desktop-min-height--m {
+        min-height: 300px; 
+    }    
     .opss-desktop-padding-0 {
         padding: 0 !important ;
     }
