@@ -1,0 +1,26 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Email message was sent
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        The email message was sent
+      </h3>
+      <p class="govuk-body">Return to the <a class="govuk-notification-banner__link" href="/psd-revised-flow/products.html">products page</a> for the case.</p>
+    </div>
+  </div>
+  
+    
+{% endblock %}
