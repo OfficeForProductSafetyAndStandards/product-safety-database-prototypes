@@ -99,6 +99,14 @@ body.js-enabled .opss-nojs-hide {
     }
 }
 
+.opss-hidden-desktop {
+    visibility: visible; 
+
+    @include govuk-media-query($from: desktop) {
+        visibility: hidden;
+    }    
+}
+
 .opss-float-left {
     float: left;
 }
