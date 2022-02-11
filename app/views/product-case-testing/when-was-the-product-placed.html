@@ -17,67 +17,51 @@
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
   </h2>
+
   <div class="govuk-error-summary__body">
-
     <ul class="govuk-list govuk-error-summary__list">
-
       <li>
-
         <a href="#when">Select yes if the product was placed on the market before 1 January 2021</a>
-
       </li>
-
     </ul>
   </div>
 </div>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <form action="#" method="post" novalidate>
 
-      <form action="#" method="post" novalidate>
+      <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="when">
 
+        <fieldset class="govuk-fieldset">
 
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
+          <h1 class="govuk-fieldset__heading">
+            Was the product placed on the market before 1&nbsp;January 2021?
+          </h1>
 
+        </legend>
 
-
-
-
-
-
-
-
-<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="when">
-
-  <fieldset class="govuk-fieldset">
-
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-    <h1 class="govuk-fieldset__heading">
-      Was the product placed on the market before 1&nbsp;January 2021?
-    </h1>
-
-  </legend>
-
-  <span id="when-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Select yes if the product was placed on the market before 1 January 2021
-  </span>
+        <span id="when-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select yes if the product was placed on the market before 1 January 2021
+        </span>
 
 
-  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
+        <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
 
 
 
 
 
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="when" name="when" type="radio" value="yes">
-          <label class="govuk-label govuk-radios__label" for="when">
-        Yes
-      </label>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="when" name="when" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="when">
+              Yes
+            </label>
 
-        </div>
+              </div>
 
 
 
@@ -85,57 +69,47 @@
 
 
 
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="when-2" name="when" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="when-2">
-        No
-      </label>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="when-2" name="when" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="when-2">
+              No
+            </label>
 
-        </div>
-
-
+              </div>
 
 
 
 
 
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="when-3" name="when" type="radio" value="unknown">
-          <label class="govuk-label govuk-radios__label" for="when-3">
-        Unable to ascertain
-      </label>
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="when-3" name="when" type="radio" value="unknown">
+                <label class="govuk-label govuk-radios__label" for="when-3">
+              Unable to ascertain
+            </label>
+
+              </div>
+
+
+
 
         </div>
 
 
+      </fieldset>
 
+
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
 
   </div>
-
-
-</fieldset>
-
-
 </div>
-
-
-
-
-
-
-
-
-
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-
-
-      </form>
-
-
-    </div>
-  </div>
 {% endblock %}
 
 {% block bodyEnd %}
