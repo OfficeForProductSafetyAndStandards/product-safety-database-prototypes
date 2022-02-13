@@ -1,0 +1,36 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Is this the product
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "add-a-product"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">  
+            
+            
+            <form action="/psd-revised-flow/is-this-the-product" method="post" novalidate>
+Is this the correct product record? <br>
+Yes - Save and continue<br>
+No - "Enter the PSD reference number again"    - Returns to the previous page
+<br>+ Cancel link
+            
+
+            </form>          
+
+
+        </div>
+    </div>
+             
+  
+{% endblock %}

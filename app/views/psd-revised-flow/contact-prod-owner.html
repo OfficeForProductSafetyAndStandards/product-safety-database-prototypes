@@ -22,18 +22,35 @@
 
             <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
                 <div class="govuk-form-group govuk-!-margin-bottom-5">
-
+                    <span class="govuk-caption-l">Product record: psd-304 </span>
                     <h1 class="govuk-label-wrapper">
                         <label class="govuk-label govuk-label--l govuk-!-margin-bottom-2" for="description">
                             Email the product record owner
                         </label>
                     </h1>
 
-                    <div id="description-hint" class="govuk-hint govuk-!-margin-bottom-6">
-                        <span class="govuk-!-display-inline-block govuk-!-font-size-16 govuk-!-margin-bottom-4">You can send an email message to advise the product record owner of additional product information or corrections. (Product titles, product categories and subcategories are not editable).</span>
-                        
-                        <span class="govuk-!-display-inline-block govuk-!-font-size-16">The email message will automatically include the product name, the <abbr>PSD</abbr> reference number and a hyperlink to the product record page.</span>
+                    <div id="description-hint" class="govuk-hint">
+                        The email message will automatically include the product name, the <abbr>PSD</abbr> reference number and a hyperlink to the product record page.
                     </div>
+
+                    <details class="govuk-details govuk-!-margin-bottom-7 opss-details--sm" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Help with emailing the owner
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body-s">
+                                You can send an email message to advise the product record owner of additional product information or corrections. (Product titles, product categories and subcategories are not editable). 
+                            </p>
+                            <p class="govuk-body-s">
+                                You will automatically receive a Blind carbon copy (<abbr>Bcc</abbr>) email.
+                            </p>                            
+                            <p class="govuk-body-s">
+                                You can attached a file to the email message.
+                            </p>
+                        </div>
+                    </details>                    
 
                     <textarea class="govuk-textarea govuk-js-character-count" id="description" name="description" rows="7" aria-describedby="description-info description-hint"></textarea>
 
@@ -46,7 +63,7 @@
 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="file-upload">
-                    You can attach a file to your email message
+                    Attach a file to your email message
                 </label>
                 <input class="govuk-file-upload" id="file-upload" name="file-upload" type="file">
             </div>                
