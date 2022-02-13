@@ -1,0 +1,72 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Add a product to the case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "products"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+<form action="/psd-revised-flow/is-this-the-product" method="post" novalidate>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">  
+
+            <span class="govuk-caption-l">Add a product to case 2101-0008 </span>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="add-product">
+                    Enter a <abbr>PSD</abbr> product record reference number
+                </label>
+            </h1>
+
+            <div id="add-product-hint" class="govuk-hint">
+                Each product record in the Product Safety Database (<abbr>PSD</abbr>) has a <abbr>PSD</abbr> reference number.
+            </div>
+
+        </div>                
+
+        <div class="govuk-grid-column-two-thirds">  
+            
+            <details class="govuk-details govuk-!-margin-bottom-9 opss-details--sm" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Help with adding a product to the case
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p class="govuk-body-s">
+                        Use the Products area to find a product and its product record reference number. <span class="govuk-!-margin-right-1">For example, <i><abbr>psd</abbr>-301</i>.</span> You can search for products within the <abbr>PSD</abbr> product records using the <a href="#" class="govuk-link govuk-link--no-visited-state" target="blank"><span class="opss-no-wrap">Products search page</span> (opens in new tab)</a>. Using an existing <abbr>PSD</abbr> product record avoids having to add a new one and highlights other cases investigating the same product.
+                    </p>
+                    <p class="govuk-body-s">
+                        After checking that a product does not already exist within the <abbr>PSD</abbr> product records, you can add it to the database (using the links provided in the Products area pages).
+                    </p>
+                </div>
+            </details>
+
+            <div class="govuk-form-group">
+                <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">psd-</div>
+                    <input class="govuk-input govuk-input--width-5"  id="add-product" name="add-product" type="text" aria-describedby="add-product-hint" spellcheck="false">
+                </div>                  
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+            </div>                
+
+        </div>
+    </div>                
+</form>
+
+  
+{% endblock %}
