@@ -21,7 +21,9 @@
     li i {
         font-size: 60%; 
     }
-
+    a.todo, span.todo {
+        color: red !important;
+    }
 
 </style>
 <div class="govuk-grid-row">
@@ -63,10 +65,10 @@
                             <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-non-admin.html" target="_blank">Trading Standards - Case page</a> (Non-Admin)
                         </li>
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-different-team.html" target="_blank">Trading Standards = Case page</a> (different team)
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-different-team.html" target="_blank">Trading Standards = Case page</a> (different team - viewing the case without owning the case or having been invited)
                         </li>
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Trading Standards Case page</a> (Admin): after case creation
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Trading Standards Case page</a> (Admin): after case creation, highlighint no products have been added yet.
                         </li>
                         <li>
                             <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing.html" target="_blank">
@@ -87,8 +89,6 @@
                     </ul>
                 </li>
             </ul> 
-
-            <p class="govuk-body">In the left navigation: "Case admin" only appears for the case owner.</p>
 
             <p class="govuk-body-l">OPSS</p>
             <p class="govuk-body">In the Case source section is the statement: "Only teams added to the case can view case source contact details" which is shown if the OPSS user is in the team that owns this case</p>
@@ -134,17 +134,135 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/no-products.html" target="_blank">There are no products</a> linked to this case (blank products page with statement - to design "&hellip;<a href="#">add a product to the case</a>&hellip;)
+                    <a class="xxxgovuk-link xxxgovuk-link--no-visited-state todo" href="/psd-revised-flow/no-products.html" target="_blank">There are no products</a> linked to this case (blank products page with statement - to design "&hellip;<a href="#">add a product to the case</a>&hellip;)
                 </li> 
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/add-a-product.html" target="_blank">Add a product</a> to the case page. (Phase one version - simply ID entry).
-                </li>                                                                
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/add-a-product.html" target="_blank">Add a product</a> to the case page. (Phase one version - simple <abbr>ID</abbr> entry). Products pages to now have an 'Add a product' link.
+
+                    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product.html" target="_blank">Is this the product?</a> Yes = saves (adds the product). No = return to the previous page 'add a product'. This example shows a 'no owner' message. The alternative message is "This product record is currently owned by [team name here]."     
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-added.html" target="_blank">Product added</a> 
+                        </li>                        
+                    </ul>                    
+                </li>
+                <li>
+                    'Edit this product' link goes to the new <a class="todo" href="/psd-revised-flow/product-page.html" target="_blank">Product page</a> design (to a match products pages in the case pages).                    
+                </li>  
+                <li>
+                    <a class="todo" href="/psd-revised-flow/timestamp-product-page.html" target="_blank">Timestamp product page</a> showing a product record within a closed case stating it is a timestamp record (and is non-editiable, even if the case is reopened)                    
+                </li>                                                                                
 
             </ul>
+
             <p class="govuk-body">The "Edit this product" link(s) only appear if the user is in the product record owner team or the product record has no owner.</p>
             <p class="govuk-body">Within the tabbed areas, the statements "To edit the [details/images/attachments] for this product go to the full [product name] product record page" only appear if the user is in the product record owner team or the product record has no owner. Alternatively, we serve this statement instead: "Only the product record owner ([Owner name]) can edit these [details/images/attachments]".</p>
         </div>
 
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Images (landing page):
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="todo" href="/psd-revised-flow/images.html" target="_blank">IMAGES page</a> - case and evidence images 
+                    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/images-empty.html" target="_blank">Images page</a> - no images
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Businesses (landing page): phase 1 - use current logic (phase 2: as like products)
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="todo" href="/psd-revised-flow/businesses.html" target="_blank">BUSINESSES page</a> 
+                    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/images-empty.html" target="_blank">Businesses page</a> - no businesses
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div> 
+        
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Supportive information landing page
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="todo" href="/psd-revised-flow/supporting-information.html" target="_blank">SUPPORTIVE INFORMATION page</a> 
+                    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            Empty states will be shown in individual statements for each section
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>         
+
+
+        <h2 class="govuk-heading-s">
+            Pages and page features yet to be designed/built
+        </h2>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li><span class="todo">To do: </span>Activity page: probably no change other than placing within the new header and left nav layout</li>
+            <li><span class="todo">To do: </span>The details in the tabbing on the product records page (images, attachments, cases)</li>
+            <li>Pages and designs for 'Case specific product information' (inc batch numbers, affected units and customs codes)</li>
+        </ul>
+
+        <h2 class="govuk-heading-s">
+            Pages already usable - but will benefit from <abbr>HTML</abbr> re-designs at some stage
+        </h2>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>All the 'Add' pages: including the add pages for Corrective action, add Image/Attachment(?), Test results, etc. (All the actions from the Cases page).</li>
+            <li>Businesses pages: pages used for adding, changing, removing businesses.</li>
+            <li>Images pages (case and evidence images): add, edit, remove image pages. (Phase 2 add/remove and choose default image).</li>
+            <li>Images pages (product images): add, edit, remove image pages. (Phase 2 add/remove and choose default image).</li>
+            <li>Supporting information landing page: the pages for adding the supportive information.</li>
+            <li>Add comment page (found via the Activity page)</li>
+            <li><b>All the current</b> <abbr>OPSS</abbr> user journey pages for creating a case</li>
+        </ul>  
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+        <h2 class="govuk-heading-s">
+            The revised Trading Standards user-journey for creating a case
+        </h2>
+        <p class="govuk-body">
+            Ref: <a href="https://www.figma.com/file/xlzfNBUROXqD3tox7kdlap/Current-and-New-Create-a-Case-flows?node-id=0%3A1" class="govuk-link govuk-link--no-visited-state" target="_blank">Diagram</a>
+        </p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>Click "Create a case" (the following pages are the new Trading Standards journey):<br>
+                <span class="todo">To do: </span>Create a full click-through of this journey: 
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                    <li><span class="todo">To do: </span>Is this case related to the coronavirus (COVID-19) pandemic? </li>
+                    <li><span class="todo">To do: </span>Why are you creating a case about a product(s)?</li>
+                    <li><span class="todo">To do: </span>New case reference details <sup>*</sup></li>
+                    <li><span class="todo">To do: </span>Case created confirmation page</li>
+                </ul>
+
+            </li>
+        </ul>
+        
+        <p class="govuk-body"><sup>*</sup> <span class="todo">To do: </span>Devise how (if) the new case name feature will work. (Functionality on the cases pages - and search - displays will need updating to fallback to "names" created before this feature).</p>
 
         <!--div class="opss-border-all govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5">
 

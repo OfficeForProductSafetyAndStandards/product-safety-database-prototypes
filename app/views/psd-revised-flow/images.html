@@ -1,0 +1,73 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Images
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <span class="govuk-caption-l">Allegation: 2101-0008 </span>
+                <h1 class="govuk-heading-l">
+                    Images
+                </h1>
+
+                <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">
+                    These are the <span class="govuk-!-font-weight-bold">case evidence</span> images showing damage, incidents or injuries included in the case.
+                </p>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+                <div class="opss-text-align-right">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                        Add a case image
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <ul class="govuk-list opss-left-nav">
+            <li>
+                <a href="/psd-revised-flow/case-trading-stds-landing.html" class="govuk-link govuk-link--no-visited-state">
+                    Case
+                </a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Products <span>(1)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+            </li>
+            <li class="opss-left-nav__active">
+                <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Images <span>(3)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state">Activity</a>  
+            </li>
+        </ul>
+    </nav>
+
+    <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
+
+    </section>
+
+</div>
+
+{% endblock %}
