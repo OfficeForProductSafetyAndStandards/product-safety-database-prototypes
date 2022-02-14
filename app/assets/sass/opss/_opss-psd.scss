@@ -93,7 +93,8 @@ main.govuk-main-wrapper {
     margin-top: govuk-spacing(7);
     margin-bottom: govuk-spacing(2);
 
-    .opss-panels__pair {
+    .opss-panels__pair, 
+    .opss-panels__single {
 
         border-width: 2px;
         border-style: solid;
@@ -123,6 +124,17 @@ main.govuk-main-wrapper {
             @include govuk-font($size: 16);
         }
 
+    }
+
+    .opss-panels__single {
+        width: 100%; 
+        padding-bottom: govuk-spacing(2); 
+        margin-top: - govuk-spacing(4);
+        margin-bottom: govuk-spacing(2);
+
+        dt, dd {
+            padding-bottom: 0; 
+        }
     }
 }
 @include govuk-media-query($from: desktop) {
