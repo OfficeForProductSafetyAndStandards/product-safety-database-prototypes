@@ -1,0 +1,44 @@
+{% extends "layout-psd-menu_products.html" %}
+
+{% block pageTitle %}
+    Add a product to the case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "products"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">  
+
+        <!--span class="govuk-caption-l">Product record </span-->
+        <h1 class="govuk-heading-l">
+            the Product page
+        </h1>
+
+
+
+    </div>                
+
+</div>                
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+            
+        content
+
+
+
+            
+
+    </div>
+</div>
+
+  
+{% endblock %}
