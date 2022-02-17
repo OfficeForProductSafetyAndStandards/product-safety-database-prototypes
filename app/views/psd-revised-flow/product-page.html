@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
-    Add a product to the case
+    Product [.... ....]
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,26 +13,87 @@
 
 
 {% block content %}
-  
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">  
 
-        <!--span class="govuk-caption-l">Product record </span-->
-        <h1 class="govuk-heading-l">
-            the Product page
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <span class="govuk-caption-l">Product record psd-304</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+            Asda dishwashing liquid
         </h1>
 
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt? Harum expedita vero ea incidunt iusto? Nisi, illo tempore nemo maxime  voluptas amet esse.</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+        <div class="opss-text-align-right">
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                xxxxx
+            </a>
+        </div>
+    </div>
+    <!--div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
 
+        <ul class="govuk-list opss-float-right-desktop opss-text-align-right">
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Close case</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change Case owner</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Restrict this Case</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change risk level</a></li>
+        </ul>
 
-    </div>                
-
-</div>                
+    </div-->
+</div>              
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">  
-            
-        content
+    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
 
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <ul class="govuk-list opss-left-nav">
+            <li>
+                <a href="/psd-revised-flow/case-trading-stds-landing.html" class="govuk-link govuk-link--no-visited-state">
+                    Case
+                </a>
+            </li>
+            <li class="opss-left-nav__active">
+                <a href="#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Products <span>(1)</span></a>
+
+                <ul class="govuk-list">
+                    <li>
+                        <a href="#prod-1" class="govuk-link govuk-link--no-visited-state">
+                            Asda dishwashing liquid
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state">Activity</a>  <!-- have add comment on this page -->
+            </li>
+        </ul>
+    </nav>
+            
+    <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">The product record</h2>
+
+        <section>
+            content
+        </section>
+
+        <!-- HR here followed by next section for next product - see, producgts-2-products.html -->
+
+    </section>
+</div>
 
 
             
