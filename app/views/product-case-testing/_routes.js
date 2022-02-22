@@ -186,8 +186,8 @@ router.post('/can-you-provide-an-image', function (req, res) {
 })
 //****************** success-product-added
 router.post('/success-product-added', function (req, res) {
-  if (req.session.data['createcase'] == 'yes') {
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')
+  if (req.session.data['defaultimg'] == 'yes') {
+    res.redirect('/product-case-testing/is-this-case-related-to-covid')//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   } else {
     res.redirect('/product-case-testing/products-page')//or the product page in real production version
   }
