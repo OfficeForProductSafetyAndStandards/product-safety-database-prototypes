@@ -1,7 +1,7 @@
 {% extends "layout-user-testing.html" %}
 
 {% block pageTitle %}
-    Success - the product has been added
+    Success - the product record has been created
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
 
 
 {% block content %}
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+<!--div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
   </h2>
@@ -29,9 +29,9 @@
 
     </ul>
   </div>
-</div>
+</div-->
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<!--div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Success
@@ -39,11 +39,10 @@
     </div>
     <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-            The product has been added
+            The product record has been created
         </h3>
-        <!--p class="govuk-body">You can now create cases for this product.</p-->
     </div>
-</div>
+</div-->
 
 
   <div class="govuk-grid-row">
@@ -51,61 +50,43 @@
 
         <form action="#" method="post" novalidate>
 
-
-
-
-
-
-
-
-
-
 <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="createcase">
 
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" aria-describedby="which-image-hint">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-    <!--Do you want to create a case for this product now?-->
-    Do you want to add this product to your case?
+    <!--Do you want to add this product to your case?-->
+    Select which image will be the default image
 
   </legend>
 
-  <span id="createcase-error" class="govuk-error-message">
+  <div class="govuk-hint" id="which-image-hint">
+    The default image will be used as the product record's thumbnail image. 
+  </div>  
+
+  <!--span id="createcase-error" class="govuk-error-message">
     <span class="govuk-visually-hidden">Error:</span> Select yes if you want to add this product to your case
-  </span>
+  </span-->
 
   <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
-
-
-
 
 
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="createcase" name="createcase" type="radio" value="yes" disabled>
           <label class="govuk-label govuk-radios__label" for="createcase">
-        Yes
+            Yes
+          </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="createcase-2" name="createcase" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="createcase-2">
+          No - return to the products page
       </label>
 
-        </div>
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="createcase-2" name="createcase" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="createcase-2">
-        No - return to the products page
-      </label>
-
-        </div>
-
-
-
-
+      </div>
   </div>
 
 
