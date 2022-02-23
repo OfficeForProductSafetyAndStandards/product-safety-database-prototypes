@@ -400,7 +400,7 @@
 
                 <table id="table-items" class="govuk-table opss-table-items opss-table-items--sm">
                     <caption class="govuk-visually-hidden">
-                        Products data: The table features three columns and each product is described across corresponding rows within each table body.
+                        Products data: The table features five columns and each product is described across corresponding rows within each table body.
                     </caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -472,13 +472,13 @@
 function buildHTML(val, o, c){
     o += '<tr class="govuk-table__row">';
     o += '<th class="govuk-visually-hidden">Product</th>';
-    o += '<th id="item-'+val.id+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="/product-case-testing/blank-01.html" class="govuk-link govuk-link--no-visited-state">'+ val.full_prod_name +'</a></th>';
+    o += '<th id="item-'+val.psdref+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="/product-case-testing/blank-01.html" class="govuk-link govuk-link--no-visited-state">'+ val.full_prod_name +'</a></th>';
     o += '</tr><tr class="govuk-table__row">';
-    o += '<th headers="item-'+val.id+'" id="meta-'+val.id+'" class="govuk-visually-hidden">Metadata</th>';
-    o += '<td headers="psd item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
-    o += '<td headers="cat item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
-    o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
-    o += '<td headers="bar item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
+    o += '<th headers="item-'+val.psdref+'" id="meta-'+val.psdref+'" class="govuk-visually-hidden">Metadata</th>';
+    o += '<td headers="psd item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">psd-'+val.psdref+'</td>';
+    o += '<td headers="cat item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
+    o += '<td headers="type item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
+    o += '<td headers="bar item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
     o += '</tr>';
     //o += '<tr class="govuk-table__row">';
     //o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';

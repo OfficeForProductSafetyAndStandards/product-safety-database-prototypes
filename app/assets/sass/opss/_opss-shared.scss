@@ -130,6 +130,7 @@ body.js-enabled .opss-nojs-hide {
         }        
     }
 }
+
 .opss-responsive-margin-top-6 {
     @include govuk-responsive-margin(6, "top");
 }
@@ -264,10 +265,13 @@ kbd {
     text-align: center;
 }
 
-.opss-text-align-right {
-    @include govuk-media-query($from: tablet) {
-        text-align: right; display: inline-block; width: 100%;
+@include govuk-media-query($from: tablet) {
+    .opss-max-width-two-thirds {
+        max-width: 66%;
     }
+    .opss-text-align-right {
+        text-align: right; display: inline-block; width: 100%;
+    }    
 }
 
 .opss-text-underline-offset {

@@ -181,16 +181,17 @@ router.post('/can-you-provide-an-image', function (req, res) {
   if (req.session.data['productimage'] == 'yes') {
     res.redirect('/product-case-testing/upload-a-product-image')
   } else {
-    res.redirect('/product-case-testing/success-product-added')
+    res.redirect('/product-case-testing/product-created-confirmation')
   }
 })
 //****************** success-product-added
 router.post('/success-product-added', function (req, res) {
-  if (req.session.data['defaultimg'] == 'yes') {
-    res.redirect('/product-case-testing/is-this-case-related-to-covid')//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  } else {
-    res.redirect('/product-case-testing/products-page')//or the product page in real production version
+  var imgdefault = req.session.data['defaultimg']
+
+  if (imgdefault != null) {
+    res.redirect('/product-case-testing/product-created-confirmation')
   }
+
 })
 //****************** it-was-your-product
 router.post('/it-was-your-product', function (req, res) {
@@ -209,13 +210,20 @@ router.post('/upload-a-product-image-success', function (req, res) {
   const valanother = req.session.data['another']
   const valmax = req.session.data['max']
 
-  /*if (valmax == 'yes') {
-    res.redirect('/product-case-testing/blank-no-more-images')
-  } else */
+ 
   if (valanother == 'anotherimage') {
-    res.redirect('/product-case-testing/upload-a-product-image')
+    if (valmax == 'yes') {
+      res.redirect('/product-case-testing/blank-no-more-images')
+    } else {
+      res.redirect('/product-case-testing/upload-a-product-image')
+    }
+    
   } else if (valanother == 'no') {
-    res.redirect('/product-case-testing/success-product-added')//xxxxxxxxxxxxxxxxxxxxxxxxxxx remove - change to: select which default image
+    if (valmax == 'yes') {
+      res.redirect('/product-case-testing/success-product-added')//xxxxxxxxxxxxxxxxxxxxxxxxxxx
+    }else{
+      res.redirect('/product-case-testing/product-created-confirmation')//xxxxxxxxxxxxxxxxxxxxxxxxxxx 
+    }
   }
 })
 //************ start remove-a-product-image-success
@@ -225,7 +233,7 @@ router.post('/remove-a-product-image-success', function (req, res) {
   if (valanother2 == 'anotherimage') {
     res.redirect('/product-case-testing/upload-a-product-image')
   } else if (valanother2 == 'no') {
-    res.redirect('/product-case-testing/success-product-added')//xxxxxxxxxxxxxxxxxxxxxxxxxxx remove - change to: select which default image
+    res.redirect('/product-case-testing/success-product-added')
   }
 })
 //****************** success-case-created
@@ -238,5 +246,6 @@ router.post('/success-case-created', function (req, res) {
     res.redirect('/product-case-testing/add-a-product-to-a-case?ref=20-2120')
   }
 })
+
 
 module.exports = router

@@ -13,6 +13,27 @@
 
 
 {% block content %}
+<style>
+  .govuk-radios__item label {
+    float: left;
+  }
+  .imgsarea {
+    height: 60px; 
+    margin-left: 15px; 
+    float: left;
+  }
+  .imgsarea img {
+    height: inherit !important;
+    width: auto; 
+  }
+  @media only screen and (min-width: 1025px) {/* desktop */
+      .imgsarea {
+        margin-top: -10px; 
+        margin-left: 30px; 
+      }
+  } 
+</style>
+
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
@@ -48,74 +69,57 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
-<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="defaultimg">
+          <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="defaultimg">
 
-  <fieldset class="govuk-fieldset" aria-describedby="which-image-hint">
+            <fieldset class="govuk-fieldset" aria-describedby="which-image-hint">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-    <!--Do you want to add this product to your case?-->
-    Select which image will be the default image
+              <!--Do you want to add this product to your case?-->
+              Select which image will be the default image
 
-  </legend>
+            </legend>
 
-  <div class="govuk-hint" id="which-image-hint">
-    The default image will be used as the product record's thumbnail image. 
-  </div>  
+            <div class="govuk-hint opss-max-width-two-thirds" id="which-image-hint">
+              The default image should provide the clearest representation of the product and will be used as the thumbnail image for product record.
+            </div>  
 
-  <span id="defaultimg-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Select which image will be the default image
-  </span>
+            <span id="defaultimg-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select which image will be the default image
+            </span>
 
-  <style>
-.govuk-radios__item label {
-  float: left;
-}
-.imgsarea {
-  height: 60px;
-  margin-left: 30px; 
-  margin-top: -10px;
-  float: left;
-}
-.imgsarea img {
-  height: inherit !important;
-  width: auto; 
-}
-  </style>
+            <div class="govuk-radios govuk-!-padding-top-6 govuk-!-padding-bottom-1">
 
-  <div class="govuk-radios govuk-!-padding-top-6 govuk-!-padding-bottom-1">
+                <div class="govuk-radios__item govuk-!-margin-bottom-5">
+                  <input class="govuk-radios__input" id="defaultimg" name="defaultimg" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="defaultimg" id="theImg00">
+                    
+                  </label>
+                  <div class="imgsarea" id="imagearea0" aria-describedby="theImg00"></div><!-- put aria-describedby on the IMAGE in real HTML -->
+                </div>
 
-      <div class="govuk-radios__item govuk-!-margin-bottom-5">
-        <input class="govuk-radios__input" id="defaultimg" name="defaultimg" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="defaultimg" id="theImg00">
-          <span id="imageTitle0"></span> &ndash; <span id="fileName0"></span>
-        </label>
-        <div class="imgsarea" id="imagearea0" aria-describedby="theImg00"></div><!-- put aria-describedby on the IMAGE in real HTML -->
-      </div>
+                <div class="govuk-radios__item govuk-!-margin-bottom-5">
+                  <input class="govuk-radios__input" id="defaultimg-2" name="defaultimg" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="defaultimg-2" id="theImg01">
 
-      <div class="govuk-radios__item govuk-!-margin-bottom-5">
-        <input class="govuk-radios__input" id="defaultimg-2" name="defaultimg" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="defaultimg-2" id="theImg01">
-          <span id="imageTitle1"></span> &ndash; <span id="fileName1"></span>
-        </label>
-        <div class="imgsarea" id="imagearea1" aria-describedby="theImg01"></div><!-- put aria-describedby on the IMAGE in real HTML -->
-      </div>
-  </div>
+                  </label>
+                  <div class="imgsarea" id="imagearea1" aria-describedby="theImg01"></div><!-- put aria-describedby on the IMAGE in real HTML -->
+                </div>
+            </div>
 
 
-</fieldset>
+          </fieldset>
 
 
-</div>
+          </div>
 
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
 
       </form>
-
 
     </div>
   </div>
@@ -137,38 +141,21 @@
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
 
-    if((localStorage.getItem('theImageName0') === null) || (localStorage.getItem('theImageName1') === null)){ //if either are empty then there is only 1 image
-
-        window.location.replace("http://www.bbc.com/news");//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-    }else{
-
-        if(localStorage.getItem('theImageName0') !== null){
-            var img0 = new Image();
-            img0.id = "img0";
-            img0.src = localStorage.theImage0;
-            img0.thename = localStorage.theImageName0;
-            img0.title = localStorage.theImageTitle0;
-            img0.desc = localStorage.theImageDesc0;
-            $('#imagearea0').html(img0);
-            $('#fileName0').text(img0.thename);
-            $('#imageTitle0').text(img0.title);
-
-
-        }
-        if(localStorage.getItem('theImageName1') !== null){
-            var img1 = new Image();
-            img1.id = "img1";
-            img1.src = localStorage.theImage1;
-            img1.thename = localStorage.theImageName1;
-            img1.title = localStorage.theImageTitle1;
-            img1.desc = localStorage.theImageDesc1;
-            $('#imagearea1').html(img1);
-            $('#fileName1').text(img1.thename);
-            $('#imageTitle1').text(img1.title);
-
-        }
-
+    if(localStorage.getItem('theImageName0') !== null){
+        var img0 = new Image();
+        img0.id = "img0";
+        img0.src = localStorage.theImage0;
+        img0.title = localStorage.theImageTitle0;
+        $('#imagearea0').html(img0);
+        $('#theImg00').text(img0.title);
+    }
+    if(localStorage.getItem('theImageName1') !== null){
+        var img1 = new Image();
+        img1.id = "img1";
+        img1.src = localStorage.theImage1;
+        img1.title = localStorage.theImageTitle1;
+        $('#imagearea1').html(img1);
+        $('#theImg01').text(img1.title);
     }
 
   });

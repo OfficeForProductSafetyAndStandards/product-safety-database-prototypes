@@ -22,6 +22,9 @@
 
     <ul class="govuk-list govuk-error-summary__list">
       <li>
+        <a href="#category">Select a category</a>
+      </li>      
+      <li>
         <a href="#subcategory">Enter a subcategory</a>
       </li>
     </ul>
@@ -36,12 +39,12 @@
   </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-          These selections and entries will be permanent and cannot be changed.
+          These two categories will be permanent and cannot be changed after the product record has been created. 
         </strong>
       </div>
     </div>
@@ -59,7 +62,7 @@
           <input id="theMatch" name="theMatch" type="hidden" value="">
 
 
-<div class="govuk-form-group govuk-!-margin-bottom-5">
+<div class="govuk-form-group govuk-!-margin-bottom-5" data-test-for="select" data-test-ele-name="category">
   <label class="govuk-label govuk-label--s" for="category">
     Product category
   </label>
@@ -70,13 +73,16 @@
     Select a category. <!--br>Coronavirus  (COVID-19) categories <abbr>PPE</abbr> and Hand sanitiser have now been added.-->
   </div>
 
+  <span id="category-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select a category
+  </span>
 
 <select class="govuk-select" id="category" name="category" aria-describedby="category-hint">
 <option value="" selected></option>
 <option value="Personal protective equipment (PPE)">Personal protective equipment (PPE)</option>
 <option value="Hand sanitiser">Hand sanitiser</option>
 <option value="Chemical products">Chemical products</option>
-<option value="Childcare articles and children’s equipment">Childcare articles and children’s equipment</option>
+<option value="Childcare articles and children's equipment">Childcare articles and children's equipment</option>
 <option value="Clothing, textiles and fashion items">Clothing, textiles and fashion items</option>
 <option value="Communication and media equipment">Communication and media equipment</option>
 <option value="Construction products">Construction products</option>
@@ -124,7 +130,7 @@
     Enter a descriptive subcategory. For example, Washing machine, Shampoo or Necklace.
   </div>
 
-    <span id="subcategory-error" class="govuk-error-message">
+  <span id="subcategory-error" class="govuk-error-message">
     <span class="govuk-visually-hidden">Error:</span> Enter a subcategory
   </span>
 

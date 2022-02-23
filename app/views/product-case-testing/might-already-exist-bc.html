@@ -41,7 +41,7 @@
         </h1>
 
         <div class="govuk-hint" id="isit-hint">
-            The product you are creating a product record for might already exist in our records? <span class="govuk-visually-hidden">Here you can compare it to the product you are adding.</span>
+            The product you are creating a new product record for might already exist in our records? <span class="govuk-visually-hidden">Here you can compare it to the product you are creating a record for.</span>
         </div>
 
         <section class="govuk-grid-row opss-panels">
@@ -104,10 +104,14 @@
                         <div id="imageURL" class="govuk-details__text"></div>
                     </details>
 
+                    <p class="govuk-body-s govuk-!-margin-bottom-0 opss-secondary-text opss-text-align-right">
+                        <abbr title="Product Safety Database">PSD</abbr> <span title="Reference">ref</span>: <span class="opss-no-wrap"><abbr>psd</abbr>-<span id="psdref"></span></span>
+                    </p>
+
             </section>
             <section class="govuk-grid-column-one-half-from-desktop opss-panels__pair opss-panels__pair--right">
 
-                    <span class="govuk-caption-m">The product you are adding</span>
+                    <span class="govuk-caption-m">The product record you are creating</span>
 
                     <h2 class="govuk-heading-m govuk-!-margin-bottom-3">
                         <span class="govuk-visually-hidden">No product name provided yet</span>&nbsp;
@@ -237,6 +241,7 @@
                 $('#barNumber').text(val.prod_barcode);
                 $('#identifier').text(val.identifier);
                 $('#descriptionTxt').text(val.description);
+                $('#psdref').text(val.psdref);
                 $('#imageURL').html('<img src="../public/images/products/'+val.prod_img+'" class="opss-details-img" alt="Product image">');
                 return false;
             }
