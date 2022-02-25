@@ -54,7 +54,7 @@
         <form action="#" method="post" novalidate>
 
 
-
+          <input type="hidden" id="max" name="max" value="">
 
 
 
@@ -204,6 +204,12 @@
     validateTheForm($("#main-content").find('form'));
 
     getAndDisplayImages();
+
+    if(($('#img0').length) && ($('#img1').length)){
+      $('#max').val('yes');//to redirect to no more images pg
+    }else{
+      $('#max').val('no');
+    }    
 
   });
 </script>

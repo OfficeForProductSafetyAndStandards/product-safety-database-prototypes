@@ -229,11 +229,20 @@ router.post('/upload-a-product-image-success', function (req, res) {
 //************ start remove-a-product-image-success
 router.post('/remove-a-product-image-success', function (req, res) {
   const valanother2 = req.session.data['another']
+  const valmax2 = req.session.data['max']
 
   if (valanother2 == 'anotherimage') {
-    res.redirect('/product-case-testing/upload-a-product-image')
+    if (valmax2 == 'yes') {
+      res.redirect('/product-case-testing/blank-no-more-images')
+    } else {
+      res.redirect('/product-case-testing/upload-a-product-image')
+    }    
   } else if (valanother2 == 'no') {
-    res.redirect('/product-case-testing/success-product-added')
+    if (valmax2 == 'yes') {
+      res.redirect('/product-case-testing/success-product-added')
+    }else{
+      res.redirect('/product-case-testing/product-created-confirmation')
+    }
   }
 })
 //****************** success-case-created
