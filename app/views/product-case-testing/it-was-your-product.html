@@ -101,7 +101,7 @@
       </p>
 
       <p class="govuk-body">
-        You can <a href="blank-01.html" class="govuk-link govuk-link--no-visited-state">view the full product record details</a> for <span id="productName2"></span>, or use its <abbr>PSD</abbr> reference number to include the product record in a case. 
+        You can <a href="blank-03.html" class="govuk-link govuk-link--no-visited-state">view the full product record details</a> for <span id="productName2"></span>, or use its <abbr>PSD</abbr> reference number to include the product record in a case. 
       </p>      
 
 
@@ -141,6 +141,9 @@
               $('#psdref').add($('#psdref2')).text(val.psdref);  
               $('#productName').add($('#productName2')).add($('#productName3')).text(val.full_prod_name);
               return false;
+          }else{
+            $('#psdref').add($('#psdref2')).text('The product record in our database');  
+            $('#productName').add($('#productName2')).add($('#productName3')).text('749');
           }
       });
   
