@@ -532,10 +532,9 @@ function buildHTML(val, o, c){
                     $('#results-msg').removeClass('hidden');
                     for (var i = 0; i < arrayLength; i++) {
 
-                                var regex = new RegExp(mywords[i], "i");//mywords[i] was searchField
-
-                                if( $('#searchtype').prop("checked") == true ){//search keywords
+                                //if( $('#searchtype').prop("checked") == true ){//search keywords //related HTML also commented out in the HTML file
                                     $.each(data, function(key, val){
+                                        
                                         if ((val.prod_subcategory.search(regex) != -1) || (val.full_prod_name.search(regex) != -1)) {
 
                                             if(!matchedIDs.includes(val.id)){
@@ -545,14 +544,15 @@ function buildHTML(val, o, c){
                                             matchedIDs.push(String(val.id));
                                         }
                                     });
-                                }else{//search with barcode
+                                /*}else{//search with barcode
+                                    
                                     $.each(data, function(key, val){
                                         if (val.prod_barcode.search(regex) != -1) {
                                             output =  buildHTML(val, output, count);
                                             count++;
                                         }
                                     });
-                                }
+                                }*/
                     }
                     if(count <= 1){
                         output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="4">There are no products matching your search.</td></tr></tbody>';
