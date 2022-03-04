@@ -541,6 +541,28 @@ dl.opss-summary-list-aside {
     }
 }
 
+dd dl.opss-nested-definition-list {
+    margin: 0; 
+    @include opss-font-size($s: 16px, $l: 1.6);
+
+    & > div {
+        width: 100%; 
+    }
+
+    dt {
+        font-weight: bold; 
+        display: inline-block; 
+        margin: 0 govuk-spacing(2) 0 0; 
+        width: 45%;
+    }
+
+    dd {
+        display: inline-block; 
+        padding-right: 0; 
+        margin-left: 0; 
+    }
+}
+
 @include govuk-media-query($from: tablet) {
     .opss-grouping {
         border: 1px solid $govuk-border-colour;

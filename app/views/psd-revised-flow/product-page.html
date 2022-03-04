@@ -22,14 +22,14 @@
             Product <span class="govuk-!-font-weight-regular govuk-!-font-size-27 govuk-!-margin-left-2"><abbr>psd</abbr>-304</span>
         </h1>
 
-        <p class="govuk-body opss-secondary-text">Each product record in the Product Safety Database (<abbr>PSD</abbr>) has a <abbr>PSD</abbr> reference number. 
-            <!--Some products might be represented by more than one product record.--></p>
+        <p class="govuk-body opss-secondary-text">Each product record in the Product Safety Database (<abbr>PSD</abbr>) has a <abbr>PSD</abbr> reference number.</p>
     </div>
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
-            <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-                Add the product to a case
-            </a>
+            <!-- only show this link if the team owns the product record and it has NO open cases - from any team - linked to it -->
+            <a href="/psd-revised-flow/delete-product-record.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Delete this record
+            </a>               
         </div>
     </div>
 
@@ -66,17 +66,17 @@
 
                 <ul class="govuk-list">
                     <li>
-                        <a href="#images" class="govuk-link govuk-link--no-visited-state">
+                        <a href="#product-images" class="govuk-link govuk-link--no-visited-state">
                             Images
                         </a>
                     </li>
                     <li>
-                        <a href="#attachments" class="govuk-link govuk-link--no-visited-state">
+                        <a href="#product-attachments" class="govuk-link govuk-link--no-visited-state">
                             Attachments
                         </a>
                     </li>  
                     <li>
-                        <a href="#cases" class="govuk-link govuk-link--no-visited-state">
+                        <a href="#product-cases" class="govuk-link govuk-link--no-visited-state">
                             <span class="govuk-visually-hidden">Related</span> Cases 
                         </a>
                     </li>                                        
@@ -89,243 +89,257 @@
 
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">The product record</h2>
 
-        <section>
-
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">
-                    <h3 id="prod-1" class="govuk-heading-m">Asda dishwashing liquid</h3>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <h3 class="govuk-heading-m">Asda dishwashing liquid</h3>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+                <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                    <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                        Edit product details
+                    </a>                    
                 </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
-                        <!-- ******** see the rules in the index page for if and when we include this link ******** -->
-                        <a href="/psd-revised-flow/delete-product-record.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-                            Delete this record
-                        </a>                        
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4 opss-summary-list-mixed opss-summary-list-mixed--compact"> <!-- opss-summary-list-mixed--sm -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Last updated</dt>
+                        <dd class="govuk-summary-list__value">About 8 hours ago</dd>
                     </div>
-                </div>
-            </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Created</dt>
+                        <dd class="govuk-summary-list__value">13 December 2021</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Product record owner</dt>
+                        <dd class="govuk-summary-list__value">
+                            Your team is the product record owner
 
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-
-                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4 opss-summary-list-mixed opss-summary-list-mixed--compact"> <!-- opss-summary-list-mixed--sm -->
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">Last updated</dt>
-                            <dd class="govuk-summary-list__value">About 8 hours ago</dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">Created</dt>
-                            <dd class="govuk-summary-list__value">13 December 2021</dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">Product record owner</dt>
-                            <dd class="govuk-summary-list__value">
-                                Your team is the product record owner
-
-                                <!-- 
-                                    alt texts:
-                                    
-                                    1. Your team is the product record owner
-                                    2. No owner
-                                    3. <a href="contact-prod-owner" class="govuk-link govuk-link--no-visited-state">Cardiff trading standards service</a>
-
-
-                                    footers: No owner = "By editing this product record your team will become the owner of this product record"
-                                -->
-                            </dd>
-                            <!--dd class="govuk-summary-list__actions">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">
-                                    Contact<span class="govuk-visually-hidden"> the product's record owner</span>
-                                </a>
-                            </dd-->
-                        </div>
-                    </dl>  
-
-                </div>
-
-                Style this page into one page, like the case page - add Edit links
-
-                <div class="govuk-grid-column-one-third">
-
-                    <figure class="opss-margin-bottom-1-desktop">
-                        <img src="../public/images/dishwashing-liquid.jpg" class="opss-details-img opss-details-img--thumbnail opss-float-right-desktop" alt="Lorem ipsum etite">
-                        <figcaption class="govuk-visually-hidden">Image title here</figcaption>
-                        <!--figcaption class="opss-img-caption opss-text-align-right opss-float-right-desktop opss-margin-bottom-1-desktop">Lorem ipsum etite ett</figcaption-->
-                    </figure>
-
-                </div>
-            </div>
-            
-            <div class="govuk-tabs opss-tabs govuk-!-margin-bottom-2 opss-tabs--min-height-m" data-module="govuk-tabs">
-                <h3 class="govuk-tabs__title">
-                  Information related to this <abbr>PSD</abbr> product record
-                </h3>
-                
-                <ul class="govuk-tabs__list">
-                  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                    <a class="govuk-tabs__tab" href="#product-tab-1">
-                      Details
-                    </a>
-                  </li>
-                  <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#images-tab-1">
-                      Images <span class="govuk-!-font-size-16">(3)</span>
-                    </a>
-                  </li>
-                  <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#attachments-tab-1">
-                      Attachments <span class="govuk-!-font-size-16">(2)</span>
-                    </a>
-                  </li>
-                  <li class="govuk-tabs__list-item">
-                    <a class="govuk-tabs__tab" href="#cases-tab-1">
-                      Cases <span class="govuk-!-font-size-16">(4)</span>
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="govuk-tabs__panel govuk-!-padding-bottom-2" id="product-tab-1">
-                    <h4 class="govuk-heading-m">Product details</h4>
-
-                    <dl class="govuk-summary-list">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                <abbr title="Product Safety Database">PSD</abbr> <span title="reference">ref</span>   
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                psd-304 
-                                <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
-                                    <span class="govuk-visually-hidden"> - </span>The <abbr>PSD</abbr> reference for this product record
-                                </span>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Category
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Temporibus doloremque 
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Subcategory
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Lorem ipsum dolor elit
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Barcode
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                342984-9813766
-                            </dd>
-                        </div>                  
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Brand
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Asda
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Description
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Lorem ipsum quia possimus minus nam quo minima inventore impedit quaerat architecto veniam iusto, similique ratione voluptatibus molestias iste ipsa ea reiciendis fuga odio.
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Webpage
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                               <a href="https://www.dyson.co.uk/vacuum-cleaners/sticks/dyson-cyclone-v10-stick/dyson-cyclone-v10-absolute-pro" class="govuk-link govuk-link--no-visited-state" target="_blank">
-                                   <span class="govuk-!-font-size-16">www.dyson.co.uk/vacuum-cleaners/sticks/dyson-cyclone-v10-stick/dyson-cyclone-v10-absolute-pro</span>
-                                </a>
-                                <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">(Opens in a new tab)</span>
-                            </dd>
-                        </div>       
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Market date 
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                22 September 2021
-                                <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
-                                    <span class="govuk-visually-hidden"> - </span>Placed on the market
-                                </span>
-                            </dd>
-                        </div>                              
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Country of origin
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                China
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Product authenticity
-                            </dt>
-                            <dd class="govuk-summary-list__value">
+                            <!-- 
+                                alt texts:
                                 
-                            </dd>
+                                1. Your team is the product record owner
+                                2. No owner
+                                3. <a href="contact-prod-owner" class="govuk-link govuk-link--no-visited-state">Cardiff trading standards service</a>
+
+
+                                footers: No owner = "By editing this product record your team will become the owner of this product record"
+                            -->
+                        </dd>
+                    </div>
+                </dl>  
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+                <figure class="opss-margin-bottom-1-desktop">
+                    <img src="../public/images/dishwashing-liquid.jpg" class="opss-details-img opss-details-img--thumbnail opss-float-right-desktop" alt="Lorem ipsum etite">
+                    <figcaption class="govuk-visually-hidden">Image title here</figcaption>
+                    <!--figcaption class="opss-img-caption opss-text-align-right opss-float-right-desktop opss-margin-bottom-1-desktop">Lorem ipsum etite ett</figcaption-->
+                </figure>
+
+            </div>
+        </div>
+        
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-visually-hidden">Product details</h4>
+
+        <dl class="govuk-summary-list govuk-!-margin-top-8">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <abbr title="Product Safety Database">PSD</abbr> <span title="reference">ref</span>   
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <abbr>psd</abbr>-304 
+                    <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                        <span class="govuk-visually-hidden"> - </span>The <abbr>PSD</abbr> reference for this product record
+                    </span>
+                </dd>
+            </div>
+
+            <!-- if and 3 have a value .... start -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Constituent names
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <dl class="opss-nested-definition-list">
+                        <div>
+                            <dt>Manufacturer's brand name</dt>
+                            <dd>Dyson</dd>
                         </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Product marking 
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Unknown
-                            </dd>
-                        </div> 
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key opss-border-none">
-                                Other product identifiers
-                            </dt>
-                            <dd class="govuk-summary-list__value opss-border-none">
-                                NO.DY807
-                            </dd>
+                        <div>
+                            <dt>Product brand name</dt>
+                            <dd>Small ball </dd>   
+                        </div>
+                        <div>
+                            <dt>Model name</dt>
+                            <dd>Animal 2</dd> 
                         </div>
                     </dl>
+                </dd>
+            </div> 
+            <!-- if and 3 have a value .... end -->    
+            
+            <!--div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Brand
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Asda
+                </dd>
+            </div-->            
+                                  
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Category
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Excipisum elitteet
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Subcategory
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Lorem ipsum dolor elit
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Barcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    342984-9813766
+                </dd>
+            </div>                  
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Lorem ipsum quia possimus minus nam quo minima inventore impedit quaerat architecto veniam iusto, similique ratione voluptatibus molestias iste ipsa ea reiciendis fuga odio.
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Webpage
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a href="https://www.dyson.co.uk/vacuum-cleaners/sticks/dyson-cyclone-v10-stick/dyson-cyclone-v10-absolute-pro" class="govuk-link govuk-link--no-visited-state" target="_blank">
+                        <span class="govuk-!-font-size-16">www.dyson.co.uk/vacuum-cleaners/sticks/dyson-cyclone-v10-stick/dyson-cyclone-v10-absolute-pro</span>
+                    </a>
+                    <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">(Opens in a new tab)</span>
+                </dd>
+            </div>       
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Market date 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    22 September 2021
+                    <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                        <span class="govuk-visually-hidden"> - </span>Placed on the market
+                    </span>
+                </dd>
+            </div>                              
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Country of origin
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    China
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Product authenticity
+                </dt>
+                <dd class="govuk-summary-list__value">
                     
-              
-                </div>
-
-                <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-1">
-                    <h4 class="govuk-heading-m">Product images</h4>
-                  
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product images (they <strong>are not</strong> case evidence images).</p>
-              
-                </div>
-
-                <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="attachments-tab-1">
-                    <h4 class="govuk-heading-m">Product attachments</h4>
-
-              
-              
-                </div>
-                <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-1">
-                    <h4 class="govuk-heading-m">Related cases</h4>
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This product record is included in these cases.</p>
-
-              
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Product marking 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Unknown
+                </dd>
+            </div> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Model or product number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    334176-01
+                </dd>
+            </div>              
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key opss-border-none">
+                    Other product identifiers
+                </dt>
+                <dd class="govuk-summary-list__value opss-border-none">
+                    NO.DY807
+                </dd>
+            </div>
+        </dl>
+        
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+            <div class="govuk-grid-column-two-thirds">
+                <h4 class="govuk-heading-m govuk-!-margin-bottom-1" id="product-images">Images</h4>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                        Add a product image
+                    </a>                    
                 </div>
             </div>
+        </div>
+        
+        <p class="govuk-body opss-secondary-text">There are 0 images. (These are the product images &ndash; they <strong>are not</strong> case evidence images).</p>
 
-            <!-- potential feature: pg to then enter the case ID. Only cases which the user owns are allowed -->
-            <!--div class="opss-text-align-right opss-margin-bottom-1-desktop">
-                <a href="/psd-revised-flow/remove-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add this product record</a> to your case
-            </div-->  
+
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+            <div class="govuk-grid-column-two-thirds">
+                <h4 class="govuk-heading-m govuk-!-margin-bottom-1" id="product-attachments">Attachments</h4>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                        Add an attachment
+                    </a>                    
+                </div>
+            </div>
+        </div>
+
+        <p class="govuk-body opss-secondary-text">There are 0 attachments.</p>
     
-        </section>
+
+        <div class="govuk-!-margin-top-9 opss-grouping">
+            <h4 class="govuk-heading-m opss-grouping__heading-m" id="product-cases">Cases</h4>
+
+            <!--p class="govuk-body opss-secondary-text govuk-!-margin-bottom-2">This product record is included in 0 open cases.</p-->
+
+            <p class="govuk-body opss-secondary-text">This product record is included in 1 open case(s).</p>
+        </div>
+
+
+
+        <!-- potential feature: pg to then enter the case ID. Only cases which the user owns are allowed -->
+        <!--div class="opss-text-align-right opss-margin-bottom-1-desktop">
+            <a href="/psd-revised-flow/remove-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
+                Add this product record</a> to your case
+        </div-->  
+
+
 
     </section>
 </div>
