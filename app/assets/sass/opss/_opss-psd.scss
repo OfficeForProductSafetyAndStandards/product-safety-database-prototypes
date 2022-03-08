@@ -603,21 +603,22 @@ ul.opss-left-nav {
    
 }
 
-.opss-tabs {
+@include govuk-media-query($from: desktop) {
+    .opss-tabs {
 
-    &.opss-tabs--min-height-s {
-        & > div {
-            min-height: 254px;
+        &.opss-tabs--min-height-s {
+            & > div {
+                min-height: 254px;
+            }
         }
+        &.opss-tabs--min-height-m {
+            & > div {
+                min-height: 730px; 
+            }
+        }    
+
     }
-    &.opss-tabs--min-height-m {
-        & > div {
-            min-height: 730px; 
-        }
-    }    
-
 }
-
 /*
 .opss-list-counter {
     padding-left: govuk-spacing(0); 

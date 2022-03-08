@@ -1,0 +1,73 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Your cases
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Your cases 
+        </h1>
+
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+            You are the case owner of 0 open cases.
+        </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="opss-text-align-right govuk-!-margin-bottom-8">
+            <a href="find-the-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Create a case
+            </a>            
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li class="opss-left-nav__active">
+                    <a href="/psd-products-area/your-products-sorting.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Your cases</a>
+                </li>
+                <li>
+                    <a href="/psd-products-area/team-products.html" class="govuk-link govuk-link--no-visited-state">Team cases</a>
+                </li>
+                <li>
+                    <a href="/psd-products-area/all-products.html" class="govuk-link govuk-link--no-visited-state">All cases &ndash; Search</a>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Cases">
+
+
+                <p class="govuk-body opss-text-align-center">
+                   You have no open cases. <br>You can find all other cases in the <a href="/psd-products-area/all-products.html" class="govuk-link govuk-link--no-visited-state">all cases</a> search page.
+                </p>
+
+
+            </div>
+        </div>        
+
+    </section>
+
+</div>
+
+{% endblock %}
