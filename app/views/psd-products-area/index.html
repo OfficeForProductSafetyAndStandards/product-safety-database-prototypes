@@ -42,7 +42,9 @@
                         <li>This work maintains the current behaviours of the products search page - table columns and sorting options/texts, for now - and focuses on emulating the work recently completed on the Cases pages.</li>
                     </ul>
                      
-
+                    <p class="govuk-body">
+                        (Eventually we will revisit these pages to adde two more page options, replace the Hazard type column and add a sort option for created date).
+                    </p>
 
 
         </div>
@@ -59,8 +61,19 @@
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>The page automatically loads displaying all the products related to <b>open</b> cases owned by the user</li>
                 <li>The list of products are automatically ordered by Newly added</li>
-                <li>Only if there are 12 or more products is the 'Sort by' option added to the page (as like Cases pages).</li>
+                <li>Only if there are 12 or more products is the 'Sort by' options added to the page (as like the Cases pages).</li>
                 <li>If there are no (zero) products, the sorting options are omitted.</li>
+                <li>Only if there are 12 or more products do we include the table footer.</li>
+                <li>Only if there are more than products do we include pagination (with 20 products per page). <br>[With sorting page design (below) only shows 12 products!].</li>
+                <li>HTML changes to current products page: 
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Additional <abbr>ID</abbr> "page-content" added to main section (for skip nav)</li>
+                        <li>Update hidden skip nav from #results to #page-content</li>
+                        <li>Remove #results <abbr>ID</abbr> from the <abbr>HTML</abbr> table tag.</li>
+                        <li>aria-label="Cases" is now aria-label="Products"</li>
+                        <li>Text in table CAPTION updated</li>
+                    </ul>
+                </li>
             </ul>
 
             <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
@@ -115,6 +128,8 @@
                         <li>Change the search input label to just "Search".</li>
                         <li>Change the hidden text on the search button to "Submit search".</li>
                         <li>Change class (width) on the results overview sentence.</li>
+                        <li>aria-label="Cases" is now aria-label="Products".</li>
+                        <li>Text in table CAPTION updated.</li>
                     </ul>
                 </li>
             </ul>            
@@ -126,16 +141,17 @@
              
             </ol> 
             
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->
 
-            <div style="border: 2px solid red; padding: 30px 30px 10px 30px;">
-                <h2 class="govuk-heading-m">Additional updates outstanding on the 'All cases - Search' page (recently spotted)</h2>
+            <div style="border: 2px dashed #000; padding: 30px 30px 10px 30px;">
+                <h2 class="govuk-heading-s">4. Additional updates outstanding on the 'All <u>cases</u> - Search' </h2>
+                <p>Some legacy edits missed recently and only recently spotted, while creating these products pages.</p>
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                     <li>The help link text to be updated</li>
-                    <li>Full width class on the results overview sentence</li>
-                    <li>The hidden skip link to be updated from #results to #page-content</li>
+                    <li>Full width class on the results overview sentence (wrapping div now: 'govuk-grid-column-full')</li>
+                    <li>The hidden skip link <code>href</code> to be updated from <code>#results</code> to <code>#page-content</code></li>
                 </ul>
-                <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases.html" target="_blank">All cases - search: design</a></p>
+                <p class="govuk-body">Design: <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases.html" target="_blank">All cases - search: design</a></p>
             </div>
 
         </div>
