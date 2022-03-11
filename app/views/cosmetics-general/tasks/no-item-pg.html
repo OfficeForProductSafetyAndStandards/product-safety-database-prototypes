@@ -1,0 +1,46 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Lorem ipsum
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+            <h1 class="govuk-heading-m">
+                Items have already been added to the multi-item kit
+            </h1>
+
+            <p class="govuk-body">
+                You will be able to add and remove items directly from the tasks list page once the multi-item kit task is completed.
+            </p>
+
+            <a href="" class="govuk-button govuk-!-margin-top-8">Continue</a>
+
+            <!-- or
+                <form novalidate>
+                    <button class="govuk-button govuk-!-margin-top-8">
+                        Continue
+                    </button>
+                </form>
+            -->
+            
+
+
+    </div>
+  </div>
+
+
+{% endblock %}
