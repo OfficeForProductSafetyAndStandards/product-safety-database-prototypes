@@ -28,50 +28,17 @@
 </div>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
+                  <!--
         <form action="#" method="post" novalidate>
 
             <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="createcase">
 
-              <!--fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-                  Do you want to create a case for this product now?
-
-                </legend>
-
-                <span id="createcase-error" class="govuk-error-message">
-                  <span class="govuk-visually-hidden">Error:</span> Select yes if you want to create a case for this product now
-                </span>
-
-                <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
-
-
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="createcase" name="createcase" type="radio" value="yes">
-                        <label class="govuk-label govuk-radios__label" for="createcase">
-                          Yes
-                        </label>
-
-                      </div>
-
-
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="createcase-2" name="createcase" type="radio" value="no">
-                        <label class="govuk-label govuk-radios__label" for="createcase-2">
-                          No - return to the products page
-                        </label>
-
-                      </div>
-
-                </div>
-            </fieldset-->
-
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-                Do you want to add this product to your case?
+                The product record
 
               </legend>
 
@@ -104,6 +71,9 @@
 
 
 
+
+
+
             </div>
 
 
@@ -114,6 +84,35 @@
 
 
       </form>
+-->
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+
+         
+        <span class="govuk-!-font-weight-regular opss-no-wrap">
+          <span id="psdref"></span>: <abbr title="Product Safety Database">psd-</abbr><span id="productName" data-id="{{ data['theMatch'] }}"></span>
+        </span>
+        
+      </h1>
+
+      <p class="govuk-body">
+        Because the product is already represented within the Product Safety Database (<abbr>PSD</abbr>) you do not need to create a duplicate product record. 
+      </p>
+
+      <p class="govuk-body">
+        You can <a href="blank-03.html" class="govuk-link govuk-link--no-visited-state">view the full product record details</a> for product record <abbr>psd</abbr>-<span id="productName2"></span>, or use its <abbr>PSD</abbr> reference number to include the product record in a case. 
+      </p>      
+
+
+      <div class="govuk-inset-text">
+        The <abbr>PSD</abbr> reference number for this product record is: 
+        <span class="govuk-!-font-weight-bold govuk-!-font-size-24">
+          <span class="opss-no-wrap"><abbr>psd</abbr>-<span id="productName3"></span></span>
+        </span> 
+      </div>
+
+
 
 
     </div>
@@ -128,14 +127,28 @@
     {% endblock %}
   {% endblock %}
 
-<script>
-  jQuery(document).ready(function(){
+  <script>
+    jQuery(document).ready(function(){
+  
+      setMenuState('products');
+  
+      var theID = $('#productName').data("id");
+      var fromTheProducts = '';
 
-    setMenuState('products');
-    validateTheForm($("#main-content").find('form'));
-
-  });
-</script>
+      $.each(data, function(key, val) {
+          fromTheProducts = val.id;
+          if(theID == fromTheProducts){
+              $('#psdref').add($('#psdref2')).text(val.psdref);  
+              $('#productName').add($('#productName2')).add($('#productName3')).text(val.full_prod_name);
+              return false;
+          }else{
+            $('#psdref').add($('#psdref2')).text('The product record in our database');  
+            $('#productName').add($('#productName2')).add($('#productName3')).text('749');
+          }
+      });
+  
+    });
+  </script>
 
 {% endblock %}
 

@@ -1,0 +1,165 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Products pages - index
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+
+
+
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+
+
+
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+                        <abbr>PSD</abbr> Products area
+                    </h1>
+
+                    <p class="govuk-body-l">
+                        Pages: Your products, Team products and All products - Search: 3x page designs showing two new pages with all 3 incorporating an additional left-hand sub-nav as used in the new cases pages. This work matches the work implemented on the Cases pages.
+                    </p>
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-8">
+                        <li>When the user selects the "Products" option from the top level navigation, the user now lands on the "Your products" page. The parent nav "Products" active state remains active for all 3 pages.</li>
+                        <li>This work maintains the current behaviours of the products search page - table columns and sorting options/texts, for now - and focuses on emulating the work recently completed on the Cases pages.</li>
+                    </ul>
+                     
+                    <p class="govuk-body">
+                        (Eventually we will revisit these pages to adde two more page options, replace the Hazard type column and add a sort option for created date).
+                    </p>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                1. Your products:
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>The page automatically loads displaying all the products linked to <b>open</b> cases owned by the user. <br>(There are sometimes more than one product linked to a case)</li>
+                <li>The list of products are automatically ordered by Newly added</li>
+                <li>Only if there are 12 or more products is the 'Sort by' options added to the page (as like the Cases pages).</li>
+                <li>If there are no (zero) products, the sorting options are omitted.</li>
+                <li>Only if there are 12 or more products do we include the table footer.</li>
+                <li>Only if there are more than products do we include pagination (with 20 products per page). <br>[With sorting page design (below) only shows 12 products!].</li>
+                <li>HTML changes to current products page: 
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Additional <abbr>ID</abbr> "page-content" added to main section (for skip nav)</li>
+                        <li>Update hidden skip nav from #results to #page-content</li>
+                        <li>Remove #results <abbr>ID</abbr> from the <abbr>HTML</abbr> table tag.</li>
+                        <li>aria-label="Cases" is now aria-label="Products"</li>
+                        <li>Text in table CAPTION updated.</li>
+                        <li>Unique text on the no results page.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/your-products.html" target="_blank">Your products</a> page (without sorting)
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/your-products-sorting.html" target="_blank">Your products</a> page (with sorting)
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/no-products-example.html" target="_blank">Your products</a> page (with no products)
+                </li>
+            </ol> 
+
+            <h2 class="govuk-heading-s">
+                2. Team products: 
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>The page automatically loads displaying all the products linked to <b>open</b> cases owned by the team. <br>(There are sometimes more than one product linked to a case)</li>
+                <li>Unique text on the no results page.</li>
+                <li>Everything else, as above.</li>
+            </ul>
+
+            <ol class="govuk-list govuk-list--number govuk-!-margin-bottom-9">
+                <li>
+                    Team products page (without sorting): see 'Your products' example
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/team-products.html" target="_blank">Team products</a> page (with sorting)
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/no-team-products-example.html" target="_blank">Team products</a> page (with no products)
+                </li>                
+            </ol>             
+
+            <h2 class="govuk-heading-s">
+                3. All products - Search:
+            </h2>  
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>No change to the current functionality</li>
+                <li>Design changes: 
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Update to the H1 title (and page title tag).</li>
+                        <li>Update to the 'help' link text.</li>
+                        <li>New main hint text added below the H1 to be added.</li>
+                        <li>Keywords input field moved to new row + and input width classe + new opss-desktop-min-height--s</li>
+                        <li>Additional <abbr>ID</abbr> "page-content" added to main section (for skip nav)</li>
+                        <li>Update hidden skip nav from #results to #page-content</li>
+                        <li>Remove #results <abbr>ID</abbr> from the <abbr>HTML</abbr> table tag.</li>
+                        <li>Change the class on the 'Filters' header to "govuk-heading-s".</li>
+                        <li>Change the search input label to just "Search".</li>
+                        <li>Change the hidden text on the search button to "Submit search".</li>
+                        <li>Change class (width) on the results overview sentence.</li>
+                        <li>aria-label="Cases" is now aria-label="Products".</li>
+                        <li>Text in table CAPTION updated.</li>
+                    </ul>
+                </li>
+            </ul>            
+            
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/all-products.html" target="_blank">All products - Search</a>. 
+                </li>
+             
+            </ul> 
+            
+            <!--hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"-->
+
+            <div style="border: 2px dashed #000; padding: 30px 30px 10px 30px;">
+                <h2 class="govuk-heading-s">4. Additional updates outstanding on the 'All <u>cases</u> - Search' </h2>
+                <p>Some legacy edits missed recently and only recently spotted, while creating these products pages.</p>
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                    <li>The help link text to be updated</li>
+                    <li>Full width class on the results overview sentence (wrapping div now: 'govuk-grid-column-full') on the Your cases and Team cases page</li>
+                    <li>The hidden skip link <code>href</code> to be updated from <code>#results</code> to <code>#page-content</code></li>
+                </ul>
+                <p class="govuk-body">Design: <a class="govuk-link govuk-link--no-visited-state" href="/psd-cases-area/all-cases.html" target="_blank">All cases - search: design</a></p>
+            </div>
+
+        </div>
+            
+
+    </div>
+</div>
+
+{% endblock %}

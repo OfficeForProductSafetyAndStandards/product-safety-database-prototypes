@@ -28,15 +28,17 @@
                     <span id="search-hint">You can search for products using keywords from the product name or by using a barcode. A barcode is normally 13 digits, although older products may have a 12 digit number.</span>
                 </p>
                 <p class="govuk-body-s">
-                    You can also create a case for a product or add a product if it doesn't already exist<!-- within our records-->.
+                    You can also create a new product record in the Product Safety Database (<abbr>PSD</abbr>) to describe a product that isn’t already represented. 
                 </p>
             </div>
         </details>
     </div>
     <div class="govuk-grid-column-one-third govuk-!-margin-top-8">
-        <a href="/product-case-testing/do-you-have-the-barcode" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-align-right opss-text-underline-offset">
-            Add a product
-        </a>
+        <div class="opss-text-align-right">
+            <a href="/product-case-testing/do-you-have-the-barcode" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Create a product record
+            </a>
+        </div>
     </div>
 </div>
 
@@ -398,7 +400,7 @@
 
                 <table id="table-items" class="govuk-table opss-table-items opss-table-items--sm">
                     <caption class="govuk-visually-hidden">
-                        Products data: The table features three columns and each product is described across corresponding rows within each table body.
+                        Products data: The table features five columns and each product is described across corresponding rows within each table body.
                     </caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -470,13 +472,13 @@
 function buildHTML(val, o, c){
     o += '<tr class="govuk-table__row">';
     o += '<th class="govuk-visually-hidden">Product</th>';
-    o += '<th id="item-'+val.id+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="/product-case-testing/blank-01.html" class="govuk-link govuk-link--no-visited-state">'+ val.full_prod_name +'</a></th>';
+    o += '<th id="item-'+val.psdref+'" colspan="4" scope="colgroup" class="govuk-table__header"><a href="/product-case-testing/blank-01.html" class="govuk-link govuk-link--no-visited-state">'+ val.full_prod_name +'</a></th>';
     o += '</tr><tr class="govuk-table__row">';
-    o += '<th headers="item-'+val.id+'" id="meta-'+val.id+'" class="govuk-visually-hidden">Metadata</th>';
-    o += '<td headers="psd item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">psd-'+val.id+'</td>';
-    o += '<td headers="cat item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
-    o += '<td headers="type item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
-    o += '<td headers="bar item-'+val.id+' meta-'+val.id+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
+    o += '<th headers="item-'+val.psdref+'" id="meta-'+val.psdref+'" class="govuk-visually-hidden">Metadata</th>';
+    o += '<td headers="psd item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">psd-'+val.psdref+'</td>';
+    o += '<td headers="cat item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_category +'</td>';
+    o += '<td headers="type item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_subcategory +'</td>';
+    o += '<td headers="bar item-'+val.psdref+' meta-'+val.psdref+'" class="govuk-table__cell">'+ val.prod_barcode +'</td>';
     o += '</tr>';
     //o += '<tr class="govuk-table__row">';
     //o += '<th headers="item-'+val.id+'" id="actions-'+val.id+'" class="govuk-visually-hidden">Actions</th>';
@@ -530,10 +532,9 @@ function buildHTML(val, o, c){
                     $('#results-msg').removeClass('hidden');
                     for (var i = 0; i < arrayLength; i++) {
 
-                                var regex = new RegExp(mywords[i], "i");//mywords[i] was searchField
-
-                                if( $('#searchtype').prop("checked") == true ){//search keywords
+                                //if( $('#searchtype').prop("checked") == true ){//search keywords //related HTML also commented out in the HTML file
                                     $.each(data, function(key, val){
+                                        
                                         if ((val.prod_subcategory.search(regex) != -1) || (val.full_prod_name.search(regex) != -1)) {
 
                                             if(!matchedIDs.includes(val.id)){
@@ -543,14 +544,15 @@ function buildHTML(val, o, c){
                                             matchedIDs.push(String(val.id));
                                         }
                                     });
-                                }else{//search with barcode
+                                /*}else{//search with barcode
+                                    
                                     $.each(data, function(key, val){
                                         if (val.prod_barcode.search(regex) != -1) {
                                             output =  buildHTML(val, output, count);
                                             count++;
                                         }
                                     });
-                                }
+                                }*/
                     }
                     if(count <= 1){
                         output = '<tbody class="govuk-table__body"><tr class="govuk-table__row"><td class="govuk-visually-hidden"></td><td class="govuk-table__cell opss-temp-td" colspan="4">There are no products matching your search.</td></tr></tbody>';

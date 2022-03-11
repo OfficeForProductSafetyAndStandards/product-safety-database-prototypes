@@ -47,22 +47,31 @@
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">What is the product name?</h1>
 
         <p class="govuk-body opss-secondary-text">
           Sometimes the brand and model name can form part of the full product name. For example, the Dyson Small Ball Animal 2, is an upright vaccum cleaner.
         </p>
 
-        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-8">
+        <p class="govuk-body opss-secondary-text">
           Provide and categorise what information you can.
         </p>
+
+        <div class="govuk-warning-text govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            The 'full product name' entry will be permanent and cannot be changed after the product record has been created.
+          </strong>
+        </div>        
 
     </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
       <form action="#" method="post" novalidate>
 
 
@@ -72,7 +81,7 @@
           </label>
 
           <div id="fullproductname-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
-            For example, Dyson Small Ball Animal 2.
+            For example, Dyson Small Ball Animal 2. 
           </div>
 
           <span id="fullproductname-error" class="govuk-error-message">
@@ -149,7 +158,7 @@
               <fieldset class="govuk-fieldset" aria-describedby="product-hint">
 
               <legend class="govuk-fieldset__legend">
-                Does the product have a specific product name?
+                Does the product have a specific product, or product brand, name?
               </legend>
 
 
@@ -267,10 +276,10 @@
 
 <div class="govuk-form-group govuk-!-margin-bottom-5">
   <label class="govuk-label" for="modelnumber">
-    What is the model number?
+    What is the model or product number?
   </label>
   <div id="modelnumber-hint" class="govuk-hint govuk-hint govuk-!-font-size-16">
-    Some products have a separate model number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <!--br class="opss-br-desktop">Some retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.-->
+    Some products have a separate model or product number. For example, <span class="opss-no-wrap">334176-01</span>. <!--br class="opss-br-desktop">Numbers in a product name usually form part of the product or model name.--> <!--br class="opss-br-desktop">Some retailers sometimes repeat a model number as part of the product name, or use part of the name as a model number.-->
   </div>
   <input class="govuk-input  govuk-input--width-10" id="modelnumber" name="modelnumber" type="text" aria-describedby="modelnumber-hint">
 </div>
@@ -283,7 +292,7 @@
     General product identifiers might include an <abbr title="Stock Keeping Unit">SKU</abbr>, eBay or <abbr title="Amazon Standard Identification Number">ASIN</abbr> (Amazon) number.
     <br class="opss-br-desktop">To add multipul number codes seperate each one from the next with a comma.
   </div>
-  <input class="govuk-input  govuk-input--width-10" id="identifyingnumber" name="identifyingnumber" type="text" aria-describedby="identifyingnumber-hint">
+  <input class="govuk-input  govuk-input--width-20" id="identifyingnumber" name="identifyingnumber" type="text" aria-describedby="identifyingnumber-hint">
 </div>
 
 

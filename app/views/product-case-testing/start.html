@@ -19,60 +19,55 @@
 
 
 
-      <p class="govuk-body-l">Today we will ask you to complete 3 tasks:</p>
+      <p class="govuk-body-l">In these 3 tasks you will be asked to add a product to the database. <b>You will not be creating a new case</b>, but instead, testing a new feature which requires you to create a new record in the database of a product. These are called product records. These tasks will not involve information relevant to cases. </p>
 
-      <h2 class="govuk-heading-m">
+      <p class="govuk-body-l">Please familiarize yourself with the assets (files) we have emailed you. Please move them to a folder on your computer desktop so that you can refer back to them easily during each task and so you can easily access any product images which you might need to upload during a task.</p>
+
+      <p class="govuk-body-l">You will be asked to add 3 different products to the database.</p>
+
+      <!--h2 class="govuk-heading-m">
         Task 1
       </h2>
 
       <p class="govuk-body govuk-visually-hidden">Add a product that has a matching barcode</p>
-      <!-- Podium Sports Drinking Bottle -->
       <p class="govuk-body">Upon investigating a drinks container by Podium-sports - which sports people can refill and carry the bottle - you identify that the product poses a risk of choking as there is a small silicone valve in the affected caps (with date codes H19063 or H19175).</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>The valve could release while drinking, posing a potential choking hazard</li>
         <li>The product does not comply with the requirements of the General Product Safety Regulations 2005</li>
         <li>The barcode labelled on the product is 886798014739.</li>
       </ul>
-      <p class="govuk-body">You must notify OPSS about this product.</p>
+      <p class="govuk-body">You will want to eventually notify OPSS about this product. In this task you must first <b>create a record of the product</b> in the Product Safety Database.</p>
 
       <h2 class="govuk-heading-m">
         Task 2
       </h2>
 
-      <p class="govuk-body govuk-visually-hidden">Add a product that matches a product already in the system: we hide the product from the search results so that it throws a match later</p>
+      <p class="govuk-body govuk-visually-hidden">Add a product that matches a product already in the system: we hide the product from the search results so that it throws a match later.</p>
 
       <p class="govuk-body">Upon investigating an EMANBA Electric Scooter you identify that the product poses a serious risk as the speed is not limited to the maximum restriction. Consumers may not be able to stop safely due to unrestricted speeds, which could result in a crash and serious injuries.</p>
       <p class="govuk-body">The product does not meet the requirements of the Supply of Machinery Regulations 2008.</p>
-      <p class="govuk-body">You must notify OPSS about this product.</p>
+      <p class="govuk-body">You will want to eventually notify OPSS about this product. In this task you must first <b>create a record of the product</b> in the Product Safety Database.</p>
 
       <h2 class="govuk-heading-m">
         Task 3
       </h2>
 
-      <p class="govuk-body govuk-visually-hidden">Can't find product because it doesn't exist - and there is no match, so they create their own product. A standard journey adding product and then onto the case pages</p>
+      <p class="govuk-body govuk-visually-hidden">Can't find product because it doesn't exist - and there is no match, so they create their own product. A standard journey adding product and then onto the case pages.</p>
 
-      <p class="govuk-body">Upon investigating the Phillips Triple USB Output AC/DC Adaptor ADS-30W, you identify that the product presents a high risk of electric shock. The internal insulation between the mains circuitry and the USB outputs was found to be deficient and the dimensional requirements of the plug pins was not in accordance with the relevant standard (BS1363).</p>
+      <p class="govuk-body">Upon investigating the Fisher Price 2-in-1 Soothe'n Play Glider infant swing, you identify that the product presents a high risk of suffocation. Infants who are placed unrestrained in the product can move and may shift onto their stomach. The product does meet the requirements of the General Product Safety Regulations 2005.</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>There was a potential that poor connection between the plug and socket which could lead to overheating within the product</li>
-        <li>The product was not marked with the required product markings or accompanied with safety instructions</li>
-        <li>The product does not comply with the Electrical Equipment (Safety) Regulations 2016</li>
-        <li>The barcode on the product is MC00058303.</li>
-      </ul>
-      <p class="govuk-body">You must notify OPSS about this product.</p>
-<!--
-on scenario 3, should we have a clearer brand?
+        <li>Category: Childcare articles and children's equipment</li>
+        <li>Product identifiers: FYY21 and HBD64 product code(s)</li>
+       </ul>
+      <p class="govuk-body">You will want to eventually notify OPSS about this product. In this task you must first <b>create a record of the product</b> in the Product Safety Database.</p-->
 
-is Phillips clear enough?
-
-FYI for scenario 3 I just tweaked some existing product info, so no need to make any changes to the search
--->
 
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
 
-      <p class="govuk-body-l">The next page will open in a new tab - <br>please start each new task by clicking this Start button:</p>
+      <p class="govuk-body-l">Please start each new task by clicking this Start button:</p>
 
       <a href="cases-page.html" id="test-clear" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
         Start now
@@ -118,7 +113,7 @@ FYI for scenario 3 I just tweaked some existing product info, so no need to make
       window.localStorage.clear();
 
       //window.location.assign('home.html');
-      window.open('home.html', '_blank').focus();
+      window.open('home.html', '_self').focus();
     });
 
 

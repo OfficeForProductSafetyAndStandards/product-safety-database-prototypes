@@ -1,18 +1,24 @@
-{% extends "layout-01.html" %}
+{% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    Case landing page - Trading Stds - admin
+    Case 2101-0008
 {% endblock %}
 
-
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases"
+    }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-        <span class="govuk-caption-l">Allegation: 2101-0008 </span>
+    <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
+        <!--span class="govuk-caption-l">Allegation 2101-0008 </span-->
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-            Case
+            Case <span class="govuk-!-font-weight-regular govuk-!-font-size-27 govuk-!-margin-left-2">2101-0008</span>
+            <!--span class="govuk-heading-m govuk-!-font-weight-regular govuk-!-padding-left-1 opss-secondary-text">2101-0008</span-->
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt? Harum expedita vero ea incidunt iusto? Nisi, illo tempore nemo maxime  voluptas amet esse.</p>
@@ -45,7 +51,7 @@
             Skip to the main content
         </a>
 
-        {% include "psd-revised-flow/inc_left_nav_1.html" %}
+        {% include "psd-revised-flow/inc_left_nav_1c.html" %}
     </nav>
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
@@ -53,15 +59,7 @@
         {% include "psd-revised-flow/inc_top_nav_2.html" %}
 
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
-<!--
-        <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                0 products have been added to this case.
-            </strong>
-        </div>
--->
+
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -78,10 +76,12 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Allegation   <!-- or Enquiry / Project -->
+                    Allegation <span class="opss-numero" title="Number">&numero;</span>   <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    2101-0008
+                    2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                        <span class="govuk-visually-hidden"> - </span>Case reference 
+                    </span>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -161,7 +161,7 @@
                     Case owner
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Darren Harridence
+                    Renfrewshire Council
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -176,7 +176,7 @@
                 <dd class="govuk-summary-list__value">
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            Renfrewshire Council
+                            South Yorkshire Trading Standards services
                         </li>
                         <li>
                             Watford Council
@@ -299,12 +299,7 @@
                     Batch numbers
                 </dt>
                 <dd class="govuk-summary-list__value">
-
-                    <ol class="govuk-list govuk-list--number">
-                        <li>B3736-33QY</li>
-                        <li>D9887-31ZY</li>
-                    </ol>
-
+                    <span class="opss-no-wrap">B3736-33QY</span>, <span class="opss-no-wrap">D9887-31ZY</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -317,12 +312,7 @@
                     Customs codes
                 </dt>
                 <dd class="govuk-summary-list__value">
-
-                    <ol class="govuk-list govuk-list--number">
-                        <li>Unknown</li>
-                        <li>97888-319</li>
-                    </ol>
-
+                    <span class="opss-no-wrap">97888-319</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -335,9 +325,7 @@
                     Units affected
                 </dt>
                 <dd class="govuk-summary-list__value">
-
                     22000 
-  
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">

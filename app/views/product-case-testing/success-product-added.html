@@ -1,7 +1,7 @@
 {% extends "layout-user-testing.html" %}
 
 {% block pageTitle %}
-    Success - the product has been added
+    Select the default image
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,6 +13,27 @@
 
 
 {% block content %}
+<style>
+  .govuk-radios__item label {
+    float: left;
+  }
+  .imgsarea {
+    height: 60px; 
+    margin-left: 15px; 
+    float: left;
+  }
+  .imgsarea img {
+    height: inherit !important;
+    width: auto; 
+  }
+  @media only screen and (min-width: 1025px) {/* desktop */
+      .imgsarea {
+        margin-top: -10px; 
+        margin-left: 30px; 
+      }
+  } 
+</style>
+
 <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
@@ -23,7 +44,7 @@
 
       <li>
 
-        <a href="#createcase">Select yes if you want to create a case for this product now</a>
+        <a href="#defaultimg">Select which image will be the default image</a>
 
       </li>
 
@@ -31,7 +52,7 @@
   </div>
 </div>
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<!--div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Success
@@ -39,95 +60,66 @@
     </div>
     <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-            The product has been added
+            The product record has been created
         </h3>
-        <!--p class="govuk-body">You can now create cases for this product.</p-->
     </div>
-</div>
+</div-->
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="#" method="post" novalidate>
+      <form action="#" method="post" novalidate>
+
+          <div class="govuk-form-group" data-test-for="radio" data-test-ele-name="defaultimg">
+
+            <fieldset class="govuk-fieldset" aria-describedby="which-image-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+              <!--Do you want to add this product to your case?-->
+              Select which image will be the default image
+
+            </legend>
+
+            <div class="govuk-hint opss-max-width-two-thirds" id="which-image-hint">
+              The default image should provide the clearest representation of the product and will be used as the thumbnail image for product record.
+            </div>  
+
+            <span id="defaultimg-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select which image will be the default image
+            </span>
+
+            <div class="govuk-radios govuk-!-padding-top-6 govuk-!-padding-bottom-1">
+
+                <div class="govuk-radios__item govuk-!-margin-bottom-5">
+                  <input class="govuk-radios__input" id="defaultimg" name="defaultimg" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="defaultimg" id="theImg00">
+                    
+                  </label>
+                  <div class="imgsarea" id="imagearea0" aria-describedby="theImg00"></div><!-- put aria-describedby on the IMAGE in real HTML -->
+                </div>
+
+                <div class="govuk-radios__item govuk-!-margin-bottom-5">
+                  <input class="govuk-radios__input" id="defaultimg-2" name="defaultimg" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="defaultimg-2" id="theImg01">
+
+                  </label>
+                  <div class="imgsarea" id="imagearea1" aria-describedby="theImg01"></div><!-- put aria-describedby on the IMAGE in real HTML -->
+                </div>
+            </div>
 
 
+          </fieldset>
 
 
+          </div>
 
-
-
-
-
-
-<div class="govuk-form-group" data-test-for="radio" data-test-ele-name="createcase">
-
-  <fieldset class="govuk-fieldset">
-
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-    <!--Do you want to create a case for this product now?-->
-    Do you want to add this product to your case?
-
-  </legend>
-
-  <span id="createcase-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Select yes if you want to add this product to your case
-  </span>
-
-  <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="createcase" name="createcase" type="radio" value="yes" disabled>
-          <label class="govuk-label govuk-radios__label" for="createcase">
-        Yes
-      </label>
-
-        </div>
-
-
-
-
-
-
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="createcase-2" name="createcase" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="createcase-2">
-        No - return to the products page
-      </label>
-
-        </div>
-
-
-
-
-  </div>
-
-
-</fieldset>
-
-
-</div>
-
-
-
-
-
-
-
-
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
 
       </form>
-
 
     </div>
   </div>
@@ -142,11 +134,29 @@
     {% endblock %}
   {% endblock %}
 
+
 <script>
   jQuery(document).ready(function(){
 
     setMenuState('products');
     validateTheForm($("#main-content").find('form'));
+
+    if(localStorage.getItem('theImageName0') !== null){
+        var img0 = new Image();
+        img0.id = "img0";
+        img0.src = localStorage.theImage0;
+        img0.title = localStorage.theImageTitle0;
+        $('#imagearea0').html(img0);
+        $('#theImg00').text(img0.title);
+    }
+    if(localStorage.getItem('theImageName1') !== null){
+        var img1 = new Image();
+        img1.id = "img1";
+        img1.src = localStorage.theImage1;
+        img1.title = localStorage.theImageTitle1;
+        $('#imagearea1').html(img1);
+        $('#theImg01').text(img1.title);
+    }
 
   });
 </script>

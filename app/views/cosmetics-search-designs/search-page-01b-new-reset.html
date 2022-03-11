@@ -66,9 +66,9 @@
                             <option value="val04">Option 4</option>
                         </select>
                     </div>
-                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional opss-radios--tight" data-module="govuk-radios">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional opss-radios--tight      opss-nojs-hide" data-module="govuk-radios">
 
-                        <div class="govuk-radios__item opss-nojs-hide">
+                        <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date" data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date">
                                 Date
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint" checked>
+                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date-range">
                                 Date range
                             </label>
@@ -428,13 +428,53 @@
 </div>
 
 <script>
-    /* hide first filter for non js - start */
+    /* hide first filter for non js - start 
+    //document.addEventListener("DOMContentLoaded", function() {
+        if(document.getElementById('by-date-range')){
+            if (!window.location.search) {// = no querystring 
+                document.getElementById('by-date-range').removeAttribute('checked');
+            }else{// = there is a querystring
+                var IDinputs = document.getElementById('conditional-date-block-2');
+                var myInputs = IDinputs.getElementsByTagName('input');
+                var anyVal = false;
+
+                for (i = 0; i < myInputs.length; ++i) {
+                    if(myInputs[i].value != ''){//if an input has a value //alert(myInputs[i].value);
+                        anyVal = true;//set to true
+                        break; 
+                    }
+                }                
+                if(anyVal == false){//date range inputs are empty, so remove checked radio (collapse date range)
+                    document.getElementById('by-date-range').removeAttribute('checked');
+                }
+            }
+
+            document.getElementById('conditional-date-block-2').classList.remove('opss-js-enabled-hidden');
+        }
+    //});
+    hide first filter for non js - end */
+
+    /* hide first filter for non js - start 
     if(document.getElementById('by-date-range')){
-        if (!window.location.search) {// = no querystring
+        if (!window.location.search) {// = no querystring 
             document.getElementById('by-date-range').removeAttribute('checked');
+        }else{// = there is a querystring
+            var IDinputs = document.getElementById('conditional-date-block-2');
+            var myInputs = IDinputs.getElementsByTagName('input');
+            var anyVal = false;
+
+            for (i = 0; i < myInputs.length; ++i) {
+                if(myInputs[i].value != ''){//if an input has a value //alert(myInputs[i].value);
+                    anyVal = true;//set to true
+                    break; 
+                }
+            }                
+            if(anyVal == false){//date range inputs are empty, so remove checked radio (collapse date range)
+                document.getElementById('by-date-range').removeAttribute('checked');
+            }
         }
     }
-    /* hide first filter for non js - end */
+    hide first filter for non js - end */
 
     /* clear filters reset - start */
     var filterForm = document.getElementById('new_notification_search_form_filters');
@@ -444,6 +484,7 @@
     var prodSelect = document.getElementById('notification_search_form_category');
 
     document.getElementById('opss-reset').addEventListener('click', function () {//click the filter's form reset link/button
+
         prodSelect.querySelectorAll('option').forEach(function(s){//all options
             s.removeAttribute('selected');
         });

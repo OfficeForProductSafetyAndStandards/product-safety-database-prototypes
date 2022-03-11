@@ -130,6 +130,7 @@ body.js-enabled .opss-nojs-hide {
         }        
     }
 }
+
 .opss-responsive-margin-top-6 {
     @include govuk-responsive-margin(6, "top");
 }
@@ -264,10 +265,13 @@ kbd {
     text-align: center;
 }
 
-.opss-text-align-right {
-    @include govuk-media-query($from: tablet) {
-        text-align: right; display: inline-block; width: 100%;
+@include govuk-media-query($from: tablet) {
+    .opss-max-width-two-thirds {
+        max-width: 66%;
     }
+    .opss-text-align-right {
+        text-align: right; display: inline-block; width: 100%;
+    }    
 }
 
 .opss-text-underline-offset {
@@ -534,6 +538,28 @@ dl.opss-summary-list-aside {
             @include opss-font-size($s: 16px, $l: 1.2);
             padding-bottom: govuk-spacing(0);
         }
+    }
+}
+
+dd dl.opss-nested-definition-list {
+    margin: 0; 
+    @include opss-font-size($s: 16px, $l: 1.6);
+
+    & > div {
+        width: 100%; 
+    }
+
+    dt {
+        font-weight: bold; 
+        display: inline-block; 
+        margin: 0 govuk-spacing(2) 0 0; 
+        width: 45%;
+    }
+
+    dd {
+        display: inline-block; 
+        padding-right: 0; 
+        margin-left: 0; 
     }
 }
 
