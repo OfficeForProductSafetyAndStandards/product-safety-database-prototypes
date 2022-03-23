@@ -1,0 +1,56 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredient 2b
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="ingredient-2a-how-many.html" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add another ingredient?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="another" name="another" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="another">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue" name="continue" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="continue">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button ">Continue</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

@@ -781,6 +781,35 @@ dd dl.opss-nested-definition-list {
             thead th:nth-child(2) {width: 33%; }
         }
     }
+
+    &.opss-table-items--first-col-50 {/*no hidden 1st col */
+        @include govuk-media-query($from: tablet) {
+            thead th:nth-child(1) {width: 50%; }
+        }
+    }    
+}
+
+.opss-table-stripes {
+    tbody tr {
+        th, td {
+            border-top: 1px solid govuk-colour("light-grey");
+        }
+    }
+    tbody tr:first-child, 
+    tbody tr:last-child {
+        th, td {
+            border-bottom: none;
+        }
+    }
+
+    &.opss-table-items--sm {
+        tbody tr {
+            th, td {
+                padding-top: govuk-spacing(2); 
+                padding-bottom: govuk-spacing(2); 
+            }
+        }
+    }
 }
 
 @include govuk-media-query($from: desktop) {
@@ -789,7 +818,7 @@ dd dl.opss-nested-definition-list {
         position: sticky;
         top: 20px;
     }
-
+    
     .opss-desktop-padding-left-0 {
         padding-left: 0;
     }
