@@ -1,0 +1,145 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Page designs for revised PSD create a case journey
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+    li i {
+        font-size: 60%; 
+    }
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+                        Ingredients pages
+                    </h1>
+
+                    <p class="govuk-body opss-secondary-text">
+                        Here are the initial designs - not finalised - for the new ingredients pages (to be inserted into the current user journey).
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Main design(s)
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient" target="_blank">Add the ingredients form</a> <br><i>We insert this page into the standard flow. There is contextual text refering to the ingredients of this product or this item. Click, Save and continue.</i>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2b-how-many" target="_blank">Do you want to add another?</a> <i>We ask if the user wishes to add another ingredient for the product of the item. (Clicking No, allows the user to exit the loop). Click, Yes.</i>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-2" target="_blank">Add another ingredient form</a> <i>This version shows the start of the list of ingredients already added to the product or item. Click, Yes (to see a longer list). </i>
+                        </li>  
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5" target="_blank">Add another ingredient form (with longer list)</a> <i>This version shows a list of ingredients already added to the product or item.</i>
+                        </li>                                                
+                    </ul>
+                </li>
+
+            </ul> 
+        </div>
+
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Main design(s) - when editing 
+            </h2>
+
+            <p class="govuk-body-s">Showing the 'remove' link which shows on this page only when editing drafts, re-taking tasks, or clicking through tasks that are 'In progress'.</p>
+            <p class="govuk-body-s">And showing the 'add a new ingredient' page, which is inserted into the flow, at the end of paging through the ingredients pages, only when editing drafts, re-taking tasks, or clicking through tasks that are 'In progress'.</p>            
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-3-link" target="_blank">Add the ingredients form - with link</a> <br><i>When clicking Save and continue, the user simply pages onto the next ingredient in the list. We should update the title tags to read, 'Add the ingredients - ingredient [number]'.</i> 
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove" target="_blank">Do you want to remove it?</a> <i>Clicking No, will return the user back to the previous page. electing no, takes the user onto the next page in the current journey. Click, Yes</i>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-removed-confirmation" target="_blank">Removed - confirmed</a> <i>This standalone page is required as the ingredient may be the last in the list of ingredients (making inline success banners inappropriate). No back link. Contextual text "... from this product or this item". Click Continue; the user now goes to the next ingredient form page shown in the ingredients list. If this was the last ingredient the user goes to the 'Add an ingredient' page (below)</i>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add" target="_blank">Do you want to add a new ingredient to this product/item</a> <br><i>No, goes to the next page in the current journey, Yes, goes to a <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5.html" target="_blank">blank ingredient page</a> to append another ingredient to the list (without a remove link). Contextual text "... to this product or to this item". The new ingredient is added immediately (before the end of the task). </i>                   
+                </li>
+
+            </ul> 
+        </div>
+        
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Error pages
+            </h2>
+
+            <p class="govuk-body-s">Pages showing the error summary and errors:</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">1</a> 
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">2</a>  
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">3</a>  
+                </li>
+            </ul> 
+        </div>         
+
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
+            <p class="govuk-body">
+                Single form page design for all ingredients
+            </p>
+
+            <p class="govuk-body-s">This pattern is included here for demonstration purposes but isn't an ideal solution(!)</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredient-1a-how-many" target="_blank">How many page</a>. <i>User predicts how many entries (as part of this product or product item - we'd use conditional text). Click continue.</i>
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredient-1b-how-many" target="_blank">Ingredient list of forms</a>. <i>All entries on the one page and continue with established flow(s).</i>
+                </li>                    
+            </ul>
+        </div>        
+            
+
+    </div>
+</div>
+
+{% endblock %}

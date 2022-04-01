@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Ingredient 2a
+    Ingredient 3a
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,20 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
         Add the ingredients
       </h1>
 
     </div>
+    <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+      <div class="opss-text-align-right">
+          <a href="ingredient-2c-remove" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+              Remove this ingredient
+          </a>
+      </div>
+  </div>
   </div>
 
   <div class="govuk-grid-row">
@@ -464,24 +471,24 @@
       
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
-      <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
+      <form id="skip-to-form" action="#" novalidate>
         
         <div class="govuk-form-group govuk-!-margin-bottom-9">  
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Ingredient 5
+              Ingredient 3
             </legend>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-5">What is the name?</label>
-              <input class="govuk-input" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false">
+              <input class="govuk-input" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false" value="Voluptas recusandae aliquid delectus">
             </div>
             
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
                 <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-5">What is the concentration?</label>
                 <div class="govuk-input__wrapper">
-                  <input class="govuk-input govuk-input--width-3" id="concentrate-5" name="concentrate-5" type="text" maxlength="3">
+                  <input class="govuk-input govuk-input--width-3" id="concentrate-5" name="concentrate-5" type="text" maxlength="3" value="60">
                   <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
                 </div>
               </div>
@@ -499,13 +506,9 @@
           </fieldset>
         </div>    
 
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>  
-          
-          <a href="#" class="govuk-link govuk-link--no-visited-state">Ignore and continue</a>
-        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button> 
 
       </form>
 
@@ -518,7 +521,7 @@
       <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
         <li>Lorem ipsum dolor sit amet </li>
         <li>Consectetur adipisicing elit</li>
-        <li>Voluptas recusandae aliquid delectus</li>
+        <li><span class="govuk-!-font-weight-bold">Voluptas recusandae aliquid delectus</span></li>
         <li>Saepe maiores rem dolor</li>
       </ol>
   

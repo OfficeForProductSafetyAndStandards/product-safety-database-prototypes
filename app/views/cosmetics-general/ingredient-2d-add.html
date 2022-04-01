@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Ingredient 2b
+    Add an ingredient
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,25 +13,26 @@
 
 
 {% block content %}
-
-{% include "cosmetics-general/inc_success-added.html" %}  
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form action="ingredient-2a-enter-ingredient-2.html" novalidate>
+    <form action="ingredient-2a-enter-ingredient-5.html" novalidate>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="add-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Do you want to add another ingredient?
-            </h1>
+              Do you want to add another ingredient? 
+            </h1> 
           </legend>
+
+          <div id="add-hint" class="govuk-hint">
+            A new ingredient will be added to this product. <!-- ... or to this item -->
+          </div>
 
           <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="another" name="another" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="another">
+              <input class="govuk-radios__input" id="add" name="add" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="add">
                 Yes
               </label>
             </div>
@@ -49,7 +50,7 @@
       </div>
 
       <div class="govuk-button-group">
-        <button class="govuk-button ">Continue</button>
+        <button class="govuk-button ">Save and continue</button>
       </div>
 
     </form>
