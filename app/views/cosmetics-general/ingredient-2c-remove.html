@@ -1,0 +1,60 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Remove ingredient
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form action="ingredient-2c-removed-confirmation.html" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="remove-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to remove this ingredient? 
+            </h1> 
+          </legend>
+
+          <div id="remove-hint" class="govuk-hint">
+            Ingredient 'Voluptas recusandae aliquid delectus' will be removed from this product. <!-- ... or from this Item -->
+          </div>
+
+          <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove" name="remove" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="remove">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue" name="continue" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="continue">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button ">Save and continue</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

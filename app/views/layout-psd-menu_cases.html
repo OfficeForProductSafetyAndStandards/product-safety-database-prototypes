@@ -31,8 +31,7 @@
 
 
 {% block head %}
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-<link href="/public/stylesheets/layout-psd-menu__layout.css" media="all" rel="stylesheet" type="text/css" />
+  {% include "includes/headpsdmenu.html" %}
 {% endblock %}
 
 
@@ -102,7 +101,7 @@
                 <li class="psd-header__navigation-item">
                   <a class="psd-header__link" href="#">Home</a>
                 </li>
-                <li class="psd-header__navigation-item psd-header__navigation-item--active">
+                <li class="psd-header__navigation-item">
                     <a class="psd-header__link" href="#">Cases</a>
                 </li>
                 <li class="psd-header__navigation-item ">
