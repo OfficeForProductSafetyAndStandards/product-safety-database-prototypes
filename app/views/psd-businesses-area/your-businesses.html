@@ -1,0 +1,363 @@
+{% extends "layout-routes-02.html" %}
+
+{% block pageTitle %}
+    Your businesses
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Your businesses 
+        </h1>
+
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+            There are 11 businesses linked to open cases where you are the case owner. 
+        </p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li class="opss-left-nav__active">
+                    <a href="/psd-businesses-area/your-businesses.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Your businesses</a>
+                </li>
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Team businesses</a>
+                </li>
+                <li>
+                    <a href="/psd-businesses-area/all-businesses.html" class="govuk-link govuk-link--no-visited-state">All businesses &ndash; Search</a>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-third opss-float-right-desktop">
+                <div class="govuk-form-group opss-text-align-right">
+                    
+                    <fieldset class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
+                        <label class="govuk-label govuk-body-s" for="sort_by">
+                            Sort <span class="govuk-visually-hidden">the results</span> by
+                        </label>
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="sort_by">
+                            <option selected="selected" data-url="/businesses?sort_by=updated_at">Recently added</option>
+                            <option data-url="/businesses?sort_by=name&amp;sort_dir=asc">Name A-Z</option>
+                            <option data-url="/businesses?sort_by=name&amp;sort_dir=desc">Name Z-A</option>
+                        </select>
+                    </fieldset>
+
+                    <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
+                        <dt>
+                            Sort <span class="govuk-visually-hidden">the results</span> by
+                        </dt>
+                        
+                        <dd class="opss-dl-select__active">
+                            <a href="/businesses?sort_by=updated_at"><span class="govuk-visually-hidden">Active: </span>Recently added</a>
+                        </dd>
+                        <dd>
+                            <a href="/businesses?sort_by=name&amp;sort_dir=asc">Name A-Z</a>
+                        </dd>
+                        <dd>
+                            <a href="/businesses?sort_by=name&amp;sort_dir=desc">Name Z-A</a>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+            
+        </div>        
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Businesses">
+
+                <table class="govuk-table opss-table-items opss-table-items--first-col-33 opss-table-items--sm opss-table--borders">
+                    <caption class="govuk-table__caption govuk-visually-hidden">
+                        Businesses: a simple data table.
+                    </caption>
+
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Added</th>
+                        <th scope="col" class="govuk-table__header">Company number</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          23 July 2019
+                        </td>                        
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          2 December 2020
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          16 April 2020
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          18 July 2019
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          5 August 2022
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          17 September 2019
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          28 March 2019
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          22 April 2019
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                         8 May 2018
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          098872
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          19 January 2021
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          889235
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          18 February 2021
+                        </td>                         
+                        <td class="govuk-table__cell">
+                          0299987
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                        </th>
+                        <td class="govuk-table__cell">
+                          6 October 2018
+                        </td> 
+                        <td class="govuk-table__cell">
+                          022875
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            23 November 2019
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            098872
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            12 June 2019
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            889235
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            28 September 2019
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            0299987
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            14 July 2019
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            022875
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Shampoos are us</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            23 June 2020
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            098872
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco Ltd</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            16 August 2019
+                          </td> 
+                          <td class="govuk-table__cell">
+                            889235
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Electronics UK Limited</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                            7 October 2022
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            0299987
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Lockwood Lighting Imports Ltd</a>
+                          </th>
+                          <td class="govuk-table__cell">
+                           21 November 2019
+                          </td>                           
+                          <td class="govuk-table__cell">
+                            022875
+                          </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name</th>
+                        <th scope="col" class="govuk-table__header">Added</th>
+                        <th scope="col" class="govuk-table__header">Company number</th>
+                      </tr>
+                    </tfoot>
+
+                  </table>
+
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                            </a>
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                            Page 2
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>        
+
+    </section>
+
+</div>
+
+{% endblock %}

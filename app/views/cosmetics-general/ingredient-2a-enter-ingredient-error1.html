@@ -1,49 +1,50 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Ingredient 3a
+    Error: Ingredient 5
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "/index"
+        href: "/ingredients-pages"
     }) }}
 {% endblock %}
 
 
 {% block content %}
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#ingredient-5">Enter a name</a>
+        </li>
+        <li>
+          <a href="#concentrate-1">Enter the concentration</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
         Add the ingredients
       </h1>
 
     </div>
-    <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
-      <div class="opss-text-align-right">
-          <a href="ingredient-2c-remove" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-              Remove this ingredient
-          </a>
-      </div>
-    </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body-s opss-secondary-text">For every ingredient:</p>
-        
-      <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 opss-secondary-text">
-        <li>Use the International Nomenclature of Cosmetic Ingredients (<abbr>INCI</abbr>) name, where available</li>
-        <li>Provide the exact concentrations (&percnt; <span title="Weight by weight"><abbr>w</abbr>/<abbr>w</abbr></span>)</li>
-        <li>Confirm if poisonous - especially if the details match ingredients listed in the following poison tables </li>
-      </ul>
-
-      <a href="#skip-to-form" class="govuk-skip-link opss-skip-link">Skip poisonous ingredients tables.</a>
-
-      {% include "cosmetics-general/inc_tables-details.html" %}      
+      {% include "cosmetics-general/inc_tables-details.html" %}         
       
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
@@ -52,46 +53,50 @@
         <div class="govuk-form-group govuk-!-margin-bottom-9">  
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Ingredient 3
-            </legend>
+              Ingredient 5
+            </legend> 
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
               <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-5">What is the name?</label>
-              <input class="govuk-input" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false" value="Voluptas recusandae aliquid delectus">
+              
+              <p id="name-input-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a name
+              </p>
+
+              <input class="govuk-input govuk-input--error" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false" aria-describedby="name-input-error">
             </div>
-            
+
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
-
-                <div class="govuk-form-group">
+                <div class="govuk-form-group govuk-form-group--error">
 
                   <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is the concentration?</label>
+
+                  <p id="concentrate-input-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Enter the concentration
+                  </p>
+
                   <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text" maxlength="3" value="60">
-                    <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
+                    <input class="govuk-input govuk-input--width-3 govuk-input--error" id="concentrate-1" name="concentrate-1" type="text" maxlength="3" aria-describedby="concentrate-input-error">
+                    <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">% w/w</span></div>
                   </div>
 
                 </div>
               </div>
               <div class="govuk-grid-column-one-half">
-
                 <div class="govuk-form-group">
-
+                  
                   <div class="govuk-checkboxes opss-float-right-desktop">
                     <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS number?</label>
-                    <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text" value="5530992">
+                    <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
                   </div>
-
+                  
                 </div>
-
               </div>              
             </div>
-          
+
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-
-                <div class="govuk-form-group">
-
+                <div class="govuk-grid-column-one-half">
                   <div class="govuk-checkboxes govuk-!-padding-top-6">
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
@@ -100,19 +105,18 @@
                       </label>
                     </div>
                   </div>
-
                 </div>
-
-              </div>
             </div>
-
-
           </fieldset>
         </div>    
 
-        <button class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </button> 
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Skip</a>
+        </div>        
 
       </form>
 
@@ -125,7 +129,7 @@
       <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
         <li>Lorem ipsum dolor sit amet </li>
         <li>Consectetur adipisicing elit</li>
-        <li><span class="govuk-!-font-weight-bold">Voluptas recusandae aliquid delectus</span></li>
+        <li>Voluptas recusandae aliquid delectus</li>
         <li>Saepe maiores rem dolor</li>
       </ol>
   

@@ -14,12 +14,19 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
         Add the ingredients
       </h1>
 
+    </div>
+    <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+      <div class="opss-text-align-right">
+          <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+              Remove this ingredient
+          </a>
+      </div>
     </div>
   </div>
 
@@ -30,7 +37,7 @@
       
       <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
-      <form id="skip-to-form" action="#" novalidate>
+      <form id="skip-to-form" action="ingredient-2d-add.html" novalidate>
         
         <div class="govuk-form-group govuk-!-margin-bottom-9">  
           <fieldset class="govuk-fieldset">
@@ -45,23 +52,51 @@
             
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-half">
-                <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-5">What is the concentration?</label>
-                <div class="govuk-input__wrapper">
-                  <input class="govuk-input govuk-input--width-3" id="concentrate-5" name="concentrate-5" type="text" maxlength="3" value="55">
-                  <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
+
+                <div class="govuk-form-group">
+
+                  <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is the concentration?</label>
+                  <div class="govuk-input__wrapper">
+                    <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text" maxlength="3" value="55">
+                    <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
+                  </div>
+
                 </div>
+
               </div>
               <div class="govuk-grid-column-one-half">
-                <div class="govuk-checkboxes opss-float-right-desktop govuk-!-padding-top-6">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="poisonous-5" name="poisonous-5" type="checkbox" value="checkbox">
-                    <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-5">
-                      Is it poisonous?
-                    </label>
+
+                <div class="govuk-form-group">
+
+                  <div class="govuk-checkboxes opss-float-right-desktop">
+                    <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS number?</label>
+                    <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text" value="7729118">
                   </div>
+
                 </div>
+
               </div>              
             </div>
+          
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+
+                <div class="govuk-form-group">
+
+                  <div class="govuk-checkboxes govuk-!-padding-top-6">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
+                        Is it poisonous?
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>            
+
           </fieldset>
         </div>    
 

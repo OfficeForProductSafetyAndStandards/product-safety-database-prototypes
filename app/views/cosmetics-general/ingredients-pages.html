@@ -14,12 +14,12 @@
       padding: 20px 0 5px 0; 
 
     }
-    li ul li, 
+    /*li ul li, 
     li ul li i {
         font-size: 80%; 
-    }
+    }*/
     li i {
-        font-size: 60%; 
+        font-size: 80%; 
     }
 </style>
 <div class="govuk-grid-row">
@@ -27,16 +27,46 @@
         <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-
+                <div class="govuk-grid-column-full">
                     
                     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
                         Ingredients pages
                     </h1>
 
-                    <p class="govuk-body opss-secondary-text">
-                        Here are the initial designs - not finalised - for the new ingredients pages (to be inserted into the current user journey).
+                    <p class="govuk-body">
+                        Here are the initial design concepts - not finalised - for the new ingredients pages (to be inserted into the current user journey within the new tasks bases pattern).
                     </p>
+
+                    <p class="govuk-body">
+                        All pages with initial inline notes.
+                    </p>  
+                    
+                    <p class="govuk-body">
+                        The current examples (below) show forms referring to "<b>What is the concentration?</b>", but the user may choose the option to specify via "<b>percentages</b>". These will be identical forms (concentration substituted out for percentages). The second bullet point text at the start of each page will also be contextual.
+                    </p>
+
+                    <p class="govuk-body">
+                        Ingredients are added/saved upon selecting the 'Save and continue' buttons (not at the end of a given task).
+                    </p> 
+
+                    <h1 class="govuk-heading-m govuk-!-margin-bottom-2">
+                        Highlights summary
+                    </h1>                    
+                    
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>This journey is idential for two alternative journeys: concentration and percentages</li>
+                        <li>Inserted into the current task flow, the user adds a new ingredient, page by page</li>
+                        <li>But, when using this same mini-flow (within the tasks flow) when a user is <b>re-editing a draft</b> ... 
+
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>We add a 'Remove this ingredient' link (and its confirmation pages)</li>
+                                <li>When the user pages through the previously entered ingredients we highlight (bold text) the current ingredient (in the righthand list)</li>
+                                <li>We add a 'Skip' link to the ingredient form page <b>if</b> adding a <b>new</b> ingredient</li>
+                                <li>At the end of a run of ingredient pages, we insert a 'Do you want to add an ingredient?' page (and its confirmation pages)</li>
+                            </ul>
+
+                        </li>
+                    </ul>
 
                 </div>
             </div>
@@ -54,14 +84,14 @@
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient" target="_blank">Add the ingredients form</a> <br><i>We insert this page into the standard flow. There is contextual text refering to the ingredients of this product or this item. Click, Save and continue.</i>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient" target="_blank">Add the ingredients form</a> <br><i>We insert this page into the standard tasks flow. There will be contextual text refering to the ingredients of this "product" or this "item". (After the first ingredient form page we add a Skip link). Select, Save and continue.</i>
 
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2b-how-many" target="_blank">Do you want to add another?</a> <i>We ask if the user wishes to add another ingredient for the product of the item. (Clicking No, allows the user to exit the loop). Click, Yes.</i>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2b-how-many" target="_blank">Do you want to add another?</a> <i>A confirmation banner is shown (with contextual text); We ask if the user wishes to add another ingredient for the product or the item. (Clicking No, allows the user to exit the loop and continue the standard current journey). Select, Yes.</i>
                         </li>
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-2" target="_blank">Add another ingredient form</a> <i>This version shows the start of the list of ingredients already added to the product or item. Click, Yes (to see a longer list). </i>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-2" target="_blank">Add another ingredient form</a> <i>This version shows the start of the list of ingredients already added to the product or item. Select, Yes - (repeatedly to see a longer list of 5). </i>
                         </li>  
                         <li>
                             <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5" target="_blank">Add another ingredient form (with longer list)</a> <i>This version shows a list of ingredients already added to the product or item.</i>
@@ -77,25 +107,26 @@
                 Main design(s) - when editing 
             </h2>
 
-            <p class="govuk-body-s">Showing the 'remove' link which shows on this page only when editing drafts, re-taking tasks, or clicking through tasks that are 'In progress'.</p>
-            <p class="govuk-body-s">And showing the 'add a new ingredient' page, which is inserted into the flow, at the end of paging through the ingredients pages, only when editing drafts, re-taking tasks, or clicking through tasks that are 'In progress'.</p>            
+            <p class="govuk-body-s">Shows the 'Remove this ingredient' link (top right) which appears on this page only <b>when editing drafts or clicking through tasks</b> before the Accept and submit stage.</p> 
+
+            <p class="govuk-body-s">This flow also shows the 'add a new ingredient' page, which is also inserted into the task flow at the end of paging through any ingredients pages - only when editing drafts or a re-running tasks. (If the user chooses to add a new ingredient, we also add the 'Skip' link in the following ingredient form page).</p>            
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-3-link" target="_blank">Add the ingredients form - with link</a> <br><i>When clicking Save and continue, the user simply pages onto the next ingredient in the list. We should update the title tags to read, 'Add the ingredients - ingredient [number]'.</i> 
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-3-link" target="_blank">Add the ingredients form - with link</a> <br><i>When clicking Save and continue, the user simply pages onto the next ingredient in the list. We should update the title tags to read, 'Add the ingredients <b>- ingredient [number]</b>'.</i> 
 
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove" target="_blank">Do you want to remove it?</a> <i>Clicking No, will return the user back to the previous page. electing no, takes the user onto the next page in the current journey. Click, Yes</i>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove" target="_blank">Do you want to remove it?</a> <i>Clicking No, will return the user back to the previous page. electing no, takes the user onto the next page in the current journey. Select, Yes</i>
                         </li>
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-removed-confirmation" target="_blank">Removed - confirmed</a> <i>This standalone page is required as the ingredient may be the last in the list of ingredients (making inline success banners inappropriate). No back link. Contextual text "... from this product or this item". Click Continue; the user now goes to the next ingredient form page shown in the ingredients list. If this was the last ingredient the user goes to the 'Add an ingredient' page (below)</i>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-removed-confirmation" target="_blank">Removed - confirmed</a> <i>This standalone page is required as the ingredient may be the last in the list of ingredients (making inline success banners inappropriate). No back link. Contextual text "... from this product or this item". Select Continue; the user now goes to the next ingredient form page shown in the ingredients list. If this is the last ingredient, the user is served the 'Add an ingredient' page (below)</i>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add" target="_blank">Do you want to add a new ingredient to this product/item</a> <br><i>No, goes to the next page in the current journey, Yes, goes to a <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5.html" target="_blank">blank ingredient page</a> to append another ingredient to the list (without a remove link). Contextual text "... to this product or to this item". The new ingredient is added immediately (before the end of the task). </i>                   
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add" target="_blank">Do you want to add a new ingredient to this product/item</a> <br><i>No, continues to the next page in the standard current journey, Yes, goes to a <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5.html" target="_blank">blank ingredient page</a> to append another ingredient to the list (<b>without a remove link</b> but with a skip link). Contextual text "... to this product or to this item". The new ingredient is added immediately (before the end of the task). </i>                   
                 </li>
 
             </ul> 
@@ -110,30 +141,30 @@
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">1</a> 
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-error1.html" target="_blank">Ingredient page</a> 
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">2</a>  
+                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank"></a> WIP  
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank">3</a>  
+                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank"></a> WIP
                 </li>
             </ul> 
         </div>         
 
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
-            <p class="govuk-body">
+            <p class="govuk-body strike">
                 Single form page design for all ingredients
             </p>
 
-            <p class="govuk-body-s">This pattern is included here for demonstration purposes but isn't an ideal solution(!)</p>
+            <p class="govuk-body-s strike">This pattern is included here for demonstration purposes but isn't an ideal solution(!)</p>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredient-1a-how-many" target="_blank">How many page</a>. <i>User predicts how many entries (as part of this product or product item - we'd use conditional text). Click continue.</i>
+                    <a class="govuk-link govuk-link--no-visited-state strike" href="/cosmetics-general/ingredient-1a-how-many" target="_blank">How many page</a>. <i>User predicts how many entries (as part of this product or product item - we'd use conditional text). Select continue.</i>
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredient-1b-how-many" target="_blank">Ingredient list of forms</a>. <i>All entries on the one page and continue with established flow(s).</i>
+                    <a class="govuk-link govuk-link--no-visited-state strike" href="/cosmetics-general/ingredient-1b-how-many" target="_blank">Ingredient list of forms</a>. <i>All entries on the one page and continue with established flow(s).</i>
                 </li>                    
             </ul>
         </div>        
