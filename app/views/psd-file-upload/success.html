@@ -190,8 +190,39 @@
     </div>
   </div>
   
+  <!--script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      alert('fired');
+      if (location.hash) {//stop scroll on load
+        setTimeout(function() {
+          window.scrollTo(0, 0);
+        }, 1);
+      }
+    }
+  </script-->
   
-  <div class="govuk-tabs" data-module="govuk-tabs"><h2 class="govuk-tabs__title">Contents</h2><ul class="govuk-tabs__list" role="tablist"><li class="govuk-tabs__list-item" role="presentation"><a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#full-detail" id="tab_full-detail" role="tab" aria-controls="full-detail" aria-selected="false" tabindex="-1">Full detail</a></li><li class="govuk-tabs__list-item" role="presentation"><a class="govuk-tabs__tab" href="#attachments" id="tab_attachments" role="tab" aria-controls="attachments" aria-selected="false" tabindex="-1">Attachments (0)</a></li><li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation"><a class="govuk-tabs__tab" href="#images" id="tab_images" role="tab" aria-controls="images" aria-selected="true" tabindex="0">Images (3)</a></li><li class="govuk-tabs__list-item" role="presentation"><a class="govuk-tabs__tab" href="#cases" id="tab_cases" role="tab" aria-controls="cases" aria-selected="false" tabindex="-1">Cases</a></li></ul><section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full-detail" role="tabpanel" aria-labelledby="tab_full-detail"><div class="govuk-grid-row">
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Contents</h2>
+  
+    <ul class="govuk-tabs__list" role="tablist">
+      <li class="govuk-tabs__list-item" role="presentation">
+        <a class="govuk-tabs__tab" href="#full-detail" id="tab_full-detail" role="tab" aria-controls="full-detail" aria-selected="false" tabindex="-1">Full detail</a>
+      </li>
+      <li class="govuk-tabs__list-item" role="presentation">
+        <a class="govuk-tabs__tab" href="#attachments" id="tab_attachments" role="tab" aria-controls="attachments" aria-selected="false" tabindex="-1">Attachments (0)</a>
+      </li>
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#images" id="tab_images" role="tab" aria-controls="images" aria-selected="true" tabindex="0">Images (3)</a>
+      </li>
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+        <a class="govuk-tabs__tab" href="#cases" id="tab_cases" role="tab" aria-controls="cases" aria-selected="false" tabindex="-1">Cases</a>
+      </li>
+    </ul>
+  
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full-detail" role="tabpanel" aria-labelledby="tab_full-detail">
+    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
   
       <h2 class="govuk-heading-m">Full detail</h2>
@@ -356,7 +387,10 @@
   
     </div>
   </div>
-  </section><section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="attachments" role="tabpanel" aria-labelledby="tab_attachments"><div class="govuk-grid-row">
+  </section>
+  
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="attachments" role="tabpanel" aria-labelledby="tab_attachments">
+    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
   
       <h2 class="govuk-heading-m">Attachments</h2>
@@ -371,129 +405,134 @@
   </div>
   
   
-  </section><section class="govuk-tabs__panel" id="images" role="tabpanel" aria-labelledby="tab_images"><div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+  </section>
   
-      <h2 class="govuk-heading-m">Images</h2>
-  
-      <p class="govuk-body">
-        <a class="govuk-link" href="/products/563/documents/new">Add image</a>
-      </p>
-  
-      <hr class="govuk-section-break govuk-section-break--l">
-  
-    </div>
-  </div>
-  
-  
-  <div class="govuk-grid-row govuk-!-padding-bottom-6">
-    <div class="govuk-grid-column-one-quarter">
-      
-  <div class="app-document-preview ">
-        <div class="app-document-preview__image">
-            <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">              <img class="app-image" alt="test img 1" src="/public/images/asda-wood-floor-cleaner.png">
-  
-              <span class="govuk-visually-hidden">(opens in new tab)</span>
-  </a>
-        </div>
-  </div>
-  
+  <section class="govuk-tabs__panel" id="images" role="tabpanel" aria-labelledby="tab_images">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+    
+        <h2 class="govuk-heading-m">Images</h2>
+    
+        <p class="govuk-body">
+          <a class="govuk-link" href="/products/563/documents/new">Add image</a>
+        </p>
+    
+        <hr class="govuk-section-break govuk-section-break--l">
+    
+      </div>
     </div>
   
-    <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
-        test img 1
-      </h2>
-      <span class="govuk-hint govuk-!-font-size-16">
-        Updated 8 April 2022
-      </span>
   
-      <p class="govuk-body"></p><p>testing image one</p><p></p>
-  
-        <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 1, opens in new tab)</span>
-  </a>
-  
-          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2156/edit">Edit image<span class="govuk-visually-hidden"> (test img 1)</span>
-  </a>
-  <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2156/remove">Remove image<span class="govuk-visually-hidden"> (test img 1)</span>
-  </a>
-  
-    </div>
-  </div>
-  
-  <div class="govuk-grid-row govuk-!-padding-bottom-6">
-    <div class="govuk-grid-column-one-quarter">
-      
-  <div class="app-document-preview ">
-        <div class="app-document-preview__image">
-            <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">              
-              
-              <img class="app-image" alt="test img 2" src="/public/images/dishwashing-liquid.jpg">
-  
-              <span class="govuk-visually-hidden">(opens in new tab)</span>
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">              <img class="app-image" alt="test img 1" src="/public/images/asda-wood-floor-cleaner.png">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
             </a>
-        </div>
-  </div>
-  
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 1
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 8 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>testing image one</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 1, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2156/edit">Edit image<span class="govuk-visually-hidden"> (test img 1)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2156/remove">Remove image<span class="govuk-visually-hidden"> (test img 1)</span>
+    </a>
+    
+      </div>
+    </div>
+    
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">              
+                
+                <img class="app-image" alt="test img 2" src="/public/images/dishwashing-liquid.jpg">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
+              </a>
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 2
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 8 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>testing image two</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">View image<span class="govuk-visually-hidden"> (test img 2, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2159/edit">Edit image<span class="govuk-visually-hidden"> (test img 2)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2159/remove">Remove image<span class="govuk-visually-hidden"> (test img 2)</span>
+    </a>
+    
+      </div>
+    </div>
+    
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">              <img class="app-image" alt="test img 3" src="/public/images/asda-window-cleaner.png">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
+    </a>
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 3
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 9 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>test image three</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 3, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2161/edit">Edit image<span class="govuk-visually-hidden"> (test img 3)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2161/remove">Remove image<span class="govuk-visually-hidden"> (test img 3)</span>
+    </a>
+    
+      </div>
     </div>
   
-    <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
-        test img 2
-      </h2>
-      <span class="govuk-hint govuk-!-font-size-16">
-        Updated 8 April 2022
-      </span>
+  </section>
   
-      <p class="govuk-body"></p><p>testing image two</p><p></p>
-  
-        <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">View image<span class="govuk-visually-hidden"> (test img 2, opens in new tab)</span>
-  </a>
-  
-          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2159/edit">Edit image<span class="govuk-visually-hidden"> (test img 2)</span>
-  </a>
-  <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2159/remove">Remove image<span class="govuk-visually-hidden"> (test img 2)</span>
-  </a>
-  
-    </div>
-  </div>
-  
-  <div class="govuk-grid-row govuk-!-padding-bottom-6">
-    <div class="govuk-grid-column-one-quarter">
-      
-  <div class="app-document-preview ">
-        <div class="app-document-preview__image">
-            <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">              <img class="app-image" alt="test img 3" src="/public/images/asda-window-cleaner.png">
-  
-              <span class="govuk-visually-hidden">(opens in new tab)</span>
-  </a>
-        </div>
-  </div>
-  
-    </div>
-  
-    <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
-        test img 3
-      </h2>
-      <span class="govuk-hint govuk-!-font-size-16">
-        Updated 9 April 2022
-      </span>
-  
-      <p class="govuk-body"></p><p>test image three</p><p></p>
-  
-        <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 3, opens in new tab)</span>
-  </a>
-  
-          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2161/edit">Edit image<span class="govuk-visually-hidden"> (test img 3)</span>
-  </a>
-  <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2161/remove">Remove image<span class="govuk-visually-hidden"> (test img 3)</span>
-  </a>
-  
-    </div>
-  </div>
-  
-  </section><section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cases" role="tabpanel" aria-labelledby="tab_cases"><div class="govuk-grid-row">
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cases" role="tabpanel" aria-labelledby="tab_cases"><div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h2 class="govuk-heading-m">Cases</h2>
     </div>
