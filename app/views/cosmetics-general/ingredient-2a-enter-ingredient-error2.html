@@ -1,0 +1,135 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Error: Ingredient 5
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/ingredients-pages"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#ingredient-5">Enter a name which is unique to this product <!-- or, item --></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        Add the ingredients
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "cosmetics-general/inc_tables-details.html" %}         
+      
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+
+      <form id="skip-to-form" action="#" novalidate>
+        
+        <div class="govuk-form-group govuk-!-margin-bottom-9">  
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Ingredient 5
+            </legend> 
+
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-5">What is the name?</label>
+              
+              <p id="name-input-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a name which is unique to this product <!-- or, item -->
+              </p>
+
+              <input class="govuk-input govuk-input--error" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false" aria-describedby="name-input-error">
+            </div>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group">
+
+                  <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is the concentration?</label>
+
+                  <div class="govuk-input__wrapper">
+                    <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text" maxlength="3">
+                    <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">% w/w</span></div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group">
+                  
+                  <div class="govuk-checkboxes opss-float-right-desktop">
+                    <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS number?</label>
+                    <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
+                  </div>
+                  
+                </div>
+              </div>              
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-checkboxes govuk-!-padding-top-6">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
+                        Is it poisonous?
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </fieldset>
+        </div>    
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Skip</a>
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      
+      <h2 class="govuk-heading-s">Already added</h2>
+  
+      <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
+        <li>Lorem ipsum dolor sit amet </li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Voluptas recusandae aliquid delectus</li>
+        <li>Saepe maiores rem dolor</li>
+      </ol>
+  
+      <p class="govuk-body-s opss-secondary-text">
+        These ingredients have already been added to the product. <!-- or .... already been added to the item. -->
+      </p>
+  
+    </div>    
+  </div>
+{% endblock %}
