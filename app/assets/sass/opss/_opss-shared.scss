@@ -582,6 +582,30 @@ dd dl.opss-nested-definition-list {
     }
 }
 
+.opss-definition-list {
+    @include govuk-media-query($from: tablet) {
+        @include opss-font-size($s: 19px, $l: 1.3);
+    }
+
+    @include opss-font-size($s: 16px, $l: 1.25);
+    font-family: $std-font-family;
+    color: $govuk-text-colour;
+
+    &.opss-definition-list--left dd {
+        margin-left: 0;
+    }
+
+    @include govuk-media-query($from: desktop) {
+        & > div {
+            display: inline-block;
+        }        
+    }
+
+    dt {
+        @include word-wrap;
+    }
+}
+
 @include govuk-media-query($from: tablet) {
     .opss-grouping {
         border: 1px solid $govuk-border-colour;
