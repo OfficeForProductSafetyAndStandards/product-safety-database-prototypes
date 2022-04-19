@@ -1,0 +1,627 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+
+
+{% block head %}
+  {% include "includes/headpsdmenu.html" %}
+
+
+<style>
+.app-document-preview__image img {
+  background-color: #505a5f;
+  display: inline-block;
+  outline: 1px solid rgba(11,12,12,.15);
+  outline-offset: -1px;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+</style>
+{% endblock %}
+
+
+{% block header %}
+<header class="govuk-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a class="psd-header__link psd-header__link--homepage" href="#">
+        <span class="psd-header__logotype">
+
+          <svg class="psd-header__logotype-crown" focusable="false" height="32" role="presentation" viewBox="0 0 132 97" width="36" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7
+              1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7
+              1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8
+              1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8
+              1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6
+              1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6
+              1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6
+              1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6
+              1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9
+              4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4
+              0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0
+              4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1
+              0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7
+              14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10
+              11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5
+              2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5
+              7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6
+              8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1
+              13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8
+              7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7
+              7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3
+              0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+
+
+            <image class="psd-header__logotype-crown-fallback-image" src="/assets/images/govuk-logotype-crown.png"></image>
+          </svg>
+
+          <span class="psd-header__logotype-text">GOV.UK</span>
+        </span>
+
+        <span class="psd-header__product-name">Product Safety Database</span><span class="govuk-tag govuk-phase-banner__content__tag">beta</span>
+      </a>
+    </div>
+    <div class="govuk-header__content">
+
+        <button class="psd-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation" role="button" type="button" aria-expanded="false">Menu</button>
+
+        <nav>
+            <ul class="psd-header__secondary-navigation" aria-label="Secondary navigation">
+                  <li class="psd-header__navigation-item ">
+                    <a class="psd-header__link" href="#">Your account</a>
+                  </li>
+                  <li class="psd-header__navigation-item ">
+                    <a class="psd-header__link" href="#">Sign out</a>
+                  </li>
+            </ul>
+
+          <ul id="navigation" class="psd-header__navigation" aria-label="Top level navigation">
+                  <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
+                    <a class="psd-header__link" href="#">Your account</a>
+                  </li>
+                  <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
+                    <a class="psd-header__link" href="#">Sign out</a>
+                  </li>
+
+                <li class="psd-header__navigation-item">
+                  <a class="psd-header__link" href="#">Home</a>
+                </li>
+                <li class="psd-header__navigation-item">
+                    <a class="psd-header__link" href="#">Cases</a>
+                </li>
+                <li class="psd-header__navigation-item ">
+                    <a class="psd-header__link" href="#">Businesses</a>
+                </li>
+                <li class="psd-header__navigation-item psd-header__navigation-item--active">
+                    <a class="psd-header__link" href="#">Products</a>
+                </li>
+                <li class="psd-header__navigation-item psd-header__navigation-item--right">
+                    <a class="psd-header__link" href="#">Your team</a>
+                </li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+
+  <div class="govuk-notification-banner__content">
+    
+    <h3 class="govuk-notification-banner__heading">
+      The image was added       <!-- a simple sentence to avoid differences between cases and products -->
+    </h3>
+
+    <p class="govuk-body"><a class="govuk-notification-banner__link" href="#images">View images</a>.</p>
+    <!-- the cases section we link to id #case-images -->
+
+  </div>
+
+</div>
+
+
+
+<main id="main-content" class="govuk-main-wrapper app-main-class" role="main">
+         
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Product</span>
+      <h1 class="govuk-heading-l">boot hand cream</h1>
+  
+        <p class="govuk-body-l">hand cream (hand sanitiser)</p>
+  
+      <p class="govuk-caption-m">
+        Created: 3 March 2022
+          <br>
+          Updated: 9 April 2022
+      </p>
+    </div>
+  
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-7">
+        
+  <div class="app-document-preview product-image app-document-preview--inherit">
+        <div class="app-document-preview__image">
+            <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">              <img class="app-image" alt="test img 1" src="/public/images/asda-wood-floor-cleaner.png">
+  
+              <span class="govuk-visually-hidden">(opens in new tab)</span>
+  </a>
+        </div>
+  </div>
+  
+    </div>
+  </div>
+  
+  <!--script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      alert('fired');
+      if (location.hash) {//stop scroll on load
+        setTimeout(function() {
+          window.scrollTo(0, 0);
+        }, 1);
+      }
+    }
+  </script-->
+  
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Contents</h2>
+  
+    <ul class="govuk-tabs__list" role="tablist">
+      <li class="govuk-tabs__list-item" role="presentation">
+        <a class="govuk-tabs__tab" href="#full-detail" id="tab_full-detail" role="tab" aria-controls="full-detail" aria-selected="false" tabindex="-1">Full detail</a>
+      </li>
+      <li class="govuk-tabs__list-item" role="presentation">
+        <a class="govuk-tabs__tab" href="#attachments" id="tab_attachments" role="tab" aria-controls="attachments" aria-selected="false" tabindex="-1">Attachments (0)</a>
+      </li>
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#images" id="tab_images" role="tab" aria-controls="images" aria-selected="true" tabindex="0">Images (3)</a>
+      </li>
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+        <a class="govuk-tabs__tab" href="#cases" id="tab_cases" role="tab" aria-controls="cases" aria-selected="false" tabindex="-1">Cases</a>
+      </li>
+    </ul>
+  
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full-detail" role="tabpanel" aria-labelledby="tab_full-detail">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+  
+      <h2 class="govuk-heading-m">Full detail</h2>
+  
+      <p class="govuk-body">
+          <a class="govuk-link" href="/products/563/edit">Edit details</a>
+      </p>
+  
+      <hr class="govuk-section-break govuk-section-break--l">
+  
+      
+  <dl class="govuk-summary-list ">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          <abbr title="Product Safety Database">PSD</abbr> <span title="reference">ref</span>
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          psd-563
+            <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+              <span class="govuk-visually-hidden"> - </span>The <abbr>PSD</abbr> reference for this product record
+            <span>
+        </span></span></dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Category
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          Hand sanitiser
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Product subcategory
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          hand cream
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Product authenticity
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          Genuine
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Product marking
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          None
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Units affected
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          Unknown
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Product brand
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          Tesco
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Product name
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          boot hand cream
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          When placed on market
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          On or after 1 January 2021
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Barcode number
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          1234664827
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Batch number
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Other product identifiers
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Webpage
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          <p>test test</p>
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Country of origin
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          China
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Customs code
+        </dt>
+        <dd class="govuk-summary-list__value ">
+          
+        </dd>
+  
+      </div>
+  </dl>
+  
+  
+    </div>
+  </div>
+  </section>
+  
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="attachments" role="tabpanel" aria-labelledby="tab_attachments">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+  
+      <h2 class="govuk-heading-m">Attachments</h2>
+  
+      <p class="govuk-body">
+        <a class="govuk-link" href="/products/563/documents/new">Add attachment</a>
+      </p>
+  
+      <hr class="govuk-section-break govuk-section-break--l">
+  
+    </div>
+  </div>
+  
+  
+  </section>
+  
+  <section class="govuk-tabs__panel" id="images" role="tabpanel" aria-labelledby="tab_images">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+    
+        <h2 class="govuk-heading-m">Images</h2>
+    
+        <p class="govuk-body">
+          <a class="govuk-link" href="/products/563/documents/new">Add image</a>
+        </p>
+    
+        <hr class="govuk-section-break govuk-section-break--l">
+    
+      </div>
+    </div>
+  
+  
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">              <img class="app-image" alt="test img 1" src="/public/images/asda-wood-floor-cleaner.png">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
+            </a>
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 1
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 8 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>testing image one</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc3dGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6c4e2de6008ddbd9080b37a567369790e9567eed/asda-wood-floor-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 1, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2156/edit">Edit image<span class="govuk-visually-hidden"> (test img 1)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2156/remove">Remove image<span class="govuk-visually-hidden"> (test img 1)</span>
+    </a>
+    
+      </div>
+    </div>
+    
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">              
+                
+                <img class="app-image" alt="test img 2" src="/public/images/dishwashing-liquid.jpg">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
+              </a>
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 2
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 8 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>testing image two</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczhGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--384b4e6c006d1eb0495e7794aecfee359377fdd0/dishwashing-liquid.jpg">View image<span class="govuk-visually-hidden"> (test img 2, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2159/edit">Edit image<span class="govuk-visually-hidden"> (test img 2)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2159/remove">Remove image<span class="govuk-visually-hidden"> (test img 2)</span>
+    </a>
+    
+      </div>
+    </div>
+    
+    <div class="govuk-grid-row govuk-!-padding-bottom-6">
+      <div class="govuk-grid-column-one-quarter">
+        
+    <div class="app-document-preview ">
+          <div class="app-document-preview__image">
+              <a target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">              <img class="app-image" alt="test img 3" src="/public/images/asda-window-cleaner.png">
+    
+                <span class="govuk-visually-hidden">(opens in new tab)</span>
+    </a>
+          </div>
+    </div>
+    
+      </div>
+    
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          test img 3
+        </h2>
+        <span class="govuk-hint govuk-!-font-size-16">
+          Updated 9 April 2022
+        </span>
+    
+        <p class="govuk-body"></p><p>test image three</p><p></p>
+    
+          <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" target="_blank" rel="noopener" href="/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEVGIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34ea80e78d5e5433fa3a4272201bb4cb406d37e6/asda-window-cleaner.png">View image<span class="govuk-visually-hidden"> (test img 3, opens in new tab)</span>
+    </a>
+    
+            <a class="govuk-link app-block-link govuk-!-margin-right-3 govuk-link--no-visited-state" href="/products/563/documents/2161/edit">Edit image<span class="govuk-visually-hidden"> (test img 3)</span>
+    </a>
+    <a class="govuk-link app-block-link govuk-link--no-visited-state" href="/products/563/documents/2161/remove">Remove image<span class="govuk-visually-hidden"> (test img 3)</span>
+    </a>
+    
+      </div>
+    </div>
+  
+  </section>
+  
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cases" role="tabpanel" aria-labelledby="tab_cases"><div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h2 class="govuk-heading-m">Cases</h2>
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+            
+  <div class="govuk-grid-row psd-case-card card_classes">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m govuk-!-font-size-16">
+        Allegation: 2203-0003
+      </span>
+      <span>
+        <a href="/cases/2203-0003">boot hand cream, hand cream – burns hazard</a>
+      </span>
+      
+    </div>
+  
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m govuk-!-font-size-16">Case owner</span>
+      <span>
+        Darren Harridence
+      </span>
+    </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m govuk-!-font-size-16">Last updated</span>
+        <span>about 1 month ago</span>
+      </div>
+  </div>
+  
+  
+    </div>
+  </div>
+  
+  </section></div>
+  
+          </main>
+
+{% endblock %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    <footer class="govuk-footer" role="contentinfo">
+      <div class="govuk-width-container">
+        <div class="govuk-footer__meta">
+          <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+            <div class="opss-footer__body">
+              Email <a class="govuk-footer__link" href="mailto:opss.enquiries@beis.gov.uk?subject=Help%20requested%20on%20the%20Product%20Safety%20Database">opss.enquiries@beis.gov.uk</a> for help using this service.
+            </div>
+
+            <br>
+
+            <ul class="govuk-footer__inline-list">
+
+              <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/about">More information<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" href="/help/accessibility">Accessibility</a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/privacy-notice">Privacy policy<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/terms-and-conditions">Terms and conditions<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+            </ul>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="opss-footer__body">
+               Built by the
+
+               <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.gov.uk/government/organisations/office-for-product-safety-and-standards">Office for Product Safety and Standards<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+            </div>
+
+            <div class="opss-footer__body">
+              <br>
+              This is a new service – your
+
+              <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.surveymonkey.co.uk/r/TWLYX9W">feedback<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+              will help us to improve it.
+            </div>
+          </div>
+
+          <div class="govuk-footer__meta-item">
+            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+
+{% endblock %}

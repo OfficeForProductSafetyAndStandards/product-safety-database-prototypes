@@ -33,6 +33,11 @@
                         Ingredients pages
                     </h1>
 
+                    <p class="govuk-body govuk-!-margin-top-6 govuk-!-padding-5 opss-border-all">
+                        FigJam diagram documenting the user journey for adding and editing ingredients: <br>
+                        <a class="govuk-link govuk-link--no-visited-state" href="https://www.figma.com/file/OzYtlSk8sXUulMQOWrkwOS/COS-new-ingredients-flow?node-id=0%3A1" target="_blank">Diagram(s) of user flows</a>
+                    </p>
+
                     <p class="govuk-body">
                         Here are the initial design concepts - not finalised - for the new ingredients pages (to be inserted into the current user journey within the new tasks bases pattern).
                     </p>
@@ -42,7 +47,7 @@
                     </p>  
                     
                     <p class="govuk-body">
-                        The current examples (below) show forms referring to "<b>What is the concentration?</b>", but the user may choose the option to specify via "<b>percentages</b>". These will be identical forms (concentration substituted out for percentages). The second bullet point text at the start of each page will also be contextual.
+                        The current examples (below) show forms referring to "<b>What is the exact concentration?</b>", but the user may choose the option to specify via a "concentration <b>range</b>". These will be identical forms ('exact' substituted out for 'range'). The second bullet point text at the start of each page will also be contextual: either "exact" statement or the concentration ranges.
                     </p>
 
                     <p class="govuk-body">
@@ -54,7 +59,7 @@
                     </h1>                    
                     
                     <ul class="govuk-list govuk-list--bullet">
-                        <li>This journey is idential for two alternative journeys: concentration and percentages</li>
+                        <li>This journey is idential for two alternative journeys: exact concentrations and concentration ranges</li>
                         <li>Inserted into the current task flow, the user adds a new ingredient, page by page</li>
                         <li>But, when using this same mini-flow (within the tasks flow) when a user is <b>re-editing a draft</b> ... 
 
@@ -82,9 +87,11 @@
                 Main design(s)
             </h2>
 
+            <p class="govuk-body">These pages show the 'Concentrations' journey forms:</p>
+
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient" target="_blank">Add the ingredients form</a> <br><i>We insert this page into the standard tasks flow. There will be contextual text refering to the ingredients of this "product" or this "item". (After the first ingredient form page we add a Skip link). Select, Save and continue.</i>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient" target="_blank">Add the ingredients form (concentrations)</a> <br><i>We insert this page into the standard tasks flow. There will be contextual text refering to the ingredients of this "product" or this "item". (After the first ingredient form page we add a Skip link). Select, Save and continue.</i>
 
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
@@ -100,6 +107,15 @@
                 </li>
 
             </ul> 
+
+            <p class="govuk-body">This page shows the 'Ranges' journey form design:</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-b-enter-ingredient" target="_blank">Add the ingredients form (ranges)</a> <br><i>The 'Is it poisonous?' question is a required field.</i>
+                </li>
+            </ul>
+
         </div>
 
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
@@ -136,21 +152,65 @@
             <h2 class="govuk-heading-s">
                 Error pages
             </h2>
-
+            
             <p class="govuk-body-s">Pages showing the error summary and errors:</p>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-error1.html" target="_blank">Ingredient page</a> 
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-error1.html" target="_blank">Ingredient page - empty fields</a> 
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank"></a> WIP  
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-error2.html" target="_blank">Ingredient page - unique name</a> <span class="govuk-!-font-size-16">(contextual: "product" or "item")</span> 
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="#" target="_blank"></a> WIP
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add-error.html" target="_blank">Do you want to add an ingredient</a> <span class="govuk-!-font-size-16">(combining hint text "aria-describedby")</span>
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2b-how-many-error.html" target="_blank">Do you want to add <b>another</b> ingredient</a>
                 </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove-error.html" target="_blank">Do you want to remove this ingredient</a> <span class="govuk-!-font-size-16">(combining hint text "aria-describedby")</span>
+                </li>   
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-b-enter-ingredient-error.html" target="_blank">Add the ingredients form (ranges)</a>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Enter a name</li>
+                        <li>Select yes if it is poisonous</li>
+                        <li>Enter the exact concentration</li>
+                        <li>Select a concentration range</li>
+                    </ul>
+                </li>             
             </ul> 
-        </div>         
+        </div>    
+        
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Notified products pages for SUBMIT &amp; SEARCH
+            </h2>
+            
+            <p class="govuk-body-s">Ingredients use own title - examples here show every scenario of <abbr>HTML</abbr> to use in situ:</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-notification-submit-1.html" target="_blank">Notified products example page (using items)</a> 
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-notification-submit-2.html" target="_blank">Notified products example page (single product item)</a>  WIP
+                </li>                
+            </ul> 
+
+            <p class="govuk-body-s">Lists of differing scenarios ingredients can be presented:</p>
+
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>Formulation. Ends.</li>
+                <li>Formulation + poisonous ingredients as exact concentrations. Ends.</li>
+                <li>Ingredients listed as exact concentrations. Ends.</li>
+                <li>Ingredients listed as concentration ranges. Ends.</li>
+                <li>Ingredients listed as concentration ranges + poisonous ingredients as exact concentrations. Ends.</li>
+                </ul>
+        </div>           
 
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
             <p class="govuk-body strike">

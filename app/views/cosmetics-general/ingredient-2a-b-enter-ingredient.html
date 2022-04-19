@@ -1,0 +1,184 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredient 2a-b
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        Add the ingredients
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "cosmetics-general/inc_tables-details.html" %}   
+      
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+
+      <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate="">
+        
+        <div class="govuk-form-group">  
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Ingredient 1
+            </legend>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-1">What is the name?</label>
+              <input class="govuk-input" id="ingredient-1" name="ingredient-1" type="text" spellcheck="false">
+            </div>
+
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes">
+                <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS number?</label>
+                <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
+              </div>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                  Is it poisonous?
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="poisonous" name="poisonous" type="radio" value="yes" data-aria-controls="poisonous-question">
+                    <label class="govuk-label govuk-radios__label" for="poisonous">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question">
+                    <div class="govuk-form-group">
+                      
+                      <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is the exact concentration?</label>
+                      <div class="govuk-input__wrapper">
+                        <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text" maxlength="3">
+                        <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">% w/w</span></div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="poisonous-2" name="poisonous" type="radio" value="no" data-aria-controls="poisonous-question-2">
+                    <label class="govuk-label govuk-radios__label" for="poisonous-2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question-2">
+                    <div class="govuk-form-group">
+
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            What is the concentration range?
+                        </legend>
+        
+                        <div class="govuk-radios govuk-radios--small">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-1" name="range" type="radio" value="range-1">
+                            <label class="govuk-label govuk-radios__label" for="range-1">
+                              above <span class="govuk-!-font-weight-bold">75&percnt;</span> <abbr class="govuk-!-font-size-16" title="Weight by weight">w/w</abbr> up to <span class="govuk-!-font-weight-bold">100&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-2" name="range" type="radio" value="range-2">
+                            <label class="govuk-label govuk-radios__label" for="range-2">
+                              above <span class="govuk-!-font-weight-bold">50&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">75&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-3" name="range" type="radio" value="range-3">
+                            <label class="govuk-label govuk-radios__label" for="range-3">
+                              above <span class="govuk-!-font-weight-bold">25&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">50&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-4" name="range" type="radio" value="range-4">
+                            <label class="govuk-label govuk-radios__label" for="range-4">
+                              above <span class="govuk-!-font-weight-bold">10&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">25&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-5" name="range" type="radio" value="range-5">
+                            <label class="govuk-label govuk-radios__label" for="range-5">
+                              above <span class="govuk-!-font-weight-bold">5&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">10&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-6" name="range" type="radio" value="range-6">
+                            <label class="govuk-label govuk-radios__label" for="range-6">
+                              above <span class="govuk-!-font-weight-bold">1&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">5&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-7" name="range" type="radio" value="range-7">
+                            <label class="govuk-label govuk-radios__label" for="range-7">
+                              above <span class="govuk-!-font-weight-bold">0.1&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr> up to <span class="govuk-!-font-weight-bold">1&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="range-8" name="range" type="radio" value="range-8">
+                            <label class="govuk-label govuk-radios__label" for="range-8">
+                              up to and including <span class="govuk-!-font-weight-bold">0.1&percnt;</span> <abbr class="govuk-!-font-size-16">w/w</abbr>
+                            </label>
+                          </div>
+                        </div>
+        
+                      </fieldset>
+
+                    </div>
+                  </div>
+
+                </div>
+            
+              </fieldset>
+            </div>
+
+
+
+
+          </fieldset>
+        </div>    
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button> 
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      
+      <!--h2 class="govuk-heading-s">Already added</h2>
+  
+      <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
+        <li>Lorem ipsum dolor sit amet </li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Voluptas recusandae aliquid delectus</li>
+        <li>Saepe maiores rem dolor</li>
+      </ol>
+  
+      <p class="govuk-body-s opss-secondary-text">
+        These ingredients have already been added to the product. 
+      </p--><!-- or .... already been added to the item. -->
+  
+    </div>    
+  </div>
+{% endblock %}
