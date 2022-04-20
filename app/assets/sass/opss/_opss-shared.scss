@@ -28,6 +28,16 @@ figcaption {
 }
 /* not normalised by gds library - ends */
 
+@include govuk-media-query($from: desktop) {
+    .govuk-width-container > main.govuk-main-wrapper {
+        padding-top: govuk-spacing(8);
+    }
+    .govuk-width-container > .govuk-breadcrumbs + main.govuk-main-wrapper,
+    .govuk-width-container > .govuk-back-link + main.govuk-main-wrapper {
+        padding-top: govuk-spacing(2);
+    }
+}
+
 main.govuk-main-wrapper {
     @include govuk-media-query($from: desktop) {
         min-height: 500px;
