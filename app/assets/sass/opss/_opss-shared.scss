@@ -607,7 +607,8 @@ dd dl.opss-nested-definition-list {
 
     @include govuk-media-query($from: desktop) {
         & > div {
-            display: inline-block;
+            display: inline-block; 
+            width: 100%; 
         }        
     }
 

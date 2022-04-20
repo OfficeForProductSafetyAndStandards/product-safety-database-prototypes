@@ -186,30 +186,40 @@
         
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
             <h2 class="govuk-heading-s">
-                Notified products pages for SUBMIT &amp; SEARCH
+                Notified products pages for SUBMIT &amp; <u>SEARCH</u>
             </h2>
             
-            <p class="govuk-body-s">Ingredients use own title - examples here show every scenario of <abbr>HTML</abbr> to use in situ:</p>
+            <p class="govuk-body-s">Following examples show every scenario of <abbr>HTML</abbr> to use in situ:</p>
 
             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                 <li>
                     <a class="govuk-link govuk-link--no-visited-state" href="ingredient-notification-submit-1.html" target="_blank">Notified products example page (using items)</a> 
+
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>Item 1 = User has chosen a frame formulation</li>
+                        <li>Item 2 = User has chosen a frame formulation, but has also manually added poisonous ingredients</li>
+                        <li>Item 3 = User has manually added ingredients as concentration ranges</li>
+                        <li>Item 4 = User has manually added ingredients as exact concentrations</li>
+                        <li>Item 5 = User has manually added ingredients as concentration ranges AND specified some as poisons, so those are listed as exact concentrations</li>
+                        <li>Item 6 = User has manually added ingredients as exact concentrations AND specified some as poisons</li>
+                    </ol>                    
                 </li>
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-notification-submit-2.html" target="_blank">Notified products example page (single product item)</a>  <b>WIP</b>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-notification-submit-2.html" target="_blank">Notified products example page (single product item)</a>  
+                    <br><span class="govuk-!-font-size-16">User has manually added ingredients as exact concentrations AND specified some as poisons</span> 
                 </li>                
             </ul> 
 
-            <p class="govuk-body-s">Lists of differing scenarios ingredients can be presented:</p>
+            <p class="govuk-body-s">Notes:</p>
 
+            <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                <li>If poisons are ever included/listed, then we always include the title: "Poisonous ingredients and ingredients the NPIS needs to know about" and <code>DL</code> list stating: "Formulation given as	Exact concentration" and "Acute poisoning information" above the list of poisons). I have only included "Acute poisoning information" where there are poisons listed. If this value is empty can we write into the <abbr>HTML</abbr> output a value of 'None', as shown.</li>
+                <li>The 'View draft' page on the tasks page will also need updating</li>
+                <li>We still need to 'get rid of' these redundant span tags: <code>&lt;span class="govuk-summary-list__actions"&gt;&lt;/span&gt;</code></li>
+                <li>Have removed the "Contains ingredients NPIS needs to know about" entries (Y or N). No longer required. (<b>But we should continue to save this value within the db for future use, based on ingredients entry or formulation selections?</b>).</li>
+                
+            </ol>
 
-                <ul class="govuk-list govuk-list--bullet">
-                <li>Formulation. Ends.</li>
-                <li>Formulation + poisonous ingredients as exact concentrations. Ends.</li>
-                <li>Ingredients listed as exact concentrations. Ends.</li>
-                <li>Ingredients listed as concentration ranges. Ends.</li>
-                <li>Ingredients listed as concentration ranges + poisonous ingredients as exact concentrations. Ends. ......</li>
-                </ul>
         </div>           
 
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
