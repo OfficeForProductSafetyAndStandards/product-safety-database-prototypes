@@ -1,0 +1,388 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredients search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Ingredients search
+        </h1>
+
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+            Search for ingredients which are Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </p>
+
+    </div>
+
+</div>
+
+<div class="govuk-grid-row opss-full-height govuk-!-margin-top-7 govuk-!-padding-top-9">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li>
+                    <a href="/cosmetics-general/cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Cosmetic products search
+                    </a>
+                </li>
+                <li class="opss-left-nav__active">
+                    <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                        Ingredients search
+                    </a>
+                </li>
+                <li>
+                    <a href="/cosmetics-general/blank.html" class="govuk-link govuk-link--no-visited-state">Lorem ipsum Search</a>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Cases">
+
+                <table class="govuk-table opss-table-items opss-table-items--sm">
+                    <caption class="govuk-visually-hidden">
+                        Cases data: 4 columns with each case described across rows within each table body.
+                    </caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">&nbsp;</th>
+                            <th id="allegation" scope="col" class="govuk-table__header">Case number</th>
+                            <th id="casecreated" scope="col" class="govuk-table__header">Case created</th>
+                            <th id="updated" scope="col" class="govuk-table__header">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-1" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Hair bleach – chemical hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-1 meta-1" class="govuk-table__cell">
+                                2021-11
+                            </td>
+                            <td headers="casecreated item-1 meta-1" class="govuk-table__cell">
+                                6 January 2022
+                            </td>
+                            <td headers="updated item-1 meta-1" class="govuk-table__cell">
+                                about 6 hours ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-1" id="status-01" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-1 status-01" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Allegation</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-2" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">And another product title here</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-2" id="meta-2" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-2 meta-2" class="govuk-table__cell">
+                                20-2120
+                            </td>
+                            <td headers="casecreated item-2 meta-2" class="govuk-table__cell">
+                                18 December 2021
+                            </td>
+                            <td headers="updated item-2 meta-2" class="govuk-table__cell">
+                                about 2 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-2" id="status-02" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-2 status-02" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Allegation</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-3" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Electrical appliances and equipment – electric shock hazard (no product specified)</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-3" id="meta-3" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-3 meta-3" class="govuk-table__cell">
+                                2104-21000
+                            </td>
+                            <td headers="casecreated item-3 meta-3" class="govuk-table__cell">
+                                2 December 2021
+                            </td>
+                            <td headers="updated item-3 meta-3" class="govuk-table__cell">
+                                21 days ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-3" id="status-03" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-3 status-03" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Enquiry</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-4" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Washing machine – burns hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-4" id="meta-4" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-4 meta-4" class="govuk-table__cell">
+                                2007-37001
+                            </td>
+                            <td headers="casecreated item-4 meta-4" class="govuk-table__cell">
+                                30 November 2021
+                            </td>
+                            <td headers="updated item-4 meta-4" class="govuk-table__cell">
+                                3 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-4" id="status-04" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-4 status-04" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Project</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-5" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Large Phone Charger Battery, Portable battery – electric shock hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-5" id="meta-5" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-5 meta-5" class="govuk-table__cell">
+                                1007-27002
+                            </td>
+                            <td headers="casecreated item-5 meta-5" class="govuk-table__cell">
+                                11 November 2021
+                            </td>
+                            <td headers="updated item-5 meta-5" class="govuk-table__cell">
+                                6 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-5" id="status-05" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-5 status-05" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Allegation</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-6" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Washer 3000, Washing machine – electric shock hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-6" id="meta-6" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-6 meta-6" class="govuk-table__cell">
+                                45001-70000
+                            </td>
+                            <td headers="casecreated item-6 meta-6" class="govuk-table__cell">
+                                23 October 2021
+                            </td>
+                            <td headers="updated item-6 meta-6" class="govuk-table__cell">
+                                4 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-6" id="status-06" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-6 status-06" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Enquiry</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-7" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Asda bleach, Bleach – chemical hazard</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-7" id="meta-7" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-7 meta-7" class="govuk-table__cell">
+                                25022-21010
+                            </td>
+                            <td headers="casecreated item-7 meta-7" class="govuk-table__cell">
+                                15 October 2021
+                            </td>
+                            <td headers="updated item-7 meta-7" class="govuk-table__cell">
+                                about 3 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-7" id="status-07" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-7 status-07" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Enquiry</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-8" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">BOSA face masks - fabric fail</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-8" id="meta-8" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-8 meta-8" class="govuk-table__cell">
+                                2221-70003
+                            </td>
+                            <td headers="casecreated item-8 meta-8" class="govuk-table__cell">
+                                11 October 2021
+                            </td>
+                            <td headers="updated item-8 meta-8" class="govuk-table__cell">
+                                about 7 months ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-8" id="status-08" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-8 status-08" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Allegation</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Case title
+                            </th>
+                            <th id="item-9" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-9" id="meta-9" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="allegation item-9 meta-9" class="govuk-table__cell">
+                                21-23341
+                            </td>
+                            <td headers="casecreated item-9 meta-9" class="govuk-table__cell">
+                                2 September 2021
+                            </td>
+                            <td headers="updated item-9 meta-9" class="govuk-table__cell">
+                                2 weeks ago
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-9" id="status-09" class="govuk-visually-hidden">
+                                Type
+                            </th>
+                            <td headers="item-9 status-09" colspan="3" class="govuk-table__cell">
+                                <span class="opss-tag opss-tag--std">Allegation</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
+                                <span class="govuk-visually-hidden"> | </span>
+                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>        
+
+    </section>
+
+</div>
+
+{% endblock %}
