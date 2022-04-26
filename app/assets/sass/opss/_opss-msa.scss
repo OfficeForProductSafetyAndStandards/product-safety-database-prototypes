@@ -363,6 +363,16 @@ li.opss-task-sub {
             }
         }
     }
+
+    .opss-date-input--tight {
+        .govuk-date-input__item {
+            margin-right: govuk-spacing(1);
+
+            .govuk-label {
+                @include opss-font-size($s: 16px, $l: 1.5);//1.0
+            }
+        }
+    }
 }
 
 /* used on the search page - starts */

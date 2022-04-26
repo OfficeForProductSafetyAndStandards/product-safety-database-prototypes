@@ -1,0 +1,1136 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredients search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Ingredients search
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+            Search cosmetic product notifications for notifications which include a specific ingredient. 
+            <!--br><span class="govuk-!-font-size-16">(Currently, only notifications made after [dd month year] are searchable).</span--> 
+        </p>
+
+        <details class="govuk-details govuk-!-width-two-thirds opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the ingredients search
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <!--p class="govuk-body-s govuk-!-margin-bottom-4">
+                    <span id="search-hint">For best results, search for an individual ingredient using its name (or the keywords of its name).</span> This will search cosmetic product notifications for cosmetic products which use it. 
+                </p-->
+                
+                <p class="govuk-body-s govuk-!-margin-bottom-4">
+                    <span class="govuk-!-font-weight-bold">Currently, only products notified after [dd month year] are searchable for ingredients.</span>
+                </p>                
+
+                <p class="govuk-body-s govuk-!-margin-bottom-4">
+                    <span id="search-hint">For best results, search for an individual ingredient.</span> This will search cosmetic product notifications for products which use it. 
+                </p>
+                
+                <p class="govuk-body-s govuk-!-margin-bottom-4">
+                    The &quot;match type&quot; filter option allows you to search for <span class="govuk-!-font-weight-bold">exact name matches</span> or for ingredient names which feature one or more words of the name you are searching for and returns more general search results. 
+                </p>                
+
+                <p class="govuk-body-s govuk-!-margin-bottom-1">
+                    You can use the filter options to focus the search results. You can also choose to display the results grouped together by notifications which share the same Responsible Person.
+                </p>
+
+            </div>
+        </details>        
+
+    </div>
+
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li>
+                    <a href="/cosmetics-general/ingredients-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Cosmetic products search
+                    </a>
+                </li>
+                <li class="opss-left-nav__active">
+                    <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                        Ingredients search
+                    </a>
+                </li>
+                <!--li>
+                    <a href="/cosmetics-general/blank.html" class="govuk-link govuk-link--no-visited-state">Lorem ipsum search</a>
+                </li-->
+            </ul>
+        </nav>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link opss-skip-link--mb">
+            Skip past the filter options
+        </a> 
+        
+        <!-- filters start -->
+        <form id="ingredient_search_form_filters" action="#" method="post" novalidate>
+
+            <h2 class="govuk-heading-s">
+                Display<span class="govuk-visually-hidden">:</span>
+            </h2>    
+
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Group by 
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <input name="priority_all" type="hidden" value="on">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="no-grouping" name="grouping" type="radio" value="no-group" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="no-grouping">
+                                None
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes-grouping" name="grouping" type="radio" value="yes-grouping">
+                            <label class="govuk-label govuk-radios__label" for="yes-grouping">
+                                Responsible Person
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>   
+            
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">            
+
+            <h2 class="govuk-heading-s">
+                Filters<span class="govuk-visually-hidden">:</span>
+            </h2> 
+
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Match type
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="exact-match" name="matching" type="radio" value="exact-match" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="no-grouping">
+                                Exact match only
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="any-match" name="matching" type="radio" value="any-match">
+                            <label class="govuk-label govuk-radios__label" for="any-match">
+                                Match any words
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>  
+            
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Notification status
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="active-status" name="notification-status" type="radio" value="active-status" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="active-status">
+                                Active
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="archived-status" name="notification-status" type="radio" value="archived-status">
+                            <label class="govuk-label govuk-radios__label" for="archived-status">
+                                Archived
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="both-status" name="notification-status" type="radio" value="both-status">
+                            <label class="govuk-label govuk-radios__label" for="both-status">
+                                Both
+                            </label>
+                        </div>                        
+                    </div>
+                </fieldset>
+            </div>              
+            
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset" aria-describedby="by-date-range-hint">            
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Notified dates
+                    </legend>
+
+                    <div class="govuk-form-group">
+
+                        <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
+                            Filter searches by notified dates within a date range. For example, from <span class="opss-no-wrap">01 04 2020</span> to <span class="opss-no-wrap">30 09 2022</span>.
+                        </div>
+                        <div class="govuk-hint govuk-!-font-size-16">
+                            From<span class="govuk-visually-hidden">:</span>
+                        </div>
+
+                        <div class="govuk-date-input opss-date-input--tight">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-day" name="by-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-month" name="by-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-from-year" name="by-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                            To<span class="govuk-visually-hidden">:</span>
+                        </div>
+
+                        <div class="govuk-date-input opss-date-input--tight">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-month" name="by-date-to-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Apply
+                </button>
+
+                <button type="reset" class="govuk-button govuk-!-font-size-16 opss-button-link" id="opss-reset">
+                    Reset
+                </button>
+            </div>                
+        
+        </form>
+        <!-- filters end -->
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                
+                <div class="govuk-form-group govuk-!-padding-bottom-2"> 
+
+                    <label class="govuk-label" for="products-search">
+                        Search
+                    </label>
+    
+                    <div class="govuk-input__wrapper opss-search__wrapper">
+                        <input class="govuk-input govuk-!-width-full" type="search" id="products-search" name="products-search" spellcheck="false" aria-describedby="search-hint">
+                        <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                            <span class="govuk-visually-hidden">Submit</span>
+                        </button>
+                    </div>
+    
+                </div>
+
+            </div>                    
+
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group opss-text-align-right">
+                    <form class="new_notification_search_form" id="new_notification_search_form_sort" novalidate="novalidate" action="/notifications" accept-charset="UTF-8" method="get">
+                        
+                        <input name="utf8" type="hidden" value="✓" autocomplete="off">
+            
+                        <label class="govuk-label govuk-body-s" for="notification_search_form_sort_by">
+                        Sort by
+                        </label>
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" name="notification_search_form[sort_by]" id="notification_search_form_sort_by">
+                            <option value="score">Relevance</option>
+                            <option value="date_descending">Newest</option>
+                            <option value="date_ascending">Oldest</option>
+                        </select>
+
+                        <button class="govuk-button opss-js-enabled-hidden" data-module="govuk-button">
+                            Sort
+                        </button>
+
+                        <input id="notification_search_form_q_sort_hidden" autocomplete="off" type="hidden" value="" name="notification_search_form[q]">
+
+                        <input id="notification_search_form_category_sort_hidden" autocomplete="off" type="hidden" value="" name="notification_search_form[category]">
+
+                        <input id="notification_search_form_date_exact_day_sort_form_hidden" value="" name="notification_search_form[date_exact][day]" type="hidden">
+
+                        <input id="notification_search_form_date_exact_month_sort_form_hidden" value="" name="notification_search_form[date_exact][month]" type="hidden">
+
+                        <input id="notification_search_form_date_exact_year_sort_form_hidden" value="" name="notification_search_form[date_exact][year]" type="hidden">
+
+                        <input id="notification_search_form_date_from_day_sort_form_hidden" value="" name="notification_search_form[date_from][day]" type="hidden">
+
+                        <input id="notification_search_form_date_from_month_sort_form_hidden" value="" name="notification_search_form[date_from][month]" type="hidden">
+
+                        <input id="notification_search_form_date_from_year_sort_form_hidden" value="" name="notification_search_form[date_from][year]" type="hidden">
+
+                        <input id="notification_search_form_date_to_day_sort_form_hidden" value="" name="notification_search_form[date_to][day]" type="hidden">
+
+                        <input id="notification_search_form_date_to_month_sort_form_hidden" value="" name="notification_search_form[date_to][month]" type="hidden">
+
+                        <input id="notification_search_form_date_to_year_sort_form_hidden" value="" name="notification_search_form[date_to][year]" type="hidden">
+
+                        <input id="notification_search_form_date_filter_sort_hidden" autocomplete="off" type="hidden" value="" name="notification_search_form[date_filter]">
+
+                    </form>
+                </div>
+              </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                    <p class="govuk-body-s">
+                        19 notifications with ingredients matching the search 
+                        <samp>
+                            <span class="govuk-!-font-weight-bold">Consectetur Lorem Etilee</span>,
+                        </samp>
+                        <span class="opss-filter-txt"> 
+                            using the current filters,
+                        </span> 
+                        were found.
+                    </p>
+            </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Search results">
+
+                <table id="table-items" class="govuk-table govuk-!-margin-top-5 opss-table-items opss-table-items--sm opss-table-items--first-col-33">
+                    <caption class="govuk-visually-hidden">
+                        Each notification is described across 3 rows within its own table body.
+                    </caption>
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">&nbsp;</th>
+                        <th id="uknotified" scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                        <th id="ukcosprodnumber" scope="col" class="govuk-table__header"><abbr>UK</abbr> cosmetic product number</th>
+                        <th id="resperson" scope="col" class="govuk-table__header">Responsible Person</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-01" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-01" id="meta-01" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-01 meta-01" class="govuk-table__cell">
+                            4 May 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-01 meta-01" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="resperson item-01 meta-01" class="govuk-table__cell">
+                            Smith and son
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-01" id="ingredients-01" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-01 ingredients-01" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span>
+
+                            <!-- we duplicate the results here if ingredient used more than once in a multi-kit item -->
+                        </td>
+                      </tr>                    
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-02" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-02" id="meta-02" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-02 meta-02" class="govuk-table__cell">
+                            5 January 1978
+                        </td>
+                        <td headers="ukcosprodnumber item-02 meta-02" class="govuk-table__cell">
+                            UKCP-78219900
+                        </td>
+                        <td headers="resperson item-02 meta-02" class="govuk-table__cell">
+                            David Harris
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-02" id="ingredients-02" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-02 ingredients-02" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                        </td>
+                      </tr>                      
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-03" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-03" id="meta-03" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-03 meta-03" class="govuk-table__cell">
+                            11 May 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-03 meta-03" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="resperson item-03 meta-03" class="govuk-table__cell">
+                            JWK industries
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-03" id="ingredients-03" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-03 ingredients-03" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                        </td>
+                      </tr>                    
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-04" id="meta-04b" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-04 meta-04b" class="govuk-table__cell">
+                            4 May 2020
+                        </td>
+                        <td headers="ukcosprodnumber item-04 meta-04b" class="govuk-table__cell">
+                            UKCP-675630988
+                        </td>
+                        <td headers="resperson item-04 meta-04b" class="govuk-table__cell">
+                           David Harris
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-03" id="ingredients-03" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-03 ingredients-03" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                        </td>
+                      </tr>                    
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-04b" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-04b" id="meta-04" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-04b meta-04" class="govuk-table__cell">
+                            27 September 2020
+                        </td>
+                        <td headers="ukcosprodnumber item-04b meta-04" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="resperson item-04b meta-04" class="govuk-table__cell">
+                            Boots PLC
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-04" id="ingredients-04" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-04 ingredients-04" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                        </td>
+                      </tr>                    
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-05" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-05" id="meta-05" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-05 meta-05" class="govuk-table__cell">
+                            4 August 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-05 meta-05" class="govuk-table__cell">
+                            UKCP-78219900
+                        </td>
+                        <td headers="resperson item-05 meta-05" class="govuk-table__cell">
+                            Smith and sons
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-05" id="ingredients-05" class="govuk-visually-hidden">
+                          Matching ingredients
+                        </th>
+                        <td headers="item-05 ingredients-05" colspan="3" class="govuk-table__cell">
+                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                        </td>
+                      </tr>                    
+                    </tbody>
+
+
+
+
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-06" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-06" id="meta-06" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-06 meta-06" class="govuk-table__cell">
+                                5 January 1978
+                            </td>
+                            <td headers="ukcosprodnumber item-06 meta-06" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="resperson item-06 meta-06" class="govuk-table__cell">
+                                Hanna White
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-06" id="ingredients-06" class="govuk-visually-hidden">
+                              Matching ingredients
+                            </th>
+                            <td headers="item-06 ingredients-06" colspan="3" class="govuk-table__cell">
+                                <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            </td>
+                          </tr>                        
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="meta-07" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-07 meta-07" class="govuk-table__cell">
+                                11 May 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-07 meta-07" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="resperson item-07 meta-07" class="govuk-table__cell">
+                                Hanna White
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="ingredients-07" class="govuk-visually-hidden">
+                              Matching ingredients
+                            </th>
+                            <td headers="item-07 ingredients-07" colspan="3" class="govuk-table__cell">
+                                <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            </td>
+                          </tr>                        
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-08" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-08" id="meta-08" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-08 meta-08" class="govuk-table__cell">
+                                4 May 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-08 meta-08" class="govuk-table__cell">
+                                UKCP-675630988
+                            </td>
+                            <td headers="resperson item-08 meta-08" class="govuk-table__cell">
+                                Peter Blake
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-08" id="ingredients-08" class="govuk-visually-hidden">
+                              Matching ingredients
+                            </th>
+                            <td headers="item-08 ingredients-08" colspan="3" class="govuk-table__cell">
+                                <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            </td>
+                          </tr>                        
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-09" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-09" id="meta-09" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-09 meta-09" class="govuk-table__cell">
+                                27 September 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-09 meta-09" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="resperson item-09 meta-09" class="govuk-table__cell">
+                                Boots PLC
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-09" id="ingredients-09" class="govuk-visually-hidden">
+                              Matching ingredients
+                            </th>
+                            <td headers="item-09 ingredients-09" colspan="3" class="govuk-table__cell">
+                                <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            </td>
+                          </tr>                        
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-10" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-10" id="meta-10" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-10 meta-10" class="govuk-table__cell">
+                                4 August 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-10 meta-10" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="resperson item-10 meta-10" class="govuk-table__cell">
+                                Richard Hemmings
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-10" id="ingredients-10" class="govuk-visually-hidden">
+                              Matching ingredients
+                            </th>
+                            <td headers="item-10 ingredients-10" colspan="3" class="govuk-table__cell">
+                                <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                            </td>
+                          </tr>                        
+                        </tbody>
+                        
+                        
+
+
+
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-11" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-11" id="meta-11" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-11 meta-11" class="govuk-table__cell">
+                                    11 May 2021
+                                </td>
+                                <td headers="ukcosprodnumber item-11 meta-11" class="govuk-table__cell">
+                                    UKCP-895536243
+                                </td>
+                                <td headers="resperson item-11 meta-11" class="govuk-table__cell">
+                                    Arkwrights sports
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-11" id="ingredients-11" class="govuk-visually-hidden">
+                                  Matching ingredients
+                                </th>
+                                <td headers="item-11 ingredients-11" colspan="3" class="govuk-table__cell">
+                                    <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                    <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                </td>
+                              </tr>                            
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-12" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-12" id="meta-12" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-12 meta-12" class="govuk-table__cell">
+                                    4 May 2020
+                                </td>
+                                <td headers="ukcosprodnumber item-12 meta-12" class="govuk-table__cell">
+                                    UKCP-675630988
+                                </td>
+                                <td headers="resperson item-12 meta-12" class="govuk-table__cell">
+                                    David Harris
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-12" id="ingredients-12" class="govuk-visually-hidden">
+                                  Matching ingredients
+                                </th>
+                                <td headers="item-12 ingredients-12" colspan="3" class="govuk-table__cell">
+                                    <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                    <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                </td>
+                              </tr>                            
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-13" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-13" id="meta-13" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-13 meta-13" class="govuk-table__cell">
+                                    27 September 2020
+                                </td>
+                                <td headers="ukcosprodnumber item-13 meta-13" class="govuk-table__cell">
+                                    UKCP-895536243
+                                </td>
+                                <td headers="resperson item-13 meta-13" class="govuk-table__cell">
+                                    Hanna White
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-13" id="ingredients-13" class="govuk-visually-hidden">
+                                  Matching ingredients
+                                </th>
+                                <td headers="item-13 ingredients-13" colspan="3" class="govuk-table__cell">
+                                    <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                    <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                </td>
+                              </tr>                            
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-14" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-14" id="meta-14" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-14 meta-14" class="govuk-table__cell">
+                                    4 August 2021
+                                </td>
+                                <td headers="ukcosprodnumber item-14 meta-14" class="govuk-table__cell">
+                                    UKCP-78219900
+                                </td>
+                                <td headers="resperson item-14 meta-14" class="govuk-table__cell">
+                                    Boots PLC 
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-14" id="ingredients-14" class="govuk-visually-hidden">
+                                  Matching ingredients
+                                </th>
+                                <td headers="item-14 ingredients-14" colspan="3" class="govuk-table__cell">
+                                    <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                    <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                </td>
+                              </tr>                            
+                            </tbody>              
+                            
+                            
+
+
+
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-15" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-15" id="meta-15" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-15 meta-15" class="govuk-table__cell">
+                                        5 January 1978
+                                    </td>
+                                    <td headers="ukcosprodnumber item-15 meta-15" class="govuk-table__cell">
+                                        UKCP-78219900
+                                    </td>
+                                    <td headers="resperson item-15 meta-15" class="govuk-table__cell">
+                                        Bay city rollers
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-15" id="ingredients-15" class="govuk-visually-hidden">
+                                      Matching ingredients
+                                    </th>
+                                    <td headers="item-15 ingredients-15" colspan="3" class="govuk-table__cell">
+                                        <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                        <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                    </td>
+                                  </tr>                                
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-16" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-16" id="meta-16" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-16 meta-16" class="govuk-table__cell">
+                                        11 May 2021
+                                    </td>
+                                    <td headers="ukcosprodnumber item-16 meta-16" class="govuk-table__cell">
+                                        UKCP-895536243
+                                    </td>
+                                    <td headers="resperson item-16 meta-16" class="govuk-table__cell">
+                                        PPL pace Ltd
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-16" id="ingredients-16" class="govuk-visually-hidden">
+                                      Matching ingredients
+                                    </th>
+                                    <td headers="item-16 ingredients-16" colspan="3" class="govuk-table__cell">
+                                        <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                        <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                    </td>
+                                  </tr>                                
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-17" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-17" id="meta-17" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-17 meta-17" class="govuk-table__cell">
+                                        4 May 2020
+                                    </td>
+                                    <td headers="ukcosprodnumber item-17 meta-17" class="govuk-table__cell">
+                                        UKCP-675630988
+                                    </td>
+                                    <td headers="resperson item-17 meta-17" class="govuk-table__cell">
+                                        Catherine Ketters
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-17" id="ingredients-17" class="govuk-visually-hidden">
+                                      Matching ingredients
+                                    </th>
+                                    <td headers="item-17 ingredients-17" colspan="3" class="govuk-table__cell">
+                                        <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                        <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                    </td>
+                                  </tr>                                
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-18" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-18" id="meta-18" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-18 meta-18" class="govuk-table__cell">
+                                        27 September 2020
+                                    </td>
+                                    <td headers="ukcosprodnumber item-18 meta-18" class="govuk-table__cell">
+                                        UKCP-895536243
+                                    </td>
+                                    <td headers="resperson item-18 meta-18" class="govuk-table__cell">
+                                        Boots PLC
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-18" id="ingredients-18" class="govuk-visually-hidden">
+                                      Matching ingredients
+                                    </th>
+                                    <td headers="item-18 ingredients-18" colspan="3" class="govuk-table__cell">
+                                        <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                        <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                    </td>
+                                  </tr>                                  
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-19" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-19" id="meta-19" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-19 meta-19" class="govuk-table__cell">
+                                        4 August 2021
+                                    </td>
+                                    <td headers="ukcosprodnumber item-19 meta-19" class="govuk-table__cell">
+                                        UKCP-78219900
+                                    </td>
+                                    <td headers="resperson item-19 meta-19" class="govuk-table__cell">
+                                        Asda farms Ltd
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-19" id="ingredients-19" class="govuk-visually-hidden">
+                                      Matching ingredients
+                                    </th>
+                                    <td headers="item-19 ingredients-19" colspan="3" class="govuk-table__cell">
+                                        <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                        <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                    </td>
+                                  </tr>                                  
+                                </tbody> 
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <th class="govuk-visually-hidden">
+                                            Name
+                                        </th>
+                                        <th id="item-20" colspan="3" scope="colgroup" class="govuk-table__header">
+                                            <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                        </th>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th headers="item-20" id="meta-20" class="govuk-visually-hidden">
+                                            Metadata
+                                        </th>
+                                        <td headers="uknotified item-20 meta-20" class="govuk-table__cell">
+                                            27 September 2020
+                                        </td>
+                                        <td headers="ukcosprodnumber item-20 meta-20" class="govuk-table__cell">
+                                            UKCP-895536243
+                                        </td>
+                                        <td headers="resperson item-20 meta-20" class="govuk-table__cell">
+                                            David Harris
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th headers="item-20" id="ingredients-20" class="govuk-visually-hidden">
+                                          Matching ingredients
+                                        </th>
+                                        <td headers="item-20 ingredients-20" colspan="3" class="govuk-table__cell">
+                                            <span class="govuk-!-font-size-14">Ingredient matches: </span>
+                                            <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
+                                        </td>
+                                      </tr>                                      
+                                    </tbody>                                                                   
+
+                    <tfoot class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">&nbsp;</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UK</abbr> cosmetic product number</th>
+                            <th scope="col" class="govuk-table__header">Responsible Person</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                                </a>
+                            </li>
+                            <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                                </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
