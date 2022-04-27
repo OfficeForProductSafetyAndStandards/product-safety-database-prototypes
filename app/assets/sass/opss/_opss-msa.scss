@@ -374,6 +374,30 @@ li.opss-task-sub {
         }
     }
 }
+/* .govuk-table__header, .govuk-table__cell         $govuk-border-colour;*/
+.grouped-by-on {
+    xxxbackground-color: #eee; 
+
+    th, td {
+        border-bottom: 1px dashed govuk-colour("light-grey");
+    }
+
+    &:last-child {
+        th, td {
+            xxxbackground-color: lime;
+        }
+    }
+    
+}
+
+.grouped-by-off {
+    
+}
+
+
+
+
+/* check if this code BELOW is still required? .... */
 
 /* used on the search page - starts */
 body.js-enabled .govuk-radios__conditional--hidden.opss-nojs-hide {
