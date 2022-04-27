@@ -133,7 +133,8 @@
 
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove" target="_blank">Do you want to remove it?</a> <i>Clicking No, will return the user back to the previous page. electing no, takes the user onto the next page in the current journey. Select, Yes</i>
+                            <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-remove" target="_blank">Do you want to remove it?</a> 
+                            <i>The hint text should be contextual: ending in either "... removed from this product." or "... removed from this item." <br>Clicking No, will return the user back to the previous page. Selecting no, takes the user onto the next page in the current journey. Select, Yes</i>
                         </li>
                         <li>
                             <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2c-removed-confirmation" target="_blank">Removed - confirmed</a> <i>This standalone page is required as the ingredient may be the last in the list of ingredients (making inline success banners inappropriate). No back link. Contextual text "... from this product or this item". Select Continue; the user now goes to the next ingredient form page shown in the ingredients list. If this is the last ingredient, the user is served the 'Add an ingredient' page (below)</i>
@@ -222,6 +223,69 @@
 
         </div>           
 
+
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                SEARCH page(s)
+            </h2>
+
+            <p class="govuk-body-s">Two search pages, 1 new, and the pre-existing search page (with some minor layout changes). The pre-existing search page, remains the default landing page for the SEARCh are of the service (and features the new nav menu, which will expand as we work on other epics).</p>
+            
+            <p class="govuk-body-s">A standalone search page for users to search for an ingredient within notified products. Introduces a new 'display' setting, allowing the user to view the results <b>grouped by Responsible Person</b>. (Dev to determine how which 'group' is prioritised after the search criteria to list at the top of the results).</p>
+
+            <p class="govuk-body-s">As previously we use pagination when there are more than 20 results and we add the table footer when there are 12 or more results.</p>
+
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredients-cosmetic-products-search.html" target="_blank">Cosmetic products search</a> 
+
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>Old page, with revised layout tweaks to match the evolution of the service</li>
+                    </ol>                    
+                </li>                
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredients-ingredients-search.html" target="_blank">Ingredients search (exact match)</a> 
+
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>New page for the service - showing results with 'exact match' filter setting</li>
+                        <li>Page design shows the default state of the filters and forms</li>
+                        <li>Date range filter to work as per the pre-existing cosmetics search (with same error messages, etc)</li>
+                        <li>If more than one ingredient matches is found in a product, we list them all, even if repeated (as demonstrated the first record)</li>
+                        <li>The search input would persist (as like the current cosmetics search), and show in the search input field when page returned results</li>
+                    </ol>                    
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredients-ingredients-search-any.html" target="_blank">Ingredients search (any words match)</a> 
+                    
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>Demonstrates a version of the page showing results with 'match any words' filter setting. I suspect the current search behaviour settings - as used in cosmetic products - or similar is what we need here, only searching on the ingredients data instead</li>
+                        <li>
+                            On this version, the ingredient matches shown in the results are seperated by commas (with a fullstop at the end)
+                        </li>
+                    </ol>                     
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredients-ingredients-search-start.html" target="_blank">Ingredients search (on first load)</a> 
+                    
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>On first load (when no search has been made) we do not show any results by default - instead we show this message</li>
+                    </ol>                     
+                </li> 
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredients-ingredients-search-empty.html" target="_blank">Ingredients search (no results)</a> 
+                    
+                    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+                        <li>When there are no results</li>
+                    </ol>                     
+                </li>                                                
+            </ul> 
+
+            <p class="govuk-body-s">Filter and display settings return to their default settings the next time the user visits the service (or page?)? (But the settings persist as they page through paginated page results or alter the search input).</p>
+
+
+        </div>
+
+
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
             <p class="govuk-body strike">
                 Single form page design for all ingredients
@@ -249,6 +313,8 @@
 
 On div "govuk-grid-row opss-full-height govuk-!-margin-top-7 govuk-!-padding-top-9" remove "govuk-!-margin-top-7 govuk-!-padding-top-9" and add "opss-desktop-min-height--s" to the div that wraps the H1 title.
 
+Changes to the HTML table: different caption text.
+
 On cosmetic products search remove the work "search" from the hidden button text on the search form. 
 
 The cosmetics product search page now features a H1 title with seperate label for the search input field. The input search field now has a full width class.
@@ -257,7 +323,7 @@ Add the hidden "Skip to results" jump-to link.
 
 Change the class "govuk-fieldset__legend--m" in the filters title to "govuk-fieldset__legend--s" .
 
-The results summary statement is now in a full width div. And the HTML structure and wording has changed.
+The results summary statement is now in a full width div. The class (font size) has changed, commas removed, and the HTML structure and wording has changed.
 
 Class "opss-desktop-min-height--s" now features in the top section of the pages.
 
