@@ -374,24 +374,25 @@ li.opss-task-sub {
         }
     }
 }
-/* .govuk-table__header, .govuk-table__cell         $govuk-border-colour;*/
-.grouped-by-on {
-    xxxbackground-color: #eee; 
 
+
+tbody.opss-table-grouped-by--1, 
+tbody.opss-table-grouped-by--2 {
     th, td {
-        border-bottom: 1px dashed govuk-colour("light-grey");
+        border-bottom: 1px solid $govuk-border-colour;
     }
-
-    &:last-child {
+}/*thead + tbody.opss-table-grouped-by--1, */
+tbody.opss-table-grouped-by--2 + tbody.opss-table-grouped-by--1, 
+tbody.opss-table-grouped-by--1 + tbody.opss-table-grouped-by--2, 
+tbody.opss-table-grouped-by--1 + tbody.opss-table-grouped-by--none, 
+tbody.opss-table-grouped-by--2 + tbody.opss-table-grouped-by--none {
+    tr:first-child {
         th, td {
-            xxxbackground-color: lime;
-        }
+            border-top: 3px dashed  $govuk-text-colour;
+            position: relative;
+            top: -2px; /* avoids swapping top borders with bottom */
+        }        
     }
-    
-}
-
-.grouped-by-off {
-    
 }
 
 

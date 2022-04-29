@@ -231,7 +231,10 @@
 
             <p class="govuk-body-s">Two search pages, 1 new, and the pre-existing search page (with some minor layout changes). The pre-existing search page, remains the default landing page for the SEARCh are of the service (and features the new nav menu, which will expand as we work on other epics).</p>
             
-            <p class="govuk-body-s">A standalone search page for users to search for an ingredient within notified products. Introduces a new 'display' setting, allowing the user to view the results <b>grouped by Responsible Person</b>. (Dev to determine how which 'group' is prioritised after the search criteria to list at the top of the results).</p>
+            <p class="govuk-body-s">A standalone search page for users to search for an ingredient within notified products. Introduces a new 'display' setting, allowing the user to view the results <b>grouped by Responsible Person</b>. (Dev to determine how which 'group' is prioritised after the search criteria to list at the top of the results). </p>
+
+            <p class="govuk-body-s">One column is changed to Responsible Person and two new Sort by options are added (RP A-Z and RP Z-A).</p>
+
 
             <p class="govuk-body-s">As previously we use pagination when there are more than 20 results and we add the table footer when there are 12 or more results.</p>
 
@@ -278,7 +281,7 @@
                     <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
                         <li>Using GROUP-BY (SQL)</li>
                         <li>This page design demonstrates results grouped by Responsible Person (showing them grouped together)</li>
-                        <li>It all shows the potential to visually group the results with a CSS classes (added when looping through the parent GROUPED-BY results)</li>
+                        <li>It all shows the potential to visually group the results with a CSS classes (added when looping through the parent GROUPED-BY results). Each <code>tbody</code> in a group has the same class, then the next group of <code>tbody</code>s use the alternating class, and records (<code>tbody</code>) not returned as part of a group use the third <abbr>CSS</abbr> class</li>
                     </ol>                     
                 </li>                                                
             </ul> 
