@@ -143,7 +143,14 @@
                 </li>
 
                 <li>
-                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add" target="_blank">Do you want to add a new ingredient to this product/item</a> <br><i>No, continues to the next page in the standard current journey, Yes, goes to a <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5.html" target="_blank">blank ingredient page</a> to append another ingredient to the list (<b>without a remove link</b> but with a skip link). Contextual text "... to this product or to this item". The new ingredient is added immediately (before the end of the task). </i>                   
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add" target="_blank">Do you want to add a new ingredient to this product/item</a> <br><i>No, continues to the next page in the standard current journey, Yes, reveals the form options and the user is served the form version/journey they have selected. e.g, choosing 'exact' serves <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2a-enter-ingredient-5.html" target="_blank">this page</a> with the previous ingredients also listed, to append another ingredient to the list (<b>without a remove link</b> but with a skip link). Contextual text "... to this product or to this item". The new ingredient is added immediately (before the end of the task). </i>                   
+                </li>
+
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-NICS-page-redesign" target="_blank">Does the product contain any poisonous ingredients?</a><br>
+                    A pre-existing page will also require a <abbr>HTML</abbr> redesign, althought the functionality remains the same. 
+                    The "Ingredients the National Poisons Information Service needs to know about" has new text content and <abbr>HTML</abbr> layout. The new error message will read: "Select yes, fi the product contains poisonous ingredients".
+                    
                 </li>
 
             </ul> 
@@ -165,7 +172,10 @@
                 </li>
                 <li>
                     <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add-error.html" target="_blank">Do you want to add an ingredient</a> <span class="govuk-!-font-size-16">(combining hint text "aria-describedby")</span>
-                </li>                
+                </li>
+                <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2d-add-error-nested.html" target="_blank">Do you want to add an ingredient</a> <span class="govuk-!-font-size-16">(combining hint text "aria-describedby") Nested radios</span>
+                </li>                                
                 <li>
                     <a class="govuk-link govuk-link--no-visited-state" href="ingredient-2b-how-many-error.html" target="_blank">Do you want to add <b>another</b> ingredient</a>
                 </li>
@@ -292,7 +302,7 @@
         </div>
 
 
-        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee;">
+        <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all" style="background-color: #eee; display: none;">
             <p class="govuk-body strike">
                 Single form page design for all ingredients
             </p>
@@ -314,27 +324,43 @@
 </div>
 
 
+<div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
+    <h3 class="govuk-heading-s">
+        Some developer notes:
+    </h3>
 
-
-
-On div "govuk-grid-row opss-full-height govuk-!-margin-top-7 govuk-!-padding-top-9" remove "govuk-!-margin-top-7 govuk-!-padding-top-9" and add "opss-desktop-min-height--s" to the div that wraps the H1 title.
-
-Changes to the HTML table: different caption text.
-
-On cosmetic products search remove the work "search" from the hidden button text on the search form. 
-
-The cosmetics product search page now features a H1 title with seperate label for the search input field. The input search field now has a full width class.
-
-Add the hidden "Skip to results" jump-to link.
-
-Change the class "govuk-fieldset__legend--m" in the filters title to "govuk-fieldset__legend--s" .
-
-The results summary statement is now in a full width div. The class (font size) has changed, commas removed, and the HTML structure and wording has changed.
-
-Class "opss-desktop-min-height--s" now features in the top section of the pages.
-
-On the ingredient page (and cosmetic products) the input field submit and the filters submit should submit the status of all form elements. i.e, both search and filters forms.
-
-Get latest _opss-shared.scss
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        <li>
+            On div "govuk-grid-row opss-full-height govuk-!-margin-top-7 govuk-!-padding-top-9" remove "govuk-!-margin-top-7 govuk-!-padding-top-9" and add "opss-desktop-min-height--s" to the div that wraps the H1 title.
+        </li>
+        <li>
+            Changes to the HTML poison table: different caption text.
+        </li>
+        <li>
+            On cosmetic products search remove the work "search" from the hidden button text on the search form. 
+        </li>
+        <li>
+            The cosmetics product search page now features a H1 title with seperate label for the search input field. The input search field now has a full width class.
+        </li>
+        <li>
+            Add the hidden "Skip to results" jump-to link.
+        </li>
+        <li>
+            Change the class "govuk-fieldset__legend--m" in the filters title to "govuk-fieldset__legend--s" .
+        </li>
+        <li>
+            The results summary statement is now in a full width div. The class (font size) has changed, commas removed, and the HTML structure and wording has changed.
+        </li>
+        <li>
+            Class "opss-desktop-min-height--s" now features in the top section of the pages.
+        </li>
+        <li>
+            On the ingredient page (and cosmetic products) the input field submit and the filters submit should submit the status of all form elements. i.e, both search and filters forms.
+        </li> 
+        <li>
+            <b>Get latest _opss-shared.scss</b>
+        </li>       
+    </ul>
+</div>
 
 {% endblock %}
