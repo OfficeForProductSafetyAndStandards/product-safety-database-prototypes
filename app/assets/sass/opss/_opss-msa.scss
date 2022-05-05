@@ -375,6 +375,31 @@ li.opss-task-sub {
     }
 }
 
+
+tbody.opss-table-grouped-by--1, 
+tbody.opss-table-grouped-by--2 {
+    th, td {
+        border-bottom: 1px solid $govuk-border-colour;
+    }
+}/*thead + tbody.opss-table-grouped-by--1, */
+tbody.opss-table-grouped-by--2 + tbody.opss-table-grouped-by--1, 
+tbody.opss-table-grouped-by--1 + tbody.opss-table-grouped-by--2, 
+tbody.opss-table-grouped-by--1 + tbody.opss-table-grouped-by--none, 
+tbody.opss-table-grouped-by--2 + tbody.opss-table-grouped-by--none {
+    tr:first-child {
+        th, td {
+            border-top: 3px dashed  $govuk-text-colour;
+            position: relative;
+            top: -2px; /* avoids swapping top borders with bottom */
+        }        
+    }
+}
+
+
+
+
+/* check if this code BELOW is still required? .... */
+
 /* used on the search page - starts */
 body.js-enabled .govuk-radios__conditional--hidden.opss-nojs-hide {
     height: 0; overflow: hidden; float: left; margin: 0;

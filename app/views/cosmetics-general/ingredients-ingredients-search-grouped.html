@@ -16,7 +16,6 @@
 
         <p class="govuk-body opss-secondary-text">
             Search cosmetic product notifications for notifications which include a specific ingredient. 
-            <!--br><span class="govuk-!-font-size-16">(Currently, only notifications made after [dd month year] are searchable).</span--> 
         </p>
 
         <details class="govuk-details govuk-!-width-two-thirds opss-details--sm" data-module="govuk-details">
@@ -27,10 +26,6 @@
             </summary>
             <div class="govuk-details__text">
 
-                <!--p class="govuk-body-s govuk-!-margin-bottom-4">
-                    <span id="search-hint">For best results, search for an individual ingredient using its name (or the keywords of its name).</span> This will search cosmetic product notifications for cosmetic products which use it. 
-                </p-->
-                
                 <p class="govuk-body-s govuk-!-margin-bottom-4">
                     <span class="govuk-!-font-weight-bold">Currently, only products notified after [dd month year] are searchable for ingredients.</span>
                 </p>                
@@ -74,9 +69,6 @@
                         Ingredients search
                     </a>
                 </li>
-                <!--li>
-                    <a href="/cosmetics-general/blank.html" class="govuk-link govuk-link--no-visited-state">Lorem ipsum search</a>
-                </li-->
             </ul>
         </nav>
 
@@ -102,14 +94,14 @@
                     <div class="govuk-radios govuk-radios--small">
                         <input name="priority_all" type="hidden" value="on">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="no-grouping" name="grouping" type="radio" value="no-group" checked="checked">
+                            <input class="govuk-radios__input" id="no-grouping" name="grouping" type="radio" value="no-group">
                             <label class="govuk-label govuk-radios__label" for="no-grouping">
                                 None
                             </label>
                         </div>
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes-grouping" name="grouping" type="radio" value="yes-grouping">
+                            <input class="govuk-radios__input" id="yes-grouping" name="grouping" type="radio" value="yes-grouping" checked="checked">
                             <label class="govuk-label govuk-radios__label" for="yes-grouping">
                                 Responsible Person
                             </label>
@@ -305,6 +297,8 @@
                             <option value="score">Relevance</option>
                             <option value="date_descending">Newest</option>
                             <option value="date_ascending">Oldest</option>
+                            <option value="rp_descending">Responsible Person A-Z</option>
+                            <option value="rp_ascending">Responsible Person Z-A</option>
                         </select>
 
                         <button class="govuk-button opss-js-enabled-hidden" data-module="govuk-button">
@@ -372,7 +366,7 @@
                     </tr>
                     </thead>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--1">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -392,7 +386,7 @@
                             UKCP-895536243
                         </td>
                         <td headers="resperson item-01 meta-01" class="govuk-table__cell">
-                            Smith and son
+                            David Harris
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -408,7 +402,7 @@
                       </tr>                    
                     </tbody>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--1">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -442,7 +436,7 @@
                       </tr>                      
                     </tbody>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--1">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -462,7 +456,7 @@
                             UKCP-895536243
                         </td>
                         <td headers="resperson item-03 meta-03" class="govuk-table__cell">
-                            JWK industries
+                            David Harris
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -476,7 +470,7 @@
                       </tr>                    
                     </tbody>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--1">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -510,7 +504,7 @@
                       </tr>                    
                     </tbody>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--2">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -544,7 +538,7 @@
                       </tr>                    
                     </tbody>
 
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body opss-table-grouped-by--2">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Name
@@ -564,7 +558,7 @@
                             UKCP-78219900
                         </td>
                         <td headers="resperson item-05 meta-05" class="govuk-table__cell">
-                            Smith and sons
+                            Boots PLC
                         </td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -577,12 +571,7 @@
                         </td>
                       </tr>                    
                     </tbody>
-
-
-
-
-
-                    <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body opss-table-grouped-by--2">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Name
@@ -602,7 +591,7 @@
                                 UKCP-78219900
                             </td>
                             <td headers="resperson item-06 meta-06" class="govuk-table__cell">
-                                Hanna White
+                                Boots PLC
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -615,8 +604,7 @@
                             </td>
                           </tr>                        
                         </tbody>
-    
-                        <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body opss-table-grouped-by--1">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Name
@@ -650,7 +638,7 @@
                           </tr>                        
                         </tbody>
     
-                        <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body opss-table-grouped-by--1">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Name
@@ -670,7 +658,7 @@
                                 UKCP-675630988
                             </td>
                             <td headers="resperson item-08 meta-08" class="govuk-table__cell">
-                                Peter Blake
+                                Hanna White
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -684,7 +672,7 @@
                           </tr>                        
                         </tbody>
     
-                        <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body opss-table-grouped-by--2">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Name
@@ -704,7 +692,7 @@
                                 UKCP-895536243
                             </td>
                             <td headers="resperson item-09 meta-09" class="govuk-table__cell">
-                                Boots PLC
+                                Smith and sons
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -718,7 +706,7 @@
                           </tr>                        
                         </tbody>
     
-                        <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body opss-table-grouped-by--2">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">
                                 Name
@@ -738,7 +726,7 @@
                                 UKCP-78219900
                             </td>
                             <td headers="resperson item-10 meta-10" class="govuk-table__cell">
-                                Richard Hemmings
+                                Smith and sons
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -751,12 +739,7 @@
                             </td>
                           </tr>                        
                         </tbody>
-                        
-                        
-
-
-
-                        <tbody class="govuk-table__body">
+                         <tbody class="govuk-table__body opss-table-grouped-by--1">
                             <tr class="govuk-table__row">
                                 <th class="govuk-visually-hidden">
                                     Name
@@ -788,9 +771,8 @@
                                     <span class="govuk-!-font-size-14"><mark>Consectetur lorem etilee</mark>. </span> 
                                 </td>
                               </tr>                            
-                            </tbody>
-        
-                            <tbody class="govuk-table__body">
+                        </tbody>
+                        <tbody class="govuk-table__body opss-table-grouped-by--1">
                             <tr class="govuk-table__row">
                                 <th class="govuk-visually-hidden">
                                     Name
@@ -810,7 +792,7 @@
                                     UKCP-675630988
                                 </td>
                                 <td headers="resperson item-12 meta-12" class="govuk-table__cell">
-                                    David Harris
+                                    Arkwrights sports
                                 </td>
                             </tr>
                             <tr class="govuk-table__row">
@@ -824,7 +806,7 @@
                               </tr>                            
                             </tbody>
         
-                            <tbody class="govuk-table__body">
+                            <tbody class="govuk-table__body opss-table-grouped-by--2">
                             <tr class="govuk-table__row">
                                 <th class="govuk-visually-hidden">
                                     Name
@@ -844,7 +826,7 @@
                                     UKCP-895536243
                                 </td>
                                 <td headers="resperson item-13 meta-13" class="govuk-table__cell">
-                                    Hanna White
+                                    Russell Smith
                                 </td>
                             </tr>
                             <tr class="govuk-table__row">
@@ -858,7 +840,7 @@
                               </tr>                            
                             </tbody>
         
-                            <tbody class="govuk-table__body">
+                            <tbody class="govuk-table__body opss-table-grouped-by--2">
                             <tr class="govuk-table__row">
                                 <th class="govuk-visually-hidden">
                                     Name
@@ -878,7 +860,7 @@
                                     UKCP-78219900
                                 </td>
                                 <td headers="resperson item-14 meta-14" class="govuk-table__cell">
-                                    Boots PLC 
+                                    Russell Smith
                                 </td>
                             </tr>
                             <tr class="govuk-table__row">
@@ -891,12 +873,7 @@
                                 </td>
                               </tr>                            
                             </tbody>              
-                            
-                            
-
-
-
-                            <tbody class="govuk-table__body">
+                            <tbody class="govuk-table__body opss-table-grouped-by--2">
                                 <tr class="govuk-table__row">
                                     <th class="govuk-visually-hidden">
                                         Name
@@ -916,7 +893,7 @@
                                         UKCP-78219900
                                     </td>
                                     <td headers="resperson item-15 meta-15" class="govuk-table__cell">
-                                        Bay city rollers
+                                        Russell Smith
                                     </td>
                                 </tr>
                                 <tr class="govuk-table__row">
@@ -930,7 +907,7 @@
                                   </tr>                                
                                 </tbody>
             
-                                <tbody class="govuk-table__body">
+                                <tbody class="govuk-table__body opss-table-grouped-by--1">
                                 <tr class="govuk-table__row">
                                     <th class="govuk-visually-hidden">
                                         Name
@@ -964,7 +941,7 @@
                                   </tr>                                
                                 </tbody>
             
-                                <tbody class="govuk-table__body">
+                                <tbody class="govuk-table__body opss-table-grouped-by--1">
                                 <tr class="govuk-table__row">
                                     <th class="govuk-visually-hidden">
                                         Name
@@ -984,7 +961,7 @@
                                         UKCP-675630988
                                     </td>
                                     <td headers="resperson item-17 meta-17" class="govuk-table__cell">
-                                        Catherine Ketters
+                                        PPL pace Ltd
                                     </td>
                                 </tr>
                                 <tr class="govuk-table__row">
@@ -998,7 +975,7 @@
                                   </tr>                                
                                 </tbody>
             
-                                <tbody class="govuk-table__body">
+                                <tbody class="govuk-table__body opss-table-grouped-by--none">
                                 <tr class="govuk-table__row">
                                     <th class="govuk-visually-hidden">
                                         Name
@@ -1018,7 +995,7 @@
                                         UKCP-895536243
                                     </td>
                                     <td headers="resperson item-18 meta-18" class="govuk-table__cell">
-                                        Boots PLC
+                                        Asda pharms Ltd
                                     </td>
                                 </tr>
                                 <tr class="govuk-table__row">
@@ -1032,7 +1009,7 @@
                                   </tr>                                  
                                 </tbody>
             
-                                <tbody class="govuk-table__body">
+                                <tbody class="govuk-table__body opss-table-grouped-by--none">
                                 <tr class="govuk-table__row">
                                     <th class="govuk-visually-hidden">
                                         Name
@@ -1052,7 +1029,7 @@
                                         UKCP-78219900
                                     </td>
                                     <td headers="resperson item-19 meta-19" class="govuk-table__cell">
-                                        Asda farms Ltd
+                                        Peter Richards
                                     </td>
                                 </tr>
                                 <tr class="govuk-table__row">
@@ -1065,7 +1042,7 @@
                                     </td>
                                   </tr>                                  
                                 </tbody> 
-                                <tbody class="govuk-table__body">
+                                <tbody class="govuk-table__body opss-table-grouped-by--none">
                                     <tr class="govuk-table__row">
                                         <th class="govuk-visually-hidden">
                                             Name
@@ -1085,7 +1062,7 @@
                                             UKCP-895536243
                                         </td>
                                         <td headers="resperson item-20 meta-20" class="govuk-table__cell">
-                                            David Harris
+                                            Richard Hemmings
                                         </td>
                                     </tr>
                                     <tr class="govuk-table__row">

@@ -29,13 +29,33 @@
             A new ingredient will be added to this product. <!-- ... or to this item -->
           </div>
 
-          <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3">
+          <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add" name="add" type="radio" value="yes">
+              <input class="govuk-radios__input" id="add" name="add" type="radio" value="yes" data-aria-controls="add-another">
               <label class="govuk-label govuk-radios__label" for="add">
                 Yes
               </label>
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="add-another">
+              <div class="govuk-form-group">
+                
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="exact concentration" name="concentration" type="radio" value="exact">
+                    <label class="govuk-label govuk-radios__label" for="exact concentration">
+                      List the ingredient by its <span class="govuk-!-font-weight-bold">exact</span> concentration
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="concentration-range" name="concentration" type="radio" value="range">
+                    <label class="govuk-label govuk-radios__label" for="concentration-range">
+                      List the ingredient by its concentration <span class="govuk-!-font-weight-bold">range</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+            </div>            
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="continue" name="add" type="radio" value="no">
@@ -50,7 +70,7 @@
       </div>
 
       <div class="govuk-button-group">
-        <button class="govuk-button ">Save and continue</button>
+        <button class="govuk-button">Continue</button>
       </div>
 
     </form>

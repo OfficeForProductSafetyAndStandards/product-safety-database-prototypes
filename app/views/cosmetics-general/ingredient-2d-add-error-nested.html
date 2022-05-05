@@ -21,7 +21,7 @@
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#another">Select yes if you want to add an ingredient</a>
+        <a href="#exact-concentration">Select how the ingredient will be listed</a>
       </li>
     </ul>
   </div>
@@ -31,7 +31,7 @@
   <div class="govuk-grid-column-full">
 
     <form action="ingredient-2a-enter-ingredient-5.html" novalidate>
-      <div class="govuk-form-group govuk-form-group--error">
+      <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="add-hint another-error"> 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
@@ -43,22 +43,22 @@
             A new ingredient will be added to this product. <!-- ... or to this item -->
           </div>
 
-          <p id="another-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes if you want to add an ingredient
-          </p>          
-
           <div class="govuk-radios govuk-radios--conditional govuk-!-padding-top-3" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add" name="add" type="radio" value="yes" data-aria-controls="add-another">
+              <input class="govuk-radios__input" id="add" name="add" type="radio" value="yes" data-aria-controls="add-another" checked>
               <label class="govuk-label govuk-radios__label" for="add">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="add-another">
-              <div class="govuk-form-group">
+              <div class="govuk-form-group govuk-form-group--error">
 
-                <fieldset class="govuk-fieldset">
-                
+                <fieldset class="govuk-fieldset" aria-describedby="concentration-error">
+
+                  <p id="concentration-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Select how the ingredient will be listed
+                  </p> 
+
                   <div class="govuk-radios govuk-radios--small">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="exact-concentration" name="concentration" type="radio" value="exact">

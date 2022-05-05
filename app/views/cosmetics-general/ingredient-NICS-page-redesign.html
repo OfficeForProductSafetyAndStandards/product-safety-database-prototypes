@@ -1,0 +1,66 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredients the NICS needs to know about
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "/index"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="/responsible_persons/628/notifications/54825511/components/4959/build/contains_poisonous_ingredients" accept-charset="UTF-8" method="post" novalidate>
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="checkbox-hint">
+          
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does the product contain poisonous ingredients?
+            </h1>
+          </legend>
+
+          <div id="checkbox-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-3">
+            There are also particular poisons which the National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about &ndash; especially if their details match ingredients listed in the following poison tables. The <abbr>NPIS</abbr> needs to know the exact concentrations (<span title="Percentage weight for weight">&percnt; <abbr>w</abbr>/<abbr>w</abbr></span>) of these ingredients. The information you provide will be used to help treat people who might accidentally be affected by them.
+          </div>
+        
+          {% include "cosmetics-general/inc_tables-details-details.html" %}          
+
+          <input name="utf8" type="hidden" value="" autocomplete="off">
+          <input type="hidden" name="_method" value="put" autocomplete="off">
+          <input type="hidden" name="authenticity_token" value="laxQMWVFjlgrvb0hAxuWm1NyLQ6M9VeTgwoPa8u6TUduXnYZssjq27rND4b/Jdv/yyjSwXx3m9fuJjnjBo8YAA==" autocomplete="off">   
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="component_contains_poisonous_ingredients_true" name="component[contains_poisonous_ingredients]" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="component_contains_poisonous_ingredients_true">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="component_contains_poisonous_ingredients_false" name="component[contains_poisonous_ingredients]" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="component_contains_poisonous_ingredients_false">
+                No
+              </label>
+            </div>
+          </div>          
+      
+        </fieldset>
+      </div>
+
+      <button class="govuk-button ">Continue</button>      
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
