@@ -336,4 +336,16 @@
     </ul>
 </div>
 
+
+<!--script>
+    document.addEventListener('DOMContentLoaded', (e) => {//fallback for older browsers
+        var theList = document.getElementById("opss-downloads");
+
+        var elements = theList.querySelectorAll('a');
+        Array.prototype.forEach.call(elements, function(el, i){
+            el.setAttribute("download", "");
+        });
+    });
+</script->
+
 {% endblock %}

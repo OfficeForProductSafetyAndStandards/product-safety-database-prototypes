@@ -21,6 +21,9 @@
 
 $std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
+/*input[type="checkbox"]:disabled, input[type="checkbox"]:disabled + label {color:  govuk-colour("mid-grey"); }
+input[type="checkbox"]:disabled + label {opacity: 1 !important; }*/
+
 /* not normalised by gds library - starts */
 figure, 
 figcaption {
