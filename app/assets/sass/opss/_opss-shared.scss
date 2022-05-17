@@ -740,6 +740,32 @@ dl.opss-summary-list-aside {
             padding-bottom: govuk-spacing(0);
         }
     }
+    .opss-summary-list-mixed.opss-summary-list-mixed--sm-font {/* a mixed and small font version */
+        margin-bottom: govuk-spacing(4);
+
+        dt, dd {
+            @include opss-font-size($s: 16px, $l: 1.2);
+            padding-top: govuk-spacing(1);         
+            padding-bottom: govuk-spacing(1);            
+        }
+
+        .govuk-accordion__section-content & {
+            margin-bottom: govuk-spacing(7);
+
+            div:last-child {
+                dt, dd {
+                    border-bottom: none;
+                } 
+            }
+        }
+    }
+    .opss-summary-list-mixed.opss-summary-list--equal-widths {
+        div {
+            dt,  dd {
+                width: 33%;
+            }  
+        }
+    }
 }
 
 dd dl.opss-nested-definition-list {
