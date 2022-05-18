@@ -30,6 +30,9 @@
     ul.margin-left {
         margin-left: 50px; 
     }
+    .ghost {
+        color: #999 !important;
+    }
 </style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -47,6 +50,10 @@
                         Here are the current page designs for revised 'Create a case' user-flow.
                     </p>
 
+                    <p class="govuk-body opss-secondary-text">
+                        <a class="govuk-link govuk-link--no-visited-state" href="https://www.figma.com/file/xlzfNBUROXqD3tox7kdlap/Current-and-New-Create-a-Case-flows?node-id=0%3A1">Flow diagrams</a>
+                    </p>
+
                 </div>
             </div>
 
@@ -57,6 +64,49 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-top-7">
+
+        <h2 class="govuk-heading-s"><abbr>TSO</abbr> - user journey</h2>
+   
+        <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-are-you-creating-a-case.html" target="_blank">Why are you creating a case?</a>
+                <br><span class="govuk-!-font-size-16">This is a revised form/page design for the current 'Why are you reporting this product?' page</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/products-2-products-no-owner-error.html" target="_blank">Why are you creating a case? - error</a>
+                    </li>
+                </ul>                
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern.html" target="_blank">Why is the product of concern?
+                </a>
+                <br><span class="govuk-!-font-size-16">This splits the current 'Why are you reporting this product?' page over two pages</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern-error.html" target="_blank">Why is the product of concern? - error 1</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern-error-2.html" target="_blank">Why is the product of concern? - error 2</a>
+                    </li>
+                </ul>                 
+            </li>             
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/what-is-the-case-name.html" target="_blank">What is the case name?</a>
+                <br><span class="govuk-!-font-size-16">A new page (with a pre-existing form element)</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/why-is-the-product-of-concern-error.html" target="_blank">What is the case name? - error</a>
+                        <br><span class="govuk-!-font-size-16">Only 'name' is a required field</span>.
+                    </li>
+                </ul>                 
+            </li>            
+        </ol>   
+        
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
 
         <h2 class="govuk-heading-s">Cases - case pages</h2>
    
@@ -80,6 +130,10 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Case page - warning</a>
                 <br><span class="govuk-!-font-size-16">Nothing added yet. Warns that no products, businesses, or assessments have been added</span>.
             </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
+                <br><span class="govuk-!-font-size-16">A version showing a closed case with a timestamped product. (You can only view a timestamped product via a case page)</span>.
+            </li>            
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -120,7 +174,6 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-2-products" target="_blank">Case - products page - multiple products</a>
                 <br><span class="govuk-!-font-size-16">Showing a case with 3 products (all with a different ownership status)</span>.
             </li>            
-
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -144,9 +197,16 @@
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
-                    Case - product page - is this your product?
-                </a>
-                <br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it</span>.
+                    Case - product page - is this your product?  
+                </a><sup>*</sup>
+                <br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it.  This example shows a 'no owner' message</span>. <!-- Yes = saves (adds the product). No = return to the previous page 'add a product'. -->
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-owned.html" target="_blank">Case - product page - is this your product? (owned)</a><sup>*</sup>
+                        <br><span class="govuk-!-font-size-16">If the product record is owned - there is no additional message.</span>      
+                    </li> 
+                </ul>
             </li> 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-added" target="_blank">
@@ -156,6 +216,8 @@
             </li>                                                
                        
         </ul>  
+
+        <p class="govuk-body-s"><sup>*</sup> Model number may need to be removed depending upon 'create a product' flow.</p>
         
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
@@ -176,7 +238,7 @@
                     </li>
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-no-owner-not-included" target="_blank">Product page - not owned (and not included in any of my team's cases)</a>
-                        <br><span class="govuk-!-font-size-16">No team owns the product record and my team do not have a case linked to it</span>.
+                        <br><span class="govuk-!-font-size-16">No team owns the product record and my team <b>do not</b> have a case linked to it</span>.
                     </li>                    
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-owned-by-others" target="_blank">Product page - owned elsewhere</a>
@@ -185,9 +247,20 @@
                 </ul>
             </li>
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-edit" target="_blank">Edit the product</a>
-                <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and some non-editable fields</span>.                
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-edit" target="_blank">Create a product record</a>
+                <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed</span>.  
+                
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-edit" target="_blank">Edit a product record</a>
+                        <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and two fields not editable</span>.  
+                    </li>
+                </ul>
             </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-confirmation" target="_blank">Product record created confirmation</a> 
+                <br><span class="govuk-!-font-size-16">To match the new case created confirmation page</span>.
+            </li>  
         </ol>
 
     </div>
@@ -291,7 +364,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="xxxgovuk-link xxxgovuk-link--no-visited-state todo" href="/psd-revised-flow/no-products.html" target="_blank">There are no products</a> linked to this case (blank products page with statement - to design "&hellip;<a href="#">add a product to the case</a>&hellip;)
+                    <a class="govuk-link govuk-link--no-visited-state todo" href="/psd-revised-flow/no-products.html" target="_blank">There are no products</a> linked to this case (blank products page with statement - to design "&hellip;<a href="#">add a product to the case</a>&hellip;)
                 </li> 
                 <li>
                     <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/add-a-product.html" target="_blank">Add a product</a> to the case page. (Phase one version - simple <abbr>ID</abbr> entry). Products pages to now have an 'Add a product' link. 
@@ -299,8 +372,11 @@
                     
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product.html" target="_blank">Is this the product?</a> Yes = saves (adds the product). No = return to the previous page 'add a product'. This example shows a 'no owner' message. The alternative message is "This product record is currently owned by [team name here]."     
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product.html" target="_blank">Is this the product?</a> Yes = saves (adds the product). No = return to the previous page 'add a product'. This example shows a 'no owner' message.      
                         </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-owned.html" target="_blank">This example shows an owned message.      
+                        </li>                        
                         <li>
                             <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-added.html" target="_blank">Product added</a> 
                         </li>                        

@@ -1,0 +1,67 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Create the case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "why-are-you-creating-a-case"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+<form action="" method="post" novalidate>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">  
+
+<h1>
+    Create the case
+</h1>
+
+<p>Give the case a name and an optional reference number.</p>
+
+https://opss-html.herokuapp.com/create-cases-add-products/what-is-the-product-category
+
+<p>Next: confirmation banner with case number. And what happens now: the user can add the product to the case as well as other information such as businesses and saftey certificates. Include a link to the case (and state that it will now appear on the users 'My cases' page).</p>
+
+
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="add-product">
+                    Enter a <abbr>PSD</abbr> product record reference number
+                </label>
+            </h1>
+
+            <div id="add-product-hint" class="govuk-hint">
+                This is the name you will give to the case.
+            </div>
+
+        </div>   spellcheck="false"             
+
+        <div class="govuk-grid-column-two-thirds">  
+            
+
+
+            <div class="govuk-form-group">
+
+                    <input class="govuk-input govuk-input--width-5"  id="add-product" name="add-product" type="text" spellcheck="false">
+                </div>                  
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+            </div>                
+
+        </div>
+    </div>                
+</form>
+
+  
+{% endblock %}
