@@ -27,7 +27,8 @@
     ul.small-links a {
         font-size: 16px;
     }
-    ul.margin-left {
+    ul.margin-left, 
+    h3.margin-left {
         margin-left: 50px; 
     }
     .ghost {
@@ -98,11 +99,16 @@
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/why-is-the-product-of-concern-error.html" target="_blank">What is the case name? - error</a>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/what-is-the-case-name-error.html" target="_blank">What is the case name? - error</a>
                         <br><span class="govuk-!-font-size-16">Only 'name' is a required field</span>.
                     </li>
                 </ul>                 
-            </li>            
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Confirmation page - case created
+                </a>
+                <br><span class="govuk-!-font-size-16">New <abbr>HTML</abbr> design for current confirmation page</span>. 
+            </li>                       
         </ol>   
         
         
@@ -131,10 +137,27 @@
                 <br><span class="govuk-!-font-size-16">Nothing added yet. Warns that no products, businesses, or assessments have been added</span>.
             </li>
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
-                <br><span class="govuk-!-font-size-16">A version showing a closed case with a timestamped product. (You can only view a timestamped product via a case page)</span>.
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - restricted view</a>
+                <br><span class="govuk-!-font-size-16">Example of case page with restricted view (+ sub case pages)</span>.
             </li>            
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team</a>
+                <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (viewing only)</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team - editable</a>
+                        <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (with editing rights)</span>.<!-- but not of the product record(s) -->
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited teams</a>
+                        <br><span class="govuk-!-font-size-16">A version showing a case with additional teams invited (with mixture of editing and viewing rights)</span>. 
+                    </li>
+                </ul>
+            </li>             
         </ol>
+
+        <h3 class="govuk-heading-s govuk-!-font-weight-regular margin-left"><abbr>OPSS</abbr> pages - updating</h3>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
             <li>
@@ -163,6 +186,16 @@
             </li>                        
         </ul>
 
+
+        <h3 class="govuk-heading-s">Closing a case - timestamped records</h3>
+
+        <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
+                <br><span class="govuk-!-font-size-16">A version showing a closed case with a timestamped product. <br>(You can only view a timestamped product record via a case page)</span>.
+            </li>
+        </ol>        
+
         <h2 class="govuk-heading-s">Cases - products pages</h2>
 
         <ol class="govuk-list govuk-list--number govuk-list--spaced">
@@ -173,7 +206,11 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-2-products" target="_blank">Case - products page - multiple products</a>
                 <br><span class="govuk-!-font-size-16">Showing a case with 3 products (all with a different ownership status)</span>.
-            </li>            
+            </li> 
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/products-2-products-safe" target="_blank">Case - products page - safe</a>
+                <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record as safe and compliant</span>.
+            </li>                        
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -247,6 +284,23 @@
                 </ul>
             </li>
             <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-confirmation" target="_blank">Product record created confirmation</a> 
+                <br><span class="govuk-!-font-size-16">To match the new case created confirmation page</span>.
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-is-safe" target="_blank">Product record - is safe</a> 
+                <br><span class="govuk-!-font-size-16">Example of product record showing a case has defined this product as being safe and compliant (as defined when a user first created a case). This will be shown in the Cases tab and a flag at the top of the page</span>.
+            </li>              
+        </ol>
+
+        <h2 class="govuk-heading-s govuk-!-font-weight-regular margin-left">Product pages area - tech debt</h2>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/" target="_blank">All cases - Search page</a>
+                <br><span class="govuk-!-font-size-16">Shows revised list/search logic for included products in results and new case names.</span>.
+            </li>
+            <li>
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-edit" target="_blank">Create a product record</a>
                 <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed</span>.  
                 
@@ -256,12 +310,9 @@
                         <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and two fields not editable</span>.  
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-confirmation" target="_blank">Product record created confirmation</a> 
-                <br><span class="govuk-!-font-size-16">To match the new case created confirmation page</span>.
-            </li>  
-        </ol>
+            </li>            
+                       
+        </ul>
 
     </div>
 </div>
@@ -271,9 +322,9 @@
 
 
 
-<hr style="margin-bottom: 80px;">
 
-<div class="govuk-grid-row">
+
+<div class="govuk-grid-row" style="display: none; ">
     <div class="govuk-grid-column-full govuk-!-padding-top-7">
         <div class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-5 govuk-!-margin-bottom-8 opss-border-all">
             <h2 class="govuk-heading-s">
