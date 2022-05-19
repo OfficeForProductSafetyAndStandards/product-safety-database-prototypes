@@ -4,15 +4,20 @@
     Case landing page - OPSS - Enquiry
 {% endblock %}
 
-
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-        <span class="govuk-caption-l">Enquiry: 2101-0009 </span>
+        <span class="govuk-caption-m">Enquiry</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-            Case
+            Case {% include "psd-revised-flow/case-ref.html" %}
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt? Harum expedita vero ea incidunt iusto? Nisi, illo tempore nemo maxime  voluptas amet esse.</p>
@@ -36,7 +41,7 @@
             Skip to the main content
         </a>
 
-        {% include "psd-revised-flow/inc_left_nav_1_opss.html" %}
+        {% include "psd-revised-flow/inc_left_nav_1_empty.html" %}
     </nav>
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
@@ -72,7 +77,9 @@
                     Enquiry
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    2101-0009
+                    2101-0009 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                        <span class="govuk-visually-hidden"> - </span>Case number 
+                    </span>
                 </dd>
             </div>
             <!--div class="govuk-summary-list__row">

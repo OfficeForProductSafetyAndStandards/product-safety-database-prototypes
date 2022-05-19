@@ -4,15 +4,20 @@
     Case landing page - Trading Stds - with warning texts
 {% endblock %}
 
-
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases"
+    }) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-        <span class="govuk-caption-l">Allegation 2101-0008 </span>
+        <span class="govuk-caption-m">Allegation</span>   <!-- Allegation 2101-0008 -->
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-            Case
+            Case {% include "psd-revised-flow/case-ref.html" %}
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt? Harum expedita vero ea incidunt iusto? Nisi, illo tempore nemo maxime  voluptas amet esse.</p>
@@ -75,12 +80,12 @@
                     Allegation   <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    2101-0008
+                    2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Case number</span>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Reference <span class="opss-numero" title="Number">&numero;</span>
+                    Reference <!--span class="opss-numero" title="Number">&numero;</span-->
                 </dt>
                 <dd class="govuk-summary-list__value">
                     12345300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading standards reference</span>

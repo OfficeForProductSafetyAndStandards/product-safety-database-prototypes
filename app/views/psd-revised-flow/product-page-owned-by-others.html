@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "products"
+        href: "#"
     }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-        <!--span class="govuk-caption-l">Product record psd-304</span-->
+        {% include "psd-revised-flow/inc_product_record_subtitle.html" %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Product <span class="govuk-!-font-weight-regular govuk-!-font-size-27 govuk-!-margin-left-2"><abbr>psd</abbr>-304</span>
         </h1>
