@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    What is the case name
+    Error: What is the case name
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,13 +13,28 @@
 
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#case-name">Enter a case name</a>
+        </li>
+        <li>
+          <a href="#case-name">The case name has already been used in an open case by your team</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   
 <form action="case-created-confirmation" method="post" novalidate>
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">  
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
                 <h1 class="govuk-label-wrapper">
                     <label class="govuk-label govuk-label--l" for="example">
                         What is the case name?
@@ -32,8 +47,13 @@
                     <span class="govuk-!-display-block govuk-!-font-size-16">The case name will be permanent and <strong>can not</strong> be edited.</span>
                 </div>
 
-                <input class="govuk-input  govuk-!-width-two-thirds" id="case-name" name="case-name" type="text" aria-describedby="case-name-hint" spellcheck="false" maxlength="45">
-                <!-- a 45 max character count has been added -->
+                <p id="case-name-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> The case name has already been used for an open case by your team
+                </p>
+
+                <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="case-name" name="case-name" type="text" aria-describedby="case-name-hint case-name-error" spellcheck="false" maxlength="45">
+                
+                <!-- A 45 max character count has been added here -->
 
             </div>
 
