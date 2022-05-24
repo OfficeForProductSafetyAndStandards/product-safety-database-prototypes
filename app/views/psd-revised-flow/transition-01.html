@@ -1,0 +1,200 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+  Transition 1
+{% endblock %}
+
+
+
+{% block content %}
+  <!--nav class="hmcts-sub-navigation">
+  <ul class="hmcts-sub-navigation__list">
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" aria-current="page" id="Overview_id" href="/cases/1903-0065">
+          Overview
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Products_id" href="/cases/1903-0065/products">
+          Products (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Businesses_id" href="/cases/1903-0065/businesses">
+          Businesses (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Images_id" href="/cases/1903-0065/images">
+          Images (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Supporting information_id" href="/cases/1903-0065/supporting-information">
+          Supporting information (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Activity_id" href="/cases/1903-0065/activity">
+          Activity
+</a>      </li>
+  </ul>
+</nav-->
+
+<div class="govuk-grid-row"><!-- **** new HTML to match the other pages **** -->
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class="govuk-caption-l">Allegation: 1903-0065</span>
+    <h1 class="govuk-heading-l">Case</h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--l">
+  </div>
+</div>
+
+<!--
+1. remove the old NAV (above)
+2. immediately inside the div.govuk-grid-row 
+3. remove the content of div.govuk-grid-column-one-third inside div.govuk-grid-column-two-thirds (and delete the empty div.govuk-grid-column-one-third)
+4. change the class div.govuk-grid-column-two-thirds to div.govuk-grid-column-three-quarters 
+5. add the new two divs and HR (see HTML) to match all the other pages, above the main div.govuk-grid-row
+6. move first two elements of content (the first span and h1) into this new div.govuk-grid-row
+7. change the h1 title from 'Overview' to 'Case'
+-->
+
+
+      <div class="govuk-grid-row govuk-!-padding-bottom-6">
+
+        <!-- **** new NAV starts **** -->
+        <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+          <a href="#page-content" class="govuk-skip-link opss-skip-link">
+              Skip to the main content
+          </a>
+  
+          <ul class="govuk-list opss-left-nav">
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Your cases</a>
+              </li>
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Team cases</a>
+              </li>
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">All cases – Search</a>
+              </li>    
+          </ul>
+                  
+          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
+          
+          <ul class="govuk-list opss-left-nav">
+              <li class="opss-left-nav__active">
+                  <a href="#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Case <span class="govuk-!-font-weight-regular">&nbsp;1903-0065</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Products <span>(1)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state">Activity</a>  
+              </li>
+              
+          </ul>
+
+        </nav>
+        <!-- **** new NAV ends **** -->
+
+
+
+        <div class="govuk-grid-column-three-quarters">
+          <!--span class="govuk-caption-l">Allegation: 1903-0065</span>
+          <h1 class="govuk-heading-l">Overview</h1-->
+
+          <p class="govuk-body-l">test – chemical exposure hazard.</p>
+
+          <h2 class="govuk-heading-m">Summary</h2>
+
+          <p class="govuk-body"><p>Product reported because it is unsafe and non-compliant.</p></p>
+
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+            <h2 class="govuk-heading-m">Product</h2>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key ">Category</dt>
+            <dd class="govuk-summary-list__value "><ul class="govuk-list"><li>Personal protective equipment (ppe)</li><li>Clothing, textiles and fashion items</li></ul></dd>
+
+              <dd class="govuk-summary-list__actions">
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key ">Product details</dt>
+            <dd class="govuk-summary-list__value ">1 product added</dd>
+
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link " href="/cases/1903-0065/products">View<span class="govuk-visually-hidden"> product details</span></a>
+              </dd>
+          </div>
+      </dl>
+
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+          <h2 class="govuk-heading-m">Risks and issues</h2>
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border app-summary-list--actions-on-own-line"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Case risk level</dt><dd class="govuk-summary-list__value">Not set</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Risk level validated</dt><dd class="govuk-summary-list__value">No</dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Risk assessments</dt><dd class="govuk-summary-list__value">No risk assessments</dd></div></dl>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+          <h2 class="govuk-heading-m">Safety and compliance</h2>
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border app-summary-list--actions-on-own-line"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Reported as</dt><dd class="govuk-summary-list__value"><p>Not provided</p></dd></div></dl>
+
+
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+          <h2 class="govuk-heading-m">Sharing and collaboration</h2>
+
+
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Case owner</dt><dd class="govuk-summary-list__value">OPSS Enforcement</dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Teams added to case</dt><dd class="govuk-summary-list__value">        <ul class="govuk-list">
+                  <li>Birmingham trading standards</li>
+                  <li>OPSS Enforcement</li>
+              </ul>
+
+      </dd><dd class="govuk-summary-list__actions"><a class="govuk-link " href="/cases/1903-0065/teams">View <span class="govuk-visually-hidden">teams added to the case</span></a></dd></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Case restriction</dt><dd class="govuk-summary-list__value">Unrestricted</dd><span class="govuk-summary-list__actions"></span></div></dl>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+          <h2 class="govuk-heading-m">About the case</h2>
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border app-summary-list--actions-on-own-line"><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Status</dt><dd class="govuk-summary-list__value">Open</dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Coronavirus related</dt><dd class="govuk-summary-list__value">Not a coronavirus related case</dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Created by</dt><dd class="govuk-summary-list__value">Nasir Khan-TS<br />Birmingham trading standards</dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Notifying country</dt><dd class="govuk-summary-list__value"></dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Date created</dt><dd class="govuk-summary-list__value">27 March 2019</dd><span class="govuk-summary-list__actions"></span></div><div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Last updated</dt><dd class="govuk-summary-list__value">6 days ago</dd><span class="govuk-summary-list__actions"></span></div></dl>
+
+            <!-- single column content moved here starts -->
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible app-!-display-mobile--only">
+
+            <h2 class="govuk-heading-m">Products (1)</h2>
+            <ul class="govuk-list">
+              <li class="govuk-!-margin-bottom-3">
+                <a class="app-block-link govuk-link govuk-!-margin-bottom-2" href="/products/117">test</a>
+
+                <div class="app-document-preview app-document-preview--small">
+                  <div class="app-document-preview__image">
+                        <img class="app-image" alt="Bottle cap" src="../public/images/extension-lead.jpg">
+            
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+            <!-- single column content moved here ends  -->
+
+        </div>
+
+          <!--div class="govuk-grid-column-one-third">
+            content was here ...
+          </div-->
+      </div>
+
+     
+{% endblock %}

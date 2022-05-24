@@ -1,0 +1,217 @@
+{% extends "layout-psd-width.html" %}
+
+{% block pageTitle %}
+    Transition 2
+{% endblock %}
+
+
+
+{% block content %}
+<!--nav class="hmcts-sub-navigation">
+  <ul class="hmcts-sub-navigation__list">
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Overview_id" href="/cases/1903-0065">
+          Overview
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" aria-current="page" id="Products_id" href="/cases/1903-0065/products">
+          Products (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Businesses_id" href="/cases/1903-0065/businesses">
+          Businesses (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Images_id" href="/cases/1903-0065/images">
+          Images (0)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Supporting information_id" href="/cases/1903-0065/supporting-information">
+          Supporting information (1)
+</a>      </li>
+      <li class="hmcts-sub-navigation__item">
+        <a class="hmcts-sub-navigation__link" id="Activity_id" href="/cases/1903-0065/activity">
+          Activity
+</a>      </li>
+  </ul>
+</nav-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class="govuk-caption-l">Allegation: 1903-0065</span>
+    <h1 class="govuk-heading-l">
+      Products
+    </h1>
+
+
+    <hr class="govuk-section-break govuk-section-break--l">
+  </div>
+</div>
+
+
+<!--
+1. remove the old NAV
+2. inside div.product-summary: immediately inside the second div.govuk-grid-row, add the new NAV element with the new navigation content
+3. inside div.product-summary: take the contents of the first div.govuk-grid-row and move it to immediately inside the div.govuk-grid-column-two-thirds  
+4. delete the now empty div.govuk-grid-row
+4. take the content of div.govuk-grid-column-one-third and move it inside div.govuk-grid-column-two-thirds at the very end 
+5. delete the now empty div.govuk-grid-column-one-third
+6. change the class div.govuk-grid-column-two-thirds to div.govuk-grid-column-three-quarters
+-->
+
+
+
+
+<div class="product-summary govuk-!-margin-top-3 govuk-!-margin-bottom-6">
+  <div class="govuk-grid-row">
+
+        <!-- **** new NAV starts **** -->
+        <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+          <a href="#page-content" class="govuk-skip-link opss-skip-link">
+              Skip to the main content
+          </a>
+  
+          <ul class="govuk-list opss-left-nav">
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Your cases</a>
+              </li>
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Team cases</a>
+              </li>
+              <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">All cases – Search</a>
+              </li>    
+          </ul>
+                  
+          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
+          
+          <ul class="govuk-list opss-left-nav">
+              <li>
+                  <a href="#page-content" class="govuk-link govuk-link--no-visited-state">Case <span class="govuk-!-font-weight-regular">&nbsp;1903-0065</span></a>
+              </li>
+              <li class="opss-left-nav__active">
+                  <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Products <span>(1)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+              </li>
+              <li>
+                  <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state">Activity</a>  
+              </li>
+              
+          </ul>
+
+        </nav>
+        <!-- **** new NAV ends **** -->    
+    
+    <!--div class="govuk-grid-column-one-third">
+        content for the left column was once here
+    </div-->
+
+    <div class="govuk-grid-column-three-quarters"><!-- this div was originally: govuk-grid-column-two-thirds -->
+
+        <!-- this was moved here starts -->
+        <!--div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds"-->
+            <h2 class="govuk-heading-m">test</h2>
+          <!--/div>
+        </div-->
+        <!-- this was moved here ends -->
+
+        <dl class="govuk-summary-list ">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Category</dt>
+              <dd class="govuk-summary-list__value ">Clothing, textiles and fashion items</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Product subcategory</dt>
+              <dd class="govuk-summary-list__value ">test</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Product authenticity</dt>
+              <dd class="govuk-summary-list__value ">Not provided</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Product marking</dt>
+              <dd class="govuk-summary-list__value ">Not provided</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Units affected</dt>
+              <dd class="govuk-summary-list__value ">Not provided</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Product brand</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Product name</dt>
+              <dd class="govuk-summary-list__value ">test</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">When placed on market</dt>
+              <dd class="govuk-summary-list__value ">Not provided</dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Barcode number</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Batch number</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Other product identifiers</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Webpage</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Description</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Country of origin</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key ">Customs code</dt>
+              <dd class="govuk-summary-list__value "></dd>
+
+            </div>
+        </dl>
+        <a class="app-block-link govuk-link govuk-!-margin-right-3" href="/products/117">View product
+          <span class="govuk-visually-hidden"> (test)</span>
+        </a>
+
+        <p class="govuk-body">No images</p>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

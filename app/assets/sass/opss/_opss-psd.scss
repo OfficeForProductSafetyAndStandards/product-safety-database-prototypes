@@ -240,6 +240,17 @@ ul.opss-radio-list {
         background-color: govuk-colour("black");
         color: govuk-colour("white");
     }
+    &.opss-tag--plain {
+        @include opss-font-size($s: 14px, $l: 1.3);
+        text-transform: none;
+        font-weight: normal;
+        color: $govuk-text-colour;
+        border: 1px solid $govuk-border-colour;
+        float: right;
+        margin-left: 0;
+        min-width: 76px;
+        text-align: center;
+    }
     &.opss-tag--covid {
         background-color: govuk-colour("pink");
         border-color: govuk-colour("pink");

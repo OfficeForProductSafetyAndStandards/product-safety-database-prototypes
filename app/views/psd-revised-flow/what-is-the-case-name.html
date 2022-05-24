@@ -1,0 +1,54 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    What is the case name
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "do-you-want-to-add-a-ref-number"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+<form action="case-created-confirmation" method="post" novalidate>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">  
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="example">
+                        What is the case name?
+                    </label>
+                </h1>
+
+                <div id="case-name-hint" class="govuk-hint govuk-!-margin-bottom-2">
+                    <span class="govuk-!-display-block govuk-!-margin-bottom-6">Give the case a short descriptive title. For example, &quot;Overheating handheld Minolta camera&quot;. </span>
+
+                    <span class="govuk-!-display-block govuk-!-font-size-16">The case name will be permanent and <strong>can not</strong> be edited.</span>
+                </div>
+
+                <input class="govuk-input  govuk-!-width-two-thirds" id="case-name" name="case-name" type="text" aria-describedby="case-name-hint" spellcheck="false" maxlength="45">
+                <!-- a 45 max character count has been added -->
+
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="govuk-button-group">
+        <button class="govuk-button">
+          Save
+        </button>
+      
+        <a class="govuk-link" href="#">Cancel</a><!-- do not create a case return to 'Your cases' page -->
+    </div>     
+
+</form>
+
+  
+{% endblock %}

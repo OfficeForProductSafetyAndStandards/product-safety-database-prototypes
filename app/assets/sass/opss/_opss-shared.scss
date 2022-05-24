@@ -21,6 +21,9 @@
 
 $std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
+/*input[type="checkbox"]:disabled, input[type="checkbox"]:disabled + label {color:  govuk-colour("mid-grey"); }
+input[type="checkbox"]:disabled + label {opacity: 1 !important; }*/
+
 /* not normalised by gds library - starts */
 figure, 
 figcaption {
@@ -735,6 +738,32 @@ dl.opss-summary-list-aside {
         dt, dd {
             @include opss-font-size($s: 16px, $l: 1.2);
             padding-bottom: govuk-spacing(0);
+        }
+    }
+    .opss-summary-list-mixed.opss-summary-list-mixed--sm-font {/* a mixed and small font version */
+        margin-bottom: govuk-spacing(4);
+
+        dt, dd {
+            @include opss-font-size($s: 16px, $l: 1.2);
+            padding-top: govuk-spacing(1);         
+            padding-bottom: govuk-spacing(1);            
+        }
+
+        .govuk-accordion__section-content & {
+            margin-bottom: govuk-spacing(7);
+
+            div:last-child {
+                dt, dd {
+                    border-bottom: none;
+                } 
+            }
+        }
+    }
+    .opss-summary-list-mixed.opss-summary-list--equal-widths {
+        div {
+            dt,  dd {
+                width: 33%;
+            }  
         }
     }
 }

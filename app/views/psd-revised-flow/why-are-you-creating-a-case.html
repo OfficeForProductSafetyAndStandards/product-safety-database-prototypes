@@ -1,0 +1,95 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Why are you creating this case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<form action="why-is-the-product-of-concern">
+  
+  <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset">
+      
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-7">
+        <h1 class="govuk-fieldset__heading">
+          Why are you creating a case?
+        </h1>
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="why-case" name="why-case" type="radio" value="unsafe"> <!--  data-aria-controls="conditional-why-case" -->
+          <label class="govuk-label govuk-radios__label" for="why-case">
+            A product is of concern
+          </label>
+        </div>
+
+        <!--div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-why-case">
+
+          <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+            <fieldset class="govuk-fieldset" aria-describedby="which-is-it-hint">
+              <legend class="govuk-visually-hidden">
+                Is it unsafe, non-compliant or both?
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-1" id="which-is-it-hint">
+                Select one or both descriptions.
+              </div>
+
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="is-unsafe" name="status" type="checkbox" value="is-unsafe">
+                  <label class="govuk-label govuk-checkboxes__label" for="is-unsafe">
+                    It is unsafe (or suspected of being)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="is-noncompliant" name="status" type="checkbox" value="is-noncompliant">
+                  <label class="govuk-label govuk-checkboxes__label" for="is-noncompliant">
+                    It is non-compliant (or suspected of being)
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>     
+
+        </div-->
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="issafe" name="why-case" type="radio" value="safe" aria-describedby="why-case-is-safe">
+          <label class="govuk-label govuk-radios__label" for="issafe">
+            A product is safe and compliant
+          </label>
+          <div id="why-case-is-safe" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            This helps other market surveillance authorities avoid testing the same product again.
+          </div>
+        </div>
+
+      </div>
+
+    </fieldset>
+
+  </div>
+
+  <div class="govuk-button-group">
+    <button class="govuk-button">
+      Continue
+    </button>
+  
+    <a class="govuk-link" href="#">Cancel</a>
+  </div> 
+
+</form>
+
+{% endblock %}
