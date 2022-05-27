@@ -1,4 +1,4 @@
-{% extends "layout-01.html" %}
+{% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
     Case 2101-0008
@@ -12,6 +12,18 @@
 {% endblock %}
 
 {% block content %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        The case information was updated
+      </h3>
+    </div>
+</div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
@@ -105,7 +117,7 @@
                         Edit<span class="govuk-visually-hidden"> the summary</span>                                
                     </a>
                 </dd>
-            </div>          
+            </div>            
             <div class="govuk-summary-list__row opss-summary-list__row--split">
                 <dt class="govuk-summary-list__key">
                     Status

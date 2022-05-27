@@ -1,0 +1,79 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+  How is the product being reported
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<form action="edit-why-is-the-product-of-concern">
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-7">
+        <h1 class="govuk-fieldset__heading">
+          How is the product being reported?
+        </h1>
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="unsafe" name="why-case" type="radio" value="unsafe" checked> 
+          <label class="govuk-label govuk-radios__label" for="unsafe">
+            As unsafe
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="non-compliant" name="why-case" type="radio" value="non-compliant"> 
+          <label class="govuk-label govuk-radios__label" for="non-compliant">
+            As non-compliant
+          </label>
+        </div> 
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="unsafe-and-non-compliant" name="why-case" type="radio" value="unsafe-and-non-compliant"> 
+          <label class="govuk-label govuk-radios__label" for="unsafe-and-non-compliant">
+            As unsafe and non-compliant
+          </label>
+        </div>         
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="issafe" name="why-case" type="radio" value="safe" aria-describedby="why-case-is-safe">
+          <label class="govuk-label govuk-radios__label" for="issafe">
+            As safe and compliant
+          </label>
+          <div id="why-case-is-safe" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+            This helps other market surveillance authorities avoid testing the same product again.
+          </div>       
+        </div>
+
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="govuk-button-group">
+    <button class="govuk-button">
+      Save and continue    <!-- "Save and continue" because of the last option (returns to the case page). But don't save 1, 2, or 3 until next page is submitted -->
+    </button>
+
+    <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a> <!-- goes back to the prev page -->
+  </div> 
+</form>
+
+{% endblock %}
+
+
+
+
+
