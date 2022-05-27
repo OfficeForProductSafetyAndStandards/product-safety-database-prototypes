@@ -1,0 +1,175 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Edit why is this product of concern
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "edit-why-are-you-creating-a-case"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form action="case-trading-stds-landing-updated" method="post" novalidate>
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="safety-hint">
+          
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          
+            <h1 class="govuk-fieldset__heading">
+              Why is the product of concern?
+            </h1>
+          
+          </legend>
+          
+        
+          <div id="safety-hint" class="govuk-hint">
+            Select one or both descriptions.
+          </div>
+        
+        
+          <div class="govuk-checkboxes govuk-!-padding-top-3" data-module="govuk-checkboxes">
+    
+                
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="safety" name="safety" type="checkbox" value="unsafeform" data-aria-controls="conditional-safety" checked disabled>
+                  <label class="govuk-label govuk-checkboxes__label" for="safety">
+                    The product is unsafe (or suspected of being)
+                  </label>
+                  
+                </div>
+                
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-safety">
+                    
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="primary-hazard">What is the primary hazard?</label>
+
+                      <select class="govuk-select" id="primary-hazard" name="primary-hazard">
+                        <option class="govuk-!-font-size-16" value=""></option>
+                        <option class="govuk-!-font-size-16" value="Asphyxiation">Asphyxiation</option>
+                        <option class="govuk-!-font-size-16" value="Burns">Burns</option>
+                        <option class="govuk-!-font-size-16" value="Chemical" selected="">Chemical</option>
+                        <option class="govuk-!-font-size-16" value="Choking">Choking</option>
+                        <option class="govuk-!-font-size-16" value="Cuts">Cuts</option>
+                        <option class="govuk-!-font-size-16" value="Damage to hearing">Damage to hearing</option>
+                        <option class="govuk-!-font-size-16" value="Damage to sight">Damage to sight</option>
+                        <option class="govuk-!-font-size-16" value="Disturbance">Disturbance</option>
+                        <option class="govuk-!-font-size-16" value="Drowning">Drowning</option>
+                        <option class="govuk-!-font-size-16" value="Electric shock">Electric shock</option>
+                        <option class="govuk-!-font-size-16" value="Electromagnetic">Electromagnetic</option>
+                        <option class="govuk-!-font-size-16" value="Energy consumption">Energy consumption</option>
+                        <option class="govuk-!-font-size-16" value="Entrapment">Entrapment</option>
+                        <option class="govuk-!-font-size-16" value="Environment">Environment</option>
+                        <option class="govuk-!-font-size-16" value="Fire">Fire</option>
+                        <option class="govuk-!-font-size-16" value="Health risk">Health risk</option>
+                        <option class="govuk-!-font-size-16" value="Incorrect measurement">Incorrect measurement</option>
+                        <option class="govuk-!-font-size-16" value="Injuries">Injuries</option>
+                        <option class="govuk-!-font-size-16" value="Microbiological">Microbiological</option>
+                        <option class="govuk-!-font-size-16" value="Security">Security</option>
+                        <option class="govuk-!-font-size-16" value="Strangulation">Strangulation</option>
+                        <option class="govuk-!-font-size-16" value="Suffocation">Suffocation</option>
+                        <option class="govuk-!-font-size-16" value="Other">Other</option>
+                      </select> 
+                    </div>
+        
+        
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1500">
+          
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="why-unsafe">
+            Why is the product unsafe?
+          </label>
+        
+          
+          
+          <div id="why-unsafe-hint" class="govuk-hint govuk-!-font-size-16">
+            If the product has been involved in an incident include this additional information.
+          </div>
+        
+        
+          <textarea class="govuk-textarea govuk-js-character-count govuk-!-width-three-quarters" id="why-unsafe" name="why-unsafe" rows="5" aria-describedby="why-unsafe-info why-unsafe-hint">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id minima nam, voluptatum architecto ea aut cupiditate, distinctio commodi facere.</textarea>
+        </div>
+        
+          <div id="why-unsafe-info" class="govuk-hint govuk-character-count__message govuk-!-font-size-16" aria-live="polite">
+          You can enter up to 1500 characters
+        </div>
+        
+        </div>
+        
+        
+        
+                  </div>
+                
+              
+            
+              
+                
+                
+                
+                
+                
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="safety-2" name="safety" type="checkbox" value="noncompliantform" data-aria-controls="conditional-safety-2" disabled>
+                  <label class="govuk-label govuk-checkboxes__label" for="safety-2">
+                The product is non-compliant (or suspected of being)
+              </label>
+                  
+                </div>
+                
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-safety-2">
+                    
+            
+        
+        
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1500">
+          
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="why-noncompliant">
+            Why is the product non-compliant?
+          </label>
+        
+        
+          <textarea class="govuk-textarea govuk-js-character-count govuk-!-width-three-quarters" id="why-noncompliant" name="why-noncompliant" rows="5" aria-describedby="why-noncompliant-info"></textarea>
+        </div>
+        
+          <div id="why-noncompliant-info" class="govuk-hint govuk-character-count__message govuk-!-font-size-16" aria-live="polite">
+          You can enter up to 1500 characters
+        </div>
+        
+        </div>
+        
+        
+                  </div>
+                
+              
+            
+          </div>
+          
+        
+        </fieldset>
+        
+        
+        </div> 
+
+        <div class="govuk-button-group">
+          <button class="govuk-button">
+            Save
+          </button>
+      
+          <a class="govuk-link govuk-link--no-visited-state" href="case-trading-stds-landing.html">Cancel</a> 
+        </div> 
+        
+        </form>
+
+    </div>
+  </div>
+{% endblock %}
