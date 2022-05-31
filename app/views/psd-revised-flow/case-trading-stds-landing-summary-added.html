@@ -1,4 +1,4 @@
-{% extends "layout-01.html" %}
+{% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
     Case 2101-0008
@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "cases"
+        href: "#"
     }) }}
 {% endblock %}
 
@@ -98,19 +98,20 @@
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key">
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                                        
-                    <!-- opss user: what is being alleged, shows here on current service -->
+                    <span class="govuk-!-font-size-16">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ad officia a incidunt repudiandae quia. Vero, exercitationem! Ipsam ab molestias est repellendus minus. Minus natus a explicabo quasi repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ad officia a incidunt repudiandae quia. Vero, exercitationem! Ipsam ab molestias est repellendus.
+                    </span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                            <a href="/psd-revised-flow/edit-summary" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the summary</span>                                
+                    <a href="/psd-revised-flow/edit-summary" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the summary</span>
                     </a>
                 </dd>
-            </div>          
+            </div>            
             <div class="govuk-summary-list__row opss-summary-list__row--split">
                 <dt class="govuk-summary-list__key">
                     Status
@@ -244,11 +245,11 @@
         
         <a href="edit-why-are-you-creating-a-case" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 govuk-!-margin-top-6 opss-float-right">
             Edit<span class="govuk-visually-hidden"> the safety and compliance</span>
-        </a>                              
+        </a>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key">
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -261,20 +262,22 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Electric shock
-                                </dd>
+                </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Hazard description
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
-                                </dd>
+                    <span class="govuk-!-font-size-16">
+                        Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
+                    </span>
+                </dd>
             </div>
         </dl>
-
+        <span class="govuk-!-font-size-16">
         <h3 id="product-info-1" class="govuk-heading-m govuk-!-margin-top-9">
-            Case specific product information
+            
         </h3>
 
         <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up liquid</h4>

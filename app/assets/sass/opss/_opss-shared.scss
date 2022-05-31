@@ -693,16 +693,24 @@ dl.opss-summary-list-aside {
         & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
     }
 
-    &.opss-summary-list-mixed--narrow-dt > div {
-        dt {
-            width: 25%;
-        }
-        dt + dd {
-            min-width: 50%;
-        }
-    }
+
 
     @include govuk-media-query($from: desktop) {
+        &.opss-summary-list-mixed--narrow-dt > div {
+            dt {
+                width: 25%;
+            }
+            dt + dd {
+                min-width: 50%;
+            }
+        }        
+
+        &.opss-summary-list-mixed--narrow-actions > div {
+            dd[class$="__actions"] {
+                width: 10%;
+            } 
+        }
+
         &.opss-summary-list-mixed--compact > div {
             dt, dd {
                 margin-top: 0; 

@@ -1,0 +1,60 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Edit the summary
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "case-trading-stds-landing-summary"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="case-trading-stds-landing-summary-added" novalidate>
+
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="800">
+                
+                <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--l govuk-!-margin-bottom-2" for="summary-text">
+                            Edit the summary
+                        </label>
+                    </h1>
+
+                    <div id="summary-text-hint" class="govuk-hint govuk-!-margin-bottom-6">
+                        You can add and edit a general summary about the case.
+                    </div>
+
+                    <textarea class="govuk-textarea govuk-js-character-count" id="summary-text" name="summary-text" rows="11" aria-describedby="summary-text-info summary-text-hint">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, repudiandae quisquam vero fuga maxime nihil iste reprehenderit fugiat neque omnis quas eum, ab doloribus sunt architecto velit quos consequuntur rem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur ex hic autem nisi architecto. Ad minus doloribus atque nemo at repellat accusamus, itaque exercitationem perferendis? Molestiae tenetur rem deserunt dicta!</textarea>
+
+                    <div id="summary-text-info" class="govuk-hint govuk-character-count__message govuk-!-font-size-16"> 
+                        You can enter up to 400 characters
+                    </div>            
+                </div>
+
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button govuk-link--no-visited-state" data-module="govuk-button">
+                Save
+                </button>
+            
+                <a class="govuk-link govuk-link--no-visited-state" href="case-trading-stds-landing.html">Cancel</a> 
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+  
+{% endblock %}
