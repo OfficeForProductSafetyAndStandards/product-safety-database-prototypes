@@ -1,0 +1,91 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Edit the units affected
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+        <form action="case-trading-stds-landing-updated" method="post" novalidate>
+            
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="units-affected-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Edit how many units are affected
+                        </h1>
+                    </legend>        
+
+                    <div id="units-affected-hint" class="govuk-hint govuk-!-margin-bottom-5">
+                            You can add and edit how many product units are affected. 
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="affected_units_status" name="product[affected_units_status]" type="radio" value="exact" aria-controls="conditional-affected_units_status" aria-expanded="false">
+                            <label class="govuk-label govuk-radios__label " for="affected_units_status">Exact number</label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-affected_units_status">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="exact_units">How many units are affected?</label>
+                                <input class="govuk-input govuk-input--width-10" id="exact_units" name="product[exact_units]" type="text">
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="affected_units_status-1" name="product[affected_units_status]" type="radio" value="approx" aria-controls="conditional-affected_units_status-1" aria-expanded="false">
+                            <label class="govuk-label govuk-radios__label " for="affected_units_status-1">Approximate number</label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-affected_units_status-1">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="approx_units">How many units are affected?</label>
+                                <input class="govuk-input govuk-input--width-10" id="approx_units" name="product[approx_units]" type="text">
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="affected_units_status-2" name="product[affected_units_status]" type="radio" value="unknown">
+                            <label class="govuk-label govuk-radios__label " for="affected_units_status-2">Unknown</label>
+                        </div>
+
+                        <div class="govuk-radios__divider">or</div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="affected_units_status-4" name="product[affected_units_status]" type="radio" value="not_relevant">
+                            <label class="govuk-label govuk-radios__label " for="affected_units_status-4">Not relevant</label>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>            
+
+            
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                Save
+                </button>
+            
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+            </div>     
+
+        </form>
+
+    </div>
+</div>
+  
+{% endblock %}

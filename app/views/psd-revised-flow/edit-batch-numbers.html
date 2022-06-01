@@ -1,0 +1,55 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Edit the batch numbers
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "case-trading-stds-landing-case-specific-x2"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+        <form action="case-trading-stds-landing-updated" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="batch-numbers">
+                        Edit the batch numbers
+                    </label>
+                </h1>
+
+                <div id="batch-numbers-hint" class="govuk-hint govuk-!-margin-bottom-5">
+                    <span class="govuk-!-display-block govuk-!-margin-bottom-2">
+                        You can add and edit batch numbers for Asda washing up liquid.
+                    </span>
+                    
+                    <span class="govuk-!-display-block govuk-!-font-size-16">
+                        Use a comma and a space to separate multiple batch numbers. For example, <br class="opss-br-desktop">37364361, 98774776<span class="govuk-visually-hidden">.</span>
+                    </span>
+                </div>
+
+                <input class="govuk-input govuk-!-width-three-quarters" id="batch-numbers" name="batch-numbers" type="text" aria-describedby="batch-numbers-hint" value="B3736-33QY, D9887-31ZY">
+            </div>    
+            
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                Save
+                </button>
+            
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
+            </div>     
+
+        </form>
+
+    </div>
+</div>
+  
+{% endblock %}
