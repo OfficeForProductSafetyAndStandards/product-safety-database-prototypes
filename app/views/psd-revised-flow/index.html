@@ -82,7 +82,7 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern.html" target="_blank">Why is the product of concern?
                 </a>
-                <br><span class="govuk-!-font-size-16">This splits the current 'Why are you reporting this product?' page over two pages. <br>If 'safe and compliant' is selected then this case <b>can only include one product record</b></span>.
+                <br><span class="govuk-!-font-size-16">This splits the current 'Why are you reporting this product?' page over two pages</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
@@ -94,12 +94,13 @@
                 </ul>                 
             </li>             
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/what-is-the-case-name.html" target="_blank">Do you want to add a reference number?</a>
-                <br><span class="govuk-!-font-size-16">A new page (with a pre-existing form element)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/do-you-want-to-add-a-ref-number.html" target="_blank">Do you want to add a reference number?</a>
+                <br><span class="govuk-!-font-size-16">A new page (with a pre-existing form element). Yes or No are required fields: "Select yes if you want to add a reference number"</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/do-you-want-to-add-a-ref-number-error.html" target="_blank">Do you want to add a reference number? - error</a>
+                        <br><span class="govuk-!-font-size-16">Error message for drop down number field</span>.
                     </li>
                 </ul>                 
             </li>            
@@ -110,14 +111,14 @@
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/what-is-the-case-name-error.html" target="_blank">What is the case name? - error</a>
-                        <br><span class="govuk-!-font-size-16">The 'name' is required field, but also it is required to be unique amongst the team's open cases. (The 2 errors illustrated would not fire at the same time).</span>.
+                        <br><span class="govuk-!-font-size-16">The 'name' is required field, but also it is required to be unique amongst the team's open cases. (The 2 errors illustrated would not fire at the same time)</span>.
                     </li>
                 </ul>                 
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-created-confirmation.html" target="_blank">Confirmation page - case created
                 </a>
-                <br><span class="govuk-!-font-size-16">New <abbr>HTML</abbr> design for current confirmation page</span>. 
+                <br><span class="govuk-!-font-size-16">New <abbr>HTML</abbr> design for current confirmation page. (No back link)</span>. 
             </li>                       
         </ol>   
         
@@ -131,7 +132,12 @@
                 <br><span class="govuk-!-font-size-16">Typical example</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                    <li>Case pages - Summary field no longer prepopulated with 'reported as' text statement. (New designs are compatible with old cases).[<i><abbr>OPSS</abbr> users still: "what is being alleged", continues to show here on current service</i>]</li>
+                    <li>
+                        'Reference' can be blank. Reference number can now be edited (don't know why users currently can't?). 'Notifying country' can be blank - if this is because of EU exit we do not need this row? 'Case risk level' link is 'Set' when not, set but changes to 'Change' once set.
+                    </li>
+                    <li>
+                        Case pages - Summary field no longer prepopulated with 'reported as' text statement. (New designs are compatible with old cases).[<i><abbr>OPSS</abbr> users still: "what is being alleged", continues to show here on current service</i>]
+                    </li>
                     <li>
                         "Reported as" now to show text, 1 of 4 variations: 1) Product reported as unsafe 2). Product reported as non-compliant 3). Product reported as unsafe and non-compliant 4). Product reported as safe and compliant
                     </li>                    
@@ -155,12 +161,27 @@
                             
                         </ul>
                     </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-reference-number.html" target="_blank">Edit the reference number</a>
+                        <br><span class="govuk-!-font-size-16">The 'Edit' link on the Reference number row (Trading standards) opens this page. (No form validation is required on the edit reference number form, as users may want to remove a number - leaving it blank and may want to incorporate letters).  <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Save</a> - returns the case page with a success banner</span>.
+                    </li>                     
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-summary.html" target="_blank">Edit the summary</a>
+                        <br><span class="govuk-!-font-size-16">The 'Edit' link on the <a href="/psd-revised-flow/case-trading-stds-landing-summary.html"class="govuk-link govuk-link--no-visited-state" target="_blank">Summery</a> row opens this page. (No form validation is required on the edit summary form).  <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Save</a> - returns the case page with a success banner</span>. 
+                        
+                        <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                            <li>
+                                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-summary-added.html" target="_blank">Case page - updated with a summary</a>
+                                <br><span class="govuk-!-font-size-16">Shows the small text summary text</span>.
+                            </li>
+                        </ul>
+                    </li>                    
 
                 </ul>                
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-different-team.html" target="_blank">Case page - visitor</a>
-                <br><span class="govuk-!-font-size-16">Different team viewing the case without owning the case or having been invited. Click 'Products' ...</span>.
+                <br><span class="govuk-!-font-size-16">Anyone (anyteam) viewing a case without owning the case or having been invited. Click 'Products' ...</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
@@ -168,11 +189,65 @@
                         <br><span class="govuk-!-font-size-16">When viewing someone else's case, and included products are owned, they do not feature links to the owner</span>.
                     </li>
                 </ul>
-            </li>            
+            </li> 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Case page - warning</a>
-                <br><span class="govuk-!-font-size-16">Nothing added yet. Warns that no products, businesses, or assessments have been added</span>.
+                <br><span class="govuk-!-font-size-16">Nothing added yet. Warns that no products, businesses, or assessments have been added. (Warning text and minor label in the Case specific product information section)</span>.
             </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-case-specific-x2.html" target="_blank">Case page - Case specific product information</a> - showing two products
+                <br><span class="govuk-!-font-size-16">Edit links on Case specific product information section have unique hidden text (to each product). The units affected row should automatically populate the database as 'Unknown' when the case is first created - as it does now (because of a pre-selected default form option). The user can change this after the case creation via the edit option. We leave the case page row visually blank, until an edit is made. We then show the values or "Unknown", or "Not relevant" if those options are ever selected as raw text (see <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-case-specific-x2.html" target="_blank">second product example</a> at bottom of page). If a number is entered, we show the number followed by the small label "Exact number", or "Approximate number" (see the <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-case-specific-x2.html" target="_blank">first product example</a> in the case specific product information area)</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-batch-numbers.html" target="_blank">Edit batch numbers page</a>
+                        <br><span class="govuk-!-font-size-16">Shows the product name in the hint text. Input is empty if no code has been added, but prepopulated if editing pre-existing entries. (No form validation required)</span>.
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-batch-numbers-no-product.html" target="_blank">Edit batch numbers page</a> - no product
+                        <br><span class="govuk-!-font-size-16">Shows hint text if no product has been added to the case yet. Input is empty if no batch numbers have been added, but prepopulated if editing a pre-existing entries. (No form validation required)</span>.
+                    </li>  
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-batch-numbers.html" target="_blank">Edit customs codes page</a>
+                        <br><span class="govuk-!-font-size-16">Shows the product name in the hint text. Input is empty if no code has been added, but prepopulated if editing pre-existing entries. (No form validation required)</span>.
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-batch-numbers-no-product.html" target="_blank">Edit customs codes page</a> - no products
+                        <br><span class="govuk-!-font-size-16">Shows hint text if no product has been added to the case yet. Input is empty if no codes have been added, but prepopulated if editing a pre-existing entries. (No form validation required)</span>.
+                    </li> 
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-units-affected.html" target="_blank">Edit units affected</a> - with product with data
+                        <br><span class="govuk-!-font-size-16">Shows the product name in the hint text. (Normal validation is required)</span>.
+                    </li> 
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-units-affected.html" target="_blank">Edit units affected</a> - with product, has data
+                        <br><span class="govuk-!-font-size-16">Shows the product name in the hint text. When editing pre-existing data a radio option is pre-selected and its data is shown in the input. (Normal validation is required)</span>.
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-units-affected-no-product.html" target="_blank">Edit units affected</a> - no product, has data
+                        <br><span class="govuk-!-font-size-16">Shows the hint text <b>without</b> product name. When editing pre-existing data a radio option is pre-selected and its data is shown in the input. (Normal validation is required)</span>.
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/edit-units-affected-blank.html" target="_blank">Edit units affected</a> - no data
+                        <br><span class="govuk-!-font-size-16">Example of when the user opens the page for the first time (using the no-product hint text). (Normal validation is required)</span>.
+                    </li> 
+                    <li>
+                        Error messages for 'Units affected' form page: For the top level (radios): "Select exact number if you know the exact number of units affected" . For the sub-level: "Enter how many units are affected"
+                    </li>                                                                                                    
+
+
+
+
+
+                    <li>
+                        <span class="govuk-!-font-size-16"><a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Save</a> returns the user back to the case page and shows the success banner</span> after the user has clicked save (even if no edits were made).
+                    </li>                                       
+                </ul> 
+            </li>               
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-new-case.html" target="_blank">Case page - newly created</a>
+                <br><span class="govuk-!-font-size-16">Shows the case page freshly created with only the standard data gained from the case creation process. ('Teams added': if one team shown there is no bullet list). ('Case updated': is blank)</span>.
+            </li>                        
             <li>
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - restricted view</a>
                 <br><span class="govuk-!-font-size-16">Example of case page with restricted view (+ sub case pages)</span>.
@@ -191,7 +266,11 @@
                         <br><span class="govuk-!-font-size-16">A version showing a case with additional teams invited (with mixture of editing and viewing rights)</span>. 
                     </li>
                 </ul>
-            </li>             
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-email-alert.html" target="_blank">Case page - email</a> - new email alert link design
+                <br><span class="govuk-!-font-size-16">There current service serves an email alert link (linking to a page for sending the email) for certain users: this page shows the new email link within the body of the page.</span>.
+            </li>                         
         </ol>
 
         <h3 class="govuk-heading-s govuk-!-font-weight-regular margin-left"><abbr>OPSS</abbr> pages - updating</h3>
@@ -297,6 +376,12 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
 
         <h2 class="govuk-heading-s">Product pages</h2>
+
+        <!--
+Morning Bruce - after thinking about the conundrum of counterfeit products for ages yesterday and mapping out how to handle them, I've come to the conclusion that we don't reference it at all in the case information, but we do on the product record (prominently); which will also show on the product tab in the case.
+We could ask a question in the case set up for clever behaviours when adding product records, but its more bloat. I think when creating a product record we simply ask if it is a counterfeit product or not (which is non-editable). Users are minded to create a separate product record for a product if it is a counterfeit version. If the case owner changes their mind on its fake status they simply remove and add the correct product record to their case.
+
+        -->
 
         <p class="govuk-body-s">"Constituent names" names to be revised.</p>
 

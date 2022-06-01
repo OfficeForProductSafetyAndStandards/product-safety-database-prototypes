@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
         text: "Back",
-        href: "cases"
+        href: "#"
     }) }}
 {% endblock %}
 
@@ -98,15 +98,16 @@
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+            <dt class="govuk-summary-list__key">
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    
+                                        
+                    <!-- opss user: what is being alleged, shows here on current service -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="/psd-revised-flow/edit-summary" class="govuk-link govuk-link--no-visited-state">
-                        Edit<span class="govuk-visually-hidden"> the summary</span>
+                            <a href="/psd-revised-flow/edit-summary" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the summary</span>                                
                     </a>
                 </dd>
             </div>            
@@ -218,23 +219,6 @@
                     </a>
                 </dd>
             </div>
-            <!--div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Risk level validated</dt>
-                <dd class="govuk-summary-list__value">No</dd>
-            </div-->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    COVID-19
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <span class="opss-tag opss-tag--covid opss-tag--lrg"><span class="govuk-visually-hidden">This case is </span>COVID-19 related</span>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the coronavirus status</span>
-                    </a>
-                </dd>
-            </div>
         </dl>
 
         <h3 id="safety" class="govuk-heading-m govuk-!-margin-top-6 opss-float-left">
@@ -243,11 +227,11 @@
         
         <a href="edit-why-are-you-creating-a-case" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 govuk-!-margin-top-6 opss-float-right">
             Edit<span class="govuk-visually-hidden"> the safety and compliance</span>
-        </a>
+        </a>                              
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                                <dt class="govuk-summary-list__key">
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -260,10 +244,10 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Electric shock
-                </dd>
+                                </dd>
             </div>
             <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key">
                     Hazard description
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -278,7 +262,9 @@
             Case specific product information
         </h3>
 
-        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up liquid</h4>
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">
+            Asda washing up liquid
+        </h4>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
@@ -289,7 +275,7 @@
                     <span class="opss-no-wrap">B3736-33QY</span>, <span class="opss-no-wrap">D9887-31ZY</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                                        <a href="edit-batch-numbers" class="govuk-link govuk-link--no-visited-state">
+                    <a href="edit-batch-numbers" class="govuk-link govuk-link--no-visited-state">
                         Edit<span class="govuk-visually-hidden"> the batch numbers for Asda washing up liquid</span>
                     </a>
                 </dd>                
@@ -320,7 +306,53 @@
                     </a>
                 </dd>                
             </div>              
-        </dl>        
+        </dl>    
+        
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">
+            Asda hand soap
+        </h4>
+
+        <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Batch numbers
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <span class="opss-no-wrap">A77394</span>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the batch numbers for Asda hand soap</span>
+                    </a>
+                </dd>                
+            </div>  
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Customs codes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <span class="opss-no-wrap">37728-799</span>, <span class="opss-no-wrap">72998-210</span>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the customs codes for Asda hand soap</span>
+                    </a>
+                </dd>                
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Units affected
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Unknown 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the units affected for Asda hand soap</span>
+                    </a>
+                </dd>                
+            </div>              
+        </dl>            
 
     </section>
 

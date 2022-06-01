@@ -16,7 +16,11 @@
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
-    {
+  {
+    text: "Select the primary hazard",
+    href: "#primary-hazard"
+  },
+  {
       text: "Enter why the product is unsafe",
       href: "#why-unsafe"
     },
@@ -30,7 +34,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="what-is-the-case-name" method="post" novalidate>
+        <form action="do-you-want-to-add-a-ref-number" method="post" novalidate>
 
 {% set unsafeformHtml %}
     {{ govukSelect({
@@ -39,11 +43,19 @@
         label: {
             text: "What is the primary hazard?"
         },
+        errorMessage: {
+          text: "Select the primary hazard"
+        },        
         items: [
+        {
+          value: "",
+          text: "",
+          selected: true
+          },
             {
             value: "hazard01",
             text: "Lorem ipsum",
-            selected: true
+            selected: false
             },
             {
             value: "hazard02",

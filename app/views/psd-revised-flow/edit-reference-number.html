@@ -1,0 +1,54 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Edit the summary
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "case-trading-stds-landing"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="case-trading-stds-landing" novalidate>
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l govuk-!-margin-bottom-2" for="investigation_complainant_reference">
+                    Edit the reference number
+                  </label>
+                </h1>
+
+                <div id="ref-number-hint" class="govuk-hint">
+                    You can add your own reference number to this case.
+                </div>
+
+                {% include "psd-revised-flow/inc_ref-number-help.html" %}
+
+                <input class="govuk-input govuk-input--width-20" id="investigation_complainant_reference" name="investigation[complainant_reference]" type="text" aria-describedby="ref-number-hint" value="12345300">
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button govuk-link--no-visited-state" data-module="govuk-button">
+                    Save
+                </button>
+            
+                <a class="govuk-link govuk-link--no-visited-state" href="case-trading-stds-landing.html">Cancel</a> 
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+  
+{% endblock %}
