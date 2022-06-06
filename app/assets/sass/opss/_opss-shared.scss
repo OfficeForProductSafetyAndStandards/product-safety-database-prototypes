@@ -693,9 +693,12 @@ dl.opss-summary-list-aside {
         & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
     }
 
-
-
     @include govuk-media-query($from: desktop) {
+        &.opss-summary-list-mixed--narrow-dt + .opss-text-align-right {
+            position: relative;
+            top: - govuk-spacing(4);  
+        }
+
         &.opss-summary-list-mixed--narrow-dt > div {
             dt {
                 width: 25%;
@@ -721,7 +724,51 @@ dl.opss-summary-list-aside {
                 color: $govuk-secondary-text-colour;
             }
         }
+
     }
+
+    &.opss-summary-list-mixed--image { 
+        /*position: relative;*/
+
+        & > div:first-child dt {
+            vertical-align: bottom; 
+            margin-bottom: govuk-spacing(3); 
+
+            & + dd {
+                padding-right: govuk-spacing(0); 
+
+                figure {
+                    width: 100%; 
+
+                    figcaption {
+                        padding-right: govuk-spacing(4); 
+                    }                    
+
+                    img {
+                        max-width: 100%;
+                    } 
+
+                    a { 
+                        display: block; 
+                        margin-bottom: govuk-spacing(3); 
+
+                        img {
+                            margin-top: -2px;
+                            margin-bottom: -2px; 
+                            border: 0;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    /*.opss-summary-list-mixed_count {
+        position: absolute;
+        top: govuk-spacing(1); 
+        left: 0; 
+    }*/
 
     .opss-grouping & {
         &.opss-summary-list-mixed--narrow-dt {
@@ -1131,5 +1178,4 @@ dd dl.opss-nested-definition-list {
         margin-right: govuk-spacing(1) - 2;
     }
 }
-
 
