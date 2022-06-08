@@ -269,8 +269,40 @@
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-email-alert.html" target="_blank">Case page - email</a> - new email alert link design
-                <br><span class="govuk-!-font-size-16">There current service serves an email alert link (linking to a page for sending the email) for certain users: this page shows the new email link within the body of the page.</span>.
-            </li>                         
+                <br><span class="govuk-!-font-size-16">There current service serves an email alert link (linking to a page for sending the email) for certain users: this page shows the new email link within the body of the page</span>.
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/images.html" target="_blank">Case page - Images</a> - shows the case images 
+                <br><span class="govuk-!-font-size-16">The Edit and Rmove links only show for users with editing rights. Tech debt: on the current 'Remove image' form page, we should include the image, as done on the current 'Edit image' form page</span>.
+            </li>             
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/businesses.html" target="_blank">Case page - Businesses</a> - shows the businesses information
+                <br><span class="govuk-!-font-size-16">Shows two business examples, with differing data or lack of</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li class="govuk-!-font-size-16">
+                        We only show/include edit links if the user has edit rights. In the sentence "To view and edit all the details about this business go to the full <u>business page</u>", we replace this with "To view all the details about this business go to the full <u>business page</u>" if the user has no edit rights.
+                    </li>                    
+                    <li class="govuk-!-font-size-16">
+                        For the case page we'll now include all (or reference all) information for the businesses featured in the case
+                    </li>
+                    <li class="govuk-!-font-size-16">
+                        When there is no information for a row, we leave it blank. (This also means not including the grey sub-text: e.g, "Registration number for incorporated businesses")
+                    </li>
+                    <li class="govuk-!-font-size-16">
+                         If there is more than one address or contact, we number them. 
+                    </li>
+                    <li>
+                        Add the HR divider tag after each business, but not after the last business.
+                    </li>
+                    <li class="govuk-!-font-size-16">
+                        Because the current business pages have a mixture of edit pages - this makes it diffcult to utilise in the cases page: The main 'Edit this business' link and the 'business page' links simply go directly to the relevant business page. The attachments and cases links also do so, but with the hash attachments or cases appended to the URL (to open the correct tab on landing). (Note "cases" is plural differs from x1 statement).
+                    </li>
+                    <li class="govuk-!-font-size-16">
+                        <b>Tech debt: </b> 1. We should capture which address is the 'Registered address' in the current business page forms. 2. The current business edit forms need the ability for the user to change the business type. 3. On the businesses pages - change "Locations" text to "Addresses" (tabs and links), and remove "Address" from "Registered office ...". 4. On Businesses page change the tab text "Full details" to "Main details". 5. Attachments seems to only be able to upload images? If this is correct we should change all references from 'Attachments' to 'Images'? 6. Move the warning text about removing a business from the case page to the form page where the user removes the business (+ advise, if business is not included in any other cases, then the business details will be lost: Darren to provide HTML snippet)
+                    </li>
+                </ul>                
+            </li>                                     
         </ol>
 
         <h3 class="govuk-heading-s govuk-!-font-weight-regular margin-left"><abbr>OPSS</abbr> pages - updating</h3>

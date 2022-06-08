@@ -171,6 +171,13 @@ body.js-enabled .opss-nojs-hide {
         margin-bottom: govuk-spacing(1);
     }
 }
+.opss-margin-top-1-mobile {
+    margin-top: govuk-spacing(4);
+
+    @include govuk-media-query($from: tablet) {
+        margin-top: govuk-spacing(1);
+    }
+}
 .opss-skip-link:focus {
     &.opss-skip-link--mb {
         margin-bottom: govuk-spacing(4) !important;
@@ -725,50 +732,74 @@ dl.opss-summary-list-aside {
             }
         }
 
+        
+
     }
 
-    &.opss-summary-list-mixed--image { 
-        /*position: relative;*/
-
-        & > div:first-child dt {
-            vertical-align: bottom; 
-            margin-bottom: govuk-spacing(3); 
-
-            & + dd {
-                padding-right: govuk-spacing(0); 
-
-                figure {
-                    width: 100%; 
-
-                    figcaption {
-                        padding-right: govuk-spacing(4); 
-                    }                    
-
-                    img {
-                        max-width: 100%;
-                    } 
-
-                    a { 
-                        display: block; 
-                        margin-bottom: govuk-spacing(3); 
-
-                        img {
-                            margin-top: -2px;
-                            margin-bottom: -2px; 
-                            border: 0;
-                        }
-                        
-                    }
+    @include govuk-media-query($from: tablet) {
+        &.opss-summary-list-mixed--image {
+            position: relative; 
+        
+            &  > div:first-child {
+                figcaption {
+                    max-width: 65%; 
+                    @include word-wrap; 
                 }
+
+                dt + dd {
+                    width: 100%;
+                }
+            }
+
+            figcaption span {
+                display: inline-block;
+                font-weight: bold; 
+                margin-right: govuk-spacing(2);
+            }             
+        
+            & > div dd.opss-summary-list-mixed_edit-image {
+                white-space: nowrap; 
+                width: 20%;
+                position: absolute;
+                right: 0;
+                text-align: right;
+                top: govuk-spacing(2); 
+                margin: 0; 
             }
         }
     }
 
-    /*.opss-summary-list-mixed_count {
-        position: absolute;
-        top: govuk-spacing(1); 
-        left: 0; 
-    }*/
+    &.opss-summary-list-mixed--image {
+    
+        & > div:first-child dt + dd {
+            padding-right: govuk-spacing(0); 
+
+            figure {
+                width: 100%; 
+
+                img {
+                    max-width: 100%;
+                } 
+
+                a { 
+                    display: block; 
+                    margin-top: govuk-spacing(3); 
+                    margin-bottom: - govuk-spacing(2); 
+
+                    img {
+                        margin-top: -2px;
+                        margin-bottom: -2px; 
+                        border: 0;
+                    }
+                    
+                }
+            }
+        }
+
+        .opss-summary-list-mixed_edit-image {
+            margin: govuk-spacing(6) 0 0 0; 
+        }       
+    }
 
     .opss-grouping & {
         &.opss-summary-list-mixed--narrow-dt {
