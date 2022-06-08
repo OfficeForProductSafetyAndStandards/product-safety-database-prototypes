@@ -171,6 +171,13 @@ body.js-enabled .opss-nojs-hide {
         margin-bottom: govuk-spacing(1);
     }
 }
+.opss-margin-top-1-mobile {
+    margin-top: govuk-spacing(4);
+
+    @include govuk-media-query($from: tablet) {
+        margin-top: govuk-spacing(1);
+    }
+}
 .opss-skip-link:focus {
     &.opss-skip-link--mb {
         margin-bottom: govuk-spacing(4) !important;
@@ -743,6 +750,12 @@ dl.opss-summary-list-aside {
                     width: 100%;
                 }
             }
+
+            figcaption span {
+                display: inline-block;
+                font-weight: bold; 
+                margin-right: govuk-spacing(2);
+            }             
         
             & > div dd.opss-summary-list-mixed_edit-image {
                 white-space: nowrap; 
@@ -763,8 +776,6 @@ dl.opss-summary-list-aside {
 
             figure {
                 width: 100%; 
-
-                /*figcaption {padding-right: govuk-spacing(4); }*/                    
 
                 img {
                     max-width: 100%;
