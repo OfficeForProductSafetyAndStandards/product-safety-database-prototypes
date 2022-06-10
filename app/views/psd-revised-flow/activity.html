@@ -4,6 +4,13 @@
     Activity
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -58,40 +65,9 @@
             </li>
             <li>
                 <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
-
-                <ul class="govuk-list">
-                    <li>
-                        <a href="#accidents" class="govuk-link govuk-link--no-visited-state">Accidents and incidents <span>(2)</span></a>
-                    </li>
-                    <li>
-                        <a href="#corrective" class="govuk-link govuk-link--no-visited-state">
-                            Corrective actions <span>(1)</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#assessment" class="govuk-link govuk-link--no-visited-state">
-                            Risk assessments <span>(2)</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#correspondence" class="govuk-link govuk-link--no-visited-state">
-                            Correspondence <span>(2)</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/#testresult" class="govuk-link govuk-link--no-visited-state">
-                            Test results <span>(1)</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#other" class="govuk-link govuk-link--no-visited-state">
-                            Other <span>(1)</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="opss-left-nav__active">
-                <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Activity</a>  
+                <a href="/psd-revised-flow/activity.html#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Activity</a>  
             </li>
         </ul>
     </nav>

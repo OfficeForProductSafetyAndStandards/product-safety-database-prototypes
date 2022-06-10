@@ -4,6 +4,13 @@
     Businesses
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -52,7 +59,7 @@
                 <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Products <span>(1)</span></a>
             </li>
             <li class="opss-left-nav__active">
-                <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Businesses <span>(2)</span></a>
+                <a href="/psd-revised-flow/businesses.html#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Businesses <span>(2)</span></a>
 
                 <ul class="govuk-list">
                     <li>
@@ -213,8 +220,8 @@
                         Attachments
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">4 file attachments<span class="govuk-visually-hidden">for Smith and Son importers</span></a>
-                        <!-- *** this hyperlink goes direct to the full business page, but appends #attachments to the URL *** -->
+                        <a href="#" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">Smith and Son importers has </span>4 file attachments</a>
+                        <!-- *** this hyperlink goes direct to the full business page, but appends #attachments to the URL to open the tab *** -->
                     </dd>
                 </div>  
                 <div class="govuk-summary-list__row">
@@ -337,7 +344,7 @@
                         Cases
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state">Included in 3 cases</a>
+                        <a href="#" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">Chemists R Us is </span>Included in 3 cases</a>
                         <!-- *** this hyperlink goes to the business pages but appends #cases to the end of the URL. Note: 'cases', plural *** -->
                     </dd>
                 </div>                                                                

@@ -4,6 +4,13 @@
     Supporting information
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
 
 
 {% block content %}
@@ -15,49 +22,17 @@
             Supporting information
         </h1>
 
-        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt? Harum expedita vero ea incidunt iusto? Nisi, illo tempore nemo maxime  voluptas amet esse.</p>
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This is the supporting information for the case.</p>
     </div>
 
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
             <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-                Add a comment
+                Add supporting information
             </a>
         </div>
     </div>
 
-        <!--ul role="menu" class="govuk-list opss-float-right-desktop opss-text-align-right">
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add an Accident or Incident
-                </a>
-            </li>
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add a Corrective action
-                </a>
-            </li>
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add a Risk assessment
-                </a>
-            </li>
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add a Correspondence
-                </a>
-            </li>
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add a Test result
-                </a>
-            </li>
-            <li role="menuitem" class="govuk-!-margin-bottom-0">
-                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
-                    Add Other
-                </a>
-            </li>
-        </ul-->
 
 </div>
 
@@ -88,7 +63,7 @@
                 <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
             </li>
             <li class="opss-left-nav__active">
-                <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Supporting information <span>(9)</span></a>
+                <a href="/psd-revised-flow/supporting-information.html#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Supporting information <span>(9)</span></a>
 
                 <ul class="govuk-list">
                     <li>
@@ -129,7 +104,128 @@
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
         
-        <p class="govuk-body">On this page 'Add' links for each of the informtion types will be inline with each section.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">The supporting information for this case</h2>
+
+        <section id="accidents" class="govuk-!-margin-bottom-9">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h3 class="govuk-heading-m">
+                        Accidents and incidents <span class="govuk-!-font-weight-regular govuk-!-font-size-24">(2)</span>
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                        <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Add<span class="govuk-visually-hidden">supporting information for an accident or incident</span>
+                        </a><!-- goes directly to the relevant form page -->
+                    </div>
+                </div>
+            </div> 
+
+            <ul class="govuk-list">
+                <li>
+
+                    <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt"><!--  opss-summary-list-mixed--sm-font -->
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            Incident
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Title
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a href="/cases/2202-0005/accident_or_incidents/14" class="govuk-link govuk-link--no-visited-state">Sunshine washing up liquid: With the supervision of an adult</a>
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Event date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            13 October 2021 <!--span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                                <span class="govuk-visually-hidden"> - </span>When the incident happened 
+                            </span-->
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Added
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            9 June 2022
+                        </dd>
+                        </div>
+                    </dl>
+
+                </li>
+                <li>
+
+                    <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            Accident
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Title
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a href="/cases/2202-0005/accident_or_incidents/13" class="govuk-link govuk-link--no-visited-state">Sunshine washing up liquid: Normal use</a>
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Event date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            22 April 2021 <!--span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                                <span class="govuk-visually-hidden"> - </span>When the accident happened 
+                            </span-->
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Added
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            6 June 2022
+                        </dd>
+                        </div>
+                    </dl>
+            
+                </li>
+            </ul>
+        </section>
+
+        <section id="corrective" class="govuk-!-margin-bottom-9">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h3 class="govuk-heading-m">
+                        Corrective actions <span class="govuk-!-font-weight-regular govuk-!-font-size-24">(1)</span>
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                        <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Add<span class="govuk-visually-hidden">supporting information for a corrective action</span>
+                        </a><!-- goes directly to the relevant form page -->
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+
+
+
 
     </section>
 

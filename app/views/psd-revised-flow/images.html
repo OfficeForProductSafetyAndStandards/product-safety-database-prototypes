@@ -4,6 +4,13 @@
     Images
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -17,7 +24,7 @@
                 </h1>
 
                 <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">
-                    These are the <span class="govuk-!-font-weight-bold">case evidence</span> images showing damage, incidents, injuries or other case evidence.
+                    These are the case evidence images showing damage, incidents, injuries or other case evidence.
                 </p>
             </div>
             <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
@@ -55,7 +62,7 @@
                 <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
             </li>
             <li class="opss-left-nav__active">
-                <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Images <span>(3)</span></a>
+                <a href="/psd-revised-flow/images.html#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Images <span>(3)</span></a>
             </li>
             <li>
                 <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
@@ -71,26 +78,37 @@
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">The case images supporting this case</h2>
 
         <section class="govuk-!-margin-bottom-9">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h3 class="govuk-heading-m">
+                        Case image 1
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Edit this image<span class="govuk-visually-hidden">: Burnt floor</span>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+
             <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--image">
-                <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Image and title
                     </dt>
                     <dd class="govuk-summary-list__value">
                         
                         <figure>
-                            <figcaption><span>1.</span> Burnt floor</figcaption>
                             <a href="../public/images/heat-stain.webp" class="govuk-link govuk-link--no-visited-state" target="_blank" title="Opens in a new tab">
                                 <img src="../public/images/heat-stain.webp">
                             </a>
+                            <figcaption>Burnt floor</figcaption>
                         </figure>
     
                     </dd>
-                    <dd class="opss-summary-list-mixed_edit-image">
-                        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset" href="#">
-                          Edit this image<span class="govuk-visually-hidden">: Burnt floor</span>
-                        </a>
-                    </dd>                    
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -124,26 +142,37 @@
         </section>
 
         <section class="govuk-!-margin-bottom-9">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h3 class="govuk-heading-m">
+                        Case image 2
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Edit this image<span class="govuk-visually-hidden">: Dead puppy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--image">
-                <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Image and title
                     </dt>
                     <dd class="govuk-summary-list__value">
                         
                         <figure>
-                            <figcaption><span class="govuk-!-margin-right-1">2.</span> Dead puppy</figcaption>
                             <a href="../public/images/kills-dogs.jpg" class="govuk-link govuk-link--no-visited-state" target="_blank" title="Opens in a new tab">
                                 <img src="../public/images/kills-dogs.jpg">
                             </a>
+                            <figcaption>Dead puppy</figcaption>                            
                         </figure>
     
                     </dd>
-                    <dd class="opss-summary-list-mixed_edit-image">
-                        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset" href="#">
-                          Edit this image<span class="govuk-visually-hidden">: Dead puppy</span>
-                        </a>
-                    </dd>                     
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -169,26 +198,37 @@
         </section>
 
         <section class="govuk-!-margin-bottom-9">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h3 class="govuk-heading-m">
+                        Case image 3
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="opss-text-align-right opss-margin-bottom-1-desktop">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Edit this image<span class="govuk-visually-hidden">: Burn on leg</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--image">
-                <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Image and title
                     </dt>
                     <dd class="govuk-summary-list__value">
                         
                         <figure>
-                            <figcaption><span class="govuk-!-margin-right-1">3.</span> Burn on leg</figcaption>
                             <a href="../public/images/burn-on-leg.jpg" class="govuk-link govuk-link--no-visited-state" target="_blank" title="Opens in a new tab">
                                 <img src="../public/images/burn-on-leg.jpg">
                             </a>
+                            <figcaption>Burn on leg</figcaption>
                         </figure>
     
                     </dd>
-                    <dd class="opss-summary-list-mixed_edit-image">
-                        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset" href="#">
-                          Edit this image<span class="govuk-visually-hidden">: Burn on leg</span>
-                        </a>
-                    </dd>                     
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
