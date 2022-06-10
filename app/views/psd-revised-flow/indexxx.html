@@ -302,7 +302,38 @@
                         <b>Tech debt: </b> 1. We should capture which address is the 'Registered address' in the current business page forms. 2. The current business edit forms need the ability for the user to change the business type. 3. On the businesses pages - change "Locations" text to "Addresses" (tabs and links), and remove "Address" from "Registered office ...". 4. On Businesses page change the tab text "Full details" to "Main details". 5. Attachments seems to only be able to upload images? If this is correct we should change all references from 'Attachments' to 'Images'? 6. Move the warning text about removing a business from the case page to the form page where the user removes the business (+ advise, if business is not included in any other cases, then the business details will be lost: Darren to provide HTML snippet)
                     </li>
                 </ul>                
-            </li>                                     
+            </li>  
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information.html" target="_blank">Case page - Supporting information</a> - shows the list of supporting info (now in blocks)
+                <br><span class="govuk-!-font-size-16">The 'Add supporting information' link goes to the current form page with the list of choices of information to add, but the individual 'Add' links go directly to the relevant blank form pages (bypassing the list of choices form page). We keep the same patterns, except 'Phone call' becomes 'Telephone' and we add 'type' to 'Test results' and 'Other'. (For 'Other' see below). Each individual list is ordered by the Added date, with newest at the top. The left nav has jump-to links 'jumping' to each section. The link in each 'title' section opens the legacy pages for each item (from which the user can utilise any editing options)<sup>*</sup>. We remove the sorting options</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li class="govuk-!-font-size-16">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-empty.html" target="_blank">Case page - Supporting information blank</a> - shows the page/<abbr>HTML</abbr> without any information
+                    </li>                    
+                    <li class="govuk-!-font-size-16">
+                        <sup>*</sup>New behaviour change. Everytime a user adds or edits an item via a legacy page, the user should be instantly returned to the Supporing information page (with a <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Success banner</a> stating: "The supporting information has been added to the case") and not to the base information page for that item, which is currently the behaviour (except for one of the info types?).
+                    </li> 
+                    <li>
+                        On the current form page which shows the list of the different types of supporing information to add, we need to make some changes: 1. Move 'Other' up to the bottom of the main list. 2. Move 'Image' to the now vacated place after the OR (now at the very bottom). 3. Change the label "Image" to "Case image". 4. Remove the "Comment" option. 
+                    </li>
+                    <li>
+                        On the current form page which shows the list of the different types of supporing information to add, the 'Other' option and its form only allows the images to be uploaded? Can't upload PDFs, Word Docs, or text files. If this is correct, we remove this 'Other' option - this is the simplest option (and remove 'Other' from left nav and new page design). [Otherwise we need to allow other file types and detect if it is an image being uploaded or not - and redirect to either a standalone image file page with editing options, etc, or a general file page]. I recommend for now we simply remove this 'Other' option (as it seems you can only add images and they currently default to the case images, which is unacceptable).
+                    </li>
+                    <li>
+                        In the new Supporting information page we use the new label "Event date". Every instance throughout the related add and edit pages for various informations we change "Date of action" to "Event date" (and we may add hint text: For example, when was a document issued.)
+                    </li>                    
+                    <li>
+                        On the current 'Add comment' form we need to add a Hint text advising the user that the comment will only appear within the Activity timeline (as is the current behaviour).
+                    </li>
+                    <li>
+                        <span class="govuk-!-font-size-16">
+                            Note: error messages not working correctly (summary links) on Correspondence form page and Test results form page.
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            
         </ol>
 
         <h3 class="govuk-heading-s govuk-!-font-weight-regular margin-left"><abbr>OPSS</abbr> pages - updating</h3>
