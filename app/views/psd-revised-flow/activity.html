@@ -4,6 +4,13 @@
     Activity
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -16,7 +23,9 @@
                     Activity
                 </h1>
 
-                <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">Initially the same as the current page ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sunt?</p>
+                <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">
+                    Initially the same as the current page.
+                </p>
             </div>
             <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
                 <div class="opss-text-align-right">
@@ -30,7 +39,44 @@
     </div>
 </div>
 
+<div class="govuk-grid-row">
+    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
 
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
 
+        {% include "psd-revised-flow/inc_left_nav_top-part-only.html" %}      
+
+        <ul class="govuk-list opss-left-nav">
+            <li>
+                <a href="/psd-revised-flow/case-trading-stds-landing.html" class="govuk-link govuk-link--no-visited-state">
+                    Case <span class="govuk-!-font-weight-regular">&nbsp;2101-0008</span>
+                </a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Products <span>(1)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
+            </li>
+            <li>
+                <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+            </li>
+            <li class="opss-left-nav__active">
+                <a href="/psd-revised-flow/activity.html#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Activity</a>  
+            </li>
+        </ul>
+    </nav>
+
+    <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
+        
+        <p class="govuk-body">content here ...</p>
+
+    </section>
+</div>
 
 {% endblock %}
