@@ -362,75 +362,6 @@ ul.opss-radio-list {
         }
     }
 }
-/*********************************************************************/
-
-/*
-.opss-left-nav {
-    padding: 0;
-
-    li {
-        margin-bottom: 0;
-        padding: 8px 0 5px 0;
-        @include opss-font-size($s: 17px, $l: 1.2);
-
-        a span {
-            font-size: 90%;
-        }
-
-        ul {
-            padding-left: govuk-spacing(4);
-            margin-bottom: 0;
-
-            li {
-                padding-bottom: 0;
-                @include opss-font-size($s: 16px, $l: 1.2);
-
-                &:before {
-                    content: "—";
-                    margin-left: - govuk-spacing(4);
-                    color: $govuk-secondary-text-colour;
-                }
-            }
-        }
-
-        a {
-            text-decoration: none !important;
-            text-underline-offset: 0.1em;
-
-            &:hover {
-                text-decoration: underline !important;
-                text-decoration-thickness: 0.2em !important;
-                text-decoration-thickness: 3px !important;
-                -webkit-text-decoration-skip-ink: none;
-                text-decoration-skip-ink: none;
-                -webkit-text-decoration-skip: none;
-                text-decoration-skip: none;
-            }
-
-        }
-    }
-
-    & > li:first-child {
-        padding-top: 5px;
-    }
-
-    .opss-left-nav__active {
-        ul {
-            padding-left: govuk-spacing(6);
-        }
-
-        & > a {
-            font-weight: bold;
-            margin-left: govuk-spacing(2);
-        }
-
-        display: block;
-        margin-left: - govuk-spacing(2) - 4;
-        border-left: 4px solid $govuk-brand-colour;
-
-    }
-}
-*/
 
 @include govuk-media-query($from: desktop) {
     .opss-tabs {
@@ -469,3 +400,19 @@ ul.opss-radio-list {
 
 }
 */
+
+.opss-timeline img {
+    max-width: 100%;;
+}
+
+section[data-info-number] {
+    margin-left: - govuk-spacing(4);
+    margin-right: - govuk-spacing(4);  
+} 
+section.opss-border-all[data-info-number] {
+    margin-bottom: govuk-spacing(8) !important; 
+}    
+section:not(.opss-border-all)[data-info-number="0"] {
+    margin-bottom: govuk-spacing(6) !important; 
+}
+
