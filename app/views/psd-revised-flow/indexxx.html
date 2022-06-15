@@ -119,7 +119,10 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-created-confirmation.html" target="_blank">Confirmation page - case created
                 </a>
                 <br><span class="govuk-!-font-size-16">New <abbr>HTML</abbr> design for current confirmation page. (No back link)</span>. 
-            </li>                       
+            </li>
+            <li>
+                Confirm the 'Create a case' links on the 3 cases pages <b>and</b> the 'Create a case' button on the Home page are correctly pointing to the new journey (for TSOs).
+            </li>
         </ol>   
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
@@ -133,7 +136,7 @@
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        'Reference' can be blank. Reference number can now be edited (don't know why users currently can't?). 'Notifying country' can be blank - if this is because of EU exit we do not need this row? 'Case risk level' link is 'Set' when not, set but changes to 'Change' once set.
+                        'Reference' can be blank. 'Case risk level' link is 'Set' when not, set but changes to 'Change' once set.
                     </li>
                     <li>
                         Case pages - Summary field no longer prepopulated with 'reported as' text statement. (New designs are compatible with old cases).[<i><abbr>OPSS</abbr> users still: "what is being alleged", continues to show here on current service</i>]
@@ -158,6 +161,9 @@
                                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Success - Case information updated</a>
                                 <br><span class="govuk-!-font-size-16">This simply maintains the current functionality with a generic confirmation statement</span>.
                             </li>
+                            <li>
+                                The 'Notifying country' row, should only be inserted and included for <abbr>OPSS</abbr> users. (If there is no value we include the row but with a blank value).
+                            </li>                            
                             
                         </ul>
                     </li>
@@ -235,14 +241,69 @@
                         Error messages for 'Units affected' form page: For the top level (radios): "Select exact number if you know the exact number of units affected" . For the sub-level: "Enter how many units are affected"
                     </li>                                                                                                    
 
-
-
-
-
                     <li>
                         <span class="govuk-!-font-size-16"><a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Save</a> returns the user back to the case page and shows the success banner</span> after the user has clicked save (even if no edits were made).
                     </li>                                       
                 </ul> 
+
+                <h3 class="govuk-heading-s margin-left">Updates to the current Add/Edit product page</h3>
+                
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        We add a "<a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/all-products">Create a product record</a>" link to <u>all three</u> Products pages (Your, Team, All). 
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/create-a-product-record-edit.html" target="_blank">Edit a product record</a> - updated version of the current form page.
+                        <br><span class="govuk-!-font-size-16">This is the legacy/current single page for editing a product page - with some changes. There are two live versions - the Edit and the Add version of the same page (with the only difference involving the top title section). The changes we are making to <b>both</b> page versions are: 
+
+                            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                                <li>
+                                    In the Product category hint text, remove the Covid-19 hint text and the aria-describedby attribute from the select list. (Bruce, do we remove PPE and Hand sanitiser product categories?)
+                                </li>
+                                <li>
+                                    Remove the 'How many units are affected?' form section and replace with new units affected advice text section (aside)  
+                                </li>
+                                <li>
+                                    Remove the 'Batch number' form section and replace with new batch numbers advice text section (aside)
+                                </li>
+                                <li>
+                                    Remove the 'Customs code' form section and replace with new customs codes advice text section (aside)
+                                </li>
+                                <li>
+                                    Change the text on "Save product" button to "Save"
+                                </li>
+                                <li>
+                                    In the "Description of product" hint text: change "You don't need to include"... to, "Do not include"...  
+                                </li>  
+                                <li>
+                                    Remove related error messages for the form elements now removed from this page. 
+                                </li>
+                            </ul> 
+
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/create-a-product-record-add.html" target="_blank">Add a product record</a> - additional changes for the 'add' version.
+                        <br><span class="govuk-!-font-size-16">The additional changes we are making to the current add a product page are: 
+
+                            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                                <li>
+                                    Remove top Allegation title (above the H1)
+                                </li>
+                                <li>    
+                                    Change the H1 text to 'Create a product record' and add the margin class
+                                </li>
+                                <li>
+                                    Remove the H2 (that follows the H1)
+                                </li>
+                                <li>
+                                    Add the new text (and its <abbr>HTML</abbr>), below the H1
+                                </li>
+                            </ul> 
+
+                            <p class="govuk-body-s">These 2 pages will eventually be replaced.</p>
+                    </li>                    
+                </ul> 
+
             </li>               
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-new-case.html" target="_blank">Case page - newly created</a>
@@ -305,20 +366,20 @@
             </li>  
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information.html" target="_blank">Case page - Supporting information</a> - shows the list of supporting info (now in blocks)
-                <br><span class="govuk-!-font-size-16">The 'Add supporting information' link goes to the current form page with the list of choices of information to add, but the individual 'Add' links go directly to the relevant blank form pages (bypassing the list of choices form page). We keep the same patterns, except 'Phone call' becomes 'Telephone' and we add 'type' to 'Test results' and 'Other'. (For 'Other' see below). Each individual list is ordered by the Added date, with newest at the top. The left nav has jump-to links 'jumping' to each section. The link in each 'title' section opens the legacy pages for each item (from which the user can utilise any editing options)<sup>*</sup>. We remove the sorting options</span>.
+                <br><span class="govuk-!-font-size-16">The 'Add supporting information' link goes to the current form page with the list of choices of information to add, but the individual 'Add' links go directly to the relevant blank form pages (bypassing the list of choices form page). We keep the same patterns, except 'Phone call' becomes 'Telephone' and we add 'type' to 'Test results' and 'Other'. (For 'Other' see below). Each individual list is ordered by the Added date, with newest at the top. The left nav has jump-to links 'jumping' to each section. We remove the sorting options. The link in each 'title' section opens the legacy pages for each item (from which the user can utilise any editing options)<sup>*</sup></span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li class="govuk-!-font-size-16">
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-empty.html" target="_blank">Case page - Supporting information blank</a> - shows the page/<abbr>HTML</abbr> without any information
                     </li>                    
                     <li class="govuk-!-font-size-16">
-                        <sup>*</sup>New behaviour change. Everytime a user adds or edits an item via a legacy page, the user should be instantly returned to the Supporing information page (with a <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Success banner</a> stating: "The supporting information has been added to the case") and not to the base information page for that item, which is currently the behaviour (except for one of the info types?).
+                        <sup>*</sup>New behaviour change. Everytime a user adds or edits an item via any legacy page, the user should be instantly returned to the Supporting information page (with a <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-updated.html" target="_blank">Success banner</a> stating: "The supporting information has been added to the case") and not to the base information page for that item, which is the current behaviour (except for one of the info types, which is a current anomaly?).
                     </li> 
                     <li>
-                        On the current form page which shows the list of the different types of supporing information to add, we need to make some changes: 1. Move 'Other' up to the bottom of the main list. 2. Move 'Image' to the now vacated place after the OR (now at the very bottom). 3. Change the label "Image" to "Case image". 4. Remove the "Comment" option. 
+                        On the current form page which shows the list of the different types of supporting information to add, we need to make some changes: 1. Move 'Other' up to the bottom of the main list. 2. Move 'Image' to the now vacated place after the OR (now at the very bottom). 3. Change the label "Image" to "Case image". 4. Remove the "Comment" option. 
                     </li>
                     <li>
-                        On the current form page which shows the list of the different types of supporing information to add, the 'Other' option and its form only allows the images to be uploaded? Can't upload PDFs, Word Docs, or text files. If this is correct, we remove this 'Other' option - this is the simplest option (and remove 'Other' from left nav and new page design). [Otherwise we need to allow other file types and detect if it is an image being uploaded or not - and redirect to either a standalone image file page with editing options, etc, or a general file page]. I recommend for now we simply remove this 'Other' option (as it seems you can only add images and they currently default to the case images, which is unacceptable).
+                        On the current form page which shows the list of the different types of supporting information to add, the 'Other' option and its form only allows images to be uploaded. <span style="text-decoration: line-through;">Can't upload PDFs, Word Docs, or text files. If this is correct, we remove this 'Other' option - this is the simplest option (and remove 'Other' from left nav and new page design). [Otherwise we need to allow other file types and detect if it is an image being uploaded or not - and redirect to either a standalone image file page with editing options, etc, or a general file page]. I recommend for now we simply remove this 'Other' option (as it seems you can only add images and they currently default to the case images, which is unacceptable).</span> Agreed with Bruce: 1. We remove 'Other' from the list of info types form. 2. We remove the 'Other' section from the 'Supporting information' page (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. <b>There may well not be any, as 'other' seems to only default entries to the case images?</b>). 3. We remove the 'Other' link from the left hand nav (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. But although the total count for supporting information could include an 'other' tally on legacy cases, we could drop it from the left nav if this proved excessively fiddly). ... Darren to update designs (by removing other).
                     </li>
                     <li>
                         In the new Supporting information page we use the new label "Event date". Every instance throughout the related add and edit pages for various informations we change "Date of action" to "Event date" (and we may add hint text: For example, when was a document issued.)
@@ -333,17 +394,24 @@
                     </li>
                 </ul>
             </li>
-            
+            <li>
+                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/activity.html" target="_blank">Case page - Activity</a> - recycles the current <abbr>HTML</abbr> for the activity list
+                <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list)</span>.
+            </li>
+
         </ol>
 
-        <h3 class="govuk-heading-s govuk-!-font-weight-regular margin-left"><abbr>OPSS</abbr> pages - updating</h3>
+        <h3 class="govuk-heading-s govuk-!-font-weight-regular"><abbr>OPSS</abbr> pages - updating</h3>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing.html" target="_blank">
                     Case page - OPSS
                 </a>
-                <br><span class="govuk-!-font-size-16">Allergation - with contact info</span>.
+                <br><span class="govuk-!-font-size-16">Allergation - with contact info. (The 'Notifying country' row, is inserted and included for <abbr>OPSS</abbr> users)</span>.
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-opss-landing-team-not-added-to-case.html" target="_blank">
@@ -389,7 +457,10 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/products-2-products-safe" target="_blank">Case - products page - safe</a>
                 <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record as safe and compliant</span>.
-            </li>                        
+            </li>  
+            <li>
+                Note: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search).
+            </li>                       
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -415,21 +486,22 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
                     Case - product page - is this your product?  
                 </a><sup>*</sup>
-                <br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it.  This example shows a 'no owner' message</span>. <!-- Yes = saves (adds the product). No = return to the previous page 'add a product'. -->
+                <!--br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it.  This example shows a 'no owner' message</span>.--> <!-- Yes = saves (adds the product). No = return to the previous page 'add a product'. -->
 
-                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                <!--ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-owned.html" target="_blank">Case - product page - is this your product? (owned)</a><sup>*</sup>
                         <br><span class="govuk-!-font-size-16">If the product record is owned - there is no additional message.</span>      
                     </li> 
-                </ul>
+                </ul-->
             </li> 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-added" target="_blank">
                     Case - product page - product was added 
                 </a>
                 <br><span class="govuk-!-font-size-16">Confirmation the the product record was added. (No back link)</span>.
-            </li>                                                
+            </li>
+
                        
         </ul>  
 
