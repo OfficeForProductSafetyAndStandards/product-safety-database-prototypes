@@ -314,17 +314,13 @@
                 <br><span class="govuk-!-font-size-16">Shows a case which the user/team member has restricted: if the case is restricted we use the highlight tag (<abbr>CSS</abbr>) design (similar to the Serious risk tag). Use plain text for other status</span>.
             </li>            
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team</a>
-                <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (viewing only)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow//case-trading-stds-landing-different-team" target="_blank">Case page - with invited team - viewable</a>
+                <br><span class="govuk-!-font-size-16">A version showing a case with another team (Watford) adding (but with viewing rights only). Edit and add links removed and the main home page action bar has gone</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team - editable</a>
-                        <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (with editing rights)</span>.<!-- but not of the product record(s) -->
-                    </li>
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited teams</a>
-                        <br><span class="govuk-!-font-size-16">A version showing a case with additional teams invited (with mixture of editing and viewing rights)</span>. 
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-invited-team-with-editing" target="_blank">Case page - with invited team - editable</a>
+                        <br><span class="govuk-!-font-size-16">A version showing a case with another team (Watford) invited (but with editing rights). But they only have editing rights for the case (not any product records the case owner might also have - click the products menu link, to view)</span>.<!-- but not of the product record(s) -->
                     </li>
                 </ul>
             </li>
@@ -377,9 +373,6 @@
                     </li> 
                     <li>
                         On the current form page which shows the list of the different types of supporting information to add, we need to make some changes: 1. Move 'Other' up to the bottom of the main list. 2. Move 'Image' to the now vacated place after the OR (now at the very bottom). 3. Change the label "Image" to "Case image". 4. Remove the "Comment" option. 
-                    </li>
-                    <li>
-                        On the current form page which shows the list of the different types of supporting information to add, the 'Other' option and its form only allows images to be uploaded. <span style="text-decoration: line-through;">Can't upload PDFs, Word Docs, or text files. If this is correct, we remove this 'Other' option - this is the simplest option (and remove 'Other' from left nav and new page design). [Otherwise we need to allow other file types and detect if it is an image being uploaded or not - and redirect to either a standalone image file page with editing options, etc, or a general file page]. I recommend for now we simply remove this 'Other' option (as it seems you can only add images and they currently default to the case images, which is unacceptable).</span> Agreed with Bruce: 1. We remove 'Other' from the list of info types form. 2. We remove the 'Other' section from the 'Supporting information' page (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. <b>There may well not be any, as 'other' seems to only default entries to the case images?</b>). 3. We remove the 'Other' link from the left hand nav (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. But although the total count for supporting information could include an 'other' tally on legacy cases, we could drop it from the left nav if this proved excessively fiddly). ... Darren to update designs (by removing other).
                     </li>
                     <li>
                         In the new Supporting information page we use the new label "Event date". Every instance throughout the related add and edit pages for various informations we change "Date of action" to "Event date" (and we may add hint text: For example, when was a document issued.)

@@ -1,0 +1,18 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Products
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "cases"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+{% include "psd-revised-flow/inc_products_pg_content_yorkshire-owner.html" %}
+
+{% endblock %}
