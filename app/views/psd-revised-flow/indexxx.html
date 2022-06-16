@@ -310,8 +310,8 @@
                 <br><span class="govuk-!-font-size-16">Shows the case page freshly created with only the standard data gained from the case creation process. ('Teams added': if one team shown there is no bullet list). ('Case updated': is blank)</span>.
             </li>                        
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - restricted view</a>
-                <br><span class="govuk-!-font-size-16">Example of case page with restricted view (+ sub case pages)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-restricted.html" target="_blank">Case page - restricted</a>
+                <br><span class="govuk-!-font-size-16">Shows a case which the user/team member has restricted: if the case is restricted we use the highlight tag (<abbr>CSS</abbr>) design (similar to the Serious risk tag). Use plain text for other status</span>.
             </li>            
             <li>
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team</a>
@@ -394,13 +394,16 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
-            </li>
+
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/activity.html" target="_blank">Case page - Activity</a> - recycles the current <abbr>HTML</abbr> for the activity list
                 <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list)</span>.
             </li>
+
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - Help</a>
+                <br><span class="govuk-!-font-size-16">A help page explaining how to create a case (with Help link appended to the bottom of the new case left nav)</span>.
+            </li>            
 
         </ol>
 
@@ -563,8 +566,15 @@
                         <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and two fields not editable</span>.  
                     </li>
                 </ul>
-            </li>            
-                       
+            </li> 
+            <li class="govuk-!-font-size-16">
+                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
+            </li>
+            <li class="govuk-!-font-size-16">
+                On the form page for adding a comment - we should add some hint text advising that the comment will appear within the Activity timeline (particularly useful for when the user 'Adds' a comment from the home page).
+            </li>
+
+            
         </ul>
 
     </div>
