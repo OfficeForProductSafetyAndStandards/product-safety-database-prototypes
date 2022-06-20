@@ -258,7 +258,10 @@
 
                             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                                 <li>
-                                    In the Product category hint text, remove the Covid-19 hint text and the aria-describedby attribute from the select list. (Bruce, do we remove PPE and Hand sanitiser product categories?)
+                                    In the Product category hint text, remove the Covid-19 hint text and the aria-describedby attribute from the select list. (Bruce, do we remove <abbr>PPE</abbr> and Hand sanitiser product categories?)
+                                </li>
+                                <li>
+                                    <b>Note</b>: On my prototypes of these pages, I haven't included the javascript auto-complete on the "Product category", or "Country of origin", but these can remain
                                 </li>
                                 <li>
                                     Remove the 'How many units are affected?' form section and replace with new units affected advice text section (aside)  
@@ -481,7 +484,16 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
                     Case - product page - is this your product?  
-                </a><sup>*</sup>
+                </a>
+                <br><span class="govuk-!-font-size-16">Only include one (the default) product image</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">Case - product page - is this your product? (Is counterfeit)</a>
+                        <br><span class="govuk-!-font-size-16">If the product records records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
+                    </li> 
+                </ul>
+
                 <!--br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it.  This example shows a 'no owner' message</span>.--> <!-- Yes = saves (adds the product). No = return to the previous page 'add a product'. -->
 
                 <!--ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -501,7 +513,7 @@
                        
         </ul>  
 
-        <p class="govuk-body-s"><sup>*</sup> Model number may need to be removed depending upon 'create a product' flow.</p>
+        
         
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
