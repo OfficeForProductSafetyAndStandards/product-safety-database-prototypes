@@ -250,7 +250,7 @@
                 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        We add a "<a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/all-products">Create a product record</a>" link to <u>all three</u> Products pages (Your, Team, All). 
+                        We add a "<a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/all-products" target="_blank">Create a product record</a>" link to <u>all three</u> Products pages (Your, Team, All). 
                     </li>
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/create-a-product-record-edit.html" target="_blank">Edit a product record</a> - updated version of the current form page.
@@ -258,7 +258,10 @@
 
                             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                                 <li>
-                                    In the Product category hint text, remove the Covid-19 hint text and the aria-describedby attribute from the select list. (Bruce, do we remove PPE and Hand sanitiser product categories?)
+                                    In the Product category hint text, remove the Covid-19 hint text and the aria-describedby attribute from the select list. (Bruce, do we remove <abbr>PPE</abbr> and Hand sanitiser product categories?)
+                                </li>
+                                <li>
+                                    <b>Note</b>: On my prototypes of these pages, I haven't included the javascript auto-complete on the "Product category", or "Country of origin", but these can remain
                                 </li>
                                 <li>
                                     Remove the 'How many units are affected?' form section and replace with new units affected advice text section (aside)  
@@ -310,21 +313,17 @@
                 <br><span class="govuk-!-font-size-16">Shows the case page freshly created with only the standard data gained from the case creation process. ('Teams added': if one team shown there is no bullet list). ('Case updated': is blank)</span>.
             </li>                        
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - restricted view</a>
-                <br><span class="govuk-!-font-size-16">Example of case page with restricted view (+ sub case pages)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-restricted.html" target="_blank">Case page - restricted</a>
+                <br><span class="govuk-!-font-size-16">Shows a case which the user/team member has restricted: if the case is restricted we use the highlight tag (<abbr>CSS</abbr>) design (similar to the Serious risk tag). Use plain text for other status</span>.
             </li>            
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team</a>
-                <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (viewing only)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow//case-trading-stds-landing-different-team" target="_blank">Case page - with invited team - viewable</a>
+                <br><span class="govuk-!-font-size-16">A version showing a case with another team (Watford) adding (but with viewing rights only). Edit and add links removed and the main home page action bar has gone</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited team - editable</a>
-                        <br><span class="govuk-!-font-size-16">A version showing a case with another team invited (with editing rights)</span>.<!-- but not of the product record(s) -->
-                    </li>
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page - with invited teams</a>
-                        <br><span class="govuk-!-font-size-16">A version showing a case with additional teams invited (with mixture of editing and viewing rights)</span>. 
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-invited-team-with-editing" target="_blank">Case page - with invited team - editable</a>
+                        <br><span class="govuk-!-font-size-16">A version showing a case with another team (Watford) invited (but with editing rights). But they only have editing rights for the case (not any product records the case owner might also have - click the products menu link, to view)</span>.<!-- but not of the product record(s) -->
                     </li>
                 </ul>
             </li>
@@ -370,6 +369,10 @@
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li class="govuk-!-font-size-16">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-other.html" target="_blank">Case page - Supporting information with Other info</a> - shows the page/<abbr>HTML</abbr> with 'Other' documents
+                        <br><span class="govuk-!-font-size-16">If a case (which will be legacy/closed cases) has any documents uploaded via the previous 'Other' option - which are NOT images - then we simply list them in their own section at the foot of the page. Their hyperlinks are direct downloads - as currently demonstrated in current fuctionality - (but note 'download' attribute on this prototype). No need for a quanity count in the header, an 'Add' link, or a link in the left-nav, this is to service old cases.
+                    </li>                     
+                    <li class="govuk-!-font-size-16">
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-empty.html" target="_blank">Case page - Supporting information blank</a> - shows the page/<abbr>HTML</abbr> without any information
                     </li>                    
                     <li class="govuk-!-font-size-16">
@@ -377,9 +380,6 @@
                     </li> 
                     <li>
                         On the current form page which shows the list of the different types of supporting information to add, we need to make some changes: 1. Move 'Other' up to the bottom of the main list. 2. Move 'Image' to the now vacated place after the OR (now at the very bottom). 3. Change the label "Image" to "Case image". 4. Remove the "Comment" option. 
-                    </li>
-                    <li>
-                        On the current form page which shows the list of the different types of supporting information to add, the 'Other' option and its form only allows images to be uploaded. <span style="text-decoration: line-through;">Can't upload PDFs, Word Docs, or text files. If this is correct, we remove this 'Other' option - this is the simplest option (and remove 'Other' from left nav and new page design). [Otherwise we need to allow other file types and detect if it is an image being uploaded or not - and redirect to either a standalone image file page with editing options, etc, or a general file page]. I recommend for now we simply remove this 'Other' option (as it seems you can only add images and they currently default to the case images, which is unacceptable).</span> Agreed with Bruce: 1. We remove 'Other' from the list of info types form. 2. We remove the 'Other' section from the 'Supporting information' page (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. <b>There may well not be any, as 'other' seems to only default entries to the case images?</b>). 3. We remove the 'Other' link from the left hand nav (but keep it - display it - for legacy and closed cases which have an entry for 'Other'. But although the total count for supporting information could include an 'other' tally on legacy cases, we could drop it from the left nav if this proved excessively fiddly). ... Darren to update designs (by removing other).
                     </li>
                     <li>
                         In the new Supporting information page we use the new label "Event date". Every instance throughout the related add and edit pages for various informations we change "Date of action" to "Event date" (and we may add hint text: For example, when was a document issued.)
@@ -394,13 +394,16 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
-            </li>
+
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/activity.html" target="_blank">Case page - Activity</a> - recycles the current <abbr>HTML</abbr> for the activity list
                 <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list)</span>.
             </li>
+
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - Help</a>
+                <br><span class="govuk-!-font-size-16">A help page explaining how to create a case (with Help link appended to the bottom of the new case left nav)</span>.
+            </li>            
 
         </ol>
 
@@ -438,8 +441,15 @@
 
         <ol class="govuk-list govuk-list--number govuk-list--spaced">
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
                 <br><span class="govuk-!-font-size-16">A version showing a closed case with a timestamped product. <br>(You can only view a timestamped product record via a case page)</span>.
+                <br><span class="govuk-!-font-size-16">All edit (add/edit/change/set, etc) options removed through the entire case (including supporting pages - not exampled in this prototype), except for the two 'Re-open' links on the case landing page. If a case is closed, the status row uses a black tag highlight block to display 'Case closed'. The date the case was closed is shown next to the black tag (we record the date cases are closed). "Add a product to the case" and all equivalent links (top right, on all the related case pages) are removed. The statement below the main H1 title is changed to "This case is closed". 
+                    <br><br>  
+                    The product record included is now a "timestamped" version and so no edit links or links to the full product page are included (which is demonstrated via the Products link). The <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-timestamped" target="_blank">Products page now uses an alternative text</a> with the <abbr>PSD</abbr> reference number and a new <abbr>PSD</abbr> ref number, which here appends a "now" timestamp (as like the javascript funciton date.now) to give the record a unique reference. (The case closed date is included in this text). Opening and closing the case does not update the product record - it can't change - only a different product record that might have been added while the case was re-opened can be affected. No edits of any kind can now be made to this timestamped version of the product record and it can never be removed from the case, even if the case is re-opened (so the remove product link is also removed). This product record, by default, will not be included in other cases, so the Cases tab is set to (0) and it will be empty. The entire row (with updated date and image) below the H3 product title) is removed. 
+
+                    <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases must also hide the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ).
+
+                </span>
             </li>
         </ol>        
 
@@ -455,8 +465,8 @@
                 <br><span class="govuk-!-font-size-16">Showing a case with 3 products (all with a different ownership status)</span>.
             </li> 
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/products-2-products-safe" target="_blank">Case - products page - safe</a>
-                <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record as safe and compliant</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-safe" target="_blank">Case - products page - safe</a>
+                <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record(s) as safe and compliant. There is a simple inset text (statement) at the top of the main section</span>.
             </li>  
             <li>
                 Note: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search).
@@ -480,12 +490,21 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/add-a-product" target="_blank">
                     Case - product page - add a product
                 </a>
-                <br><span class="govuk-!-font-size-16">Use a <abbr>PSD</abbr> product record code to add it to the case</span>.
+                <br><span class="govuk-!-font-size-16">Use a <abbr>PSD</abbr> product record code to add it to the case. Users can not add the same product record to a case more than once at any one time. Error message: This product record has already been added to the case </span>
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
                     Case - product page - is this your product?  
-                </a><sup>*</sup>
+                </a>
+                <br><span class="govuk-!-font-size-16">Only include one (the default) product image</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">Case - product page - is this your product? (Is counterfeit)</a>
+                        <br><span class="govuk-!-font-size-16">If the product records records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
+                    </li> 
+                </ul>
+
                 <!--br><span class="govuk-!-font-size-16">We check if this is the right product record before adding it.  This example shows a 'no owner' message</span>.--> <!-- Yes = saves (adds the product). No = return to the previous page 'add a product'. -->
 
                 <!--ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -505,7 +524,7 @@
                        
         </ul>  
 
-        <p class="govuk-body-s"><sup>*</sup> Model number may need to be removed depending upon 'create a product' flow.</p>
+        
         
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
@@ -563,8 +582,15 @@
                         <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and two fields not editable</span>.  
                     </li>
                 </ul>
-            </li>            
-                       
+            </li> 
+            <li class="govuk-!-font-size-16">
+                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
+            </li>
+            <li class="govuk-!-font-size-16">
+                On the form page for adding a comment - we should add some hint text advising that the comment will appear within the Activity timeline (particularly useful for when the user 'Adds' a comment from the home page).
+            </li>
+
+            
         </ul>
 
     </div>
@@ -696,6 +722,7 @@
             </ul>
 
             <p class="govuk-body">The "Edit this product" link(s) only appear if the user is in the product record owner team or the product record has no owner.</p>
+
             <p class="govuk-body">Within the tabbed areas, the statements "To edit the [details/images/attachments] for this product go to the full [product name] product record page" only appear if the user is in the product record owner team or the product record has no owner. Alternatively, we serve this statement instead: "Only the product record owner ([Owner name]) can edit these [details/images/attachments]".</p>
         </div>
 
