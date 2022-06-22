@@ -303,8 +303,13 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-1">
                     <h4 class="govuk-heading-m">Product images</h4>
 
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>
-                  
+                    <p class="govuk-body-s opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>
+ 
+                    {% include "psd-revised-flow/inc_tab-prod-img-1.html" %}
+
+                    {% include "psd-revised-flow/inc_tab-prod-img-2.html" %}
+            
+                    {% include "psd-revised-flow/inc_tab-prod-img-3.html" %}                   
 
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         You cannot edit these images, but you can <a href="/psd-revised-flow/contact-prod-owner.html" class="govuk-link govuk-link--no-visited-state">contact the <span class="govuk-visually-hidden">psd-304</span> product record owner<span class="govuk-visually-hidden"> about its images</span></a><br class="opss-br-desktop"> with additional product information or corrections 
@@ -314,6 +319,8 @@
 
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="attachments-tab-1">
                     <h4 class="govuk-heading-m">Product attachments</h4>
+
+                    {% include "psd-revised-flow/inc_tab-attachments-x2.html" %}
 
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         You cannot edit these attachments, but you can <a href="/psd-revised-flow/contact-prod-owner.html" class="govuk-link govuk-link--no-visited-state">contact the <span class="govuk-visually-hidden">psd-304</span> product record owner<span class="govuk-visually-hidden"> about its attachments</span></a><br class="opss-br-desktop"> with additional product information or corrections                         

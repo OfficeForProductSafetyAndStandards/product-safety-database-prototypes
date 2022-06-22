@@ -143,7 +143,7 @@
                     </li>
                     <li>
                         "Reported as" now to show text, 1 of 4 variations: 1) Product reported as unsafe 2). Product reported as non-compliant 3). Product reported as unsafe and non-compliant 4). Product reported as safe and compliant
-                    </li>                    
+                    </li>
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-summary.html" target="_blank">Edit Safety and compliance</a>
                         <br><span class="govuk-!-font-size-16">The one edit link for editing Safety and compliance information, opens ...</span>. 
@@ -397,7 +397,7 @@
 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/activity.html" target="_blank">Case page - Activity</a> - recycles the current <abbr>HTML</abbr> for the activity list
-                <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list)</span>.
+                <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list). This prototype does not include the legacy CSS of the current build so the "time lines" are missing, but the HTML is a true reflection</span>.
             </li>
 
             <li>
@@ -433,7 +433,10 @@
                     Case page - OPSS - enquiry
                 </a>
                 <br><span class="govuk-!-font-size-16">Enquiry example</span>. 
-            </li>                        
+            </li>
+            <li>
+                <span class="govuk-!-font-size-16">The 'Notifying country' row, should only be inserted and included for OPSS users. (If there is no value we include the row but with a blank value).</span>
+            </li>
         </ul>
 
 
@@ -447,7 +450,9 @@
                     <br><br>  
                     The product record included is now a "timestamped" version and so no edit links or links to the full product page are included (which is demonstrated via the Products link). The <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-timestamped" target="_blank">Products page now uses an alternative text</a> with the <abbr>PSD</abbr> reference number and a new <abbr>PSD</abbr> ref number, which here appends a "now" timestamp (as like the javascript funciton date.now) to give the record a unique reference. (The case closed date is included in this text). Opening and closing the case does not update the product record - it can't change - only a different product record that might have been added while the case was re-opened can be affected. No edits of any kind can now be made to this timestamped version of the product record and it can never be removed from the case, even if the case is re-opened (so the remove product link is also removed). This product record, by default, will not be included in other cases, so the Cases tab is set to (0) and it will be empty. The entire row (with updated date and image) below the H3 product title) is removed. 
 
-                    <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases must also hide the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ).
+                    <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases should also not include the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ). <b>HOWEVER</b>, we don't NEED to include this functionality as it doesn't currently exist in the live service for closed cases so we can look to review this in the future?
+                    <br><br>
+                    <strong>Note:</strong> When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.
 
                 </span>
             </li>
@@ -470,7 +475,7 @@
             </li>  
             <li>
                 Note: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search).
-            </li>                       
+            </li>
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -501,7 +506,7 @@
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">Case - product page - is this your product? (Is counterfeit)</a>
-                        <br><span class="govuk-!-font-size-16">If the product records records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
+                        <br><span class="govuk-!-font-size-16">If the product record records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
                     </li> 
                 </ul>
 
@@ -520,11 +525,15 @@
                 </a>
                 <br><span class="govuk-!-font-size-16">Confirmation the the product record was added. (No back link)</span>.
             </li>
-
                        
-        </ul>  
-
+        </ul>
         
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+            <li>      
+                <span class="govuk-!-font-size-16">Note: in the Attachments tab, the links go directly to the full product page with hash 'accordion-attachments' added to the <abbr>URL</abbr> so that the product page will jump to the correct area. (This feature will become effective once the new Product pages are implimented, but in the transition stage the links will still go to the current full product page). Also - When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.</span>
+            </li>
+                       
+        </ul>
         
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        
