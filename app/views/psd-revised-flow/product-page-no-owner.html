@@ -69,7 +69,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#accordion-default-heading-2" class="govuk-link govuk-link--no-visited-state">
+                        <a href="#accordion-attachments" class="govuk-link govuk-link--no-visited-state">
                             Attachments <span>(4)</span>
                         </a>
                     </li>  
@@ -149,7 +149,7 @@
                 </dd>
             </div>
 
-            <!-- if and 3 have a value .... start -->
+            <!-- if and 3 have a value .... start
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Constituent names
@@ -157,11 +157,11 @@
                 <dd class="govuk-summary-list__value">
                     <dl class="opss-nested-definition-list">
                         <div>
-                            <dt>Manufacturer's brand name</dt>
+                            <dt>Brand name</dt>
                             <dd>Dyson</dd>
                         </div>
                         <div>
-                            <dt>Product brand name</dt>
+                            <dt>Product name</dt>
                             <dd>Small ball </dd>   
                         </div>
                         <div>
@@ -170,7 +170,7 @@
                         </div>
                     </dl>
                 </dd>
-            </div> 
+            </div> -->
             <!-- if and 3 have a value .... end -->    
             
             <!--div class="govuk-summary-list__row">
@@ -180,7 +180,23 @@
                 <dd class="govuk-summary-list__value">
                     Asda
                 </dd>
-            </div-->            
+            </div-->   
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Brand name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Asda
+                </dd>
+            </div>  
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Product name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Dishwashing liquid
+                </dd>
+            </div>                      
                                   
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -246,10 +262,10 @@
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Product authenticity
+                    Counterfeit
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    
+                    {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -309,12 +325,12 @@
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  <span class="govuk-accordion__section-button" id="accordion-attachments">
                     Attachments <span class="govuk-!-font-weight-regular govuk-!-font-size-19">(4)</span>
                   </span>
                 </h2>
               </div>
-              <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-attachments">
 
                 {% include "psd-revised-flow/inc_products_pg_attachments.html" %}
 

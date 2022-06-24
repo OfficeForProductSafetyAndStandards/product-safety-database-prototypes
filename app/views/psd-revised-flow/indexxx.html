@@ -143,7 +143,7 @@
                     </li>
                     <li>
                         "Reported as" now to show text, 1 of 4 variations: 1) Product reported as unsafe 2). Product reported as non-compliant 3). Product reported as unsafe and non-compliant 4). Product reported as safe and compliant
-                    </li>                    
+                    </li>
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-summary.html" target="_blank">Edit Safety and compliance</a>
                         <br><span class="govuk-!-font-size-16">The one edit link for editing Safety and compliance information, opens ...</span>. 
@@ -281,6 +281,12 @@
                                 <li>
                                     Remove related error messages for the form elements now removed from this page. 
                                 </li>
+                                <li>
+                                    <b>Important:</b> We now remove the 'Unsure' option for the counterfeit question. We add the new hint text for the edit page version in the counterfeit section. We add the disabled and aria-disabled attributes to the two counterfeit radio inputs.
+                                </li>
+                                <li>
+                                    A quick and easy win to improve the input: A long standing discussion has established it is better to refer to the manufacturer's brand name: On this page we have changed the label "Product brand (if branded)" to "Manufacturer's brand name".
+                                </li>
                             </ul> 
 
                     </li>
@@ -301,6 +307,9 @@
                                 <li>
                                     Add the new text (and its <abbr>HTML</abbr>), below the H1
                                 </li>
+                                <li>
+                                    The new hint text for the counterfeit section uses a slighty different longer text for the intial 'add' process. This version does not disable or add the aria-disabled attributes to the radio inputs.
+                                </li>                                
                             </ul> 
 
                             <p class="govuk-body-s">These 2 pages will eventually be replaced.</p>
@@ -368,10 +377,10 @@
                 <br><span class="govuk-!-font-size-16">The 'Add supporting information' link goes to the current form page with the list of choices of information to add, but the individual 'Add' links go directly to the relevant blank form pages (bypassing the list of choices form page). We keep the same patterns, except 'Phone call' becomes 'Telephone' and we add 'type' to 'Test results' and 'Other'. (For 'Other' see below). Each individual list is ordered by the Added date, with newest at the top. The left nav has jump-to links 'jumping' to each section. We remove the sorting options. The link in each 'title' section opens the legacy pages for each item (from which the user can utilise any editing options)<sup>*</sup></span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                    <li class="govuk-!-font-size-16">
+                    <!--li class="govuk-!-font-size-16">
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-other.html" target="_blank">Case page - Supporting information with Other info</a> - shows the page/<abbr>HTML</abbr> with 'Other' documents
                         <br><span class="govuk-!-font-size-16">If a case (which will be legacy/closed cases) has any documents uploaded via the previous 'Other' option - which are NOT images - then we simply list them in their own section at the foot of the page. Their hyperlinks are direct downloads - as currently demonstrated in current fuctionality - (but note 'download' attribute on this prototype). No need for a quanity count in the header, an 'Add' link, or a link in the left-nav, this is to service old cases.
-                    </li>                     
+                    </li-->                     
                     <li class="govuk-!-font-size-16">
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/supporting-information-empty.html" target="_blank">Case page - Supporting information blank</a> - shows the page/<abbr>HTML</abbr> without any information
                     </li>                    
@@ -397,7 +406,7 @@
 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/activity.html" target="_blank">Case page - Activity</a> - recycles the current <abbr>HTML</abbr> for the activity list
-                <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list)</span>.
+                <br><span class="govuk-!-font-size-16">The specific <abbr>HTML</abbr> list is reused and simply placed within the new content area of the new page design/layout. (A new class has been added to the wrapper div of the old list). This prototype does not include the legacy CSS of the current build so the "time lines" are missing, but the HTML is a true reflection</span>.
             </li>
 
             <li>
@@ -433,7 +442,10 @@
                     Case page - OPSS - enquiry
                 </a>
                 <br><span class="govuk-!-font-size-16">Enquiry example</span>. 
-            </li>                        
+            </li>
+            <li>
+                <span class="govuk-!-font-size-16">The 'Notifying country' row, should only be inserted and included for OPSS users. (If there is no value we include the row but with a blank value).</span>
+            </li>
         </ul>
 
 
@@ -447,7 +459,9 @@
                     <br><br>  
                     The product record included is now a "timestamped" version and so no edit links or links to the full product page are included (which is demonstrated via the Products link). The <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-timestamped" target="_blank">Products page now uses an alternative text</a> with the <abbr>PSD</abbr> reference number and a new <abbr>PSD</abbr> ref number, which here appends a "now" timestamp (as like the javascript funciton date.now) to give the record a unique reference. (The case closed date is included in this text). Opening and closing the case does not update the product record - it can't change - only a different product record that might have been added while the case was re-opened can be affected. No edits of any kind can now be made to this timestamped version of the product record and it can never be removed from the case, even if the case is re-opened (so the remove product link is also removed). This product record, by default, will not be included in other cases, so the Cases tab is set to (0) and it will be empty. The entire row (with updated date and image) below the H3 product title) is removed. 
 
-                    <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases must also hide the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ).
+                    <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases should also not include the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ). <b>HOWEVER</b>, we don't NEED to include this functionality as it doesn't currently exist in the live service for closed cases so we can look to review this in the future?
+                    <br><br>
+                    <strong>Note:</strong> When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.
 
                 </span>
             </li>
@@ -468,9 +482,7 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-safe" target="_blank">Case - products page - safe</a>
                 <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record(s) as safe and compliant. There is a simple inset text (statement) at the top of the main section</span>.
             </li>  
-            <li>
-                Note: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search).
-            </li>                       
+
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -496,12 +508,12 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
                     Case - product page - is this your product?  
                 </a>
-                <br><span class="govuk-!-font-size-16">Only include one (the default) product image</span>.
+                <br><span class="govuk-!-font-size-16">Only include one (the default) product image. The H2 is the brand and the product name combined.</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">Case - product page - is this your product? (Is counterfeit)</a>
-                        <br><span class="govuk-!-font-size-16">If the product records records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
+                        <br><span class="govuk-!-font-size-16">If the product record records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
                     </li> 
                 </ul>
 
@@ -520,11 +532,23 @@
                 </a>
                 <br><span class="govuk-!-font-size-16">Confirmation the the product record was added. (No back link)</span>.
             </li>
-
                        
-        </ul>  
-
+        </ul>
         
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+            <li>
+                <span class="govuk-!-font-size-16">Note 1: in the Details tab, we have changed the "Product authenticity" label to "Counterfeit" to match the current forms. Here we use the design shown, for 'No' and for 'Yes' we use the same design and text as used <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">inline here</a>. (We no longer have an 'Unsure' value for the new designs)</span>.
+            </li>              
+            <li>      
+                <span class="govuk-!-font-size-16">Note 2: in the Attachments tab, the links go directly to the full product page with hash 'accordion-attachments' added to the <abbr>URL</abbr> so that the product page will jump to the correct area. (This feature will become effective once the new Product pages are implimented, but in the transition stage the links will still go to the current full product page). Also - When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.</span>
+            </li>
+            <li>
+                <span class="govuk-!-font-size-16">Note 3: the 'Cases' tab on the case products page: The list is ordered by 'created' date, with newest at the top. When a case is shown which is closed, the 'Case closed' text uses the black highlight design, and the date the case was closed is included next to it. The hyperlink for each case name goes directly to <em>that</em> case page. If a case is closed these links can still be links linking to the different cases. The current case ("this case") is not included in the list - the list shows cases which <em>also</em> include this product record</span>.
+            </li>            
+            <li>
+                <span class="govuk-!-font-size-16">Note 4: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search)</span>.
+            </li>                       
+        </ul>
         
         
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">        

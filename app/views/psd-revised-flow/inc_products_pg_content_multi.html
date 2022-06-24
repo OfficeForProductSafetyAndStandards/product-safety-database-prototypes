@@ -163,7 +163,7 @@
                             </dd>
                         </div>
 
-                        <!-- if and 3 have a value .... start -->
+                        <!-- if and 3 have a value .... start 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Constituent names
@@ -171,7 +171,7 @@
                             <dd class="govuk-summary-list__value">
                                 <dl class="opss-nested-definition-list">
                                     <div>
-                                        <dt>Manufacturer's brand name</dt>
+                                        <dt>Brand name</dt>
                                         <dd>Asda</dd>
                                     </div>
                                     <div>
@@ -185,16 +185,25 @@
                                 </dl>
                             </dd>
                         </div> 
+                        -->
                         <!-- if and 3 have a value .... end -->
 
-                        <!--div class="govuk-summary-list__row">
+                        <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Brand
+                                Brand name
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 Asda
                             </dd>
-                        </div-->                        
+                        </div>  
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Product name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Dishwashing liquid
+                            </dd>
+                        </div>                                               
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -254,13 +263,13 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Product authenticity
+                                Counterfeit
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                
+                                {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
                             </dd>
                         </div>
-                        <div class="govuk-summary-list__row">
+                        <div class="govuk-summary-list__row">  
                             <dt class="govuk-summary-list__key">
                                 Product marking 
                             </dt>
@@ -295,7 +304,11 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-2">
                     <h4 class="govuk-heading-m">Product images</h4>
                   
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>                        
+                    <p class="govuk-body-s govuk-!-padding-bottom-7 opss-secondary-text">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>  
+                    
+                    {% include "psd-revised-flow/inc_tab-prod-img-1.html" %}
+
+                    {% include "psd-revised-flow/inc_tab-prod-img-2.html" %}                    
 
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         To edit the images for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-122</span> product record page <span class="govuk-visually-hidden">to access its images</span></a>
@@ -306,6 +319,8 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="attachments-tab-2">
                     <h4 class="govuk-heading-m">Product attachments</h4>
 
+                    {% include "psd-revised-flow/inc_tab-attachments-x2.html" %}
+
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         To add or remove attachments for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-122</span> product record page <span class="govuk-visually-hidden">to access its attachments</span></a>
                     </p>                  
@@ -313,7 +328,9 @@
                 </div>
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-2">
                     <h4 class="govuk-heading-m">Related cases</h4>
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This product record is included in these cases.</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-7 opss-secondary-text">This product record is also included in these cases.</p>
+
+                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}
                 </div>
             </div>
 
@@ -419,7 +436,7 @@
                             </dd>
                         </div>
 
-                            <!-- if and 3 have a value .... start -->
+                            <!-- if and 3 have a value .... start 
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     Constituent names
@@ -427,11 +444,11 @@
                                 <dd class="govuk-summary-list__value">
                                     <dl class="opss-nested-definition-list">
                                         <div>
-                                            <dt>Manufacturer's brand name</dt>
+                                            <dt>Brand name</dt>
                                             <dd>Asda</dd>
                                         </div>
                                         <div>
-                                            <dt>Product brand name</dt>
+                                            <dt>Product name</dt>
                                             <dd>Lorem ipsum</dd>   
                                         </div>
                                         <div>
@@ -440,7 +457,7 @@
                                         </div>
                                     </dl>
                                 </dd>
-                            </div> 
+                            </div> -->
                             <!-- if and 3 have a value .... end -->
     
                             <!--div class="govuk-summary-list__row">
@@ -450,7 +467,24 @@
                                 <dd class="govuk-summary-list__value">
                                     Asda
                                 </dd>
-                            </div-->          
+                            </div-->  
+                            
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Brand name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Asda
+                                </dd>
+                            </div>  
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Product name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Dishwashing liquid
+                                </dd>
+                            </div>                             
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -516,10 +550,10 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Product authenticity
+                                Counterfeit
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                
+                                {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -557,7 +591,13 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-1">
                     <h4 class="govuk-heading-m">Product images</h4>
 
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>
+                    <p class="govuk-body-s govuk-!-padding-bottom-7 opss-secondary-text">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>
+
+                    {% include "psd-revised-flow/inc_tab-prod-img-1.html" %}
+
+                    {% include "psd-revised-flow/inc_tab-prod-img-2.html" %}
+            
+                    {% include "psd-revised-flow/inc_tab-prod-img-3.html" %}                    
                   
 
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
@@ -569,6 +609,8 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="attachments-tab-1">
                     <h4 class="govuk-heading-m">Product attachments</h4>
 
+                    {% include "psd-revised-flow/inc_tab-attachments-x2.html" %}
+
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         You cannot edit these attachments, but you can <a href="/psd-revised-flow/contact-prod-owner.html" class="govuk-link govuk-link--no-visited-state">contact the <span class="govuk-visually-hidden">psd-304</span> product record owner<span class="govuk-visually-hidden"> about its attachments</span></a><br class="opss-br-desktop"> with additional product information or corrections                         
                     </p>                  
@@ -577,7 +619,9 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-1">
                     <h4 class="govuk-heading-m">Related cases</h4>
                     
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This product record is included in these cases.</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-7 opss-secondary-text">This product record is also included in these cases.</p>
+
+                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}
               
                 </div>
             </div>
@@ -683,7 +727,7 @@
                             </dd>
                         </div>
 
-                            <!-- if and 3 have a value .... start -->
+                            <!-- if and 3 have a value .... start 
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     Constituent names
@@ -691,11 +735,11 @@
                                 <dd class="govuk-summary-list__value">
                                     <dl class="opss-nested-definition-list">
                                         <div>
-                                            <dt>Manufacturer's brand name</dt>
+                                            <dt>Brand name</dt>
                                             <dd>Asda</dd>
                                         </div>
                                         <div>
-                                            <dt>Product brand name</dt>
+                                            <dt>Product name</dt>
                                             <dd>Lorem ipsum</dd>   
                                         </div>
                                         <div>
@@ -704,7 +748,7 @@
                                         </div>
                                     </dl>
                                 </dd>
-                            </div> 
+                            </div> -->
                             <!-- if and 3 have a value .... end -->
     
                             <!--div class="govuk-summary-list__row">
@@ -714,7 +758,23 @@
                                 <dd class="govuk-summary-list__value">
                                     Asda
                                 </dd>
-                            </div-->                                  
+                            </div-->  
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Brand name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Asda
+                                </dd>
+                            </div>  
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Product name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Dishwashing liquid
+                                </dd>
+                            </div>                                                             
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -774,10 +834,10 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Product authenticity
+                                Counterfeit
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                
+                                {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -816,7 +876,9 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-3">
                     <h4 class="govuk-heading-m">Product images</h4>
                   
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>                        
+                    <p class="govuk-body-s govuk-!-padding-bottom-7 opss-secondary-text">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>                        
+
+                    {% include "psd-revised-flow/inc_tab-prod-img-1.html" %}
 
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         To edit the images for this product go to the full <a href="/psd-revised-flow/asda-wood-floor-cleaner.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-526</span> product record page <span class="govuk-visually-hidden">to access its images</span></a>
@@ -827,6 +889,8 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="attachments-tab-3">
                     <h4 class="govuk-heading-m">Product attachments</h4>
 
+                    {% include "psd-revised-flow/inc_tab-attachments-x2.html" %}
+
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
                         To add or remove attachments for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-526</span> product record page <span class="govuk-visually-hidden">to access its attachments</span></a>
                     </p>                  
@@ -834,7 +898,9 @@
                 </div>
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-3">
                     <h4 class="govuk-heading-m">Related cases</h4>
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This product record is included in these cases.</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-7 opss-secondary-text">This product record is also included in these cases.</p>
+
+                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}
                 </div>
             </div>
 
