@@ -106,6 +106,11 @@
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Is the product counterfeit?</legend>
+
+    <div class="govuk-hint govuk-!-font-size-16">
+      The counterfeit status will be permanent for this product record. You can create the product record later, or create an alternative product record when required.
+    </div>
+
     <div class="govuk-radios">
     <div class="govuk-radios__item">
     <input class="govuk-radios__input" id="authenticity" name="product[authenticity]" type="radio" value="counterfeit" />
@@ -115,10 +120,10 @@
     <input class="govuk-radios__input" id="authenticity-1" name="product[authenticity]" type="radio" value="genuine" />
     <label class="govuk-label govuk-radios__label " for="authenticity-1">No</label>
     </div>
-    <div class="govuk-radios__item">
+    <!--div class="govuk-radios__item">
     <input class="govuk-radios__input" id="authenticity-2" name="product[authenticity]" type="radio" value="unsure" />
     <label class="govuk-label govuk-radios__label " for="authenticity-2">Unsure</label>
-    </div>
+    </div-->
     </div>
     </fieldset>
     </div>
@@ -213,7 +218,7 @@
   </div-->
   
   <div class="govuk-form-group">
-    <label class="govuk-label govuk-label--m" for="product_brand">Product brand (if branded)</label>
+    <label class="govuk-label govuk-label--m" for="product_brand">Manufacturer's brand name</label>
     <div class="govuk-hint " id="product_brand-hint">For example, ‘Dyson’ or ‘Sony’</div>
     <input aria-describedby="product_brand-hint" class="govuk-input app-!-max-width-one-half" id="product_brand" name="product[brand]" type="text" value="" />
     </div>

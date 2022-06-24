@@ -281,6 +281,12 @@
                                 <li>
                                     Remove related error messages for the form elements now removed from this page. 
                                 </li>
+                                <li>
+                                    <b>Important:</b> We now remove the 'Unsure' option for the counterfeit question. We add the new hint text for the edit page version in the counterfeit section. We add the disabled and aria-disabled attributes to the two counterfeit radio inputs.
+                                </li>
+                                <li>
+                                    A quick and easy win to improve the input: A long standing discussion has established it is better to refer to the manufacturer's brand name: On this page we have changed the label "Product brand (if branded)" to "Manufacturer's brand name".
+                                </li>
                             </ul> 
 
                     </li>
@@ -301,6 +307,9 @@
                                 <li>
                                     Add the new text (and its <abbr>HTML</abbr>), below the H1
                                 </li>
+                                <li>
+                                    The new hint text for the counterfeit section uses a slighty different longer text for the intial 'add' process. This version does not disable or add the aria-disabled attributes to the radio inputs.
+                                </li>                                
                             </ul> 
 
                             <p class="govuk-body-s">These 2 pages will eventually be replaced.</p>
@@ -473,9 +482,7 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-safe" target="_blank">Case - products page - safe</a>
                 <br><span class="govuk-!-font-size-16">Example showing that this case has defined the included product record(s) as safe and compliant. There is a simple inset text (statement) at the top of the main section</span>.
             </li>  
-            <li>
-                Note: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search).
-            </li>
+
         </ol>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -501,7 +508,7 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product" target="_blank">
                     Case - product page - is this your product?  
                 </a>
-                <br><span class="govuk-!-font-size-16">Only include one (the default) product image</span>.
+                <br><span class="govuk-!-font-size-16">Only include one (the default) product image. The H2 is the brand and the product name combined.</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
@@ -529,10 +536,18 @@
         </ul>
         
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+            <li>
+                <span class="govuk-!-font-size-16">Note 1: in the Details tab, we have changed the "Product authenticity" label to "Counterfeit" to match the current forms. Here we use the design shown, for 'No' and for 'Yes' we use the same design and text as used <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">inline here</a>. (We no longer have an 'Unsure' value for the new designs)</span>.
+            </li>              
             <li>      
-                <span class="govuk-!-font-size-16">Note: in the Attachments tab, the links go directly to the full product page with hash 'accordion-attachments' added to the <abbr>URL</abbr> so that the product page will jump to the correct area. (This feature will become effective once the new Product pages are implimented, but in the transition stage the links will still go to the current full product page). Also - When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.</span>
+                <span class="govuk-!-font-size-16">Note 2: in the Attachments tab, the links go directly to the full product page with hash 'accordion-attachments' added to the <abbr>URL</abbr> so that the product page will jump to the correct area. (This feature will become effective once the new Product pages are implimented, but in the transition stage the links will still go to the current full product page). Also - When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.</span>
             </li>
-                       
+            <li>
+                <span class="govuk-!-font-size-16">Note 3: the 'Cases' tab on the case products page: The list is ordered by 'created' date, with newest at the top. When a case is shown which is closed, the 'Case closed' text uses the black highlight design, and the date the case was closed is included next to it. The hyperlink for each case name goes directly to <em>that</em> case page. If a case is closed these links can still be links linking to the different cases. The current case ("this case") is not included in the list - the list shows cases which <em>also</em> include this product record</span>.
+            </li>            
+            <li>
+                <span class="govuk-!-font-size-16">Note 4: during this work we will also need to add a 'Create a product record' link to the 3x Products pages (Your, Team, Search)</span>.
+            </li>                       
         </ul>
         
         

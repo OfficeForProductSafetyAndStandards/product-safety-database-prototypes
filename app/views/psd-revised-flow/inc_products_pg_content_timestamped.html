@@ -131,7 +131,7 @@
                   </li>
                   <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#cases-tab-2">
-                      Cases <span class="govuk-!-font-size-16">(0)</span>
+                      Cases <span class="govuk-!-font-size-16">(4)</span>
                     </a>
                   </li>
                 </ul>
@@ -152,7 +152,7 @@
                             </dd>
                         </div>
 
-                        <!-- if and 3 have a value .... start -->
+                        <!-- if and 3 have a value .... start 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Constituent names
@@ -160,11 +160,11 @@
                             <dd class="govuk-summary-list__value">
                                 <dl class="opss-nested-definition-list">
                                     <div>
-                                        <dt>Manufacturer's brand name</dt>
+                                        <dt>Brand name</dt>
                                         <dd>Asda</dd>
                                     </div>
                                     <div>
-                                        <dt>Product brand name</dt>
+                                        <dt>Product name</dt>
                                         <dd>Lorem ipsum</dd>   
                                     </div>
                                     <div>
@@ -173,7 +173,7 @@
                                     </div>
                                 </dl>
                             </dd>
-                        </div> 
+                        </div> -->
                         <!-- if and 3 have a value .... end -->
 
                         <!--div class="govuk-summary-list__row">
@@ -183,7 +183,23 @@
                             <dd class="govuk-summary-list__value">
                                 Asda
                             </dd>
-                        </div-->                        
+                        </div--> 
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Brand name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Asda
+                            </dd>
+                        </div>  
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Product name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Dishwashing liquid
+                            </dd>
+                        </div>                                                
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -243,10 +259,10 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Product authenticity
+                                Counterfeit
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                
+                                {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -284,7 +300,7 @@
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-2">
                     <h4 class="govuk-heading-m">Product images</h4>
                   
-                    <p class="govuk-body-s opss-secondary-text govuk-!-margin-bottom-7">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>   
+                    <p class="govuk-body-s govuk-!-padding-bottom-7 opss-secondary-text">These are the product images &ndash; they <strong>are not</strong> the case evidence images.</p>   
                     
                     {% include "psd-revised-flow/inc_tab-prod-img-1.html" %}
 
@@ -308,7 +324,9 @@
                 </div>
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-2">
                     <h4 class="govuk-heading-m">Related cases</h4>
-                    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">This product record is included in these cases.</p>
+                    <p class="govuk-body-s govuk-!-margin-bottom-7 opss-secondary-text">This product record is also included in these cases.</p>
+
+                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}
                 </div>
             </div>
 
