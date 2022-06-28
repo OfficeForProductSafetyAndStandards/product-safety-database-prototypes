@@ -34,6 +34,9 @@
     .ghost {
         color: #999 !important;
     }
+    .highlight {
+        background-color: aquamarine;
+    }
 </style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -198,7 +201,7 @@
             </li> 
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing_warnings.html" target="_blank">Case page - warning</a>
-                <br><span class="govuk-!-font-size-16">Nothing added yet. Warns that no products, businesses, or assessments have been added. (Warning text and minor label in the Case specific product information section)</span>.
+                <br><span class="govuk-!-font-size-16">Nothing added yet. <!--Warns that no products, businesses, or assessments have been added. -->(Warning text and minor label in the Case specific product information section)</span>.
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-trading-stds-landing-case-specific-x2.html" target="_blank">Case page - Case specific product information</a> - showing two products
@@ -393,10 +396,10 @@
                     <li>
                         In the new Supporting information page we use the new label "Event date". Every instance throughout the related add and edit pages for various informations we change "Date of action" to "Event date" (and we may add hint text: For example, when was a document issued.)
                     </li>                    
-                    <li>
-                        On the current 'Add comment' form we need to add a Hint text advising the user that the comment will only appear within the Activity timeline (as is the current behaviour).
+                    <li class="highlight">
+                        On the current 'Add comment' form we need to add a Hint text advising the user that the comment will only appear within the Activity timeline (as is the current behaviour). "Comments appear within the activity timeline."
                     </li>
-                    <li>
+                    <li class="highlight">
                         <span class="govuk-!-font-size-16">
                             Note: error messages not working correctly (summary links) on Correspondence form page and Test results form page.
                         </span>
@@ -565,10 +568,10 @@
                 <br><span class="govuk-!-font-size-16">My team owns this product record (and we have at least one case linked to it)</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                    <li>
+                    <!--li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-no-owner" target="_blank">Product page - not owned (but is included in any of my team's cases)</a>
                         <br><span class="govuk-!-font-size-16">No team owns the product record but my team have an open case linked to it</span>.
-                    </li>
+                    </li-->
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-no-owner-not-included" target="_blank">Product page - not owned (and not included in any of my team's cases)</a>
                         <br><span class="govuk-!-font-size-16">No team owns the product record and my team <b>do not</b> have a case linked to it</span>.
