@@ -416,3 +416,14 @@ section:not(.opss-border-all)[data-info-number="0"] {
     margin-bottom: govuk-spacing(6) !important; 
 }
 
+input[type="text"]:disabled, 
+select:disabled {
+    color: govuk-colour("mid-grey"); 
+    border-color: govuk-colour("mid-grey"); 
+
+    color: rgba(118, 118, 118, 0.6); 
+    border-color: rgba(118, 118, 118, 0.6);    
+
+    background-color: transparent !important; 
+    cursor: default;
+}
