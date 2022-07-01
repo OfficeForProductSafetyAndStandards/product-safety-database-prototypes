@@ -1,0 +1,141 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Help with how to create a case
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "#"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
+        <span class="govuk-caption-m">Recent changes to the Product Safety Database</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+            Help &ndash; cases and product records
+        </h1>
+
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">
+            How a case is created has changed: You now create a case and then add a product - along with other information - to the case.
+        </p>
+    </div>
+    <!--div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
+        <div class="opss-text-align-right">
+
+        </div>
+    </div-->
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">About cases</h2>
+
+        <p class="govuk-body">
+            A case records case specific information. In the Product Safety Database (<abbr>PSD</abbr>), information about a case and a product are seperate. Information about a product is recorded as a product record and you include a product record in your case.
+        </p>
+    </div>                
+</div> 
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-panels"> 
+
+        <div class="opss-panels__single">
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced">
+                <li><span class="govuk-!-font-weight-bold">Create your case</span> <span class="govuk-!-font-size-16 govuk-!-padding-left-2">&ndash;&nbsp;&nbsp;this is now quicker with fewer questions</span></li>
+                <li><span class="govuk-!-font-weight-bold">Add to the case the product your case is about</span>
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-!-font-size-16">
+                        <li>Check to see the product does not already exist in the database - if it does, use its <abbr>PSD</abbr> reference number to add the product record to your case</li>
+                        <li>If a suitable product record does not already exist, create a new product record for the product and use its <abbr>PSD</abbr> reference number to add it to your case</li>
+                    </ul>
+
+
+                </li>
+                <li><span class="govuk-!-font-weight-bold">Add any businesses, supporting information and other details to your case</span>.</li>
+            </ol>
+
+            <p class="govuk-body-s">
+                You can add information to your case at any time and any team member can add or edit different information. From the case product page you can now discover any cases - from across the country - which include the same product record.
+            </p>
+
+        </div>
+
+    </div>                
+</div>  
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">
+            About product records
+        </h2>
+
+        <p class="govuk-body">
+            A product record only records information about a product which is, or has been, on the market (and does not include information about safety concerns or incidents).
+        </p>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                About product records
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                  <li>A product record only describes a product (and does not include any case information)</li>
+                  <li>A product record describing a counterfeit version of a product should be a different product record to one describing the genuine product</li>
+                  <li>While more than one product record might accidently describe the same product, we aim to have only one product record in the Product Safety Database describing a product</li>
+                  <li>The same product record can be added to many different cases</li>
+                  <li>Product records are found in the Products area of this digital service.</li>                  
+                </ul>
+
+            </div>
+        </details>  
+        
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                How product records work
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                    <li>We want one product record (describing a product) to be used by all users creating a case about the same product</li>
+                    <li>Because a product record only describes the product - and not information about a case - it can be reused in many different cases and cases which might be reporting different safety concerns</li>
+                    <li>You may need to create your own version of a product record if an existing one doesn't fit your needs (or one doesn't already exist for your product)</li>
+                    <li>Because the same product record should be used by all users creating cases about the same product, it is important that editing is controlled: At any one time only one team can edit a product record - as the product record owner - but any team can ask the product record owner to add additional information if required</li>
+                    <li>You can remove a product record from your case at any time and add a different one to your case if necessary</li>
+                    <li>A team is only a product record owner while the product record is included in one of their open cases</li>
+                    <li>When a product record owner closes their case, the product record remains in the Product Safety Database as a seperate entry and has no owner. The next team to include it in their case or edit it will become the new product record owner.</li>
+                </ul>
+
+            </div>
+        </details>  
+        
+        <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-4">
+            We have made the cases and products pages easier to use and more useful
+        </h3>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>There is now no need to input data about a product if a product record for your product already exists</li>
+            <li>The product records will have improved information and detail</li>
+            <li>You now know if teams from across the country are using the same product record in their investigations (and are investigating the same product)</li>
+            <!--li>You now know if teams from across the country have already concluded investigations into the same product</li-->
+            <li>You can now see the progress and results of all cases currently using the same product record in their investigations and the conclusions of all closed cases which included the product record</li>
+            <li>You can contact other teams you now know to be investigating the same product. (Teams can add other teams to a case)</li>
+            <li>By using the same product records across different teams and cases nationally, there is greater transparency, and you are able to share information or even avoid duplicating work.</li>
+        </ul>      
+
+    </div>                
+</div>          
+  
+{% endblock %}
