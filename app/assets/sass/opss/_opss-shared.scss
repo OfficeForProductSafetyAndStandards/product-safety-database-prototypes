@@ -818,6 +818,13 @@ dl.opss-summary-list-aside {
     }
 }
 
+/* bespoke styles for Cases accordian section on a product page ... starts */
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dt {width: 35%; }
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd, 
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd + dd {width: 25%; }
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd:last-of-type {width: 15%; }
+/* bespoke styles for Cases accordian section on a product page ... ends */
+
 dd dl.opss-nested-definition-list {
     margin: 0; 
     @include opss-font-size($s: 16px, $l: 1.6);
