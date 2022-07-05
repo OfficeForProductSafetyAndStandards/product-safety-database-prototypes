@@ -146,7 +146,7 @@
         
         <h4 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-visually-hidden">Product details</h4>
 
-        <dl class="govuk-summary-list govuk-!-margin-top-8">
+        <dl class="govuk-summary-list govuk-!-margin-top-8 opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -278,6 +278,9 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {% include "psd-revised-flow/inc_products-tab-counterfeit-value.html" %}
+                    <!-- OR 
+                    {% include "psd-revised-flow/inc_products-tab-counterfeit-yes.html" %}
+                    -->
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -324,7 +327,7 @@
                     <div class="govuk-grid-column-one-third">
                         <div class="opss-text-align-right opss-margin-bottom-1-desktop">
                             <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-                                Add an image
+                                Add an image 
                             </a> 
                         </div>
                     </div>                    
@@ -391,7 +394,7 @@
             </div>
           </div>
 
-          <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">This product record is owned by your team<span class="opss-hidden-desktop">.</span><br class="opss-br-desktop"> You can <a href="/psd-revised-flow/product-page-edit.html" class="govuk-link govuk-link--no-visited-state">edit the product details</a><span class="opss-hidden-desktop">.</span></p>          
+          <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">This product record is currently owned by your team<span class="opss-hidden-desktop">.</span><br class="opss-br-desktop"> You can <a href="/psd-revised-flow/product-page-edit.html" class="govuk-link govuk-link--no-visited-state">edit the product details</a><span class="opss-hidden-desktop">.</span></p>          
 
 
     </section>

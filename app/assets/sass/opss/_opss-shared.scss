@@ -816,7 +816,24 @@ dl.opss-summary-list-aside {
             }  
         }
     }
+    .opss-summary-list-mixed.opss-summary-list--equal-last-2-wide {
+        div {
+            dt {
+                width: 20%;
+            }
+            dd {
+                width: 40%;
+            }  
+        }
+    }    
 }
+
+/* bespoke styles for Cases accordian section on a product page ... starts */
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dt {width: 35%; }
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd, 
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd + dd {width: 25%; }
+.opss-summary-list-mixed.opss-summary-list-mixed--4-cols dd:last-of-type {width: 15%; }
+/* bespoke styles for Cases accordian section on a product page ... ends */
 
 dd dl.opss-nested-definition-list {
     margin: 0; 

@@ -37,6 +37,9 @@
     .highlight {
         background-color: aquamarine;
     }
+    .strike {
+        text-decoration: line-through;
+    }
 </style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -413,8 +416,8 @@
             </li>
 
             <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/#" target="_blank">Case page - Help</a>
-                <br><span class="govuk-!-font-size-16">A help page explaining how to create a case (with Help link appended to the bottom of the new case left nav)</span>.
+                <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/help.html" target="_blank">Case page - Help</a>
+                <br><span class="govuk-!-font-size-16">A help page explaining how the case and product pages have changed (and why). A link to this to be added to the case pages left nav and a 'block' inserted into the 'How to use the PSD' page: HTML examples to follow</span>.
             </li>            
 
         </ol>
@@ -458,13 +461,13 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/case-page-closed" target="_blank">Case page closed</a>
                 <br><span class="govuk-!-font-size-16">A version showing a closed case with a timestamped product. <br>(You can only view a timestamped product record via a case page)</span>.
-                <br><span class="govuk-!-font-size-16">All edit (add/edit/change/set, etc) options removed through the entire case (including supporting pages - not exampled in this prototype), except for the two 'Re-open' links on the case landing page. If a case is closed, the status row uses a black tag highlight block to display 'Case closed'. The date the case was closed is shown next to the black tag (we record the date cases are closed). "Add a product to the case" and all equivalent links (top right, on all the related case pages) are removed. The statement below the main H1 title is changed to "This case is closed". 
+                <br><span class="govuk-!-font-size-16">All edit (add/edit/change/set, etc) options removed through the entire case (including supporting pages - not exampled in this prototype), except for the two 'Re-open' links on the case landing page. If a case is closed, the status row uses a black tag highlight block to display 'Case closed'. The date the case was closed is shown next to the black tag (we record the date cases are closed). "Add a product to the case" and all equivalent links (top right, on all the related case pages) are removed. The statement below the main H1 title is changed to "This case is closed". The opening statement on the products page, inside the Cases tab, is also different: it is now "The original product record was or is included in these 4 cases."
                     <br><br>  
                     The product record included is now a "timestamped" version and so no edit links or links to the full product page are included (which is demonstrated via the Products link). The <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/products-timestamped" target="_blank">Products page now uses an alternative text</a> with the <abbr>PSD</abbr> reference number and a new <abbr>PSD</abbr> ref number, which here appends a "now" timestamp (as like the javascript funciton date.now) to give the record a unique reference. (The case closed date is included in this text). Opening and closing the case does not update the product record - it can't change - only a different product record that might have been added while the case was re-opened can be affected. No edits of any kind can now be made to this timestamped version of the product record and it can never be removed from the case, even if the case is re-opened (so the remove product link is also removed). This product record, by default, will not be included in other cases, so the Cases tab is set to (0) and it will be empty. The entire row (with updated date and image) below the H3 product title) is removed. 
 
                     <br><br>  <strong>Important:</strong> the links linking to supporting information go to the relevant page to display the full details but these destination pages for <b>closed</b> cases should also not include the "Edit" (or similar) links. This is also true for the Businesses destination pages (and on the new case Businesses page itself we change the link text of "To view and edit all the details ..." to "To view all the details..." ). <b>HOWEVER</b>, we don't NEED to include this functionality as it doesn't currently exist in the live service for closed cases so we can look to review this in the future?
                     <br><br>
-                    <strong>Note:</strong> When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page.
+                    <strong>Note:</strong>1. When a case is closed the product record is timestamped and a copy is made - this includes copies of any "Attachments" assets. The 'Attachments' tab in the products page then updates its attachment <abbr>URL</abbr> links to simply point directly to the new saved file asset copies themselves and not to the supporting attachments section in the original product page. 2. For the included/linked product record we need to devise a way to record this (and all closed cases) that have been linked to it for the cases feature list in the product record page. (Open cases can remove product records before they are closed, so we'd look at the all active open cases AND its own record of closed cases).
 
                 </span>
             </li>
@@ -516,7 +519,7 @@
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/is-this-the-product-counterfeit" target="_blank">Case - product page - is this your product? (Is counterfeit)</a>
-                        <br><span class="govuk-!-font-size-16">If the product record records a product which <em>is</em> counterfeit we change the 'counterfeit' row to look like this and with this text instead</span>.      
+                        <br><span class="govuk-!-font-size-16">If the product record records a product which <em>is</em> counterfeit we change the 'counterfeit' row <a href="/psd-revised-flow/products-2-products" class="govuk-link govuk-link--no-visited-state" target="_blank">to look like this (see 2nd product)</a> and with this text instead</span>.      
                     </li> 
                 </ul>
 
@@ -560,7 +563,7 @@
 
         
 
-        <p class="govuk-body-s">"Constituent names" names to be revised.</p>
+        <!--p class="govuk-body-s">"Constituent names" names to be revised.</p-->
 
         <ol class="govuk-list govuk-list--number govuk-list--spaced">
             <li>
@@ -574,19 +577,35 @@
                     </li-->
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-no-owner-not-included" target="_blank">Product page - not owned (and not included in any of my team's cases)</a>
-                        <br><span class="govuk-!-font-size-16">No team owns the product record and my team <b>do not</b> have a case linked to it</span>.
+                        <br><span class="govuk-!-font-size-16">No team owns the product record and my team <b>do not</b> have a case linked to it. <br>This page also illustrates the 'Yes' design for a Counterfeit status</span>.
                     </li>                    
                     <li>
                         <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-page-owned-by-others" target="_blank">Product page - owned elsewhere</a>
                         <br><span class="govuk-!-font-size-16">A different team owns the product record</span>.
-                    </li>                        
+                    </li> 
+                    <li>
+                        <span class="govuk-!-font-size-16">
+                            Notes about the Attachments section: A new page is required... The title hyperlink goes to a new page which emulates the new page created for the 'Other' documents in the Supporting information page (now on staging). From there the user can edit and/or remove the attachement and open the document. The meta data rows will remain the same as on this product page: Type, Title, Description, and Added (With Edit, Remove, "View" links). The list of attachments in the product page are order by most recently added, with the oldest being at the bottom. The 'Add an attachement' link is only included if the user has permission to edit the product record - it goes directly to the add attachement page exactly as the same link on the live service currently does, returning the user back to the Product page (and we use a new success banner HTML design).
+                        </span>
+                    </li>
+                    <li>
+                        <span class="govuk-!-font-size-16">
+                            Notes about the Activity section: Here hyperlinks are direct links to the quoted Case page.
+                        </span>
+                    </li>
+                    <li>
+                        <span class="govuk-!-font-size-16">
+                            Notes about the Cases section: Cases are ordered by the most recently created with the oldest being at the bottom - but it may be necessary to list the closed cases seperately at the bottom of the list as this data is accessed seperately.
+                        </span>
+                    </li>                                        
                 </ul>
             </li>
-            <li>
+            
+            <li class="strike">
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-confirmation" target="_blank">Product record created confirmation</a> 
                 <br><span class="govuk-!-font-size-16">To match the new case created confirmation page</span>.
             </li>
-            <li>
+            <li class="strike">
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-is-safe" target="_blank">Product record - is safe</a> 
                 <br><span class="govuk-!-font-size-16">Example of product record showing a case has defined this product as being safe and compliant (as defined when a user first created a case). This will be shown in the Cases tab and a flag at the top of the page. (We remove the 'Add' product links if there is 1 or more products already added)</span>.
             </li>              
