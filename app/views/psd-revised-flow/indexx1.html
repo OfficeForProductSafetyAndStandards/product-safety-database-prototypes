@@ -40,6 +40,9 @@
     .strike {
         text-decoration: line-through;
     }
+    ol.govuk-list--number li > a {
+        font-size: inherit;
+    }
 </style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -297,7 +300,7 @@
 
                     </li>
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/create-a-product-record-add.html" target="_blank">Add a product record</a> - additional changes for the 'add' version.
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/create-a-product-record-add.html" target="_blank">Add/Create a product record</a> - additional changes for the 'add' version.
                         <br><span class="govuk-!-font-size-16">The additional changes we are making to the current add a product page are: 
 
                             <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
@@ -319,7 +322,10 @@
                             </ul> 
 
                             <p class="govuk-body-s">These 2 pages will eventually be replaced.</p>
-                    </li>                    
+                    </li>   
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/product-created-confirmation" target="_blank">Product record created confirmation</a>. When a user creates a new product record - buy using the above 'add' / create a product record page (recycled page), we serve this confirmation page. <span class="govuk-!-font-size-16">This now matches the new <em>case</em> created confirmation page</span>.
+                    </li>                 
                 </ul> 
 
             </li>               
@@ -601,46 +607,48 @@
                 </ul>
             </li>
             
-            <li class="strike">
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-confirmation" target="_blank">Product record created confirmation</a> 
-                <br><span class="govuk-!-font-size-16">To match the new case created confirmation page</span>.
-            </li>
+
             <li class="strike">
                 <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-created-is-safe" target="_blank">Product record - is safe</a> 
                 <br><span class="govuk-!-font-size-16">Example of product record showing a case has defined this product as being safe and compliant (as defined when a user first created a case). This will be shown in the Cases tab and a flag at the top of the page. (We remove the 'Add' product links if there is 1 or more products already added)</span>.
             </li>              
         </ol>
 
-        <h2 class="govuk-heading-s govuk-!-font-weight-regular margin-left">Product pages area - tech debt</h2>
+        <h2 class="govuk-heading-s govuk-!-font-weight-regular margin-left">Product/Cases pages area - tech debt</h2>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
             <li>
-                On the Product "search" pages - Your products <b>and</b> Team products: hazard type is no longer relervant to a product record, so we move the category column (thead, tfoot and column in the tbody) to become the second column and we move the Hazard type column to last row and it becomes the Counterfeit column. (The value of Yes - it <em>is</em> counterfiet - has additional <abbr>HTML</abbr>). It is now important for users to see the difference between a product record about product X which is the genuine product and a product record about product X which represents a counterfiet version of the product. (The headers and IDs "haztype" have been updated to "counterfeit"). We also change the sort option by hazard type to 'Counterfeit' which puts all counterfiet records to the top of the list. In the dropdown help section of the 'All search' we also update the last sentence<br>
-                <a href="/psd-revised-flow/new-products-example_your_and_team" class="govuk-link govuk-link--no-visited-state" target="_blank">Example of new table for Your/Team products</a>
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/" target="_blank">All cases - Search page</a>
-                <br><span class="govuk-!-font-size-16">Shows revised list/search logic for included products in results and new case names.</span>.
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-edit" target="_blank">Create a product record</a>
-                <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed</span>.  
-                
-                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state ghost" href="/psd-revised-flow/product-page-edit" target="_blank">Edit a product record</a>
-                        <br><span class="govuk-!-font-size-16">Tech debt: old page with 3x details/fields removed and two fields not editable</span>.  
-                    </li>
-                </ul>
-            </li> 
-            <li class="govuk-!-font-size-16">
-                Where a user adds an image or an "Image" from the supporting information list, we need to update the form page to clearly reference they are adding an image (not 'Adding an attachment').
-            </li>
-            <li class="govuk-!-font-size-16">
-                On the form page for adding a comment - we should add some hint text advising that the comment will appear within the Activity timeline (particularly useful for when the user 'Adds' a comment from the home page).
-            </li>
+                On the <b>3x Cases search pages - Your cases, Team cases and All cases search</b>: <br><br>
 
-            
+                We add an additional column to the results table showing the case Hazard type (now that this is case specific information): Add the new column to the table thead, tfoot, and each tbody (with the TD 'headers' refs added). Change the colspan="3" to colspan="4" on the TH in every tbody. Update the number in the table Caption tag text to 5. 
+
+                <ol class="govuk-list govuk-list--number">
+                    <li>
+                        Example of <a href="/psd-revised-flow/new-cases-example_your_and_team" class="govuk-link govuk-link--no-visited-state" target="_blank">new table for Your/Team cases</a> pages   
+                    </li>
+                    <li>
+                        There is a <b>significant change</b> to the results and what the search works on: legacy cases (closed) continue with their case name format (which is searched upon), but all new cases going forwards now only feature the offical 'Case name' in the results (and is used within the search logic. This new case name is a new page/feature in the TSO create a case journey.
+                    </li>
+                    <li>
+                        Updated design for <a href="/psd-revised-flow/new-cases-example_all" class="govuk-link govuk-link--no-visited-state" target="_blank">All cases</a> - search page: In addition to the updated table (as above), we add the new filter 'Hazard type' to the bottom of the filters list (within 'More options'); we can take this from the current 'All products - Search' page.
+                    </li>
+
+                </ol>
+            </li>            
+            <li>
+                On the <b>3x Product search pages - Your products, Team products and All products search</b>: <br><br>
+
+                Hazard type is no longer relervant to a product record, so we move the category column (thead, tfoot and column in the tbody) to become the second column and we move the Hazard type column to last row and it becomes the Counterfeit column. (The value of Yes - it <em>is</em> counterfiet - has additional <abbr>HTML</abbr>). It is now important for users to see the difference between a product record about product X which is the genuine product and a product record about product X which represents a counterfiet version of the product. (The headers and IDs "haztype" have been updated to "counterfeit"). We also update/change the hazard type filter functionality to filter on the "Category" list instead. (Keep the same <abbr>HTML</abbr> list and list style, just update the list values and its label text). (We <b>also</b> amend the last sentence in the dropdown help text on the All products search page).  <br>
+
+
+                <ol class="govuk-list govuk-list--number">
+                    <li>
+                        Example of <a href="/psd-revised-flow/new-products-example_your_and_team" class="govuk-link govuk-link--no-visited-state" target="_blank">new table for Your/Team products</a> pages
+                    </li>
+                    <li>All changes for the <a href="/psd-revised-flow/new-products-example_all" class="govuk-link govuk-link--no-visited-state" target="_blank">All products</a> - search' page</li>
+                </ol>
+            </li>
+           
         </ul>
 
     </div>
