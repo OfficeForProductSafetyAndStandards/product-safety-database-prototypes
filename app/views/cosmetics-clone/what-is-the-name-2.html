@@ -1,0 +1,92 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Create a notification template
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "notification-1"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        Create a notification template
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="#skip-to-form" class="govuk-skip-link opss-skip-link">
+        Skip to the form
+      </a>
+
+      <p class="govuk-body-s opss-secondary-text">Create a new <span class="govuk-!-font-weight-bold">draft notification</span> using the 'Vestibulum eyedrops' notification as a template.</p>
+        
+      <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 opss-secondary-text">
+        <li>
+          The new draft notification will be a copy of the 'Vestibulum eyedrops' notification, ready for you to edit
+        </li>
+        <li>
+          If the 'Vestibulum eyedrops' notification provided ingredient information via a <abbr title="Portable Document Format">PDF</abbr>, you will need to add this information to the new draft notification
+        </li>
+        <!--li>
+          The new draft will be available to edit in your cosmetic products page (in the drafts section)
+        </li--> 
+      </ul>
+      
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+
+      <form id="skip-to-form" action="confirmation-3.html" novalidate>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="notification_product_name">
+            What is the product name?
+          </label>
+
+          <p class="govuk-body opss-secondary-text">
+            Provide the product name for the new draft notification: Include the trademark or brand, the product line and the specific name of the product as it appears on the packaging. Include the type of product (for example, 'shower gel') unless it's included in the product name.
+          </p>
+
+          <span class="govuk-hint govuk-!-margin-bottom-5" id="notification_product_name-hint">
+            For example, 'SkinSoft body fresh with aloe vera, shower gel'.
+          </span>
+
+          <input aria-describedby="notification_product_name-hint" class="govuk-input" id="notification_product_name" name="notification_product_name" type="text">
+        </div>
+
+        <button class="govuk-button">
+          Save
+        </button> 
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      
+      <!--h2 class="govuk-heading-s">Already added</h2>
+  
+      <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
+        <li>Lorem ipsum dolor sit amet </li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Voluptas recusandae aliquid delectus</li>
+        <li>Saepe maiores rem dolor</li>
+      </ol>
+  
+      <p class="govuk-body-s opss-secondary-text">
+        These ingredients have already been added to the product. 
+      </p--><!-- or .... already been added to the item. -->
+  
+    </div>    
+  </div>
+{% endblock %}

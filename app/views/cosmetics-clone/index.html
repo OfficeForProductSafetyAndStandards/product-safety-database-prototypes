@@ -1,0 +1,122 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Page designs COS clone templating
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+    li i {
+        font-size: 60%; 
+    }
+    a.todo, span.todo {
+        color: red !important;
+    }
+    ul.small-links a {
+        font-size: 16px;
+    }
+    ul.margin-left, 
+    h3.margin-left {
+        margin-left: 50px; 
+    }
+    .ghost {
+        color: #999 !important;
+    }
+    .highlight {
+        background-color: aquamarine;
+    }
+    .strike {
+        text-decoration: line-through;
+    }
+    ol.govuk-list--number li > a {
+        font-size: inherit;
+    }
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <span class="govuk-caption-m">Create a notification template:</span>
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+                        Notification templating <abbr>HTML</abbr>/Designs
+                    </h1>
+
+                    <p class="govuk-body opss-secondary-text">
+                        Here are the current page designs for the Cosmetics templating process.
+                    </p>
+
+                    <p class="govuk-body opss-secondary-text">
+                        <a class="govuk-link govuk-link--no-visited-state" href="#">Flow diagram</a> and <a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1446" class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1446</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+
+        <h2 class="govuk-heading-s">Create a notification template</h2>
+   
+        <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/notification-1.html" target="_blank">A notified product</a>
+                <br><span class="govuk-!-font-size-16">Includes small text 'Create notification template' link. </span>.
+
+                <!--ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-are-you-creating-a-case-error.html" target="_blank">Why are you creating a case? - error</a>
+                    </li>
+                </ul-->                
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/what-is-the-name-2.html" target="_blank">What is the product name?
+                </a>
+                <br><span class="govuk-!-font-size-16">Error message: "Enter the product name" (if left blank)</span>.
+
+                <!--ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern-error.html" target="_blank">Why is the product of concern? - error 1</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/psd-revised-flow/why-is-the-product-of-concern-error-2.html" target="_blank">Why is the product of concern? - error 2</a>
+                    </li>
+                </ul-->                 
+            </li>             
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/confirmation-3.html" target="_blank">Draft created confirmation</a>
+                <br><span class="govuk-!-font-size-16">With links to the cosmetics page and to the draft (which would open in the task list page).</span>
+
+                
+            </li>            
+
+        </ol>   
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

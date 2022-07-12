@@ -520,9 +520,11 @@ ul.opss-left-nav {
 .opss-border-right {border-right-width: 1px; }
 .opss-border-none {border-width: 0; }
 @include govuk-media-query($from: tablet) {
-    .opss-border-all {border-width: 1px; }
     .opss-rounded-corners {border-radius: 5px; }
     .opss-drop-shadow {box-shadow: 3px 4px 6px 0px #ebebeb; }//2px 2px 10px govuk-colour("mid-grey");
+    .opss-border-all {border-width: 1px; }
+    /*.opss-border-all--padding-sm {padding: govuk-spacing(1); }
+    a.opss-border-all--padding-sm {padding: 7px 13px 8px 11px; }*/
 }
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
