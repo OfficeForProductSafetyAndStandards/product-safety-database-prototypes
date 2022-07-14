@@ -13,51 +13,43 @@
 
 
 {% block content %}
-  <!--div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-        
+        Create a notification template
       </h1>
 
-
-
     </div>
-  </div-->
+  </div>
 
-  <div class="govuk-grid-row opss-switch-cols">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-column-one-third opss-switch-cols__right">
-      
-      <h1 class="govuk-heading-s">Create a notification template</h1>
-      
       <a href="#skip-to-form" class="govuk-skip-link opss-skip-link">
         Skip to the form
       </a>
 
-      <p class="govuk-body-s opss-secondary-text">You are now creating a new <span class="govuk-!-font-weight-bold">draft</span>  notification using the 'Vestibulum eyedrops' notification as a template.</p>
+      <p class="govuk-body-s opss-secondary-text">Create a new <span class="govuk-!-font-weight-bold">draft notification</span> using the 'Vestibulum eyedrops' notification as a template.</p>
         
-      <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 opss-secondary-text">
+      <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 opss-secondary-text">
         <li>
           The new draft notification will be a copy of the 'Vestibulum eyedrops' notification, ready for you to edit
         </li>
         <li>
           If the 'Vestibulum eyedrops' notification provided ingredient information via a <abbr title="Portable Document Format">PDF</abbr>, you will need to add this information to the new draft notification
         </li>
+        <!--li>
+          The new draft will be available to edit in your cosmetic products page (in the drafts section)
+        </li--> 
       </ul>
       
-      <p class="govuk-body-s opss-secondary-text">
-        You only need to provide a product name to create this new draft notification.
-      </p>      
-  
-    </div>     
-
-    <section class="govuk-grid-column-two-thirds opss-switch-cols__left" role="region">
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
       <form id="skip-to-form" action="confirmation-3.html" novalidate>
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--l" for="notification_product_name">
+          <label class="govuk-label govuk-label--m" for="notification_product_name">
             What is the product name?
           </label>
 
@@ -78,12 +70,27 @@
           </button>
         
           <a class="govuk-link govuk-link--no-visited-state" href="notification-1.html">Cancel</a>
-        </div>        
+        </div>  
 
       </form>
 
-    </section>
+    </div>
 
-   
+    <div class="govuk-grid-column-one-third">
+      
+      <!--h2 class="govuk-heading-s">Already added</h2>
+  
+      <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
+        <li>Lorem ipsum dolor sit amet </li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Voluptas recusandae aliquid delectus</li>
+        <li>Saepe maiores rem dolor</li>
+      </ol>
+  
+      <p class="govuk-body-s opss-secondary-text">
+        These ingredients have already been added to the product. 
+      </p--><!-- or .... already been added to the item. -->
+  
+    </div>    
   </div>
 {% endblock %}
