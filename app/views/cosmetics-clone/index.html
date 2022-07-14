@@ -57,11 +57,11 @@
                     </h1>
 
                     <p class="govuk-body opss-secondary-text">
-                        Here are the current page designs for the Cosmetics templating process.
+                        Page designs for the Cosmetics templating (cloning) process.
                     </p>
 
                     <p class="govuk-body opss-secondary-text">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#">Flow diagram</a> and <a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1446" class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1446</a>
+                        <!--a class="govuk-link govuk-link--no-visited-state" href="#">Flow diagram</a> and --><a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1446" class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1446</a>
                     </p>
 
                 </div>
@@ -85,7 +85,7 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/what-is-the-name-2.html" target="_blank">What is the product name?
                 </a>
-                <br><span class="govuk-!-font-size-16">Error message: "Enter the product name" (if left blank)</span>.
+                <br><span class="govuk-!-font-size-16">Error message: "Enter the product name" (if left blank). The template source product is name-checked 3 times). 'Cancel' returns the user to the previous page (as does the 'Back' link)</span>.
 
                 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
@@ -96,10 +96,31 @@
             </li>             
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/confirmation-3.html" target="_blank">Draft created confirmation</a>
-                <br><span class="govuk-!-font-size-16">With links to the cosmetics page and to the draft (which would open in the task list page).</span>
+                <br><span class="govuk-!-font-size-16">With links to the cosmetic products page and to the draft via the task list page. We "clone" the notification including labels but we do not clone/include ingredient PDFs.</span>
+            </li> 
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-clone/task-page-4.html" target="_blank">Draft opened in the task page</a>
+                <br><span class="govuk-!-font-size-16">This typical example illustrates how the draft is edited in the usual way. (The H1 is populated with the new product name). All the established behaviour of how the tasks page works is followed,<sup>*</sup> allowing a user to work their way through all the tasks.</span>
 
-                
-            </li>            
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        Each page in each task is pre-populated with data from the original notification; except potentially for ingredients, but this scenario is already dealt with by the tasks process when opening an old draft (with ingredients PDF) in the new ingredients manual input version of the service (where the task journey will automatically request ingredient information)
+                    </li>
+                    <li>
+                        It is important that the user 'clicks' through each task, so no task has the status of 'Completed' when the draft is created. It is noted that zero tasks have been completed in the sub-header: e.g, "Incomplete: 0 of 4 tasks have been completed."
+                    </li>
+                    <li>
+                        The final 'accept and submit' task has the status of 'Cannot start yet' until all the previous tasks have been 'clicked' through and their status becomes 'Completed'
+                    </li>
+                    <li>
+                        There is new content for the right-hand column, which is the only right-hand column content used for drafts which were 'cloned' (templated drafts) 
+                    </li>
+                    <li>
+                        <sup>*</sup>Essentially this scenario is best described as being <b>a normal draft which has completed all the tasks</b> &ndash; except for the final 'accept and submit' task &ndash; <b> except that the status on all the other tasks is not shown as 'Completed' but as 'Not started' instead</b>. When each task has been 'clicked' through in full their status changes to 'Completed', but as like a 'normal' draft the user can click through these tasks in any order (except for the final task which must be completed last and only changes to 'Not started' once all the other tasks are 'Completed'). 
+                    </li>
+                    
+                </ul>
+            </li>                        
 
         </ol>   
         
