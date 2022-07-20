@@ -1,0 +1,135 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Page designs COS search on submit
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }
+    li i {
+        font-size: 60%; 
+    }
+    a.todo, span.todo {
+        color: red !important;
+    }
+    ul.small-links a {
+        font-size: 16px;
+    }
+    ul.margin-left, 
+    h3.margin-left {
+        margin-left: 50px; 
+    }
+    .ghost {
+        color: #999 !important;
+    }
+    .highlight {
+        background-color: aquamarine;
+    }
+    .strike {
+        text-decoration: line-through;
+    }
+    ol.govuk-list--number li > a {
+        font-size: inherit;
+    }
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <span class="govuk-caption-m">Search on the submit service:</span>
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+                        Cosmetics search (in Submit)
+                    </h1>
+
+                    <p class="govuk-body opss-secondary-text">
+                        Page designs for the Cosmetics search functionality in the submit service.
+                    </p>
+
+                    <p class="govuk-body opss-secondary-text">
+                        <a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1469" class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1469</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+
+        <h2 class="govuk-heading-s">New left nav design for 'Cosmetics products' page - required for extending the products functionality</h2>
+   
+        <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products.html" target="_blank">New left nav</a>
+                <br><span class="govuk-!-font-size-16">To allow for additional search page - and future search pages - this now also affords the opportunity to split out the the draft notifications into their own page (and eventually, archived notifications). The parent 'Cosmetic products' nav link stays active for all left nav links.
+                    
+                <br><br>(Left nav has active class and aria attribute. DOM is now 'main' > 'div.govuk-grid-row' > 'nav' & 'section'. Header and hint text updated. New '.opss-desktop-min-height--s' added to headers. Moved hint text with updated classes. Remove H2. Remove "of your notified products" text from notified products download link. Remove the two margin classes from the download link).</span>.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-extended.html" target="_blank">New left nav - extended</a> 
+                        <br><span class="govuk-!-font-size-16">Provides example of how the left nav will/can eventually be used</span>.
+                    </li>
+                </ul>                 
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-drafts.html" target="_blank">Drafts page</a>
+                <br><span class="govuk-!-font-size-16">Maintain the same functionality - or lack of it - and simply split out the drafts information into its own page. (Any embellishments for the drafts page is a seperate piece of work).               
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search.html" target="_blank">Product - search</a>
+                <br><span class="govuk-!-font-size-16">Search form. (Update "aria-label" on the section tag). The main search box returns fuzzy matches on the product name, but if a UKCP number is entered we should search for "UKCP-61869641" or "61869641". There is no error message required on the search input (as a it can be blank). Both the blue button and the 'search' button submit the form.
+                <br><br>
+                The filtering on notified or archived notifications is shown for illustrative purposes - once archiving is introduced we should include this filter.
+                <br><br>
+                The reset link is a standard reset (resetting the form); there is no need for hidden inputs (which won't need resetting).
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-errors.html" target="_blank">Product - search - errors</a> 
+                        <br><span class="govuk-!-font-size-16">Example of date form errors. I recommend only using these two date error messages: 
+                            <br>1. Enter a value for all date fields or none.    <i>....(if one date field has a date, they all need a value)</i>
+                            <br>2. Enter only valid dates.</span>.       <i>....(numbers which are not valid dates and non-numeric values)</i>
+                    </li>
+                </ul>
+            </li> 
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-results.html" target="_blank">Product - search - results</a>
+                <br><span class="govuk-!-font-size-16">Clicking 'Search again' returns the user back to the search page (and the search page form is blank).               
+            </li>                       
+
+
+                    
+                </ul>
+            </li>                        
+
+        </ol>   
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
+
+        <p class="govuk-body-l">Get latest _opss-shared.scss and add _opss-search.scss to your sass build.</p>
+
+
+    </div>
+</div>
+
+{% endblock %}
