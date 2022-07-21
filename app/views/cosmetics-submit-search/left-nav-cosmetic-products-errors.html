@@ -1,11 +1,27 @@
 {% extends "layout-02-noacc.html" %}
 
 {% block pageTitle %}
-    Product search
+    Error: Product search
 {% endblock %}
 
 
 {% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#from-month">Enter a valid date</a>
+      </li>
+      <li>
+        <a href="#to-day">Enter a value for all date fields</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
@@ -63,7 +79,6 @@
 
     <form action="left-nav-cosmetic-products-search-results.html" novalidate>
 
-
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           
@@ -115,8 +130,8 @@
             </fieldset> 
           </div>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
+          <div class="govuk-form-group govuk-form-group--error">
+            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date from-month-error to-day-error">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Notification date
               </legend>
@@ -125,6 +140,13 @@
                 You can filter the search results to show only notifications notified within a date range.
               </div>
 
+              <p id="from-month-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid date
+              </p>
+
+              <p id="to-day-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a value for all date fields
+              </p>              
 
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
@@ -144,7 +166,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" value="14">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -152,7 +174,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="from-month" name="from-month" type="text" inputmode="numeric" value="13">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -160,7 +182,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric" value="2019">
                         </div>
                       </div>
                     </div>
@@ -184,7 +206,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="to-day" name="to-day" type="text" inputmode="numeric" value="">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -192,7 +214,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" value="8">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -200,7 +222,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" value="2022">
                         </div>
                       </div>
                     </div>
@@ -300,5 +322,6 @@
     });
   });
 </script>
+
 
 {% endblock %}

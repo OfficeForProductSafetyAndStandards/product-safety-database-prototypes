@@ -422,6 +422,14 @@ section[data-info-number] {
 } 
 section.opss-border-all[data-info-number] {
     margin-bottom: govuk-spacing(8) !important; 
+
+    & > ul li:last-child dl {/* remove border bottom and margin from last row when inside a border box */
+        margin-bottom: - govuk-spacing(2); 
+
+        div:last-child > * {
+            border-bottom: none; 
+        }
+    }
 }    
 section:not(.opss-border-all)[data-info-number="0"] {
     margin-bottom: govuk-spacing(6) !important; 
