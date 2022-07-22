@@ -1,27 +1,11 @@
 {% extends "layout-02-noacc.html" %}
 
 {% block pageTitle %}
-    Error: Product search
+    Product search
 {% endblock %}
 
 
 {% block content %}
-
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#from-month">Enter a valid date</a>
-      </li>
-      <li>
-        <a href="#to-day">Enter a value for all date fields</a>
-      </li>
-    </ul>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
@@ -79,6 +63,7 @@
 
     <form action="left-nav-cosmetic-products-search-results.html" novalidate>
 
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           
@@ -90,7 +75,7 @@
             </div>
             
             <div class="govuk-input__wrapper opss-search__wrapper">
-              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="prod-search" id="prod-search" aria-describedby="search-hint">
+              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="prod-search" id="prod-search" aria-describedby="search-hint" value="... the search criteria went here ...">
               <button class="govuk-button govuk-!-margin-bottom-0">
                 <span class="govuk-visually-hidden">Submit search</span>
               </button>
@@ -109,7 +94,7 @@
       
               <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio" value="notified" checked>
+                  <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio" value="notified">
                   <label class="govuk-label govuk-radios__label" for="status">
                     Notified
                   </label>
@@ -121,7 +106,7 @@
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="status-3" name="status" type="radio" value="all">
+                  <input class="govuk-radios__input" id="status-3" name="status" type="radio" value="all" checked>
                   <label class="govuk-label govuk-radios__label" for="status-3">
                     Both
                   </label>
@@ -130,8 +115,8 @@
             </fieldset> 
           </div>
 
-          <div class="govuk-form-group govuk-form-group--error">
-            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date from-month-error to-day-error">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Notification date
               </legend>
@@ -140,13 +125,6 @@
                 You can filter the search results to show only notifications notified within a date range.
               </div>
 
-              <p id="from-month-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a valid date
-              </p>
-
-              <p id="to-day-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a value for all date fields
-              </p>              
 
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
@@ -166,7 +144,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" value="14">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" value="22">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -174,7 +152,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="from-month" name="from-month" type="text" inputmode="numeric" value="13">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric" value="8">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -206,7 +184,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="to-day" name="to-day" type="text" inputmode="numeric" value="">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric" value="10">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -214,7 +192,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" value="8">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" value="10">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -222,7 +200,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" value="2022">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" value="2021">
                         </div>
                       </div>
                     </div>
@@ -247,13 +225,13 @@
       
               <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio" value="relevance" checked>
+                  <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio" value="relevance">
                   <label class="govuk-label govuk-radios__label" for="sorting">
                     Relevance
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="sorting-2" name="sorting" type="radio" value="newest">
+                  <input class="govuk-radios__input" id="sorting-2" name="sorting" type="radio" value="newest" checked>
                   <label class="govuk-label govuk-radios__label" for="sorting-2">
                     Newest
                   </label>
@@ -287,6 +265,5 @@
 </div>
 
 {% include "cosmetics-submit-search/inc_clear-form-js.html" %} 
-
 
 {% endblock %}

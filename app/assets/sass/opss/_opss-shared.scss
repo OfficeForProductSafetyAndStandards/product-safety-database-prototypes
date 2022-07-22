@@ -913,6 +913,7 @@ dd dl.opss-nested-definition-list {
         }
         .opss-grouping__legend--s {
             top: govuk-spacing(0);
+            padding-right: 0; 
         }        
         .opss-grouping__heading--norm {
             font-weight: normal;
@@ -1015,6 +1016,21 @@ dd dl.opss-nested-definition-list {
     }
 }
 
+.opss-table--2-row-groups {
+    tbody tr:first-child {
+        & > * {
+            border-bottom: none 0; 
+        }
+        & + tr > * {
+            border-bottom: 1px solid $govuk-border-colour;
+        }
+    }
+    tbody:last-of-type tr > th, 
+    tbody:last-of-type tr > td {
+        border-bottom: none 0; 
+    }
+}
+
 .opss-table-items {
     border-collapse: initial !important;/*stops 1px border issues on laptops using 150% text scale*/
 
@@ -1048,14 +1064,6 @@ dd dl.opss-nested-definition-list {
     }
     tbody td {
         @include govuk-font($size: 19);
-
-        span > em,
-        mark {
-            font-style: normal;
-            font-weight: bold;
-            background: none;
-            color: $govuk-text-colour;
-        }
     }
     /*tbody tr:last-child td a {
         @include govuk-font($size: 16);
@@ -1128,6 +1136,19 @@ dd dl.opss-nested-definition-list {
     }    
 }
 
+.opss-table, 
+.opss-table-items {
+    tbody td {
+        span > em,
+        mark {
+            font-style: normal;
+            font-weight: bold;
+            background: none;
+            color: $govuk-text-colour;
+        }
+    }
+}
+
 .opss-table-stripes {
     tbody tr {
         th, td {
@@ -1150,6 +1171,8 @@ dd dl.opss-nested-definition-list {
         }
     }
 }
+
+
 
 @include govuk-media-query($from: desktop) {
     .opss-desktop-sticky {
