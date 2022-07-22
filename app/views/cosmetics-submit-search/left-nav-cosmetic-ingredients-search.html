@@ -1,27 +1,11 @@
 {% extends "layout-02-noacc.html" %}
 
 {% block pageTitle %}
-    Error: Product search
+    Ingredient search
 {% endblock %}
 
 
 {% block content %}
-
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#from-month">Enter a valid date</a>
-      </li>
-      <li>
-        <a href="#to-day">Enter a value for all date fields</a>
-      </li>
-    </ul>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
@@ -30,11 +14,11 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
-            Product &ndash; search
+            Ingredient &ndash; search
           </h1>
           <p id="cosmetic-products-hint" class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-            Search for notifications from your notified cosmetic products.
-          </p>
+            Search for an ingredient included in your cosmetic product notifications. <span class="govuk-!-font-size-16">(Compatible with notifications notified after 21 August 2022)</span>.
+          </p>  <!-- (Valid for notifications notified after 21 August 2022) -->
         </div>
         <!--div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
           <div class="opss-text-align-right">
@@ -65,11 +49,11 @@
       <!--li class="govuk-!-margin-bottom-6">
           <a href="left-nav-cosmetic-products-archived.html" class="govuk-link govuk-link--no-visited-state">Archived notifications</a>
       </li--> 
-      <li class="opss-left-nav__active">
-        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Product - search</a>
-      </li> 
       <li>
-        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">Ingredient - search</a>
+        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">Product - search</a>
+      </li> 
+      <li class="opss-left-nav__active">
+        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Ingredient - search</a>
       </li>                
     </ul>
 
@@ -77,25 +61,53 @@
 
   <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
 
-    <form action="left-nav-cosmetic-products-search-results.html" novalidate>
+    <form action="left-nav-cosmetic-ingredients-search-results.html" novalidate>
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           
           <div class="govuk-form-group">
-            <label class="govuk-label--s" for="prod-search">Search</label>
+            <label class="govuk-label--s" for="ingredient-search">Search</label>
 
             <div class="govuk-hint govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-1" id="search-hint">
-              <span class="govuk-visually-hidden">Search</span> on a product name or the <abbr>UKCP</abbr> cosmetic product number.
+              <span class="govuk-visually-hidden">Search</span> on an ingredient name.
             </div>
             
             <div class="govuk-input__wrapper opss-search__wrapper">
-              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="prod-search" id="prod-search" aria-describedby="search-hint">
+              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="ingredient-search" id="ingredient-search" aria-describedby="search-hint">
               <button class="govuk-button govuk-!-margin-bottom-0">
                 <span class="govuk-visually-hidden">Submit search</span>
               </button>
             </div>
           </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-match">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Match type
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-match">
+                You can filter the results to match against the ingredient name exactly or to any of its words.
+              </div>
+      
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input opss-radios__input-default" id="match" name="match" type="radio" value="exact" checked>
+                  <label class="govuk-label govuk-radios__label" for="match">
+                    Exact match only
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="match-2" name="match" type="radio" value="any">
+                  <label class="govuk-label govuk-radios__label" for="match-2">
+                    Match any words
+                  </label>
+                </div>
+              </div>
+            </fieldset> 
+          </div>          
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-status">
@@ -129,9 +141,9 @@
               </div>
             </fieldset> 
           </div>
-
-          <div class="govuk-form-group govuk-form-group--error">
-            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date from-month-error to-day-error">
+<!--
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Notification date
               </legend>
@@ -140,17 +152,10 @@
                 You can filter the search results to show only notifications notified within a date range.
               </div>
 
-              <p id="from-month-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a valid date
-              </p>
-
-              <p id="to-day-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter a value for all date fields
-              </p>              
 
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
-                  <!-- **** nested fieldset: from, starts **** -->              
+                      
                   <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="from-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
                         From
@@ -166,7 +171,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" value="14">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -174,7 +179,7 @@
                           <label class="govuk-label govuk-date-input__label" for="from-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="from-month" name="from-month" type="text" inputmode="numeric" value="13">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -182,22 +187,22 @@
                           <label class="govuk-label govuk-date-input__label" for="from-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric" value="2019">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric">
                         </div>
                       </div>
                     </div>
                   </fieldset>
-                  <!-- **** nested fieldset: from, ends-->
+                  
                 </div>
                 <div class="govuk-grid-column-one-half">
-                  <!-- **** nested fieldset: to, starts **** -->              
+                             
                   <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="to-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
                         To
                     </legend>
 
                     <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden" id="to-hint">
-                      For example, 27 8 2022
+                      For example, 30 9 2022
                     </div>
 
                     <div class="govuk-date-input" id="to">
@@ -206,7 +211,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="to-day" name="to-day" type="text" inputmode="numeric" value="">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -214,7 +219,7 @@
                           <label class="govuk-label govuk-date-input__label" for="to-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" value="8">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -222,18 +227,18 @@
                           <label class="govuk-label govuk-date-input__label" for="to-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" value="2022">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric">
                         </div>
                       </div>
                     </div>
                   </fieldset>
-                  <!-- **** nested fieldset: to, ends-->
+                  
                 </div>                
               </div>
-              
 
             </fieldset> 
           </div>          
+-->            
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset opss-grouping" aria-describedby="sorting-order">
@@ -287,6 +292,5 @@
 </div>
 
 {% include "cosmetics-submit-search/inc_clear-form-js.html" %} 
-
 
 {% endblock %}

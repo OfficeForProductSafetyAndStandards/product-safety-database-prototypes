@@ -79,10 +79,10 @@
    
         <ol class="govuk-list govuk-list--number govuk-list--spaced">
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products.html" target="_blank">New left nav</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products.html" target="_blank">Product notifications</a> - New left nav
                 <br><span class="govuk-!-font-size-16">To allow for additional search page - and future search pages - this now also affords the opportunity to split out the the draft notifications into their own page (and eventually, archived notifications). The parent 'Cosmetic products' nav link stays active for all left nav links.
                     
-                <br><br>(Left nav has active class and aria attribute. DOM is now 'main' > 'div.govuk-grid-row' > 'nav' & 'section'. Header and hint text updated. New '.opss-desktop-min-height--s' added to headers. Moved hint text with updated classes. Remove H2. Remove "of your notified products" text from notified products download link. Remove the two margin classes from the download link). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer</span>.
+                <br><br>(Left nav has active class and aria attribute. DOM is now 'main' > 'div.govuk-grid-row' > 'nav' & 'section'. Header and hint text updated. New '.opss-desktop-min-height--s' added to headers. Moved hint text with updated classes. Remove H2. Remove "of your notified products" text from notified products download link (and add new wrapping div). Remove the two margin classes from the download link). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. 'Add a cosmetic product' removed float class (and wrapped in new div)</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
@@ -92,8 +92,16 @@
                 </ul>                 
             </li>
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-drafts.html" target="_blank">Drafts page</a>
-                <br><span class="govuk-!-font-size-16">Maintain the same functionality - or lack of it - and simply split out the drafts information into its own page. (Any embellishments for the drafts page is a seperate piece of work). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer.               
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-drafts.html" target="_blank">Drafts page</a> - New left nav (own page)
+                <br><span class="govuk-!-font-size-16">Maintain the same functionality - or lack of it - and simply split out the drafts information into its own page. (Any embellishments for the drafts page is a seperate piece of work). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. If there are 12 or more drafts, we add the table footer (as elsewhere).  <br><br>
+                    
+                We will also need to update links referencing drafts: 
+                <br>1. <a href="https://opss-html.herokuapp.com/cosmetics-clone/confirmation-3" class="govuk-link govuk-link--no-visited-state" target="_blank">Draft creation confirmation</a>. Change text from "It is now in the drafts section of your <u>cosmetic products page</u>." to "It is now in your <u>Draft notification</u> drafts page." and update the link to point to the drafts page.
+                <br>2. On the tasks list page, in the drop down help section - change "Product drafts are stored in the <u>Cosmetic products page</u> from where you can resume and complete the remaining tasks at any time." to "Product notification drafts are stored in your <u>Draft notifications page</u> from where you can resume and complete the remaining tasks at any time."
+                <br>3. <a href="https://opss-html.herokuapp.com/cosmetics-general/tasks/pg-success-create" class="govuk-link govuk-link--no-visited-state" target="_blank">Task completed confirmation</a> page. Change text from "Product drafts are stored in the <u>Cosmetic products page</u> from where you can resume and complete the remaining tasks at any time." to "Product notification drafts are stored in your <u>Draft notifications page</u> from where you can resume and complete the remaining tasks at any time."
+
+
+                
             </li>
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search.html" target="_blank">Product - search</a>
@@ -118,9 +126,49 @@
             <li>
                 <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-results.html" target="_blank">Product - search - results</a>
                 <br><br>
-                Max 30 results per page - pagination only added if more than one page. Table footers only added if there are 12 or more results. Bascially, continue with current fuctionality/behaviour. Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer.
-                <br><br><span class="govuk-!-font-size-16">Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is returned to the form page which shows all the input values they last used/submitted. 
-            </li>                       
+                Max 30 results per page - pagination only added if more than one page. Table footers only added if there are 12 or more results. Bascially, continue with current fuctionality/behaviour. Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. The main H1 hint is now visually hidden.
+                <br><br>Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is returned to the form page which shows all the input values they last used/submitted. 
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-edit.html" target="_blank">Edit your search</a> 
+                            <br>This demo page simply demonstrates how clicking the 'edit your search' serves the search form with the previous search criteria pre-populating the form fields, ready to be edited.
+                        </li>
+                    </ul>
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search.html" target="_blank">Ingredient - search</a>
+                <br><br>
+                Because this ingredient search is for a user to search their own notifications I don't think there is any requirement for a true 'fuzzy' search, and an exact match and an 'any word' match are sufficent (as implimented in the 'search' service). <br>
+                The main search input IS required (see error page below). (Update the date in the header to reflect when the new ingredients forms went live). Have removed the date range filters here, as the ingredients are only searchable for such a small date range, and this could be misleading for now. Notification status added here for illustration purposes only - preempting when that feature is implimented.<br>
+                Max 30 results per page, then add pagination - table footer added if 12 or more results. (Due to the design we can keep the table code simple using only tbody elements to create relationships).
+                
+                <br><br>
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search.html" target="_blank">Ingredient - search - with error message</a> 
+                            <br>Only one error message is required: "Enter an ingredient name" if the search input is blank.
+                        </li>                        
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-edit.html" target="_blank">Edit your search</a> 
+                            <br>
+                        </li>
+                    </ul>
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results.html" target="_blank">Ingredient - search - results</a>
+                <br><br>
+                The main H1 hint is now visually hidden. If using the exact match filter the results list states "Ingredient match", if 'any word' filter, the list states "Ingredient matches". Exact match filter results show one ingredient for each notification but 'any words' should show each word with a comma seperating each word and a fullstop at the end. 
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results-any-word.html" target="_blank">Ingredient - search - results</a> - any words.
+                        <br>This is an example of ingredient results page, if the 'any words' filter was used
+                    </li> 
+
+                </ul>
+            </li>                                   
 
 
                     
@@ -132,6 +180,22 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
 
         <p class="govuk-body-l">Developer: Get latest '_opss-shared.scss' and add '_opss-search.scss' to your sass build.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-2">
+            Update the main navigation - proposal
+        </h1>
+
+        <p class="govuk-body">Without a major redesign and rebuild, this work offers us the opportunity to improve the current site navigation easily - improving upon the current rationale:</p>
+
+        <ol class="govuk-list govuk-list--number">
+            <li>Change the URL of the "Submit cosmetic product notifications" header link (at the very top of all the pages) to point to the Cosmetic products section (with Product notifications being the default landing page). This make more sense of the text/title.</li>
+            <li>Add a 'Home' link to the current top level navigation (which points to the actual home page).</li>
+            <li>Remove the 'Nanomaterials' link from the current top level navigation and move it to the new left column navigation in the Cosmetic products area. (The current page content can be moved into the right column - as like the cosmetic products page as a guide/template. Update 'Back' links, and keep 'Cosmetic products' top level nav link active throughout Nanomaterials pages).</li>
+        </ol>
+
+        <p class="govuk-body">Like this! <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/new-nav-example.html" target="_blank">New navigation demonstration</a></p>
 
 
     </div>

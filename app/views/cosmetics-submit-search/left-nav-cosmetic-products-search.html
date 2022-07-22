@@ -264,41 +264,6 @@
   </section>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
-    var targetElement = document.getElementById("page-content");
-    var elements;
-
-    targetElement.querySelector('button[type="reset"]').addEventListener("click", function(){ //reset btn
-
-      elements = targetElement.getElementsByClassName("govuk-input");
-      Array.prototype.forEach.call(elements, function(el, i){
-        el.setAttribute("value", "");
-        el.classList.remove("govuk-input--error");
-      });
-
-      elements = targetElement.getElementsByClassName("govuk-radios__input");
-      Array.prototype.forEach.call(elements, function(el, i){
-        el.removeAttribute("checked");
-      });
-
-      elements = targetElement.getElementsByClassName("opss-radios__input-default");
-      Array.prototype.forEach.call(elements, function(el, i){
-        el.setAttribute("checked", "checked");
-      });     
-      
-      Array.prototype.forEach.call(targetElement.querySelectorAll('.govuk-form-group--error'), function (el) {
-        el.classList.remove('govuk-form-group--error');
-      });
-
-      Array.prototype.forEach.call(targetElement.querySelectorAll('.govuk-error-message'), function (el) {
-        el.remove('govuk-error-message');
-      }); 
-
-      document.getElementById("main-content").querySelector('.govuk-error-summary').remove("govuk-error-summary");     
-      //no need to reset title
-    });
-  });
-</script>
+{% include "cosmetics-submit-search/inc_clear-form-js.html" %} 
 
 {% endblock %}
