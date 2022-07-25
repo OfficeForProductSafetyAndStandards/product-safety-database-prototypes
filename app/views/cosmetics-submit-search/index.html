@@ -109,7 +109,7 @@
                 <br><br>
                 The filtering on notified or archived notifications is shown for illustrative purposes - once archiving is introduced we should include this filter.
                 <br><br>
-                The reset link is a standard <abbr>HTML</abbr> reset (resetting the form). No hidden inputs will need resetting. The submitted search settings can be stored in hidden inputs in the results list page and then used to submit back to the search form page again, in order to maintain the form state if the user chooses to 'Edit the search' (so that the form will reload as the user last submitted it). The reset button also uses script to reset any "value" attributes, which will be set if the user chooses to 'Edit the search' (and will remove error messages, returning the form back to its default state). (Add the JavaScript directly to this page - not a global file - and ensure that 'opss-radios__input-default' classes are added to the default radio options. That's all you need to do).
+                The reset link is a standard <abbr>HTML</abbr> reset (resetting the form). No hidden inputs will need resetting. The submitted search settings can be stored in hidden inputs in the results list page and then used to submit back to the search form page again, in order to maintain the form state if the user chooses to 'Edit the search' (so that the form will reload as the user last submitted it). The 'Edit the search' link is a button (submitting a form). The reset button also uses script to reset any "value" attributes, which will be set if the user chooses to 'Edit the search' (and will remove error messages, returning the form back to its default state). (Add the JavaScript directly to this page - not a global file - and ensure that 'opss-radios__input-default' classes are added to the default radio options. That's all you need to do).
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
@@ -127,7 +127,7 @@
                 <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-results.html" target="_blank">Product - search - results</a>
                 <br><br>
                 Max 30 results per page - pagination only added if more than one page. Table footers only added if there are 12 or more results. Bascially, continue with current fuctionality/behaviour. Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. The main H1 hint is now visually hidden.
-                <br><br>Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is returned to the form page which shows all the input values they last used/submitted. 
+                <br><br>Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is returned to the form page which shows all the input values they last used/submitted. (The 'Edit the search' "link" is a form submit button (which submits hidden inputs - which were the search criteria, to pre-populate the original search form).
 
                     <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                         <li>
