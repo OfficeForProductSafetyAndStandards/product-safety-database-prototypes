@@ -386,7 +386,11 @@ ul.opss-radio-list {
             & > div {
                 min-height: 730px; 
             }
-        }    
+        }  
+        
+        dl > div:last-child {
+            border-bottom: none 0; 
+        }
 
     }
 }
