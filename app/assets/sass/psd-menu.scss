@@ -776,7 +776,7 @@
 /*********** temporary override CSS for std GDS widths: STARTS ***************/
 @media (min-width: 40.0625em){
   .govuk-width-container {/*this "override" reinstates the normal width*/
-    max-width: 990px !important;
+    max-width: 960px !important;
   }
   .govuk-header {
     border-bottom: 10px solid #1d70b8; /* $govuk-brand-colour */
