@@ -74,9 +74,16 @@
 
       <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">   
         <div class="opss-text-align-right">
-          <a href="left-nav-cosmetic-ingredients-search-edit.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-underline-offset">
-            Edit your search
-          </a>
+
+          <form action="left-nav-cosmetic-products-search-edit.html" novalidate>
+            <input type="hidden" name="filter-1" value="filter setting">
+            <input type="hidden" name="main-search" value="search text">
+
+            <button class="govuk-button opss-button-link govuk-!-font-size-14">
+              Edit your search
+            </button>
+          </form>          
+
         </div>
       </div>
     </div>    
