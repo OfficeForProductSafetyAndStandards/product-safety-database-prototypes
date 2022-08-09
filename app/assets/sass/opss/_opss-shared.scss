@@ -329,6 +329,9 @@ samp {
     dl div dd:last-of-type {
         margin-bottom: 0 !important;
     }
+    li a {
+        @include word-wrap;
+    }
 }
 
 @include govuk-media-query($from: desktop) {
