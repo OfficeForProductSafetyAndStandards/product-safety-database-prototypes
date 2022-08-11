@@ -419,6 +419,11 @@ ul.opss-radio-list {
 .opss-timeline img {
     max-width: 100%;;
 }
+@include govuk-media-query($from: desktop) {
+.opss-blank-img {
+    width: 50%;
+}
+}
 
 section[data-info-number] {
     margin-left: - govuk-spacing(4);
