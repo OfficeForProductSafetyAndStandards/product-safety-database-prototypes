@@ -7,10 +7,6 @@
 @import "opss/opss-search";
 @import "opss/opss-pagination";
 
-form.opss-cookie-form {/*for the cookie banner*/
-    display: flex;
-}
-
 .govuk-list *[class^="govuk-heading"] .govuk-link {
     @include word-wrap;
 }
