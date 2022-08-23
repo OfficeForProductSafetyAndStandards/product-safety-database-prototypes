@@ -1,4 +1,4 @@
-{% extends "layout-psd-menu_cases.html" %}
+{% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
     Product record created confirmation
@@ -21,13 +21,21 @@
             </div>
         </div>
 
-        <p class="govuk-body">The product record will now appear in <a href="#" class="govuk-link govuk-link--no-visited-state">your products list</a>.</p>
+        <p class="govuk-body">The product record will now appear in <a href="[go to: Your products]]" class="govuk-link govuk-link--no-visited-state">your products list</a>.</p>
 
-        <h2 class="govuk-heading-m">What happens next</h2>
+        <div class="govuk-inset-text">
+            <span class="govuk-!-font-weight-bold govuk-!-display-inline-block govuk-!-margin-bottom-4">
+                It has not been added to a case<span class="govuk-visually-hidden">.</span>
+            </span>
+            
+            <span class="govuk-!-display-inline-block govuk-!-margin-bottom-4">
+                By using the <abbr>PSD</abbr> reference number you can now add this product record to your case.
+            </span>
 
-        <p class="govuk-body">
-            By using the <abbr>PSD</abbr> reference number you can now include this product record in your cases.
-        </p>
+            <span class="govuk-!-display-inline-block">
+                You add a product record to your case directly from the case page.
+            </span>
+        </div>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
