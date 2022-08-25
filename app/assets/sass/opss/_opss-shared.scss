@@ -295,7 +295,10 @@ samp {
 }
 
 .opss-text-align-center {
-    text-align: center;
+    text-align: center; 
+}
+*[class^="govuk-heading"].opss-text-align-center {
+    width: 100%; 
 }
 
 @include govuk-media-query($from: tablet) {
@@ -745,26 +748,36 @@ dl.opss-summary-list-aside {
         }
     }
 
-    &.opss-summary-list-mixed--image > div:first-child dt {
-        vertical-align: bottom;
+    &.opss-summary-list-mixed--image {
+        margin-bottom: govuk-spacing(8); 
+        border-bottom: 1px solid $govuk-input-border-colour;
+
+        .opss-tabs li:last-child & {
+            margin-bottom: govuk-spacing(0);
+            border-bottom: none 0; 
+        }         
+
+        & > div:first-child dt {
+            vertical-align: bottom;
+        
+            & + dd {
+                padding-right: govuk-spacing(0); 
     
-        & + dd {
-            padding-right: govuk-spacing(0); 
-
-            figure {
-                img {
-                    max-width: 100%;
-                } 
-
-                a { 
-                    display: block; 
-                    margin-top: - govuk-spacing(5); 
-                    margin-bottom: govuk-spacing(1); 
-
+                figure {
                     img {
-                        margin-top: -2px;
-                        margin-bottom: -2px; 
-                        border: 0;
+                        max-width: 100%;
+                    } 
+    
+                    a { 
+                        display: block; 
+                        margin-top: - govuk-spacing(5); 
+                        margin-bottom: govuk-spacing(1); 
+    
+                        img {
+                            margin-top: -2px;
+                            margin-bottom: -2px; 
+                            border: 0;
+                        }
                     }
                 }
             }
