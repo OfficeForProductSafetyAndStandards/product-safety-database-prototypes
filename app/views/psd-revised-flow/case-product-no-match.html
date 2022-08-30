@@ -1,16 +1,11 @@
-{% extends "layout-psd-menu_cases.html" %}
+{% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
     Product record no match
 {% endblock %}
 
 
-{% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "add-a-product"
-    }) }}
-{% endblock %}
+
 
 
 
@@ -24,11 +19,11 @@
         </h1>
 
         <p class="govuk-body govuk-!-margin-bottom-9">
-            A product record matching <span class="govuk-!-font-weight-bold"><abbr>psd</abbr>-302</span> does not exist.
+            A product record matching <span class="govuk-!-font-weight-bold"><abbr>psd</abbr>-302</span> does not exist or is no longer available.
         </p>
 
         <p class="govuk-body">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">Go back to the case page</a>
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Search for product records</a>
         </p>
     </div>
 </div>
