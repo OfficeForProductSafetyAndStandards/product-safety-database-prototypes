@@ -408,3 +408,7 @@ body.js-enabled .govuk-radios__conditional.opss-nojs-hide {
     display: block;
 }
 /* used on the search page - ends */
+
+.opss-text-align-right > form > select {
+    min-width: none;
+}

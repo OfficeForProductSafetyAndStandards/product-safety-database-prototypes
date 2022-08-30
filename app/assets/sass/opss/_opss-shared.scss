@@ -538,7 +538,12 @@ ul.opss-left-nav {
     .opss-border-all {border-width: 1px; }
     /*.opss-border-all--padding-sm {padding: govuk-spacing(1); }
     a.opss-border-all--padding-sm {padding: 7px 13px 8px 11px; }*/
+
+    a[class*="font-size-14"].opss-border-all { 
+        line-height: 1.2 !important; 
+    }     
 }
+
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
         summary {
