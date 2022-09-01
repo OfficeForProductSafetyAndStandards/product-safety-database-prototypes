@@ -395,9 +395,11 @@ tbody.opss-table-grouped-by--2 + tbody.opss-table-grouped-by--none {
     }
 }
 
-/* check if this code BELOW is still required? .... */
+.opss-text-align-right > form > select {
+    min-width: none;
+}
 
-/* used on the search page - starts */
+/* used on the search page - starts.  (Required for filters in left col on search pgs) */
 body.js-enabled .govuk-radios__conditional--hidden.opss-nojs-hide {
     height: 0; overflow: hidden; float: left; margin: 0;
 }
@@ -408,7 +410,3 @@ body.js-enabled .govuk-radios__conditional.opss-nojs-hide {
     display: block;
 }
 /* used on the search page - ends */
-
-.opss-text-align-right > form > select {
-    min-width: none;
-}
