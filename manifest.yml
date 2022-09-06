@@ -1,0 +1,5 @@
+---
+applications:
+- name: product-safety-database-prototypes
+  memory: 512M
+  buildpack: nodejs_buildpack
