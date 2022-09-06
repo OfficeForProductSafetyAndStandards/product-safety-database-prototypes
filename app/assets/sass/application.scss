@@ -5,7 +5,7 @@ $govuk-global-styles: true;
 $govuk-assets-path: '/govuk/assets/';
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
-@import "lib/extensions/extensions";
+@import ".tmp/sass/extensions";
 
 // Patterns that aren't in Frontend
 @import "patterns/step-by-step-header";
@@ -29,5 +29,3 @@ $govuk-assets-path: '/govuk/assets/';
 //styles for PSD and MSA
 @import "opss/opss-psd";
 @import "opss/opss-msa";
-
-

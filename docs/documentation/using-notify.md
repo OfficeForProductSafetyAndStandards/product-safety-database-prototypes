@@ -1,4 +1,7 @@
-# Using GOV.UK Notify to prototype emails and text messages
+---
+title: Use GOV.UK Notify
+---
+# Use GOV.UK Notify to prototype emails and text messages
 
 You can use GOV.UK Notify to send text messages or emails when users
 interact with your prototype. For example you could send users a
@@ -6,11 +9,9 @@ confirmation email at the end of a journey.
 
 ## Sign up for a GOV.UK Notify account
 
-If you have a government email address you can sign up for an account at
-https://www.gov.uk/notify
+You need an account before you can use GOV.UK Notify to send text messages or emails.
 
-You need an account before you can use GOV.UK Notify to send text
-messages or emails.
+If you have a government email address you can [sign up for a GOV.UK Notify account](https://www.gov.uk/notify)
 
 ## Getting an API key
 
@@ -22,7 +23,7 @@ To get a key:
 - go to the ‘API integration’ page
 - click ‘API keys’
 - click the ‘Create an API’ button
-- choose the ‘Team and whitelist’ option
+- choose the ‘Team and guest list’ option
 - copy the key to your clipboard
 
 ### Saving your key on your computer
@@ -35,7 +36,7 @@ file in your prototype (where `xxxxxxx` is the key you’ve copied from
 Notify):
 ```shell
 NOTIFYAPIKEY=xxxxxxx
-```
+```   
 Your prototype will load the key from your `.env` file. If you don’t
 have a `.env` file then run your prototype (with the `npm start`
 command) and it will create one for you.
@@ -81,16 +82,22 @@ example:
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form  method="post">
+      <form class="form" method="post">
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="email-address">
-            Email address
-          </label>
-          <input class="govuk-input" id="email-address" name="emailAddress" type="text">
-        </div>
+        {{ govukInput({
+          label: {
+            text: "Email Address"
+          },
+          id: "email-address",
+          name: "emailAddress",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ govukButton({
+          text: "Continue"
+        })}}
 
       </form>
     </div>
@@ -133,10 +140,10 @@ you’ve sent on the GOV.UK Notify dashboard.
 
 Because your account is in trial mode you’ll only be able to send emails
 to yourself. If you’re doing user research you can add the participants
-email addresses to the ‘whitelist’ in GOV.UK Notify. This will let you
+email addresses to the ‘guest list’ in GOV.UK Notify. This will let you
 send them emails too. You’ll need to collect their email addresses and
 get consent to use them before doing your research.
 
 ## More things you can do with GOV.UK Notify
 
-The complete documentation for using the GOV.UK Notify API is here: https://docs.notifications.service.gov.uk/node.html
+[Documentation for using the GOV.UK Notify API](https://docs.notifications.service.gov.uk/node.html)
