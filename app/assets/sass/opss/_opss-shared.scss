@@ -88,6 +88,10 @@ h1.govuk-label-wrapper label.govuk-label--l {
         font-weight: 400;
     }
 }*/
+main a.govuk-link:hover {/*recreate new hover styles of latest gds*/
+    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+    text-decoration-skip-ink: none;
+}
 .opss-no-wrap {
   white-space: nowrap;
 }
