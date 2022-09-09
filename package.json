@@ -57,5 +57,8 @@
     "node-sass": "^4.14.1",
     "standard": "^14.3.3",
     "supertest": "^4.0.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }

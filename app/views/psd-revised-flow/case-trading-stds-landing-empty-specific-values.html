@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    Case landing page - Trading Stds - with warning texts
+    Case 2101-0008
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,9 +15,10 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-        <span class="govuk-caption-m">Allegation</span>   <!-- Allegation 2101-0008 -->
+        <span class="govuk-caption-m">Allegation</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Case {% include "psd-revised-flow/case-ref.html" %}
+            <!--span class="govuk-heading-m govuk-!-font-weight-regular govuk-!-padding-left-1 opss-secondary-text">2101-0008</span-->
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">From here you can find all the information about this case. If you have editing rights for this case, you can add products, businesses and supporting information.</p>
@@ -26,10 +27,19 @@
         <div class="opss-text-align-right">
             <a href="close-case.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
                 Close case
-            </a>
+            </a><!-- or, Re-open case -->
         </div>
     </div>
+    <!--div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
 
+        <ul class="govuk-list opss-float-right-desktop opss-text-align-right">
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Close case</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change Case owner</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Restrict this Case</a></li>
+            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change risk level</a></li>
+        </ul>
+
+    </div-->
 </div>
 
 
@@ -41,25 +51,14 @@
             Skip to the main content
         </a>
 
-        {% include "psd-revised-flow/inc_left_nav_1_empty.html" %}
+        {% include "psd-revised-flow/inc_left_nav_1c.html" %}
     </nav>
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-        <div class="govuk-warning-text govuk-!-display-inline-block">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                A product has not been added to this case.
-            </strong>
-        </div>
-
-        {% include "psd-revised-flow/inc_top_nav_2_empty.html" %}
+        {% include "psd-revised-flow/inc_top_nav_2.html" %}
 
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
-
-
-
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
@@ -75,12 +74,14 @@
                     </a>
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
-                    Allegation   <!-- or Enquiry / Project -->
+                    Allegation <!--span class="opss-numero" title="Number">&numero;</span-->   <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Case number</span>
+                    2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                        <span class="govuk-visually-hidden"> - </span>Case number 
+                    </span>
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -101,7 +102,7 @@
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                                                            <span class="opss-text-limit-scroll-s">
+                    <span class="opss-text-limit-scroll-s">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis recusandae rerum eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis recusandae rerum eos? 
                     </span>
                 </dd>
@@ -110,7 +111,7 @@
                         Edit<span class="govuk-visually-hidden"> the summary</span>                                
                     </a>
                 </dd>
-            </div>          
+            </div>            
             <div class="govuk-summary-list__row opss-summary-list__row--split">
                 <dt class="govuk-summary-list__key">
                     Status
@@ -132,6 +133,19 @@
                 <dt class="govuk-summary-list__key">Created</dt>
                 <dd class="govuk-summary-list__value">13 December 2021</dd>
             </div>
+            <!--div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Notifying country
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Change<span class="govuk-visually-hidden"> the notifying country</span>
+                    </a>
+                </dd>               
+            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Created by
@@ -145,7 +159,7 @@
                     Case owner
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Darren Harridence
+                    Darren Harridence - Renfrewshire Council
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -160,7 +174,7 @@
                 <dd class="govuk-summary-list__value">
                     <ul class="govuk-list govuk-list--bullet">
                         <li>
-                            Renfrewshire Council
+                            South Yorkshire Trading Standards services
                         </li>
                         <li>
                             Watford Council
@@ -237,7 +251,7 @@
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key">
                     Reported as
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -253,7 +267,7 @@
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key">
                     Hazard description
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -268,9 +282,7 @@
             Case specific product information
         </h3>
 
-        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">
-            You can add this information after a product has been added to the case
-        </h4>
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up liquid</h4>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
@@ -278,10 +290,12 @@
                     Batch numbers
                 </dt>
                 <dd class="govuk-summary-list__value">
-                     
+                    
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                                        
+                                        <a href="edit-batch-numbers" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the batch numbers for Asda washing up liquid</span>
+                    </a>
                 </dd>                
             </div>  
             <div class="govuk-summary-list__row">
@@ -292,7 +306,9 @@
                     
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    
+                    <a href="edit-customs-codes" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the customs codes for Asda washing up liquid</span>
+                    </a>
                 </dd>                
             </div>
             <div class="govuk-summary-list__row">
@@ -303,10 +319,12 @@
                     
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    
+                    <a href="edit-units-affected" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the units affected for Asda washing up liquid</span>
+                    </a>
                 </dd>                
             </div>              
-        </dl>                   
+        </dl>        
 
     </section>
 
