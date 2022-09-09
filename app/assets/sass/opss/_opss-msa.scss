@@ -179,6 +179,15 @@ header.govuk-header + .opss-std-row.opss-std-row--borders {
     }
 }
 
+.opss-font-size--reduced-s { /* inherited size - small amount reduced size*/
+    font-size: 92% !important;
+}
+
+a.govuk-link.opss-link--no-hover:hover {
+    text-decoration: none !important; 
+    color: $govuk-link-colour !important;
+}
+
 /*.opss-list--borders {
     li {
         padding: govuk-spacing(4) 0 govuk-spacing(2) 0;

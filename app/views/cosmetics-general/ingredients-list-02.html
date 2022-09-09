@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<div class="govuk-breadcrumbs">
+<!--div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
         <a class="govuk-breadcrumbs__link" href="ingredients-list-01.html">Ingredients list</a>
@@ -16,17 +16,23 @@
         <a class="govuk-breadcrumbs__link" href="#">Responsible Persons</a>
       </li>
     </ol>
-</div>
+</div-->
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s"> 
+    <div class="govuk-grid-column-full opss-desktop-min-height--s"> 
+
+        <!--span class="govuk-caption-l govuk-!-display-inline-block">- Responsible Persons</span--> 
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            Ingredients list <span class="govuk-caption-l govuk-!-display-inline-block">- Responsible Persons</span> 
+            Ingredients list - <span class="govuk-!-font-weight-regular opss-font-size--reduced-s">Responsible Persons</span>
         </h1>
 
-        <p class="govuk-body opss-secondary-text">
-            Ingredient Lorem ipsum is included in notifications by these Responsible Persons (after 2 October 2022). From here you can view all the notifications by the Responsible Person which includes the ingredient.
+        <p class="govuk-body govuk-!-margin-bottom-1 opss-secondary-text">
+            Ingredient Lorem ipsum is included in notifications (after 2 October 2022) by these Responsible Persons. <br class="opss-br-desktop">
+        </p>
+
+        <p class="govuk-body-s opss-secondary-text">
+            From here you can view all the notifications by the Responsible Person which include the ingredient.
         </p>
 
     </div>
@@ -43,7 +49,7 @@
         <nav aria-label="Secondary">
             <ul class="govuk-list opss-left-nav">
                 <li>
-                    <a href="/cosmetics-general/ingredients-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">
+                    <a href="/cosmetics-general/ingredients-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">
                         Cosmetic products search
                     </a>
                 </li>
@@ -52,8 +58,17 @@
                         Ingredients search
                     </a>
                 </li>
-                <li>
-                    <a href="/cosmetics-general/ingredients-list-01.html" class="govuk-link govuk-link--no-visited-state">Ingredients list</a>
+                <li class="opss-left-nav__active">
+                    <a href="/cosmetics-general/ingredients-list-01.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">Ingredients list</a>
+
+                    <ul class="govuk-list">
+                        <li>
+                            <a href="/cosmetics-general/ingredients-list-02.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold opss-link--no-hover" aria-current="page">
+                                Responsible Persons
+                            </a>
+                        </li>
+                  
+                    </ul>
                 </li>
             </ul>
         </nav>

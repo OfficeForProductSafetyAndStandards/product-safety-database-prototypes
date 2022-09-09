@@ -481,15 +481,11 @@ ul.opss-left-nav {
                 text-decoration: none !important;
                 text-underline-offset: 0.1em;
 
-                &:hover {
-                    text-decoration: underline !important;
-                    text-decoration-thickness: 0.2em !important;
-                    text-decoration-thickness: 3px !important;
-                    -webkit-text-decoration-skip-ink: none;
-                    text-decoration-skip-ink: none;
-                    -webkit-text-decoration-skip: none;
-                    text-decoration-skip: none; 
-                }
+                /*&:hover {//styles supersede by gds upgrade to 4.2
+                    text-decoration: underline !important; text-decoration-thickness: 0.2em !important; 
+                    text-decoration-thickness: 3px !important; -webkit-text-decoration-skip-ink: none;
+                    text-decoration-skip-ink: none; -webkit-text-decoration-skip: none; text-decoration-skip: none; 
+                }*/
 
                 span {
                     font-size: 90%;
