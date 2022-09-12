@@ -25,6 +25,19 @@
     </div>
   </div-->
 
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#notification_product_name">Enter a name which has not been used in your active notifications</a>
+        </li>
+      </ul>
+    </div>
+  </div>  
+
   <div class="govuk-grid-row opss-switch-cols">
 
     <div class="govuk-grid-column-one-third opss-switch-cols__right">
@@ -56,7 +69,7 @@
 
       <form id="skip-to-form" action="confirmation-3.html" novalidate>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label govuk-label--l" for="notification_product_name">
             What is the product name?
           </label>
@@ -69,7 +82,11 @@
             For example, 'SkinSoft body fresh with aloe vera, shower gel'.
           </span>
 
-          <input aria-describedby="notification_product_name-hint" class="govuk-input" id="notification_product_name" name="notification_product_name" type="text">
+          <p id="input-error" class="govuk-error-message govuk-!-margin-top-2">
+            <span class="govuk-visually-hidden">Error:</span> Enter a name which has not been used in your active notifications
+          </p>
+
+          <input aria-describedby="notification_product_name-hint input-error" class="govuk-input" id="notification_product_name" name="notification_product_name" type="text">
         </div>
 
         <div class="govuk-button-group">
