@@ -453,7 +453,7 @@ samp {
 }
 
 ul.opss-left-nav {
-    padding: 0;
+    padding: 0; 
 
     ul.govuk-list {
         margin-top: 0; 
@@ -467,6 +467,7 @@ ul.opss-left-nav {
         margin-bottom: 0;
         padding: 8px 0 5px 0;
         @include opss-font-size($s: 17px, $l: 1.2);
+        @include word-wrap;
 
             ul {
                 padding-left: govuk-spacing(4);
