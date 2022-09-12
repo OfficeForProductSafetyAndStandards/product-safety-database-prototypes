@@ -711,13 +711,18 @@ dl.opss-summary-list-aside {
             }
         }
 
-        dd {
+        dd { 
             overflow-wrap: break-word;
             word-wrap: break-word;
             -ms-word-break: break-all;
             word-break: break-all;
             word-break: break-word; /*no adding hypens*/
         }
+
+        dd[class*="summary-list__actions"] a { /*don't wrap the short "edit" type action links*/
+            white-space: nowrap; 
+        }
+
         & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
     }
 
