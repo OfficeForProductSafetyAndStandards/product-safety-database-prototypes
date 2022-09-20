@@ -3,4 +3,8 @@
 
 {% for stylesheetUrl in extensionConfig.stylesheets %}
   <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  <style>/* bespoke updates for cosmetics header */
+    .app-navigation__list > li a {padding: 15px 10px; }
+    .responsible-person-name {padding: 15px 10px; font-size: 16px; line-height: 1.5; }
+  </style>
 {% endfor %}

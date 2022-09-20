@@ -1,0 +1,59 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Case cannot be closed
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">   <!-- ******** govuk-grid-column-three-quarters ******** -->
+
+
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-8">
+                        A product has not been added to this case
+                    </h1>
+
+                    <div class="govuk-inset-text">
+                        <p class="govuk-body">
+                            A case cannot be closed if it does not include a product. 
+                        </p>
+                    </div>
+
+                    <p class="govuk-body">
+                        Either add an active product record to the case or delete the case. 
+                    </p>
+
+
+                    <div class="govuk-button-group govuk-!-margin-top-8">
+                        <a href="case-closing-journey-02.html" class="govuk-button govuk-link--no-underline">
+                            Delete the case
+                        </a>
+
+                        <a class="govuk-link govuk-link--no-visited-state" href="case-trading-stds-landing_warnings">Go back to the case page</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-7">
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

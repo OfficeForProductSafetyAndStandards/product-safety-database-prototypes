@@ -5,11 +5,13 @@
             Products
         </h1>
 
-        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">The product records included in this case.</p>
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">These are the product records included in the case. <!--br class="opss-br-desktop">If one or more have been added - this is what the case is about.</p-->
     </div>
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
-
+            <a href="/psd-revised-flow/add-a-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Add a product to the case
+            </a>
         </div>
     </div>
 
@@ -24,26 +26,13 @@
             Skip to the main content
         </a>
 
+        {% include "psd-revised-flow/inc_left_nav_top-part-only.html" %}
 
         <ul class="govuk-list opss-left-nav">
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">
-                    Your cases
+                <a href="/psd-revised-flow/case-trading-stds-landing.html" class="govuk-link govuk-link--no-visited-state">
+                    Case <span class="govuk-!-font-weight-regular">&nbsp;2101-0008</span>
                 </a>
-            </li>
-            <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Team cases</a>
-            </li>
-            <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">All cases &ndash; Search</a>
-            </li>
-        </ul>
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">           
-
-        <ul class="govuk-list opss-left-nav">
-            <li>
-                <a href="/psd-revised-flow/case-trading-stds-landing-different-team.html" class="govuk-link govuk-link--no-visited-state">Case <span class="govuk-!-font-weight-regular">&nbsp;2101-0008</span></a>
             </li>
             <li class="opss-left-nav__active">
                 <a href="#page-content" class="govuk-link govuk-link--no-visited-state" aria-current="page">Products <span>(1)</span></a>
@@ -57,16 +46,16 @@
                 </ul>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
+                <a href="/psd-revised-flow/businesses.html" class="govuk-link govuk-link--no-visited-state">Businesses <span>(2)</span></a>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
+                <a href="/psd-revised-flow/images.html" class="govuk-link govuk-link--no-visited-state">Images <span>(3)</span></a>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
+                <a href="/psd-revised-flow/supporting-information.html" class="govuk-link govuk-link--no-visited-state">Supporting information <span>(9)</span></a>
             </li>
             <li>
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Activity</a>  <!-- have add comment on this page -->
+                <a href="/psd-revised-flow/activity.html" class="govuk-link govuk-link--no-visited-state">Activity</a>  <!-- have add comment on this page -->
             </li>
         </ul>
     </nav>
@@ -83,7 +72,9 @@
                 </div>
                 <div class="govuk-grid-column-one-quarter">
                     <div class="opss-text-align-right opss-margin-bottom-1-desktop">
-                        <!-- no edit link -->
+                        <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                            Edit this <span class="govuk-visually-hidden">Asda dishwashing liquid </span>product
+                        </a>
                     </div>
                 </div>
             </div>
@@ -103,11 +94,13 @@
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">Product record owner</dt>
                             <dd class="govuk-summary-list__value">
-                                
-                                    Cardiff Trading Standards Services
-                                
+                                Your team is the product record owner
                             </dd>
-
+                            <!--dd class="govuk-summary-list__actions">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                    Contact<span class="govuk-visually-hidden"> the product's record owner</span>
+                                </a>
+                            </dd-->
                         </div>
                     </dl>  
 
@@ -117,6 +110,7 @@
                     <figure class="opss-margin-bottom-1-desktop">
                         <img src="../public/images/dishwashing-liquid.jpg" class="opss-details-img opss-details-img--thumbnail opss-float-right-desktop" alt="Lorem ipsum etite">
                         <figcaption class="govuk-visually-hidden">Image title here</figcaption>
+                        <!--figcaption class="opss-img-caption opss-text-align-right opss-float-right-desktop opss-margin-bottom-1-desktop">Lorem ipsum etite ett</figcaption-->
                     </figure>
 
                 </div>
@@ -128,21 +122,26 @@
                 </h3>
                 
                 <ul class="govuk-tabs__list">
-                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                      <a class="govuk-tabs__tab" href="#product-tab-1">
-                        Details
-                      </a>
-                    </li>
-                    <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#images-tab-1">
-                        Images <span class="govuk-!-font-size-16">(3)</span>
-                      </a>
-                    </li>
-                    <li class="govuk-tabs__list-item">
-                      <a class="govuk-tabs__tab" href="#cases-tab-1">
-                        Cases <span class="govuk-!-font-size-16">(4)</span>
-                      </a>
-                    </li>
+                  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#product-tab-1">
+                      Details
+                    </a>
+                  </li>
+                  <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#images-tab-1">
+                      Images <span class="govuk-!-font-size-16">(3)</span>
+                    </a>
+                  </li>
+                  <!--li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#documents-tab-1">
+                      Documents <span class="govuk-!-font-size-16">(2)</span>
+                    </a>
+                  </li-->
+                  <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#cases-tab-1">
+                      Cases <span class="govuk-!-font-size-16">(4)</span>
+                    </a>
+                  </li>
                 </ul>
 
                 <div class="govuk-tabs__panel govuk-!-padding-bottom-2" id="product-tab-1">
@@ -160,56 +159,58 @@
                                     <span class="govuk-visually-hidden"> - </span>The <abbr>PSD</abbr> reference for this product record
                                 </span>
                             </dd>
-                        </div>
+                        </div>                        
 
-                            <!-- if and 3 have a value .... start 
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Constituent names
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    <dl class="opss-nested-definition-list">
-                                        <div>
-                                            <dt>Brand name</dt>
-                                            <dd>Asda</dd>
-                                        </div>
-                                        <div>
-                                            <dt>Product name</dt>
-                                            <dd>Lorem ipsum</dd>   
-                                        </div>
-                                        <div>
-                                            <dt>Model name</dt>
-                                            <dd>Clean dishes</dd> 
-                                        </div>
-                                    </dl>
-                                </dd>
-                            </div> -->
-                            <!-- if and 3 have a value .... end -->
-    
-                            <!--div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Brand
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Asda
-                                </dd>
-                            </div-->          
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Brand name
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Asda
-                                </dd>
-                            </div>  
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Product name
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Dishwashing liquid
-                                </dd>
-                            </div> 
+                        <!-- if and 3 have a value .... start 
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Constituent names
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <dl class="opss-nested-definition-list">
+                                    <div>
+                                        <dt>Brand name</dt>
+                                        <dd>Asda</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Product name</dt>
+                                        <dd>Small ball </dd>   
+                                    </div>
+                                    <div>
+                                        <dt>Model name</dt>
+                                        <dd>Animal 2</dd> 
+                                    </div>
+                                </dl>
+                            </dd>
+                        </div> -->
+                        <!-- if and 3 have a value .... end -->
+                        
+                        <!--div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Brand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Asda
+                            </dd>
+                        </div--> 
+                        
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Brand name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Asda
+                            </dd>
+                        </div>  
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Product name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Dishwashing liquid
+                            </dd>
+                        </div>                         
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Category
@@ -287,15 +288,15 @@
                             <dd class="govuk-summary-list__value">
                                 Unknown
                             </dd>
-                        </div>
+                        </div> 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Model or product number
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                
+                                334176-01
                             </dd>
-                        </div>                           
+                        </div>                          
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key opss-border-none">
                                 Other product identifiers
@@ -306,13 +307,16 @@
                         </div>
                     </dl>
                     
-                    <!-- no statement about contacting the product owner -->
+                    <!-- only show this next line if the user is the product owner (or same team) -->
+                    <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
+                        To edit the details for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-304</span> product record page</a>
+                    </p>
               
                 </div>
 
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="images-tab-1">
                     <h4 class="govuk-heading-m">Product images</h4>
-
+                  
                     <p class="govuk-body-s opss-secondary-text">There are 2 images added to this product record. <br class="opss-br-desktop">These are the product images &ndash; they <strong>are not</strong> case evidence images.
                     </p>
 
@@ -320,30 +324,47 @@
 
                     {% include "psd-revised-flow/inc_tab-prod-img-2.html" %}
             
-                    {% include "psd-revised-flow/inc_tab-prod-img-3.html" %}                    
-                  
-
+                    {% include "psd-revised-flow/inc_tab-prod-img-3.html" %}
+            
                     <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
-                        You cannot edit these images, but you can <a href="/psd-revised-flow/contact-prod-owner.html" class="govuk-link govuk-link--no-visited-state">contact the <span class="govuk-visually-hidden">psd-304</span> product record owner<span class="govuk-visually-hidden"> about its images</span></a><br class="opss-br-desktop"> with additional product information or corrections 
+                        To edit the images for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-304</span> product record page <span class="govuk-visually-hidden">to access its images</span></a>
                     </p>
               
                 </div>
 
+                <!--div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="documents-tab-1">
+                    <h4 class="govuk-heading-m">Product documents</h4>
+
+                    <p class="govuk-body-s opss-secondary-text">There are 2 documents added to this product record. <br class="opss-br-desktop">These are product documents - they <strong>are not</strong> case evidence documents.
+                    </p>
+
+                    {% include "psd-revised-flow/inc_tab-attachments-x2.html" %}
+
+                    <p class="govuk-body-s govuk-!-margin-bottom-1 opss-secondary-text opss-text-align-right">
+                        To add or remove documents for this product go to the full <a href="/psd-revised-flow/product-page.html" class="govuk-link govuk-link--no-visited-state"><span class="govuk-visually-hidden">psd-304</span> product record page <span class="govuk-visually-hidden">to access its documents</span></a>
+                    </p>                  
+              
+                </div-->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden govuk-!-padding-bottom-2" id="cases-tab-1">
+                    
                     <h4 class="govuk-heading-m">Related cases</h4>
                     
                     <p class="govuk-body-s govuk-!-margin-bottom-7 opss-secondary-text">This product record has also been added to these 4 cases.</p>
 
-                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}
-              
+                    {% include "psd-revised-flow/inc_tab-prod-cases-x4.html" %}             
+
                 </div>
             </div>
 
             <div class="opss-text-align-right opss-margin-bottom-1-desktop">
-
-            </div>             
+                <a href="/psd-revised-flow/remove-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 opss-text-underline-offset">
+                    Remove this <span class="govuk-visually-hidden">Asda dishwashing liquid </span>product <span class="govuk-visually-hidden">from the case</span>
+                </a>
+            </div>  
     
         </section>
+
+        <!-- HR here followed by next section for next product - see, producgts-2-products.html -->
 
     </section>
 </div>
