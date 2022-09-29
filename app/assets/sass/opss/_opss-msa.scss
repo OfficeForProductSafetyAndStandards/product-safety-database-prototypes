@@ -418,3 +418,10 @@ body.js-enabled .govuk-radios__conditional.opss-nojs-hide {
     display: block;
 }
 /* used on the search page - ends */
+
+div[class*="radios--small"], 
+div[class*="checkboxes--small"] {
+    label[class*="font-size-16"] {
+        line-height: 1.5 !important
+    }
+}
