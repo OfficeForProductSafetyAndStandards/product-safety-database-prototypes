@@ -171,7 +171,11 @@
 
         a {
             padding-right: govuk-spacing(2); 
-            color: $govuk-focus-text-colour;
+            color: $govuk-focus-text-colour; 
+
+            &:hover {
+                color: govuk-colour("dark-grey");
+            }
         }
     }
     tr:last-child td {
