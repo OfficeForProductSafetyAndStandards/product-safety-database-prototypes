@@ -960,9 +960,7 @@ dd dl.opss-nested-definition-list {
         }
 
         & > dl > div:last-child {
-            dt, dd {
-                border-bottom: none;
-            }
+            border-bottom: none;
         }
     }
 
