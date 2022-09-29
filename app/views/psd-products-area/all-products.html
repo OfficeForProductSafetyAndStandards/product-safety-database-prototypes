@@ -107,6 +107,33 @@
               <option class="govuk-!-font-size-16" value="Other">Other</option>
             </select>
           </div>
+
+          <!-- ******* included for OPSS users only, starts ************ -->
+          <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+            <fieldset class="govuk-fieldset" aria-describedby="">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                  Product record status
+              </legend>  
+          
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input id="status_active" name="status" type="radio" value="active" class="govuk-radios__input" checked="checked">
+                    <label class="govuk-label govuk-radios__label" for="status_active">Active</label>
+                  </div>
+            
+                  <div class="govuk-radios__item">
+                    <input id="status_retired" name="status" type="radio" value="retired" class="govuk-radios__input">
+                    <label class="govuk-label govuk-radios__label" for="status_retired">Retired</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input id="status_all" name="status" type="radio" value="all" class="govuk-radios__input">
+                    <label class="govuk-label govuk-radios__label" for="status_all">All</label>
+                  </div>                  
+              </div>
+            </fieldset>
+          </div> 
+          <!-- ******* included for OPSS users only, ends ************ -->         
   
           <div class="govuk-button-group">
               <button type="submit" class="govuk-button" data-module="govuk-button">
@@ -133,12 +160,12 @@
             <div class="govuk-grid-column-two-thirds">
 
                 <div class="govuk-form-group govuk-!-padding-bottom-2">
-                  <label class="govuk-label" for="businesses-search">
+                  <label class="govuk-label" for="products-search">
                     Search
                   </label>
 
                   <div class="govuk-input__wrapper opss-search__wrapper">
-                    <input class="govuk-input govuk-input govuk-!-width-full" type="search" id="businesses-search" name="businesses-search" spellcheck="false" aria-describedby="search-hint">
+                    <input class="govuk-input govuk-input govuk-!-width-full" type="search" id="products-search" name="products-search" spellcheck="false" aria-describedby="search-hint">
                     <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
                         <span class="govuk-visually-hidden">Submit search</span>
                     </button>
@@ -181,7 +208,7 @@
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-              <p class="govuk-body">12 products matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, were found.</p>
+              <p class="govuk-body">12 products matching keyword(s) <span class="govuk-!-font-weight-bold">Lorem, consectetur, ipsum</span>, using the current filters, were found.</p>
             </div>
           </div>          
   
@@ -230,13 +257,13 @@
                       </tr>
                   </tbody>
 
-                  <tbody class="govuk-table__body">
+                  <tbody class="govuk-table__body opss-grey-record">
                     <tr class="govuk-table__row">
                         <th class="govuk-visually-hidden">
                             Product
                         </th>
                         <th id="item-2" colspan="4" scope="colgroup" class="govuk-table__header">
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">Nevica skis</a>
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Nevica skis</a> <span class="govuk-!-font-size-14 govuk-!-font-weight-regular opss-no-wrap">(Retired product record)</span>
                         </th>
                     </tr>
                     <tr class="govuk-table__row">
@@ -258,13 +285,13 @@
                     </tr>
                 </tbody>
 
-                <tbody class="govuk-table__body">
+                <tbody class="govuk-table__body opss-grey-record">
                   <tr class="govuk-table__row">
                       <th class="govuk-visually-hidden">
                           Product
                       </th>
                       <th id="item-3" colspan="4" scope="colgroup" class="govuk-table__header">
-                          <a href="#" class="govuk-link govuk-link--no-visited-state">Llaboriosam Nostrum Minus 3000kw</a>
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Llaboriosam Nostrum Minus 3000kw</a> <span class="govuk-!-font-size-14 govuk-!-font-weight-regular opss-no-wrap">(Retired product record)</span>
                       </th>
                   </tr>
                   <tr class="govuk-table__row">
