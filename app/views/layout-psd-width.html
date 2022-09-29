@@ -47,17 +47,17 @@
         content: '-' !important;
     }
 }
-
 /* gds bug fix ends */
 
-/*********** temporary override CSS for std GDS widths: STARTS ***************/
+/*********** temporary override CSS for std GDS widths: STARTS ***************/ /*this "override" reinstates the normal width*/
+
 @media (min-width: 40.0625em){
-  .govuk-width-container {/*this "override" reinstates the normal width*/
+  /*.govuk-width-container {
     max-width: 960px !important;
-  }
+  }*/
   .govuk-header {
-    border-bottom: 10px solid #1d70b8; /* $govuk-brand-colour */
-    padding-bottom: 10px;
+    border-bottom: 5px solid #000; /* 1d70b8  was 10px on border and padding-bottom*/ 
+    padding-bottom: 5px;
   }
   .govuk-header__container {
     border-bottom: none 0;
@@ -129,6 +129,9 @@
 }
 
 /*********** temporary override CSS for std GDS widths: ENDS ***************/
+
+
+
 </style>
 {% endblock %}
 
