@@ -13,68 +13,107 @@
 
 
 {% block content %}
-<!-- new search page table design -->
+
 <div class="govuk-grid-row">
-    <section class="govuk-grid-column-full">
+    <form action="#" method="post" novalidate>
 
-        <form action="#" method="post" novalidate>
-            <div class="govuk-form-group opss-desktop-min-height--s3">
+        <div class="govuk-grid-column-full">
                 
-                <h1 class="govuk-label-wrapper">
-                    <label class="govuk-label govuk-label--l" for="products-search">
-                        Search cosmetic products
-                    </label>
-                </h1>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="products-search">
+                    Search cosmetic products
+                </label>
+            </h1>
 
-                <div id="search-hint" class="govuk-hint">
-                    Use one or more keywords to search for product notifications.
+            <div class="govuk-grid-row">
+                
+                <div class="govuk-grid-column-three-quarters opss-desktop-min-height--m">
+
+                    <div id="search-hint" class="govuk-hint">
+                        Use one or more keywords to search for product notifications.
+                    </div>
+
+                    <section class="govuk-form-group">
+                        <div class="govuk-input__wrapper opss-search__wrapper">
+                            <input class="govuk-input govuk-!-width-three-quarters" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
+                            <button class="govuk-button govuk-!-margin-bottom-2">
+                                <span class="govuk-visually-hidden">Search</span>
+                            </button>
+                        </div>
+        
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-visually-hidden">
+                                Advanced search options
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="name" name="searchtype" type="radio" value="name">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="name">
+                                        Notification name
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="rp" name="searchtype" type="radio" value="rp">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="rp">
+                                        Responsible Person name&sol;address
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="both" name="searchtype" type="radio" value="both" checked="checked">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="both">
+                                        Both
+                                    </label>
+                                </div>                        
+                            </div>
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="similar" name="organisation" type="checkbox" value="similar">
+                                    <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="similar">
+                                        Include similar words
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset> 
+                    </section>
+
                 </div>
 
-                <div class="govuk-input__wrapper opss-search__wrapper">
-                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
-                    <button class="govuk-button govuk-!-margin-bottom-2">
-                        <span class="govuk-visually-hidden">Search</span>
-                    </button>
+                <div class="govuk-grid-column-one-quarter">
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                About keywords search 
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                    
+                            <p class="govuk-body govuk-!-font-size-14">
+                                Target keyword searches by searching on:
+                            </p>
+                    
+                            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-14">
+                                <li>
+                                    A notification name
+                                </li>
+                                <li>
+                                    A Responsible Person name or their address (or parts of their address)
+                                </li>
+                                <li>
+                                    And include close matches with similar words.
+                                </li>                                
+                            </ul>
+
+                        </div>
+                    </details>
+            
                 </div>
 
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-visually-hidden">
-                        Advanced search options
-                    </legend>
-                    <div class="govuk-radios govuk-radios--inline govuk-radios--small">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="name" name="searchtype" type="radio" value="name" checked="checked">
-                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="name">
-                                Notification name
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="rp" name="searchtype" type="radio" value="rp">
-                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="rp">
-                                Responsible Person name
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="both" name="searchtype" type="radio" value="both">
-                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="both">
-                                Both
-                            </label>
-                        </div>                        
-                    </div>
-                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="similar" name="organisation" type="checkbox" value="similar">
-                          <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16" for="similar">
-                            Include similar words
-                          </label>
-                        </div>
-                    </div>
-                </fieldset> 
+            </div>                
 
-            </div>
-        </form>
+        </div><!-- ends full column -->
 
-    </section>
+    </form>
 </div>
 
 <div class="govuk-grid-row">
