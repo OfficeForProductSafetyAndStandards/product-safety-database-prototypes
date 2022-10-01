@@ -525,8 +525,14 @@ ul.opss-left-nav {
    
 }
 
+.opss-primary-text {
+    color: $govuk-text-colour;
+}
 .opss-secondary-text {
     color: $govuk-secondary-text-colour;
+}
+a[class*="link--no-underline"] sup {
+    color: $govuk-text-colour;
 }
 
 .opss-border-top, .opss-border-bottom, .opss-border-left, .opss-border-right, .opss-border-all {
