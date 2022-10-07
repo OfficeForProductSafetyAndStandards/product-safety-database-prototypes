@@ -19,6 +19,8 @@
   word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
 }
 
+.test-edit {background: lime; }
+
 $std-font-family: "GDS Transport", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
 form.opss-cookie-form {/*for the cookie banner*/
@@ -524,9 +526,7 @@ ul.opss-left-nav {
     }
    
 }
-.opss-test-text {
-    color: $govuk-text-colour;
-}
+
 .opss-primary-text {
     color: $govuk-text-colour;
 }
@@ -547,6 +547,7 @@ a[class*="link--no-underline"] sup {
 .opss-border-left {border-left-width: 1px; }
 .opss-border-right {border-right-width: 1px; }
 .opss-border-none {border-width: 0; }
+
 @include govuk-media-query($from: tablet) {
     .opss-rounded-corners {border-radius: 5px; }
     .opss-drop-shadow {box-shadow: 3px 4px 6px 0px #ebebeb; }//2px 2px 10px govuk-colour("mid-grey");
@@ -558,6 +559,12 @@ a[class*="link--no-underline"] sup {
         line-height: 1.2 !important; 
     }     
 }
+
+@include govuk-media-query($until: tablet) { 
+    .opss-border-all {
+        padding: govuk-spacing(0) !important; 
+    }
+ }
 
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
