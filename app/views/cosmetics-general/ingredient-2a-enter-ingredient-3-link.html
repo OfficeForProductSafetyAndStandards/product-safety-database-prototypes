@@ -86,8 +86,9 @@
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
                       <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
-                        Is it poisonous?
+                        {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
                       </label>
+                      {% include "cosmetics-general/inc_tables-checkbox-label-hint.html" %}
                     </div>
                   </div>
 

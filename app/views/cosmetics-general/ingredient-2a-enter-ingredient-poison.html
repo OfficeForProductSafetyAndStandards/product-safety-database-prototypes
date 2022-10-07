@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-        Add the poisonous ingredients
+        Add the ingredient of concern
       </h1>
 
     </div>
@@ -31,7 +31,8 @@
       <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16 opss-secondary-text">
         <li>Use the International Nomenclature of Cosmetic Ingredients (<abbr>INCI</abbr>) name, where available</li>
         <li>
-          The exact concentration of a poisonous ingredient is required - especially if the details match ingredients listed in the following poison tables
+          {% include "cosmetics-general/inc_npis-hint.html" %}
+          <!--The exact concentration of a poisonous ingredient is required - especially if the details match ingredients listed in the following poison tables-->
         </li>
       </ul>
 
@@ -81,7 +82,7 @@
             </div>
           
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
+              <div class="govuk-grid-column-full">
           
                 <div class="govuk-form-group">
           
@@ -89,8 +90,9 @@
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox" checked disabled aria-disabled="true">
                       <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
-                        Is it poisonous?
+                        {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
                       </label>
+                      {% include "cosmetics-general/inc_tables-checkbox-label-hint.html" %}
                     </div>
                   </div>
           
