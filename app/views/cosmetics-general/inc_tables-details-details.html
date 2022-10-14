@@ -1,17 +1,17 @@
 <a href="#skip-to-form" class="govuk-skip-link opss-skip-link">Skip poisonous ingredients tables.</a>
 
-<details class="govuk-details govuk-!-margin-left-0 govuk-!-font-size-16">
+<details class="govuk-details govuk-!-margin-left-0">
 
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
-        Show the poison tables 
+        Show the <abbr>NPIS</abbr> tables 
       </span>
     </summary>
 
     <div class="govuk-details__text">
 
       <p class="govuk-body-s opss-secondary-text">
-        The National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about these ingredients in the product.
+        {% include "cosmetics-general/inc_npis-tables-statement.html" %}
       </p> 
 
       <table class="govuk-table opss-table-items opss-table-items--sm opss-table-items--first-col-50 opss-table-stripes">
