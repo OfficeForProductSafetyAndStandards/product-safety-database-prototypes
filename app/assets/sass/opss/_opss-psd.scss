@@ -482,9 +482,14 @@ ul.opss-radio-list {
     max-width: 100%;;
 }
 @include govuk-media-query($from: desktop) {
-.opss-blank-img {
-    width: 50%;
+    .opss-blank-img {
+        width: 50%;
+    }
 }
+
+.opss-label-wrapper, 
+.opss-fieldset__legend {
+    max-width: none !important;
 }
 
 section[data-info-number] {
