@@ -1,0 +1,13 @@
+                    {% from "govuk/components/details/macro.njk" import govukDetails %}
+                    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+                    {% set detailsHtml %}
+                        {{ govukDetails({
+                        summaryText: "Help with nationality",
+                        text: "We need to know your nationality so we can work out which elections you're entitled to vote in. If you cannot provide your nationality, you'll have to send copies of identity documents through the post."
+                        }) }}
+                    {% endset %}
+
+                    {{ govukInsetText({
+                      html: detailsHtml
+                    }) }}

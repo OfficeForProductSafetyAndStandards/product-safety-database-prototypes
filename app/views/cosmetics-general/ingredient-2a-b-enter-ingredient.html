@@ -53,8 +53,10 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
-                  Is it poisonous?
+                  {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
                 </legend>
+
+                {% include "cosmetics-general/inc_tables-radio-label-hint.html" %}
 
                 <div class="govuk-radios" data-module="govuk-radios">
                   

@@ -89,7 +89,7 @@ h1.govuk-label-wrapper label.govuk-label--l {
     }
 }*/
 main a.govuk-link:hover {/*recreate new hover styles of latest gds*/
-    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+    //text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
     text-decoration-skip-ink: none;
 }
 .opss-no-wrap {
@@ -352,6 +352,12 @@ samp {
     .opss-desktop-min-height--s {
         min-height: 180px;
     }
+    .opss-desktop-min-height--s2 {
+        min-height: 230px;
+    }
+    .opss-desktop-min-height--s3 {
+        min-height: 275px;
+    }
     .opss-desktop-min-height--m {
         min-height: 300px;
     }
@@ -467,6 +473,7 @@ ul.opss-left-nav {
         margin-bottom: 0;
         padding: 8px 0 5px 0;
         @include opss-font-size($s: 17px, $l: 1.2);
+        @include word-wrap;
 
             ul {
                 padding-left: govuk-spacing(4);
@@ -481,15 +488,11 @@ ul.opss-left-nav {
                 text-decoration: none !important;
                 text-underline-offset: 0.1em;
 
-                &:hover {
-                    text-decoration: underline !important;
-                    text-decoration-thickness: 0.2em !important;
-                    text-decoration-thickness: 3px !important;
-                    -webkit-text-decoration-skip-ink: none;
-                    text-decoration-skip-ink: none;
-                    -webkit-text-decoration-skip: none;
-                    text-decoration-skip: none;
-                }
+                /*&:hover {//styles supersede by gds upgrade to 4.2
+                    text-decoration: underline !important; text-decoration-thickness: 0.2em !important;
+                    text-decoration-thickness: 3px !important; -webkit-text-decoration-skip-ink: none;
+                    text-decoration-skip-ink: none; -webkit-text-decoration-skip: none; text-decoration-skip: none;
+                }*/
 
                 span {
                     font-size: 90%;
@@ -522,8 +525,14 @@ ul.opss-left-nav {
 
 }
 
+.opss-primary-text {
+    color: $govuk-text-colour;
+}
 .opss-secondary-text {
     color: $govuk-secondary-text-colour;
+}
+a[class*="link--no-underline"] sup {
+    color: $govuk-text-colour;
 }
 
 .opss-border-top, .opss-border-bottom, .opss-border-left, .opss-border-right, .opss-border-all {
@@ -536,6 +545,7 @@ ul.opss-left-nav {
 .opss-border-left {border-left-width: 1px; }
 .opss-border-right {border-right-width: 1px; }
 .opss-border-none {border-width: 0; }
+
 @include govuk-media-query($from: tablet) {
     .opss-rounded-corners {border-radius: 5px; }
     .opss-drop-shadow {box-shadow: 3px 4px 6px 0px #ebebeb; }//2px 2px 10px govuk-colour("mid-grey");
@@ -547,6 +557,12 @@ ul.opss-left-nav {
         line-height: 1.2 !important;
     }
 }
+
+@include govuk-media-query($until: tablet) {
+    .opss-border-all {
+        padding: govuk-spacing(0) !important;
+    }
+ }
 
 .opss-details--sm {
     @include govuk-media-query($from: desktop) {
@@ -721,6 +737,11 @@ dl.opss-summary-list-aside {
             word-break: break-all;
             word-break: break-word; /*no adding hypens*/
         }
+
+        dd[class*="summary-list__actions"] a { /*don't wrap the short "edit" type action links*/
+            white-space: nowrap;
+        }
+
         & > span.govuk-summary-list__actions {display: none !important; }/* 2. protects against rogue legacy psd invalid html */
     }
 
@@ -957,10 +978,12 @@ dd dl.opss-nested-definition-list {
             }
         }
 
-        & > dl > div:last-child {
-            dt, dd {
-                border-bottom: none;
-            }
+        /*& > dl > div:last-child {
+            border-bottom: none;
+        }*/
+
+        & dl:last-of-type > div:last-child {
+            border-bottom: none;
         }
     }
 

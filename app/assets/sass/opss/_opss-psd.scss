@@ -156,6 +156,42 @@
     }
 }
 
+.opss-grey-record {
+    position: relative; 
+    top: -1px; 
+
+    & + .opss-grey-record {
+        top: -2px; 
+    }
+
+    tr:first-child th {
+        border-top: 1px dashed govuk-colour("mid-grey") !important; 
+        background-color: govuk-colour("light-grey") !important; /* #f7f9fa*/
+
+
+        a {
+            padding-right: govuk-spacing(2); 
+            color: $govuk-focus-text-colour; 
+
+            &:hover {
+                color: govuk-colour("dark-grey");
+            }
+        }
+    }
+    tr:last-child td {
+        border-bottom: 1px dashed govuk-colour("mid-grey") !important; 
+        background-color: govuk-colour("light-grey") !important; 
+     
+    }
+
+    tr th, 
+    tr + tr td:first-of-type {
+        padding-left: govuk-spacing(2);
+    }
+    tr + tr td:last-of-type {
+        padding-right: govuk-spacing(2);
+    }
+}
 
 ul.opss-radio-list {
     margin-bottom: 0;
@@ -446,9 +482,14 @@ ul.opss-radio-list {
     max-width: 100%;;
 }
 @include govuk-media-query($from: desktop) {
-.opss-blank-img {
-    width: 50%;
+    .opss-blank-img {
+        width: 50%;
+    }
 }
+
+.opss-label-wrapper, 
+.opss-fieldset__legend {
+    max-width: none !important;
 }
 
 section[data-info-number] {

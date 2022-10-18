@@ -1,0 +1,75 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+    Go to the products area
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">   
+
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+                        Create a case 
+                    </h1>
+
+                    <div class="govuk-inset-text govuk-!-margin-bottom-7">
+                        
+                        <p class="govuk-body-l govuk-!-margin-bottom-4">
+                            Creating a case starts from a product record page. 
+                        </p>
+
+                        <p class="govuk-body">
+                            Find a product and create the case from there. 
+                        </p>                        
+
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                How to create a case
+                              </span>
+                            </summary>
+                            <div class="govuk-details__text">
+    
+                                <ol class="govuk-list govuk-list--number govuk-list--spaced">
+                                    <li>
+                                      In the products area <a href="[All products - search]" class="govuk-link govuk-link--no-visited-state">search for your product</a> 
+                                    </li>
+                                    <li>
+                                      Select a product record to view the product record page 
+                                    </li>
+                                    <li>
+                                      Select the '<span class="govuk-!-font-weight-bold">Create a new case for this product</span>' option 
+                                    </li>
+                                  </ol>    
+              
+                                  <p class="govuk-body">
+                                      When you have finished creating the case, the product record will automatically be included.
+                                  </p>  
+                                  
+                                  <p class="govuk-body">
+                                      If a suitable product record does not already exist, create a new product record and then create your case from that product record.
+                                  </p>
+    
+                            </div>
+                        </details>                            
+                    </div>
+
+
+                    <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-24" href="[All products - search]">Go to the products search page</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Create a draft notification<br class="opss-br-desktop"> using this one as a template
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "notification-1"
+    }) }}
+{% endblock %}
+
+
+{% block content %}
+  <!--div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        
+      </h1>
+
+
+
+    </div>
+  </div-->
+
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#notification_product_name">Enter a name which has not been used in your active notifications</a>
+        </li>
+      </ul>
+    </div>
+  </div>  
+
+  <div class="govuk-grid-row opss-switch-cols">
+
+    <div class="govuk-grid-column-one-third opss-switch-cols__right">
+      
+      <h1 class="govuk-heading-s">Create a draft notification using a previous notification as a template</h1>
+      
+      <a href="#skip-to-form" class="govuk-skip-link opss-skip-link">
+        Skip to the form
+      </a>
+
+      <p class="govuk-body-s opss-secondary-text">You are now creating a new <span class="govuk-!-font-weight-bold">draft</span>  notification using the 'Vestibulum eyedrops' notification as a template.</p>
+        
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 opss-secondary-text">
+        <li>
+          The new draft notification will be a copy of the 'Vestibulum eyedrops' notification, ready for you to edit
+        </li>
+        <li>
+          If the 'Vestibulum eyedrops' notification provided ingredient information via a <abbr title="Portable Document Format">PDF</abbr> file, you will need to add this information to the new draft notification
+        </li>
+      </ul>
+      
+      <p class="govuk-body-s opss-secondary-text">
+        You will only need to provide a product name to create this new draft notification.
+      </p>      
+  
+    </div>     
+
+    <section class="govuk-grid-column-two-thirds opss-switch-cols__left" role="region">
+
+      <form id="skip-to-form" action="confirmation-3.html" novalidate>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <label class="govuk-label govuk-label--l" for="notification_product_name">
+            What is the product name?
+          </label>
+
+          <p class="govuk-body opss-secondary-text">
+            Provide the product name for the new draft notification: Include the trademark or brand, the product line and the specific name of the product as it appears on the packaging. Include the type of product (for example, 'shower gel') unless it's included in the product name.
+          </p>
+
+          <span class="govuk-hint govuk-!-margin-bottom-5" id="notification_product_name-hint">
+            For example, 'SkinSoft body fresh with aloe vera, shower gel'.
+          </span>
+
+          <p id="input-error" class="govuk-error-message govuk-!-margin-top-2">
+            <span class="govuk-visually-hidden">Error:</span> Enter a name which has not been used in your active notifications
+          </p>
+
+          <input aria-describedby="notification_product_name-hint input-error" class="govuk-input" id="notification_product_name" name="notification_product_name" type="text">
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button">
+            Save
+          </button>
+        
+          <a class="govuk-link govuk-link--no-visited-state" href="notification-1.html">Cancel</a>
+        </div>        
+
+      </form>
+
+    </section>
+
+   
+  </div>
+{% endblock %}

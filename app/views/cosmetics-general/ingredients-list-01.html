@@ -1,0 +1,739 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredients list
+{% endblock %}
+
+
+{% block content %}
+
+<!--div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Ingredients list</a>
+      </li>
+    </ol>
+</div-->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Ingredients list
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+            Ingredients listed in cosmetic product notifications (<span class="govuk-!-font-weight-bold opss-primary-text">submitted after 2 October 2022</span>)<a href="#october" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"><sup class="govuk-!-font-size-14">&ast;</sup></a>.
+        </p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li>
+                    <a href="/cosmetics-general/ingredients-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Cosmetic products search
+                    </a>
+                </li>
+                <li>
+                    <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Ingredients search
+                    </a>
+                </li>
+                <li class="opss-left-nav__active">
+                    <a href="/cosmetics-general/ingredients-list-01.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Ingredients list</a>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+                    
+
+            <div class="govuk-grid-column-one-third opss-text-align-right">
+                <div class="govuk-form-group opss-text-align-right">
+                    <form class="new_notification_search_form" id="new_notification_search_form_sort" novalidate="novalidate" action="#" accept-charset="UTF-8" method="get">
+            
+                        <label class="govuk-label govuk-body-s" for="notification_search_form_sort_by">
+                            Order by
+                        </label>
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" name="notification_search_form[sort_by]" id="notification_search_form_sort_by">
+                            <option value="alpha" selected>A - Z</option>
+                            <option value="alpha2">Z - A</option>
+                            <option value="date_descending">Newly added</option>
+                        </select>
+
+                        <button class="govuk-button opss-js-enabled-hidden">
+                            Order
+                        </button>
+
+                    </form>
+                </div>
+              </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p class="govuk-body-s">
+                    There are currently 343 different ingredients listed in cosmetic product notifications <br class="opss-br-desktop">(submitted after 2 October 2022).
+                </p>                    
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Search results">
+
+                <div class="govuk-!-margin-top-5 opss-2-col-flow">
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Aorem ipsum</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beritatis ipsum impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Celeniti voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Draesentium sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ecessitatibus ferendis explicabo uod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Farum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Gerferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Dignissimos dolore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sapiente atque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Inventore porro</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Benefit fraud</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Culpa</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sit amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Fuga aut impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Laboriosam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus excepturi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quam modi labore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ipsum dolor sit amet</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Consectetur adipisicing</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Esse fuga aut</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores quod quam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quas minima</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Iusto praesent</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Recusandae quo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehenderit assumenda</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis excittmus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehendt eccocurem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Lorem ipsum dolor</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Veritatis ipsum impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Praesentium sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Dignissimos dolore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sapiente atque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Inventore porro</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Benefit fraud</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Culpa</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Impedit a harum quae</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sit amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Fuga aut impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Laboriosam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus excepturi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quam modi labore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ipsum dolor sit amet</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Consectetur adipisicing</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Esse fuga aut</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores quod quam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quas minima</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Iusto praesent</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Impedit a harum quae itaque inventore cettis</a>
+                        </li>                        
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Recusandae quo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehenderit assumenda</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis excittmus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehendt eccocurem</a>
+                        </li>    
+                        
+                        <!-- 100 -->
+
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Aorem ipsum dolor</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beritatis ipsum impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Celeniti voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Draesentium sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ecessitatibus ferendis explicabo uod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Farum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Gerferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Dignissimos dolore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sapiente atque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Inventore porro</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Benefit fraud</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Culpa</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sit amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Fuga aut impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Laboriosam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus excepturi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quam modi labore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ipsum dolor sit amet</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Consectetur adipisicing</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Esse fuga aut</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores quod quam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quas minima</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Iusto praesent</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Recusandae quo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehenderit assumenda</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis excittmus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehendt eccocurem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Lorem ipsum dolor</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Veritatis ipsum impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Praesentium sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quod quam modi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt exercitationem</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Dignissimos dolore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sapiente atque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis explicabo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Inventore porro</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Voluptatum itaque</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Benefit fraud</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Culpa</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Impedit a harum quae</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sed incidunt</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Sit amet consectetur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Harum quae ipsam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Fuga aut impedit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Adipisicing elit</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Laboriosam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Necessitatibus excepturi</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quam modi labore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Ipsum dolor sit amet</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Consectetur adipisicing</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Esse fuga aut</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores quod quam</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Quas minima</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Deleniti voluptatum</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Iusto praesent</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Impedit a harum quae itaque inventore cettis</a>
+                        </li>                        
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Beatae maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Recusandae quo</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehenderit assumenda</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Itaque inventore</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Maiores</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Vel consequatur</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Perferendis excittmus</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-general/ingredients-list-02.html">Reprehendt eccocurem</a>
+                        </li>                            
+                                                
+                    </ul>
+
+                </div>
+
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                                </a>
+                            </li>
+                            <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                                </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+        <p id="october" class="govuk-body govuk-!-font-size-14 govuk-!-margin-top-9 govuk-!-margin-bottom-0 opss-secondary-text opss-text-align-right">
+            <sup>&ast;</sup>Notifications submitted before 3 October 2022 are not searchable for ingredients. <br class="opss-br-desktop">These ingredients may also feature in older notifications.
+        </p>
+    </div>
+</div>
+
+{% endblock %}

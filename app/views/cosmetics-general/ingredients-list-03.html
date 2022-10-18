@@ -1,0 +1,774 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+    Ingredients list
+{% endblock %}
+
+
+{% block content %}
+
+<!--div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="ingredients-list-01.html">Ingredients list</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="ingredients-list-02.html">Responsible Persons</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Notifications</a>
+      </li>      
+    </ol>
+</div-->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Ingredients list - <span class="govuk-!-font-weight-regular opss-font-size--reduced-s">Notifications</span>
+        </h1>
+
+
+        <p class="govuk-body opss-secondary-text">
+            Notifications by Procter &amp; Gamble -&nbsp;<span class="govuk-!-font-weight-bold opss-primary-text">submitted after 2 October 2022</span><a href="#october" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"><sup class="govuk-!-font-size-14">&ast;</sup></a>&nbsp;- which include the ingredient Aorem ipsum.
+        </p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+                <li>
+                    <a href="/cosmetics-general/ingredients-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Cosmetic products search
+                    </a>
+                </li>
+                <li>
+                    <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">
+                        Ingredients search
+                    </a>
+                </li>
+                <li class="opss-left-nav__active">
+                    <a href="/cosmetics-general/ingredients-list-01.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular">Ingredients list</a>
+
+                    <ul class="govuk-list">
+                        <li>
+                            <a href="/cosmetics-general/ingredients-list-02.html" class="govuk-link govuk-link--no-visited-state">
+                                Responsible Persons
+                            </a> <br>
+                            Aorem ipsum dolor
+
+                            <ul class="govuk-list">
+                                <li>
+                                    <a href="/cosmetics-general/ingredients-list-03.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold opss-link--no-hover" aria-current="page">
+                                        Notifications
+                                    </a> <br>
+                                    Procter &amp; Gamble
+                                </li>                                 
+                            </ul>
+                        </li>
+                 
+                    </ul>                    
+                </li>
+            </ul>
+        </nav>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
+        
+        <form>
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+            
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Notifications filter
+                    </legend>  
+                
+                    <div class="govuk-radios govuk-radios--small" data-opss-reset-to-default="element" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="active" name="notifications" type="radio" value="active" class="govuk-radios__input" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="active">Active notifications</label>
+                        </div>
+                
+                        <div class="govuk-radios__item">
+                            <input id="archived" name="notifications" type="radio" value="archived" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="archived">Archived notifications</label>
+                        </div>
+                
+                        <div class="govuk-radios__item">
+                            <input id="both" name="notifications" type="radio" value="both" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="both">Both</label>
+                        </div>
+                
+                    </div>
+                </fieldset>
+
+
+
+                <!--div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            Filters
+                        </legend>
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="archived" name="organisation" type="checkbox" value="archived">
+                                <label class="govuk-label govuk-checkboxes__label" for="archived">
+                                    Include archived notifications
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div-->
+
+
+
+                
+            </div>
+
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button">
+                    Apply
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+
+        <div class="govuk-grid-row">
+                    
+
+            <div class="govuk-grid-column-one-third opss-text-align-right">
+                <div class="govuk-form-group opss-text-align-right">
+                    <form class="new_notification_search_form" id="new_notification_search_form_sort" novalidate="novalidate" action="#" accept-charset="UTF-8" method="get">
+            
+                        <label class="govuk-label govuk-body-s" for="notification_search_form_sort_by">
+                            Order by
+                        </label>
+
+                        <select class="govuk-select govuk-!-margin-bottom-1" name="notification_search_form[sort_by]" id="notification_search_form_sort_by">
+                            <option value="alpha" selected>A - Z</option>
+                            <option value="alpha2">Z - A</option>
+                            <option value="date_descending">Newly added</option>                            
+                        </select>
+
+                        <button class="govuk-button opss-js-enabled-hidden">
+                            Order
+                        </button>
+
+                    </form>
+                </div>
+              </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p class="govuk-body-s">
+                    There are currently 96 active notifications by Procter &amp; Gamble (submitted after 2 October 2022) which include the ingredient Aorem ipsum.
+                </p>                    
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="Notifications">
+
+                <table id="table-items" class="govuk-table govuk-!-margin-top-5 opss-table-items opss-table-items--sm opss-table-items--first-col-33">
+                    <caption class="govuk-visually-hidden">
+                        Each notification is described across 2 rows within its own table body.
+                    </caption>
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">&nbsp;</th>
+                        <th id="uknotified" scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                        <th id="ukcosprodnumber" scope="col" class="govuk-table__header"><abbr>UKCP</abbr>  number</th>
+                        <th id="eurefnumber" scope="col" class="govuk-table__header"><abbr>EU</abbr> reference number</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-01" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-01" id="meta-01" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-01 meta-01" class="govuk-table__cell">
+                            4 May 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-01 meta-01" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="eurefnumber item-01 meta-01" class="govuk-table__cell">
+                            1000094
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-02" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-02" id="meta-02" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-02 meta-02" class="govuk-table__cell">
+                            5 January 1978
+                        </td>
+                        <td headers="ukcosprodnumber item-02 meta-02" class="govuk-table__cell">
+                            UKCP-78219900
+                        </td>
+                        <td headers="eurefnumber item-02 meta-02" class="govuk-table__cell">
+                            15766863112607598
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-03" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-03" id="meta-03" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-03 meta-03" class="govuk-table__cell">
+                            11 May 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-03 meta-03" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="eurefnumber item-03 meta-03" class="govuk-table__cell">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-04" id="meta-04b" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-04 meta-04b" class="govuk-table__cell">
+                            4 May 2020
+                        </td>
+                        <td headers="ukcosprodnumber item-04 meta-04b" class="govuk-table__cell">
+                            UKCP-675630988
+                        </td>
+                        <td headers="eurefnumber item-04 meta-04b" class="govuk-table__cell">
+                            7768-998-23
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-04b" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-04b" id="meta-04" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-04b meta-04" class="govuk-table__cell">
+                            27 September 2020
+                        </td>
+                        <td headers="ukcosprodnumber item-04b meta-04" class="govuk-table__cell">
+                            UKCP-895536243
+                        </td>
+                        <td headers="eurefnumber item-04b meta-04" class="govuk-table__cell">
+                            002-473885-12995
+                        </td>
+                    </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-visually-hidden">
+                            Name
+                        </th>
+                        <th id="item-05" colspan="3" scope="colgroup" class="govuk-table__header">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                        </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th headers="item-05" id="meta-05" class="govuk-visually-hidden">
+                            Metadata
+                        </th>
+                        <td headers="uknotified item-05 meta-05" class="govuk-table__cell">
+                            4 August 2021
+                        </td>
+                        <td headers="ukcosprodnumber item-05 meta-05" class="govuk-table__cell">
+                            UKCP-78219900
+                        </td>
+                        <td headers="eurefnumber item-05 meta-05" class="govuk-table__cell">
+                            1000094346872
+                        </td>
+                    </tr>
+                    </tbody>
+
+
+
+
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-06" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-06" id="meta-06" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-06 meta-06" class="govuk-table__cell">
+                                5 January 1978
+                            </td>
+                            <td headers="ukcosprodnumber item-06 meta-06" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="eurefnumber item-06 meta-06" class="govuk-table__cell">
+                                15766863112607598
+                            </td>
+                        </tr>
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-07" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-07" id="meta-07" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-07 meta-07" class="govuk-table__cell">
+                                11 May 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-07 meta-07" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="eurefnumber item-07 meta-07" class="govuk-table__cell">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-08" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-08" id="meta-08" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-08 meta-08" class="govuk-table__cell">
+                                4 May 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-08 meta-08" class="govuk-table__cell">
+                                UKCP-675630988
+                            </td>
+                            <td headers="eurefnumber item-08 meta-08" class="govuk-table__cell">
+                                7768-998-23
+                            </td>
+                        </tr>
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-09" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-09" id="meta-09" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-09 meta-09" class="govuk-table__cell">
+                                27 September 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-09 meta-09" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="eurefnumber item-09 meta-09" class="govuk-table__cell">
+                                002-473885-12995
+                            </td>
+                        </tr>
+                        </tbody>
+    
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-10" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-10" id="meta-10" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-10 meta-10" class="govuk-table__cell">
+                                4 August 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-10 meta-10" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="eurefnumber item-10 meta-10" class="govuk-table__cell">
+                                1000094346872
+                            </td>
+                        </tr>
+                        </tbody>
+                        
+                        
+
+
+
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-11" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-11" id="meta-11" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-11 meta-11" class="govuk-table__cell">
+                                    11 May 2021
+                                </td>
+                                <td headers="ukcosprodnumber item-11 meta-11" class="govuk-table__cell">
+                                    UKCP-895536243
+                                </td>
+                                <td headers="eurefnumber item-11 meta-11" class="govuk-table__cell">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-12" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-12" id="meta-12" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-12 meta-12" class="govuk-table__cell">
+                                    4 May 2020
+                                </td>
+                                <td headers="ukcosprodnumber item-12 meta-12" class="govuk-table__cell">
+                                    UKCP-675630988
+                                </td>
+                                <td headers="eurefnumber item-12 meta-12" class="govuk-table__cell">
+                                    7768-998-23
+                                </td>
+                            </tr>
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-13" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-13" id="meta-13" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-13 meta-13" class="govuk-table__cell">
+                                    27 September 2020
+                                </td>
+                                <td headers="ukcosprodnumber item-13 meta-13" class="govuk-table__cell">
+                                    UKCP-895536243
+                                </td>
+                                <td headers="eurefnumber item-13 meta-13" class="govuk-table__cell">
+                                    002-473885-12995
+                                </td>
+                            </tr>
+                            </tbody>
+        
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-visually-hidden">
+                                    Name
+                                </th>
+                                <th id="item-14" colspan="3" scope="colgroup" class="govuk-table__header">
+                                    <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                                </th>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <th headers="item-14" id="meta-14" class="govuk-visually-hidden">
+                                    Metadata
+                                </th>
+                                <td headers="uknotified item-14 meta-14" class="govuk-table__cell">
+                                    4 August 2021
+                                </td>
+                                <td headers="ukcosprodnumber item-14 meta-14" class="govuk-table__cell">
+                                    UKCP-78219900
+                                </td>
+                                <td headers="eurefnumber item-14 meta-14" class="govuk-table__cell">
+                                    1000094346872 
+                                </td>
+                            </tr>
+                            </tbody>              
+                            
+                            
+
+
+
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-15" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-15" id="meta-15" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-15 meta-15" class="govuk-table__cell">
+                                        5 January 1978
+                                    </td>
+                                    <td headers="ukcosprodnumber item-15 meta-15" class="govuk-table__cell">
+                                        UKCP-78219900
+                                    </td>
+                                    <td headers="eurefnumber item-15 meta-15" class="govuk-table__cell">
+                                        15766863112607598
+                                    </td>
+                                </tr>
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-16" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-16" id="meta-16" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-16 meta-16" class="govuk-table__cell">
+                                        11 May 2021
+                                    </td>
+                                    <td headers="ukcosprodnumber item-16 meta-16" class="govuk-table__cell">
+                                        UKCP-895536243
+                                    </td>
+                                    <td headers="eurefnumber item-16 meta-16" class="govuk-table__cell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-17" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing Elit</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-17" id="meta-17" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-17 meta-17" class="govuk-table__cell">
+                                        4 May 2020
+                                    </td>
+                                    <td headers="ukcosprodnumber item-17 meta-17" class="govuk-table__cell">
+                                        UKCP-675630988
+                                    </td>
+                                    <td headers="eurefnumber item-17 meta-17" class="govuk-table__cell">
+                                        7768-998-23
+                                    </td>
+                                </tr>
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-18" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-18" id="meta-18" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-18 meta-18" class="govuk-table__cell">
+                                        27 September 2020
+                                    </td>
+                                    <td headers="ukcosprodnumber item-18 meta-18" class="govuk-table__cell">
+                                        UKCP-895536243
+                                    </td>
+                                    <td headers="eurefnumber item-18 meta-18" class="govuk-table__cell">
+                                        002-473885-12995
+                                    </td>
+                                </tr>
+                                </tbody>
+            
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-visually-hidden">
+                                        Name
+                                    </th>
+                                    <th id="item-19" colspan="3" scope="colgroup" class="govuk-table__header">
+                                        <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta loutettie</a>
+                                    </th>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th headers="item-19" id="meta-19" class="govuk-visually-hidden">
+                                        Metadata
+                                    </th>
+                                    <td headers="uknotified item-19 meta-19" class="govuk-table__cell">
+                                        4 August 2021
+                                    </td>
+                                    <td headers="ukcosprodnumber item-19 meta-19" class="govuk-table__cell">
+                                        UKCP-78219900
+                                    </td>
+                                    <td headers="eurefnumber item-19 meta-19" class="govuk-table__cell">
+                                        1000094346872
+                                    </td>
+                                </tr>
+                                </tbody> 
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <th class="govuk-visually-hidden">
+                                            Name
+                                        </th>
+                                        <th id="item-20" colspan="3" scope="colgroup" class="govuk-table__header">
+                                            <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum lectus</a>
+                                        </th>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th headers="item-20" id="meta-20" class="govuk-visually-hidden">
+                                            Metadata
+                                        </th>
+                                        <td headers="uknotified item-20 meta-20" class="govuk-table__cell">
+                                            27 September 2020
+                                        </td>
+                                        <td headers="ukcosprodnumber item-20 meta-20" class="govuk-table__cell">
+                                            UKCP-895536243
+                                        </td>
+                                        <td headers="eurefnumber item-20 meta-20" class="govuk-table__cell">
+                                            002-473885-12995
+                                        </td>
+                                    </tr>
+                                    </tbody>                                                                   
+
+                    <tfoot class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">&nbsp;</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UKCP</abbr> number</th>
+                            <th scope="col" class="govuk-table__header"><abbr>EU</abbr> reference number</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                                </a>
+                            </li>
+                            <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                                <a href="" class="govuk-link govuk-link--no-visited-state">
+                                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                                </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+        <p class="govuk-body govuk-!-font-size-14 govuk-!-margin-top-9 govuk-!-margin-bottom-0 opss-secondary-text opss-text-align-right">
+            <sup>&ast;</sup>Notifications submitted before 3 October 2022 are not searchable for ingredients. <br class="opss-br-desktop">The ingredient may also feature in older notifications.
+        </p>
+    </div>
+</div>
+
+{% endblock %}
