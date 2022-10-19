@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-  Does the product contain ingredients of concern?  
+  Does the product contain ingredients the National Poisons Information Service needs to know about?
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,19 +22,21 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="checkbox-hint">
           
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              Does the product contain ingredients of concern?
+              Does the product contain ingredients the National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about?
             </h1>
           </legend>
 
           <div id="checkbox-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-3">
-            There are ingredients of concern which the National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about. If the ingredient is listed in the following tables and the amount meets the weight-by-weight (<abbr class="opss-no-wrap">w/w</abbr>) criteria then it is an ingredient of concern. The information you provide will be used to help treat people who might accidentally be affected by them.
+            If any of your product ingredients are listed in the following <abbr>NPIS</abbr> tables and their amounts meet the weight-by-weight (<abbr class="opss-no-wrap">w/w</abbr>) criteria, then they are ingredients the <abbr>NPIS</abbr> needs to know about. The information you provide will be used to help treat people who might accidentally be affected by them.
 
 
 
             <!-- OLD content ... 
                         There are also particular poisons which the National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about &ndash; especially if their details match ingredients listed in the following poison tables. The <abbr>NPIS</abbr> needs to know the exact concentrations (<span title="Percentage weight for weight">&percnt; <abbr>w</abbr>/<abbr>w</abbr></span>) of these ingredients. The information you provide will be used to help treat people who might accidentally be affected by them.
+
+                        There are ingredients of concern which the National Poisons Information Service (<abbr>NPIS</abbr>) needs to know about. If the ingredient is listed in the following tables and the amount meets the weight-by-weight (<abbr class="opss-no-wrap">w/w</abbr>) criteria then it is an ingredient of concern. The information you provide will be used to help treat people who might accidentally be affected by them.
             -->
           </div>
         
