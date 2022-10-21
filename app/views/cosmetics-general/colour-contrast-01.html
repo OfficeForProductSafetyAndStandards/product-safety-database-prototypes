@@ -1,0 +1,53 @@
+{% extends "layout-cos-landing.html" %}
+
+{% block pageTitle %}
+    ---
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>
+    li ul {
+      margin-left: 50px; 
+      padding: 20px 0 5px 0; 
+
+    }
+    /*li ul li, 
+    li ul li i {
+        font-size: 80%; 
+    }*/
+    li i {
+        font-size: 80%; 
+    }
+</style>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">Notify the Office for Product Safety and Standards (OPSS) about cosmetic products available to consumers in Great Britain (GB).</p>
+
+      <h2 class="govuk-heading-m">What you need to do</h2>
+
+      <p class="govuk-body">You need to notify OPSS about every cosmetic product available to consumers in GB.</p>
+
+      <div class="govuk-warning-text "><span class="govuk-warning-text__icon" aria-hidden="true">!</span><strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span>You may face a fine and a prison term of up to 3 months if you do not notify <abbr title="Office for Product Safety and Standards">OPSS</abbr> about a cosmetic product. This fine could be unlimited in England and Wales or up to £5,000 in Scotland and Northern Ireland.</strong></div>
+
+      <h2 class="govuk-heading-m">What you will need to tell us</h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">You will need to tell OPSS:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what is in the cosmetic product, including certain nanomaterials</li>
+        <li>the name and details of a contact person for the National Poisons Information Service, or Trading Standards, to get in touch with</li>
+        <li>who the Responsible Person is</li>
+      </ul>
+
+      <div class="govuk-inset-text">The Responsible Person is the individual or company responsible for ensuring the regulations are followed. Every cosmetic product placed on the GB market must have a Responsible Person.</div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
