@@ -1,7 +1,7 @@
 {% extends "layout-02-noacc.html" %}
 
 {% block pageTitle %}
-    Product search
+Product search
 {% endblock %}
 
 
@@ -11,23 +11,23 @@
   <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
-            Product &ndash; search
-          </h1>
-          <p id="cosmetic-products-hint" class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-            Search for notifications from your notified cosmetic products.
-          </p>
-        </div>
-        <!--div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
+          Product &ndash; search
+        </h1>
+        <p id="cosmetic-products-hint" class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+          Search for notifications from your notified cosmetic products.
+        </p>
+      </div>
+      <!--div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
           <div class="opss-text-align-right">
             <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
               Add a cosmetic product
             </a>
           </div>
         </div-->
-      </div>
+    </div>
   </div>
 </div>
 
@@ -36,25 +36,29 @@
   <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
 
     <a href="#page-content" class="govuk-skip-link opss-skip-link">
-        Skip to the main content
+      Skip to the main content
     </a>
 
     <ul class="govuk-list opss-left-nav">
       <li>
-          <a href="left-nav-cosmetic-products.html" class="govuk-link govuk-link--no-visited-state">Product notifications</a>
+        <a href="" class="govuk-link govuk-link--no-visited-state">Product notifications</a>
+        <!--left-nav-cosmetic-products.html-->
       </li>
       <li class="govuk-!-margin-bottom-6">
-          <a href="left-nav-cosmetic-products-drafts.html" class="govuk-link govuk-link--no-visited-state">Draft notifications</a>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Draft notifications</a>
+        <!--left-nav-cosmetic-products-drafts.html-->
       </li>
       <!--li class="govuk-!-margin-bottom-6">
           <a href="left-nav-cosmetic-products-archived.html" class="govuk-link govuk-link--no-visited-state">Archived notifications</a>
-      </li--> 
+      </li-->
       <li class="opss-left-nav__active">
-        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Product - search</a>
-      </li> 
+        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state"
+          aria-current="page">Product - search</a>
+      </li>
       <li>
-        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">Ingredient - search</a>
-      </li>                
+        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">Ingredient -
+          search</a>
+      </li>
     </ul>
 
   </nav>
@@ -66,16 +70,20 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          
+
           <div class="govuk-form-group">
             <label class="govuk-label--s" for="prod-search">Search</label>
 
-            <div class="govuk-hint govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-1" id="search-hint">
-              <span class="govuk-visually-hidden">Search</span> on a product name or the <abbr>UKCP</abbr> cosmetic product number.
+            <div class="govuk-hint govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-1"
+              id="search-hint">
+              <span class="govuk-visually-hidden">Search</span> on a product name or the <abbr>UKCP</abbr> cosmetic
+              product number.
             </div>
-            
+
             <div class="govuk-input__wrapper opss-search__wrapper">
-              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="prod-search" id="prod-search" aria-describedby="search-hint" value="... the search criteria went here ...">
+              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search"
+                name="prod-search" id="prod-search" aria-describedby="search-hint"
+                value="... the search criteria went here ...">
               <button class="govuk-button govuk-!-margin-bottom-0">
                 <span class="govuk-visually-hidden">Submit search</span>
               </button>
@@ -84,17 +92,19 @@
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-status">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Notification status
               </legend>
 
               <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-status">
                 You can filter the search results to show only notified or archived notifications.
               </div>
-      
+
               <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio" value="notified">
+                  <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio"
+                    value="notified">
                   <label class="govuk-label govuk-radios__label" for="status">
                     Notified
                   </label>
@@ -110,14 +120,15 @@
                   <label class="govuk-label govuk-radios__label" for="status-3">
                     Both
                   </label>
-                </div>                
+                </div>
               </div>
-            </fieldset> 
+            </fieldset>
           </div>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Notification date
               </legend>
 
@@ -128,10 +139,11 @@
 
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
-                  <!-- **** nested fieldset: from, starts **** -->              
+                  <!-- **** nested fieldset: from, starts **** -->
                   <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="from-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
-                        From
+                    <legend
+                      class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
+                      From
                     </legend>
 
                     <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="from-hint">
@@ -144,7 +156,8 @@
                           <label class="govuk-label govuk-date-input__label" for="from-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" value="22">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day"
+                            name="from-day" type="text" inputmode="numeric" value="22">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -152,7 +165,8 @@
                           <label class="govuk-label govuk-date-input__label" for="from-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric" value="8">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month"
+                            name="from-month" type="text" inputmode="numeric" value="8">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -160,7 +174,8 @@
                           <label class="govuk-label govuk-date-input__label" for="from-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric" value="2019">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year"
+                            name="from-year" type="text" inputmode="numeric" value="2019">
                         </div>
                       </div>
                     </div>
@@ -168,13 +183,14 @@
                   <!-- **** nested fieldset: from, ends-->
                 </div>
                 <div class="govuk-grid-column-one-half">
-                  <!-- **** nested fieldset: to, starts **** -->              
+                  <!-- **** nested fieldset: to, starts **** -->
                   <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="to-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
-                        To
+                      To
                     </legend>
 
-                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden" id="to-hint">
+                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden"
+                      id="to-hint">
                       For example, 27 8 2022
                     </div>
 
@@ -184,7 +200,8 @@
                           <label class="govuk-label govuk-date-input__label" for="to-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric" value="10">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day"
+                            name="to-day" type="text" inputmode="numeric" value="10">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -192,7 +209,8 @@
                           <label class="govuk-label govuk-date-input__label" for="to-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" value="10">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month"
+                            name="to-month" type="text" inputmode="numeric" value="10">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -200,32 +218,35 @@
                           <label class="govuk-label govuk-date-input__label" for="to-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" value="2021">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year"
+                            name="to-year" type="text" inputmode="numeric" value="2021">
                         </div>
                       </div>
                     </div>
                   </fieldset>
                   <!-- **** nested fieldset: to, ends-->
-                </div>                
+                </div>
               </div>
-              
 
-            </fieldset> 
-          </div>          
+
+            </fieldset>
+          </div>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset opss-grouping" aria-describedby="sorting-order">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
                 Sorting order
               </legend>
 
               <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="sorting-order">
                 You can sort the ordering of how the notifications will be displayed.
               </div>
-      
+
               <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio" value="relevance">
+                  <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio"
+                    value="relevance">
                   <label class="govuk-label govuk-radios__label" for="sorting">
                     Relevance
                   </label>
@@ -241,29 +262,29 @@
                   <label class="govuk-label govuk-radios__label" for="sorting-3">
                     Oldest
                   </label>
-                </div>                
+                </div>
               </div>
-            </fieldset> 
-          </div>  
-          
+            </fieldset>
+          </div>
+
           <div class="govuk-button-group">
             <button class="govuk-button">
               Search
             </button>
-          
+
             <button type="reset" class="govuk-button opss-button-link opss-nojs-hide">
               Reset
             </button>
-          </div>          
+          </div>
 
         </div>
-      </div>     
+      </div>
 
     </form>
 
   </section>
 </div>
 
-{% include "cosmetics-submit-search/inc_clear-form-js.html" %} 
+{% include "cosmetics-submit-search/inc_clear-form-js.html" %}
 
 {% endblock %}
