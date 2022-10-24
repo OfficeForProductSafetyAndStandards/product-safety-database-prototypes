@@ -1,8 +1,12 @@
-# Requirements
+---
+title: Prototype Kit requirements
+caption: Installation guide for new users
+---
+# Prototype Kit requirements
 
-The kit runs on Mac, Windows and Linux. At a minimum you’ll need `node.js` (install instructions below) and a web browser.
+The GOV.UK Prototype Kit runs on Mac, Windows and Linux. At a minimum you’ll need Node.js (install instructions below) and a web browser.
 
-This guide recommends additional software which will be used in later guides.
+[If you're using an M1 Mac issued in 2020 or later](https://en.wikipedia.org/wiki/Apple_M1#Products_that_include_the_Apple_M1), you might experience issues when you run the Prototype Kit. To get support, [contact the Prototype team](/docs/about).
 
 ## Software you need
 
@@ -10,13 +14,12 @@ You'll usually need admin access to your machine to install the software.
 
 If you do not have admin access, ask your IT team to install the software for you.
 
-GDS staff can install the software themselves with Managed Software Centre (MSC).
+GDS staff can install the software themselves with the Self Service app.
 
 You'll need:
 
-* Node.js 12.x.x
-* Atom (text editor)
-* Git bash (Windows)
+* Node.js 16.x.x
+* Git Bash (if you're using Windows, see below)
 
 ## Terminal
 
@@ -24,57 +27,50 @@ You'll need a terminal application to install, start and stop the kit. Using a t
 
 ### Mac users
 
-Macs come with `Terminal.app`. It’s located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
+Macs come with a terminal application already. It’s located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
 
 ### Windows users
 
 This guide will use `Git Bash` as a terminal instead of the existing `CMD` application. Git Bash is more fully featured and uses the same commands as Mac and Linux, so instructions in this guide work for all.
 
-Installing `git bash` installs two things for you: a terminal (for entering commands), and git (used later to share your work with others).
+Installing `Git Bash` installs 2 things for you: 
 
-#### Installing git bash
+* a terminal (for entering commands) and 
+* Git (used later to share your work with others)
 
-Download [Git bash (direct download)](https://git-scm.com/download/win).
+#### Installing Git Bash for Windows users
 
-Install with all default options.
+Download [Git Bash (direct download)](https://git-scm.com/download/win).
 
-### Entering commands in the terminal
+Install with all the default options.
 
-Commands to be entered in to the terminal will be inset like this:
-```
-command to be typed in to terminal
-```
-Once you’ve typed the command, press enter to send it.
+## Node.js version 16 LTS
 
-
-## Node.js version 12 LTS
-
-The kit is designed to work with Node.js version 12 LTS. The kit works with any 12.x.x version.
+The kit is designed to work with Node.js version 16 LTS. The kit works with any 16.x.x version.
 
 ### Check if you have Node.js
 
-In terminal (git bash in Windows):
+In terminal (Git Bash in Windows):
 ```
 node --version
 ```
-If it says `command not found` or `Error 0x2 starting node.exe --version` you don’t have node and will need to download and install it.
+If it says `command not found` or `Error 0x2 starting node.exe --version` you don’t have Node and will need to download and install it.
 
-If the version number starts with 12 you have the correct version installed.
+If the version number starts with 16 you have the correct version installed.
 
-If it says another number such as `0.12` or `5.x.x`, you need to download and install version 12.
+If it says another number such as `0.12` or `5.x.x`, you need to download and install version 16.
 
 ### Download and install Node.js
 
 #### Mac / Windows users
 
-Download version 12 from [nodejs.org](https://nodejs.org/en/).
+[Download version 16 from the Node.js website.](https://nodejs.org/en/)
 
 Run the installer with all default options.
 
 #### Linux users
 
-Follow the instructions on the [Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
-) site. Make sure you get version 12.
+[Follow the Linux instructions on the Node.js. website.](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) Make sure you get version 16.
 
 ### Once Node is installed
 
@@ -85,10 +81,6 @@ To check it is installed correctly you can again run:
 node --version
 ```
 
-If it’s installed correctly it should show a number starting with 12.
+If it’s installed correctly it should show a number starting with 16.
 
-## Atom (text editor)
-
-You’ll need a text editor to edit and make changes to your prototype. We recommend [Atom](https://atom.io/) - which is free and has lots of useful features.
-
-<a href="install-the-kit.md" class="button">Next (install the kit)</a>
+<a href="install-the-kit.md" class="button">Next (How to install the kit)</a>
