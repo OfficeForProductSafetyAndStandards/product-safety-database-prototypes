@@ -3,19 +3,19 @@
 //Don't edit your local copy to avoid it unsyncing  with these versions.
 //We can remove linting from these scss files - they won't build if there is a real problem.
 
-@import "opss/opss-shared";
-@import "opss/opss-search";
-@import "opss/opss-pagination";
+@import "./opss-shared";
+@import "./opss-search";
+@import "./opss-pagination";
 
 @include govuk-media-query($from: desktop) {
-/*fix for psd while it is unable to place back links outside and before the main.govuk-main-wrapper element */    
+/*fix for psd while it is unable to place back links outside and before the main.govuk-main-wrapper element */
     body > .govuk-width-container > .govuk-main-wrapper > .govuk-back-link {
         margin-top: - govuk-spacing(8);
         margin-bottom:  - (govuk-spacing(8) + govuk-spacing(1));
         position: relative;
-        top: - (govuk-spacing(6) + govuk-spacing(1));        
+        top: - (govuk-spacing(6) + govuk-spacing(1));
     }
-}    
+}
 
 .opss-radios__divider--title .govuk-radios__divider {
     width: 100%;
@@ -87,7 +87,7 @@
     margin-top: govuk-spacing(7);
     margin-bottom: govuk-spacing(2);
 
-    .opss-panels__pair, 
+    .opss-panels__pair,
     .opss-panels__single {
 
         border-width: 2px;
@@ -122,12 +122,12 @@
 
     .opss-panels__single {
         /*width: 100%; */
-        padding-bottom: govuk-spacing(2); 
+        padding-bottom: govuk-spacing(2);
         margin-top: - govuk-spacing(4);
         margin-bottom: govuk-spacing(2);
 
         dt, dd {
-            padding-bottom: 0; 
+            padding-bottom: 0;
         }
     }
 }
@@ -235,9 +235,9 @@ ul.opss-radio-list {
 }
 
 /*.opss-list-squares {
-    list-style-type: square; 
+    list-style-type: square;
 
-    ol &, 
+    ol &,
     ul & {
         margin-left: govuk-spacing(6);
         padding-top: govuk-spacing(4);
@@ -300,19 +300,19 @@ ul.opss-radio-list {
         color: govuk-colour("white");
     }
     &.opss-tag--risk4 {
-        /*border-radius: govuk-spacing(2); border-width: 0.5px; border-color: govuk-colour("red"); padding-left: govuk-spacing(2); padding-right: govuk-spacing(2);*/ 
-        
+        /*border-radius: govuk-spacing(2); border-width: 0.5px; border-color: govuk-colour("red"); padding-left: govuk-spacing(2); padding-right: govuk-spacing(2);*/
+
         border-width: 0;
-        margin-top: 0.2rem; 
-        float: left; 
+        margin-top: 0.2rem;
+        float: left;
 
         background-color: govuk-colour("white");
-        color: govuk-colour("red"); 
-        text-transform: none; 
+        color: govuk-colour("red");
+        text-transform: none;
 
-        /* &::before {content: '*** '; vertical-align: middle; }        
+        /* &::before {content: '*** '; vertical-align: middle; }
         &::after {content: ' ***'; vertical-align: middle; } */
-    }    
+    }
     &.opss-tag--plain {
         @include opss-font-size($s: 14px, $l: 1.3);
         text-transform: none;
@@ -446,23 +446,23 @@ ul.opss-radio-list {
         }
         &.opss-tabs--min-height-m {
             & > div {
-                min-height: 730px; 
+                min-height: 730px;
             }
-        }  
-        
+        }
+
         dl > div:last-child {
-            border-bottom: none 0; 
+            border-bottom: none 0;
         }
 
     }
 }
 /*
 .opss-list-counter {
-    padding-left: govuk-spacing(0); 
+    padding-left: govuk-spacing(0);
     counter-reset: item;
 
     li {
-        counter-increment: item; 
+        counter-increment: item;
         display: inline-block;
         padding-right: govuk-spacing(4);
     }
@@ -470,8 +470,8 @@ ul.opss-radio-list {
     li:before {
         margin-right: 10px;
         content: counter(item)":";
-        display: inline-block; 
-        color: $govuk-secondary-text-colour; 
+        display: inline-block;
+        color: $govuk-secondary-text-colour;
         font-size: 90%;
     }
 
@@ -494,47 +494,47 @@ ul.opss-radio-list {
 
 section[data-info-number] {
     margin-left: - govuk-spacing(4);
-    margin-right: - govuk-spacing(4);  
-} 
+    margin-right: - govuk-spacing(4);
+}
 section.opss-border-all[data-info-number] {
-    margin-bottom: govuk-spacing(8) !important; 
+    margin-bottom: govuk-spacing(8) !important;
 
     & > ul li:last-child dl {/* remove border bottom and margin from last row when inside a border box */
-        margin-bottom: - govuk-spacing(2); 
-        
+        margin-bottom: - govuk-spacing(2);
+
         div:last-child  {
-            border-bottom: none; 
+            border-bottom: none;
         }
     }
-}    
+}
 section:not(.opss-border-all)[data-info-number="0"] {
-    margin-bottom: govuk-spacing(6) !important; 
+    margin-bottom: govuk-spacing(6) !important;
 }
 
-input[type="text"]:disabled, 
+input[type="text"]:disabled,
 select:disabled {
-    color: govuk-colour("mid-grey"); 
-    border-color: govuk-colour("mid-grey"); 
+    color: govuk-colour("mid-grey");
+    border-color: govuk-colour("mid-grey");
 
-    color: rgba(118, 118, 118, 0.6); 
-    border-color: rgba(118, 118, 118, 0.6);    
+    color: rgba(118, 118, 118, 0.6);
+    border-color: rgba(118, 118, 118, 0.6);
 
-    background-color: transparent !important; 
+    background-color: transparent !important;
     cursor: default;
 }
 
 .opss-accordion--sm-all > div:first-child button {//'Show all sections': right + sm font*/
-    float: right; 
+    float: right;
     @include opss-font-size($s: 14px, $l: 1.3);
 }
 
 @include govuk-media-query($from: desktop) {
     .opss-text-limit-scroll-s {
         @include opss-font-size($s: 16px, $l: 1.2);
-        display: block; 
-        margin-right: - govuk-spacing(4); 
-        padding-right: govuk-spacing(2); 
-        max-height: 400px; 
+        display: block;
+        margin-right: - govuk-spacing(4);
+        padding-right: govuk-spacing(2);
+        max-height: 400px;
         overflow-y: auto;
 
         &::-webkit-scrollbar {width: govuk-spacing(2); }

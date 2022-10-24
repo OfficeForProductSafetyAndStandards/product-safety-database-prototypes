@@ -4,11 +4,10 @@ const path = require('path')
 
 // NPM dependencies
 const express = require('express')
-const marked = require('marked')
 const router = express.Router()
 
 // Local dependencies
-const utils = require('../lib/utils.js')
+const utils = require('../lib/utils')
 
 // Page routes
 
@@ -30,14 +29,28 @@ router.get('/install/:page', function (req, res) {
   }
   redirectMarkdown(req.params.page, res)
   var doc = fs.readFileSync(path.join(__dirname, '/documentation/install/', req.params.page + '.md'), 'utf8')
-  var html = marked(doc)
-  res.render('install_template', { document: html })
+  const renderOptions = utils.getRenderOptions(doc)
+  res.render('install_template', renderOptions)
 })
 
-// Redirect to the zip of the latest release of the Prototype Kit on GitHub
+// When in 'promo mode', redirect to download the current release zip from
+// GitHub, based on the version number from package.json
+//
+// Otherwise, redirect to the latest release page on GitHub, to avoid just
+// linking to the same version being run by someone referring to the copy of the
+// docs running in their kit
 router.get('/download', function (req, res) {
-  var url = utils.getLatestRelease()
-  res.redirect(url)
+  if (req.app.locals.promoMode === 'true') {
+    const version = require('../package.json').version
+
+    res.redirect(
+      `https://github.com/alphagov/govuk-prototype-kit/releases/v${version}/download/govuk-prototype-kit-${version}.zip`
+    )
+  } else {
+    res.redirect(
+      'https://github.com/alphagov/govuk-prototype-kit/releases/latest'
+    )
+  }
 })
 
 // Examples - examples post here
@@ -52,19 +65,22 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { name: 'Foo' })
 })
 
-// Branching
-router.post('/examples/branching/over-18-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
+// Redirects
 
-  const over18 = req.session.data['over-18']
+router.get('/examples/branching', function (req, res) {
+  res.redirect('/docs/make-first-prototype/branching')
+})
 
-  if (over18 === 'false') {
-    res.redirect('/docs/examples/branching/under-18')
-  } else {
-    res.redirect('/docs/examples/branching/over-18')
-  }
+router.get('/making-pages', function (req, res) {
+  res.redirect('/docs/make-first-prototype/create-pages')
+})
+
+router.get('/make-first-prototype/add-questions', function (req, res) {
+  res.redirect('/docs/make-first-prototype/use-components')
+})
+
+router.get('/templates/check-your-answers', function (req, res) {
+  res.redirect('/docs/templates/check-answers')
 })
 
 module.exports = router
