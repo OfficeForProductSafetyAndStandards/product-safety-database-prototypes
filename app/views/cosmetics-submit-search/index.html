@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Page designs COS search on submit
+Page designs COS search on submit
 {% endblock %}
 
 
@@ -10,39 +10,50 @@
 {% block content %}
 <style>
     li ul {
-      margin-left: 50px; 
-      padding: 20px 0 5px 0; 
+        margin-left: 50px;
+        padding: 20px 0 5px 0;
 
     }
-    li ul li, 
+
+    li ul li,
     li ul li i {
-        font-size: 80%; 
+        font-size: 80%;
     }
+
     li i {
-        font-size: 60%; 
+        font-size: 60%;
     }
-    a.todo, span.todo {
+
+    a.todo,
+    span.todo {
         color: red !important;
     }
+
     ul.small-links a {
         font-size: 16px;
     }
-    ul.margin-left, 
+
+    ul.margin-left,
     h3.margin-left {
-        margin-left: 50px; 
+        margin-left: 50px;
     }
+
     .ghost {
         color: #999 !important;
     }
+
     .highlight {
         background-color: aquamarine;
     }
+
     .strike {
         text-decoration: line-through;
     }
-    ol.govuk-list--number li > a {
+
+    ol.govuk-list--number li>a {
         font-size: inherit;
     }
+
 </style>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -61,7 +72,8 @@
                     </p>
 
                     <p class="govuk-body opss-secondary-text">
-                        <a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1469" class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1469</a>
+                        <a href="https://regulatorydelivery.atlassian.net/browse/COSBETA-1469"
+                            class="govuk-link govuk-link--no-visited-state" target="_blank">spike design ticket 1469</a>
                     </p>
 
                 </div>
@@ -72,114 +84,207 @@
 </div>
 
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" style="display: none;">
     <div class="govuk-grid-column-full govuk-!-padding-top-7">
 
-        <h2 class="govuk-heading-s">New left nav design for 'Cosmetics products' page - required for extending the products functionality</h2>
-   
+        <h2 class="govuk-heading-s">New left nav design for 'Cosmetics products' page - required for extending the
+            products functionality</h2>
+
         <ol class="govuk-list govuk-list--number govuk-list--spaced">
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products.html" target="_blank">Product notifications</a> - New left nav
-                <br><span class="govuk-!-font-size-16">To allow for additional search page - and future search pages - this now also affords the opportunity to split out the the draft notifications into their own page (and eventually, archived notifications). The parent 'Cosmetic products' nav link stays active for all left nav links.
-                    
-                <br><br>(Left nav has active class and aria attribute. DOM is now 'main' > 'div.govuk-grid-row' > 'nav' & 'section'. Header and hint text updated. New '.opss-desktop-min-height--s' added to headers. Moved hint text with updated classes. Remove H2. Remove "of your notified products" text from notified products download link (and add new wrapping div). Remove the two margin classes from the download link). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. 'Add a cosmetic product' removed float class (and wrapped in new div)</span>.
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-products.html" target="_blank">Product
+                    notifications</a> - New left nav
+                <br><span class="govuk-!-font-size-16">To allow for additional search page - and future search pages -
+                    this now also affords the opportunity to split out the the draft notifications into their own page
+                    (and eventually, archived notifications). The parent 'Cosmetic products' nav link stays active for
+                    all left nav links.
+
+                    <br><br>(Left nav has active class and aria attribute. DOM is now 'main' > 'div.govuk-grid-row' >
+                    'nav' & 'section'. Header and hint text updated. New '.opss-desktop-min-height--s' added to headers.
+                    Moved hint text with updated classes. Remove H2. Remove "of your notified products" text from
+                    notified products download link (and add new wrapping div). Remove the two margin classes from the
+                    download link). Remove
+                    '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table
+                    header and footer. 'Add a cosmetic product' removed float class (and wrapped in new div)</span>.
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-extended.html" target="_blank">New left nav - extended</a> 
-                        <br><span class="govuk-!-font-size-16">Provides example of how the left nav will/can eventually be used</span>.
-                    </li>
-                </ul>                 
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-drafts.html" target="_blank">Drafts page</a> - New left nav (own page)
-                <br><span class="govuk-!-font-size-16">Maintain the same functionality - or lack of it - and simply split out the drafts information into its own page. (Any embellishments for the drafts page is a seperate piece of work). Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. If there are 12 or more drafts, we add the table footer (as elsewhere).  <br><br>
-                    
-                We will also need to update links referencing drafts: 
-                <br>1. <a href="https://opss-html.herokuapp.com/cosmetics-clone/confirmation-3" class="govuk-link govuk-link--no-visited-state" target="_blank">Draft creation confirmation</a>. Change text from "It is now in the drafts section of your <u>cosmetic products page</u>." to "It is now in your <u>Draft notification</u> drafts page." and update the link to point to the drafts page.
-                <br>2. On the tasks list page, in the drop down help section - change "Product drafts are stored in the <u>Cosmetic products page</u> from where you can resume and complete the remaining tasks at any time." to "Product notification drafts are stored in your <u>Draft notifications page</u> from where you can resume and complete the remaining tasks at any time."
-                <br>3. <a href="https://opss-html.herokuapp.com/cosmetics-general/tasks/pg-success-create" class="govuk-link govuk-link--no-visited-state" target="_blank">Task completed confirmation</a> page. Change text from "Product drafts are stored in the <u>Cosmetic products page</u> from where you can resume and complete the remaining tasks at any time." to "Product notification drafts are stored in your <u>Draft notifications page</u> from where you can resume and complete the remaining tasks at any time."
-
-
-                
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search.html" target="_blank">Product - search</a>
-                <br><span class="govuk-!-font-size-16">Search form. The main search box returns fuzzy matches on the product name, but if a UKCP number is entered we should search for "UKCP-61869641" or "61869641". There is no error message required on the Search input (as a value is not required and it can be blank). Both the blue button and the 'Search' button submit the form. (Update "aria-label" on the section tag). 
-                <br><br>
-                The filtering on notified or archived notifications is shown for illustrative purposes - once archiving is introduced we should include this filter.
-                <br><br>
-                The reset link is a standard <abbr>HTML</abbr> reset (resetting the form). No hidden inputs will need resetting. The submitted search settings can be stored in hidden inputs in the results list page and then used to submit back to the search form page again, in order to maintain the form state if the user chooses to 'Edit the search' (so that the form will reload as the user last submitted it). The 'Edit the search' link is a button (submitting a form). The reset button also uses script to reset any "value" attributes, which will be set if the user chooses to 'Edit the search' (and will remove error messages, returning the form back to its default state). (Add the JavaScript directly to this page - not a global file - and ensure that 'opss-radios__input-default' classes are added to the default radio options. That's all you need to do).
-
-                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-errors.html" target="_blank">Product - search - errors</a> 
-                        <br>For the dates there are 2 fieldsets directly nested within 1 parent fieldset: A minor style change for these error message styles adds the 'aria-describedby' values to the parent fieldset and injects the error messages into the parent fieldset (and not the nested fieldsets). The date values have been hardcoded into this demo page form for illustration purposes. 
-                        <br><br>
-                        <span class="govuk-!-font-size-16">Example of date form errors. I recommend only using these 3 date error messages: 
-                            <br>1. Enter a valid date     <i>(this also covers non-numeric entries and avoids having to name individual fields)</i>
-                            <br>2. Enter a value for all date fields</span>       <i>(Dates fiels are only required if one or more fields have a value: if any 1 of the 6 date fields has a value then all date fields require a value. If all date fields are empty then they do not require a value. This also avoids having to name individual fields. It also allows for only one message for several offences - a single error message ID should target the first empty date field)</i>
-                            <br>3. The From date must be before the To date</span>       <i>(if the To date preceeds the From date)</i>
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/cosmetics-submit-search/left-nav-cosmetic-products-extended.html" target="_blank">New
+                            left nav - extended</a>
+                        <br><span class="govuk-!-font-size-16">Provides example of how the left nav will/can eventually
+                            be used</span>.
                     </li>
                 </ul>
-            </li> 
+            </li>
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-results.html" target="_blank">Product - search - results</a>
-                <br><br>
-                Max 30 results per page - pagination only added if more than one page. Table footers only added if there are 12 or more results. Bascially, continue with current fuctionality/behaviour. Remove '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header and footer. The main H1 hint is now visually hidden.
-                <br><br>Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is returned to the form page which shows all the input values they last used/submitted. (The 'Edit the search' "link" is a form submit button (which submits hidden inputs - which were the search criteria, to pre-populate the original search form).
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-products-drafts.html" target="_blank">Drafts
+                    page</a> - New left nav (own page)
+                <br><span class="govuk-!-font-size-16">Maintain the same functionality - or lack of it - and simply
+                    split out the drafts information into its own page. (Any embellishments for the drafts page is a
+                    seperate piece of work). Remove
+                    '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table
+                    header and footer. If there are 12 or more drafts, we add the table footer (as elsewhere). <br><br>
+
+                    We will also need to update links referencing drafts:
+                    <br>1. <a href="https://opss-html.herokuapp.com/cosmetics-clone/confirmation-3"
+                        class="govuk-link govuk-link--no-visited-state" target="_blank">Draft creation confirmation</a>.
+                    Change text from "It is now in the drafts section of your <u>cosmetic products page</u>." to "It is
+                    now in your <u>Draft notification</u> drafts page." and update the link to point to the drafts page.
+                    <br>2. On the tasks list page, in the drop down help section - change "Product drafts are stored in
+                    the <u>Cosmetic products page</u> from where you can resume and complete the remaining tasks at any
+                    time." to "Product notification drafts are stored in your <u>Draft notifications page</u> from where
+                    you can resume and complete the remaining tasks at any time."
+                    <br>3. <a href="https://opss-html.herokuapp.com/cosmetics-general/tasks/pg-success-create"
+                        class="govuk-link govuk-link--no-visited-state" target="_blank">Task completed confirmation</a>
+                    page. Change text from "Product drafts are stored in the <u>Cosmetic products page</u> from where
+                    you can resume and complete the remaining tasks at any time." to "Product notification drafts are
+                    stored in your <u>Draft notifications page</u> from where you can resume and complete the remaining
+                    tasks at any time."
+
+
+
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-products-search.html" target="_blank">Product -
+                    search</a>
+                <br><span class="govuk-!-font-size-16">Search form. The main search box returns fuzzy matches on the
+                    product name, but if a UKCP number is entered we should search for "UKCP-61869641" or "61869641".
+                    There is no error message required on the Search input (as a value is not required and it can be
+                    blank). Both the blue button and the 'Search' button submit the form. (Update "aria-label" on the
+                    section tag).
+                    <br><br>
+                    The filtering on notified or archived notifications is shown for illustrative purposes - once
+                    archiving is introduced we should include this filter.
+                    <br><br>
+                    The reset link is a standard <abbr>HTML</abbr> reset (resetting the form). No hidden inputs will
+                    need resetting. The submitted search settings can be stored in hidden inputs in the results list
+                    page and then used to submit back to the search form page again, in order to maintain the form state
+                    if the user chooses to 'Edit the search' (so that the form will reload as the user last submitted
+                    it). The 'Edit the search' link is a button (submitting a form). The reset button also uses script
+                    to reset any "value" attributes, which will be set if the user chooses to 'Edit the search' (and
+                    will remove error messages, returning the form back to its default state). (Add the JavaScript
+                    directly to this page - not a global file - and ensure that 'opss-radios__input-default' classes are
+                    added to the default radio options. That's all you need to do).
 
                     <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                         <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-products-search-edit.html" target="_blank">Edit your search</a> 
-                            <br>This demo page simply demonstrates how clicking the 'edit your search' serves the search form with the previous search criteria pre-populating the form fields, ready to be edited.
-                        </li>
-                    </ul>
+                            <a class="govuk-link govuk-link--no-visited-state"
+                                href="/cosmetics-submit-search/left-nav-cosmetic-products-errors.html"
+                                target="_blank">Product - search - errors</a>
+                            <br>For the dates there are 2 fieldsets directly nested within 1 parent fieldset: A minor
+                            style change for these error message styles adds the 'aria-describedby' values to the parent
+                            fieldset and injects the error messages into the parent fieldset (and not the nested
+                            fieldsets). The date values have been hardcoded into this demo page form for illustration
+                            purposes.
+                            <br><br>
+                            <span class="govuk-!-font-size-16">Example of date form errors. I recommend only using these
+                                3 date error messages:
+                                <br>1. Enter a valid date <i>(this also covers non-numeric entries and avoids having to
+                                    name individual fields)</i>
+                                <br>2. Enter a value for all date fields</span> <i>(Dates fiels are only required if one
+                                or more fields have a value: if any 1 of the 6 date fields has a value then all date
+                                fields require a value. If all date fields are empty then they do not require a value.
+                                This also avoids having to name individual fields. It also allows for only one message
+                                for several offences - a single error message ID should target the first empty date
+                                field)</i>
+                            <br>3. The From date must be before the To date
+                </span> <i>(if the To date preceeds the From date)</i>
+            </li>
+            </ul>
             </li>
             <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search.html" target="_blank">Ingredient - search</a>
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-products-search-results.html"
+                    target="_blank">Product - search - results</a>
                 <br><br>
-                Because this ingredient search is for a user to search their own notifications I don't think there is any requirement for a true 'fuzzy' search, and an exact match and an 'any word' match are sufficent (as implimented in the 'search' service). <br>
-                The main search input IS required (see error page below). (Update the date in the header to reflect when the new ingredients forms went live). Have removed the date range filters here, as the ingredients are only searchable for such a small date range, and this could be misleading for now. Notification status added here for illustration purposes only - preempting when that feature is implimented.<br>
-                Max 30 results per page, then add pagination - table footer added if 12 or more results. (Due to the design we can keep the table code simple using only tbody elements to create relationships).
-                
-                <br><br>
-
-                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
-                        <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-errors.html" target="_blank">Ingredient - search - with error message</a> 
-                            <br>Only one error message is required: "Enter an ingredient name" if the search input is blank.
-                        </li>                        
-                        <li>
-                            <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-edit.html" target="_blank">Edit your search</a> 
-                            <br>
-                        </li>
-                    </ul>
-            </li>
-            <li>
-                <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results.html" target="_blank">Ingredient - search - results</a>
-                <br><br>
-                The main H1 hint is now visually hidden. If using the exact match filter the results list states "Ingredient match", if 'any word' filter, the list states "Ingredient matches". Exact match filter results show one ingredient for each notification but 'any words' should show each word with a comma seperating each word and a fullstop at the end. 
+                Max 30 results per page - pagination only added if more than one page. Table footers only added if there
+                are 12 or more results. Bascially, continue with current fuctionality/behaviour. Remove
+                '<code>&lt;span class="govuk-visually-hidden"&gt;cosmetic product&lt;/span&gt;</code>' from table header
+                and footer. The main H1 hint is now visually hidden.
+                <br><br>Clicking 'Search again' returns the user back to the search page - simply as a hyperlink - so
+                that the form page loads with its default settings. If the user chooses to 'Edit the search' the user is
+                returned to the form page which shows all the input values they last used/submitted. (The 'Edit the
+                search' "link" is a form submit button (which submits hidden inputs - which were the search criteria, to
+                pre-populate the original search form).
 
                 <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results-any-word.html" target="_blank">Ingredient - search - results</a> - any words.
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/cosmetics-submit-search/left-nav-cosmetic-products-search-edit.html"
+                            target="_blank">Edit your search</a>
+                        <br>This demo page simply demonstrates how clicking the 'edit your search' serves the search
+                        form with the previous search criteria pre-populating the form fields, ready to be edited.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search.html" target="_blank">Ingredient
+                    - search</a>
+                <br><br>
+                Because this ingredient search is for a user to search their own notifications I don't think there is
+                any requirement for a true 'fuzzy' search, and an exact match and an 'any word' match are sufficent (as
+                implimented in the 'search' service). <br>
+                The main search input IS required (see error page below). (Update the date in the header to reflect when
+                the new ingredients forms went live). Have removed the date range filters here, as the ingredients are
+                only searchable for such a small date range, and this could be misleading for now. Notification status
+                added here for illustration purposes only - preempting when that feature is implimented.<br>
+                Max 30 results per page, then add pagination - table footer added if 12 or more results. (Due to the
+                design we can keep the table code simple using only tbody elements to create relationships).
+
+                <br><br>
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-errors.html"
+                            target="_blank">Ingredient - search - with error message</a>
+                        <br>Only one error message is required: "Enter an ingredient name" if the search input is blank.
+                    </li>
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-edit.html"
+                            target="_blank">Edit your search</a>
+                        <br>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results.html"
+                    target="_blank">Ingredient - search - results</a>
+                <br><br>
+                The main H1 hint is now visually hidden. If using the exact match filter the results list states
+                "Ingredient match", if 'any word' filter, the list states "Ingredient matches". Exact match filter
+                results show one ingredient for each notification but 'any words' should show each word with a comma
+                seperating each word and a fullstop at the end.
+
+                <ul class="govuk-list govuk-list--bullet govuk-list--spaced small-links margin-left">
+                    <li>
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/cosmetics-submit-search/left-nav-cosmetic-ingredients-search-results-any-word.html"
+                            target="_blank">Ingredient - search - results</a> - any words.
                         <br>This is an example of ingredient results page, if the 'any words' filter was used
-                    </li> 
+                    </li>
 
                 </ul>
-            </li>                                   
+            </li>
 
 
-                    
-                </ul>
-            </li>                        
 
-        </ol>   
-        
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">       
+            </ul>
+            </li>
 
-        <p class="govuk-body-l">Developer: Get latest '_opss-shared.scss' and add '_opss-search.scss' to your sass build.</p>
+        </ol>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <p class="govuk-body-l">Developer: Get latest '_opss-shared.scss' and add '_opss-search.scss' to your sass
+            build.</p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -187,15 +292,23 @@
             Update the main navigation - proposal
         </h1>
 
-        <p class="govuk-body">Without a major redesign and rebuild, this work offers us the opportunity to improve the current site navigation easily - improving upon the current rationale:</p>
+        <p class="govuk-body">Without a major redesign and rebuild, this work offers us the opportunity to improve the
+            current site navigation easily - improving upon the current rationale:</p>
 
         <ol class="govuk-list govuk-list--number">
-            <li>Change the URL of the "Submit cosmetic product notifications" header link (at the very top of all the pages) to point to the Cosmetic products section (with Product notifications being the default landing page). This make more sense of the text/title.</li>
+            <li>Change the URL of the "Submit cosmetic product notifications" header link (at the very top of all the
+                pages) to point to the Cosmetic products section (with Product notifications being the default landing
+                page). This make more sense of the text/title.</li>
             <li>Add a 'Home' link to the current top level navigation (which points to the actual home page).</li>
-            <li>Remove the 'Nanomaterials' link from the current top level navigation and move it to the new left column navigation in the Cosmetic products area. (The current page content can be moved into the right column - as like the cosmetic products page as a guide/template. Update 'Back' links, and keep 'Cosmetic products' top level nav link active throughout Nanomaterials pages).</li>
+            <li>Remove the 'Nanomaterials' link from the current top level navigation and move it to the new left column
+                navigation in the Cosmetic products area. (The current page content can be moved into the right column -
+                as like the cosmetic products page as a guide/template. Update 'Back' links, and keep 'Cosmetic
+                products' top level nav link active throughout Nanomaterials pages).</li>
         </ol>
 
-        <p class="govuk-body">Like this! <a class="govuk-link govuk-link--no-visited-state" href="/cosmetics-submit-search/new-nav-example.html" target="_blank">New navigation demonstration</a></p>
+        <p class="govuk-body">Like this! <a class="govuk-link govuk-link--no-visited-state"
+                href="/cosmetics-submit-search/new-nav-example.html" target="_blank">New navigation demonstration</a>
+        </p>
 
 
     </div>
