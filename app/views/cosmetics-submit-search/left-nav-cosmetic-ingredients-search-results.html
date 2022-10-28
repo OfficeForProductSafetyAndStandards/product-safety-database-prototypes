@@ -1,7 +1,7 @@
 {% extends "layout-02-noacc.html" %}
 
 {% block pageTitle %}
-    Ingredient search results
+Ingredient search results
 {% endblock %}
 
 
@@ -11,26 +11,28 @@
   <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
 
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-ingredients-hint">
-            Ingredient &ndash; search results
-          </h1>
-          <p id="cosmetic-ingredients-hint" class="govuk-body opss-secondary-text govuk-!-margin-bottom-1 govuk-visually-hidden">
-            Your search results page.
-          </p>
-        </div>
-
-        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-
-          <div class="opss-text-align-right">
-            <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
-              Search again
-            </a>
-          </div>
-
-        </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-ingredients-hint">
+          Ingredient &ndash; search results
+        </h1>
+        <p id="cosmetic-ingredients-hint"
+          class="govuk-body opss-secondary-text govuk-!-margin-bottom-1 govuk-visually-hidden">
+          Your search results page.
+        </p>
       </div>
+
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+
+        <div class="opss-text-align-right">
+          <a href="left-nav-cosmetic-ingredients-search.html"
+            class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+            Search again
+          </a>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 
@@ -39,25 +41,29 @@
   <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
 
     <a href="#page-content" class="govuk-skip-link opss-skip-link">
-        Skip to the main content
+      Skip to the main content
     </a>
 
     <ul class="govuk-list opss-left-nav">
       <li>
-          <a href="left-nav-cosmetic-products.html" class="govuk-link govuk-link--no-visited-state">Product notifications</a>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Product notifications</a>
+        <!-- left-nav-cosmetic-products.html-->
       </li>
       <li class="govuk-!-margin-bottom-6">
-          <a href="left-nav-cosmetic-products-drafts.html" class="govuk-link govuk-link--no-visited-state">Draft notifications</a>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Draft notifications</a>
+        <!-- left-nav-cosmetic-products-drafts.html-->
       </li>
       <!--li class="govuk-!-margin-bottom-6">
           <a href="left-nav-cosmetic-products-archived.html" class="govuk-link govuk-link--no-visited-state">Archived notifications</a>
-      </li--> 
+      </li-->
       <li>
-        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">Product - search</a>
-      </li> 
+        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">Product -
+          search</a>
+      </li>
       <li class="opss-left-nav__active">
-        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state" aria-current="page">Ingredient - search</a>
-      </li>                
+        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state"
+          aria-current="page">Ingredient - search</a>
+      </li>
     </ul>
 
   </nav>
@@ -65,14 +71,14 @@
   <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">      
+      <div class="govuk-grid-column-two-thirds">
 
         <p class="govuk-body govuk-!-margin-bottom-0">
           72 notifications using the current filters, were found.
         </p>
       </div>
 
-      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">   
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
         <div class="opss-text-align-right">
 
           <form action="left-nav-cosmetic-products-search-edit.html" novalidate>
@@ -82,34 +88,36 @@
             <button class="govuk-button opss-button-link govuk-!-font-size-14">
               Edit your search
             </button>
-          </form>          
+          </form>
 
         </div>
       </div>
-    </div>    
+    </div>
 
-    <table class="govuk-table govuk-!-margin-top-6 govuk-!-margin-bottom-0 opss-table opss-table--last-col-right opss-table--first-col-normal opss-table--2-row-groups">
+    <table
+      class="govuk-table govuk-!-margin-top-6 govuk-!-margin-bottom-0 opss-table opss-table--last-col-right opss-table--first-col-normal opss-table--2-row-groups">
 
       <caption class="govuk-table__caption govuk-visually-hidden">List of notified products</caption>
-  
+
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Product</th>
-  
+
           <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
-  
+
           <th scope="col" class="govuk-table__header"><abbr>UKCP</abbr> number</th>
-  
+
           <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">View</span></th>
         </tr>
       </thead>
-  
+
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Xero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -117,16 +125,17 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
-      <tbody class="govuk-table__body">  
+      <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -134,7 +143,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -143,7 +152,8 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -151,7 +161,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -160,7 +170,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion X</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -168,7 +179,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -177,7 +188,8 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -185,7 +197,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -194,7 +206,8 @@
           <th scope="row" class="govuk-table__header">Xero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -202,7 +215,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -211,7 +224,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -219,7 +233,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -228,7 +242,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -236,7 +251,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -245,7 +260,8 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -253,7 +269,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -262,7 +278,8 @@
           <th scope="row" class="govuk-table__header">Xero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -270,7 +287,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -279,7 +296,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -287,7 +305,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -296,7 +314,8 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -304,7 +323,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -313,7 +332,8 @@
           <th scope="row" class="govuk-table__header">Xero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -321,7 +341,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -330,7 +350,8 @@
           <th scope="row" class="govuk-table__header">Xsda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -338,7 +359,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -347,7 +368,8 @@
           <th scope="row" class="govuk-table__header">Yegda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -355,7 +377,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -364,7 +386,8 @@
           <th scope="row" class="govuk-table__header">Zero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -372,7 +395,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -381,7 +404,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -389,7 +413,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -398,7 +422,8 @@
           <th scope="row" class="govuk-table__header">Begda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -406,7 +431,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -415,7 +440,8 @@
           <th scope="row" class="govuk-table__header">Cero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -423,7 +449,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -432,24 +458,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th>
-                  <span class="govuk-visually-hidden">Matches</span>
-                </th>
-                <td class="govuk-table__cell" colspan="3">
-                  <span class="govuk-!-font-size-14">Ingredient match: </span>
-                  <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
-                </td>
-              </tr>
-            </tbody>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
-          <td class="govuk-table__cell">12 Feburary 2019</td>
-          <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -457,7 +467,25 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
+          <td class="govuk-table__cell">12 Feburary 2019</td>
+          <td class="govuk-table__cell">UKCP-229978799</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th>
+            <span class="govuk-visually-hidden">Matches</span>
+          </th>
+          <td class="govuk-table__cell" colspan="3">
+            <span class="govuk-!-font-size-14">Ingredient match: </span>
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -466,7 +494,8 @@
           <th scope="row" class="govuk-table__header">Xero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -474,7 +503,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -483,7 +512,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -491,7 +521,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -500,7 +530,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -508,7 +539,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -517,24 +548,26 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
-        </tr> 
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+        </tr>
         <tr class="govuk-table__row">
           <th>
             <span class="govuk-visually-hidden">Matches</span>
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
-      <tbody class="govuk-table__body"> 
+      <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Yegda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -542,7 +575,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -551,7 +584,8 @@
           <th scope="row" class="govuk-table__header">Zero Tan removal</th>
           <td class="govuk-table__cell">3 October 2019</td>
           <td class="govuk-table__cell">UKCP-445399100</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Xero Tan removal</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -559,7 +593,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -568,7 +602,8 @@
           <th scope="row" class="govuk-table__header">Asda Summer tan lotion</th>
           <td class="govuk-table__cell">28 July 2020</td>
           <td class="govuk-table__cell">UKCP-337475933</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Asda Summer tan lotion notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -576,7 +611,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -585,7 +620,8 @@
           <th scope="row" class="govuk-table__header">Begda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -593,7 +629,7 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
       </tbody>
@@ -602,7 +638,8 @@
           <th scope="row" class="govuk-table__header">Segda fresh shampoo</th>
           <td class="govuk-table__cell">12 Feburary 2019</td>
           <td class="govuk-table__cell">UKCP-229978799</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">View<span
+                class="govuk-visually-hidden"> the Segda fresh shampoo notification</span></a></td>
         </tr>
         <tr class="govuk-table__row">
           <th>
@@ -610,33 +647,33 @@
           </th>
           <td class="govuk-table__cell" colspan="3">
             <span class="govuk-!-font-size-14">Ingredient match: </span>
-            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span> 
+            <span class="govuk-!-font-size-14"><mark>Lorem ipsumzetum</mark></span>
           </td>
         </tr>
-      </tbody>      
-  
+      </tbody>
+
       <tfoot class="govuk-table__head">
-          <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Product</th>
-              <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
-              <th scope="col" class="govuk-table__header"><abbr>UKCP</abbr> number</th>
-              <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">View</span></th>
-          </tr>
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Product</th>
+          <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+          <th scope="col" class="govuk-table__header"><abbr>UKCP</abbr> number</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">View</span></th>
+        </tr>
       </tfoot>
-  
+
     </table>
 
     <nav class="opss-pagination-link opss-pagination-link--no-top-border">
-        <ul>
-            <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
-                Page 1
-            </li>
-            <li class="opss-pagination-link__wrap opss-pagination-link--next">
-                <a href="#" class="govuk-link govuk-link--no-visited-state">
-                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 2 of 3</span>
-                </a>
-            </li>
-        </ul>
+      <ul>
+        <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+          Page 1
+        </li>
+        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">
+            <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 2 of 3</span>
+          </a>
+        </li>
+      </ul>
     </nav>
 
   </section>

@@ -1,0 +1,108 @@
+{% extends "layout-02-noacc.html" %}
+
+{% block pageTitle %}
+Cosmetic products
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds opss-desktop-min-height--xs">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-products-hint">
+          Product notifications
+        </h1>
+        <p id="cosmetic-products-hint" class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+          These are your notified cosmetic products.
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+        <div class="opss-text-align-right">
+          <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+            Add a cosmetic product
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- new text when there are no notifications starts -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <p class="govuk-body-s opss-secondary-text">
+          Warwickshire Health has not submitted any cosmetic product notifications in Great Britain (<abbr>GB</abbr>).
+          <br class="opss-br-desktop">All cosmetic products sold or given away in <abbr>GB</abbr> must be notified in
+          <abbr>GB</abbr>.
+        </p>
+      </div>
+    </div>
+    <!-- new text when there are no notifications ends -->
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+    <a href="#page-content" class="govuk-skip-link opss-skip-link">
+      Skip to the main content
+    </a>
+
+    <ul class="govuk-list opss-left-nav">
+      <li class="opss-left-nav__active">
+        <a href="left-nav-cosmetic-products.html" class="govuk-link govuk-link--no-visited-state"
+          aria-current="page">Product notifications</a>
+      </li>
+      <li class="govuk-!-margin-bottom-6">
+        <a href="left-nav-cosmetic-products-drafts.html" class="govuk-link govuk-link--no-visited-state">Draft
+          notifications</a>
+      </li>
+      <!--li class="govuk-!-margin-bottom-6">
+          <a href="left-nav-cosmetic-products-archived.html" class="govuk-link govuk-link--no-visited-state">Archived notifications</a>
+      </li-->
+      <!--li>
+        <a href="left-nav-cosmetic-products-search.html" class="govuk-link govuk-link--no-visited-state">Product - search</a>
+      </li> 
+      <li>
+        <a href="left-nav-cosmetic-ingredients-search.html" class="govuk-link govuk-link--no-visited-state">Ingredient - search</a>
+      </li-->
+    </ul>
+
+  </nav>
+
+  <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Notified products">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <!--  govuk-!-margin-top-7 -->
+        <!--h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-visually-hidden">
+          Product notifications 
+        </h2-->
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          There are currently 0 notified cosmetic products.
+        </p>
+      </div>
+
+      <!--div class="govuk-grid-column-one-third">
+
+        <div class="opss-text-align-right">
+          <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-14 opss-text-underline-offset"
+            download>
+            <span class="opss-download-link-sm"></span>Download a <abbr title="Comma-Separated Values">CSV</abbr> file
+          </a>
+        </div>
+      </div-->
+
+    </div>
+
+
+
+
+
+  </section>
+</div>
+
+{% endblock %}
