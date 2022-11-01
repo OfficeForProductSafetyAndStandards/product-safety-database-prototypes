@@ -526,7 +526,8 @@ ul.opss-radio-list {
 }
 
 .opss-label-wrapper,
-.opss-fieldset__legend {
+.opss-fieldset__legend,
+div[class*="warning-text"] strong {
     max-width: none !important;
 }
 
