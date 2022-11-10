@@ -880,6 +880,10 @@ dl.opss-summary-list-aside {
         }
 
         /* 2. protects against rogue legacy psd invalid html */
+
+        dd br+span.opss-secondary-text {
+            padding-left: govuk-spacing(0) !important;
+        }
     }
 
     @include govuk-media-query($from: desktop) {
