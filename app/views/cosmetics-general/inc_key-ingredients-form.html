@@ -1,88 +1,85 @@
-<div class="govuk-form-group">
-    <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-5">What is the name?</label>
-    <input class="govuk-input" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false">
-  </div>
-  
-  <!--div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-      <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-5">What is the exact concentration?</label>
-      <div class="govuk-input__wrapper">
-        <input class="govuk-input govuk-input--width-3" id="concentrate-5" name="concentrate-5" type="text" maxlength="3">
-        <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
+<div class="govuk-form-group govuk-!-margin-bottom-7">
+  <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-5">What is the name?</label>
+  <input class="govuk-input" id="ingredient-5" name="ingredient-5" type="text" spellcheck="false">
+</div>
+
+<!-- row divs removed! padding classes removed! xxxxxxxxxxxxxxx -->
+
+<div class="govuk-form-group govuk-!-margin-bottom-4">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+      Is it used for different shades?
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="exact-1" name="concentration" type="radio" value="exact-1"
+          data-aria-controls="conditional-concentration">
+        <label class="govuk-label govuk-radios__label" for="exact-1">
+          Yes
+        </label>
       </div>
-    </div>
-    <div class="govuk-grid-column-one-half">
-      <div class="govuk-checkboxes opss-float-right-desktop govuk-!-padding-top-6">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="poisonous-5" name="poisonous-5" type="checkbox" value="checkbox">
-          <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-5">
-            Is it poisonous?
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-concentration">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="concentrate-1">
+            What is the exact maximum concentration?
           </label>
+          <div id="exact-max-hint" class="govuk-hint govuk-!-font-size-16">
+            Enter the maximum concentration used in the shades.
+          </div>
+          <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text"
+              maxlength="3" aria-describedby="exact-max-hint">
+            <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">%
+                w/w</span></div>
+          </div>
         </div>
       </div>
-    </div>              
-  </div-->
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-
-      <div class="govuk-form-group">
-
-        <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is the exact concentration?</label>
-        <div class="govuk-input__wrapper">
-          <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1" type="text" maxlength="3">
-          <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">&percnt; w/w</span></div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="concentration" type="radio" value="phone"
+          data-aria-controls="conditional-concentration-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-concentration-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="concentrate-2">
+            What is the exact concentration?
+          </label>
+          <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-2" type="text"
+              maxlength="3">
+            <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">%
+                w/w</span></div>
+          </div>
         </div>
-
       </div>
 
     </div>
-    <div class="govuk-grid-column-one-half">
+  </fieldset>
+</div>
 
-      <div class="govuk-form-group">
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-        <div class="govuk-checkboxes opss-float-right-desktop">
-          <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS number?</label>
-          <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
-        </div>
-
-      </div>
-
-    </div>              
+<div class="govuk-form-group govuk-!-margin-bottom-7">
+  <div class="govuk-checkboxes">
+    <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS
+      number?</label>
+    <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
   </div>
+</div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
 
-      <div class="govuk-form-group">
-
-        <div class="govuk-checkboxes govuk-!-padding-top-6">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
-            <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
-              {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
-            </label>
-            {% include "cosmetics-general/inc_tables-checkbox-label-hint.html" %}
-          </div>
-        </div>
-
-      </div>
-
+<div class="govuk-form-group">
+  <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
+      <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
+        {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
+      </label>
+      {% include "cosmetics-general/inc_tables-checkbox-label-hint.html" %}
     </div>
-    <!--div class="govuk-grid-column-one-half">
-
-      <div class="govuk-form-group">
-
-        <div class="govuk-checkboxes opss-float-right-desktop govuk-!-padding-top-6">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
-            <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
-              Is it poisonous?
-            </label>
-          </div>
-        </div>
-
-      </div>
-
-    </div-->              
   </div>
+</div>

@@ -1,59 +1,59 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    Ingredient 2a
+Ingredient 2a
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "/index"
-    }) }}
+{{ govukBackLink({
+text: "Back",
+href: "/index"
+}) }}
 {% endblock %}
 
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-        Add the ingredients
-      </h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      Add the ingredients
+    </h1>
 
-    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "cosmetics-general/inc_tables-details.html" %}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+
+    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Ingredient 1
+          </legend>
+
+          {% include "cosmetics-general/inc_key-ingredients-form.html" %}
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
   </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-one-third">
 
-      {% include "cosmetics-general/inc_tables-details.html" %}   
-      
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
-
-      <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
-        
-        <div class="govuk-form-group">  
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Ingredient 1
-            </legend>
-
-            {% include "cosmetics-general/inc_key-ingredients-form.html" %}
-
-          </fieldset>
-        </div>    
-
-        <button class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </button> 
-
-      </form>
-
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      
-      <!--h2 class="govuk-heading-s">Already added</h2>
+    <!--h2 class="govuk-heading-s">Already added</h2>
   
       <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
         <li>Lorem ipsum dolor sit amet </li>
@@ -64,8 +64,9 @@
   
       <p class="govuk-body-s opss-secondary-text">
         These ingredients have already been added to the product. 
-      </p--><!-- or .... already been added to the item. -->
-  
-    </div>    
+      </p-->
+    <!-- or .... already been added to the item. -->
+
   </div>
+</div>
 {% endblock %}
