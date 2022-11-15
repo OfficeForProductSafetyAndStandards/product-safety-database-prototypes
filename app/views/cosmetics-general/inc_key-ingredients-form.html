@@ -49,7 +49,7 @@
             What is the exact concentration?
           </label>
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-2" type="text"
+            <input class="govuk-input govuk-input--width-3" id="concentrate-2" name="concentrate-2" type="text"
               maxlength="3">
             <div class="govuk-input__suffix" aria-hidden="true"><span title="Percentage weight by weight">%
                 w/w</span></div>
@@ -61,8 +61,6 @@
   </fieldset>
 </div>
 
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
 <div class="govuk-form-group govuk-!-margin-bottom-7">
   <div class="govuk-checkboxes">
     <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS
@@ -71,11 +69,12 @@
   </div>
 </div>
 
-
 <div class="govuk-form-group">
   <div class="govuk-checkboxes">
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox">
+      <input class="govuk-checkboxes__input" id="poisonous-1" name="poisonous-1" type="checkbox" value="checkbox"
+        aria-describedby="npis-table-hint">
+      <!-- xxxxxxxxxx  new ID and aria described by on input xxxxxxxxxxxxxxxxxxxxxx -->
       <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="poisonous-1">
         {% include "cosmetics-general/inc_tables-checkbox-label.html" %}
       </label>
