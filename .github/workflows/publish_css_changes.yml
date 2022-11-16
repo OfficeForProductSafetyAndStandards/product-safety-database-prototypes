@@ -20,11 +20,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: CSS Style lint
-      uses: actions-hub/stylelint@master
-      env:
-        PATTERN: "app/assets/sass/opss/*.scss"
-        INDENT_SPACES: 4
+    - name: Install Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install CSS lint packages
+      run: npm install --save-dev prettier stylelint stylelint-config-standard-scss stylelint-config-prettier-scss
+
+    - name: Run Prettier code formatter over CSS files
+      run: npx prettier --write --tab-width 4 "app/assets/sass/opss/**.scss"
+
+    - name: Run Stylelint linter autofix on CSS files
+      run: npx stylelint --fix "app/assets/sass/opss/**.scss"
 
     - name: Create pull request on Cosmetics service
       uses: car-on-sale/action-pull-request-another-repo@v1.3.0
