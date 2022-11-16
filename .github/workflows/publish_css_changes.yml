@@ -21,10 +21,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: CSS Style lint
-      - uses: actions-hub/stylelint@master
-        env:
-          PATTERN: "app/assets/sass/opss/*.scss"
-          INDENT_SPACES: 4
+      uses: actions-hub/stylelint@master
+      env:
+        PATTERN: "app/assets/sass/opss/*.scss"
+        INDENT_SPACES: 4
 
     - name: Create pull request on Cosmetics service
       uses: car-on-sale/action-pull-request-another-repo@v1.3.0
