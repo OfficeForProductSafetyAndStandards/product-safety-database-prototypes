@@ -1,14 +1,14 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    Help with how to create a case
+Help with how to create a case
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "#"
-    }) }}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
 {% endblock %}
 
 
@@ -22,15 +22,15 @@
         </h1>
 
 
-            <p class="govuk-body-l govuk-!-margin-top-7 govuk-!-margin-bottom-6">
-                How a case is created has changed - you now create a case from a product record.
-            </p>        
+        <p class="govuk-body-l govuk-!-margin-top-7 govuk-!-margin-bottom-6">
+            How a case is created has changed - you now create a case from a product record.
+        </p>
 
     </div>
 </div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds opss-panels"> 
+    <div class="govuk-grid-column-two-thirds opss-panels">
 
         <div class="govuk-!-margin-bottom-8 opss-panels__single">
 
@@ -39,93 +39,115 @@
             <ol class="govuk-list govuk-list--number govuk-list--spaced">
 
                 <li>
-                    <span class="govuk-!-font-weight-bold">Find a product</span> <span class="govuk-!-font-size-16 govuk-!-padding-left-2">&ndash;&nbsp;&nbsp;by searching the <a href="[prod search - all pg]" class="govuk-link govuk-link--no-visited-state">product records</a></span>
+                    <span class="govuk-!-font-weight-bold">Find a product</span> <span
+                        class="govuk-!-font-size-16 govuk-!-padding-left-2">&ndash;&nbsp;&nbsp;by searching the <a
+                            href="[prod search - all pg]" class="govuk-link govuk-link--no-visited-state">product
+                            records</a></span>
                 </li>
                 <li><span class="govuk-!-font-weight-bold">Create a new case for that product</span>
 
-                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-!-font-size-16">
-                        <li>Select the 'Create a new case for this product' option <br class="opss-br-desktop">on the product record page</li>
-                        <li>If a suitable product record does not already exist, you can <br class="opss-br-desktop">create one</li>
+                    <ul
+                        class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-!-font-size-16">
+                        <li>Select the 'Create a new case for this product' option <br class="opss-br-desktop">on the
+                            product record page</li>
+                        <li>If a suitable product record does not already exist, you can <br
+                                class="opss-br-desktop">create one</li>
                     </ul>
 
                 </li>
-                <li><span class="govuk-!-font-weight-bold">Continue to add any other information, such as businesses or test results, to your case at any time</span></li>
+                <li><span class="govuk-!-font-weight-bold">Continue to add additional information, such as businesses or
+                        test results, to your case at any time</span></li>
             </ol>
 
             <p class="govuk-body-s">The case you have created will automatically include the product.</p>
 
         </div>
 
-    </div>                
+    </div>
 </div>
 
 
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"> 
+    <div class="govuk-grid-column-two-thirds">
 
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
             About product records
         </h3>
 
         <p class="govuk-body">
-            A product record only records and includes information about a product. For example, its name, its barcode number and photographs of the product. It does not include information about safety concerns or incidents relating to the product because that is case specific information.
+            A product record only records and includes information about a product. For example, its name, its barcode
+            number and photographs of the product. It does not include information about safety concerns or incidents
+            relating to the product because that is case specific information.
         </p>
 
         <p class="govuk-body">
-            A product record can be included in more than one case. Teams from across the country can create cases from the same product record or add it to their cases. 
-        </p> 
-        
-        <p class="govuk-body">
-            A product record describing a counterfeit version of a product should be a different product record to one describing the genuine product. 
-        </p>  
-        
-        <p class="govuk-body">
-            While several product records might accidently describe the same product, we aim to have only one product record in the Product Safety Database describing a product. 
-        </p>
-        
-        <p class="govuk-body">
-            You can create a new product record if one doesn't already exist for your product or if an existing one doesn't fit your needs.
+            A product record can be included in more than one case. Teams from across the country can create cases from
+            the same product record or add it to their cases.
         </p>
 
-    </div>                
-</div>  
+        <p class="govuk-body">
+            A product record describing a counterfeit version of a product should be a different product record to one
+            describing the genuine product.
+        </p>
+
+        <p class="govuk-body">
+            While several product records might accidently describe the same product, we aim to have only one product
+            record in the Product Safety Database describing a product.
+        </p>
+
+        <p class="govuk-body">
+            You can create a new product record if one doesn't already exist for your product or if an existing one
+            doesn't fit your needs.
+        </p>
+
+    </div>
+</div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"> 
+    <div class="govuk-grid-column-two-thirds">
         <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-2">About cases</h3>
 
         <p class="govuk-body">
-            A case records case specific information about an unsafe, or non-compliant, product. 
-            
-            For example, case specific information might include the business address for the importer of the product or risk assessments about the product. 
+            A case records case specific information about an unsafe, or non-compliant, product.
+
+            For example, case specific information might include the business address for the importer of the product or
+            risk assessments about the product.
         </p>
-        
+
         <p class="govuk-body">
-            In the Product Safety Database (<abbr>PSD</abbr>), information about a case and a product are seperate. Information which describes a product is recorded as a product record and is available to be included as part of a case. 
+            In the Product Safety Database (<abbr>PSD</abbr>), information about a case and a product are seperate.
+            Information which describes a product is recorded as a product record and is available to be included as
+            part of a case.
         </p>
-    </div>                
-</div> 
+    </div>
+</div>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"> 
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">        
-        
+    <div class="govuk-grid-column-two-thirds">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
         <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-4">
-            Product details and case information have been seperated to <br class="opss-br-desktop">create several benefits
+            Product details and case information have been seperated to <br class="opss-br-desktop">create several
+            benefits
         </h3>
 
         <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-            <li>With new cases and product records, you can now see which teams are also using the same product record in their <abbr>PSD</abbr> cases and if they are investigating the same product</li>
-            <li>With new cases and product records, you will now be able to see all investigations for a product and how they may have been resolved</li>
-            <li>There is no longer a need to input data about a product if a product record for the product already exists</li>
+            <li>With new cases and product records, you can now see which teams are also using the same product record
+                in their <abbr>PSD</abbr> cases and if they are investigating the same product</li>
+            <li>With new cases and product records, you will now be able to see all investigations for a product and how
+                they may have been resolved</li>
+            <li>There is no longer a need to input data about a product if a product record for the product already
+                exists</li>
             <li>The product records will have improved information and detail</li>
-            <li>By using the same product records across different teams and cases nationally, there is greater transparency, and you are able to share information or even avoid duplicating work</li>
-            <li>There will be fewer duplications of product entries in the database and searching for products will be more decisive</li>
+            <li>By using the same product records across different teams and cases nationally, there is greater
+                transparency, and you are able to share information or even avoid duplicating work</li>
+            <li>There will be fewer duplications of product entries in the database and searching for products will be
+                more decisive</li>
             <li>This will allow us to add more powerful features in the future.</li>
-        </ul>      
+        </ul>
 
-    </div>                
-</div> 
-  
+    </div>
+</div>
+
 {% endblock %}
