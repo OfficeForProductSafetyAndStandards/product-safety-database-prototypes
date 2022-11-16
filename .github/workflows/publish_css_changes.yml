@@ -1,0 +1,35 @@
+name: Push changes to services
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+      - automate-css-publishing-to-services
+    paths:
+      - app/assets/sass/opss/
+
+env:
+  GITHUB_TOKEN: ${{ secrets.PUBLISH_CSS_ACTION_TOKEN }}
+
+jobs:
+  publish-to-Cosmetics:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Create pull request on Cosmetics service
+      uses: car-on-sale/action-pull-request-another-repo@version
+      env:
+        API_TOKEN_GITHUB: ${{ env.GITHUB_TOKEN }}
+      with:
+        source_folder: 'app/assets/sass/opss/'
+        destination_repo: 'OfficeForProductSafetyAndStandards/cosmetic-product-notifications'
+        destination_folder: 'folder-name'
+        destination_base_branch: 'master'
+        destination_head_branch: 'opss-prototypes-css-updates'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        user_name: 'github-actions[bot]'
+        pull_request_reviewers: 'reviewers'
+        pr_title: 'CSS Update from OPSS prototypes'
