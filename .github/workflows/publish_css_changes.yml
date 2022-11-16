@@ -27,7 +27,7 @@ jobs:
       with:
         source_folder: 'app/assets/sass/opss/'
         destination_repo: 'OfficeForProductSafetyAndStandards/cosmetic-product-notifications'
-        destination_folder: 'folder-name'
+        destination_folder: 'cosmetics-web/app/assets/application/stylesheets/opss/'
         destination_base_branch: 'master'
         destination_head_branch: 'opss-prototypes-css-updates'
         user_email: 'github-actions[bot]@users.noreply.github.com'
