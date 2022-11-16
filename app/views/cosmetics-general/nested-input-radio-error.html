@@ -1,0 +1,112 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Error: Do you want to add a reference number
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#investigation_complainant_reference">Enter a reference number</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="#" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="ref-number-hint ref-number-error">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-4">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you want to add a reference number?
+                        </h1>
+                    </legend>
+
+                    <div id="ref-number-hint" class="govuk-hint">
+                        You can add your own reference number to this case.
+                    </div>
+
+                    <details class="govuk-details govuk-!-margin-bottom-8 opss-details--sm" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Help with adding a number
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body-s">This might be a number already created in a different internal
+                                system for your case, or a number you intend to use globally across different systems to
+                                reference your case. The reference number will be searchable in the <abbr
+                                    title="Product Safety Database">PSD</abbr> case search page. (You can add or edit
+                                this number later).</p>
+                        </div>
+                    </details>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="investigation_has_complainant_reference_yes"
+                                name="investigation[has_complainant_reference]" type="radio" value="Yes"
+                                aria-controls="conditional-investigation_has_complainant_reference_yes"
+                                aria-expanded="false" checked>
+
+                            <label class="govuk-label govuk-radios__label"
+                                for="investigation_has_complainant_reference_yes">Yes</label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-investigation_has_complainant_reference_yes">
+                            <div class="govuk-form-group govuk-form-group--error">
+                                <label class="govuk-label" for="investigation_complainant_reference">Reference
+                                    number</label>
+
+                                <p id="ref-number-error" class="govuk-error-message">
+                                    <span class="govuk-visually-hidden">Error:</span> Enter a reference number
+                                </p>
+
+                                <input class="govuk-input govuk-input--width-20 govuk-input--error"
+                                    id="investigation_complainant_reference" name="investigation[complainant_reference]"
+                                    type="text" aria-describedby="ref-number-hint ref-number-error">
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="investigation_has_complainant_reference_no"
+                                name="investigation[has_complainant_reference]" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label"
+                                for="investigation_has_complainant_reference_no">No</label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <button class="govuk-button">
+                    Continue
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
