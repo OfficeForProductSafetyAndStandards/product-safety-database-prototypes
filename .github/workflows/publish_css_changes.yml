@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Create pull request on Cosmetics service
-      uses: car-on-sale/action-pull-request-another-repo@version
+      uses: car-on-sale/action-pull-request-another-repo@v1.3.0
       env:
         API_TOKEN_GITHUB: ${{ env.GITHUB_TOKEN }}
       with:
