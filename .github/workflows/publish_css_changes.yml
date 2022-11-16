@@ -2,6 +2,7 @@ name: Push changes to services
 
 on:
   workflow_dispatch: # Allows manual trigger
+  pull_request: # For testing
   push:
     branches:
       - master
