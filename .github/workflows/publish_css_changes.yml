@@ -1,4 +1,4 @@
-name: Push changes to services
+name: Push CSS changes to services
 
 on:
   workflow_dispatch: # Allows manual trigger
@@ -32,5 +32,5 @@ jobs:
         destination_head_branch: 'opss-prototypes-css-updates'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         user_name: 'github-actions[bot]'
-        pull_request_reviewers: 'reviewers'
-        pr_title: 'CSS Update from OPSS prototypes'
+        commit_msg: 'update CSS from OPSS prototypes'
+        pr_title: 'Update CSS from OPSS prototypes'
