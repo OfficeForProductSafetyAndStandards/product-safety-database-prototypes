@@ -13,6 +13,26 @@ href: "/index"
 
 
 {% block content %}
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#concentrate-1">Enter the exact concentration for each shade. (Enter a
+            zero for shades which are not
+            included in this ingredient)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -38,7 +58,7 @@ href: "/index"
             Ingredient 2
           </legend>
 
-          {% include "cosmetics-general/inc_key-ingredients-form-multi.html" %}
+          {% include "cosmetics-general/inc_key-ingredients-form-multi-error.html" %}
         </fieldset>
       </div>
 
