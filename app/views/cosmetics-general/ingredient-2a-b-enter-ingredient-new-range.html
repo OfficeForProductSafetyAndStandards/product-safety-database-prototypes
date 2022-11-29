@@ -30,7 +30,7 @@ href: "/index"
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
-    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate="">
+    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -47,7 +47,7 @@ href: "/index"
           <div class="govuk-form-group">
             <div class="govuk-checkboxes">
               <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS
-                number?</label>
+                number? <span class="govuk-!-font-size-16 opss-secondary-text">(optional)</span></label>
               <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
             </div>
           </div>
@@ -99,7 +99,39 @@ href: "/index"
                       </legend>
 
 
-                      <div class="govuk-form-group govuk-!-margin-bottom-4">
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-from">
+                          From
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-from" name="range-from" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-to">
+                          To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-to" name="range-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+
+                      <!--div class="govuk-form-group govuk-!-margin-bottom-4">
                         <label class="govuk-label" for="range-from">
                           From
                         </label>
@@ -123,7 +155,7 @@ href: "/index"
                               title="Percentage weight by weight">%
                               w/w</span></div>
                         </div>
-                      </div>
+                      </div-->
 
 
 

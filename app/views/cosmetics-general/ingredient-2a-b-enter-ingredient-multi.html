@@ -30,7 +30,7 @@ href: "/index"
 
     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
 
-    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate="">
+    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -57,8 +57,6 @@ href: "/index"
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
                 Is it used for shades?
               </legend>
-
-
 
               <div class="govuk-radios" data-module="govuk-radios">
 
@@ -90,7 +88,8 @@ href: "/index"
                           Scarlet red<span class="govuk-visually-hidden">: From</span>
                         </label>
 
-                        <div class="govuk-input__wrapper govuk-!-margin-right-3 opss-float-left">
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
                           <div class="govuk-input__prefix" aria-hidden="true">From</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-1-from" name="shade-1-from"
                             type="text" maxlength="3" spellcheck="false">
@@ -103,7 +102,7 @@ href: "/index"
                           Scarlet red: To
                         </label>
 
-                        <div class="govuk-input__wrapper">
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
                           <div class="govuk-input__prefix" aria-hidden="true">To</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-1-to" name="shade-1-to" type="text"
                             maxlength="3" spellcheck="false">
@@ -120,7 +119,8 @@ href: "/index"
                           Sunshine amber<span class="govuk-visually-hidden">: From</span>
                         </label>
 
-                        <div class="govuk-input__wrapper govuk-!-margin-right-3 opss-float-left">
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
                           <div class="govuk-input__prefix" aria-hidden="true">From</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-2-from" name="shade-2-from"
                             type="text" maxlength="3" spellcheck="false">
@@ -133,7 +133,7 @@ href: "/index"
                           Sunshine amber: To
                         </label>
 
-                        <div class="govuk-input__wrapper">
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
                           <div class="govuk-input__prefix" aria-hidden="true">To</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-2-to" name="shade-2-to" type="text"
                             maxlength="3" spellcheck="false">
@@ -150,7 +150,8 @@ href: "/index"
                           Mediterranean blue<span class="govuk-visually-hidden">: From</span>
                         </label>
 
-                        <div class="govuk-input__wrapper govuk-!-margin-right-3 opss-float-left">
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
                           <div class="govuk-input__prefix" aria-hidden="true">From</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-3-from" name="shade-3-from"
                             type="text" maxlength="3" spellcheck="false">
@@ -163,7 +164,7 @@ href: "/index"
                           Mediterranean blue: To
                         </label>
 
-                        <div class="govuk-input__wrapper">
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
                           <div class="govuk-input__prefix" aria-hidden="true">To</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-3-to" name="shade-3-to" type="text"
                             maxlength="3" spellcheck="false">
@@ -180,7 +181,8 @@ href: "/index"
                           Forrest green<span class="govuk-visually-hidden">: From</span>
                         </label>
 
-                        <div class="govuk-input__wrapper govuk-!-margin-right-3 opss-float-left">
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
                           <div class="govuk-input__prefix" aria-hidden="true">From</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-4-from" name="shade-4-from"
                             type="text" maxlength="3" spellcheck="false">
@@ -193,7 +195,7 @@ href: "/index"
                           Forrest green: To
                         </label>
 
-                        <div class="govuk-input__wrapper">
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
                           <div class="govuk-input__prefix" aria-hidden="true">To</div>
                           <input class="govuk-input govuk-input--width-3" id="shade-4-to" name="shade-4-to" type="text"
                             maxlength="3" spellcheck="false">
@@ -220,13 +222,45 @@ href: "/index"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question-2">
                   <div class="govuk-form-group">
+
                     <fieldset class="govuk-fieldset">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
                         What is the concentration range?
                       </legend>
 
 
-                      <div class="govuk-form-group govuk-!-margin-bottom-4">
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-from">
+                          From
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-from" name="range-from" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-to">
+                          To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-to" name="range-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+                      <!--div class="govuk-form-group govuk-!-margin-bottom-4">
                         <label class="govuk-label" for="range-from">
                           From
                         </label>
@@ -250,8 +284,7 @@ href: "/index"
                               title="Percentage weight by weight">%
                               w/w</span></div>
                         </div>
-                      </div>
-
+                      </div-->
 
                     </fieldset>
 
@@ -264,8 +297,8 @@ href: "/index"
                   <input class="govuk-radios__input" id="poisonous-3" name="poisonous" type="radio" value="yes"
                     data-aria-controls="poisonous-question-3">
                   <label class="govuk-label govuk-radios__label" for="poisonous-3">
-                    Is it listed in the <abbr>NPIS</abbr> tables and does the <br
-                      class="opss-br-desktop"><abbr>NPIS</abbr> need to know about it?
+                    Is it listed in the <abbr>NPIS</abbr> tables and does <br class="opss-br-desktop">the
+                    <abbr>NPIS</abbr> need to know about it?
                   </label>
 
                   <div id="npis-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
