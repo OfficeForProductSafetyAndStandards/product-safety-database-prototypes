@@ -1,0 +1,364 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Ingredient 2a-b
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/index"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      Add the ingredients
+    </h1>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "cosmetics-general/inc_tables-details.html" %}
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+
+    <form id="skip-to-form" action="ingredient-2b-how-many.html" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Ingredient 1
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="ingredient-1">What is the
+              name?</label>
+            <input class="govuk-input" id="ingredient-1" name="ingredient-1" type="text" spellcheck="false">
+          </div>
+
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="cas-1">What is the CAS
+                number? <span class="opss-secondary-text govuk-!-font-size-16">(optional)</span></label>
+              <input class="govuk-input govuk-input--width-10" id="cas-1" name="cas-1" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                Is it used for shades?
+              </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="poisonous" name="poisonous" type="radio" value="yes"
+                    data-aria-controls="poisonous-question">
+                  <label class="govuk-label govuk-radios__label" for="poisonous">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question">
+
+                  <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="range-shade-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        What is the concentration range?
+                      </legend>
+                      <div id="range-shade-hint" class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-5">
+                        Enter values of zero (0) for shades which are not included in this
+                        ingreditent.
+                      </div>
+
+
+                      <div class="govuk-form-group">
+                        <!-- loop on this form group block -->
+
+                        <label class="govuk-label govuk-!-font-weight-bold" for="shade-1-from">
+                          Scarlet red<span class="govuk-visually-hidden">: From</span>
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-1-from" name="shade-1-from"
+                            type="text" maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="shade-1-to">
+                          Scarlet red: To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-1-to" name="shade-1-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-!-font-weight-bold" for="shade-2-from">
+                          Sunshine amber<span class="govuk-visually-hidden">: From</span>
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-2-from" name="shade-2-from"
+                            type="text" maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="shade-2-to">
+                          Sunshine amber: To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-2-to" name="shade-2-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-!-font-weight-bold" for="shade-3-from">
+                          Mediterranean blue<span class="govuk-visually-hidden">: From</span>
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-3-from" name="shade-3-from"
+                            type="text" maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="shade-3-to">
+                          Mediterranean blue: To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-3-to" name="shade-3-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-!-font-weight-bold" for="shade-4-from">
+                          Forrest green<span class="govuk-visually-hidden">: From</span>
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-4-from" name="shade-4-from"
+                            type="text" maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="shade-4-to">
+                          Forrest green: To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="shade-4-to" name="shade-4-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+
+
+                    </fieldset>
+
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="poisonous-2" name="poisonous" type="radio" value="no"
+                    data-aria-controls="poisonous-question-2">
+                  <label class="govuk-label govuk-radios__label" for="poisonous-2">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question-2">
+                  <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        What is the concentration range?
+                      </legend>
+
+
+                      <div class="govuk-form-group">
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-from">
+                          From
+                        </label>
+
+                        <div
+                          class="govuk-input__wrapper govuk-!-margin-right-3 opss-input__wrapper--label opss-float-left">
+                          <div class="govuk-input__prefix" aria-hidden="true">From</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-from" name="range-from" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                        <label class="govuk-label govuk-visually-hidden" for="range-to">
+                          To
+                        </label>
+
+                        <div class="govuk-input__wrapper opss-input__wrapper--label">
+                          <div class="govuk-input__prefix" aria-hidden="true">To</div>
+                          <input class="govuk-input govuk-input--width-3" id="range-to" name="range-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+
+                      </div>
+
+                      <!--div class="govuk-form-group govuk-!-margin-bottom-4">
+                        <label class="govuk-label" for="range-from">
+                          From
+                        </label>
+                        <div class="govuk-input__wrapper">
+                          <input class="govuk-input govuk-input--width-3" id="range-from" name="range-from" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+                      </div>
+
+                      <div class="govuk-form-group govuk-!-margin-bottom-4">
+                        <label class="govuk-label" for="range-to">
+                          To
+                        </label>
+                        <div class="govuk-input__wrapper">
+                          <input class="govuk-input govuk-input--width-3" id="range-to" name="range-to" type="text"
+                            maxlength="3" spellcheck="false">
+                          <div class="govuk-input__suffix" aria-hidden="true"><span
+                              title="Percentage weight by weight">%
+                              w/w</span></div>
+                        </div>
+                      </div-->
+
+                    </fieldset>
+
+                  </div>
+                </div>
+
+                <div class="govuk-radios__divider">or</div><!-- ************* OR ***************** -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="poisonous-3" name="poisonous" type="radio" value="yes"
+                    data-aria-controls="poisonous-question-3">
+                  <label class="govuk-label govuk-radios__label" for="poisonous-3">
+                    Is it listed in the <abbr>NPIS</abbr> tables and does <br class="opss-br-desktop">the
+                    <abbr>NPIS</abbr> need to know about it?
+                  </label>
+
+                  <div id="npis-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                    The <abbr>NPIS</abbr> tables are included above<span class="govuk-visually-hidden">/before</span>
+                    this form.
+                  </div>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="poisonous-question-3">
+                  <div class="govuk-form-group">
+
+                    <label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="concentrate-1">What is
+                      the exact concentration?</label>
+
+                    <div class="govuk-input__wrapper">
+                      <input class="govuk-input govuk-input--width-3" id="concentrate-1" name="concentrate-1"
+                        type="text" maxlength="3" aria-describedby="npis-hint">
+                      <div class="govuk-input__suffix" aria-hidden="true"><span
+                          title="Percentage weight by weight">&percnt; w/w</span></div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </fieldset>
+          </div>
+
+
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <!--h2 class="govuk-heading-s">Already added</h2>
+  
+      <ol class="govuk-list govuk-list--number govuk-!-font-size-16 opss-secondary-text">
+        <li>Lorem ipsum dolor sit amet </li>
+        <li>Consectetur adipisicing elit</li>
+        <li>Voluptas recusandae aliquid delectus</li>
+        <li>Saepe maiores rem dolor</li>
+      </ol>
+  
+      <p class="govuk-body-s opss-secondary-text">
+        These ingredients have already been added to the product. 
+      </p-->
+    <!-- or .... already been added to the item. -->
+
+  </div>
+</div>
+{% endblock %}
