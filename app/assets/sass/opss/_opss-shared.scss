@@ -757,6 +757,11 @@ a[class*="link--no-underline"] sup {
     }
 }
 
+section.govuk-grid-column-three-quarters div.govuk-grid-column-one-third>figure.opss-margin-bottom-1-desktop {
+    max-height: 105px;
+    /*quick fix for smooth page loading on case products pg - when img height loads = zero pg movement*/
+}
+
 .opss-img-caption {
     font-family: $std-font-family;
     @include opss-font-size($s: 14px, $l: 1.25);
