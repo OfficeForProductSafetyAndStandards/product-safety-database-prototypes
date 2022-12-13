@@ -170,6 +170,19 @@ body.js-enabled .opss-nojs-hide {
     }
 }
 
+@include govuk-media-query($from: mobile, $until: tablet, $and: false, $media-type: "all") {
+
+    /* for mobile only */
+    .opss-float-left--mobile {
+        display: block;
+        width: 100%;
+        float: left;
+        text-align: left !important;
+    }
+}
+
+
+
 @include govuk-media-query($from: desktop) {
     .opss-float-left-desktop {
         float: left;
