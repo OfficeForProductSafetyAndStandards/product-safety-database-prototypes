@@ -150,6 +150,10 @@ body.js-enabled .opss-nojs-hide {
     }
 }
 
+.opss-visibility-hidden {
+    visibility: hidden;
+}
+
 .opss-hidden-desktop {
     visibility: visible;
 
@@ -964,6 +968,7 @@ dl.opss-summary-list-aside {
                         display: block;
                         margin-top: - govuk-spacing(5);
                         margin-bottom: govuk-spacing(1);
+                        text-align: right;
 
                         img {
                             margin-top: -2px;

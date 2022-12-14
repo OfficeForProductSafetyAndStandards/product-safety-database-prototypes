@@ -1,57 +1,70 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    What is the case name
+What is the case name
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "do-you-want-to-add-a-ref-number"
-    }) }}
+{{ govukBackLink({
+text: "Back",
+href: "do-you-want-to-add-a-ref-number"
+}) }}
 {% endblock %}
 
 
 {% block content %}
-  
+
 <form action="case-created-confirmation" method="post" novalidate>
 
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">  
+        <div class="govuk-grid-column-two-thirds">
 
             <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
-                    <label class="govuk-label govuk-label--l" for="example">
+                    <label class="govuk-label govuk-label--l" for="case-name">
                         What is the case name?
                     </label>
                 </h1>
 
-                <!--div id="case-name-hint" class="govuk-hint govuk-!-margin-bottom-2">
-                    <span class="govuk-!-display-block govuk-!-margin-bottom-6">Give the case a short descriptive title. For example, &quot;Overheating handheld Minolta camera&quot;. </span>
-                    <span class="govuk-!-display-block govuk-!-font-size-16">The case name will be permanent and <strong>can not</strong> be edited.</span>
-                </div-->
-
                 <div id="case-name-hint" class="govuk-hint govuk-!-margin-bottom-5">
-                    Give the case a short descriptive title. For example, &quot;Overheating handheld Minolta camera&quot;. 
-                </div>                
+                    Give the case a short descriptive title.
+                </div>
 
-                <input class="govuk-input  govuk-!-width-two-thirds" id="case-name" name="case-name" type="text" aria-describedby="case-name-hint" spellcheck="false" maxlength="45">
-                <!-- a 45 max character count has been added -->
+                <input class="govuk-input govuk-!-width-three-quarters" id="case-name" name="case-name" type="text"
+                    aria-describedby="case-name-hint case-name-examples" spellcheck="false" maxlength="100">
+                <!-- a 100 max character count has been added -->
 
             </div>
 
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                    Save
+                </button>
+
+                <a class="govuk-link govuk-link--no-visited-state"
+                    href="#">Cancel</a><!-- do not create a case return to 'Your cases' page -->
+            </div>
+
         </div>
+
+        <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-s">Case name examples</h2>
+
+            <ul id="case-name-examples"
+                class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-font-size-16 opss-secondary-text">
+                <li>Overheating handheld Minolta camera</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipisicing elit</li>
+                <li>Non nisi in omnis nobis facere tempora</li>
+                <li>Hoover 100kx washing machines overheating recall</li>
+            </ul>
+        </div>
+
     </div>
-    
-    <div class="govuk-button-group">
-        <button class="govuk-button">
-          Save
-        </button>
-      
-        <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a><!-- do not create a case return to 'Your cases' page -->
-    </div>     
+
+
 
 </form>
 
-  
+
 {% endblock %}
