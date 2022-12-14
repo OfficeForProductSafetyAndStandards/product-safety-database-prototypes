@@ -18,6 +18,13 @@
     }
 }
 
+@function govuk-tint($colour, $percentage) {
+    /// Make a colour lighter by mixing it with white
+    @return mix(govuk-colour("white"), $colour, $percentage);
+}
+
+$opss-retired-bg: govuk-tint(govuk-colour("light-grey"), 50);
+
 .opss-radios__divider--title .govuk-radios__divider {
     width: 100%;
     text-align: left;
@@ -54,11 +61,11 @@
 }
 
 .opss-borders {
-    border-color: govuk-colour("mid-grey", $legacy: "grey-2");
+    border-color: govuk-colour("mid-grey");
     border-style: solid;
     border-width: 0;
 
-    &.opps-borders--all {
+    &.opss-borders--all {
         @include govuk-media-query($from: tablet) {
             border-width: 1px;
         }
@@ -174,9 +181,7 @@
 
     tr:first-child th {
         border-top: 1px dashed govuk-colour("mid-grey") !important;
-        background-color: govuk-colour("light-grey") !important;
-        /* #f7f9fa*/
-
+        background-color: $opss-retired-bg !important;
 
         a {
             padding-right: govuk-spacing(2);
@@ -190,8 +195,7 @@
 
     tr:last-child td {
         border-bottom: 1px dashed govuk-colour("mid-grey") !important;
-        background-color: govuk-colour("light-grey") !important;
-
+        background-color: $opss-retired-bg !important;
     }
 
     tr th,
