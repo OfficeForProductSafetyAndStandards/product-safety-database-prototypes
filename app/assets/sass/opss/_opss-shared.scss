@@ -631,11 +631,12 @@ ul.opss-left-nav {
 
 .opss-secondary-text {
     color: $govuk-secondary-text-colour;
+
+    a[class*="link--no-underline"] sup[class$="font-size-14"] {
+        color: $govuk-secondary-text-colour;
+    }
 }
 
-a[class*="link--no-underline"] sup {
-    color: $govuk-text-colour;
-}
 
 .opss-border-top,
 .opss-border-bottom,
