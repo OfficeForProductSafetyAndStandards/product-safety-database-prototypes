@@ -1,0 +1,461 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Ingredients search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full opss-desktop-min-height--s2">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+      Ingredients search
+    </h1>
+
+    <p class="govuk-body opss-secondary-text">
+      Search cosmetic product notifications for notifications which include a specific ingredient. <br
+        class="opss-br-desktop">
+      <span class="govuk-!-font-weight-bold opss-primary-text">Only products notified after 2 October 2022 are
+        searchable for ingredients.
+      </span>
+    </p>
+
+    <details class="govuk-details govuk-!-width-two-thirds opss-details--sm" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with the ingredients search
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <p class="govuk-body-s govuk-!-margin-bottom-4">
+          <span id="search-hint">For best results, search for an individual ingredient.</span> This will
+          search cosmetic product notifications for products which use it.
+        </p>
+
+        <p class="govuk-body-s govuk-!-margin-bottom-4">
+          The "match type" filter option allows you to search for <span class="govuk-!-font-weight-bold">exact name
+            matches</span> or for ingredient names which feature
+          one or more words of the name you are searching for and returns more general search results.
+        </p>
+
+        <p class="govuk-body-s govuk-!-margin-bottom-1">
+          You can use the filter options to focus the search results. You can also choose to display the
+          results grouped together by notifications which share the same Responsible Person.
+        </p>
+
+      </div>
+    </details>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+    <a href="#page-content" class="govuk-skip-link opss-skip-link">
+      Skip to the main content
+    </a>
+
+    <ul class="govuk-list opss-left-nav">
+      <li>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">
+          Cosmetic products search
+        </a>
+      </li>
+      <li class="opss-left-nav__active">
+        <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+          Ingredients search
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+
+  <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
+
+    <form action="left-nav-cosmetic-ingredients-search-results.html" novalidate>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label--s" for="ingredient-search">Search</label>
+
+            <div class="govuk-hint govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-1"
+              id="search-hint">
+              <span class="govuk-visually-hidden">Search</span> on an ingredient name.
+            </div>
+
+            <div class="govuk-input__wrapper opss-search__wrapper">
+              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search"
+                name="ingredient-search" id="ingredient-search" aria-describedby="search-hint">
+              <button class="govuk-button govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Submit search</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-group-by">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Group by
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-group-by">
+                You can display the results grouped by notifications which share the same Responsible Person.
+              </div>
+
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input opss-radios__input-default" id="group-by-1" name="group-by"
+                    type="radio" value="notified" checked>
+                  <label class="govuk-label govuk-radios__label" for="group-by-1">
+                    None
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="group-by-2" name="group-by" type="radio" value="archived">
+                  <label class="govuk-label govuk-radios__label" for="group-by-2">
+                    Responsible Person
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-status">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Notification status
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-status">
+                You can filter the search results to show only notified or archived notifications.
+              </div>
+
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio"
+                    value="notified" checked>
+                  <label class="govuk-label govuk-radios__label" for="status">
+                    Notified
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="archived">
+                  <label class="govuk-label govuk-radios__label" for="status-2">
+                    Archived
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-3" name="status" type="radio" value="all">
+                  <label class="govuk-label govuk-radios__label" for="status-3">
+                    Both
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Notification date
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="notified-date">
+                You can filter the search results to show only notifications notified within a date range.
+              </div>
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <!-- **** nested fieldset: from, starts **** -->
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="from-hint">
+                    <legend
+                      class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
+                      From
+                    </legend>
+
+                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="from-hint">
+                      For example, 27 9 2020
+                    </div>
+
+                    <div class="govuk-date-input" id="from">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day"
+                            name="from-day" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month"
+                            name="from-month" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year"
+                            name="from-year" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- **** nested fieldset: from, ends-->
+                </div>
+                <div class="govuk-grid-column-one-half">
+                  <!-- **** nested fieldset: to, starts **** -->
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="to-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
+                      To
+                    </legend>
+
+                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden"
+                      id="to-hint">
+                      For example, 27 8 2022
+                    </div>
+
+                    <div class="govuk-date-input" id="to">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day"
+                            name="to-day" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month"
+                            name="to-month" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year"
+                            name="to-year" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- **** nested fieldset: to, ends-->
+                </div>
+              </div>
+
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-match">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Match type
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-match">
+                You can filter the results to match against any of its words or the ingredient name exactly.
+              </div>
+
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="match-2" name="match" type="radio" value="any" checked>
+                  <label class="govuk-label govuk-radios__label" for="match-2">
+                    Match any words
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input opss-radios__input-default" id="match" name="match" type="radio"
+                    value="exact">
+                  <label class="govuk-label govuk-radios__label" for="match">
+                    Exact match only
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!--
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Notification date
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="notified-date">
+                You can filter the search results to show only notifications notified within a date range.
+              </div>
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                      
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="from-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
+                        From
+                    </legend>
+
+                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="from-hint">
+                      For example, 27 9 2020
+                    </div>
+
+                    <div class="govuk-date-input" id="from">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="from-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  
+                </div>
+                <div class="govuk-grid-column-one-half">
+                             
+                  <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="to-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
+                        To
+                    </legend>
+
+                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden" id="to-hint">
+                      For example, 30 9 2022
+                    </div>
+
+                    <div class="govuk-date-input" id="to">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="to-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  
+                </div>                
+              </div>
+
+            </fieldset> 
+          </div>          
+-->
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="sorting-order">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                Sorting order
+              </legend>
+
+              <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="sorting-order">
+                You can sort the ordering of how the notifications will be displayed.
+              </div>
+
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio"
+                    value="relevance" checked>
+                  <label class="govuk-label govuk-radios__label" for="sorting">
+                    Relevance
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sorting-2" name="sorting" type="radio" value="newest">
+                  <label class="govuk-label govuk-radios__label" for="sorting-2">
+                    Newest
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sorting-3" name="sorting" type="radio" value="oldest">
+                  <label class="govuk-label govuk-radios__label" for="sorting-3">
+                    Oldest
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-button-group">
+            <button class="govuk-button">
+              Search
+            </button>
+
+            <button type="reset" class="govuk-button opss-button-link opss-nojs-hide">
+              Reset
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </form>
+
+  </section>
+</div>
+
+{% include "cosmetics-submit-search/inc_clear-form-js.html" %}
+
+{% endblock %}

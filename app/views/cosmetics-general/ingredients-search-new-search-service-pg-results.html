@@ -1,0 +1,112 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Ingredients search results
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s2b">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2" aria-describedby="cosmetic-ingredients-hint">
+          Ingredients search - results
+        </h1>
+        <p id="cosmetic-ingredients-hint"
+          class="govuk-body opss-secondary-text govuk-!-margin-bottom-1 govuk-visually-hidden">
+          Your search results page.
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+        <div class="opss-text-align-right">
+          <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+            Search again
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+    <a href="#page-content" class="govuk-skip-link opss-skip-link">
+      Skip to the main content
+    </a>
+
+    <ul class="govuk-list opss-left-nav">
+      <li>
+        <a href="/cosmetics-general/ingredients-cosmetic-products-search.html"
+          class="govuk-link govuk-link--no-visited-state">
+          Cosmetic products search
+        </a>
+      </li>
+      <li class="opss-left-nav__active">
+        <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state"
+          aria-current="page">
+          Ingredients search
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+
+  <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          0 notifications using the current filters were found.
+        </p>
+      </div>
+
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+        <div class="opss-text-align-right">
+          <form class="new_ingredient_search_form" id="new_ingredient_search_form" novalidate="novalidate"
+            action="/responsible_persons/659/search-ingredients?edit=true" accept-charset="UTF-8" method="get"><input
+              name="utf8" type="hidden" value="✓" autocomplete="off">
+            <input type="hidden" name="edit" id="edit" value="true" autocomplete="off">
+            <input id="notification_search_form_q_sort_hidden" autocomplete="off" type="hidden" value="acid"
+              name="ingredient_search_form[q]">
+            <input id="notification_search_form_date_from_day_sort_form_hidden" value=""
+              name="ingredient_search_form[date_from][day]" type="hidden">
+            <input id="notification_search_form_date_from_month_sort_form_hidden" value=""
+              name="ingredient_search_form[date_from][month]" type="hidden">
+            <input id="notification_search_form_date_from_year_sort_form_hidden" value=""
+              name="ingredient_search_form[date_from][year]" type="hidden">
+
+            <input id="notification_search_form_date_to_day_sort_form_hidden" value=""
+              name="ingredient_search_form[date_to][day]" type="hidden">
+            <input id="notification_search_form_date_to_month_sort_form_hidden" value=""
+              name="ingredient_search_form[date_to][month]" type="hidden">
+            <input id="notification_search_form_date_to_year_sort_form_hidden" value=""
+              name="ingredient_search_form[date_to][year]" type="hidden">
+
+            <input id="ingredient_search_form_sort_by_hidden" autocomplete="off" type="hidden" value="score"
+              name="ingredient_search_form[sort_by]">
+            <input id="ingredient_search_form_exact_or_any_match_hidden" autocomplete="off" type="hidden"
+              value="any_match" name="ingredient_search_form[exact_or_any_match]">
+            <button class="govuk-button opss-button-link govuk-!-font-size-14">
+              Edit your search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</div>
+
+{% include "cosmetics-submit-search/inc_clear-form-js.html" %}
+
+{% endblock %}
