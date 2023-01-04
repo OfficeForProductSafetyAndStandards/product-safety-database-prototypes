@@ -2,7 +2,9 @@
       background-color: govuk-colour("light-grey");
     }*/
 
-    &.opss-table-items--new-item {/* the new product having been added - top tbody */
+    &.opss-table-items--new-item {
+
+        /* the new product having been added - top tbody */
         tbody:first-of-type {
             border-top: 3px solid $govuk-success-colour;
             border-bottom: 3px solid $govuk-success-colour;
@@ -14,6 +16,7 @@
                     padding-top: govuk-spacing(3);
                 }
             }
+
             /*tr:first-child + tr {th + th {padding-left: govuk-spacing(2); } }
             tr {
                 td:first-of-type {padding-left: govuk-spacing(2); }
@@ -21,4 +24,8 @@
             }
             & + tbody th {padding-top: govuk-spacing(4); }*/
         }
+    }
+
+    .test-css-test {
+        border: none;
     }
