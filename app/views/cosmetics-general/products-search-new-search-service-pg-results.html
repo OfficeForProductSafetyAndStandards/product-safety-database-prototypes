@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-Ingredients search results
+Cosmetic products search results
 {% endblock %}
 
 
@@ -13,7 +13,7 @@ Ingredients search results
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s2b">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-          Ingredients search - results
+          Cosmetic products search - results
         </h1>
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1 govuk-visually-hidden">
           Your search results page.
@@ -21,7 +21,8 @@ Ingredients search results
       </div>
       <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
         <div class="opss-text-align-right">
-          <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+          <a href="products-search-new-search-service-pg"
+            class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
             Search again
           </a>
         </div>
@@ -41,15 +42,15 @@ Ingredients search results
     </a>
 
     <ul class="govuk-list opss-left-nav">
-      <li>
+      <li class="opss-left-nav__active">
         <a href="/cosmetics-general/ingredients-cosmetic-products-search.html"
-          class="govuk-link govuk-link--no-visited-state">
+          class="govuk-link govuk-link--no-visited-state" aria-current="page">
           Cosmetic products search
         </a>
       </li>
-      <li class="opss-left-nav__active">
-        <a href="/cosmetics-general/ingredients-ingredients-search.html" class="govuk-link govuk-link--no-visited-state"
-          aria-current="page">
+      <li>
+        <a href="/cosmetics-general/ingredients-ingredients-search.html"
+          class="govuk-link govuk-link--no-visited-state">
           Ingredients search
         </a>
       </li>

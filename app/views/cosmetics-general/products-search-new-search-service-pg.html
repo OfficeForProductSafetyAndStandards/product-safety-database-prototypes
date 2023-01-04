@@ -1,0 +1,1051 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Cosmetic products search
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full opss-desktop-min-height--s2">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Cosmetic products search
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+            Search for product notifications.
+        </p>
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+    <nav class="govuk-grid-column-one-quarter govuk-!-padding-right-0" aria-label="Secondary">
+
+        <a href="#page-content" class="govuk-skip-link opss-skip-link">
+            Skip to the main content
+        </a>
+
+        <ul class="govuk-list opss-left-nav">
+            <li class="opss-left-nav__active">
+                <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">
+                    Cosmetic products search
+                </a>
+            </li>
+            <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    Ingredients search
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
+
+        <form action="left-nav-cosmetic-ingredients-search-results.html" novalidate>
+
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label--s" for="products-search">Search</label>
+
+                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-display-inline-block govuk-!-margin-top-1"
+                            id="search-hint">
+                            Use one or more keywords to search for product notifications.
+                        </div>
+
+                        <div class="govuk-input__wrapper opss-search__wrapper">
+                            <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search"
+                                name="products-search" id="products-search" aria-describedby="search-hint">
+                            <button class="govuk-button govuk-!-margin-bottom-0">
+                                <span class="govuk-visually-hidden">Submit search</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="advanced-search-options">
+
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                Search options
+                            </legend>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1"
+                                id="advanced-search-options">
+                                Target searches by notification name, Responsible Person name or their address <br
+                                    class="opss-br-desktop">(or
+                                parts of their address) and include close matches with similar words.
+                            </div>
+
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="name" name="searchtype" type="radio"
+                                        value="name">
+                                    <label class="govuk-label govuk-radios__label" for="name">
+                                        Notification name
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="rp" name="searchtype" type="radio"
+                                        value="rp">
+                                    <label class="govuk-label govuk-radios__label" for="rp">
+                                        <abbr>RP</abbr> name&sol;address
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="both" name="searchtype" type="radio"
+                                        value="both" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="both">
+                                        Both
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="similar" name="organisation"
+                                        type="checkbox" value="similar">
+                                    <label class="govuk-label govuk-checkboxes__label" for="similar">
+                                        Include similar words
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-status">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                Notification status
+                            </legend>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-status">
+                                You can filter the search results to show only notified or archived notifications.
+                            </div>
+
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input opss-radios__input-default" id="status"
+                                        name="status" type="radio" value="notified" checked>
+                                    <label class="govuk-label govuk-radios__label" for="status">
+                                        Notified
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="status-2" name="status" type="radio"
+                                        value="archived">
+                                    <label class="govuk-label govuk-radios__label" for="status-2">
+                                        Archived
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="status-3" name="status" type="radio"
+                                        value="all">
+                                    <label class="govuk-label govuk-radios__label" for="status-3">
+                                        Both
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping"
+                            aria-describedby="notified-date">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                Notification date
+                            </legend>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="notified-date">
+                                You can filter the search results to show only notifications notified within a date
+                                range.
+                            </div>
+
+
+                            <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-one-half">
+                                    <!-- **** nested fieldset: from, starts **** -->
+                                    <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group"
+                                        aria-describedby="from-hint">
+                                        <legend
+                                            class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
+                                            From
+                                        </legend>
+
+                                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1"
+                                            id="from-hint">
+                                            For example, 27 9 2020
+                                        </div>
+
+                                        <div class="govuk-date-input" id="from">
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                        Day
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                        id="from-day" name="from-day" type="text" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                        Month
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                        id="from-month" name="from-month" type="text"
+                                                        inputmode="numeric">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                        Year
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                        id="from-year" name="from-year" type="text" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <!-- **** nested fieldset: from, ends-->
+                                </div>
+                                <div class="govuk-grid-column-one-half">
+                                    <!-- **** nested fieldset: to, starts **** -->
+                                    <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group"
+                                        aria-describedby="to-hint">
+                                        <legend
+                                            class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
+                                            To
+                                        </legend>
+
+                                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden"
+                                            id="to-hint">
+                                            For example, 27 8 2022
+                                        </div>
+
+                                        <div class="govuk-date-input" id="to">
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="to-day">
+                                                        Day
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                        id="to-day" name="to-day" type="text" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="to-month">
+                                                        Month
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                        id="to-month" name="to-month" type="text" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="to-year">
+                                                        Year
+                                                    </label>
+                                                    <input
+                                                        class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                        id="to-year" name="to-year" type="text" inputmode="numeric">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <!-- **** nested fieldset: to, ends-->
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="product-category">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                Product category
+                            </legend>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="product-category">
+                                You can can filter the results by product category.
+                            </div>
+
+                            <!--select class="govuk-select" name="notification_search_form[category]"
+                                id="notification_search_form_category">
+                                <option value="">All</option>
+                                <option value="Skin products">Skin products</option>
+                                <option value="Hair and scalp products">Hair and scalp products</option>
+                                <option value="Nail and cuticle products">Nail and cuticle products</option>
+                                <option value="Oral hygiene products">Oral hygiene products</option>
+                            </select-->
+
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input opss-radios__input-default" id="all-products"
+                                        name="products" type="radio" value="all-products" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="all-products">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="products-2" name="products" type="radio"
+                                        value="newest">
+                                    <label class="govuk-label govuk-radios__label" for="products-2">
+                                        Skin products
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="products-3" name="products" type="radio"
+                                        value="oldest">
+                                    <label class="govuk-label govuk-radios__label" for="products-3">
+                                        Hair and scalp products
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="products-4" name="products" type="radio"
+                                        value="oldest">
+                                    <label class="govuk-label govuk-radios__label" for="products-4">
+                                        Oral hygiene products
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="products-5" name="products" type="radio"
+                                        value="oldest">
+                                    <label class="govuk-label govuk-radios__label" for="products-5">
+                                        Nail and cuticle products
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="sorting-order">
+                            <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                Sorting order
+                            </legend>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="sorting-order">
+                                You can sort the ordering of how the notifications will be displayed.
+                            </div>
+
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input opss-radios__input-default" id="sorting"
+                                        name="sorting" type="radio" value="relevance" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="sorting">
+                                        Relevance
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="sorting-2" name="sorting" type="radio"
+                                        value="newest">
+                                    <label class="govuk-label govuk-radios__label" for="sorting-2">
+                                        Newest
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="sorting-3" name="sorting" type="radio"
+                                        value="oldest">
+                                    <label class="govuk-label govuk-radios__label" for="sorting-3">
+                                        Oldest
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-button-group">
+                        <button class="govuk-button">
+                            Search
+                        </button>
+
+                        <button type="reset" class="govuk-button opss-button-link opss-nojs-hide">
+                            Reset
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+
+    </section>
+
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <form action="#" method="post" novalidate>
+
+        <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="products-search">
+                    Search cosmetic products
+                </label>
+            </h1>
+
+            <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-three-quarters opss-desktop-min-height--m">
+
+                    <div id="search-hint" class="govuk-hint">
+                        Use one or more keywords to search for product notifications.
+                    </div>
+
+                    <section class="govuk-form-group">
+                        <div class="govuk-input__wrapper opss-search__wrapper">
+                            <input class="govuk-input govuk-!-width-three-quarters" type="search" id="products-search"
+                                name="products-search" aria-describedby="search-hint">
+                            <button class="govuk-button govuk-!-margin-bottom-2">
+                                <span class="govuk-visually-hidden">Search</span>
+                            </button>
+                        </div>
+
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-visually-hidden">
+                                Advanced search options
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="name" name="searchtype" type="radio"
+                                        value="name">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="name">
+                                        Notification name
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="rp" name="searchtype" type="radio"
+                                        value="rp">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="rp">
+                                        Responsible Person name&sol;address
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="both" name="searchtype" type="radio"
+                                        value="both" checked="checked">
+                                    <label class="govuk-label govuk-radios__label govuk-!-font-size-16" for="both">
+                                        Both
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="similar" name="organisation"
+                                        type="checkbox" value="similar">
+                                    <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-16"
+                                        for="similar">
+                                        Include similar words
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                </div>
+
+                <div class="govuk-grid-column-one-quarter">
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                About keywords search
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+
+                            <p class="govuk-body govuk-!-font-size-14">
+                                Target keyword searches by searching on:
+                            </p>
+
+                            <ul class="govuk-list govuk-list--bullet govuk-!-font-size-14">
+                                <li>
+                                    A notification name
+                                </li>
+                                <li>
+                                    A Responsible Person name or their address (or parts of their address)
+                                </li>
+                                <li>
+                                    And include close matches with similar words.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div><!-- ends full column -->
+
+    </form>
+</div>
+
+<div class="govuk-grid-row">
+
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-0">
+        <form action="#" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
+                            Filter the results by<span class="govuk-visually-hidden">:</span>
+                        </h2>
+                    </legend>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="category">
+                            Product category
+                        </label>
+                        <select class="govuk-select" id="category" name="category">
+                            <option value="">All</option>
+                            <option value="val01">Option 1</option>
+                            <option value="val02">Option 2</option>
+                            <option value="val03" selected>Option 3</option>
+                            <option value="val04">Option 4</option>
+                        </select>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small govuk-radios--conditional opss-radios--tight opss-nojs-hide"
+                        data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date"
+                                data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
+                            <label class="govuk-label govuk-radios__label" for="by-date">
+                                Date
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-date-block-1">
+                            <div class="govuk-form-group">
+
+                                <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
+                                    The date notified. <br>
+                                    For example, 14 08 2019.
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio"
+                                value="by-date-range" data-aria-controls="conditional-date-block-2"
+                                aria-describedby="by-date-range-hint">
+                            <label class="govuk-label govuk-radios__label" for="by-date-range">
+                                Date range
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-date-block-2">
+                            <div class="govuk-form-group">
+
+                                <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
+                                    The date notified within a date range. For example, from <span
+                                        class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09
+                                        2020</span>.
+                                </div>
+                                <div class="govuk-hint govuk-!-font-size-16">
+                                    From<span class="govuk-visually-hidden">:</span>
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date-from">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-from-day" name="by-date-from-day" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-from-month" name="by-date-from-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-from-year" name="by-date-from-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                                    To<span class="govuk-visually-hidden">:</span>
+                                </div>
+
+                                <div class="govuk-date-input" id="by-date-to">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-to-month" name="by-date-to-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <!-- ******** noscript dates range form starts ******** -->
+            <noscript>
+                <div class="govuk-form-group govuk-!-margin-bottom-7">
+                    <fieldset class="govuk-fieldset" aria-describedby="by-date-range-hint-2">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                            Notified dates
+                        </legend>
+
+                        <div class="govuk-form-group">
+
+                            <div id="by-date-range-hint-2" class="govuk-hint govuk-!-font-size-16">
+                                Filter searches by notified dates within a date range. For example, from <span
+                                    class="opss-no-wrap">01 04 2020</span> to <span class="opss-no-wrap">30 09
+                                    2022</span>.
+                            </div>
+                            <div class="govuk-hint govuk-!-font-size-16">
+                                From<span class="govuk-visually-hidden">:</span>
+                            </div>
+
+                            <div class="govuk-date-input opss-date-input--tight">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="by-date-from-day-2" name="by-date-from-day" type="text" pattern="[0-9]*"
+                                            inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="by-date-from-month-2" name="by-date-from-month" type="text"
+                                            pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="by-date-from-year-2" name="by-date-from-year" type="text"
+                                            pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                                To<span class="govuk-visually-hidden">:</span>
+                            </div>
+
+                            <div class="govuk-date-input opss-date-input--tight">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="by-date-to-day-2" name="by-date-to-day" type="text" pattern="[0-9]*"
+                                            inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="by-date-to-month-2" name="by-date-to-month" type="text" pattern="[0-9]*"
+                                            inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="by-date-to-year-2" name="by-date-to-year" type="text" pattern="[0-9]*"
+                                            inputmode="numeric">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+            </noscript>
+            <!-- ******** noscript dates range form ends ******** -->
+
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Apply
+                </button>
+
+                <button type="reset" class="govuk-button opss-button-link" id="opss-reset" data-module="govuk-button">
+                    Reset
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="govuk-grid-column-three-quarters" id="search-results-section">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body"><span id="opss-qty">19</span> products matching keyword(s)
+                    <span class="govuk-!-font-weight-bold">dye, hairspray</span>,<span id="opss-filter-txt"
+                        class="opss-filter-txt"> using the current filters,</span> were found.
+                </p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group opss-text-align-right">
+                    <form id="sort-form" action="#" method="post">
+                        <label class="govuk-label govuk-body-s" for="results-sort">
+                            Sort by
+                        </label>
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort"
+                            aria-controls="results-order">
+                            <option value="relevance" selected>Relevance</option>
+                            <option value="recent">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                        <button class="govuk-button opss-js-enabled-hidden" data-module="govuk-button">
+                            Sort
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" role="region" aria-label="list" id="results-order" aria-live="polite">
+
+                <table id="table-items"
+                    class="govuk-table govuk-!-margin-top-5 opss-table-items opss-table-items--sm opss-table-items--first-col-33">
+                    <caption class="govuk-visually-hidden">
+                        Search results. Each notification is described across 2 rows within its own table body.
+                    </caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">&nbsp;</th>
+                            <th id="uknotified" scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                            <th id="ukcosprodnumber" scope="col" class="govuk-table__header"><abbr>UK</abbr> cosmetic
+                                product number</th>
+                            <th id="eurefnumber" scope="col" class="govuk-table__header"><abbr>EU</abbr> reference
+                                number</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-01" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-01" id="meta-01" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-01 meta-01" class="govuk-table__cell">
+                                4 May 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-01 meta-01" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="eurefnumber item-01 meta-01" class="govuk-table__cell">
+                                1000094
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-02" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Lipsomminium sobre at el</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-02" id="meta-02" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-02 meta-02" class="govuk-table__cell">
+                                5 January 1978
+                            </td>
+                            <td headers="ukcosprodnumber item-02 meta-02" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="eurefnumber item-02 meta-02" class="govuk-table__cell">
+                                15766863112607598
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-03" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Maecenas vitae augue</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-03" id="meta-03" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-03 meta-03" class="govuk-table__cell">
+                                11 May 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-03 meta-03" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="eurefnumber item-03 meta-03" class="govuk-table__cell">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Consectetur Adipiscing
+                                    Elit</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-04" id="meta-04" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-04 meta-04" class="govuk-table__cell">
+                                4 May 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-04 meta-04" class="govuk-table__cell">
+                                UKCP-675630988
+                            </td>
+                            <td headers="eurefnumber item-04 meta-04" class="govuk-table__cell">
+                                7768-998-23
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-04" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Suspendisse eu rutrum
+                                    lectus</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-04" id="meta-04" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-04 meta-04" class="govuk-table__cell">
+                                27 September 2020
+                            </td>
+                            <td headers="ukcosprodnumber item-04 meta-04" class="govuk-table__cell">
+                                UKCP-895536243
+                            </td>
+                            <td headers="eurefnumber item-04 meta-04" class="govuk-table__cell">
+                                002-473885-12995
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">
+                                Name
+                            </th>
+                            <th id="item-05" colspan="3" scope="colgroup" class="govuk-table__header">
+                                <a class="govuk-link govuk-link--no-visited-state" href="#">Foraminifera cullen etta
+                                    loutettie</a>
+                            </th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th headers="item-05" id="meta-05" class="govuk-visually-hidden">
+                                Metadata
+                            </th>
+                            <td headers="uknotified item-05 meta-05" class="govuk-table__cell">
+                                4 August 2021
+                            </td>
+                            <td headers="ukcosprodnumber item-05 meta-05" class="govuk-table__cell">
+                                UKCP-78219900
+                            </td>
+                            <td headers="eurefnumber item-05 meta-05" class="govuk-table__cell">
+                                1000094346872
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-visually-hidden">&nbsp;</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UK</abbr> notified</th>
+                            <th scope="col" class="govuk-table__header"><abbr>UK</abbr> cosmetic product number</th>
+                            <th scope="col" class="govuk-table__header"><abbr>EU</abbr> reference number</th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                            <a href="" class="govuk-link govuk-link--no-visited-state">
+                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of
+                                    3</span>
+                            </a>
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                            <a href="" class="govuk-link govuk-link--no-visited-state">
+                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of
+                                    3</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<script>
+    document.getElementById("opss-reset").addEventListener("click", function () {
+        var selects = document.getElementById("category");
+
+        selects.querySelector("[selected]").removeAttribute("selected");
+        selects[0].setAttribute("selected", "selected"); //classList.add('xxxxxxxxxxx')
+    }
+    );
+
+
+    document.getElementById("results-sort").addEventListener("change", function () {
+        //document.getElementById("sort-form").submit();
+        alert('form submitted event');
+    }
+    );
+</script>
+
+{% endblock %}
