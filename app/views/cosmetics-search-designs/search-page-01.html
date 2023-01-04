@@ -1,14 +1,14 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-    SCNP search page design
+SCNP search page design
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "/index"
-    }) }}
+{{ govukBackLink({
+text: "Back",
+href: "/index"
+}) }}
 {% endblock %}
 
 
@@ -28,7 +28,8 @@
                 </div>
 
                 <div class="govuk-input__wrapper opss-search__wrapper">
-                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search" name="products-search" aria-describedby="search-hint">
+                    <input class="govuk-input govuk-!-width-one-half" type="search" id="products-search"
+                        name="products-search" aria-describedby="search-hint">
                     <button class="govuk-button" data-module="govuk-button">
                         <span class="govuk-visually-hidden">Search</span>
                     </button>
@@ -69,12 +70,14 @@
                     <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date" data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
+                            <input class="govuk-radios__input" id="by-date" name="dates" type="radio" value="by-date"
+                                data-aria-controls="conditional-date-block-1" aria-describedby="by-date-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date">
                                 Date
                             </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-1">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-date-block-1">
                             <div class="govuk-form-group">
 
                                 <div id="by-date-hint" class="govuk-hint govuk-!-font-size-16">
@@ -83,104 +86,131 @@
                                 </div>
 
                                 <div class="govuk-date-input" id="by-date">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-day" name="by-date-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-month" name="by-date-month" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-year" name="by-date-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
 
                             </div>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio" value="by-date-range" data-aria-controls="conditional-date-block-2" aria-describedby="by-date-range-hint">
+                            <input class="govuk-radios__input" id="by-date-range" name="dates" type="radio"
+                                value="by-date-range" data-aria-controls="conditional-date-block-2"
+                                aria-describedby="by-date-range-hint">
                             <label class="govuk-label govuk-radios__label" for="by-date-range">
                                 Date range
                             </label>
                         </div>
 
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-block-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-date-block-2">
                             <div class="govuk-form-group">
 
                                 <div id="by-date-range-hint" class="govuk-hint govuk-!-font-size-16">
-                                    The date notified within a date range. For example, from <span class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09 2020</span>.
+                                    The date notified within a date range. For example, from <span
+                                        class="opss-no-wrap">01 04 2019</span> to <span class="opss-no-wrap">30 09
+                                        2020</span>.
                                 </div>
                                 <div class="govuk-hint govuk-!-font-size-16">
                                     From<span class="govuk-visually-hidden">:</span>
                                 </div>
 
                                 <div class="govuk-date-input" id="by-date-from">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-day" name="by-date-from-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-from-month" name="by-date-from-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-from-year" name="by-date-from-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-from-day" name="by-date-from-day" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-from-month" name="by-date-from-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-from-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-from-year" name="by-date-from-year" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
+                                <div
+                                    class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-4 govuk-!-margin-bottom-3">
                                     To<span class="govuk-visually-hidden">:</span>
                                 </div>
 
                                 <div class="govuk-date-input" id="by-date-to">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-to-day" name="by-date-to-day" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="by-date-to-month" name="by-date-to-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                id="by-date-to-month" name="by-date-to-month" type="text"
+                                                pattern="[0-9]*" inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="by-date-to-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                id="by-date-to-year" name="by-date-to-year" type="text" pattern="[0-9]*"
+                                                inputmode="numeric">
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
 
                             </div>
@@ -196,7 +226,8 @@
                     Apply
                 </button>
 
-                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset" data-module="govuk-button">
+                <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset"
+                    data-module="govuk-button">
                     Reset form
                 </button>
             </div>
@@ -206,17 +237,20 @@
 
     <section class="govuk-grid-column-two-thirds" id="search-results-section">
         <div class="govuk-grid-row">
-           <div class="govuk-grid-column-two-thirds">
-               <p class="govuk-body"><span id="opss-qty">19</span> products matching keyword(s)
-                   <span class="govuk-!-font-weight-bold">dye, hairspray</span>,<span id="opss-filter-txt" class="opss-filter-txt"> using the current filters,</span> were found.</p>
-           </div>
-           <div class="govuk-grid-column-one-third">
-               <div class="govuk-form-group opss-text-align-right">
-                   <form  id="sort-form" action="#" method="post">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body"><span id="opss-qty">19</span> products matching keyword(s)
+                    <span class="govuk-!-font-weight-bold">dye, hairspray</span>,<span id="opss-filter-txt"
+                        class="opss-filter-txt"> using the current filters,</span> were found.
+                </p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group opss-text-align-right">
+                    <form id="sort-form" action="#" method="post">
                         <label class="govuk-label govuk-body-s" for="results-sort">
                             Sort by
                         </label>
-                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort" aria-controls="results-order">
+                        <select class="govuk-select govuk-!-margin-bottom-1" id="results-sort" name="sort"
+                            aria-controls="results-order">
                             <option value="relevance" selected>Relevance</option>
                             <option value="recent">Newest</option>
                             <option value="oldest">Oldest</option>
@@ -226,7 +260,7 @@
                         </button>
                     </form>
                 </div>
-           </div>
+            </div>
         </div>
 
         <div class="govuk-grid-row">
@@ -237,7 +271,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Asda 50+ Hair Dye (dark brown)</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -268,7 +303,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#2">Eye see you bath bomber lemon zest version</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -299,7 +335,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#3">Mend Bright Eye face wash gel in spary</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -322,7 +359,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Poppy Austin Eye Cream 30 ml</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -353,7 +391,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Kri Skincare Awaken Eye Cream</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -385,7 +424,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Tesco hair dye shampoo</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -416,7 +456,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#2">Eye see you bath bomber</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -439,7 +480,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#3">MEND BRIGHT EYE gel 35ml</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -462,7 +504,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Poppy Austin Eye Cream pump action bottle dispenser</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -485,7 +528,8 @@
                         <h2 class="govuk-heading-s">
                             <a class="govuk-link" href="#1">Kri Skincare Awaken Eye Cream</a>
                         </h2>
-                        <dl class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
+                        <dl
+                            class="govuk-summary-list govuk-summary-list--no-border opss-summary-list opss-summary-list--small">
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     First notified in the <abbr>UK</abbr>
@@ -518,14 +562,16 @@
                 <nav class="opss-pagination-link">
                     <ul>
                         <li class="opss-pagination-link__wrap opss-pagination-link--prev">
-                                <a href="" class="govuk-link govuk-link--no-visited-state">
-                                    <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
-                                </a>
-                            </li>
-                            <li class="opss-pagination-link__wrap opss-pagination-link--next">
-                                <a href="" class="govuk-link govuk-link--no-visited-state">
-                                    <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
-                                </a>
+                            <a href="" class="govuk-link govuk-link--no-visited-state">
+                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of
+                                    3</span>
+                            </a>
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                            <a href="" class="govuk-link govuk-link--no-visited-state">
+                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of
+                                    3</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -536,20 +582,20 @@
 
 </div>
 <script>
-    document.getElementById("opss-reset").addEventListener("click", function(){
-            var selects = document.getElementById("category");
+    document.getElementById("opss-reset").addEventListener("click", function () {
+        var selects = document.getElementById("category");
 
-            selects.querySelector("[selected]").removeAttribute("selected");
-            selects[0].setAttribute("selected", "selected"); //classList.add('xxxxxxxxxxx')
-        }
+        selects.querySelector("[selected]").removeAttribute("selected");
+        selects[0].setAttribute("selected", "selected"); //classList.add('xxxxxxxxxxx')
+    }
     );
 
 
-  document.getElementById("results-sort").addEventListener("change", function(){
-      //document.getElementById("sort-form").submit();
-      alert('form submitted event');
+    document.getElementById("results-sort").addEventListener("change", function () {
+        //document.getElementById("sort-form").submit();
+        alert('form submitted event');
     }
-  );
+    );
 </script>
-
+. <!-- test dot!  -->
 {% endblock %}
