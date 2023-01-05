@@ -1,0 +1,64 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Ingredients upload help
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full opss-desktop-min-height--s">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Ingredients <abbr>CSV</abbr> file upload &ndash; help
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+
+            <abbr title="Comma Separated Values">CSV</abbr>
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus ullam eaque modi. Illum veniam
+            atque, ratione cupiditate eius consectetur quis omnis minima animi! At non facilis ex, fugiat molestiae ad?
+        </p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row opss-full-height">
+
+    <section class="govuk-grid-column-full" id="page-content">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p class="govuk-body">
+                    There are currently 343 different ingredients listed in cosmetic product notifications <br
+                        class="opss-br-desktop">(submitted after 2 October 2022).
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+
+</div>
+
+<div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+        <p class="govuk-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quos in iure cupiditate id, possimus
+            quisquam nisi suscipit fuga quis maxime odit sapiente facilis blanditiis voluptatem perferendis eveniet!
+            Incidunt, ex?
+        </p>
+    </div>
+</div>
+
+{% endblock %}
