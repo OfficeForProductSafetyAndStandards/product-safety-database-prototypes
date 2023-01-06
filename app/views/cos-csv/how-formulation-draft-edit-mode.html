@@ -1,0 +1,105 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+How will you provide the product formulation?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form action="csv-upload" accept-charset="UTF-8" method="post" novalidate>
+
+    <input type="hidden" name="utf8" value="&#x2713;" autocomplete="off" />
+    <input type="hidden" name="_method" value="put" autocomplete="off" />
+    <input type="hidden" name="authenticity_token" value="" autocomplete="off" />
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="type-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            How will you provide the product formulation?
+                        </h1>
+                    </legend>
+
+                    <p class="govuk-body govuk-!-width-three-quarters opss-secondary-text" id="type-hint">
+                        There are three formulation types: Predefined frame formulations, exact concentrations and concentration ranges. You can enter information manually or by uploading a <abbr title="Comma Separated Values">CSV</abbr> file.
+                    </p>
+
+                    <p class="govuk-body govuk-!-width-three-quarters govuk-!-margin-bottom-8 opss-secondary-text">
+                        Learn how you can <a href="csv-help.html" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">use a <abbr>CSV</abbr> file (opens in a new tab)</a>.
+                    </p>
+
+                    <div class="govuk-warning-text govuk-!-display-inline-block govuk-!-margin-bottom-7 govuk-!-width-two-thirds">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span> Changing the formulation type will remove all ingredients already added. Using a <abbr>CSV</abbr> file upload option will replace all ingredients already added
+                        </strong>
+                    </div>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item govuk-!-margin-bottom-8">
+
+                            <input id="component_notification_type_predefined" name="component[notification_type]" type="radio" value="predefined" class="govuk-radios__input">
+
+                            <label class="govuk-label govuk-radios__label" for="component_notification_type_predefined">
+                                Choose a predefined frame formulation
+                            </label>
+
+                        </div>
+
+                        <div class="govuk-radios__item govuk-!-margin-bottom-0">
+
+                            <input id="component_notification_type_exact" name="component[notification_type]" type="radio" value="exact" class="govuk-radios__input" checked="checked">
+
+                            <label class="govuk-label govuk-radios__label" for="component_notification_type_exact">
+                                Enter ingredients and their exact concentration manually
+                            </label>
+
+                        </div>
+
+                        <div class="govuk-radios__item govuk-radios--small govuk-!-margin-left-9 govuk-!-margin-bottom-4">
+
+                            <input id="component_notification_type_exact_csv" name="component[notification_type]" type="radio" value="exact" class="govuk-radios__input">
+
+                            <label class="govuk-label govuk-radios__label govuk-!-font-size-16 opss-secondary-text" for="component_notification_type_exact_csv">
+                                Provide ingredients and their exact concentration with a <abbr>CSV</abbr> file
+                            </label>
+
+                        </div>
+
+                        <div class="govuk-radios__item govuk-!-margin-bottom-0">
+
+                            <input id="component_notification_type_range" name="component[notification_type]" type="radio" value="range" class="govuk-radios__input">
+
+                            <label class="govuk-label govuk-radios__label" for="component_notification_type_range">
+                                Enter ingredients and their concentration range manually
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <button class="govuk-button">Continue</button>
+
+        </div>
+
+    </div>
+</form>
+
+
+{% endblock %}
