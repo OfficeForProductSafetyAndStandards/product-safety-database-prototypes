@@ -1,0 +1,36 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Upload the formulation
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" accept-charset="UTF-8" method="post" novalidate>
+
+    <input type="hidden" name="utf8" value="&#x2713;" autocomplete="off" />
+    <input type="hidden" name="_method" value="put" autocomplete="off" />
+    <input type="hidden" name="authenticity_token" value="" autocomplete="off" />
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-form-group">
+
+                Upload file and continue content here + create a version with the upload error message
+            </div>
+
+        </div>
+
+    </div>
+</form>
+
+
+{% endblock %}

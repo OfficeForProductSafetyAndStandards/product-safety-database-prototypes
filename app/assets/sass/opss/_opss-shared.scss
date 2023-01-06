@@ -360,6 +360,7 @@ abbr[title] {
     @include govuk-media-query($from: desktop) {
 
         h1[class^="govuk-heading"]+p &,
+        legend.govuk-fieldset__legend--l+p &,
         .opss-switch-cols &,
         .govuk-summary-list__row & {
             border-bottom: 1px dotted $govuk-secondary-text-colour;

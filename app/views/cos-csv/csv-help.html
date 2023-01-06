@@ -16,15 +16,14 @@ href: "#"
 
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full opss-desktop-min-height--s">
+    <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            Ingredients <abbr>CSV</abbr> file upload &ndash; help
+            <abbr>CSV</abbr> file uploads for ingredients &ndash; help
         </h1>
 
-        <p class="govuk-body opss-secondary-text">
-            When creating a new product notification you can add the ingredient information using a <abbr
-                title="Comma Separated Values">CSV</abbr> file.
+        <p class="govuk-body govuk-!-margin-bottom-7 opss-secondary-text">
+            When creating a new product notification you can add the ingredient information using a <abbr title="Comma Separated Values">CSV</abbr> file.
         </p>
 
     </div>
@@ -59,7 +58,8 @@ href: "#"
 
 
         <p class="govuk-body">
-            The <abbr>CSV</abbr> file you create must follow this format:
+            You can create a <abbr>CSV</abbr> file by using spreadsheet software or a simple text file editor.
+            The <abbr>CSV</abbr> file you create must follow one of these formats:
         </p>
 
 
@@ -70,12 +70,12 @@ href: "#"
             </h3>
 
             <p class="govuk-body-s">
-                For ingredients with <span class="govuk-!-font-weight-bold">exact</span> concentration measurements
-                follow Template 1.
+                For ingredients with <span class="govuk-!-font-weight-bold">exact</span> concentrations follow Template
+                1.
             </p>
 
             <p class="govuk-body-s">
-                There are four fields for each ingredient:
+                There are four fields for each ingredient (in this order):
             </p>
 
             <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
@@ -91,15 +91,15 @@ href: "#"
             <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
                 <li>Each ingredient has 4 delimited (comma separated) fields</li>
                 <li>Each ingredient is listed on its own (data) row</li>
-                <li>The file extention must be .<abbr>csv</abbr></li>
+                <li>The file name extention is .<abbr>csv</abbr></li>
                 <li>An ingredient name is always required and there must be no duplication of ingredient names
                 </li>
                 <li>An exact concentration (<span title="Percentage weight by weight">% w/w</span>) value is always
                     required
                 </li>
-                <li>The CAS number value is optional</li>
-                <li>The fourth value is always set to true or false<span class="govuk-visually-hidden">. </span> <br
-                        class="opss-br-desktop">(The value is <kbd>true</kbd> if the
+                <li>A CAS number value is optional, but must always be numbers and dashes only and without spaces
+                </li>
+                <li>The fourth value is always set to true or false<span class="govuk-visually-hidden">. </span> <br class="opss-br-desktop">(The value is <kbd>true</kbd> if the
                     <abbr>NPIS</abbr> <em>does</em> need to
                     know about it)
                 </li>
@@ -115,9 +115,7 @@ href: "#"
             </code>
 
             <p class="govuk-body-s govuk-!-margin-top-5">Download an example <abbr>CSV</abbr> file to your machine or
-                device:&nbsp; <a href="../public/template-1-example.csv"
-                    class="govuk-link govuk-link--no-visited-state opss-downloads"><span
-                        class="opss-download-link-sm"></span>Template 1</a>
+                device:&nbsp; <a href="../public/template-1-example.csv" class="govuk-link govuk-link--no-visited-state opss-downloads"><span class="opss-download-link-sm"></span>Template 1</a>
             </p>
 
         </section>
@@ -125,16 +123,16 @@ href: "#"
         <section class="govuk-!-margin-top-7 opss-grouping">
 
             <h3 class="govuk-heading-s opss-grouping__heading-s">
-                Template 2: range concentrations
+                Template 2: concentration ranges
             </h3>
 
             <p class="govuk-body-s">
-                For ingredients with <span class="govuk-!-font-weight-bold">range</span> concentration measurements
-                follow Template 2. <br class="opss-br-desktop">(<i>Use Template 3, if any ingredients use shades</i>).
+                For ingredients with concentration <span class="govuk-!-font-weight-bold">ranges</span> follow
+                Template 2. <br class="opss-br-desktop">(Use Template 3, if any ingredients use shades).
             </p>
 
             <p class="govuk-body-s">
-                Template 2 functionality is arriving later in 2023.
+                Template 2 functionality will be available later in 2023.
             </p>
 
         </section>
@@ -142,16 +140,16 @@ href: "#"
         <section class="govuk-!-margin-top-7 opss-grouping">
 
             <h3 class="govuk-heading-s opss-grouping__heading-s">
-                Template 3: range concentrations with shades
+                Template 3: concentration ranges with shades
             </h3>
 
             <p class="govuk-body-s">
-                For ingredients with <span class="govuk-!-font-weight-bold">range</span> concentration measurements
-                and ingredients which use <span class="govuk-!-font-weight-bold">shades</span> follow Template 3.
+                For ingredients with concentration <span class="govuk-!-font-weight-bold">ranges</span> and ingredients
+                which use <span class="govuk-!-font-weight-bold">shades</span> follow Template 3.
             </p>
 
             <p class="govuk-body-s">
-                Template 3 functionality is arriving later in 2023.
+                Template 3 functionality will be available later in 2023.
             </p>
 
         </section>
@@ -165,7 +163,6 @@ href: "#"
     document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
         var theList = document.getElementById("page-content");
         var elements = theList.getElementsByClassName('opss-downloads');
-        //var elements = theList.querySelectorAll('a');//
         Array.prototype.forEach.call(elements, function (el, i) {
             el.setAttribute("download", "");
         });
