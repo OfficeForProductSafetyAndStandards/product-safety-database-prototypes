@@ -1,0 +1,67 @@
+{% extends "layout-01.html" %}
+
+{% block pageTitle %}
+Do you want to add another ingredient
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+        </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+            The ingredients were added
+        </h3>
+        <p class="govuk-body">The ingredients were successfully added to the product.</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form novalidate="novalidate" action="#" accept-charset="UTF-8" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you want to add another ingredient?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios govuk-!-padding-top-3">
+                        <div class="govuk-radios__item">
+                            <input id="add_another_ingredient_yes" name="add_another_ingredient" type="radio" value="yes" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="add_another_ingredient_yes">Yes</label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="add_another_ingredient_no" name="add_another_ingredient" type="radio" value="no" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="add_another_ingredient_no">No</label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button">
+                Continue
+            </button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout-01.html" %}
 
 {% block pageTitle %}
-Upload the ingredient file
+Error: Upload the ingredient file
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,13 +13,38 @@ href: "#"
 
 {% block content %}
 
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+        <h2 class="govuk-error-summary__title">
+            There is a problem
+        </h2>
+
+        <div class="govuk-error-summary__body">
+
+            <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                    <a href="#csv-upload">The selected file must be a <abbr>CSV</abbr> file</a>
+                </li>
+                <li>
+                    <a href="#csv-upload">The selected file contains a virus</a>
+                </li>
+                <li>
+                    <a href="#csv-upload">The file could not be uploaded because of errors in lines: 2, 7</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
         <form action="csv-upload-success" accept-charset="UTF-8" method="post" novalidate>
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
 
                 <h1 class="govuk-label-wrapper">
                     <label class="govuk-label govuk-label--l" for="csv-upload">
@@ -31,7 +56,11 @@ href: "#"
                     Your <abbr title="Comma Separated Values">CSV</abbr> file must follow the correct requirements for your chosen formulation type. Learn about <a href="csv-help.html" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">ingredient <abbr>CSV</abbr> files (opens in a new tab)</a>.
                 </div>
 
-                <input class="govuk-file-upload" id="csv-upload" name="csv-upload" type="file" aria-describedby="csv-hint">
+                <p id="must-be-csv-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> The selected file must be a <abbr>CSV</abbr> file
+                </p>
+
+                <input class="govuk-file-upload" id="csv-upload" name="csv-upload" type="file" aria-describedby="csv-hint must-be-csv-error">
 
             </div>
 
