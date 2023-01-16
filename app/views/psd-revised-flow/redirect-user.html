@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    Go to the products area
+Go to the products area
 {% endblock %}
 
 
@@ -13,52 +13,58 @@
         <div class="govuk-!-margin-top-4 govuk-!-padding-bottom-4">
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">   
+                <div class="govuk-grid-column-three-quarters">
 
                     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
-                        Create a case 
+                        Create a case
                     </h1>
 
                     <div class="govuk-inset-text govuk-!-margin-bottom-7">
-                        
+
                         <p class="govuk-body-l govuk-!-margin-bottom-4">
-                            Creating a case starts from a product record page. 
+                            Creating a case starts from a product record page.
                         </p>
 
                         <p class="govuk-body">
-                            Find a product and create the case from there. 
-                        </p>                        
+                            Find a product and create the case from there.
+                        </p>
 
                         <details class="govuk-details" data-module="govuk-details">
                             <summary class="govuk-details__summary">
-                              <span class="govuk-details__summary-text">
-                                How to create a case
-                              </span>
+                                <span class="govuk-details__summary-text">
+                                    How to create a case
+                                </span>
                             </summary>
                             <div class="govuk-details__text">
-    
-                                <ol class="govuk-list govuk-list--number govuk-list--spaced">
+
+                                <p class="govuk-body">
+                                    A case and a product record are separate. Cases record information about allegations, evidence, and corrective actions. A product record describes the product and is included <em>within</em> a case.
+
+                                    <!--A case does not contain product information. Instead, a case includes a product record. (The product record contains the product information). When you create a case from a product record, the product record is included in your case.-->
+                                </p>
+
+                                <ol class="govuk-list govuk-list--number govuk-list--spaced govuk-!-margin-left-6">
                                     <li>
-                                      In the products area <a href="[All products - search]" class="govuk-link govuk-link--no-visited-state">search for your product</a> 
+                                        In the products area search for your product
                                     </li>
                                     <li>
-                                      Select a product record to view the product record page 
+                                        Select a product record to view the product record page
                                     </li>
                                     <li>
-                                      Select the '<span class="govuk-!-font-weight-bold">Create a new case for this product</span>' option 
+                                        Select the '<span class="govuk-!-font-weight-bold">Create a new case for this product</span>' option
                                     </li>
-                                  </ol>    
-              
-                                  <p class="govuk-body">
-                                      When you have finished creating the case, the product record will automatically be included.
-                                  </p>  
-                                  
-                                  <p class="govuk-body">
-                                      If a suitable product record does not already exist, create a new product record and then create your case from that product record.
-                                  </p>
-    
+                                </ol>
+
+                                <p class="govuk-body">
+                                    When you have finished creating the case, the product record will automatically be included.
+                                </p>
+
+                                <p class="govuk-body">
+                                    <span class="govuk-!-font-weight-bold">If a suitable product record does not already exist</span>, create a new product record and then create your case from that product record.
+                                </p>
+
                             </div>
-                        </details>                            
+                        </details>
                     </div>
 
 
