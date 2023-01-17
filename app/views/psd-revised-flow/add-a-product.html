@@ -1,22 +1,22 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-    Add a product to the case
+Add a product to the case
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        text: "Back",
-        href: "products"
-    }) }}
+{{ govukBackLink({
+text: "Back",
+href: "products"
+}) }}
 {% endblock %}
 
 
 {% block content %}
-  
+
 <form action="/psd-revised-flow/is-this-the-product" method="post" novalidate>
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">  
+        <div class="govuk-grid-column-full">
 
             <!--span class="govuk-caption-l">Add a product to case 2101-0008 </span-->
             <h1 class="govuk-label-wrapper opss-label-wrapper">
@@ -29,10 +29,10 @@
                 Each product record in the Product Safety Database (<abbr>PSD</abbr>) has a <abbr>PSD</abbr> reference number.
             </div>
 
-        </div>                
+        </div>
 
-        <div class="govuk-grid-column-two-thirds">  
-            
+        <div class="govuk-grid-column-two-thirds">
+
             <details class="govuk-details govuk-!-margin-bottom-9 opss-details--sm" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
@@ -41,10 +41,13 @@
                 </summary>
                 <div class="govuk-details__text">
                     <p class="govuk-body-s">
-                        Use the <a href="/products/your-products" class="govuk-link govuk-link--no-visited-state">Products area</a> to find a product and its product record reference number. For example, <abbr>psd</abbr>-301. Using an existing <abbr>PSD</abbr> product record to add to your case avoids the need to create a new one and highlights other cases investigating the same product.
+                        Use the Products area to find a product and its product record reference number. For example, <abbr>psd</abbr>-301.
                     </p>
                     <p class="govuk-body-s">
-                        After checking that the product does not already exist within the <abbr>PSD</abbr> product records, you can create a new product record (using the links provided in the Products area pages) and then use its <abbr>PSD</abbr> reference number to add it to your case.
+                        Search for the product in the <a href="/products/your-products" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Products area (opens in a new tab)</a>
+                    </p>
+                    <p class="govuk-body-s">
+                        Using an existing <abbr>PSD</abbr> product record to add to your case avoids the need to create a new one and highlights other cases investigating the same product. After checking that the product does not already exist within the <abbr>PSD</abbr> product records, you can create a new product record (using the links provided in the Products area pages) and then use its <abbr>PSD</abbr> reference number to add it to your case.
                     </p>
                 </div>
             </details>
@@ -52,8 +55,8 @@
             <div class="govuk-form-group">
                 <div class="govuk-input__wrapper">
                     <div class="govuk-input__prefix" aria-hidden="true">psd-</div>
-                    <input class="govuk-input govuk-input--width-5"  id="add-product" name="add-product" type="text" aria-describedby="add-product-hint" spellcheck="false">
-                </div>                  
+                    <input class="govuk-input govuk-input--width-5" id="add-product" name="add-product" type="text" aria-describedby="add-product-hint" spellcheck="false">
+                </div>
             </div>
 
             <div class="govuk-button-group">
@@ -62,11 +65,11 @@
                 </button>
 
                 <a href="/psd-revised-flow/products.html" class="govuk-link govuk-link--no-visited-state">Cancel</a>
-            </div>                
+            </div>
 
         </div>
-    </div>                
+    </div>
 </form>
 
-  
+
 {% endblock %}
