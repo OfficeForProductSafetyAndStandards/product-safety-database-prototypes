@@ -181,6 +181,14 @@ body.js-enabled .opss-nojs-hide {
     }
 }
 
+@include govuk-media-query($from: mobile, $until: desktop, $and: false, $media-type: "all") {
+
+    /* for mobile only */
+    .opss-remove-from-desktop {
+        display: none;
+    }
+}
+
 .opss-float-left {
     float: left;
 }
@@ -664,6 +672,13 @@ ul.opss-left-nav {
     }
 }
 
+a.opss-secondary-text sup[class$="font-size-14"] {
+    color: $govuk-secondary-text-colour;
+}
+
+div[class$="inset-text"]>ol li:last-child {
+    margin-bottom: govuk-spacing(1);
+}
 
 .opss-border-top,
 .opss-border-bottom,
