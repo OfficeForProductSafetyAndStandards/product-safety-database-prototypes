@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Help - How to use the Product Safety Database
+Help - How to operate the Product Safety Database
 {% endblock %}
 
 
@@ -13,12 +13,12 @@ Help - How to use the Product Safety Database
     <div class="govuk-grid-column-full">
         <!--span class="govuk-caption-m">How to use the Product Safety Database</span-->
         <h1 class="govuk-heading-l">
-            Help &ndash; How to use the <abbr>PSD</abbr>
+            Help &ndash; How to operate the <abbr>PSD</abbr>
         </h1>
 
 
         <p class="govuk-body govuk-!-margin-bottom-6 opss-secondary-text">
-            An introduction on how to use the Product Safety Database (<abbr>PSD</abbr>) online digital service.
+            An introduction to using the Product Safety Database (<abbr>PSD</abbr>) online digital service.
         </p>
 
     </div>
@@ -77,6 +77,9 @@ Help - How to use the Product Safety Database
                     <li>
                         <a href="#content-04" class="govuk-link govuk-link--no-visited-state">Edit or close a case</a>
                     </li>
+                    <li>
+                        <a href="#content-05" class="govuk-link govuk-link--no-visited-state">Add the <abbr>OPSS</abbr> Incident Management Team to a case</a>
+                    </li>
 
                     <li>
                         <a href="#content-0xxxxxx" class="govuk-link govuk-link--no-visited-state">Finding information about products and cases</a>
@@ -92,12 +95,17 @@ Help - How to use the Product Safety Database
             The two main areas within the <abbr>PSD</abbr> online service are the cases area and the products area. These are accessed using the main navigation menu (towards the top<span class="govuk-visually-hidden">/start</span> of each page).
         </p>
 
+        <figure class="govuk-!-margin-bottom-5 opss-keep-for-desktop">
+            <img src="../public/images/help_top-nav-link.gif" class="opss-border-all " alt="What the main navigation menu looks like">
+            <figcaption class="govuk-body govuk-!-font-size-14 opss-secondary-text">The cases area and products area are accessed using the main navigation menu</figcaption>
+        </figure>
+
         <p class="govuk-body">
             In the <span class="govuk-!-font-weight-bold">cases area</span> you can find cases you or your team have created or search the entire database of cases. A case is what ultimately reports unsafe, noncompliant and serious risk products to <span title="Department for Business, Energy and Industrial Strategy">BEIS</span>/<abbr title="Office for Product Safety and Standards">OPSS</abbr> and includes relevant information such as importer contact details, product batch numbers, test reports and corrective actions.
         </p>
 
         <p class="govuk-body">
-            When a case is created, information and assets (such as accidents or incidents, reports and evidence images) can be added directly to the case. But the basic information describing a product is added to a case by including a product record. A product record is what contains the basic information about the product.
+            When a case is created, information and assets (such as accidents or incidents, reports and evidence images) can then be added directly to the case. But the basic information describing a product is added to a case by including a product record. A product record is what contains the basic information about the product.
         </p>
 
         <div class="govuk-inset-text">
@@ -105,7 +113,7 @@ Help - How to use the Product Safety Database
         </div>
 
         <p class="govuk-body">
-            In the <span class="govuk-!-font-weight-bold">products area</span> you can find the product records which are included in your cases or search the entire database of product records. A product record only contains information about a product and doesn't include case information. A single product record can be included within many cases.
+            In the <span class="govuk-!-font-weight-bold">products area</span> you can find the product records which are included in your cases or search the entire database of product records. A product record only contains information about a product (such as its name and brandname, barcode, and its catagorisation) and doesn't include case information. A single product record can be included within many cases.
         </p>
 
 
@@ -126,8 +134,13 @@ Help - How to use the Product Safety Database
             </ol>
         </div>
 
+        <figure class="govuk-!-margin-bottom-5 opss-keep-for-desktop">
+            <img src="../public/images/help_create-a-new-case-link.gif" class="opss-border-all " alt="What the 'Create a new case' hyperlink looks like">
+            <figcaption class="govuk-body govuk-!-font-size-14 opss-secondary-text">The 'Create a new case for this product' hyperlink is on a product record page</figcaption>
+        </figure>
+
         <p class="govuk-body">
-            <sup id="findproduct">*</sup>If a product record describing the product does not already exist, you can create a new product record for the product.
+            <sup id="findproduct" class="opss-font-size-14">*</sup>If a product record describing the product does not already exist, you can create a new product record for the product.
         </p>
 
         <p class="govuk-body">
@@ -144,7 +157,7 @@ Help - How to use the Product Safety Database
 
         <div class="govuk-inset-text">
             <p class="govuk-body">
-                In the cases area, the secondary navigation menu <span class="opss-remove-from-desktop">(on the left)</span> provides three ways to find a case:
+                In the cases area, the secondary navigation menu <span class="opss-keep-for-desktop">(on the left)</span> provides three ways to find a case:
             </p>
 
             <ol class="govuk-list govuk-list--number govuk-list--spaced">
@@ -154,8 +167,13 @@ Help - How to use the Product Safety Database
             </ol>
         </div>
 
+        <figure class="govuk-!-margin-bottom-5 opss-keep-for-desktop">
+            <img src="../public/images/help_search-for-cases-link.gif" class="opss-border-all " alt="What the cases left navigation looks like">
+            <figcaption class="govuk-body govuk-!-font-size-14 opss-secondary-text">Find cases using the left navigation in the cases area</figcaption>
+        </figure>
+
         <p class="govuk-body">
-            You can apply filters to search results to reduce how many product records are returned in a search.
+            You can apply filters to search results to reduce how many product records are found in a search.
         </p>
 
         <p class="govuk-body">
@@ -167,7 +185,7 @@ Help - How to use the Product Safety Database
         </h3>
 
         <p class="govuk-body">
-            When you view a case the secondary navigation menu <span class="opss-remove-from-desktop">(on the left)</span> presents the case information in logical groups and across different pages. If you are a member of the team which owns the case, or you have been granted editing permission, the case pages provide 'edit', 'add', 'remove' or 'change' options throughout all the pages relating to the case.
+            When you view a case the secondary navigation menu <span class="opss-keep-for-desktop">(on the left)</span> presents the case information in logical groups and across different pages. If you are a member of the team which owns the case, or you have been granted editing permission, the case pages provide 'edit', 'add', 'remove' or 'change' options throughout all the pages relating to the case.
         </p>
 
         <div class="govuk-inset-text">
@@ -185,21 +203,56 @@ Help - How to use the Product Safety Database
         </p>
 
         <h3 class="govuk-heading-m govuk-!-margin-top-8" id="content-05">
-            5. Notify the <abbr>OPSS</abbr> <!-- why not beis ?-->
+            5. Add the <abbr>OPSS</abbr> Incident Management Team to a case
         </h3>
 
         <p class="govuk-body">
-            If, or when, you want to notify the <abbr>OPSS</abbr> using your <abbr>PSD</abbr> case, you must add the <abbr>OPSS</abbr> Incident Management Team (<abbr>IMT</abbr>) to the case or make them the case owner.
+            When you have finished adding information and assets to a case and once the measures taken are completed, you should add the <abbr title="Office for Product Safety and Standards">OPSS</abbr> Incident Management Team (<abbr>IMT</abbr>) to the case, if:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the product poses a <span class="govuk-!-font-weight-bold">less than serious risk</span> and has <em>not</em> been recalled<a href="#closethecase" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline opss-secondary-text"><sup class="opss-font-size-14">*</sup></a></li>
+            <li>the product has been <span class="govuk-!-font-weight-bold">recalled</span></li>
+            <li>the product <span class="govuk-!-font-weight-bold">poses a serious risk</span> to the health and safety of consumers as determined by a risk assessment<a href="#recallthecase" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline opss-secondary-text"><sup class="opss-font-size-14">**</sup></a></li>
+        </ul>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body">
+                To add the Incident Management Team (<abbr>IMT</abbr>) to a case (if you have editing permission for the case):
+            </p>
+
+            <ol class="govuk-list govuk-list--number govuk-list--spaced">
+                <li>Find the case</li>
+                <li>Open the case to view the main case page for the case</li>
+                <li>In the 'Sharing and collaboration' section &hellip;</li>
+                <li>Select the 'Change' option in the 'Teams added to case' data row</li>
+                <li>On the next page ('Teams added to the case'), select 'Add a team to the case'</li>
+                <li>On the 'Add a team to the case' page, search for <br class="opss-br-desktop">&quot;<abbr>OPSS</abbr> Incident Management&quot;</li>
+                <li>Complete the form</li>
+            </ol>
+        </div>
+
+        <p class="govuk-body">
+            <sup id="closethecase" class="opss-font-size-14">*</sup>And then close the case.
         </p>
 
         <p class="govuk-body">
-            To do this ....
-            On the main case page for a case, ....
+            <sup id="recallthecase" class="opss-font-size-14">**</sup>If the product poses a serious risk, you must also set the <abbr>OPSS</abbr> Incident Management Team (<abbr>IMT</abbr>) as the case owner, which will ensure the recall can be added to the Government Recall Site and the <abbr title="Organisation for Economic Co-operation and Development">OECD</abbr> Global Recall Portal.
         </p>
 
         <p class="govuk-body">
-            For guidence on when or why you notify the <abbr>OPSS</abbr> see 'How to notify <abbr>OPSS</abbr>' on the <a href="#" class="govuk-link govuk-link--no-visited-state">xxxxxxx xxxxxx xxxxxxxxx</a> general guidence page.
+            To set the <abbr>OPSS</abbr> Incident Management Team (<abbr>IMT</abbr>) as the case owner:
         </p>
+
+        <ol class="govuk-list govuk-list--number govuk-list--spaced">
+            <li>Find the case</li>
+            <li>Open the case to view the main case page for the case</li>
+            <li>In the 'Sharing and collaboration' section &hellip;</li>
+            <li>Select the 'Change' option in the 'Case owner' data row</li>
+            <li>On the 'Change the case owner' page &ndash; assuming you have already added the <abbr>OPSS</abbr> Incident Management Team to the case &ndash; select '<abbr>OPSS</abbr> Incident Management' as the case owner</li>
+            <li>Complete the form journey process</li>
+        </ol>
+
 
 
     </div>
