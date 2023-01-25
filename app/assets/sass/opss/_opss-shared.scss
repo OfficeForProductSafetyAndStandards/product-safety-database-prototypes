@@ -114,7 +114,8 @@ h1.govuk-label-wrapper label.govuk-label--l {
 main a.govuk-link:hover {
     /*recreate new hover styles of latest gds*/
     text-decoration-skip-ink: none;
-    /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em);*/
+    /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+    text-decoration-thickness: max(0.1875rem);*/
     text-decoration-thickness: 0.1875rem;
 }
 
@@ -344,6 +345,10 @@ body.js-enabled .opss-nojs-hide {
 
         .govuk-grid-column-one-quarter>& {
             margin-right: govuk-spacing(7) + govuk-spacing(1) !important;
+        }
+
+        abbr {
+            border-bottom: none !important;
         }
     }
 
