@@ -114,7 +114,7 @@ h1.govuk-label-wrapper label.govuk-label--l {
 main a.govuk-link:hover {
     /*recreate new hover styles of latest gds*/
     text-decoration-skip-ink: none;
-    /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+    /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em); fails build
     text-decoration-thickness: max(0.1875rem);*/
     text-decoration-thickness: 0.1875rem;
 }
@@ -632,11 +632,16 @@ ul.opss-left-nav {
             text-decoration: none !important;
             text-underline-offset: 0.1em;
 
-            /*&:hover {//styles supersede by gds upgrade to 4.2
-                    text-decoration: underline !important; text-decoration-thickness: 0.2em !important;
-                    text-decoration-thickness: 3px !important; -webkit-text-decoration-skip-ink: none;
-                    text-decoration-skip-ink: none; -webkit-text-decoration-skip: none; text-decoration-skip: none;
-                }*/
+            &:hover {
+                //styles supersede by gds upgrade to 4.2
+                text-decoration: underline !important;
+                text-decoration-thickness: 0.2em !important;
+                text-decoration-thickness: 0.1875rem !important;
+                -webkit-text-decoration-skip-ink: none;
+                text-decoration-skip-ink: none;
+                -webkit-text-decoration-skip: none;
+                text-decoration-skip: none;
+            }
 
             span {
                 font-size: 90%;
