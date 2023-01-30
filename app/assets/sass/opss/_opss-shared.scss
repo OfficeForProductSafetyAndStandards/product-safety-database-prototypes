@@ -698,7 +698,8 @@ div[class$="inset-text"]>ol li:last-child {
 .opss-border-bottom,
 .opss-border-left,
 .opss-border-right,
-.opss-border-all {
+.opss-border-all,
+.opss-border-all-perm {
     border-color: $govuk-border-colour;
     border-style: solid;
     border-width: 0;
@@ -724,6 +725,14 @@ div[class$="inset-text"]>ol li:last-child {
     border-width: 0;
 }
 
+.opss-blue-border-top {
+    border-top: 2px solid $govuk-brand-colour;
+}
+
+.opss-blue-border-all {
+    border: 2px solid $govuk-brand-colour;
+}
+
 @include govuk-media-query($from: tablet) {
     .opss-rounded-corners {
         border-radius: 5px;
@@ -744,6 +753,11 @@ div[class$="inset-text"]>ol li:last-child {
     a[class*="font-size-14"].opss-border-all {
         line-height: 1.2 !important;
     }
+}
+
+.opss-border-all-perm {
+    /* for all screen sizes */
+    border-width: 1px;
 }
 
 @include govuk-media-query($until: tablet) {
