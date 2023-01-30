@@ -3,35 +3,35 @@
 
 {% extends "govuk/template.njk" %}
 
-{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
-{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk"           import govukButton %}
-{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
-{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
-{% from "govuk/components/details/macro.njk"          import govukDetails %}
-{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
-{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
-{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
-{% from "govuk/components/input/macro.njk"            import govukInput %}
-{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
-{% from "govuk/components/panel/macro.njk"            import govukPanel %}
-{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk"           import govukRadios %}
-{% from "govuk/components/select/macro.njk"           import govukSelect %}
-{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
-{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
-{% from "govuk/components/table/macro.njk"            import govukTable %}
-{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
-{% from "govuk/components/tag/macro.njk"              import govukTag %}
-{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
-{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 
 {% block head %}
-  {% include "includes/headpsdmenu.html" %}
+{% include "includes/headpsdmenu.html" %}
 {% endblock %}
 
 {% block header %}
@@ -77,98 +77,101 @@
     </div>
     <div class="govuk-header__content">
 
-        <button class="psd-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation" role="button" type="button" aria-expanded="false">Menu</button>
+      <button class="psd-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation" role="button" type="button" aria-expanded="false">Menu</button>
 
-        <nav>
-            <ul class="psd-header__secondary-navigation" aria-label="Secondary navigation">
-                  <li class="psd-header__navigation-item ">
-                    <a class="psd-header__link" href="#">Your account</a>
-                  </li>
-                  <li class="psd-header__navigation-item ">
-                    <a class="psd-header__link" href="#">Sign out</a>
-                  </li>
-            </ul>
+      <nav>
+        <ul class="psd-header__secondary-navigation" aria-label="Secondary navigation">
+          <li class="psd-header__navigation-item ">
+            <a class="psd-header__link" href="#">Your account</a>
+          </li>
+          <li class="psd-header__navigation-item ">
+            <a class="psd-header__link" href="#">Sign out</a>
+          </li>
+        </ul>
 
-          <ul id="navigation" class="psd-header__navigation" aria-label="Top level navigation">
-                  <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
-                    <a class="psd-header__link" href="#">Your account</a>
-                  </li>
-                  <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
-                    <a class="psd-header__link" href="#">Sign out</a>
-                  </li>
+        <ul id="navigation" class="psd-header__navigation" aria-label="Top level navigation">
+          <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
+            <a class="psd-header__link" href="#">Your account</a>
+          </li>
+          <li class="psd-header__navigation-item psd-header__secondary-navigation-item">
+            <a class="psd-header__link" href="#">Sign out</a>
+          </li>
 
-                <li class="psd-header__navigation-item">
-                  <a class="psd-header__link" href="#">Home</a>
-                </li>
-                <li class="psd-header__navigation-item">
-                    <a class="psd-header__link" href="#">Cases</a>
-                </li>
-                <li class="psd-header__navigation-item ">
-                    <a class="psd-header__link" href="#">Businesses</a>
-                </li>
-                <li class="psd-header__navigation-item psd-header__navigation-item--active">
-                    <a class="psd-header__link" href="#">Products</a>
-                </li>
-                <li class="psd-header__navigation-item psd-header__navigation-item--right">
-                    <a class="psd-header__link" href="#">Your team</a>
-                </li>
-          </ul>
-        </nav>
+          <li class="psd-header__navigation-item">
+            <a class="psd-header__link" href="#">Home</a>
+          </li>
+          <li class="psd-header__navigation-item">
+            <a class="psd-header__link" href="#">Cases</a>
+          </li>
+          <li class="psd-header__navigation-item ">
+            <a class="psd-header__link" href="#">Businesses</a>
+          </li>
+          <li class="psd-header__navigation-item psd-header__navigation-item--active">
+            <a class="psd-header__link" href="#">Products</a>
+          </li>
+          <li class="psd-header__navigation-item psd-header__navigation-item--right">
+            <a class="psd-header__link" href="#">Your team</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("") %} 
+{% set mainClasses = mainClasses | default("") %}
 
 {% if useAutoStoreData %}
-  {% block footer %}
-    <footer class="govuk-footer" role="contentinfo">
-      <div class="govuk-width-container">
-        <div class="govuk-footer__meta">
-          <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-            <div class="opss-footer__body">
-              Email <a class="govuk-footer__link" href="mailto:opss.enquiries@beis.gov.uk?subject=Help%20requested%20on%20the%20Product%20Safety%20Database">opss.enquiries@beis.gov.uk</a> for help using this service.
-            </div>
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <div class="opss-footer__body">
+          Email <a class="govuk-footer__link" href="mailto:opss.enquiries@beis.gov.uk?subject=Help%20requested%20on%20the%20Product%20Safety%20Database">opss.enquiries@beis.gov.uk</a> for help using this service.
+        </div>
 
-            <br>
+        <br>
 
-            <ul class="govuk-footer__inline-list">
+        <ul class="govuk-footer__inline-list">
 
-              <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/about">More information<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" href="/help/accessibility">Accessibility</a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/privacy-notice">Privacy policy<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/terms-and-conditions">Terms and conditions<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
-            </ul>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/psd-revised-flow/help-how-to-use-psd">How to use the <abbr>PSD</abbr><span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" href="/help/accessibility">Accessibility</a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/privacy-notice">Privacy policy<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/terms-and-conditions">Terms and conditions<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+        </ul>
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-            <div class="opss-footer__body">
-               Built by the
+        <div class="opss-footer__body">
+          Built by the
 
-               <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.gov.uk/government/organisations/office-for-product-safety-and-standards">Office for Product Safety and Standards<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
-            </div>
+          <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.gov.uk/government/organisations/office-for-product-safety-and-standards">Office for Product Safety and Standards<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+        </div>
 
-            <div class="opss-footer__body">
-              <br>
-              This is a new service – your
+        <div class="opss-footer__body">
+          <br>
+          This is a new service – your
 
-              <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.surveymonkey.co.uk/r/TWLYX9W">feedback<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
-              will help us to improve it.
-            </div>
-          </div>
-
-          <div class="govuk-footer__meta-item">
-            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
-          </div>
+          <a target="_blank" rel="noopener" class="govuk-footer__link" href="https://www.surveymonkey.co.uk/r/TWLYX9W">feedback<span class="govuk-visually-hidden"> (opens in new tab)</span></a>
+          will help us to improve it.
         </div>
       </div>
-    </footer>
-  {% endblock %}
+
+      <div class="govuk-footer__meta-item">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 
 {% endblock %}

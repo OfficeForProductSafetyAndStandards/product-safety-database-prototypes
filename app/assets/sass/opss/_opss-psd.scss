@@ -518,9 +518,17 @@ ul.opss-radio-list {
 }
 */
 
+.opss-desktop-img-s {
+    min-height: 206px;
+    /*min-width: 310px */
+}
+
+.opss-desktop-img-m {
+    min-height: 300px;
+}
+
 .opss-timeline img {
     max-width: 100%;
-    ;
 }
 
 @include govuk-media-query($from: desktop) {
@@ -599,5 +607,16 @@ select:disabled {
         &::-webkit-scrollbar-thumb:hover {
             background: $govuk-secondary-text-colour;
         }
+    }
+}
+
+@include govuk-media-query($from: desktop) {
+    .psd-header__navigation-item--right-2 {
+        /* mad fix for mad nav design - to be removed when we rebuild the top nav */
+        padding: 0 !important;
+        float: none !important;
+        position: absolute !important;
+        right: 6rem;
+        bottom: 8px;
     }
 }
