@@ -518,13 +518,18 @@ ul.opss-radio-list {
 }
 */
 
-.opss-desktop-img-s {
+.opss-keep-for-desktop>.opss-desktop-img-s {
     min-height: 206px;
-    /*min-width: 310px */
+}
+
+.opss-desktop-img-s {
+    max-height: 206px;
+    max-width: 100%;
 }
 
 .opss-desktop-img-m {
-    min-height: 300px;
+    max-height: 300px;
+    max-width: 100%;
 }
 
 .opss-timeline img {
