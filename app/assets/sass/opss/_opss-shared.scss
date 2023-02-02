@@ -405,7 +405,8 @@ abbr[title] {
             cursor: help;
         }
 
-        a.govuk-link & {
+        a.govuk-link &,
+        dd span.opss-secondary-text & {
             border-bottom: none;
             cursor: inherit;
         }
@@ -979,7 +980,8 @@ dl.opss-summary-list-aside {
 
         /* 2. protects against rogue legacy psd invalid html */
 
-        dd br+span.opss-secondary-text {
+        dd br+span.opss-secondary-text,
+        dd ul li>span.opss-secondary-text:first-of-type {
             padding-left: govuk-spacing(0) !important;
         }
     }
