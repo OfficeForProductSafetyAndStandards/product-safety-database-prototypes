@@ -111,12 +111,22 @@ h1.govuk-label-wrapper label.govuk-label--l {
         font-weight: 400;
     }
 }*/
-main a.govuk-link:hover {
-    /*recreate new hover styles of latest gds*/
-    text-decoration-skip-ink: none;
-    /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em); fails build
-    text-decoration-thickness: max(0.1875rem);*/
-    text-decoration-thickness: 0.1875rem;
+main {
+    a.govuk-link:hover {
+        /*recreate new hover styles of latest gds*/
+        text-decoration-skip-ink: none;
+        /*text-decoration-thickness: max(3px, 0.1875rem, 0.12em); fails build
+        text-decoration-thickness: max(0.1875rem);*/
+        text-decoration: underline !important;
+        text-decoration-thickness: 0.1875rem !important;
+        text-decoration-thickness: 0.15em !important;
+    }
+
+    a.govuk-link:active {
+        text-decoration-thickness: 0 !important;
+        text-decoration-thickness: 0 !important;
+        text-decoration: none !important;
+    }
 }
 
 .opss-no-wrap {
@@ -641,12 +651,18 @@ ul.opss-left-nav {
             &:hover {
                 //styles supersede by gds upgrade to 4.2
                 text-decoration: underline !important;
-                text-decoration-thickness: 0.2em !important;
                 text-decoration-thickness: 0.1875rem !important;
+                text-decoration-thickness: 0.15em !important;
                 -webkit-text-decoration-skip-ink: none;
                 text-decoration-skip-ink: none;
                 -webkit-text-decoration-skip: none;
                 text-decoration-skip: none;
+            }
+
+            &:focus {
+                text-decoration-thickness: 0 !important;
+                text-decoration-thickness: 0 !important;
+                text-decoration: none !important;
             }
 
             span {

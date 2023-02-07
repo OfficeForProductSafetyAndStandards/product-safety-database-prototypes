@@ -12,28 +12,20 @@ href: "cases"
 {% endblock %}
 
 {% block content %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Success
-        </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-            The case information was updated
-        </h3>
-    </div>
-</div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-        <span class="govuk-caption-m">Allegation</span>
+
+        <span class="govuk-caption-m opss-visibility-hidden">The case page</span>
+
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Case {% include "psd-revised-flow/case-ref.html" %}
             <!--span class="govuk-heading-m govuk-!-font-weight-regular govuk-!-padding-left-1 opss-secondary-text">2101-0008</span-->
         </h1>
 
-        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">From here you can find all the information about this case. If you have editing rights for this case, you can add products, businesses and supporting information.</p>
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">From here you can find all the information
+            about this case. If you have editing rights for this case, you can add products, businesses and supporting
+            information.</p>
     </div>
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
@@ -86,9 +78,10 @@ href: "cases"
                     </a>
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
-                    Allegation <!--span class="opss-numero" title="Number">&numero;</span--> <!-- or Enquiry / Project -->
+                    Allegation <!--span class="opss-numero" title="Number">&numero;</span-->
+                    <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
                     2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
@@ -101,7 +94,8 @@ href: "cases"
                     Reference <!--span class="opss-numero" title="Number">&numero;</span-->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    12345300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading standards reference</span>
+                    12345300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading
+                        standards reference</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="/psd-revised-flow/edit-reference-number" class="govuk-link govuk-link--no-visited-state">
@@ -114,9 +108,12 @@ href: "cases"
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-
                     <span class="opss-text-limit-scroll-s">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis recusandae rerum eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis recusandae rerum eos?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate
+                        aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis
+                        recusandae rerum eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+                        magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem
+                        vero, voluptatum nulla debitis recusandae rerum eos?
                     </span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -146,19 +143,19 @@ href: "cases"
                 <dt class="govuk-summary-list__key">Created</dt>
                 <dd class="govuk-summary-list__value">13 December 2021</dd>
             </div>
-            <div class="govuk-summary-list__row">
+            <!--div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Notifying country
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    <!--i class="govuk-body-s opss-secondary-text"> --- Omit if no value or UK ---</i-->
+                    
                 </dd>
-                <!--dd class="govuk-summary-list__actions">
+                <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
                         Change<span class="govuk-visually-hidden"> the notifying country</span>
                     </a>
-                </dd-->
-            </div>
+                </dd>               
+            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Created by
@@ -257,10 +254,10 @@ href: "cases"
                     Regulator<span class="govuk-visually-hidden"> allegation origin</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Canada
+                    <abbr>UK</abbr>
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="/psd-revised-flow/overseas/overseas-case-change" class="govuk-link govuk-link--no-visited-state">
+                    <a href="overseas-case-change" class="govuk-link govuk-link--no-visited-state">
                         Change<span class="govuk-visually-hidden"> the regulator origin</span>
                     </a>
                 </dd>
@@ -297,7 +294,10 @@ href: "cases"
                     Hazard description
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
+                    <span class="govuk-!-font-size-16">
+                        Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel
+                        architecto. Aut, maiores quisquam elit.
+                    </span>
                 </dd>
             </div>
         </dl>
@@ -306,7 +306,8 @@ href: "cases"
             Case specific product information
         </h3>
 
-        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up liquid</h4>
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up
+            liquid</h4>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
@@ -340,7 +341,8 @@ href: "cases"
                     Units affected
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact number</span>
+                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact
+                        number</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="edit-units-affected" class="govuk-link govuk-link--no-visited-state">
