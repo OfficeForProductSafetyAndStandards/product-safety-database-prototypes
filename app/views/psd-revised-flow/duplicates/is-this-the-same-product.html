@@ -1,0 +1,121 @@
+{% extends "layout-psd-menu_products.html" %}
+
+{% block pageTitle %}
+Is this the same product
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "do-you-have-the-barcode"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <form action="create-a-product-record-add" method="post" novalidate>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="product-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l opss-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              Is this the same product?
+            </h1>
+          </legend>
+
+          <div id="product-hint" class="govuk-hint">
+            A product record with the same barcode already exists.
+          </div>
+
+          <div class="govuk-grid-row">
+            <section class="govuk-grid-column-three-quarters opss-panels">
+              <div class="opss-panels__single">
+
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Asda Window and glass cleaner</h2>
+
+                <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      <abbr title="Product Safety Database">PSD</abbr> <span title="reference">ref</span>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      psd-122
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Brand name</dt>
+                    <dd class="govuk-summary-list__value">Asda</dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Product name </dt>
+                    <dd class="govuk-summary-list__value">Window and glass cleaner</dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Barcode </dt>
+                    <dd id="barNumber" class="govuk-summary-list__value">664996-7676323</dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Counterfeit </dt>
+                    <dd class="govuk-summary-list__value">
+                      No <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">This product record is about a genuine product</span>
+                    </dd>
+                  </div>
+                </dl>
+
+                <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Product image
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text"><img src="../../public/images/asda-window-cleaner.png" class="opss-details-img" alt="Asda window cleaner"></div>
+                </details>
+
+              </div>
+            </section>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correct" name="correct" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="correct">
+                  Yes &nbsp;&ndash;&nbsp; use this product record for the case
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="correct-2" name="correct" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="correct-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}
