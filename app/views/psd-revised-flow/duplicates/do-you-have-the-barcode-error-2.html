@@ -36,9 +36,9 @@ href: "index"
     <form action="is-this-the-same-product" method="post" novalidate>
 
 
-      <div class="govuk-form-group govuk-form-group--error">
+      <div class="govuk-form-group">
 
-        <fieldset class="govuk-fieldset" aria-describedby="barcode-error">
+        <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
@@ -48,15 +48,11 @@ href: "index"
 
           </legend>
 
-          <p id="barcode-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes if you have the product barcode number
-          </p>
-
           <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1 govuk-radios--conditional" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
 
-              <input class="govuk-radios__input" id="barcode" name="barcode" type="radio" value="yes" data-aria-controls="conditional-barcode">
+              <input class="govuk-radios__input" id="barcode" name="barcode" type="radio" value="yes" data-aria-controls="conditional-barcode" checked="checked">
 
               <label class="govuk-label govuk-radios__label" for="barcode">
                 Yes
@@ -66,18 +62,20 @@ href: "index"
 
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-barcode">
 
-              <div class="govuk-form-group">
+              <div class="govuk-form-group govuk-form-group--error">
                 <label class="govuk-label" for="barnumber">
                   Barcode number (<abbr>GTIN</abbr>, <abbr></abbr>EAN</abbr> or <abbr></abbr>UPC</abbr>)
                 </label>
-
 
                 <div id="barnumber-hint" class="govuk-hint govuk-!-font-size-16">
                   It is normally 13 digits, although older products may have a 12 digit number.
                 </div>
 
+                <p id="barcode-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter a barcode number
+                </p>
 
-                <input class="govuk-input govuk-!-width-one-third" id="barnumber" name="barnumber" type="text" spellcheck="false" aria-describedby="barnumber-hint" autocomplete="off">
+                <input class="govuk-input govuk-!-width-one-third govuk-input--error" id="barnumber" name="barnumber" type="text" spellcheck="false" aria-describedby="barnumber-hint barcode-error" autocomplete="off">
               </div>
 
             </div>

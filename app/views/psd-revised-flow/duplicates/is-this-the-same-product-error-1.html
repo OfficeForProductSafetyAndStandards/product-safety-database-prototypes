@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
-Is this the same product
+Error: Is this the same product
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,20 @@ href: "do-you-have-the-barcode"
 
 {% block content %}
 
-
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#correct">Select yes if this is the same product</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -24,17 +37,13 @@ href: "do-you-have-the-barcode"
 
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="product-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="product-hint is-product-error">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l opss-fieldset__legend">
             <h1 class="govuk-fieldset__heading">
               Is this the same product?
             </h1>
           </legend>
-
-          <div id="product-hint" class="govuk-hint">
-            A product record with the same barcode already exists.
-          </div>
 
           <div class="govuk-grid-row">
             <section class="govuk-grid-column-three-quarters opss-panels">
@@ -87,7 +96,11 @@ href: "do-you-have-the-barcode"
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
 
-              <div class="govuk-form-group"> <!--*** extra nested form-group for this layout ***-->
+              <div class="govuk-form-group govuk-form-group--error"> <!--*** extra nested form-group for this layout ***-->
+
+                <p id="is-product-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Select yes if this is the same product
+                </p>
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="correct" name="correct" type="radio" value="yes">
