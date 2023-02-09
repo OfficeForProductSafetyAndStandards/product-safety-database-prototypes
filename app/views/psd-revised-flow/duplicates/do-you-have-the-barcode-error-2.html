@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
-Do you have the barcode number
+Error: Do you have the barcode number
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,20 @@ href: "index"
 
 {% block content %}
 
-
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Enter a barcode number</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -23,9 +36,9 @@ href: "index"
     <form action="is-this-the-same-product" method="post" novalidate>
 
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
 
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="barcode-error">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
@@ -34,6 +47,10 @@ href: "index"
             </h1>
 
           </legend>
+
+          <p id="barcode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select yes if you have the product barcode number
+          </p>
 
           <div class="govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1 govuk-radios--conditional" data-module="govuk-radios">
 
