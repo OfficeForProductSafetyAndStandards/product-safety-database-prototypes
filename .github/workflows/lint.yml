@@ -13,4 +13,5 @@ jobs:
         with:
           node-version: 16.15.0
           cache: "npm"
+      - run: npm install
       - run: npm run-script lint
