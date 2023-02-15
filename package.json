@@ -10,7 +10,7 @@
     "start": "node start",
     "build": "node lib/build/generate-assets",
     "serve": "node listen-on-port",
-    "lint": "npx stylelint app/assets/{javascripts,sass}"
+    "lint": "stylelint app/assets/{javascripts,sass}"
   },
   "stylelint": {
     "extends": [
@@ -48,10 +48,12 @@
     "portscanner": "^2.1.1",
     "require-dir": "^1.0.0",
     "sass": "^1.49.10",
-    "stylelint": "^14.16.1",
-    "stylelint-config-gds": "^0.2.0",
     "sync-request": "^6.0.0",
     "universal-analytics": "^0.5.3",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "stylelint": "^14.16.1",
+    "stylelint-config-gds": "^0.2.0"
   }
 }
