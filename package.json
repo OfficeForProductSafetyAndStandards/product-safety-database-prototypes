@@ -10,7 +10,7 @@
     "start": "node start",
     "build": "node lib/build/generate-assets",
     "serve": "node listen-on-port",
-    "lint": "stylelint app/assets/{javascripts,sass}"
+    "lint": "stylelint app/assets/sass"
   },
   "stylelint": {
     "extends": [
