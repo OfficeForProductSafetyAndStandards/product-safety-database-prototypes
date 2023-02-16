@@ -366,6 +366,7 @@
   line-height: 1.1429;
   color: #ffffff;
   background: #0b0c0c;
+  padding-top: 3px;
 }
 
 @media (min-width: 40.0625em) {
@@ -636,10 +637,6 @@
 .psd-header__logotype-crown-fallback-image {
   position: relative;
   top: -4px;
-}
-
-.psd-header {
-  padding-top: 3px;
 }
 
 .psd-header__secondary-navigation {
