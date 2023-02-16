@@ -1,4 +1,6 @@
 {
     "editor.formatOnSave": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2,
+    "html.format.wrapLineLength": 0
 }
