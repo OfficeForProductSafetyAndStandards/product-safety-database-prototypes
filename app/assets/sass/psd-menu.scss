@@ -5,7 +5,7 @@
   font-weight: 400;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   border-bottom: 10px solid #ffffff;
   color: #ffffff;
   background: #0b0c0c;
@@ -158,7 +158,7 @@
   font-weight: 700;
   font-size: 18px;
   font-size: 1.125rem;
-  line-height: 1.1111111111;
+  line-height: 1.1111;
 }
 
 @media (min-width: 40.0625em) {
@@ -209,7 +209,7 @@
   font-weight: 400;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   display: none;
   position: absolute;
   top: 20px;
@@ -330,7 +330,7 @@
   font-weight: 700;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   white-space: nowrap;
 }
 
@@ -363,7 +363,7 @@
   font-weight: 400;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   color: #ffffff;
   background: #0b0c0c;
 }
@@ -419,7 +419,7 @@
   font-weight: 400;
   font-size: 18px;
   font-size: 1.125rem;
-  line-height: 1.1111111111;
+  line-height: 1.1111;
   display: inline-table;
   padding-right: 10px;
 }
@@ -483,7 +483,7 @@
   font-weight: 700;
   font-size: 18px;
   font-size: 1.125rem;
-  line-height: 1.1111111111;
+  line-height: 1.1111;
 }
 
 @media (min-width: 40.0625em) {
@@ -525,7 +525,7 @@
   font-weight: 400;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   display: none;
   position: absolute;
   top: 20px;
@@ -683,7 +683,7 @@
   font-weight: 700;
   font-size: 14px;
   font-size: .875rem;
-  line-height: 1.1428571429;
+  line-height: 1.1429;
   white-space: nowrap;
 }
 
@@ -711,7 +711,7 @@
   .psd-header__navigation-item a {
     font-size: 19px;
     font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    line-height: 1.3158;
   }
 }
 
@@ -763,23 +763,25 @@
   }
 }
 
-/* temp gds bug fix starts */
+// temp gds bug fix starts
 @media only screen and (max-width: 640px) {
   .govuk-tabs__list-item:before {
     content: "-" !important;
   }
 }
 
-/* gds bug fix ends */
+// gds bug fix ends
 
-/*********** temporary override CSS for std GDS widths: STARTS ***************/
+// *********** temporary override CSS for std GDS widths: STARTS ***************
 @media (min-width: 40.0625em) {
-  .govuk-width-container {/* this "override" reinstates the normal width */
+  .govuk-width-container {
+    // this "override" reinstates the normal width
     max-width: 960px !important;
   }
 
   .govuk-header {
-    border-bottom: 10px solid #1d70b8; /* $govuk-brand-colour */
+    border-bottom: 10px solid #1d70b8;
+    // $govuk-brand-colour
     padding-bottom: 10px;
   }
 
@@ -867,4 +869,4 @@
   padding-right: 15px;
 }
 
-/*********** temporary override CSS for std GDS widths: ENDS ***************/
+// *********** temporary override CSS for std GDS widths: ENDS ***************

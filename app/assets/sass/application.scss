@@ -20,9 +20,11 @@ $govuk-assets-path: "/govuk/assets/";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "components/product-thumbnails";
 
-//styles only for this prototype env - do not add to production, start:
-.strike { text-decoration: line-through; }
+// styles only for this prototype env - do not add to production, start:
+.strike {
+  text-decoration: line-through;
+}
 
-//styles for PSD and MSA
+// styles for PSD and MSA
 @import "opss/opss-psd";
 @import "opss/opss-msa";

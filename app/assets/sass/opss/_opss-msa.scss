@@ -34,7 +34,7 @@
   &.opss-std-row--borders {
     border-top: 1px solid darken(govuk-colour("light-grey"), 5%);
     border-bottom: 1px solid darken(govuk-colour("light-grey"), 5%);
-    //border-bottom: 1px solid govuk-colour("mid-grey");
+    // border-bottom: 1px solid govuk-colour("mid-grey");
 
     margin-bottom: govuk-spacing(2);
 
@@ -52,11 +52,11 @@
     li {
       padding: govuk-spacing(2) 0;
       position: relative;
-      float: left; //mobile
+      float: left; // mobile
       clear: left;
 
       &:first-child {
-        padding-top: 0; //mobile
+        padding-top: 0; // mobile
       }
 
       &:before {
@@ -193,7 +193,7 @@ a.govuk-link.opss-link--no-hover:hover {
   }
 
   .govuk-radios__conditional.govuk-radios__conditional--hidden.govuk-form-group--error {
-    //helps with smooth loading
+    // helps with smooth loading
     display: block !important;
   }
 }
@@ -202,7 +202,7 @@ li.opss-task-sub {
   @include govuk-media-query($from: tablet) {
     li span,
     .opss-button-link {
-      @include opss-font-size($s: 16px, $l: 1.5); //1.0
+      @include opss-font-size($s: 16px, $l: 1.5); // 1.0
     }
 
     ul.opss-task-sub__list {
@@ -210,7 +210,7 @@ li.opss-task-sub {
 
       li {
         border-top: none;
-        border-bottom-color: rgba(76, 115, 141, .3); //#b1b4b6
+        border-bottom-color: rgba(76, 115, 141, .3); // #b1b4b6
         padding-top: 7px;
         padding-bottom: 6px;
 
@@ -246,18 +246,18 @@ li.opss-task-sub {
     display: inline-block;
     margin-left: govuk-spacing(1);
     margin-right: govuk-spacing(1);
-    color: rgba(76, 115, 141, .5); //#b1b4b6
+    color: rgba(76, 115, 141, .5); // #b1b4b6
   }
 }
 
 .app-task-list__section-number {
-  //bug fix for mobile
+  // bug fix for mobile
   display: inline-block;
   min-width: govuk-spacing(5);
 }
 
 .opss-input__wrapper--label div[class$="__prefix"] {
-  //convert prefix to label style
+  // convert prefix to label style
   background-color: transparent;
   border: none;
   padding-left: 0;
@@ -267,7 +267,7 @@ li.opss-task-sub {
 
 @media only screen and (max-width: 859px) {
 
-  //browser window is 859px wide or less
+  // browser window is 859px wide or less
   .opss-switch-cols {
     width: auto;
 
@@ -284,7 +284,7 @@ li.opss-task-sub {
 
 @media only screen and (min-width: 860px) {
 
-  //browser window is 860px wide or more
+  // browser window is 860px wide or more
   .opss-switch-cols {
     display: flex;
 
@@ -311,7 +311,7 @@ li.opss-task-sub {
         margin-right: govuk-spacing(1);
 
         .govuk-label {
-          @include opss-font-size($s: 16px, $l: 1.5); //1.0
+          @include opss-font-size($s: 16px, $l: 1.5); // 1.0
         }
       }
     }
@@ -322,7 +322,7 @@ li.opss-task-sub {
       margin-right: govuk-spacing(1);
 
       .govuk-label {
-        @include opss-font-size($s: 16px, $l: 1.5); //1.0
+        @include opss-font-size($s: 16px, $l: 1.5); // 1.0
       }
     }
   }
