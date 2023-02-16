@@ -571,7 +571,7 @@ samp {
     }
   }
 
-  @-moz-document url-prefix() {
+  @-moz-document url-prefix("") {
 
     // firefox only: col flow bug
     .opss-2-col-flow,
@@ -1021,7 +1021,7 @@ dl.opss-summary-list-aside {
         min-width: 50%;
       }
 
-      @-moz-document url-prefix() {
+      @-moz-document url-prefix("") {
         dt + dd {
           min-width: 60%;
         }
@@ -1092,7 +1092,7 @@ dl.opss-summary-list-aside {
     }
   }
 
-  @-moz-document url-prefix() {
+  @-moz-document url-prefix("") {
 
     // firefox only: align 1st dd (without a 2nd) correctly
     .govuk-summary-list__row dd:last-child {
