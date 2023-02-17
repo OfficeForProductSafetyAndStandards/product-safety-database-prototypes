@@ -69,7 +69,6 @@ main.govuk-main-wrapper {
 }
 
 #main-content > div > div div {
-
   .govuk-heading-xl,
   .govuk-heading-l {
     @include word-wrap;
@@ -112,19 +111,19 @@ h1.govuk-label-wrapper label.govuk-label--l {
 //   }
 // }
 
-//main {
-//a.govuk-link:hover {
-//text-decoration-skip-ink: none;
-//text-decoration: underline !important;
-//text-decoration-thickness: .1875rem !important;
-//text-decoration-thickness: .15em !important;
-//}
+// main {
+// a.govuk-link:hover {
+// text-decoration-skip-ink: none;
+// text-decoration: underline !important;
+// text-decoration-thickness: .1875rem !important;
+// text-decoration-thickness: .15em !important;
+// }
 
-//a.govuk-link:active {
-//text-decoration-thickness: 0 !important;
-//text-decoration: none !important;
-//}
-//}
+// a.govuk-link:active {
+// text-decoration-thickness: 0 !important;
+// text-decoration: none !important;
+// }
+// }
 
 .opss-no-wrap {
   white-space: nowrap;
@@ -145,7 +144,6 @@ h1.govuk-label-wrapper label.govuk-label--l {
 }
 
 @media (min-width: 40.0625em) {
-
   // future proof the 14px which is required for legacy dashboard designs
   .opss-font-size-14,
   .govuk-\!-font-size-14 {
@@ -166,14 +164,12 @@ body.js-enabled .opss-nojs-hide {
 .js-enabled {
   .opss-js-enabled-hidden {
     display: none;
-
     // @include govuk-visually-hidden;
   }
 }
 
 .opss-br-desktop {
   display: none;
-
   @include govuk-media-query($from: desktop) {
     display: block;
     line-height: 0;
@@ -186,14 +182,12 @@ body.js-enabled .opss-nojs-hide {
 
 .opss-hidden-desktop {
   visibility: visible;
-
   @include govuk-media-query($from: desktop) {
     visibility: hidden;
   }
 }
 
 @include govuk-media-query($from: mobile, $until: desktop, $and: false, $media-type: "all") {
-
   // for desktop only
   .opss-keep-for-desktop {
     display: none;
@@ -213,7 +207,6 @@ body.js-enabled .opss-nojs-hide {
 }
 
 @include govuk-media-query($from: mobile, $until: tablet, $and: false, $media-type: "all") {
-
   // for mobile only
   .opss-float-left--mobile {
     display: block;
@@ -264,7 +257,6 @@ body.js-enabled .opss-nojs-hide {
 
 .opss-margin-bottom-1-desktop {
   margin-bottom: govuk-spacing(4);
-
   @include govuk-media-query($from: desktop) {
     margin-bottom: govuk-spacing(1);
   }
@@ -272,7 +264,6 @@ body.js-enabled .opss-nojs-hide {
 
 .opss-margin-top-1-mobile {
   margin-top: govuk-spacing(4);
-
   @include govuk-media-query($from: tablet) {
     margin-top: govuk-spacing(1);
   }
@@ -339,7 +330,6 @@ body.js-enabled .opss-nojs-hide {
 }
 
 @include govuk-media-query($from: desktop) {
-
   // use on
   .opss-right-box-arrow {
     position: relative;
@@ -373,7 +363,6 @@ body.js-enabled .opss-nojs-hide {
 }
 
 .opss-warning-text--s {
-
   // make warning text smaller and allow several in succession
   strong {
     @include opss-font-size($s: 16px, $l: 1.3);
@@ -398,7 +387,6 @@ abbr[title] {
   text-decoration: none;
 
   @include govuk-media-query($from: desktop) {
-
     h1[class^="govuk-heading"] + p &,
     h1.govuk-label-wrapper + div.govuk-hint &,
     h1.govuk-label-wrapper + p &,
@@ -561,7 +549,6 @@ samp {
 
         span {
           @include opss-font-size($s: 14px, $l: 1.2);
-
           // position: relative; top: -1px;
         }
       }
@@ -917,7 +904,6 @@ dl.opss-summary-list-aside {
   }
 
   @media only screen and (max-width: 600px) {
-
     dt,
     dd {
       @include govuk-font($size: 16);
@@ -1110,7 +1096,6 @@ dl.opss-summary-list-aside {
 
 @include govuk-media-query($from: desktop) {
   .opss-summary-list-mixed.opss-summary-list-mixed--sm {
-
     // a narrow and small font version
     dt {
       width: 25% !important;
@@ -1355,7 +1340,6 @@ dd dl.opss-nested-definition-list {
   }
 
   @include govuk-media-query($from: tablet) {
-
     thead tr th:first-child,
     tbody tr th:first-child {
       width: auto;
@@ -1537,7 +1521,6 @@ dd dl.opss-nested-definition-list {
   }
 
   &.opss-table-items--first-col-50 {
-
     // no hidden 1st col
     @include govuk-media-query($from: tablet) {
       thead th:nth-child(1) {
@@ -1620,7 +1603,6 @@ dd dl.opss-nested-definition-list {
 }
 
 @media only screen and (min-width: 641px) and (max-width: 961px) {
-
   // jump to mobile sizing at tablet size for tight cols
   .govuk-grid-column-three-quarters .govuk-grid-column-one-third .opss-text-align-right select {
     @include govuk-font($size: 16);
