@@ -556,7 +556,6 @@ samp {
   }
 
   @-moz-document url-prefix("") {
-
     // firefox only: col flow bug
     .opss-2-col-flow,
     .opss-3-col-flow {
@@ -937,7 +936,6 @@ dl.opss-summary-list-aside {
 }
 
 .opss-summary-list-mixed {
-
   // this class was the solution for rows which did and didn't have action links, prior to GDS v4 and .opss-summary-list-mixed
   & > div {
     // std summary list but allows for a mixture of 2 & 3 cols in 1 list
@@ -1019,7 +1017,6 @@ dl.opss-summary-list-aside {
     }
 
     &.opss-summary-list-mixed--compact > div {
-
       dt,
       dd {
         margin-top: 0;
@@ -1078,14 +1075,12 @@ dl.opss-summary-list-aside {
   }
 
   @-moz-document url-prefix("") {
-
     // firefox only: align 1st dd (without a 2nd) correctly
     .govuk-summary-list__row dd:last-child {
       width: inherit;
     }
 
     &.opss-summary-list-mixed--narrow-actions > div {
-
       // firefox only: col flow bug
       dd[class$="__actions"] {
         width: auto;
@@ -1123,7 +1118,6 @@ dl.opss-summary-list-aside {
       margin-bottom: govuk-spacing(7);
 
       div:last-child {
-
         dt,
         dd {
           border-bottom: none;
@@ -1134,7 +1128,6 @@ dl.opss-summary-list-aside {
 
   .opss-summary-list-mixed.opss-summary-list--equal-widths {
     div {
-
       dt,
       dd {
         width: 33%;
@@ -1349,7 +1342,6 @@ dd dl.opss-nested-definition-list {
 }
 
 .opss-table--last-col-right {
-
   thead tr .govuk-table__header:last-child,
   tbody tr .govuk-table__cell:last-child,
   tfoot tr .govuk-table__header:last-child {
@@ -1475,10 +1467,8 @@ dd dl.opss-nested-definition-list {
   }
 
   &.opss-table--borders {
-
     // add horizontal lines to simple single rows table in one parent tbody
     tbody tr {
-
       th,
       td {
         border-bottom: 1px solid $govuk-border-colour;
@@ -1490,7 +1480,6 @@ dd dl.opss-nested-definition-list {
   }
 
   &.opss-table-items--sm {
-
     thead th,
     tfoot th {
       @include govuk-font($size: 16);
@@ -1533,7 +1522,6 @@ dd dl.opss-nested-definition-list {
 .opss-table,
 .opss-table-items {
   tbody td {
-
     span > em,
     mark {
       font-style: normal;
@@ -1546,7 +1534,6 @@ dd dl.opss-nested-definition-list {
 
 .opss-table-stripes {
   tbody tr {
-
     th,
     td {
       border-top: 1px solid govuk-colour("light-grey");
@@ -1555,7 +1542,6 @@ dd dl.opss-nested-definition-list {
 
   tbody tr:first-child,
   tbody tr:last-child {
-
     th,
     td {
       border-bottom: none;
@@ -1564,7 +1550,6 @@ dd dl.opss-nested-definition-list {
 
   &.opss-table-items--sm {
     tbody tr {
-
       th,
       td {
         padding-top: govuk-spacing(2);
