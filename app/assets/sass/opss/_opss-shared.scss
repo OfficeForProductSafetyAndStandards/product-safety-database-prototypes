@@ -115,8 +115,8 @@ main {
   a.govuk-link:hover {
     text-decoration-skip-ink: none;
     text-decoration: underline !important;
-    text-decoration-thickness: 0.1875rem !important;
-    text-decoration-thickness: 0.15em !important;
+    text-decoration-thickness: .1875rem !important;
+    text-decoration-thickness: .15em !important;
   }
   
   a.govuk-link:active,
