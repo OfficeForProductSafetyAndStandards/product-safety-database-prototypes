@@ -111,19 +111,20 @@ h1.govuk-label-wrapper label.govuk-label--l {
 //   }
 // }
 
-// main {
-// a.govuk-link:hover {
-// text-decoration-skip-ink: none;
-// text-decoration: underline !important;
-// text-decoration-thickness: .1875rem !important;
-// text-decoration-thickness: .15em !important;
-// }
+main {
+  a.govuk-link:hover {
+    text-decoration-skip-ink: none;
+    text-decoration: underline !important;
+    text-decoration-thickness: .1875rem !important;
+    text-decoration-thickness: .15em !important;
+  }
 
-// a.govuk-link:active {
-// text-decoration-thickness: 0 !important;
-// text-decoration: none !important;
-// }
-// }
+  a.govuk-link:active,
+  a.govuk-link:focus:hover {
+    text-decoration-thickness: 0 !important;
+    text-decoration: none !important;
+  }
+}
 
 .opss-no-wrap {
   white-space: nowrap;
