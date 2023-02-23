@@ -215,6 +215,10 @@ body.js-enabled .opss-nojs-hide {
     float: left;
     text-align: left !important;
   }
+  
+  .opss-padding-bottom-4-mobile {
+    padding-bottom: govuk-spacing(4);
+  }  
 }
 
 @include govuk-media-query($from: desktop) {
