@@ -1289,6 +1289,16 @@ dd dl.opss-nested-definition-list {
       margin-right: govuk-spacing(3);
       margin-left: 0;
     }
+
+    &.opss-equal-height-container--flush {
+      .opss-equal-height__col {
+        padding: 0;
+      }
+    }
+
+    .opss-equal-height-container__panel-1 {
+      min-height: 120px;
+    }
   }
 }
 
