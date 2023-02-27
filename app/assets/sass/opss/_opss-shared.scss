@@ -215,6 +215,10 @@ body.js-enabled .opss-nojs-hide {
     float: left;
     text-align: left !important;
   }
+
+  .opss-padding-bottom-4-mobile {
+    padding-bottom: govuk-spacing(4);
+  }
 }
 
 @include govuk-media-query($from: desktop) {
@@ -992,6 +996,10 @@ dl.opss-summary-list-aside {
   @include govuk-media-query($from: desktop) {
     &.opss-summary-list-mixed--narrow-dt + .opss-text-align-right {
       position: relative;
+      top: - govuk-spacing(4);
+    }
+
+    &.opss-summary-list-mixed--narrow-dt.opss-summary-list-mixed--image + .opss-text-align-right {
       top: - govuk-spacing(7);
     }
 
@@ -1288,6 +1296,16 @@ dd dl.opss-nested-definition-list {
     .opss-equal-height__col:first-child {
       margin-right: govuk-spacing(3);
       margin-left: 0;
+    }
+
+    &.opss-equal-height-container--flush {
+      .opss-equal-height__col {
+        padding: 0;
+      }
+    }
+
+    .opss-equal-height-container__panel-1 {
+      min-height: 120px;
     }
   }
 }

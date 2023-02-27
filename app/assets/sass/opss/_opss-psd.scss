@@ -7,6 +7,8 @@
 @import "./opss-search";
 @import "./opss-pagination";
 
+@import "./opss-step-by-step-nav";
+
 @include govuk-media-query($from: desktop) {
 
   // fix for psd while it is unable to place back links outside and before the main.govuk-main-wrapper element
@@ -58,6 +60,27 @@ $opss-retired-bg: govuk-tint(govuk-colour("light-grey"), 50);
   transform: scale(1.2, 1);
   font-weight: 600;
   opacity: .9;
+}
+
+.opss-brand-text {
+  color: $govuk-brand-colour;
+}
+
+.opss-colour-block-title {
+  background-color: govuk-colour("black");
+  padding: govuk-spacing(2) govuk-spacing(4);
+  margin-bottom: govuk-spacing(3);
+
+  &.opss-colour-block-title--blue {
+    background-color: govuk-colour("blue");
+  }
+
+  h2,
+  h3 {
+    color: govuk-colour("white");
+    text-align: center;
+    margin: 0;
+  }
 }
 
 .opss-borders {
