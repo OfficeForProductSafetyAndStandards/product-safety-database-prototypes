@@ -215,10 +215,10 @@ body.js-enabled .opss-nojs-hide {
     float: left;
     text-align: left !important;
   }
-  
+
   .opss-padding-bottom-4-mobile {
     padding-bottom: govuk-spacing(4);
-  }  
+  }
 }
 
 @include govuk-media-query($from: desktop) {
@@ -1001,7 +1001,7 @@ dl.opss-summary-list-aside {
 
     &.opss-summary-list-mixed--narrow-dt.opss-summary-list-mixed--image + .opss-text-align-right {
       top: - govuk-spacing(7);
-    }    
+    }
 
     &.opss-summary-list-mixed--narrow-dt > div {
       dt {
