@@ -996,8 +996,12 @@ dl.opss-summary-list-aside {
   @include govuk-media-query($from: desktop) {
     &.opss-summary-list-mixed--narrow-dt + .opss-text-align-right {
       position: relative;
-      top: - govuk-spacing(7);
+      top: - govuk-spacing(4);
     }
+
+    &.opss-summary-list-mixed--narrow-dt.opss-summary-list-mixed--image + .opss-text-align-right {
+      top: - govuk-spacing(7);
+    }    
 
     &.opss-summary-list-mixed--narrow-dt > div {
       dt {
