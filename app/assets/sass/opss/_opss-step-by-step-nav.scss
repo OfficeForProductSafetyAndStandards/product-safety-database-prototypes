@@ -4,6 +4,18 @@ $number-circle-size: 26px;
 $number-circle-size-large: 35px;
 $top-border: solid 2px $govuk-border-colour;
 
+@mixin step-nav-font($size, $tablet-size: $size, $weight: normal, $line-height: 1.3, $tablet-line-height: $line-height) {
+  font-family: $std-font-family;
+  font-size: $size + px;
+  font-weight: $weight;
+  line-height: $line-height;
+
+  @include govuk-media-query($from: tablet) {
+    font-size: $tablet-size + px;
+    line-height: $tablet-line-height;
+  }
+}
+
 @mixin step-nav-vertical-line($line-style: solid) {
   content: "";
   position: absolute;
