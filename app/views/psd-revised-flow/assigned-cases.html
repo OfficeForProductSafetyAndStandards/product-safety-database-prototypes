@@ -1,7 +1,7 @@
 {% extends "layout-routes-02.html" %}
 
 {% block pageTitle %}
-Your cases
+Assigned cases
 {% endblock %}
 
 
@@ -11,17 +11,17 @@ Your cases
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-            Your cases
+            Assigned cases
         </h1>
 
         <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-            You are the case owner of 9 open cases.
+            Your team has been added to 12 open cases.
         </p>
-
+        <!--Your team may have been assigned these cases.-->
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="opss-text-align-right govuk-!-margin-bottom-8">
-            <a href="find-the-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+            <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
                 Create a case
             </a>
         </div>
@@ -38,11 +38,14 @@ Your cases
 
         <nav aria-label="Secondary">
             <ul class="govuk-list opss-left-nav">
-                <li class="opss-left-nav__active">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">Your cases</a>
+                <li>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Your cases</a>
                 </li>
                 <li>
                     <a href="#" class="govuk-link govuk-link--no-visited-state">Team cases</a>
+                </li>
+                <li class="opss-left-nav__active">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">Assigned cases</a>
                 </li>
                 <li>
                     <a href="new-cases-example_all.html" class="govuk-link govuk-link--no-visited-state">All cases &ndash; Search</a>
@@ -59,7 +62,7 @@ Your cases
                 <div class="govuk-form-group opss-text-align-right">
                     <fieldset id="sort-by-fieldset" class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
                         <label class="govuk-label govuk-body-s" for="sort_by">
-                            Sort <span class="govuk-visually-hidden">the results</span> by
+                            Order <span class="govuk-visually-hidden">the list</span> by
                         </label>
                         <select class="govuk-select govuk-!-margin-bottom-1" id="sort_by">
                             <option selected="selected" data-url="/cases/team-cases?sort_by=created_at&amp;sort_dir=desc">Newest cases</option>
@@ -69,7 +72,7 @@ Your cases
                         </select>
                     </fieldset>
                     <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
-                        <dt>Sort <span class="govuk-visually-hidden">the list</span> by</dt>
+                        <dt>Sort <span class="govuk-visually-hidden">the results</span> by</dt>
                         <dd class="opss-dl-select__active">
                             <a href="/cases/team-cases?sort_by=created_at&amp;sort_dir=desc"><span class="govuk-visually-hidden">Active: </span>Newest cases</a>
                         </dd>
@@ -98,8 +101,8 @@ Your cases
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th id="allegation" scope="col" class="govuk-table__header">Case number</th>
-                            <th id="caseowner" scope="col" class="govuk-table__header">Case owner</th>
-                            <th id="haztype" scope="col" class="govuk-table__header">Hazard type</th>
+                            <th id="caseowner" scope="col" class="govuk-table__header">Case created</th>
+                            <th id="haztype" scope="col" class="govuk-table__header">Assigner</th>
                             <th id="updated" scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </thead>
@@ -120,10 +123,10 @@ Your cases
                                 2021-11
                             </td>
                             <td headers="caseowner item-1 meta-1" class="govuk-table__cell">
-                                David Willis
+                                28 February 2023
                             </td>
                             <td headers="haztype item-1 meta-1" class="govuk-table__cell">
-                                lorem ipusm
+                                Southampton TSO
                             </td>
                             <td headers="updated item-1 meta-1" class="govuk-table__cell">
                                 About 6 hours ago
@@ -160,10 +163,10 @@ Your cases
                                 20-2120
                             </td>
                             <td headers="caseowner item-2 meta-2" class="govuk-table__cell">
-                                OPSS Enforcement
+                                23 September 2023
                             </td>
                             <td headers="haztype item-2 meta-2" class="govuk-table__cell">
-                                lorem ipusm
+                                OPSS Enforcement
                             </td>
                             <td headers="updated item-2 meta-2" class="govuk-table__cell">
                                 About 22 hours ago
@@ -196,10 +199,10 @@ Your cases
                                 2104-21000
                             </td>
                             <td headers="caseowner item-3 meta-3" class="govuk-table__cell">
-                                Renfrewshire Council
+                                24 April 2023
                             </td>
                             <td headers="haztype item-3 meta-3" class="govuk-table__cell">
-                                lorem ipusm
+                                Renfrewshire Council
                             </td>
                             <td headers="updated item-3 meta-3" class="govuk-table__cell">
                                 21 days ago
@@ -232,10 +235,10 @@ Your cases
                                 2007-37001
                             </td>
                             <td headers="caseowner item-4 meta-4" class="govuk-table__cell">
-                                Toby Huges
+                                28 May 2023
                             </td>
                             <td headers="haztype item-4 meta-4" class="govuk-table__cell">
-                                lorem ipusm
+                                Toby Huges team
                             </td>
                             <td headers="updated item-4 meta-4" class="govuk-table__cell">
                                 3 months ago
@@ -271,10 +274,10 @@ Your cases
                                 1007-27002
                             </td>
                             <td headers="caseowner item-5 meta-5" class="govuk-table__cell">
-                                Birmingham Trading Standards
+                                6 March 2022
                             </td>
                             <td headers="haztype item-5 meta-5" class="govuk-table__cell">
-                                lorem ipusm
+                                Birmingham Trading Standards
                             </td>
                             <td headers="updated item-5 meta-5" class="govuk-table__cell">
                                 6 months ago
@@ -307,10 +310,10 @@ Your cases
                                 45001-70000
                             </td>
                             <td headers="caseowner item-6 meta-6" class="govuk-table__cell">
-                                Gary Harrison
+                                4 April 2022
                             </td>
                             <td headers="haztype item-6 meta-6" class="govuk-table__cell">
-                                lorem ipusm
+                                Bradford trading standards team
                             </td>
                             <td headers="updated item-6 meta-6" class="govuk-table__cell">
                                 4 months ago
@@ -345,13 +348,13 @@ Your cases
                                 25022-21010
                             </td>
                             <td headers="caseowner item-7 meta-7" class="govuk-table__cell">
-                                Greater London authority
+                                22 May 2022
                             </td>
                             <td headers="haztype item-7 meta-7" class="govuk-table__cell">
-                                lorem ipusm
+                                Greater London authority
                             </td>
                             <td headers="updated item-7 meta-7" class="govuk-table__cell">
-                                about 3 months ago
+                                About 3 months ago
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -383,13 +386,13 @@ Your cases
                                 2221-70003
                             </td>
                             <td headers="caseowner item-8 meta-8" class="govuk-table__cell">
-                                Flintshire Council
+                                13 August 2022
                             </td>
                             <td headers="haztype item-8 meta-8" class="govuk-table__cell">
-                                lorem ipusm
+                                Flintshire Council
                             </td>
                             <td headers="updated item-8 meta-8" class="govuk-table__cell">
-                                about 7 months ago
+                                About 7 months ago
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -419,10 +422,10 @@ Your cases
                                 21-23341
                             </td>
                             <td headers="caseowner item-9 meta-9" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
+                                17 June 2022
                             </td>
                             <td headers="haztype item-9 meta-9" class="govuk-table__cell">
-                                lorem ipusm
+                                Team Ian Weatherby-Blyth
                             </td>
                             <td headers="updated item-9 meta-9" class="govuk-table__cell">
                                 2 weeks ago
@@ -456,13 +459,13 @@ Your cases
                                 2021-11
                             </td>
                             <td headers="caseowner item-10 meta-10" class="govuk-table__cell">
-                                David Willis
+                                27 July 2022
                             </td>
                             <td headers="haztype item-10 meta-10" class="govuk-table__cell">
-                                lorem ipusm
+                                Cornwall trading standards
                             </td>
                             <td headers="updated item-10 meta-10" class="govuk-table__cell">
-                                about 6 hours ago
+                                About 6 hours ago
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -496,13 +499,13 @@ Your cases
                                 20-2120
                             </td>
                             <td headers="caseowner item-11 meta-11" class="govuk-table__cell">
-                                OPSS Enforcement
+                                30 April 2022
                             </td>
                             <td headers="haztype item-11 meta-11" class="govuk-table__cell">
-                                lorem ipusm
+                                OPSS Enforcement
                             </td>
                             <td headers="updated item-11 meta-11" class="govuk-table__cell">
-                                about 2 months ago
+                                About 2 months ago
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -534,10 +537,10 @@ Your cases
                                 2104-21000
                             </td>
                             <td headers="caseowner item-12 meta-12" class="govuk-table__cell">
-                                Renfrewshire Council
+                                18 July 2022
                             </td>
                             <td headers="haztype item-12 meta-12" class="govuk-table__cell">
-                                lorem ipusm
+                                Renfrewshire Council
                             </td>
                             <td headers="updated item-12 meta-12" class="govuk-table__cell">
                                 21 days ago
@@ -553,318 +556,12 @@ Your cases
                         </tr>
                     </tbody>
 
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-13" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Hair bleach TM, Washing machine – burns hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-13" id="meta-13" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-13 meta-13" class="govuk-table__cell">
-                                2007-37001
-                            </td>
-                            <td headers="caseowner item-13 meta-13" class="govuk-table__cell">
-                                Toby Huges
-                            </td>
-                            <td headers="haztype item-13 meta-13" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-13 meta-13" class="govuk-table__cell">
-                                3 months ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-13" id="status-13" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-13 status-13" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Project</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-14" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Large Phone Charger Battery, Portable battery – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-14" id="meta-14" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-14 meta-14" class="govuk-table__cell">
-                                1007-27002
-                            </td>
-                            <td headers="caseowner item-14 meta-14" class="govuk-table__cell">
-                                Birmingham Trading Standards
-                            </td>
-                            <td headers="haztype item-14 meta-14" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-14 meta-14" class="govuk-table__cell">
-                                6 months ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-14" id="status-14" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-14 status-14" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Allegation</span>
-
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk4">This case has no product</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-15" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Washer 3000, Washing machine – electric shock hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-15" id="meta-15" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-15 meta-15" class="govuk-table__cell">
-                                45001-70000
-                            </td>
-                            <td headers="caseowner item-15 meta-15" class="govuk-table__cell">
-                                Gary Harrison
-                            </td>
-                            <td headers="haztype item-15 meta-15" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-15 meta-15" class="govuk-table__cell">
-                                4 months ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-15" id="status-15" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-15 status-15" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Enquiry</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk2">Restricted case</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-16" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Asda bleach, Bleach – chemical hazard</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-16" id="meta-16" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-16 meta-16" class="govuk-table__cell">
-                                25022-21010
-                            </td>
-                            <td headers="caseowner item-16 meta-16" class="govuk-table__cell">
-                                Greater London authority
-                            </td>
-                            <td headers="haztype item-16 meta-16" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-16 meta-16" class="govuk-table__cell">
-                                about 3 months ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-16" id="status-16" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-16 status-16" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std opss-cross-through">Enquiry</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk3">Case closed</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-17" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">BOSA face masks - fabric fail</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-17" id="meta-17" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-17 meta-17" class="govuk-table__cell">
-                                2221-70003
-                            </td>
-                            <td headers="caseowner item-17 meta-17" class="govuk-table__cell">
-                                Flintshire Council
-                            </td>
-                            <td headers="haztype item-17 meta-17" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-17 meta-17" class="govuk-table__cell">
-                                about 7 months ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-17" id="status-17" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-17 status-17" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Allegation</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-18" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-18" id="meta-18" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-18 meta-18" class="govuk-table__cell">
-                                21-23341
-                            </td>
-                            <td headers="caseowner item-18 meta-18" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
-                            </td>
-                            <td headers="haztype item-18 meta-18" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-18 meta-18" class="govuk-table__cell">
-                                2 weeks ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-18" id="status-18" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-18 status-18" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Allegation</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-19" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Trepid surgical gloves (pair) - wrong gauge</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-19" id="meta-19" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-19 meta-19" class="govuk-table__cell">
-                                21-23341
-                            </td>
-                            <td headers="caseowner item-19 meta-19" class="govuk-table__cell">
-                                Dave Brown
-                            </td>
-                            <td headers="haztype item-19 meta-19" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-19 meta-19" class="govuk-table__cell">
-                                2 weeks ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-19" id="status-19" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-19 status-19" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Allegation</span>
-
-                            </td>
-                        </tr>
-                    </tbody>
-
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-visually-hidden">
-                                Case title
-                            </th>
-                            <th id="item-20" colspan="4" scope="colgroup" class="govuk-table__header">
-                                <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco hand cream</a>
-                            </th>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-20" id="meta-20" class="govuk-visually-hidden">
-                                Metadata
-                            </th>
-                            <td headers="allegation item-20 meta-20" class="govuk-table__cell">
-                                21-23341
-                            </td>
-                            <td headers="caseowner item-20 meta-20" class="govuk-table__cell">
-                                Ian Weatherby-Blyth
-                            </td>
-                            <td headers="haztype item-20 meta-20" class="govuk-table__cell">
-                                lorem ipusm
-                            </td>
-                            <td headers="updated item-20 meta-20" class="govuk-table__cell">
-                                2 weeks ago
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th headers="item-20" id="status-20" class="govuk-visually-hidden">
-                                Type
-                            </th>
-                            <td headers="item-20 status-20" colspan="4" class="govuk-table__cell">
-                                <span class="opss-tag opss-tag--std">Allegation</span>
-
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk4">This case has no product</span>
-
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--risk1">Serious risk case</span>
-                                <span class="govuk-visually-hidden"> | </span>
-                                <span class="opss-tag opss-tag--covid">COVID-19 related case</span>
-                            </td>
-                        </tr>
-                    </tbody>
-
                     <tfoot class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th class="govuk-visually-hidden">&nbsp;</th>
                             <th scope="col" class="govuk-table__header">Case number</th>
-                            <th scope="col" class="govuk-table__header">Case owner</th>
-                            <th scope="col" class="govuk-table__header">Hazard type</th>
+                            <th scope="col" class="govuk-table__header">Case created</th>
+                            <th scope="col" class="govuk-table__header">Assigner</th>
                             <th scope="col" class="govuk-table__header">Updated</th>
                         </tr>
                     </tfoot>
