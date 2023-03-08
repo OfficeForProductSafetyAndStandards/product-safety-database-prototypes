@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-What is the business type
+Error: What is the business type
 {% endblock %}
 
 
@@ -15,35 +15,20 @@ href: "/cases/2303-0044"
 
 {% block content %}
 
-
-<!--
-
-Replace .govuk-grid-column-two-thirds-from-desktop and move grid divs out of form
-
-added novalidate to form element 
-
-removed span subtitle from above H1 and replaced two headers with gds legend > H1 and new title (+ new title tag title)
-
-aria-describedby added to fieldset 
-aria-describedby added to the new 'online seller' AND 'retailer' radio inputs
-
-If retailer - the retailer form should have a www address input? (optional)
-
-If FBM - text box to list which online marketplaces were/are used
-
-On the 'Other' text input the width class has been changed to .govuk-!-width-three-quarters and on its sub label class was .govuk-visually-hidden removed, and changed the sub label title text
-
-
-
-The error message structure is wrong for 'Other'
-Change error message 'Please enter a business type "Other"' to " Enter a descriptive name "
-+ update error message styling
-
-
-Update any reporting tools/reports?
-
--->
-
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#business_type_retailer">Select a business type</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 <div class="govuk-grid-row">
@@ -55,8 +40,8 @@ Update any reporting tools/reports?
       <input type="hidden" name="authenticity_token" value="6ktJZfkgFw_LMZbBXd6ASBnarqHHwZrwuiX4BxWrYW-jUjf7Fot0w6UecL_TiT2YW37ZpWc-AWEe0_MtrdIt0Q" autocomplete="off" />
 
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="type-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="type-hint type-error">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
@@ -68,6 +53,10 @@ Update any reporting tools/reports?
             What is the business role in the supply chain or as an economic operator?
           </div>
 
+          <p id="type-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select a business type
+          </p>
+
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
             {% include "psd-revised-flow/online-sales/inc_retail-and-online.html" %}
@@ -75,40 +64,30 @@ Update any reporting tools/reports?
             <div class="govuk-radios__item">
               <input id="business_type_manufacturer" name="business[type]" type="radio" value="manufacturer" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_manufacturer">Manufacturer</label>
-
-
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_exporter" name="business[type]" type="radio" value="exporter" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_exporter">Exporter</label>
-
-
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_importer" name="business[type]" type="radio" value="importer" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_importer">Importer</label>
-
-
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_fulfillment_house" name="business[type]" type="radio" value="fulfillment_house" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_fulfillment_house">Fulfillment house</label>
-
-
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_distributor" name="business[type]" type="radio" value="distributor" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_distributor">Distributor</label>
-
-
             </div>
 
             <!-- other starts -->
             <div class="govuk-radios__item">
-              <input id="business_type_other" name="business[type]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-business_type_other">
+              <input id="business_type_other" name="business[type]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-business_type_other_name">
               <label class="govuk-label govuk-radios__label" for="business_type_other">Other</label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business_type_other">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business_type_other_name">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="business_type_other_name">Descriptive name</label>
                 <input class="govuk-input govuk-!-width-three-quarters" id="business_type_other_name" name="business[type_other]" type="text">
