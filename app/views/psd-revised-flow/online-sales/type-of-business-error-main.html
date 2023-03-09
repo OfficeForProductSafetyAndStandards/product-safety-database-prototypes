@@ -1,0 +1,110 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Error: What is the business type
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to allegation: 2303-0044",
+href: "/cases/2303-0044"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#business_type_retailer">Select a business type</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/cases/2303-0044/businesses/type" accept-charset="UTF-8" method="post" novalidate>
+
+      <input type="hidden" name="_method" value="put" />
+      <input type="hidden" name="authenticity_token" value="6ktJZfkgFw_LMZbBXd6ASBnarqHHwZrwuiX4BxWrYW-jUjf7Fot0w6UecL_TiT2YW37ZpWc-AWEe0_MtrdIt0Q" />
+
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="type-hint type-error">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the business type?
+            </h1>
+          </legend>
+
+          <div id="type-hint" class="govuk-hint govuk-!-margin-bottom-5">
+            What is the business role in the supply chain or as an economic operator?
+          </div>
+
+          <p id="type-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select a business type
+          </p>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+            {% include "psd-revised-flow/online-sales/inc_retail-and-online.html" %}
+
+            <div class="govuk-radios__item">
+              <input id="business_type_manufacturer" name="business[type]" type="radio" value="manufacturer" class="govuk-radios__input">
+              <label class="govuk-label govuk-radios__label" for="business_type_manufacturer">Manufacturer</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input id="business_type_exporter" name="business[type]" type="radio" value="exporter" class="govuk-radios__input">
+              <label class="govuk-label govuk-radios__label" for="business_type_exporter">Exporter</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input id="business_type_importer" name="business[type]" type="radio" value="importer" class="govuk-radios__input">
+              <label class="govuk-label govuk-radios__label" for="business_type_importer">Importer</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input id="business_type_fulfillment_house" name="business[type]" type="radio" value="fulfillment_house" class="govuk-radios__input">
+              <label class="govuk-label govuk-radios__label" for="business_type_fulfillment_house">Fulfillment house</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input id="business_type_distributor" name="business[type]" type="radio" value="distributor" class="govuk-radios__input">
+              <label class="govuk-label govuk-radios__label" for="business_type_distributor">Distributor</label>
+            </div>
+
+            <!-- other starts -->
+            <div class="govuk-radios__item">
+              <input id="business_type_other" name="business[type]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-business_type_other_name">
+              <label class="govuk-label govuk-radios__label" for="business_type_other">Other</label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business_type_other_name">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="business_type_other_name">Descriptive name</label>
+                <input class="govuk-input govuk-!-width-three-quarters" id="business_type_other_name" name="business[type_other]" type="text">
+              </div>
+            </div>
+            <!-- other ends -->
+
+          </div>
+
+        </fieldset>
+      </div>
+
+
+      <input type="submit" name="commit" value="Continue" class="govuk-button" data-disable-with="Continue" />
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
