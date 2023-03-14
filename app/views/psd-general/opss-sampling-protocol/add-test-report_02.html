@@ -1,0 +1,95 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+The test certificate details
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/psd-general/opss-sampling-protocol/add-test-report_01"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      The test certificate details
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6 opss-secondary-text">
+      To help the <abbr>OPSS</abbr> match funding to individual tests, please provide the following details. You should be able to find these details on the test result document.
+    </p>
+
+
+
+    <form action="/psd-general/opss-sampling-protocol/record-test-result_03" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sample-name">
+          What is the Trading Standards sample number?
+        </label>
+
+        <input class="govuk-input govuk-input--width-10" id="sample-name" name="sample-name" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="date-issued-hint">
+
+          <legend class="govuk-fieldset__legend">
+            What date was the test certificate issued?
+          </legend>
+
+          <div id="date-issued-hint" class="govuk-hint govuk-!-font-size-16">
+            For example, 27 5 2023
+          </div>
+
+          <div class="govuk-date-input">
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-issued-day" name="date-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-issued-month" name="date-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-issued-year" name="date-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
