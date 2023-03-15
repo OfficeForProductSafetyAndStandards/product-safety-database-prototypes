@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-The test certificate details
+Error: The test certificate details
 {% endblock %}
 
 
@@ -14,6 +14,22 @@ href: "/psd-general/opss-sampling-protocol/add-test-report_01"
 
 
 {% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#date-issued-day">Enter the date the test certificate was issued</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -43,16 +59,20 @@ href: "/psd-general/opss-sampling-protocol/add-test-report_01"
         <input class="govuk-input govuk-input--width-10" id="sample-name" name="sample-name" type="text" aria-describedby="sample-hint">
       </div>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="date-issued-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="date-issued-hint date-issued-error">
 
           <legend class="govuk-fieldset__legend">
-            What date was the test certificate issued?
+            What was the Trading Standards sample number you provided?
           </legend>
 
           <div id="date-issued-hint" class="govuk-hint govuk-!-font-size-16">
             For example, 27 5 2023
           </div>
+
+          <p id="date-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the date the test certificate was issued
+          </p>
 
           <div class="govuk-date-input">
 
@@ -61,7 +81,7 @@ href: "/psd-general/opss-sampling-protocol/add-test-report_01"
                 <label class="govuk-label govuk-date-input__label" for="date-issued-day">
                   Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-issued-day" name="date-issued-day" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="date-issued-day" name="date-issued-day" type="text" inputmode="numeric">
               </div>
             </div>
 

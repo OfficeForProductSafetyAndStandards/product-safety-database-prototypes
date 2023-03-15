@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Was the test funded under the Sampling Protocol
+Error: Was the test funded under the Sampling Protocol
 {% endblock %}
 
 
@@ -15,13 +15,28 @@ href: "/psd-general/opss-sampling-protocol/add-test-report_start"
 
 {% block content %}
 
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#funding-yes">Select yes if the test was funded under the <abbr>OPSS</abbr> Sampling Protocol</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <form action="/psd-general/opss-sampling-protocol/add-test-report_02" method="post" novalidate>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="funding-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="funding-hint funding-error">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
@@ -32,6 +47,10 @@ href: "/psd-general/opss-sampling-protocol/add-test-report_start"
           <div id="funding-hint" class="govuk-hint">
             <span class="govuk-visually-hidden">The <abbr>OPSS</abbr> would like to record which tests were funding by them. </span>The Office for Product Safety and Standards (<abbr>OPSS</abbr>) currently funds several test labs which are partnered with some local authorities.
           </div>
+
+          <p id="funding-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select yes if the test was funded under the <abbr>OPSS</abbr> Sampling Protocol
+          </p>
 
           <div class="govuk-radios govuk-!-margin-top-5" data-module="govuk-radios">
             <div class="govuk-radios__item">
