@@ -1,7 +1,6 @@
-// PSD master css/scss styles: simply copy this content into your local psd scss file (and update the @import URLs if required).
+// PSD master css/scss styles.
 // Add the listed @import scss files (below) to your directory.
 // Don't edit your local copy to avoid it unsyncing  with these versions.
-// We can remove linting from these scss files - they won't build if there is a real problem.
 
 @import "./opss-shared";
 @import "./opss-search";
@@ -11,13 +10,25 @@
 
 @include govuk-media-query($from: desktop) {
 
-  // fix for psd while it is unable to place back links outside and before the main.govuk-main-wrapper element
+  // fix for psd while it is unable to place back links/breadcrumbs outside and before the main.govuk-main-wrapper element
   body > .govuk-width-container > .govuk-main-wrapper > .govuk-back-link {
     margin-top: - govuk-spacing(8);
     margin-bottom: - (govuk-spacing(8) + govuk-spacing(1));
     position: relative;
     top: - (govuk-spacing(6) + govuk-spacing(1));
   }
+
+  body > .govuk-width-container > main.govuk-main-wrapper > .govuk-breadcrumbs {
+    margin-top: - (govuk-spacing(6) + govuk-spacing(1)); 
+  }
+}
+
+main.govuk-main-wrapper > .govuk-breadcrumbs {
+  margin-top: - govuk-spacing(1);
+}
+
+.govuk-header__content {
+  padding-left: govuk-spacing(0) !important;
 }
 
 @function govuk-tint($colour, $percentage) {

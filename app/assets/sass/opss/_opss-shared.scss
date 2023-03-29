@@ -1609,7 +1609,8 @@ dd dl.opss-nested-definition-list {
 @media only screen and (min-width: 641px) and (max-width: 961px) {
   // jump to mobile sizing at tablet size for tight cols
   .govuk-grid-column-three-quarters .govuk-grid-column-one-third .opss-text-align-right select {
-    @include govuk-font($size: 16);
+    @include govuk-font($size: 16); 
+    min-width: fit-content;
   }
 }
 
