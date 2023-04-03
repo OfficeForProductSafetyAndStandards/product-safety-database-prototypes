@@ -1,72 +1,50 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Error: Was the allegation made by an overseas regulator
+Change the notifying country
 {% endblock %}
 
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "overseas-case"
+href: "case-trading-stds-landing-internal-users"
 }) }}
 {% endblock %}
 
 
 {% block content %}
 
-<div class="govuk-error-summary">
-    <div role="alert">
-        <h2 class="govuk-error-summary__title">
-            There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                    <a href="#reg-country">Select which country</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="/psd-revised-flow/case-trading-stds-landing-updated" method="post" novalidate>
+        <form action="case-trading-stds-landing-notifying-updated" method="post" novalidate>
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="reg-hint">
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Was the allegation made by an overseas regulator?
+                            Change the notifying country
                         </h1>
                     </legend>
 
                     <div id="reg-hint" class="govuk-hint govuk-!-margin-bottom-5">
-                        Select no if the allegation was from the <abbr>UK</abbr> (or <abbr>GB</abbr>).
+                        Select the notifying country.
                     </div>
-
-
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="reg-overseas" name="reg" type="radio" value="overseas" aria-controls="overseas-regulator" aria-expanded="false" checked="checked">
-                            <label class="govuk-label govuk-radios__label" for="reg-overseas">Yes</label>
+                            <input class="govuk-radios__input" id="reg-overseas" name="reg" type="radio" value="overseas" aria-controls="overseas-regulator" aria-expanded="false">
+                            <label class="govuk-label govuk-radios__label" for="reg-overseas">Overseas countries</label>
                         </div>
 
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="overseas-regulator">
-                            <div class="govuk-form-group govuk-form-group--error">
-                                <label class="govuk-label" for="reg-country">Select which country</label>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="reg-country">Select which overseas country</label>
 
-
-                                <p id="reg-country-error" class="govuk-error-message">
-                                    <span class="govuk-visually-hidden">Error:</span> Select which country
-                                </p>
-
-                                <select class="govuk-select" id="reg-country" name="reg-country" aria-describedby="reg-country-error">
-                                    <option selected="selected"></option>
+                                <!-- *** standard list with UK removed *** -->
+                                <select class="govuk-select" id="reg-country" name="reg-country">
                                     <option value="territory:AE-AZ">Abu Dhabi</option>
                                     <option value="country:AF">Afghanistan</option>
                                     <option value="territory:AE-AJ">Ajman</option>
@@ -350,8 +328,26 @@ href: "overseas-case"
 
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="reg-uk" name="reg" type="radio" value="country:GB">
-                            <label class="govuk-label govuk-radios__label" for="reg-uk">No</label>
+                            <input class="govuk-radios__input" id="reg-uk" name="reg" type="radio" value="uk" aria-controls="uk-regulator" aria-expanded="true" checked>
+                            <label class="govuk-label govuk-radios__label" for="reg-uk"><abbr>UK</abbr> nations</label>
+                        </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="uk-regulator">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="reg-uk-country">Select which country or collection of countries</label>
+
+                                <p class="govuk-body-s opss-secondary-text" id="gb-hint">
+                                    Great Britain (England, Scotland and Wales) does not include Northern Ireland.
+                                </p>
+
+                                <select class="govuk-select" id="reg-uk-country" name="reg-uk-country" aria-describedby="gb-hint">
+                                    <option value="england" selected="selected">England</option>
+                                    <option value="scotland ">Scotland </option>
+                                    <option value="wales">Wales</option>
+                                    <option value="ni">Northern Ireland</option>
+                                    <option value="gb">Great Britain (<abbr>GB</abbr>)</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
