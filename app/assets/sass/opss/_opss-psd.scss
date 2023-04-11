@@ -8,23 +8,35 @@
 
 @import "./opss-step-by-step-nav";
 
-@include govuk-media-query($from: desktop) {
+body > .govuk-width-container > main.govuk-main-wrapper > .govuk-breadcrumbs {
+  margin-top: - govuk-spacing(2);
+}
 
+body > .govuk-width-container > .govuk-main-wrapper > .govuk-back-link {
+  margin-top: govuk-spacing(0);
+}
+
+@include govuk-media-query($from: desktop) {
   // fix for psd while it is unable to place back links/breadcrumbs outside and before the main.govuk-main-wrapper element
   body > .govuk-width-container > .govuk-main-wrapper > .govuk-back-link {
     margin-top: - govuk-spacing(8);
-    margin-bottom: - (govuk-spacing(8) + govuk-spacing(1));
+    margin-bottom: govuk-spacing(1);
     position: relative;
     top: - (govuk-spacing(6) + govuk-spacing(1));
   }
 
   body > .govuk-width-container > main.govuk-main-wrapper > .govuk-breadcrumbs {
-    margin-top: - (govuk-spacing(6) + govuk-spacing(1)); 
+    margin-top: - (govuk-spacing(6) + govuk-spacing(1));
+    margin-bottom: (govuk-spacing(6) + 3);
   }
-}
 
-main.govuk-main-wrapper > .govuk-breadcrumbs {
-  margin-top: - govuk-spacing(1);
+  .govuk-width-container > .govuk-back-link + main.govuk-main-wrapper {
+    padding-top: govuk-spacing(0); 
+  }
+
+  .govuk-width-container > .govuk-breadcrumbs + main.govuk-main-wrapper {
+    padding-top: govuk-spacing(5); 
+  }  
 }
 
 .govuk-header__content {
@@ -575,6 +587,7 @@ ul.opss-radio-list {
   }
 }
 
+//.govuk-grid-column-full > p, 
 .opss-label-wrapper,
 .opss-label-wrapper label,
 .opss-fieldset__legend,

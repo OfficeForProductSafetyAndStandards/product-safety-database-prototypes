@@ -53,11 +53,6 @@ figcaption {
   .govuk-width-container > main.govuk-main-wrapper {
     padding-top: govuk-spacing(8);
   }
-
-  .govuk-width-container > .govuk-breadcrumbs + main.govuk-main-wrapper,
-  .govuk-width-container > .govuk-back-link + main.govuk-main-wrapper {
-    padding-top: govuk-spacing(2);
-  }
 }
 
 main.govuk-main-wrapper {
@@ -134,6 +129,10 @@ main {
   .opss-no-wrap-desktop {
     white-space: nowrap;
   }
+}
+
+p.opss-max-width {
+  max-width: none !important;
 }
 
 .opss-font-size-14,
