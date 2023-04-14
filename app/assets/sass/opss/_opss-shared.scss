@@ -109,7 +109,7 @@ h1.govuk-label-wrapper label.govuk-label--l {
 .govuk-breadcrumbs__link:hover {
   text-decoration-thickness: .15em !important;
   text-decoration-thickness: .1875rem !important;
-} 
+}
 
 main {
   a.govuk-link:hover {
@@ -1599,21 +1599,17 @@ dd dl.opss-nested-definition-list {
 
   .opss-desktop-margin-bottom-240px {
     margin-bottom: 240px !important;
-
-    // aligns bottom of tbody
   }
 
   .opss-desktop-margin-bottom-220px {
     margin-bottom: 220px !important;
-
-    // aligns bottom of tbody
   }
 }
 
 @media only screen and (min-width: 641px) and (max-width: 961px) {
   // jump to mobile sizing at tablet size for tight cols
   .govuk-grid-column-three-quarters .govuk-grid-column-one-third .opss-text-align-right select {
-    @include govuk-font($size: 16); 
+    @include govuk-font($size: 16);
     min-width: fit-content;
   }
 }
