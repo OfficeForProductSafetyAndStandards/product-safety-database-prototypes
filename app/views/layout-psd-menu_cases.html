@@ -34,7 +34,6 @@
 {% include "includes/headpsdmenu.html" %}
 {% endblock %}
 
-
 {% block header %}
 <header class="govuk-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
@@ -99,16 +98,16 @@
           </li>
 
           <li class="psd-header__navigation-item">
-            <a class="psd-header__link" href="#">Home</a>
+            <a class="psd-header__link" href="home">Home</a>
           </li>
           <li class="psd-header__navigation-item psd-header__navigation-item--active">
-            <a class="psd-header__link" href="#">Cases</a>
+            <a class="psd-header__link" href="new-cases-example_your_cases-new">Cases</a>
           </li>
           <li class="psd-header__navigation-item ">
-            <a class="psd-header__link" href="#">Businesses</a>
+            <a class="psd-header__link" href="new-businesses-example_your_businesses-new">Businesses</a>
           </li>
           <li class="psd-header__navigation-item ">
-            <a class="psd-header__link" href="#">Products</a>
+            <a class="psd-header__link" href="new-products-example_your_products-new">Products</a>
           </li>
           <li class="psd-header__navigation-item psd-header__navigation-item--right">
             <a class="psd-header__link" href="#">Your team</a>
@@ -120,7 +119,9 @@
 </header>
 {% endblock %}
 
+
 {% set mainClasses = mainClasses | default("") %}
+
 
 {% if useAutoStoreData %}
 {% block footer %}

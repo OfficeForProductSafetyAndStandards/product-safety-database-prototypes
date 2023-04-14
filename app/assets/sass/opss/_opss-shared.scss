@@ -53,11 +53,6 @@ figcaption {
   .govuk-width-container > main.govuk-main-wrapper {
     padding-top: govuk-spacing(8);
   }
-
-  .govuk-width-container > .govuk-breadcrumbs + main.govuk-main-wrapper,
-  .govuk-width-container > .govuk-back-link + main.govuk-main-wrapper {
-    padding-top: govuk-spacing(2);
-  }
 }
 
 main.govuk-main-wrapper {
@@ -111,12 +106,17 @@ h1.govuk-label-wrapper label.govuk-label--l {
 //   }
 // }
 
+.govuk-breadcrumbs__link:hover {
+  text-decoration-thickness: .15em !important;
+  text-decoration-thickness: .1875rem !important;
+}
+
 main {
   a.govuk-link:hover {
     text-decoration-skip-ink: none;
     text-decoration: underline !important;
-    text-decoration-thickness: .1875rem !important;
     text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
   }
 
   a.govuk-link:active,
@@ -134,6 +134,10 @@ main {
   .opss-no-wrap-desktop {
     white-space: nowrap;
   }
+}
+
+p.opss-max-width {
+  max-width: none !important;
 }
 
 .opss-font-size-14,
@@ -1595,14 +1599,10 @@ dd dl.opss-nested-definition-list {
 
   .opss-desktop-margin-bottom-240px {
     margin-bottom: 240px !important;
-
-    // aligns bottom of tbody
   }
 
   .opss-desktop-margin-bottom-220px {
     margin-bottom: 220px !important;
-
-    // aligns bottom of tbody
   }
 }
 
@@ -1610,6 +1610,7 @@ dd dl.opss-nested-definition-list {
   // jump to mobile sizing at tablet size for tight cols
   .govuk-grid-column-three-quarters .govuk-grid-column-one-third .opss-text-align-right select {
     @include govuk-font($size: 16);
+    min-width: fit-content;
   }
 }
 

@@ -1,49 +1,21 @@
-{% extends "layout-psd-menu_cases.html" %}
-
-{% block pageTitle %}
-Case 2101-0008
-{% endblock %}
-
-{% block beforeContent %}
-{{ govukBackLink({
-text: "Back",
-href: "cases"
-}) }}
-{% endblock %}
-
-{% block content %}
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
-
-        <span class="govuk-caption-m opss-visibility-hidden">The case page</span>
-
+        <span class="govuk-caption-m">Allegation</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
             Case {% include "psd-revised-flow/case-ref.html" %}
             <!--span class="govuk-heading-m govuk-!-font-weight-regular govuk-!-padding-left-1 opss-secondary-text">2101-0008</span-->
         </h1>
 
-        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">From here you can find all the information
-            about this case. If you have editing rights for this case, you can add products, businesses and supporting
-            information.</p>
+        <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-7">From here you can find all the information about this case. If you have editing rights for this case, you can add products, businesses and supporting information.</p>
     </div>
     <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-4">
         <div class="opss-text-align-right">
             <a href="close-case.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
                 Close case
-            </a><!-- or, Re-open case -->
+            </a>
         </div>
     </div>
-    <!--div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-2">
 
-        <ul class="govuk-list opss-float-right-desktop opss-text-align-right">
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Close case</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change Case owner</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Restrict this Case</a></li>
-            <li><a href="#" class="govuk-link govuk-link--no-visited-state opss-text-underline-offset">Change risk level</a></li>
-        </ul>
-
-    </div-->
 </div>
 
 
@@ -55,7 +27,7 @@ href: "cases"
             Skip to the main content
         </a>
 
-        {% include "psd-revised-flow/inc_left_nav_1c.html" %}
+        {% include "psd-revised-flow/case-status/inc_cases_left_nav_1.html" %}
     </nav>
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
@@ -78,10 +50,9 @@ href: "cases"
                     </a>
                 </dd>
             </div>
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Allegation <!--span class="opss-numero" title="Number">&numero;</span-->
-                    <!-- or Enquiry / Project -->
+                    Allegation <!--span class="opss-numero" title="Number">&numero;</span--> <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
                     2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
@@ -94,8 +65,7 @@ href: "cases"
                     Reference <!--span class="opss-numero" title="Number">&numero;</span-->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    12345300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading
-                        standards reference</span>
+                    12345300 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Trading standards reference</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="/psd-revised-flow/edit-reference-number" class="govuk-link govuk-link--no-visited-state">
@@ -108,13 +78,7 @@ href: "cases"
                     Summary
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    <span class="opss-text-limit-scroll-s">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam, laboriosam voluptate
-                        aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem vero, voluptatum nulla debitis
-                        recusandae rerum eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-                        magnam, laboriosam voluptate aut, rem nobis porro ipsam sint iure, earum facere! Ad dolorem
-                        vero, voluptatum nulla debitis recusandae rerum eos?
-                    </span>
+
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="/psd-revised-flow/edit-summary" class="govuk-link govuk-link--no-visited-state">
@@ -143,19 +107,6 @@ href: "cases"
                 <dt class="govuk-summary-list__key">Created</dt>
                 <dd class="govuk-summary-list__value">13 December 2021</dd>
             </div>
-            <!--div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Notifying country
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the notifying country</span>
-                    </a>
-                </dd>               
-            </div-->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Created by
@@ -249,19 +200,6 @@ href: "cases"
                     </a>
                 </dd>
             </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Regulator<span class="govuk-visually-hidden"> allegation origin</span>
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <abbr>UK</abbr>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="overseas-case-change" class="govuk-link govuk-link--no-visited-state">
-                        Change<span class="govuk-visually-hidden"> the regulator origin</span>
-                    </a>
-                </dd>
-            </div>
         </dl>
 
         <h3 id="safety" class="govuk-heading-m govuk-!-margin-top-6 opss-float-left">
@@ -295,8 +233,7 @@ href: "cases"
                 </dt>
                 <dd class="govuk-summary-list__value">
                     <span class="govuk-!-font-size-16">
-                        Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel
-                        architecto. Aut, maiores quisquam elit.
+                        Lorem ipsum oluta nisi assumenda, aperiam enim dolores labore non fuga. Dolorum rem vel architecto. Aut, maiores quisquam elit.
                     </span>
                 </dd>
             </div>
@@ -306,8 +243,7 @@ href: "cases"
             Case specific product information
         </h3>
 
-        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up
-            liquid</h4>
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up liquid</h4>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
             <div class="govuk-summary-list__row">
@@ -341,8 +277,7 @@ href: "cases"
                     Units affected
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact
-                        number</span>
+                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact number</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="edit-units-affected" class="govuk-link govuk-link--no-visited-state">
@@ -355,5 +290,3 @@ href: "cases"
     </section>
 
 </div>
-
-{% endblock %}

@@ -7,7 +7,7 @@ Was the allegation made by an overseas regulator
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "overseas-case"
+href: "case-trading-stds-landing-internal-users"
 }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@ href: "overseas-case"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <form action="/psd-revised-flow/case-trading-stds-landing-updated" method="post" novalidate>
+        <form action="/psd-revised-flow/overseas/case-trading-stds-landing-regulator-updated" method="post" novalidate>
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="reg-hint">
@@ -29,7 +29,7 @@ href: "overseas-case"
                     </legend>
 
                     <div id="reg-hint" class="govuk-hint govuk-!-margin-bottom-5">
-                        Select yes if the allegation was not from the <abbr>UK</abbr>.
+                        Select no if the allegation was from the <abbr>UK</abbr> (or <abbr>GB</abbr>).
                     </div>
 
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -329,7 +329,7 @@ href: "overseas-case"
 
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="reg-uk" name="reg" type="radio" value="country:GB" checked="checked">
+                            <input class="govuk-radios__input" id="reg-uk" name="reg" type="radio" value="country:GB">
                             <label class="govuk-label govuk-radios__label" for="reg-uk">No</label>
                         </div>
 
@@ -343,7 +343,7 @@ href: "overseas-case"
                     Save
                 </button>
 
-                <a class="govuk-link govuk-link--no-visited-state" href="overseas-case.html">Cancel</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="case-trading-stds-landing-internal-users.html">Cancel</a>
             </div>
 
         </form>

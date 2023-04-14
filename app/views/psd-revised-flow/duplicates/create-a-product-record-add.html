@@ -265,12 +265,18 @@ href: "#"
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m" for="barcode">Barcode number (GTIN, EAN or UPC)</label>
+        <div class="govuk-hint" id="barcode-hint">Normally 8, 12, or 13 digits</div>
+        <input class="govuk-input" id="barcode" name="product[barcode]" type="text" aria-describedby="barcode-hint" value="423423-234-23">
+      </div>
+
+      <!--div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="barcode">Barcode number (GTIN, EAN or UPC)</label>
         <div class="govuk-hint " id="barcode-hint">Normally 8, 12, or 13 digits</div>
 
         <p id="barcode" class="govuk-body">423423-234-23</p>
 
         <input class="govuk-input app-!-max-width-one-half" id="barcode" name="product[barcode]" type="hidden" />
-      </div>
+      </div-->
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
