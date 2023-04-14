@@ -106,12 +106,17 @@ h1.govuk-label-wrapper label.govuk-label--l {
 //   }
 // }
 
+.govuk-breadcrumbs__link:hover {
+  text-decoration-thickness: .15em !important;
+  text-decoration-thickness: .1875rem !important;
+} 
+
 main {
   a.govuk-link:hover {
     text-decoration-skip-ink: none;
     text-decoration: underline !important;
-    text-decoration-thickness: .1875rem !important;
     text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
   }
 
   a.govuk-link:active,

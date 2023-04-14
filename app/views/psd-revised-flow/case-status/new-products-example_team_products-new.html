@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
-Your products
+Team products
 {% endblock %}
 
 
@@ -13,13 +13,21 @@ Your products
   <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-      Your products
+      Team products
     </h1>
 
     <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-      There are 23 products linked to open cases where you are the case owner.
+      There are 3 product records linked to open cases where the Renfrewshire Council team is the case owner.
     </p>
 
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="opss-text-align-right govuk-!-margin-bottom-8">
+      <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+        Create a product record
+      </a>
+    </div>
   </div>
 
 </div>
@@ -34,14 +42,14 @@ Your products
 
     <nav aria-label="Secondary">
       <ul class="govuk-list opss-left-nav">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="new-products-example_your_products-new">Your products</a>
+        </li>
         <li class="opss-left-nav__active">
-          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-current="page">Your products</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="new-products-example_team_products-new" aria-current="page">Team products</a>
         </li>
         <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Team products</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="new-products-example_all.html">All products - Search</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="new-products-example_all_products-new">All products - Search</a>
         </li>
       </ul>
     </nav>
@@ -111,7 +119,35 @@ Your products
                 Product
               </th>
               <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Tesco kettle 100v</a>
+                <a href="page-team-products-page" class="govuk-link govuk-link--no-visited-state">Asda dishwashing liquid (Select this item as an example)</a>
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                Metadata
+              </th>
+              <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                psd-9873
+              </td>
+              <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                Electrical
+              </td>
+              <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                Electrical appliance
+              </td>
+              <td headers="counterfeit item-1 meta-1" class="govuk-table__cell">
+                No
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-visually-hidden">
+                Product
+              </th>
+              <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">View a typcial product record page</a>
               </th>
             </tr>
             <tr class="govuk-table__row">
