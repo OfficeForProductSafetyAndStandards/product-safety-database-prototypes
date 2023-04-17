@@ -1277,6 +1277,22 @@ dd dl.opss-nested-definition-list {
     & dl:last-of-type > div:last-child {
       border-bottom: none;
     }
+
+    .govuk-radios--inline .govuk-radios__conditional {
+      border-left: none; 
+      padding-left: govuk-spacing(0);
+      margin-left:  govuk-spacing(0);
+    }
+
+    .govuk-radios--small .govuk-radios__conditional {
+      .govuk-label, 
+      .govuk-select {
+        @include opss-font-size($s: 16px, $l: 1.2);
+      }
+      .govuk-label {
+        padding-top: govuk-spacing(2);
+      }
+    }
   }
 }
 

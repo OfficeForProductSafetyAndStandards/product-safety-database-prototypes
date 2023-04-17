@@ -1,0 +1,992 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+All cases - Search
+{% endblock %}
+
+
+{% block content %}
+
+{% include "psd-revised-flow/case-status-2/inc_cases-pgs-breadcrumbs.html" %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            All cases &ndash; Search
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+            Search all cases in the Product Safety Database (<abbr>PSD</abbr>).
+        </p>
+
+        <details class="govuk-details opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the cases search
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <!--p class="govuk-body-s">
+                    Cases are used to record findings of investigations and to notify the <abbr title="Office for Product Safety and Standards">OPSS</abbr> about unsafe and non-compliant products.
+                </p-->
+
+                <p class="govuk-body-s govuk-!-margin-bottom-4">
+                    <span id="search-hint">You can search for a case using a case number or the keywords that describe it and by filtering the results.</span> You can also filter all case records without a case number or a keyword search.
+                </p>
+
+                <p class="govuk-body-s govuk-!-margin-bottom-1">
+                    When viewing a list of search results you can <a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state">request the list</a> as a downloadable <abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet) file.
+                </p>
+
+                <p class="govuk-body-s govuk-visually-hidden">
+                    Search results appear within the following <code>form</code> and within the <code>role = region</code>.
+                </p>
+            </div>
+        </details>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="opss-text-align-right govuk-!-margin-bottom-8">
+            <a href="find-the-product.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+                Create a case
+            </a>
+        </div>
+    </div>
+</div>
+
+<form id="cases-search-form" action="/cases/search" role="search" accept-charset="UTF-8" novalidate>
+
+    <div class="govuk-grid-row opss-full-height">
+
+        <!--XXXXXXXXXX filters section starts XXXXXXXXXXX -->
+        <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+            <a href="#page-content" class="govuk-skip-link opss-skip-link">
+                Skip to the main content
+            </a>
+
+            <nav aria-label="Secondary">
+                <ul class="govuk-list opss-left-nav">
+                    <li>
+                        <a href="new-cases-example_your_cases-new" class="govuk-link govuk-link--no-visited-state">Your cases</a>
+                    </li>
+                    <li>
+                        <a href="new-cases-example_team_cases-new" class="govuk-link govuk-link--no-visited-state">Team cases</a>
+                    </li>
+                    <li>
+                        <a href="new-cases-example_assigned_cases-new" class="govuk-link govuk-link--no-visited-state">Assigned cases</a>
+                    </li>
+                    <li class="opss-left-nav__active">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" aria-current="page">All cases &ndash; Search</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">
+
+            <h2 class="govuk-heading-s">
+                Filters<span class="govuk-visually-hidden">:</span>
+            </h2>
+
+            <a href="#results" class="govuk-skip-link opss-skip-link opss-skip-link--mb">
+                Skip to results
+            </a>
+
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Case status
+                    </legend>
+
+                    <input name="status_open" type="hidden" value="off">
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case-status" name="case-status" type="radio" value="open" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="case-status">
+                                Open
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case-status-2" name="case-status" type="radio" value="closed">
+                            <label class="govuk-label govuk-radios__label" for="case-status-2">
+                                Closed
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="case-status-3" name="case-status" type="radio" value="all">
+                            <label class="govuk-label govuk-radios__label" for="case-status-3">
+                                All
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        Case priority
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--small">
+                        <input name="priority_all" type="hidden" value="on">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="all_priority" name="case_priority" type="radio" value="all_priority" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="all_priority">
+                                All
+                            </label>
+                        </div>
+                        <!--input name="coronavirus_related_only" type="hidden" value="off">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="coronavirus_related_only" name="case_priority" type="radio" value="coronavirus_related_only">
+                            <label class="govuk-label govuk-radios__label" for="coronavirus_related_only">
+                                Coronavirus
+                            </label>
+                        </div-->
+                        <input name="serious_and_high_risk_level_only" type="hidden" value="off">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="serious_and_high_risk_level_only" name="case_priority" type="radio" value="serious_and_high_risk_level_only">
+                            <label class="govuk-label govuk-radios__label" for="serious_and_high_risk_level_only">
+                                Serious and high risk
+                            </label>
+                        </div>
+                        <!--div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="coronavirus_serious_and_high_risk_level_only" name="case_priority" type="radio" value="coronavirus_serious_and_high_risk_level_only">
+                            <label class="govuk-label govuk-radios__label" for="coronavirus_serious_and_high_risk_level_only">
+                                Coronavirus and <br class="opss-br-desktop">serious and high risk
+                            </label>
+                        </div-->
+                    </div>
+                </fieldset>
+            </div>
+
+            <details class="govuk-details opss-details--plain" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        More options
+                    </span>
+                </summary>
+                <div class="govuk-details__text govuk-!-margin-top-2">
+
+                    <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                                Case owner
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+                                <input name="case_owner_is_all" type="hidden" value="on">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="case_owner_is_all" name="case_owner" type="radio" value="case_owner_is_all" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="case_owner_is_all">
+                                        All
+                                    </label>
+                                </div>
+                                <input name="case_owner_is_me" type="hidden" value="off">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="case_owner_is_me" name="case_owner" type="radio" value="case_owner_is_me">
+                                    <label class="govuk-label govuk-radios__label" for="case_owner_is_me">
+                                        Me
+                                    </label>
+                                </div>
+                                <input name="case_owner_is_my_team" type="hidden" value="off">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="case_owner_is_my_team" name="case_owner" type="radio" value="case_owner_is_my_team">
+                                    <label class="govuk-label govuk-radios__label" for="case_owner_is_my_team">
+                                        Me and my team
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="case_owner_is_other" name="case_owner" type="radio" value="case_owner_is_other" data-aria-controls="conditional-case_owner_is_other">
+                                    <label class="govuk-label govuk-radios__label" for="case_owner_is_other">
+                                        Others
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-case_owner_is_other">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="case_owner_is_someone_else_id">
+                                            Person or team name
+                                        </label>
+                                        <div>
+                                            <select class="govuk-select " id="case_owner_is_someone_else_id" name="case_owner_is_someone_else_id">
+                                                <option selected=""></option>
+                                                <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc">(OPSS Processing)</option>
+                                                <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Khan-TS (Birmingham trading standards)</option>
+                                                <option value="4a1f0721-32a3-47ae-b183-a7a2fbaa01fc">Toby Hughes (OPSS Processing)</option>
+                                                <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
+                                                <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
+                                                <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles</option>
+                                                <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
+                                                <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
+                                                <option value="f2ad277a-0070-4b4e-923b-980e2028eff2">Nasir (Birmingham trading standards)</option>
+                                                <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Processing)</option>
+                                                <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+                                                <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
+                                                <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+                                                <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
+                                                <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O&#39;Kane</option>
+                                                <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
+                                                <option value="f8be3c51-32b6-4cb4-ba6d-6f6a9311d310">Toby Hughes</option>
+                                                <option value="177672e7-9e2b-44f7-aa05-852b8e68d80e">Robert Sykes (OPSS Processing)</option>
+                                                <option value="ff17f024-3f7d-4aff-ae3f-6001862a7211">Luis Morrison (OPSS Processing)</option>
+                                                <option value="9a71136e-7bc1-4f2d-8e1a-d155bceefbbc">Robert Sykes</option>
+                                                <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+                                                <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Khan (OPSS Processing)</option>
+                                                <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
+                                                <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+                                                <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
+                                                <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+                                                <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+                                                <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+                                                <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+                                                <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+                                                <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+                                                <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+                                                <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+                                                <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+                                                <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+                                                <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+                                                <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+                                                <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+                                                <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+                                                <option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option>
+                                                <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+                                            </select>
+                                        </div>
+
+                                        <script>
+                                            //<![CDATA[
+                                            window.callAutocompleteWhenReady("case_owner_is_someone_else_id", { showAllValues: "" });
+                                            //]]>
+                                        </script>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                                Teams added to cases
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+                                <input name="teams_with_access[my_team]" type="hidden" value="off">
+                                <input name="teams_with_access[other_team_with_access]" type="hidden" value="off">
+                                <input name="teams_with_access[none]" type="hidden" value="on">
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="teams_with_access_none_" name="teams_access" type="radio" value="teams_with_access_none" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="teams_with_access_none_">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="teams_with_access_my_team_" name="teams_access" type="radio" value="c33ae052-df08-46c4-bcda-6c917a89440e">
+                                    <label class="govuk-label govuk-radios__label" for="teams_with_access_my_team_">
+                                        My team
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="teams_with_access_other_team_with_access_" name="teams_access" type="radio" value="true" data-aria-controls="conditional-teams_with_access_other_team_with_access_">
+                                    <label class="govuk-label govuk-radios__label" for="teams_with_access_other_team_with_access_">
+                                        Others
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-teams_with_access_other_team_with_access_">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="teams_with_access_id_">Team name</label>
+
+                                        <div>
+                                            <select class="govuk-select" id="teams_with_access_id_" name="teams_with_access[id][]">
+                                                <option selected></option>
+                                                <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+                                                <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+                                                <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+                                                <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+                                                <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+                                                <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+                                                <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+                                                <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+                                                <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+                                                <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+                                                <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+                                                <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+                                                <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+                                                <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+                                                <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+                                            </select>
+                                        </div>
+
+                                        <script>
+                                            //<![CDATA[
+                                            window.callAutocompleteWhenReady("teams_with_access_id_", { showAllValues: "" });
+                                            //]]>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                                Created by
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+                                <input name="created_by[all]" type="hidden" value="on">
+                                <input name="created_by[me]" type="hidden" value="off">
+                                <input name="created_by[my_team]" type="hidden" value="off">
+                                <input name="created_by[me_and_team]" type="hidden" value="off">
+                                <input name="created_by[someone_else]" type="hidden" value="off">
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="created_by_all_" name="created_by" type="radio" value="created_by_all" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="created_by_all_">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="created_by_me_" name="created_by" type="radio" value="created_by_me">
+                                    <label class="govuk-label govuk-radios__label" for="created_by_me_">
+                                        Me
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="created_by_my_team_" name="created_by" type="radio" value="created_by_my_team">
+                                    <label class="govuk-label govuk-radios__label" for="created_by_my_team_">
+                                        Me and my team
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="created_by_someone_else_" name="created_by" type="radio" value="created_by_someone_else" data-aria-controls="conditional-created_by_someone_else_">
+                                    <label class="govuk-label govuk-radios__label" for="created_by_someone_else_">
+                                        Others
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-created_by_someone_else_">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="created_by_id_">Person or team name</label>
+                                        <div>
+                                            <select class="govuk-select " id="created_by_id_" name="created_by[id]">
+                                                <option selected></option>
+                                                <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
+                                                <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Khan-TS (Birmingham trading standards)</option>
+                                                <option value="4a1f0721-32a3-47ae-b183-a7a2fbaa01fc">Toby Hughes (OPSS Processing)</option>
+                                                <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
+                                                <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
+                                                <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles</option>
+                                                <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
+                                                <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
+                                                <option value="f2ad277a-0070-4b4e-923b-980e2028eff2">Nasir (Birmingham trading standards)</option>
+                                                <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Processing)</option>
+                                                <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+                                                <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
+                                                <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+                                                <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
+                                                <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O&#39;Kane</option>
+                                                <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
+                                                <option value="f8be3c51-32b6-4cb4-ba6d-6f6a9311d310">Toby Hughes</option>
+                                                <option value="177672e7-9e2b-44f7-aa05-852b8e68d80e">Robert Sykes (OPSS Processing)</option>
+                                                <option value="ff17f024-3f7d-4aff-ae3f-6001862a7211">Luis Morrison (OPSS Processing)</option>
+                                                <option value="9a71136e-7bc1-4f2d-8e1a-d155bceefbbc">Robert Sykes</option>
+                                                <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+                                                <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Khan (OPSS Processing)</option>
+                                                <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
+                                                <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+                                                <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
+                                                <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+                                                <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+                                                <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+                                                <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+                                                <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+                                                <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+                                                <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+                                                <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+                                                <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+                                                <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+                                                <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+                                                <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+                                                <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+                                                <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+                                                <option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option>
+                                                <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+                                            </select>
+                                        </div>
+
+                                        <script>
+                                            //<![CDATA[
+                                            window.callAutocompleteWhenReady("created_by_id_", { showAllValues: "" });
+                                            //]]>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                                Case type
+                            </legend>
+
+                            <input name="serious_and_high_risk_level_only" type="hidden" value="off">
+
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="all_type" name="case_type" type="radio" value="all" checked="checked">
+                                    <label class="govuk-label govuk-radios__label" for="all_type">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="allegation" name="case_type" type="radio" value="serious_and_high_risk_level_only">
+                                    <label class="govuk-label govuk-radios__label" for="allegation">
+                                        Allegation
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="enquiry" name="case_type" type="radio" value="enquiry">
+                                    <label class="govuk-label govuk-radios__label" for="enquiry">
+                                        Enquiry
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="project" name="case_type" type="radio" value="project">
+                                    <label class="govuk-label govuk-radios__label" for="project">
+                                        Project
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group opss-form-group opss-form-group--sm-labels govuk-!-margin-right-1">
+                        <label class="govuk-label" for="hazard_type">Hazard type</label>
+
+                        <select class="govuk-select" id="hazard_type" name="hazard_type">
+                            <option class="govuk-!-font-size-16" value="" selected="selected">All</option>
+                            <option class="govuk-!-font-size-16" value="Asphyxiation">Asphyxiation</option>
+                            <option class="govuk-!-font-size-16" value="Burns">Burns</option>
+                            <option class="govuk-!-font-size-16" value="Chemical">Chemical</option>
+                            <option class="govuk-!-font-size-16" value="Choking">Choking</option>
+                            <option class="govuk-!-font-size-16" value="Cuts">Cuts</option>
+                            <option class="govuk-!-font-size-16" value="Damage to hearing">Damage to hearing</option>
+                            <option class="govuk-!-font-size-16" value="Damage to sight">Damage to sight</option>
+                            <option class="govuk-!-font-size-16" value="Disturbance">Disturbance</option>
+                            <option class="govuk-!-font-size-16" value="Drowning">Drowning</option>
+                            <option class="govuk-!-font-size-16" value="Electric shock">Electric shock</option>
+                            <option class="govuk-!-font-size-16" value="Electromagnetic">Electromagnetic</option>
+                            <option class="govuk-!-font-size-16" value="Energy consumption">Energy consumption</option>
+                            <option class="govuk-!-font-size-16" value="Entrapment">Entrapment</option>
+                            <option class="govuk-!-font-size-16" value="Environment">Environment</option>
+                            <option class="govuk-!-font-size-16" value="Fire">Fire</option>
+                            <option class="govuk-!-font-size-16" value="Health risk">Health risk</option>
+                            <option class="govuk-!-font-size-16" value="Incorrect measurement">Incorrect measurement</option>
+                            <option class="govuk-!-font-size-16" value="Injuries">Injuries</option>
+                            <option class="govuk-!-font-size-16" value="Microbiological">Microbiological</option>
+                            <option class="govuk-!-font-size-16" value="Security">Security</option>
+                            <option class="govuk-!-font-size-16" value="Strangulation">Strangulation</option>
+                            <option class="govuk-!-font-size-16" value="Suffocation">Suffocation</option>
+                            <option class="govuk-!-font-size-16" value="Other">Other</option>
+                        </select>
+                    </div>
+
+                </div>
+            </details>
+
+            <div class="govuk-button-group">
+
+            </div>
+
+
+            <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
+                <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+                    Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+                </p>
+            </div>
+        </section>
+        <!-- XXXXXXXXX filters section ends XXXXXXXXXXXXX -->
+
+        <!-- ********* results section starts ************ -->
+
+        <section id="page-content" class="govuk-grid-column-three-quarters" role="region" aria-label="Search and results">
+
+            <form action="new-cases-example_all_cases-new-results.html" novalidate>
+
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label--s" for="cases-search">Search</label>
+
+                            <div class="govuk-input__wrapper opss-search__wrapper">
+                                <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="cases-search" id="cases-search" aria-describedby="search-hint">
+                                <button class="govuk-button govuk-!-margin-bottom-0">
+                                    <span class="govuk-visually-hidden">Submit search</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-status">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Case status
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-status">
+                                    Filter the search results to only include open or closed cases.
+                                </div>
+
+                                <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input opss-radios__input-default" id="status" name="status" type="radio" value="open" checked>
+                                        <label class="govuk-label govuk-radios__label" for="status">
+                                            Open
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="status-2" name="status" type="radio" value="closed">
+                                        <label class="govuk-label govuk-radios__label" for="status-2">
+                                            Closed
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="status-3" name="status" type="radio" value="all">
+                                        <label class="govuk-label govuk-radios__label" for="status-3">
+                                            All
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-priority">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Case priority
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-priority">
+                                    Filter the search results to only include cases set as serious or high risk.
+                                </div>
+
+                                <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input opss-radios__input-default" id="priority" name="priority" type="radio" value="all-risk" checked>
+                                        <label class="govuk-label govuk-radios__label" for="priority">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="priority-2" name="priority" type="radio" value="high-risk">
+                                        <label class="govuk-label govuk-radios__label" for="priority-2">
+                                            Serious or high risk
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-owner">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Case owner
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-owner">
+                                    Filter the search results to only include your own cases or cases created by other teams.
+                                </div>
+
+                                <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input opss-radios__input-default" id="owner" name="owner" type="radio" value="all-owner" checked>
+                                        <label class="govuk-label govuk-radios__label" for="owner">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="owner-2" name="owner" type="radio" value="me-owner">
+                                        <label class="govuk-label govuk-radios__label" for="owner-2">
+                                            Me
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="owner-3" name="owner" type="radio" value="me-team-owner">
+                                        <label class="govuk-label govuk-radios__label" for="owner-3">
+                                            Me and my team
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="owner-4" name="owner" type="radio" value="others-owner">
+                                        <label class="govuk-label govuk-radios__label" for="owner-4">
+                                            Others
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-assigned">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Teams assigned to cases
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-assigned">
+                                    Filter the search results to only include cases where a team has been added to the case.
+                                </div>
+
+                                <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input opss-radios__input-default" id="assigned" name="assigned" type="radio" value="all-assigned" checked>
+                                        <label class="govuk-label govuk-radios__label" for="assigned">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="assigned-2" name="assigned" type="radio" value="team-assigned">
+                                        <label class="govuk-label govuk-radios__label" for="assigned-2">
+                                            My team
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="assigned-3" name="assigned" type="radio" value="others-assigned" data-aria-controls="conditional-contact-3">
+                                        <label class="govuk-label govuk-radios__label" for="assigned-3">
+                                            Others
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-!-font-size-16" for="assigned-others-team">
+                                                Select a name or team
+                                            </label>
+                                            <select class="govuk-select" id="assigned-others-team" name="assigned-others-team">
+                                                <option value="a77cb59d-1dcd-47e9-ba90-97a333513102" selected="selected">Richard Burnett</option>
+                                                <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
+                                                <option value="32d6a1df-6832-4062-9b8c-a60f54fce5bf">Richard Burnett (OPSS view) (OPSS Processing)</option>
+                                                <option value="c18d1518-b265-40d6-a8db-9f3bb0db04a4">Adam McKeown (OPSS Processing)</option>
+                                                <option value="791800d6-605f-4184-9c48-585236b7d933">Jacob O&#39;Toole</option>
+                                                <option value="13762607-c942-4f64-8b88-51bd4d7afb42">Deborah Lader</option>
+                                                <option value="66fedde6-c386-4225-abb8-050088d3576d">Nasir (OPSS Processing)</option>
+                                                <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Processing)</option>
+                                                <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O&#39;Kane</option>
+                                                <option value="a6ef4fd3-43e4-4acc-ad45-53855f2fe963">Kara Barnard</option>
+                                                <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (OPSS Processing)</option>
+                                                <option value="750717e5-0c5d-4877-847a-e55748630ee7">Nasir Ali Khan (OPSS Processing)</option>
+                                                <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
+                                                <option value="95031954-5947-44f3-9842-0be08bef5b52">Sam Imevbore (Birmingham trading standards)</option>
+                                                <option value="87d14963-7a52-48dd-b9c9-4bd773cbd861">Alec Johns (Trading Standards view)</option>
+                                                <option value="08730f1a-2ad4-4f68-b73d-57dce4ab4c10">Nick Henson (OPSS Processing)</option>
+                                                <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+                                                <option value="49f8b7cd-e0e7-49bd-a85e-270d313065f6">Nasir Khan (Birmingham trading standards)</option>
+                                                <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
+                                                <option value="943f243b-d2e6-4783-ae68-60cc5cf53996">Lucy Duncan</option>
+                                                <option value="8aa4589a-42c7-4461-afd5-8dc2b76acccf">Dave Boston</option>
+                                                <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
+                                                <option value="0087b584-a786-4814-866a-82b2aeb56980">Bruce the second</option>
+                                                <option value="2ef5c5fe-3c68-4eff-aa0a-cdee8e45afd3">Neil Lines (pen tester)</option>
+                                                <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Ali Khan (OPSS Processing)</option>
+                                                <option value="9e5aeb75-6d56-47f3-931b-85d13009e493">Nasir (OPSS Processing)</option>
+                                                <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
+                                                <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
+                                                <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
+                                                <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+                                                <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
+                                                <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+                                                <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
+                                                <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
+                                                <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
+                                                <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+                                                <option value="2b7c3f52-e9fc-4365-9d71-93bbef9820e7">Bruce (OPSS Processing)</option>
+                                                <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Ali Khan (Birmingham trading standards)</option>
+                                                <option value="412aa24e-cc82-47e8-bf8f-97e6b2490ae5">Sham Islam (OPSS Processing)</option>
+                                                <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+                                                <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+                                                <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+                                                <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+                                                <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+                                                <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+                                                <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+                                                <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+                                                <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+                                                <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+                                                <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+                                                <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+                                                <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+                                                <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+                                                <option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option>
+                                                <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+
+
+                        <!-- Dates not included yet ...
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset govuk-!-padding-bottom-5 opss-grouping" aria-describedby="notified-date">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Notification date
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="notified-date">
+                                    Filter the search results to only include cases notified within a date range.
+                                </div>
+
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-one-half">
+                                        
+                                        <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="from-hint">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4 opss-float-left">
+                                                From
+                                            </legend>
+
+                                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="from-hint">
+                                                For example, 27 9 2020
+                                            </div>
+
+                                            <div class="govuk-date-input" id="from">
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                            Day
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                            Month
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                            Year
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        
+                                        <fieldset class="govuk-fieldset govuk-!-margin-top-3" role="group" aria-describedby="to-hint">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-right-4">
+                                                To
+                                            </legend>
+
+                                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1 govuk-visually-hidden" id="to-hint">
+                                                For example, 27 8 2022
+                                            </div>
+
+                                            <div class="govuk-date-input" id="to">
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="to-day">
+                                                            Day
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="to-month">
+                                                            Month
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="to-year">
+                                                            Year
+                                                        </label>
+                                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        
+                                    </div>
+                                </div>
+
+
+                            </fieldset>
+                        </div>
+                        -->
+
+
+                        <!-- **************** only include CASE TYPE for internatl OPSS users - starts ******************** -->
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset opss-grouping" aria-describedby="case-type">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                    Case type
+                                </legend>
+
+                                <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="case-type">
+                                    Legacy cases can be filtered by their case type.
+                                </div>
+
+                                <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input opss-radios__input-default" id="type" name="type" type="radio" value="type-all" checked>
+                                        <label class="govuk-label govuk-radios__label" for="type">
+                                            All
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="type-allegation">
+                                        <label class="govuk-label govuk-radios__label" for="type-2">
+                                            Allegation
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="type-3" name="type" type="radio" value="type-enquiry">
+                                        <label class="govuk-label govuk-radios__label" for="type-3">
+                                            Enquiry
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="type-project">
+                                        <label class="govuk-label govuk-radios__label" for="type-4">
+                                            Project
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- **************** only include CASE TYPE for internatl OPSS users - ends ******************** -->
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset opss-grouping" aria-describedby="hazard-type">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                            Hazard type
+                                        </legend>
+
+                                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="hazard-type">
+                                            Filter the search results to only include cases of a specific primary hazard type.
+                                        </div>
+
+
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset opss-grouping" aria-describedby="sorting-order">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                            Sorting order
+                                        </legend>
+
+                                        <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="sorting-order">
+                                            Sort the ordering of how the search results will be displayed.
+                                        </div>
+
+                                        <div class="govuk-radios govuk-radios--small govuk-!-margin-top-3">
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input opss-radios__input-default" id="sorting" name="sorting" type="radio" value="recent-updates" checked>
+                                                <label class="govuk-label govuk-radios__label" for="sorting">
+                                                    Recent updates
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="sorting-2" name="sorting" type="radio" value="oldest-updates">
+                                                <label class="govuk-label govuk-radios__label" for="sorting-2">
+                                                    Oldest updates
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="sorting-3" name="sorting" type="radio" value="newest-cases">
+                                                <label class="govuk-label govuk-radios__label" for="sorting-3">
+                                                    Newest cases
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="sorting-4" name="sorting" type="radio" value="oldest-cases">
+                                                <label class="govuk-label govuk-radios__label" for="sorting-4">
+                                                    Oldest cases
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="govuk-button-group">
+                            <button class="govuk-button">
+                                Search
+                            </button>
+
+                            <button type="reset" class="govuk-button opss-button-link opss-nojs-hide" id="opss-reset">
+                                Reset
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- ********* results section ends ************** -->
+
+    </div>
+
+
+</form>
+<script>
+    //****** js for reset filters starts ******
+    function findAncestor(el, sel) {//to support ie11 (can't use closest)
+        while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el, sel)));
+        return el;
+    }
+    var myReset = document.getElementById("opss-reset");
+    var mySection = findAncestor(myReset, "section");
+    var checkedRadios = mySection.querySelectorAll('.govuk-radios__input');
+    var radioGroups = mySection.querySelectorAll(".govuk-radios");
+    var expandedDivs = mySection.querySelectorAll(".govuk-radios__conditional");
+
+    myReset.addEventListener("click", function () {
+        Array.prototype.forEach.call(checkedRadios, function (el, i) {
+            el.checked = false;
+        });
+        Array.prototype.forEach.call(expandedDivs, function (el, i) {
+            el.classList.add("govuk-radios__conditional--hidden");
+        });
+        Array.prototype.forEach.call(radioGroups, function (el, i) {
+            el.querySelector(".govuk-radios__input").checked = true;
+        });
+    });
+</script>
+
+
+
+{% endblock %}
