@@ -1261,6 +1261,12 @@ dd dl.opss-nested-definition-list {
       font-weight: normal;
     }
 
+    & > .govuk-form-group > .govuk-fieldset .opss-grouping__legend--s {
+      top: - govuk-spacing(2) - 3;
+      padding-left: govuk-spacing(2);
+      padding-right: govuk-spacing(2);
+    }
+
     & > dl {
       margin-bottom: 0;
 
@@ -1294,7 +1300,15 @@ dd dl.opss-nested-definition-list {
         padding-top: govuk-spacing(2);
       }
     }
+
+    &.govuk-grid-column-one-half .govuk-select {
+      width: 100%;
+    }
   }
+}
+
+label.opss-grouping__heading--norm {
+  font-weight: bold;
 }
 
 @include govuk-media-query($from: tablet) {
