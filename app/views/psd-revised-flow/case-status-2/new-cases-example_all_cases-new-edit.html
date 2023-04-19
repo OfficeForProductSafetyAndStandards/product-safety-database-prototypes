@@ -95,7 +95,7 @@ All cases - Search
                         <label class="govuk-label--s" for="cases-search">Search</label>
 
                         <div class="govuk-input__wrapper opss-search__wrapper">
-                            <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="cases-search" id="cases-search" aria-describedby="search-hint">
+                            <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="cases-search" id="cases-search" aria-describedby="search-hint" value="Tesco handcream wash">
                             <button class="govuk-button govuk-!-margin-bottom-0">
                                 <span class="govuk-visually-hidden">Submit search</span>
                             </button>
@@ -147,13 +147,13 @@ All cases - Search
 
                             <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input opss-radios__input-default" id="priority" name="priority" type="radio" value="all-risk" checked>
+                                    <input class="govuk-radios__input opss-radios__input-default" id="priority" name="priority" type="radio" value="all-risk">
                                     <label class="govuk-label govuk-radios__label" for="priority">
                                         All
                                     </label>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="priority-2" name="priority" type="radio" value="high-risk">
+                                    <input class="govuk-radios__input" id="priority-2" name="priority" type="radio" value="high-risk" checked>
                                     <label class="govuk-label govuk-radios__label" for="priority-2">
                                         Serious or high risk
                                     </label>
@@ -213,7 +213,7 @@ All cases - Search
 
                             <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input opss-radios__input-default" id="assigned" name="assigned" type="radio" value="all-assigned" checked>
+                                    <input class="govuk-radios__input opss-radios__input-default" id="assigned" name="assigned" type="radio" value="all-assigned">
                                     <label class="govuk-label govuk-radios__label" for="assigned">
                                         All
                                     </label>
@@ -225,7 +225,7 @@ All cases - Search
                                     </label>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="assigned-3" name="assigned" type="radio" value="others-assigned" data-aria-controls="conditional-contact-3">
+                                    <input class="govuk-radios__input" id="assigned-3" name="assigned" type="radio" value="others-assigned" data-aria-controls="conditional-contact-3" checked>
                                     <label class="govuk-label govuk-radios__label" for="assigned-3">
                                         Others
                                     </label>
@@ -236,7 +236,7 @@ All cases - Search
                                             Select a name or team
                                         </label>
                                         <select class="govuk-select" id="assigned-others-team" name="assigned-others-team">
-                                            <option value="a77cb59d-1dcd-47e9-ba90-97a333513102" selected="selected">Richard Burnett</option>
+                                            <option value="a77cb59d-1dcd-47e9-ba90-97a333513102">Richard Burnett</option>
                                             <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
                                             <option value="32d6a1df-6832-4062-9b8c-a60f54fce5bf">Richard Burnett (OPSS view) (OPSS Processing)</option>
                                             <option value="c18d1518-b265-40d6-a8db-9f3bb0db04a4">Adam McKeown (OPSS Processing)</option>
@@ -265,7 +265,7 @@ All cases - Search
                                             <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
                                             <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
                                             <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
-                                            <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+                                            <option value="757cee56-c803-478a-9e57-c1b315bb7d3b" selected="selected">Trading Standards User 1 (Trading Standards 1)</option>
                                             <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
                                             <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
                                             <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
@@ -547,7 +547,7 @@ All cases - Search
 </div>
 
 <script>
-    //****** js for reset filters ******   NEEDED for resetting open conditional radios
+    //****** js for reset filters ******
     document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
         var targetElement = document.getElementById("page-content");
         var elements;
