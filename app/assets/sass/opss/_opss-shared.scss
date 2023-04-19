@@ -1307,10 +1307,10 @@ dd dl.opss-nested-definition-list {
 
     body:not(.js-enabled) & {
       .govuk-radios--inline.govuk-radios--small:last-child {
-        .govuk-radios__item input[data-aria-controls] + .govuk-radios__label {  
+        .govuk-radios__item input[data-aria-controls] + .govuk-radios__label {
           background-color: govuk-colour("light-grey");
-          padding-left: 45px; 
-          margin-left: - 40px; 
+          padding-left: 45px;
+          margin-left: - 40px;
 
           &:before {
             left: 5px;
@@ -1318,15 +1318,14 @@ dd dl.opss-nested-definition-list {
 
           &:after {
             left: 12px;
-          } 
-        } 
-        
-        .govuk-radios__conditional {
-          width: fit-content; 
-          background-color: govuk-colour("light-grey"); 
-          padding: 0 govuk-spacing(2) govuk-spacing(2) govuk-spacing(2); 
+          }
         }
 
+        .govuk-radios__conditional {
+          width: fit-content;
+          background-color: govuk-colour("light-grey");
+          padding: 0 govuk-spacing(2) govuk-spacing(2) govuk-spacing(2);
+        }
       }
     }
   }
