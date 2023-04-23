@@ -83,7 +83,7 @@ All products - Search
             <label class="govuk-label--s" for="products-search">Search</label>
 
             <div class="govuk-input__wrapper opss-search__wrapper">
-              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="products-search" id="products-search" aria-describedby="search-hint">
+              <input class="govuk-input govuk-!-width-three-quarters" spellcheck="false" type="search" name="products-search" id="products-search" aria-describedby="search-hint" value="Dyson V8 Total Clean">
               <button class="govuk-button govuk-!-margin-bottom-0">
                 <span class="govuk-visually-hidden">Submit search</span>
               </button>
@@ -206,7 +206,7 @@ All products - Search
                 </div>
 
                 <select class="govuk-select" id="category" name="category" data-opss-clear-on-reset="element">
-                  <option selected="selected" value="">All</option>
+                  <option value="">All</option>
                   <option value="Personal protective equipment (PPE)">Personal protective equipment (PPE)</option>
                   <option value="Hand sanitiser">Hand sanitiser</option>
                   <option value="Chemical products">Chemical products</option>
@@ -217,7 +217,7 @@ All products - Search
                   <option value="Cosmetics">Cosmetics</option>
                   <option value="Decorative articles">Decorative articles</option>
                   <option value="Eco-design">Eco-design</option>
-                  <option value="Electrical appliances and equipment">Electrical appliances and equipment</option>
+                  <option value="Electrical appliances and equipment" selected="selected">Electrical appliances and equipment</option>
                   <option value="Explosive atmospheres equipment">Explosive atmospheres equipment</option>
                   <option value="Food-imitating products">Food-imitating products</option>
                   <option value="Furniture">Furniture</option>
@@ -260,13 +260,13 @@ All products - Search
 
                   <div class="govuk-radios govuk-radios--small govuk-!-margin-top-3">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input opss-radios__input-default" id="ordering" name="ordering" type="radio" value="order-newly" checked>
+                      <input class="govuk-radios__input opss-radios__input-default" id="ordering" name="ordering" type="radio" value="order-newly">
                       <label class="govuk-label govuk-radios__label" for="ordering">
                         Newly added
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="ordering-2" name="ordering" type="radio" value="order-a-z">
+                      <input class="govuk-radios__input" id="ordering-2" name="ordering" type="radio" value="order-a-z" checked>
                       <label class="govuk-label govuk-radios__label" for="ordering-2">
                         Name A-Z
                       </label>
@@ -305,7 +305,7 @@ All products - Search
 </div>
 
 <script>
-  //****** js for reset filters ******   NEEDED for resetting open conditional radios
+  //****** js for reset filters ******   NEEDED for resetting open conditional radios and set inputs on search edit page
   document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
     var targetElement = document.getElementById("page-content");
     var elements;

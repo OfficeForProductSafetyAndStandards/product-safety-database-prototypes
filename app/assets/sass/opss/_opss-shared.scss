@@ -223,6 +223,14 @@ body.js-enabled .opss-nojs-hide {
   .opss-padding-bottom-4-mobile {
     padding-bottom: govuk-spacing(4);
   }
+
+  .opss-padding-bottom-3-mobile {
+    padding-bottom: govuk-spacing(3);
+  }  
+
+  .opss-padding-bottom-2-mobile {
+    padding-bottom: govuk-spacing(2);
+  }   
 }
 
 @include govuk-media-query($from: desktop) {
