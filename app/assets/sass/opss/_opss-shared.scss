@@ -112,9 +112,15 @@ h1.govuk-label-wrapper label.govuk-label--l {
 }
 
 main {
-  a.govuk-link:hover {
+  a.govuk-link:hover,
+  .govuk-details .govuk-details__summary-text:hover {
     text-decoration-skip-ink: none;
     text-decoration: underline !important;
+    text-decoration-thickness: .15em !important;
+    text-decoration-thickness: .1875rem !important;
+  }
+
+  .opss-button-link:hover {
     text-decoration-thickness: .15em !important;
     text-decoration-thickness: .1875rem !important;
   }
