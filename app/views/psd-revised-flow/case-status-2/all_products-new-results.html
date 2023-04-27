@@ -1,25 +1,36 @@
-{% extends "layout-routes-02.html" %}
+{% extends "layout-psd-menu_products.html" %}
 
 {% block pageTitle %}
-Your products
+All products - search results
 {% endblock %}
 
 
 {% block content %}
 
+{% include "psd-revised-flow/case-status-2/inc_products-pgs-breadcrumbs.html" %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
-      Your products
+      All products &ndash; search results
     </h1>
 
-    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
-      There are 23 products linked to open cases where you are the case owner.
+    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1 govuk-visually-hidden">
+      Your search results page.
     </p>
 
   </div>
-
+  <div class="govuk-grid-column-one-third">
+    <div class="opss-text-align-right">
+      <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+        Create a product record
+      </a>
+      <!--a href="new-products-example_all_products-new.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+        Search again
+      </a-->
+    </div>
+  </div>
 </div>
 
 <div class="govuk-grid-row opss-full-height">
@@ -32,62 +43,57 @@ Your products
 
     <nav aria-label="Secondary">
       <ul class="govuk-list opss-left-nav">
+        <li>
+          <a href="new-products-example_your_products-new" class="govuk-link govuk-link--no-visited-state">Your products</a>
+        </li>
+        <li>
+          <a href="new-products-example_team_products-new" class="govuk-link govuk-link--no-visited-state">Team products</a>
+        </li>
         <li class="opss-left-nav__active">
-          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-current="page">Your products</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Team products</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="new-products-example_all.html">All products - Search</a>
+          <a href="new-products-example_all_products-new" class="govuk-link govuk-link--no-visited-state" aria-current="page">All products &ndash; Search</a>
         </li>
       </ul>
     </nav>
 
+    <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
+      <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+        Request this list as a downloadable <br class="opss-br-desktop">
+        <a class="govuk-link govuk-link--no-visited-state" href="/product_exports/generate"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+      </p>
+    </div>
+
   </section>
 
-  <section class="govuk-grid-column-three-quarters" id="page-content">
+  <!-- ********* results section starts ************ -->
+  <section class="govuk-grid-column-three-quarters" id="page-content" role="region" aria-label="Search and results">
 
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-one-third opss-float-right-desktop">
-        <div class="govuk-form-group opss-text-align-right">
-          <fieldset id="sort-by-fieldset" class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
-            <label class="govuk-label govuk-body-s" for="sort_by">
-              Order <span class="govuk-visually-hidden">the results</span> by
-            </label>
-            <select class="govuk-select govuk-!-margin-bottom-1" id="sort_by">
-              <option selected="selected" data-url="/products?sort_by=created_at">Newly added</option>
-              <option data-url="/products?sort_by=name&amp;sort_dir=asc">Name A-Z</option>
-              <option data-url="/products?sort_by=name&amp;sort_dir=desc">Name Z-A</option>
-            </select>
-          </fieldset>
-
-          <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
-            <dt>
-              Sort <span class="govuk-visually-hidden">the results</span> by
-            </dt>
-            <dd>
-              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Newly added</a>
-            </dd>
-            <dd>
-              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
-                <span class="govuk-visually-hidden">Active: </span>Name A-Z
-              </a>
-            </dd>
-            <dd class="opss-dl-select__active">
-              <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
-                Name Z-A
-              </a>
-            </dd>
-          </dl>
-        </div>
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          20 products using the current filters, were found.
+        </p>
       </div>
 
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+        <div class="opss-text-align-right">
+
+          <form action="new-products-example_all_products-new-edit.html" novalidate>
+            <input type="hidden" name="filter-1" value="filter setting">
+            <input type="hidden" name="main-search" value="search text">
+            <!-- etc -->
+
+            <button class="govuk-button opss-button-link govuk-!-font-size-16">
+              Edit your search
+            </button>
+          </form>
+
+        </div>
+      </div>
     </div>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full" role="region" aria-label="Products">
+      <div class="govuk-grid-column-full" role="region" aria-label="products">
 
         <table class="govuk-table opss-table-items opss-table-items--sm">
           <caption class="govuk-visually-hidden">
@@ -102,6 +108,34 @@ Your products
               <th id="counterfeit" scope="col" class="govuk-table__header">Counterfeit</th>
             </tr>
           </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-visually-hidden">
+                Product
+              </th>
+              <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                <a href="page-all-products-page" class="govuk-link govuk-link--no-visited-state">Asda dishwashing liquid (Select this item as an example)</a>
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                Metadata
+              </th>
+              <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                psd-9873
+              </td>
+              <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                Electrical
+              </td>
+              <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                Electrical appliance
+              </td>
+              <td headers="counterfeit item-1 meta-1" class="govuk-table__cell">
+                No
+              </td>
+            </tr>
+          </tbody>
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
@@ -472,8 +506,8 @@ Your products
 
       </div>
     </div>
-
   </section>
+  <!-- ********* results section ends ************** -->
 
 </div>
 

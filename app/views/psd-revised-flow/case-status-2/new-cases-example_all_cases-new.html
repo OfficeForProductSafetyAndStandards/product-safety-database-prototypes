@@ -39,9 +39,9 @@ All cases - Search
                     When viewing a list of search results you can <a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state">request the list</a> as a downloadable <abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet) file.
                 </p>
 
-                <p class="govuk-body-s govuk-visually-hidden">
+                <!--p class="govuk-body-s govuk-visually-hidden">
                     Search results appear within the following <code>form</code> and within the <code>role = region</code>.
-                </p>
+                </p-->
             </div>
         </details>
     </div>
@@ -448,7 +448,7 @@ All cases - Search
                         <div class="govuk-grid-column-one-half opss-grouping opss-equal-height__col govuk-!-margin-top-3">
                             <div class="govuk-form-group govuk-!-margin-bottom-1">
 
-                                <label class="govuk-label opss-grouping__heading-m opss-grouping__heading--norm" for="filter-hazard_type">Hazard type</label>
+                                <label class="govuk-label opss-grouping__heading-m opss-grouping__heading--norm opss-padding-bottom-3-mobile" for="filter-hazard_type">Hazard type</label>
 
                                 <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="hazard-type-hint">
                                     Filter the search results to only include cases of a specific primary hazard type.
@@ -527,7 +527,7 @@ All cases - Search
                     </div>
 
                     <div class="govuk-button-group govuk-!-margin-top-6">
-                        <button class="govuk-button">
+                        <button type="search" class="govuk-button">
                             Search
                         </button>
 
@@ -547,7 +547,7 @@ All cases - Search
 </div>
 
 <script>
-    //****** js for reset filters ******   NEEDED for resetting open conditional radios
+    //****** js for reset filters ******   NEEDED for resetting open conditional radios and edit search page
     document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
         var targetElement = document.getElementById("page-content");
         var elements;
