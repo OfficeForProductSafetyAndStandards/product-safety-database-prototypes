@@ -1,0 +1,122 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Set case risk level
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- RIPPED straight from the page on Staging -->
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">
+            Set case risk level
+        </h1>
+
+        <p class="govuk-body">The case risk level will usually match the risk assessment.</p>
+
+        <p class="govuk-body">It can differ from risk assessments if necessary - such as when there are conflicting assessments, or where the assessment was provided by a third party.</p>
+
+        <div class="govuk-inset-text">
+            This case does not have a risk assessment. You may want to <a class="govuk-link" href="#">add a risk assessment</a> before setting the case risk level.
+        </div>
+
+        <form action="/cases/2302-0004/edit-risk-level" accept-charset="UTF-8" method="post">
+            <input type="hidden" name="_method" value="put" />
+            <input type="hidden" name="authenticity_token" value="H6rD7zoDhLCXEa3vReIMy8aHF33QCNx4HvwpkoJwYg9A64BUPmjGC2XYDDnhJQ3Whmp4haOpupymN3vQdQMaBw" />
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend ">
+                        Case risk level
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="investigation_risk_level_serious" name="investigation[risk_level]" type="radio" value="serious" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_serious">Serious risk</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input" checked>
+                            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_high">High risk</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="investigation_risk_level_medium" name="investigation[risk_level]" type="radio" value="medium" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_medium">Medium risk</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="investigation_risk_level_low" name="investigation[risk_level]" type="radio" value="low" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_low">Low risk</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__divider">
+                            or
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="investigation_risk_level_other" name="investigation[risk_level]" type="radio" value="notconclusive" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_other">Not conclusive</label>
+
+
+                        </div>
+
+
+                        <!--  data-aria-controls="conditional-investigation_risk_level_other"
+                            
+                            div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-investigation_risk_level_other">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-visually-hidden" for="investigation_custom_risk_level">Custom risk level</label>
+
+                                <input class="govuk-input govuk-!-width-one-third" id="investigation_custom_risk_level" name="investigation[custom_risk_level]" type="text">
+                            </div>
+                        </div-->
+
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <!--div class="govuk-form-group">
+                <button class="govuk-button" data-module="govuk-button">Set risk level</button>
+                <p><a class="govuk-link--no-visited-state" href="/cases/2302-0004">Cancel</a></p>
+            </div-->
+
+            <div class="govuk-button-group">
+                <button class="govuk-button govuk-link--no-visited-state" data-module="govuk-button">
+                    Save
+                </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="/cases/2302-0004">Cancel</a>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

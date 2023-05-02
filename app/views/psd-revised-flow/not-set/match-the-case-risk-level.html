@@ -1,0 +1,74 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Would you like to match the case risk level to the risk assessment level
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "#"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+<!-- RIPPED straight from the page on Staging -->
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form novalidate="novalidate" action="#" accept-charset="UTF-8" method="post">
+            <input type="hidden" name="_method" value="patch" />
+            <input type="hidden" name="authenticity_token" value="b4OS3AKmFl88_5YA5zlsQZXO8dEifNDmbvUN0Hdvd0dSWQollHMhuBR6pQhF7FouClcbcwDD-mFbvo9eWi7GUw" />
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-5">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you want to match this case risk level to the risk assessment level?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="update_case_risk_level_to_match_investigation" name="update_risk_level_from_risk_assessment_form[update_case_risk_level_to_match_investigation]" type="radio" value="true" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="update_case_risk_level_to_match_investigation">Yes, set the case risk level to <strong>high risk</strong></label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="update_case_risk_level_to_match_investigation-1" name="update_risk_level_from_risk_assessment_form[update_case_risk_level_to_match_investigation]" type="radio" value="false" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="update_case_risk_level_to_match_investigation-1">
+                                No, keep the current case risk level unchanged
+                            </label>
+
+
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Save</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
