@@ -29,7 +29,7 @@
   hyphens: auto;
 }
 
-%hover-underline {
+@mixin hover-underline() {
   text-decoration-thickness: .15em !important;
   text-decoration-thickness: .1875rem !important;
 }
@@ -113,7 +113,7 @@ h1.govuk-label-wrapper label.govuk-label--l {
 
 .govuk-back-link:hover,
 .govuk-breadcrumbs__link:hover {
-  @extend %hover-underline;
+  @include hover-underline;
 }
 
 main {
@@ -121,11 +121,11 @@ main {
   .govuk-details .govuk-details__summary-text:hover {
     text-decoration-skip-ink: none;
     text-decoration: underline !important;
-    @extend %hover-underline;
+    @include hover-underline;
   }
 
   .opss-button-link:hover {
-    @extend %hover-underline;
+    @include hover-underline;
   }
 
   a.govuk-link:active,
