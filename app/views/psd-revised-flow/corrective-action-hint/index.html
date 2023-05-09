@@ -1,0 +1,589 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Record corrective action
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+<form novalidate="novalidate" enctype="multipart/form-data" action="/cases/2304-0001/corrective-actions" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="ZFDW54I3fmcXX16oGH307kc2gkrAKIbLquqM4CY-gDIKk36i2NDT2NjLdmNYpOh0-jgDhMk8RB6PDpK2UiOMWQ" autocomplete="off" />
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+            <!-- 
+
+                remove some of the fieldsets where they shouldn't be used
+                affect effect? in to into?
+                hint IDs don't always match the fieldset describedby etc
+
+            -->
+
+            <span class="govuk-caption-l">Case: 2304-0001</span>
+            <h1 class="govuk-heading-l">Record corrective action</h1>
+
+
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="action-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        What action is being taken?
+                    </legend>
+
+                    <p class="govuk-hint govuk-!-margin-bottom-6" id="action-hint">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deleniti quidem dignissimos sint quos fugiat commodi officiis distinctio, nostrum harum corporis consequuntur molestias, modi eos! Amet quasi quos error maiores.
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="action" name="corrective_action[action]" type="radio" value="ban_on_the_marketing_of_the_product_and_any_accompanying_measures" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action">Ban on the marketing of the product and any accompanying measures</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-1" name="corrective_action[action]" type="radio" value="destruction_of_the_product" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-1">Destruction of the product</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-2" name="corrective_action[action]" type="radio" value="import_rejected_at_border" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-2">Import rejected at border</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-3" name="corrective_action[action]" type="radio" value="making_the_marketing_of_the_product_subject_to_prior_conditions" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-3">Making the marketing of the product subject to prior conditions</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-4" name="corrective_action[action]" type="radio" value="marking_the_product_with_appropriate_warnings_on_the_risks" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-4">Marking the product with appropriate warnings on the risks</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-5" name="corrective_action[action]" type="radio" value="recall_of_the_product_from_end_users" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-5">Recall of the product from end users</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-6" name="corrective_action[action]" type="radio" value="removal_of_the_listing_by_the_online_marketplace" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-6">Removal of the listing by the online marketplace</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-7" name="corrective_action[action]" type="radio" value="temporary_ban_on_the_supply_offer_to_supply_and_display_of_the_product" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-7">Temporary ban on the supply, offer to supply and display of the product</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-8" name="corrective_action[action]" type="radio" value="warning_consumers_of_the_risks" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-8">Warning consumers of the risks</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-9" name="corrective_action[action]" type="radio" value="withdrawal_of_the_product_from_the_market" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="action-9">Withdrawal of the product from the market</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="action-10" name="corrective_action[action]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-action-10">
+                            <label class="govuk-label govuk-radios__label" for="action-10">Other</label>
+
+
+                        </div>
+
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-action-10">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-visually-hidden" for="other_action">Other action</label>
+
+
+
+
+
+
+
+                                <input class="govuk-input" id="other_action" name="corrective_action[other_action]" type="text">
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="date_decided-fieldset-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        What date did the action come in to effect?
+                    </legend>
+                    <div class="govuk-hint" id="date_decided-fieldset-hint">This may be in the future. For example, 19 5 2023.</div>
+
+                    <div class="govuk-date-input" id="date_decided-fieldset">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date_decided">Day</label>
+
+
+
+
+
+
+
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date_decided" name="corrective_action[date_decided][day]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date_decided-fieldset-corrective_action[date_decided][month]">Month</label>
+
+
+
+
+
+
+
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date_decided-fieldset-corrective_action[date_decided][month]" name="corrective_action[date_decided][month]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date_decided-fieldset-corrective_action[date_decided][year]">Year</label>
+
+
+
+
+
+
+
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date_decided-fieldset-corrective_action[date_decided][year]" name="corrective_action[date_decided][year]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Which product is subject to action?
+                </legend>
+                <div class="govuk-form-group ">
+                    <p class="govuk-body">Boots hand sanitizer </p>
+                    <input value="662" autocomplete="off" type="hidden" name="corrective_action[investigation_product_id]" id="corrective_action_investigation_product_id" />
+                </div>
+
+            </fieldset>
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="legislation">Under which legislation?</label>
+
+
+
+
+
+                <div class="autocomplete-select-with-clear">
+                    <select class="govuk-select" id="legislation" name="corrective_action[legislation]">
+                        <option selected="selected"></option>
+                        <option value="ATEX 2016">ATEX 2016</option>
+                        <option value="Aerosol Dispensers Regulations 2009 (Consumer Protection Act 1987)">Aerosol Dispensers Regulations 2009 (Consumer Protection Act 1987)</option>
+                        <option value="Cableway Installations Regulations 2018">Cableway Installations Regulations 2018</option>
+                        <option value="Carriage of Dangerous Goods and Use of Transportable Pressure Equipment Regulations 2009">Carriage of Dangerous Goods and Use of Transportable Pressure Equipment Regulations 2009</option>
+                        <option value="Classification, Labelling and Packaging of Chemicals Regulations 2015">Classification, Labelling and Packaging of Chemicals Regulations 2015</option>
+                        <option value="Construction Products Regulations 2013">Construction Products Regulations 2013</option>
+                        <option value="Consumer Protection Act 1987">Consumer Protection Act 1987</option>
+                        <option value="Consumer Protection Act 1987 / Motor Vehicle Tyres (Safety) Regulations 1994">Consumer Protection Act 1987 / Motor Vehicle Tyres (Safety) Regulations 1994</option>
+                        <option value="Cosmetic Products Enforcement Regulations 2013">Cosmetic Products Enforcement Regulations 2013</option>
+                        <option value="EC Fertilisers (England and Wales) Regulations 2006">EC Fertilisers (England and Wales) Regulations 2006</option>
+                        <option value="Ecodesign for Energy-Related Products Regulations 2010">Ecodesign for Energy-Related Products Regulations 2010</option>
+                        <option value="Electrical Equipment (Safety) Regulations 2016">Electrical Equipment (Safety) Regulations 2016</option>
+                        <option value="Electromagnetic Compatibility Regulations 2016">Electromagnetic Compatibility Regulations 2016</option>
+                        <option value="End-of-Life Vehicles Regulations 2003 (as amended)">End-of-Life Vehicles Regulations 2003 (as amended)</option>
+                        <option value="Energy Information Regulations 2011">Energy Information Regulations 2011</option>
+                        <option value="Explosives Regulations 2014">Explosives Regulations 2014</option>
+                        <option value="Fireworks Act 2003 / Fireworks Regulations 2004">Fireworks Act 2003 / Fireworks Regulations 2004</option>
+                        <option value="Food Imitations (Safety) Regulations 1989">Food Imitations (Safety) Regulations 1989</option>
+                        <option value="Furniture and Furnishings (Fire) (Safety) Regulations 1988">Furniture and Furnishings (Fire) (Safety) Regulations 1988</option>
+                        <option value="Gas Appliances (Enforcement) and Miscellaneous Amendments Regulations 2018">Gas Appliances (Enforcement) and Miscellaneous Amendments Regulations 2018</option>
+                        <option value="General Product Safety Regulations 2005">General Product Safety Regulations 2005</option>
+                        <option value="Gun Barrel Proof Acts 1868 to 1978">Gun Barrel Proof Acts 1868 to 1978</option>
+                        <option value="Lifts Regulations 2016">Lifts Regulations 2016</option>
+                        <option value="Measuring Instruments Regulations 2016">Measuring Instruments Regulations 2016</option>
+                        <option value="Measuring Instruments Regulations 2016 (also NAWI)">Measuring Instruments Regulations 2016 (also NAWI)</option>
+                        <option value="Medical Devices Regulations 2002">Medical Devices Regulations 2002</option>
+                        <option value="Merchant Shipping (Marine Equipment) Regulations 2016">Merchant Shipping (Marine Equipment) Regulations 2016</option>
+                        <option value="Motor Vehicle Tyres (Safety) Regulations 1994 (Consumer Protection Act 1987)">Motor Vehicle Tyres (Safety) Regulations 1994 (Consumer Protection Act 1987)</option>
+                        <option value="N-nitrosamines and N-nitrosatable Substances in Elastomer or Rubber Teats and Dummies (Safety) Regulations 1995">N-nitrosamines and N-nitrosatable Substances in Elastomer or Rubber Teats and Dummies (Safety) Regulations 1995</option>
+                        <option value="Nightwear (Safety) Regulations 1985">Nightwear (Safety) Regulations 1985</option>
+                        <option value="Noise Emission in the Environment by Equipment for use Outdoors Regulations 2001 (as amended)">Noise Emission in the Environment by Equipment for use Outdoors Regulations 2001 (as amended)</option>
+                        <option value="Non-Automatic Weighing Instruments Regulations 2016">Non-Automatic Weighing Instruments Regulations 2016</option>
+                        <option value="Oil Heaters (Safety) Regulations 1977">Oil Heaters (Safety) Regulations 1977</option>
+                        <option value="Personal Protective Equipment (Enforcement) Regulations 2018">Personal Protective Equipment (Enforcement) Regulations 2018</option>
+                        <option value="Plugs and Sockets etc. (Safety) Regulations 1994">Plugs and Sockets etc. (Safety) Regulations 1994</option>
+                        <option value="Pressure Equipment (Safety) Regulations 2016">Pressure Equipment (Safety) Regulations 2016</option>
+                        <option value="Pyrotechnic Articles (Safety) Regulations 2015">Pyrotechnic Articles (Safety) Regulations 2015</option>
+                        <option value="REACH Enforcement Regulations 2008">REACH Enforcement Regulations 2008</option>
+                        <option value="Radio Equipment Regulations 2017">Radio Equipment Regulations 2017</option>
+                        <option value="Recreational Craft Regulations 2017">Recreational Craft Regulations 2017</option>
+                        <option value="Restriction of Use of Certain Hazardous Substances in Electrical and Electronic Equipment Regulations 2012">Restriction of Use of Certain Hazardous Substances in Electrical and Electronic Equipment Regulations 2012</option>
+                        <option value="Simple Pressure Vessels (Safety) Regulations 2016">Simple Pressure Vessels (Safety) Regulations 2016</option>
+                        <option value="Supply of Machinery (Safety) Regulations 2008">Supply of Machinery (Safety) Regulations 2008</option>
+                        <option value="Textile Products (Labelling and Fibre Composition) Regulations 2012">Textile Products (Labelling and Fibre Composition) Regulations 2012</option>
+                        <option value="Toys (Safety) Regulations 2011 (Consumer Protection Act 1987)">Toys (Safety) Regulations 2011 (Consumer Protection Act 1987)</option>
+                        <option value="Weights and Measures (Packaged Goods) Regulations (Northern Ireland) 2011">Weights and Measures (Packaged Goods) Regulations (Northern Ireland) 2011</option>
+                        <option value="Weights and Measures (Packaged Goods) Regulations 2006">Weights and Measures (Packaged Goods) Regulations 2006</option>
+                    </select>
+                </div> <button class="autocomplete__clear-button" id="clear-legislation" style="display: none;" type="button">
+                    <span class="govuk-visually-hidden">Clear autocomplete</span>
+                    <svg class="autocomplete__clear-viewbox" viewbox="0 0 40 40">
+                        <path class="autocomplete__clear-icon" d="M 10,10 L 30,30 M 30,10 L 10,30"></path>
+                    </svg>
+                </button>
+
+                <script nonce="true">
+                    // <![CDATA[
+                    window.callAutocompleteWhenReady("legislation", { showAllValues: true });
+        // ]]>
+                </script>
+
+            </div>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Which business is responsible?
+                </legend>
+                <div class="govuk-form-group ">
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-visually-hidden" for="business_id">Business</label>
+
+
+                        <div class="govuk-hint" id="corrective_action[business_id]-hint">Only businesses already added to the case are listed.</div>
+
+
+
+
+                        <select class="govuk-select" id="business_id" name="corrective_action[business_id]">
+                            <option selected="selected" value=""></option>
+                            <option value="371">Retailer oneXXX</option>
+                            <option value="370">Retailer one</option>
+                        </select>
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Has the business responsible published product recall information online?
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="has_online_recall_information" name="corrective_action[has_online_recall_information]" type="radio" value="has_online_recall_information_yes" class="govuk-radios__input" data-aria-controls="conditional-has_online_recall_information">
+                            <label class="govuk-label govuk-radios__label" for="has_online_recall_information"><span class="translation_missing" title="translation missing: en.investigations.corrective_actions.form.yes">Yes</span></label>
+
+
+                        </div>
+
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-has_online_recall_information">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-visually-hidden" for="online_recall_information">Online recall information</label>
+
+
+                                <div class="govuk-hint" id="online_recall_information-hint">For example http://www.example.com or https://www.example.com</div>
+
+
+
+
+
+
+                                <input class="govuk-input" id="online_recall_information" name="corrective_action[online_recall_information]" type="text" aria-describedby="online_recall_information-hint">
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input id="has_online_recall_information-1" name="corrective_action[has_online_recall_information]" type="radio" value="has_online_recall_information_no" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="has_online_recall_information-1"><span class="translation_missing" title="translation missing: en.investigations.corrective_actions.form.no">No</span></label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="has_online_recall_information-2" name="corrective_action[has_online_recall_information]" type="radio" value="has_online_recall_information_not_relevant" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="has_online_recall_information-2">Not relevant</label>
+
+
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Is the corrective action mandatory?
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="measure_type" name="corrective_action[measure_type]" type="radio" value="mandatory" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="measure_type">Yes</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="measure_type-1" name="corrective_action[measure_type]" type="radio" value="voluntary" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="measure_type-1">No, it’s voluntary</label>
+
+
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        How long will the corrective action be in place?
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="duration" name="corrective_action[duration]" type="radio" value="permanent" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="duration">Permanent</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="duration-1" name="corrective_action[duration]" type="radio" value="temporary" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="duration-1">Temporary</label>
+
+
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input id="duration-2" name="corrective_action[duration]" type="radio" value="unknown" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="duration-2">Unknown</label>
+
+
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        What is the geographic scope of the action?
+                    </legend>
+                    <div class="govuk-hint" id="-hint">Select all that apply.</div>
+
+
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes" name="corrective_action[geographic_scopes][]" type="checkbox" value="local" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes">Local</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-1" name="corrective_action[geographic_scopes][]" type="checkbox" value="great_britain" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-1">Great Britain</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-2" name="corrective_action[geographic_scopes][]" type="checkbox" value="northern_ireland" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-2">Northern Ireland</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-3" name="corrective_action[geographic_scopes][]" type="checkbox" value="eea_wide" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-3">EEA Wide</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-4" name="corrective_action[geographic_scopes][]" type="checkbox" value="eu_wide" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-4">EU Wide</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-5" name="corrective_action[geographic_scopes][]" type="checkbox" value="worldwide" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-5">Worldwide</label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                            <input id="geographic_scopes-6" name="corrective_action[geographic_scopes][]" type="checkbox" value="unknown" class="govuk-checkboxes__input">
+                            <label class="govuk-label govuk-checkboxes__label" for="geographic_scopes-6">Unknown</label>
+
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="details">Further details (optional)</label>
+
+
+                <div class="govuk-hint" id="details-hint">If you have more information about a corrective action, add it here.</div>
+
+
+
+
+                <textarea class="govuk-textarea" id="details" name="corrective_action[details]" rows="5" aria-describedby="details-hint">
+  </textarea>
+            </div>
+
+
+
+
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Are there any files related to the action?
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input id="related_file" name="corrective_action[related_file]" type="radio" value="true" class="govuk-radios__input" data-aria-controls="conditional-related_file">
+                            <label class="govuk-label govuk-radios__label" for="related_file">Yes</label>
+
+
+                        </div>
+
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-related_file">
+                            <input autocomplete="off" type="hidden" name="corrective_action[existing_document_file_id]" id="corrective_action_existing_document_file_id" />
+                            <fieldset class="govuk-fieldset">
+
+                                <div class="govuk-body govuk-hint">
+                                    If you have multiple files, compress them in a zip
+                                </div>
+
+
+                                <div class="govuk-form-group " , id="document">
+
+
+
+
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="attachment-file-input">Upload a file</label>
+                                    </div>
+
+                                    <input class="govuk-file-upload" id="attachment-file-input" type="file" name="corrective_action[file][file]" />
+
+
+                                    <div id="attachment-description">
+
+
+
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="corrective_action_file_description">Attachment description</label>
+
+
+
+
+
+                                            <textarea class="govuk-textarea" id="corrective_action_file_description" name="corrective_action[file][description]" key="description" rows="5" aria-describedby="" maxlength="10000">
+  </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </fieldset>
+
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input id="related_file-1" name="corrective_action[related_file]" type="radio" value="off" class="govuk-radios__input">
+                            <label class="govuk-label govuk-radios__label" for="related_file-1">No</label>
+
+
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
