@@ -1,0 +1,173 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Edit the Unique Consignment Reference numbers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "customs-codes-01"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="customs-codes-01-success-2" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="ucr-number-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Edit the Unique Consignment Reference (<abbr>UCR</abbr>) numbers
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-hint govuk-!-margin-bottom-5" id="ucr-number-hint">
+                        <span class="govuk-!-display-block govuk-!-margin-bottom-2">
+                            You can add and edit <abbr>UCR</abbr> numbers for Asda washing up liquid. Manually deleting a number will remove it from the case.
+                        </span>
+
+                        <span class="govuk-!-display-block govuk-!-font-size-16">
+                            <abbr>UCR</abbr> numbers are between 12 and 35 characters long.
+                        </span>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="ucr-number-1">
+                            <abbr>UCR</abbr> number: 1
+                        </label>
+                        <input class="govuk-input govuk-!-width-three-quarters" id="ucr-number-1" name="ucr-number" type="text" maxlength="45">
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save">
+
+                <!--input type="button" name="save-add" value="Save and add another" class="govuk-button govuk-button--secondary"-->
+                <!-- hyperlink used for secondary btn here for "prototype"-->
+                <a class="govuk-button govuk-button--secondary" href="#" role="button">Save and add another</a>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="customs-codes-01.html">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!--hr>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="success-banner-01.html" novalidate>
+
+            <div class="govuk-form-group">
+
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="ucr-code">
+                        Edit the Unique Consignment Reference (<abbr>UCR</abbr>) numbers<br> This needs to be a std Fieldset and legend as more than one can be created. use top level hint and link it to the fieldset. Each input field to have a label: UCR number: 1 UCR number: 2 UCR number: 3
+                    </label>
+                </h1>
+
+                <div class="govuk-hint govuk-!-margin-bottom-5" id="ucr-code-hint">
+                    <span class="govuk-!-display-block govuk-!-margin-bottom-2">
+                        You can add and edit <abbr>UCR</abbr> numbers for Asda washing up liquid. Manually deleting a number will remove it from the case.
+                    </span>
+
+                    <span class="govuk-!-display-block govuk-!-font-size-16">
+                        <abbr>UCR</abbr> numbers are between 12 and 35 characters long.
+                    </span>
+                </div>
+
+
+                <input class="govuk-input govuk-!-width-three-quarters" id="ucr-code" name="ucr-code" type="text" aria-describedby="ucr-code-hint" maxlength="45">
+
+            </div>
+
+            <div class="govuk-button-group">
+                <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save">
+
+                <input type="button" name="save-add" value="Save and add another" class="govuk-button govuk-button--secondary">
+
+                <a class="govuk-link govuk-link--no-visited-state" href="customs-codes-01.html">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+</div-->
+
+
+<!--hr>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Edit the customs codes</h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-2 opss-secondary-text">
+            You can add and edit customs codes for Asda washing up liquid.
+        </p>
+
+        <p id="multiple-codes-hint" class="govuk-body-s govuk-!-margin-bottom-8 opss-secondary-text">
+            Use a comma and a space to separate multiple entries. <br class="opss-br-desktop">
+            For example, <span class="opss-no-wrap">8525 80 91</span>, <span class="opss-no-wrap">8528 52 91</span><span class="govuk-visually-hidden">.</span>
+        </p>
+
+        <form action="#" method="post" novalidate>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="batch-numbers">
+                    Customs codes (Various)
+                </label>
+
+                <div id="batch-numbers-hint" class="govuk-hint">
+                    <span class="govuk-!-display-block govuk-!-font-size-16">
+                        For example, a <abbr>CN</abbr> code (8 digits) or a TARIC code (10 digits).
+                    </span>
+                </div>
+
+                <input class="govuk-input govuk-!-width-three-quarters" id="batch-numbers" name="batch-numbers" type="text" aria-describedby="batch-numbers-hint multiple-codes-hint" value="8335 80 91">
+            </div>
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="ucr-numbers">
+                    Unique Consignment Reference (<abbr>UCR</abbr>)
+                </label>
+
+                <div id="ucr-numbers-hint" class="govuk-hint">
+                    <span class="govuk-!-display-block govuk-!-font-size-16">
+                        <abbr>UCR</abbr> numbers are between 12 and 35 characters long.
+                    </span>
+                </div>
+
+                <input class="govuk-input govuk-!-width-three-quarters" id="ucr-numbers" name="ucr-numbers" type="text" aria-describedby="ucr-numbers-hint multiple-codes-hint" value="2GB123456789012-ABC1234">
+            </div>
+
+
+
+
+            <div class="govuk-button-group">
+                <button class="govuk-button">
+                    Save
+                </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="customs-codes-04">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+</div-->
+
+{% endblock %}
