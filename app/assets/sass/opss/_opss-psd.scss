@@ -136,6 +136,10 @@ $opss-retired-bg: govuk-tint(govuk-colour("light-grey"), 50);
   }
 }
 
+.opss-border-bottom-none {
+  border-bottom: 0 none !important;
+}
+
 .opss-panels {
   margin-top: govuk-spacing(7);
   margin-bottom: govuk-spacing(2);

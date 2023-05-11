@@ -1,0 +1,65 @@
+{% extends "layout-psd-menu_cases.html" %}
+
+{% block pageTitle %}
+Are you adding a Unique Consignment Reference number
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "customs-codes-04"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="add-ucr-number.html" novalidate>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-8">
+                        <h1 class="govuk-fieldset__heading">
+                            Are you editing a Unique Consignment Reference (<abbr>UCR</abbr>) number?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes" name="number-type" type="radio" value="government-gateway">
+                            <label class="govuk-label govuk-radios__label" for="yes">
+                                Yes - I am editing or adding a <abbr>UCR</abbr> number
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="no" name="type" type="radio" value="govuk-verify" aria-describedby="customes-code-hint">
+                            <label class="govuk-label govuk-radios__label" for="no">
+                                No - I am editing or adding a different type of customs code
+                            </label>
+                            <div id="customes-code-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                                For example, a <abbr>CN</abbr> code (8 digits) or a TARIC code (10 digits).
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -7,11 +7,29 @@ Case 2101-0008
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "cases"
+href: "#"
 }) }}
 {% endblock %}
 
 {% block content %}
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+        </h2>
+    </div>
+
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            The case information was updated
+        </p>
+    </div>
+
+</div>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
@@ -293,8 +311,9 @@ href: "cases"
             Case specific product information
         </h3>
 
-        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">Asda washing up
-            liquid</h4>
+        <h4 class="govuk-body govuk-!-font-weight-regular govuk-!-margin-bottom-1 opss-secondary-text">
+            Asda washing up liquid (psd-110)
+        </h4>
 
         <dl class="govuk-summary-list opss-summary-list-mixed opss-summary-list-mixed--narrow-dt opss-summary-list-mixed--narrow-actions">
 
@@ -303,8 +322,7 @@ href: "cases"
                     Units affected
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact
-                        number</span>
+                    22000 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">Exact number</span>
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -327,28 +345,36 @@ href: "cases"
                 </dd>
             </div>
 
-            <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row opss-border-bottom-none">
                 <dt class="govuk-summary-list__key">
                     Customs codes
                 </dt>
 
                 <dd class="govuk-summary-list__value">
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>
-                            <span class="opss-no-wrap">B3736-33QY</span> <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text opss-no-wrap">Various</span>
-                        </li>
-                        <li>
-                            <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text opss-no-wrap"><abbr title="Unique Consignment Reference">UCR</abbr> numbers</span>
-                        </li>
-                    </ul>
+                    <span class="govuk-!-font-size-16 opss-secondary-text">Various</span>
                 </dd>
 
                 <dd class="govuk-summary-list__actions">
-                    <a href="edit-customs-codes" class="govuk-link govuk-link--no-visited-state">
+                    <a href="edit-general-customs-codes" class="govuk-link govuk-link--no-visited-state">
                         Edit<span class="govuk-visually-hidden"> the customs codes for Asda washing up liquid</span>
                     </a>
                 </dd>
+            </div>
 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span class="govuk-visually-hidden"><abbr>UCR</abbr> code</span>
+                </dt>
+
+                <dd class="govuk-summary-list__value">
+                    123456789 <span class="govuk-!-font-size-16 opss-secondary-text govuk-!-padding-left-2"><abbr title="Unique Consignment Reference">UCR</abbr> numbers</span>
+                </dd>
+
+                <dd class="govuk-summary-list__actions">
+                    <a href="edit-ucr-codes-2" class="govuk-link govuk-link--no-visited-state">
+                        Edit<span class="govuk-visually-hidden"> the <abbr>UCR</abbr> numbers for Asda washing up liquid</span>
+                    </a>
+                </dd>
             </div>
         </dl>
 
