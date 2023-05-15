@@ -277,6 +277,39 @@ ul.opss-radio-list {
   }
 }
 
+.opss-radios-thumbnails {
+  .govuk-radios__item {
+    position: relative;
+    border-bottom: 1px solid $govuk-border-colour;
+    padding-bottom: govuk-spacing(2);
+    margin-bottom: govuk-spacing(4);
+  }
+
+  .govuk-radios__item:last-child {
+    border-bottom: 0 none;
+  }
+
+  .govuk-radios__label,
+  .govuk-radios__hint {
+    margin-right: 110px;
+
+    code {
+      font-size: 90%;
+    }
+  }
+
+  .opss-radios-thumbnails_img {
+    display: block;
+    width: 100px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
 .opss-radio-list--borders {
   li {
     border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
