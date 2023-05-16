@@ -8,80 +8,78 @@ Edit the Product Recalls and Alerts information
 
 {% block content %}
 
-<!-- The information below is required by the Product Recalls and Alerts digital service. You can add it to the PSD case and then refresh this page. -->
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
-        <h1 class="govuk-heading-l">
-            Select the image to include
-        </h1>
-
-        <p class="govuk-body-l opss-secondary-text">
-            H1 should be legend as we're using radios below <br>
-
-
-        </p>
-
-        <p class="govuk-body-s opss-secondary-text">
-            &ndash;&nbsp;<a href="https://www.gov.uk/guidance/product-recalls-and-alerts" class="govuk-link govuk-link--no-visited-state" target="_blank">Product Recalls and Alerts (opens in a new tab)</a>
-        </p>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-    </div>
-</div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <p class="govuk-body">
-            This tool provides a convenient process for porting information from the <abbr>PSD</abbr> to the Product Recalls and Alerts digital service. You can add or edit information and convert it into the required Markdown format, ready to &lsquo;copy and paste&rsquo; directly into the recall service.
-        </p>
+        <form action="edit-content-pg.html" novalidate>
 
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-8">
+                        <h1 class="govuk-fieldset__heading">
+                            Select the image to include
+                        </h1>
+                    </legend>
+
+                    <!--p class="govuk-body">
+                        No images are available. You must first add an image to the <abbr>PSD</abbr> product record, or you can 'Skip' this page.
+                    </p-->
+
+                    <div class="govuk-radios opss-radios-thumbnails">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="image-1" name="image" type="radio" value="government-gateway" aria-describedby="image-1-hint">
+                            <label class="govuk-label govuk-radios__label" for="image-1">
+                                Asda window cleaner <!-- 1. image title. -->
+                            </label>
+                            <div id="image-1-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                                <!-- 2. image description. 3. image file name-->
+                                Image shows the window cleaner bottle and label. <br><code title="Image file name">asda-window-cleaner.png</code>.
+                            </div>
+
+                            <div class="opss-radios-thumbnails_img" style="background-image: url('../public/images/asda-window-cleaner.png');"></div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="image-2" name="image" type="radio" value="government-gateway" aria-describedby="image-2-hint">
+                            <label class="govuk-label govuk-radios__label" for="image-2">
+                                Asda wood floor cleaner
+                            </label>
+                            <div id="image-2-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quisquam distinctio odio dolorem accusantium aspernatur natus nesciunt labore delectus obcaecati vero nostrum suscipit asperiores numquam veniam ex consequuntur, voluptatum perferendis? <br><code title="Image file name">asda-wood-floor-cleaner.png</code>.
+                            </div>
+
+                            <div class="opss-radios-thumbnails_img" style="background-image: url('../public/images/asda-wood-floor-cleaner.png');"></div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="image-3" name="image" type="radio" value="government-gateway" aria-describedby="image-3-hint">
+                            <label class="govuk-label govuk-radios__label" for="image-3">
+                                Dishwashing liquid
+                            </label>
+                            <div id="image-3-hint" class="govuk-hint govuk-radios__hint govuk-!-font-size-16">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quisquam distinctio odio dolorem accusantium aspernatur natus nesciunt labore delectus obcaecati vero nostrum suscipit asperiores numquam veniam ex consequuntur, voluptatum perferendis? <br><code title="Image file name">dishwashing-liquid.jpg</code>.
+                            </div>
+
+                            <div class="opss-radios-thumbnails_img" style="background-image: url('../public/images/dishwashing-liquid.jpg');"></div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+                <a href="edit-content-pg.html" class="govuk-link govuk-link--no-visited-state">Skip</a>
+            </div>
+
+        </form>
 
     </div>
 </div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Product
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Dyson Extreme Clean 2000z (psd-345)
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Case(s)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Dyson vacuum 2000z catching fire (2305-0011)
-
-                    <!--ul class="govuk-list govuk-list--bullet">
-                        <li>Dyson vacuum 2000z catching fire (2305-0011)</li>
-                        <li>Dyson 2000z over-heating (2405-6507)</li>
-                    </ul-->
-
-                </dd>
-            </div>
-        </dl>
-
-        <div class="govuk-form-group">
-            <a href="edit-content-pg.html" role="button" draggable="false" class="govuk-button govuk-button--start">
-                Continue
-                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-                </svg>
-            </a>
-        </div>
-
-    </div>
-</div>
-
 
 {% endblock %}

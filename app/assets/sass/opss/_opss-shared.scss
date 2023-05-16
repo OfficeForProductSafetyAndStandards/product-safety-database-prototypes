@@ -822,11 +822,15 @@ div[class$="inset-text"] > ol li:last-child {
 
 .opss-button-link {
   background-color: transparent !important;
+  border-top: none !important;
+  border-right: none !important;
   border-bottom: none !important;
+  border-left: none !important;
   box-shadow: none !important;
   padding: 0;
   color: $govuk-link-colour;
   text-decoration: underline;
+  cursor: pointer;
 
   &:visited {
     color: $govuk-link-colour;
