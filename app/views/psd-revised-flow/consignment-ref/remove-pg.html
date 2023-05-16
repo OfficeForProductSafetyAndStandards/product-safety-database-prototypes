@@ -1,13 +1,13 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Edit the Unique Consignment Reference numbers
+Remove the Unique Consignment Reference number from the case
 {% endblock %}
 
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "customs-codes-01"
+href: "edit-ucr-codes-5"
 }) }}
 {% endblock %}
 
@@ -17,45 +17,24 @@ href: "customs-codes-01"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="customs-codes-01-success-2" method="post" novalidate>
+        <form action="customs-codes-01-success-4" method="post" novalidate>
 
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="ucr-number-hint">
 
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Edit the Unique Consignment Reference (<abbr>UCR</abbr>) numbers
-                        </h1>
-                    </legend>
+                <h1 class="govuk-heading-l">
+                    Are you sure you want to remove the <abbr>UCR</abbr> number?
+                </h1>
 
-                    <div class="govuk-hint govuk-!-margin-bottom-5" id="ucr-number-hint">
-                        <span class="govuk-!-display-block govuk-!-margin-bottom-2">
-                            Add and edit <abbr>UCR</abbr> numbers for Asda washing up liquid.
-                        </span>
+                <p class="govuk-body">
+                    Remove <abbr>UCR</abbr> number 2 from the case.
+                </p>
 
-                        <span class="govuk-!-display-block govuk-!-font-size-16">
-                            <abbr>UCR</abbr> numbers are between 12 and 35 characters long.
-                        </span>
-                    </div>
 
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="ucr-number-1">
-                            <abbr>UCR</abbr> number: 1
-                        </label>
-                        <input class="govuk-input govuk-!-width-three-quarters" id="ucr-number-1" name="ucr-number" type="text" maxlength="45">
-                    </div>
-
-                </fieldset>
             </div>
 
             <div class="govuk-button-group">
-                <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save">
-
-                <!--input type="button" name="save-add" value="Save and add another" class="govuk-button govuk-button--secondary"-->
-                <!-- hyperlink used for secondary btn here for "prototype"-->
-                <a class="govuk-button govuk-button--secondary" href="#" role="button">Save and add another</a>
-
-                <a class="govuk-link govuk-link--no-visited-state" href="customs-codes-01.html">Cancel</a>
+                <input type="submit" name="commit" value="Remove" class="govuk-button">
+                <a class="govuk-link govuk-link--no-visited-state" href="edit-ucr-codes-5.html">Cancel</a>
             </div>
 
         </form>

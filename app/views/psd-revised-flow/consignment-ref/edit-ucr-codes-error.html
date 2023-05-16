@@ -1,23 +1,38 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Edit the Unique Consignment Reference numbers
+Error: Edit the Unique Consignment Reference numbers
 {% endblock %}
 
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "customs-codes-01"
+href: "#"
 }) }}
 {% endblock %}
 
 
 {% block content %}
 
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+        <h2 class="govuk-error-summary__title">
+            There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                    <a href="#ucr-number-1">Enter a <abbr>UCR</abbr> number</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="customs-codes-01-success-2" method="post" novalidate>
+        <form action="#" method="post" novalidate>
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="ucr-number-hint">
@@ -38,11 +53,14 @@ href: "customs-codes-01"
                         </span>
                     </div>
 
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group govuk-form-group--error">
                         <label class="govuk-label" for="ucr-number-1">
                             <abbr>UCR</abbr> number: 1
                         </label>
-                        <input class="govuk-input govuk-!-width-three-quarters" id="ucr-number-1" name="ucr-number" type="text" maxlength="45">
+                        <p id="ucr-1-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Enter a <abbr>UCR</abbr> number
+                        </p>
+                        <input class="govuk-input govuk-!-width-three-quarters govuk-input--error" id="ucr-number-1" name="ucr-number" type="text" maxlength="45" aria-describedby="ucr-1-error">
                     </div>
 
                 </fieldset>
@@ -55,7 +73,7 @@ href: "customs-codes-01"
                 <!-- hyperlink used for secondary btn here for "prototype"-->
                 <a class="govuk-button govuk-button--secondary" href="#" role="button">Save and add another</a>
 
-                <a class="govuk-link govuk-link--no-visited-state" href="customs-codes-01.html">Cancel</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Cancel</a>
             </div>
 
         </form>
