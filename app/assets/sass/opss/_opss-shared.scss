@@ -618,7 +618,7 @@ samp {
     @include opss-font-size($s: 16px, $l: 1.2);
 
     &:before {
-      content: "—";
+      content: "-";
       margin-left: - govuk-spacing(4);
       color: $govuk-secondary-text-colour;
     }
@@ -1183,6 +1183,10 @@ dl.opss-summary-list-aside {
 
   .opss-select--min-width-300 {
     min-width: 300px;
+  }
+
+  .opss-select--min-width-350 {
+    min-width: 350px;
   }
 }
 
