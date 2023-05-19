@@ -1,0 +1,49 @@
+{% extends "recall.html" %}
+
+{% block pageTitle %}
+Select the image to include
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <form action="edit-content-pg.html" novalidate>
+
+            <div class="govuk-form-group" aria-describedby="no-image-hint">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-8">
+                        <h1 class="govuk-fieldset__heading">
+                            Select the images to include
+                        </h1>
+                    </legend>
+
+                    <div id="no-image-hint">
+                        <p class="govuk-body">
+                            Images have not been added to the <abbr>PSD</abbr> product record.
+                        </p>
+
+                        <p class="govuk-body">
+                            You can add images to the product record, or <a href="edit-content-pg.html" class="govuk-link govuk-link--no-visited-state">skip this page</a>.
+                        </p>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                <a href="edit-content-pg.html" class="govuk-link govuk-link--no-visited-state">Skip</a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
