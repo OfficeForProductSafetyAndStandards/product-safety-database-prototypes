@@ -277,7 +277,9 @@ ul.opss-radio-list {
   }
 }
 
+.opss-checkboxes-thumbnails,
 .opss-radios-thumbnails {
+  .govuk-checkboxes__item,
   .govuk-radios__item {
     position: relative;
     border-bottom: 1px solid $govuk-border-colour;
@@ -285,11 +287,14 @@ ul.opss-radio-list {
     margin-bottom: govuk-spacing(4);
   }
 
+  .govuk-checkboxes__item:last-child,
   .govuk-radios__item:last-child {
     border-bottom: 0 none;
   }
 
+  .govuk-checkboxes__label,
   .govuk-radios__label,
+  .govuk-checkboxes__hint,
   .govuk-radios__hint {
     margin-right: 110px;
 
@@ -298,6 +303,7 @@ ul.opss-radio-list {
     }
   }
 
+  .opss-checkboxes-thumbnails_img,
   .opss-radios-thumbnails_img {
     display: block;
     width: 100px;
@@ -703,4 +709,13 @@ select:disabled {
     right: 6rem;
     bottom: 8px;
   }
+}
+
+noscript {
+  font-family: $std-font-family;
+  @include opss-font-size($s: 24px, $l: 2);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  display: block;
 }

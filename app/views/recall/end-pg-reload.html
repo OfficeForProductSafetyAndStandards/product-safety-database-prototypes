@@ -1,0 +1,99 @@
+{% extends "recall.html" %}
+
+{% block pageTitle %}
+Formatted product recall information
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">
+            Formatted product recall information
+        </h1>
+
+        <p class="govuk-body">
+            From here you can download a formatted <abbr title="Portable Document Format">PDF</abbr> and &lsquo;copy and paste&rsquo; the Markdown formatted content into the product recall and alerts site.
+        </p>
+
+        <hr class="govuk-section-break">
+
+        <section class="govuk-!-padding-top-6 govuk-!-padding-right-4 govuk-!-padding-bottom-3 govuk-!-padding-left-4 govuk-!-margin-top-6 govuk-!-margin-bottom-8 opss-border-all">
+            <h2 class="govuk-heading-s">
+                Dyson Extreme Clean product [the PDF title]
+            </h2>
+
+            <p class="govuk-body-s govuk-!-padding-bottom-0">
+                The creation of the <abbr>PDF</abbr> has not completed yet. Reload this page to check again.
+
+                <span class="govuk-!-display-block govuk-!-margin-top-4">
+                    <button class="govuk-!-font-size-16 opss-button-link opss-button-refresh">Reload the page</button> <!-- or input type="button" -->
+                </span>
+            </p>
+        </section>
+
+        <section>
+
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2">
+                The formatted Markdown
+            </h2>
+
+            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-3" id="markdown-hint">
+                You can edit the Markdown and &lsquo;copy&rsquo; <span class="opss-nojs-hide">it to your device's clipboard ready to &lsquo;paste&rsquo;</span> it into the recall site.
+            </div>
+
+            <noscript>This feature may require JavaScript support.</noscript>
+
+            <textarea class="govuk-textarea" id="markdown" name="markdown" rows="20" aria-describedby="markdown-hint">
+                # Sample Markdown header
+
+                This will require a JavaScript Markdown editor...
+
+                Lorem ipsum **bold text** dolor sit amet consectetur adipisicing elit. *Temporibus debitis* necessitatibus vitae voluptatem commodi. Porro dicta debitis quidem ut? Illum a minima nesciunt minus deserunt accusantium. Praesentium adipisci hic ut.
+
+                > This is a block quote - dolor sit amet consectetur adipisicing elit. Dolores consequatur ratione adipisci est maxime vitae in.
+
+            </textarea>
+
+            <div class="govuk-form-group">
+                <button class="govuk-button opss-nojs-hide" id="copy-btn">
+                    Copy to your clipboard
+                </button>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+<script>
+    //<![CDATA[
+    document.addEventListener('DOMContentLoaded', (e) => {//fallback for some browsers
+
+        document.getElementById("copy-btn").addEventListener("click", function () {
+
+            // Get the text field
+            var copyText = document.getElementById("markdown");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            //alert("Copied the text: " + copyText.value);
+
+        });
+
+        //var link = document.getElementById("opss-downloads");//add id="opss-downloads" to the link 
+        //link.setAttribute("download", "");
+
+    });
+    //]]>
+</script>
+
+{% endblock %}
