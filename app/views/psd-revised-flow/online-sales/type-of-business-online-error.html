@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
-Error: What is the business type
+What is the business type
 {% endblock %}
 
 
@@ -23,7 +23,7 @@ href: "/cases/2303-0044"
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#business_type_other">Enter a descriptive name</a>
+          <a href="#marketplace-1">Select an online marketplace</a>
         </li>
       </ul>
     </div>
@@ -55,44 +55,43 @@ href: "/cases/2303-0044"
 
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
-            {% include "psd-revised-flow/online-sales/inc_retail-and-online.html" %}
+            {% include "psd-revised-flow/online-sales/inc_retail-and-online-error.html" %}
 
             <div class="govuk-radios__item">
               <input id="business_type_manufacturer" name="business[type]" type="radio" value="manufacturer" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_manufacturer">Manufacturer</label>
+
+
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_exporter" name="business[type]" type="radio" value="exporter" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_exporter">Exporter</label>
+
+
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_importer" name="business[type]" type="radio" value="importer" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_importer">Importer</label>
+
+
             </div>
             <div class="govuk-radios__item">
               <input id="business_type_fulfillment_house" name="business[type]" type="radio" value="fulfillment_house" class="govuk-radios__input">
               <label class="govuk-label govuk-radios__label" for="business_type_fulfillment_house">Fulfillment house</label>
+
+
             </div>
-            <div class="govuk-radios__item">
-              <input id="business_type_distributor" name="business[type]" type="radio" value="distributor" class="govuk-radios__input">
-              <label class="govuk-label govuk-radios__label" for="business_type_distributor">Distributor</label>
-            </div>
+
 
             <!-- other starts 
-
             <div class="govuk-radios__item">
-              <input id="business_type_other" name="business[type]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-business_type_other_name" checked>
+              <input id="business_type_other" name="business[type]" type="radio" value="other" class="govuk-radios__input" data-aria-controls="conditional-business_type_other">
               <label class="govuk-label govuk-radios__label" for="business_type_other">Other</label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business_type_other_name">
-              <div class="govuk-form-group govuk-form-group--error">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business_type_other">
+              <div class="govuk-form-group">
                 <label class="govuk-label" for="business_type_other_name">Descriptive name</label>
-
-                <p id="business_type_other_name-error" class="govuk-error-message">
-                  <span class="govuk-visually-hidden">Error:</span> Enter a descriptive name
-                </p>
-
-                <input class="govuk-input govuk-!-width-three-quarters" id="business_type_other_name" name="business[type_other_name]" type="text" aria-describedby="business_type_other_name-error">
+                <input class="govuk-input govuk-!-width-three-quarters" id="business_type_other_name" name="business[type_other]" type="text">
               </div>
             </div>
             other ends -->
