@@ -162,143 +162,152 @@ All cases - Search
                         </fieldset>
                     </div>
 
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-owner">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
-                                Case owner
-                            </legend>
+                    <div class="govuk-grid-row opss-equal-height-container">
+                        <div class="govuk-grid-column-one-half opss-grouping opss-equal-height__col govuk-!-margin-top-3 govuk-!-margin-bottom-6">
 
-                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-owner">
-                                Filter the search results to only include your own cases or cases created by other teams.
-                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-1">
+                                <fieldset class="govuk-fieldset" aria-describedby="filters-owner">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                        Case owner
+                                    </legend>
 
-                            <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input opss-radios__input-default" id="owner" name="owner" type="radio" value="all-owner" checked>
-                                    <label class="govuk-label govuk-radios__label" for="owner">
-                                        All
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="owner-2" name="owner" type="radio" value="me-owner">
-                                    <label class="govuk-label govuk-radios__label" for="owner-2">
-                                        Me
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="owner-3" name="owner" type="radio" value="me-team-owner">
-                                    <label class="govuk-label govuk-radios__label" for="owner-3">
-                                        Me and my team
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="owner-4" name="owner" type="radio" value="others-owner">
-                                    <label class="govuk-label govuk-radios__label" for="owner-4">
-                                        Others
-                                    </label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset opss-grouping" aria-describedby="filters-assigned">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
-                                Teams assigned to cases
-                            </legend>
-
-                            <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-assigned">
-                                Filter the search results to only include cases where a specific team has been added to the case.
-                            </div>
-
-                            <div class="govuk-radios govuk-radios--inline govuk-radios--small govuk-!-margin-top-3" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input opss-radios__input-default" id="assigned" name="assigned" type="radio" value="all-assigned" checked>
-                                    <label class="govuk-label govuk-radios__label" for="assigned">
-                                        All
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="assigned-2" name="assigned" type="radio" value="team-assigned">
-                                    <label class="govuk-label govuk-radios__label" for="assigned-2">
-                                        My team
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="assigned-3" name="assigned" type="radio" value="others-assigned" data-aria-controls="conditional-contact-3">
-                                    <label class="govuk-label govuk-radios__label" for="assigned-3">
-                                        Others
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-!-font-size-16" for="assigned-others-team">
-                                            Select a name or team
-                                        </label>
-                                        <select class="govuk-select" id="assigned-others-team" name="assigned-others-team">
-                                            <option value="a77cb59d-1dcd-47e9-ba90-97a333513102" selected="selected">Richard Burnett</option>
-                                            <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
-                                            <option value="32d6a1df-6832-4062-9b8c-a60f54fce5bf">Richard Burnett (OPSS view) (OPSS Processing)</option>
-                                            <option value="c18d1518-b265-40d6-a8db-9f3bb0db04a4">Adam McKeown (OPSS Processing)</option>
-                                            <option value="791800d6-605f-4184-9c48-585236b7d933">Jacob O&#39;Toole</option>
-                                            <option value="13762607-c942-4f64-8b88-51bd4d7afb42">Deborah Lader</option>
-                                            <option value="66fedde6-c386-4225-abb8-050088d3576d">Nasir (OPSS Processing)</option>
-                                            <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Processing)</option>
-                                            <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O&#39;Kane</option>
-                                            <option value="a6ef4fd3-43e4-4acc-ad45-53855f2fe963">Kara Barnard</option>
-                                            <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (OPSS Processing)</option>
-                                            <option value="750717e5-0c5d-4877-847a-e55748630ee7">Nasir Ali Khan (OPSS Processing)</option>
-                                            <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
-                                            <option value="95031954-5947-44f3-9842-0be08bef5b52">Sam Imevbore (Birmingham trading standards)</option>
-                                            <option value="87d14963-7a52-48dd-b9c9-4bd773cbd861">Alec Johns (Trading Standards view)</option>
-                                            <option value="08730f1a-2ad4-4f68-b73d-57dce4ab4c10">Nick Henson (OPSS Processing)</option>
-                                            <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
-                                            <option value="49f8b7cd-e0e7-49bd-a85e-270d313065f6">Nasir Khan (Birmingham trading standards)</option>
-                                            <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
-                                            <option value="943f243b-d2e6-4783-ae68-60cc5cf53996">Lucy Duncan</option>
-                                            <option value="8aa4589a-42c7-4461-afd5-8dc2b76acccf">Dave Boston</option>
-                                            <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
-                                            <option value="0087b584-a786-4814-866a-82b2aeb56980">Bruce the second</option>
-                                            <option value="2ef5c5fe-3c68-4eff-aa0a-cdee8e45afd3">Neil Lines (pen tester)</option>
-                                            <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Ali Khan (OPSS Processing)</option>
-                                            <option value="9e5aeb75-6d56-47f3-931b-85d13009e493">Nasir (OPSS Processing)</option>
-                                            <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
-                                            <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
-                                            <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
-                                            <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
-                                            <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
-                                            <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
-                                            <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
-                                            <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
-                                            <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
-                                            <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
-                                            <option value="2b7c3f52-e9fc-4365-9d71-93bbef9820e7">Bruce (OPSS Processing)</option>
-                                            <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Ali Khan (Birmingham trading standards)</option>
-                                            <option value="412aa24e-cc82-47e8-bf8f-97e6b2490ae5">Sham Islam (OPSS Processing)</option>
-                                            <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
-                                            <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
-                                            <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
-                                            <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
-                                            <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
-                                            <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
-                                            <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
-                                            <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
-                                            <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
-                                            <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
-                                            <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
-                                            <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
-                                            <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
-                                            <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
-                                            <option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option>
-                                            <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
-                                        </select>
+                                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-owner">
+                                        Filter the search results to only include your own cases or cases created by other teams.
                                     </div>
-                                </div>
+
+                                    <div class="govuk-radios govuk-radios--small govuk-!-margin-top-3">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input opss-radios__input-default" id="owner" name="owner" type="radio" value="all-owner" checked>
+                                            <label class="govuk-label govuk-radios__label" for="owner">
+                                                All
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="owner-2" name="owner" type="radio" value="me-owner">
+                                            <label class="govuk-label govuk-radios__label" for="owner-2">
+                                                Me
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="owner-3" name="owner" type="radio" value="me-team-owner">
+                                            <label class="govuk-label govuk-radios__label" for="owner-3">
+                                                Me and my team
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="owner-4" name="owner" type="radio" value="others-owner">
+                                            <label class="govuk-label govuk-radios__label" for="owner-4">
+                                                Others
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
 
-                        </fieldset>
-                    </div>
+                        </div>
 
+                        <div class="govuk-grid-column-one-half opss-grouping opss-equal-height__col govuk-!-margin-top-3 govuk-!-margin-bottom-6">
+
+                            <div class="govuk-form-group govuk-!-margin-bottom-1">
+                                <fieldset class="govuk-fieldset" aria-describedby="filters-assigned">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s opss-grouping__legend--s opss-grouping__heading--norm">
+                                        Teams assigned to cases
+                                    </legend>
+
+                                    <div class="govuk-hint govuk-!-font-size-16 govuk-!-margin-top-1" id="filters-assigned">
+                                        Filter the search results to only include cases where a specific team has been added to the case.
+                                    </div>
+
+                                    <div class="govuk-radios govuk-radios--small govuk-!-margin-top-3" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input opss-radios__input-default" id="assigned" name="assigned" type="radio" value="all-assigned" checked>
+                                            <label class="govuk-label govuk-radios__label" for="assigned">
+                                                All
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="assigned-2" name="assigned" type="radio" value="team-assigned">
+                                            <label class="govuk-label govuk-radios__label" for="assigned-2">
+                                                My team
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="assigned-3" name="assigned" type="radio" value="others-assigned" data-aria-controls="conditional-contact-3">
+                                            <label class="govuk-label govuk-radios__label" for="assigned-3">
+                                                Others
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-!-font-size-16" for="assigned-others-team">
+                                                    Select a name or team
+                                                </label>
+                                                <select class="govuk-select" id="assigned-others-team" name="assigned-others-team">
+                                                    <option value="a77cb59d-1dcd-47e9-ba90-97a333513102" selected="selected">Richard Burnett</option>
+                                                    <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
+                                                    <option value="32d6a1df-6832-4062-9b8c-a60f54fce5bf">Richard Burnett (OPSS view) (OPSS Processing)</option>
+                                                    <option value="c18d1518-b265-40d6-a8db-9f3bb0db04a4">Adam McKeown (OPSS Processing)</option>
+                                                    <option value="791800d6-605f-4184-9c48-585236b7d933">Jacob O&#39;Toole</option>
+                                                    <option value="13762607-c942-4f64-8b88-51bd4d7afb42">Deborah Lader</option>
+                                                    <option value="66fedde6-c386-4225-abb8-050088d3576d">Nasir (OPSS Processing)</option>
+                                                    <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Processing)</option>
+                                                    <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O&#39;Kane</option>
+                                                    <option value="a6ef4fd3-43e4-4acc-ad45-53855f2fe963">Kara Barnard</option>
+                                                    <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (OPSS Processing)</option>
+                                                    <option value="750717e5-0c5d-4877-847a-e55748630ee7">Nasir Ali Khan (OPSS Processing)</option>
+                                                    <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
+                                                    <option value="95031954-5947-44f3-9842-0be08bef5b52">Sam Imevbore (Birmingham trading standards)</option>
+                                                    <option value="87d14963-7a52-48dd-b9c9-4bd773cbd861">Alec Johns (Trading Standards view)</option>
+                                                    <option value="08730f1a-2ad4-4f68-b73d-57dce4ab4c10">Nick Henson (OPSS Processing)</option>
+                                                    <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+                                                    <option value="49f8b7cd-e0e7-49bd-a85e-270d313065f6">Nasir Khan (Birmingham trading standards)</option>
+                                                    <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
+                                                    <option value="943f243b-d2e6-4783-ae68-60cc5cf53996">Lucy Duncan</option>
+                                                    <option value="8aa4589a-42c7-4461-afd5-8dc2b76acccf">Dave Boston</option>
+                                                    <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
+                                                    <option value="0087b584-a786-4814-866a-82b2aeb56980">Bruce the second</option>
+                                                    <option value="2ef5c5fe-3c68-4eff-aa0a-cdee8e45afd3">Neil Lines (pen tester)</option>
+                                                    <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Ali Khan (OPSS Processing)</option>
+                                                    <option value="9e5aeb75-6d56-47f3-931b-85d13009e493">Nasir (OPSS Processing)</option>
+                                                    <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
+                                                    <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
+                                                    <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O&#39;Kane (OPSS Processing)</option>
+                                                    <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+                                                    <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
+                                                    <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+                                                    <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
+                                                    <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
+                                                    <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
+                                                    <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+                                                    <option value="2b7c3f52-e9fc-4365-9d71-93bbef9820e7">Bruce (OPSS Processing)</option>
+                                                    <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Ali Khan (Birmingham trading standards)</option>
+                                                    <option value="412aa24e-cc82-47e8-bf8f-97e6b2490ae5">Sham Islam (OPSS Processing)</option>
+                                                    <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+                                                    <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+                                                    <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+                                                    <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+                                                    <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+                                                    <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+                                                    <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+                                                    <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+                                                    <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+                                                    <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+                                                    <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+                                                    <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+                                                    <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+                                                    <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+                                                    <option value="c33ae052-df08-46c4-bcda-6c917a89440e">Renfrewshire Council</option>
+                                                    <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+                        </div>
+                    </div>
 
 
                     <!-- Dates not included yet ...
