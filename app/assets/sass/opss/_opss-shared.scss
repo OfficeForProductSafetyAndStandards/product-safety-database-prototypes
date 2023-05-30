@@ -84,7 +84,8 @@ main.govuk-main-wrapper {
 .govuk-heading-m a,
 .govuk-heading-s a,
 .app-task-list li,
-.app-task-list li a {
+.app-task-list li a,
+.govuk-grid-column-one-half > div > div > label {
   @include word-wrap;
 }
 
