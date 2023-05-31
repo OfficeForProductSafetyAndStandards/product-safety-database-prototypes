@@ -566,13 +566,7 @@ The product recall information
                         Online marketplace
                     </legend>
 
-                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="marketplace-n" name="marketplace" type="radio" value="no" checked>
-                            <label class="govuk-label govuk-radios__label" for="marketplace-n">
-                                No
-                            </label>
-                        </div>
+                    <div class="govuk-radios xgovuk-radios--small xgovuk-radios--inline" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="marketplace-y" name="marketplace" type="radio" value="yes" data-aria-controls="marketplaces">
                             <label class="govuk-label govuk-radios__label" for="marketplace-y">
@@ -580,6 +574,12 @@ The product recall information
                             </label>
                         </div>
                         {% include "recall/inc_online-marketplaces.html" %}
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="marketplace-n" name="marketplace" type="radio" value="no" checked>
+                            <label class="govuk-label govuk-radios__label" for="marketplace-n">
+                                No
+                            </label>
+                        </div>
                     </div>
                 </fieldset>
             </div>
