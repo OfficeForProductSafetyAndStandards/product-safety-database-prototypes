@@ -6,7 +6,8 @@
 @import "./opss-search";
 @import "./opss-pagination";
 
-@import "./opss-step-by-step-nav"; 
+@import "./opss-step-by-step-nav";
+
 
 body > .govuk-width-container > main.govuk-main-wrapper > .govuk-breadcrumbs {
   margin-top: - govuk-spacing(2);
@@ -317,20 +318,20 @@ $opss-retired-bg: govuk-tint(govuk-colour("light-grey"), 50);
 }
 
 // .opss-radio-list--borders {
-  // li {
-    // border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
-  // }
+// li {
+// border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+// }
 // }
 
 // .opss-radio-list--no-top-border {
-  // li:first-child {
-    // border-top: none;
-  // }
+// li:first-child {
+// border-top: none;
+// }
 // }
 
 // .opss-radio-list__number {
-  // display: inline-block;
-  // padding-right: govuk-spacing(2);
+// display: inline-block;
+// padding-right: govuk-spacing(2);
 // }
 
 .opss-block--desktop {
