@@ -1,6 +1,6 @@
 // PSD master css/scss styles.
 // Add the listed @import scss files (below) to your directory.
-// Don't edit your local copy to avoid it unsyncing  with these versions.
+// Don't edit your local copy to avoid it unsyncing with these versions.
 
 @import "./opss-shared";
 @import "./opss-search";
@@ -259,23 +259,23 @@ $opss-retired-bg: govuk-tint(govuk-colour("light-grey"), 50);
   }
 }
 
-ul.opss-radio-list {
-  margin-bottom: 0;
+// ul.opss-radio-list {
+// margin-bottom: 0;
 
-  li {
-    padding: govuk-spacing(2) 0;
-    display: inline-block;
-    width: 100%;
+// li {
+// padding: govuk-spacing(2) 0;
+// display: inline-block;
+// width: 100%;
 
-    .govuk-radios__item {
-      padding-left: govuk-spacing(7);
+// .govuk-radios__item {
+// padding-left: govuk-spacing(7);
 
-      .govuk-radios__hint {
-        padding-left: 2px;
-      }
-    }
-  }
-}
+// .govuk-radios__hint {
+// padding-left: 2px;
+// }
+// }
+// }
+// }
 
 .opss-checkboxes-thumbnails,
 .opss-radios-thumbnails {
@@ -316,22 +316,22 @@ ul.opss-radio-list {
   }
 }
 
-.opss-radio-list--borders {
-  li {
-    border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
-  }
-}
+// .opss-radio-list--borders {
+// li {
+// border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+// }
+// }
 
-.opss-radio-list--no-top-border {
-  li:first-child {
-    border-top: none;
-  }
-}
+// .opss-radio-list--no-top-border {
+// li:first-child {
+// border-top: none;
+// }
+// }
 
-.opss-radio-list__number {
-  display: inline-block;
-  padding-right: govuk-spacing(2);
-}
+// .opss-radio-list__number {
+// display: inline-block;
+// padding-right: govuk-spacing(2);
+// }
 
 .opss-block--desktop {
   @include govuk-media-query($from: desktop) {

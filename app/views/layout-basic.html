@@ -1,0 +1,52 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template-splash.njk" %}
+
+
+
+
+{% block head %}
+{% include "includes/head.html" %}
+{% endblock %}
+
+
+{% block header %}
+
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "#",
+serviceName: " ",
+serviceUrl: "/",
+containerClasses: "govuk-width-container"
+}) }}
+{% endblock %}
+
+
+
+{% if useAutoStoreData %}
+{% block footer %}
+{{ govukFooter({
+meta: {
+items: [
+{
+href: "https://govuk-prototype-kit.herokuapp.com/",
+text: "GOV.UK Prototype Kit " + releaseVersion
+},
+{
+href: "/prototype-admin/clear-data",
+text: "Clear data"
+}
+]
+}
+}) }}
+{% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

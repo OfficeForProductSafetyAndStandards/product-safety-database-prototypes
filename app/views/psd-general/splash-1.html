@@ -1,0 +1,116 @@
+{% extends "layout-basic.html" %}
+
+{% block pageTitle %}
+Product Safety Database
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="app-masthead app-inverted app-inverted--masthead">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-phase-banner">
+          <p class="govuk-phase-banner__content app-body--inverted">
+            <span class="govuk-tag govuk-phase-banner__content__tag app-tag--inverted">
+              Beta
+            </span>
+            <span class="govuk-phase-banner__text">
+              This is a new service – your feedback will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    <main id="main-content" class="app-main-class govuk-main-wrapper" role="main">
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h1 class="govuk-heading-xl app-heading-xl--inverted">
+            Product Safety Database
+          </h1>
+          <p class="govuk-body-l app-body-l--inverted">
+            Report, track and share product safety information with the product safety community.
+          </p>
+
+          <p class="govuk-body app-body--inverted">
+
+            <span class="govuk-!-display-block govuk-!-margin-bottom-5">
+              <a class="govuk-link govuk-link--inverse govuk-!-font-size-27" href="/sign-in">
+                Sign in to your account
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                </svg>
+              </a>
+            </span>
+
+            <span class="govuk-!-display-block">
+              or <a href="mailto:opss.enquiries@beis.gov.uk" class="govuk-link govuk-link--inverse">email OPSS</a> if you think you should have access. <!-- fullstop! + 'inverse' class -->
+            </span>
+
+          </p>
+
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+<!-- *** 
+  !!! IGNORE THIS CSS !!! - this is a hack for this design page to render correctly as the 
+  live site uses a different DOM (which can't be recreated in the GDS kit). 
+*** -->
+<style>
+  body {
+    background-color: #1d70b8 !important;
+  }
+
+  .app-inverted,
+  .app-body--inverted,
+  .app-body-l--inverted,
+  .app-heading-m--inverted,
+  .app-heading-l--inverted,
+  .app-heading-xl--inverted,
+  .govuk-link.app-link--inverted {
+    background-color: #1d70b8;
+    color: #ffffff !important;
+  }
+
+  .app-masthead {
+    padding-top: 10px !important;
+  }
+
+  .app-button--inverted,
+  .app-button--inverted:link,
+  .app-button--inverted:visited {
+    color: #1d70b8;
+    background-color: #ffffff;
+    box-shadow: 0 2px 0 #144e81;
+  }
+
+  .app-tag--inverted {
+    background-color: #ffffff;
+    color: #1d70b8;
+  }
+
+
+
+  header.govuk-header {
+    border: 0;
+  }
+
+  .govuk-header__container {
+    margin-bottom: 0 !important;
+    border-bottom: 10px solid #0b0c0c;
+    height: 34px;
+  }
+</style>
+
+{% endblock %}

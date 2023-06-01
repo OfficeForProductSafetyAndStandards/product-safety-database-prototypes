@@ -728,6 +728,10 @@ a.opss-secondary-text sup[class$="font-size-14"] {
   color: $govuk-secondary-text-colour;
 }
 
+.opss-body-inverse {
+  color: govuk-colour("white");
+}
+
 div[class$="inset-text"] > ol li:last-child {
   margin-bottom: govuk-spacing(1);
 }
