@@ -732,6 +732,15 @@ a.opss-secondary-text sup[class$="font-size-14"] {
   color: govuk-colour("white");
 }
 
+.govuk-button.govuk-link--inverse {
+  color: $govuk-brand-colour;
+  background-color: govuk-colour("white");
+
+  &:hover {
+    background-color: govuk-colour("light-grey");
+  }
+}
+
 div[class$="inset-text"] > ol li:last-child {
   margin-bottom: govuk-spacing(1);
 }
