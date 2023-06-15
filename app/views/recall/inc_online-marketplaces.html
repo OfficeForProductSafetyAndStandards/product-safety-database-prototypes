@@ -181,3 +181,27 @@
   </div>
 
 </fieldset>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (e) => {
+    var targetElement = document.getElementById("marketplaces");
+    var otherInput = document.getElementById("marketplace-25");
+    var elements = targetElement.getElementsByClassName("govuk-radios__input");
+
+    Array.prototype.forEach.call(elements, function (el, i) {
+      el.addEventListener("click", function () {
+        otherInput.value = "";
+        otherInput.style.background = "rgb(255, 255, 255)";
+        otherInput.style.borderColor = "rgb(243, 242, 241)";
+      });
+    });
+
+    otherInput.addEventListener("click", function (el) {
+      Array.prototype.forEach.call(elements, function (e) {
+        e.checked = false;
+      });
+      el.style.removeProperty("background");
+      el.style.removeProperty("borderColor");
+    });
+  });
+</script>
