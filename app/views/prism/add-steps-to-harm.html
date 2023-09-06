@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">Add steps to harm</h1>
+
+    <div class="app-summary-card">
+      <p class="govuk-!-margin-bottom-0">For</p>
+      <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+      <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+      <p>{{ data['hazard-desc'] }}</p>
+      <p> Affected users:
+
+        {% if checked("product-aim", "Particular group of users") %}
+
+
+
+        {{ data['pug-type'] }}
+
+        {% if checked("product-aim", "General population") %}
+
+        General population
+        {% endif %}
+
+      {% endif %}</p>
+    </div>
+
+
+
+    <p>Creating a harm scenario requires consideration of how the identified hazard could cause harm to people. The scenario will normally contain between three or five steps to harm. The nature of probability is such that the more steps there are, in general the lower the probability will be. It is rare that more than five steps are necessary.</p>
+
+
+    <form class="form govuk-!-margin-bottom-6" action="harm-details" method="post" margin-bottom="">
+
+      <div class="govuk-!-margin-top-6">
+        <h2 class="govuk-heading-m">Step 1 description</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p iclass="govuk-body">
+        Step 1 should cover the existence of a hazard which can foreseeably cause harm during the lifetime of the product. For example, the car seat is occupied by an infant while the vehicle is in use.</p>
+
+
+        <textarea class="govuk-textarea" id="step1-desc" name="step1-desc" rows="2" aria-describedby="step1-desc">{{ data['step1-desc'] }}</textarea>
+
+
+
+
+
+
+
+    <div class="checked govuk-!-margin-top-6" id="step2"  style="display: none;">
+      <h2 class="govuk-heading-m">Step 2</h2>
+      <p class="govuk-body"><a href="#\" class="govuk-link" id="step2_remove">Remove</a></p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s">
+        Step description
+      </h3>
+
+      <p id="more-detail-hint" class="govuk-hint">
+      Step 2 should describe how the user (and/or other subjects) becomes exposed to risk. For example, the vehicle containing the seat/child is involved in a frontal collision of sufficient magnitude that the protection offered by the seat is necessary.</p>
+
+
+      <textarea class="govuk-textarea" id="step2-desc-1" name="step2-desc" rows="2" aria-describedby="step2-desc">{{ data['step2-desc'] }}</textarea>
+
+
+
+
+     <div class="checked govuk-!-margin-top-6" id="step3"  style="display: none;">
+      <h2 class="govuk-heading-m">Step 3</h2>
+      <p class="govuk-body"><a href="#\" class="govuk-link" id="step3_remove">Remove</a></p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-s">
+        Step description
+      </h3>
+
+      <p id="more-detail-hint" class="govuk-hint">
+      Step 3 should describe how exposure to the risk results in harm. For example, the occupant of the seat suffers injury as a result of the collision. </p>
+
+
+      <textarea class="govuk-textarea" id="step3-desc-2" name="step3-desc" rows="2" aria-describedby="step3-desc">{{ data['step3-desc'] }}</textarea>
+
+
+
+   </div>
+ </fieldset>
+
+
+
+</div>
+
+
+<p><a href="#\" id="steps_btn">
+  Add another step
+</a></p>
+
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+
+
+
+</div>
+</div>
+
+{% endblock %}

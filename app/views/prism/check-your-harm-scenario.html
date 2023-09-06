@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your harm scenario 1
+      </h1>
+
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+      <h2 class="govuk-heading-m">Hazard details</h2>
+
+      {% include "../includes/scenario-details-1.html" %}
+
+
+
+      <h2 class="govuk-heading-m">Scenario risk level <strong class="govuk-tag govuk-tag--red" style="margin-left: 100px;">Serious risk</strong></h2>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+      <form action="/version_5/task-list-v2" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Confirm and create scenario"
+        }) }}
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-3-complete" name="section-3-complete" type="checkbox" value="yes" { checked('section-3-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+      </form>
+
+    </div>
+  </div>
+
+ <div></div>
+{% endblock %}

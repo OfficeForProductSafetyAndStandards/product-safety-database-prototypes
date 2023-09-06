@@ -1,0 +1,235 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Determine severity of harm</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+    <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+    <p>{{ data['hazard-desc'] }}</p>
+    <p> Affected users:
+
+    {% if checked("product-aim", "Particular group of users") %}
+
+
+
+     {{ data['pug-type'] }}
+
+      {% if checked("product-aim", "General population") %}
+
+     General population
+     {% endif %}
+
+      {% endif %}</p>
+
+  </div>
+
+
+
+      <form class="form govuk-!-margin-bottom-6" action="harm-probability" method="post" margin-bottom="">
+
+       <!-- <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Who or what can be harmed?</h3>
+         <p id="more-detail-hint" class="govuk-hint">
+    Enter details of the product users who will be harmed as result of the hazard.</p>
+  <label class="govuk-label" for="event-name">
+
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div> -->
+
+<div class="govuk-form-group">
+  <p>
+    Choose the level of severity of harm most appropriate for the effect the hazard will have upon the subject in the context of the harm scenario.</p>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="severity-level" name="severity-level" type="radio" value="Level 1" {{ checked('severity-level','Level 1') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Level 1
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Injury or ill health that after basic treatment (first aid, normally not by a doctor) does not substantially hamper functioning or cause excessive pain; usually the consequences are completely reversible.
+          <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Examples of Level 1 harm
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class=govuk-!-padding-left-4>
+     <li> minor cuts, bruising, pinching, sprains and strains</li>
+      <li>piercing</li>
+      <li>1 degree burns or 2 degree burns <6% of body surface</li>
+    <li>poisoning causing diarrhoea or vomiting</li>
+  <li>local slight irritation</li>
+<li>mild or local allergic reactions.</li></ul>
+  </div>
+</details>
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="severity-level-1" name="severity-level" type="radio" value="Level 2" {{ checked('severity-level','Level 2') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Level 2
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Injury or ill health for which a visit to A&E may be necessary, but in general, hospitalisation is not required. Functioning may be affected for a limited period, not more than about 6 months, and recovery is more or less complete.
+          <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Examples of Level 2 harm
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul>
+      <li>cuts >10 cm on body and >5 cm on face, requiring stitches</li>
+      <li>major bruising (> 50 cm2 on body and >25 cm2 on face)</li>
+    <li>concussion involving a short period of unconsciousness</li>
+  <li>dislocations or fractures of finger, toe, hand, foot, jaw</li>
+<li>fractures of wrist, arm, rib, nose, jaw</li>
+<li>piercing deeper than the skin
+</li>2 degree burns 6-15% of body surface
+<li>electric shock causing temporary cramp or muscle paralysis</li>
+<li>temporary loss of sight or hearing; poisoning causing reversible damage to internal organs</li>
+<li>allergic reactions and widespread allergic contact dermatitis
+</li>
+<li>reversible damage from microbiological infection</li></ul>
+  </div>
+</details>
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="severity-level-3" name="severity-level" type="radio" value="Level 3" {{ checked('severity-level','Level 3') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         Level 3
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">Injury or ill health that normally requires hospitalisation and will affect functioning for more than 6 months or lead to a permanent loss of function.</p>
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Examples of Level 3 harm
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+     <ul>
+     <li>cuts / laceration or bruising to trachea or internal organs</li>
+   <li>concussion causing prolonged unconsciousness</li>
+ <li>sprains and strains causing muscle, ligament or tendon rupture/tear</li>
+<li>dislocation of ankle, wrist, shoulder, hip, knee or spine</li>
+<li>fracture of ankle, leg, hip, skull, spine (minor compression fracture), jaw (severe), more than 1 rib</li>
+<li>crushing of extremities, arm, leg, trachea, pelvis</li>
+<li>amputation of finger/s, toe/s, hand, foot, arm, leg, eye; piercing of eye, internal organs, chest wall</li>
+<li>ingestion causing internal organ injury</li>
+<li>internal airway obstruction or suffocation / strangulation without permanent consequences 2 degree burns 16-35% of body surface and 3 degree burns up to 35% of body surface</li>
+<li>epileptic seizure</li>
+<li>permanent loss of sight (one eye) or hearing (one ear)
+</li>
+<li>poisoning causing irreversible damage to internal organs</li>
+<li>strong sensitisation provoking allergies to multiple substances</li>
+<li>irreversible effects from microbiological infection</li>
+</ul>
+  </div>
+</details>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="severity-level-4" name="severity-level" type="radio" value="Level 4" {{ checked('severity-level','Level 4') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Level 4
+        </label>
+         <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">Injury or ill health Injury or ill health that is, or could be, fatal, including brain death; consequences that affect reproduction or unborn children; severe loss of limbs and/or function, leading to more than approximately 10% of disability.</p>
+         <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Examples of Level 4 harm
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul>
+      <li>cuts / laceration of spinal cord</li>
+        <li>brain, oesophagus, deep laceration of internal organs</li>
+        <li>bruising of brain stem or spinal cord causing paralysis</li>
+        <li>concussion resulting in coma</li>
+        <li>dislocation or fracture of spinal column</li>
+       <li> fracture of neck</li>
+        <li>crushing of spinal cord, chest (severe), brain stem</li>
+        <li>amputation of both arms or both legs</li>
+        <li>piercing of aorta, heart, bronchial tube or causing deep injuries in organs</li>
+        <li>ingestion causing permanent damage to internal organ</li>
+        <li>internal airway obstruction with permanent consequences</li>
+        <li>2 or 3 degree burns >35% of body surface</li>
+        <li>electrocution; permanent loss of sight (both eyes) or hearing (both ears)</li>
+        <li>poisoning causing irreversible damage to nerve system</li>
+        <li>anaphylactic reactions</li>
+        <li>prolonged hospitalisation from microbiological infection.</li>
+      </ul>
+  </div>
+</details>
+      </div>
+
+  </div>
+
+
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-m">Does the hazard have the potential to harm more than one person in a single incident?</h3>
+  <div id="changed-name-hint" class="govuk-hint">Some hazards have the potential to harm more than one subject in a single incident, for example those hazards that can result in fires or explosions, and hazardous chemicals in some types of cosmetics.</div>
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="multiple-casualties" name="multiple-casualties" type="radio" value="yes" {{ checked('multiple-casualties','yes') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="multiple-casualties-1" name="multiple-casualties" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+    </div>
+
+
+  </fieldset>
+</div>
+
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+  </form>
+
+    </div>
+  </div>
+
+{% endblock %}

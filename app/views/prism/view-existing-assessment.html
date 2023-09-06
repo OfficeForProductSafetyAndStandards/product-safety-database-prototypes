@@ -1,0 +1,362 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "All in All+ Car Seat, Dragon Kingdom CT4262" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Buckle failure risk assessment
+      </h1>
+
+      <h2 class="govuk-heading-m">About assessment</h2>
+
+
+    {% include "includes/assessment-details.html" %}
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Product identification</h2>
+      <p>as recorded on the PSD</p>
+
+
+    {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "PSD reference"
+      },
+      value: {
+        html: "<a href='#'>psd-345</a>"
+      }
+
+    },
+    {
+      key: {
+        text: "Brand name"
+      },
+      value: {
+        text: "Cosatto"
+      }
+
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        html: "All in All + Car Seat. Product models: Dragon Kingdom CT4262, Unicorn Land CT4238."
+      }
+    },
+    {
+      key: {
+        text: "Category"
+      },
+      value: {
+        html: 'Childcare articles and children’s equipment'
+      }
+    },
+    {
+      key: {
+        text: "Subcategory"
+      },
+      value: {
+        html: 'Car seat'
+      }
+
+    },
+    {
+      key: {
+        text: "Barcode"
+      },
+      value: {
+        html: 'Not available'
+      }
+    },
+    {
+      key: {
+        text: "Batch number"
+      },
+      value: {
+        html: 'From 37/2019 to 24/2020 (inclusive). Car seats from later batches are not affected.
+    </dd>'
+      }
+    },
+    {
+      key: {
+        text: "Description"
+      },
+      value: {
+        html: 'Children’s rotating car seats available in various colours and designs'
+      }
+    },
+    {
+      key: {
+        text: "Webpage"
+      },
+      value: {
+        html: '<a href="https://www.cosatto.com/pages/buckle">https://www.cosatto.com/pages/buckle</a>'
+      }
+    },
+    {
+      key: {
+        text: "Date available on the market"
+      },
+      value: {
+        html: '1 January 2022'
+      }
+    },
+    {
+      key: {
+        text: "Country of origin"
+      },
+      value: {
+        html: 'UK'
+      }
+    },
+    {
+      key: {
+        text: "Counterfeit"
+      },
+      value: {
+        html: 'No'
+      }
+    },
+    {
+      key: {
+        text: "Product marking"
+      },
+      value: {
+        html: 'Not available'
+      }
+    },
+    {
+      key: {
+        text: "Other product identifiers"
+      },
+      value: {
+        html: 'Not available'
+      }
+    },
+    {
+      key: {
+        text: "Applicable safety regulations"
+      },
+      value: {
+        html: '<ul><li>Regulation UN/ECE N. 44-04</li><li>General Product Safety Regulations 2005</li><li>BS EN 71 series</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Nature of non-compliance"
+      },
+      value: {
+        html: '<p>In case of a frontal crash, the child car seat (CRS) may not give the protection against head displacement as required.<p><p>The product does not comply with Regulation UN/ECE N. 44-04 </p> '
+      }
+    },
+    {
+      key: {
+        text: "Product safety assessment"
+      },
+      value: {
+        html: 'Not undertaken'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Product sales and safety</h2>
+
+
+   {% include "../includes/sales-safety.html" %}
+
+<h2 class="govuk-heading-m">Product hazards</h2>
+
+
+    {% include "../includes/hazard-details.html" %}
+
+<h2 class="govuk-heading-m">Hazard details</h2>
+
+      <h2 class="govuk-heading-m">Hazard details</h2>
+
+      {% include "../includes/scenario-details.html" %}
+
+      <h2 class="govuk-heading-m">Supporting evidence and uncertainty</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Supporting evidence"
+            },
+            value: {
+              html: '<a href="#">Supporting evidence 1.pdf</a>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "evidence-upload",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Level of uncertainty"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "evidence-uncertainty",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sensitivity analysis undertaken"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "evidence-uncertainty",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Overall risk</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Severity level"
+            },
+            value: {
+              text: "4"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Probability"
+            },
+            value: {
+              text: "0.25"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Risk level"
+            },
+            value: {
+              html: '<strong class="govuk-tag govuk-tag--red">Serious risk</strong>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Risk evaluation</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Risk tolerability"
+            },
+            value: {
+              text: "Intolerable"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-one-third govuk-!-padding-left-9 govuk-!-padding-top-9">
+
+
+    <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
+
+
+
+</div>
+</div>
+<br/>
+
+        <div class="govuk-button-group">
+  <a href="assign-to-case.html" class="govuk-button" data-module="govuk-button">
+    Assign to a case
+  </a>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Create a new product case
+  </button>
+</div>
+
+        <p><a href="#">Download a pdf of the assessment</a></p>
+
+
+
+{% endblock %}

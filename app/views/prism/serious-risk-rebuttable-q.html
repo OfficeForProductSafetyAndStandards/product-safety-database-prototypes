@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<!-- <h1 class="govuk-heading-l">Are there any unique circumstances of the product that suggest the risk to be less than serious?</h1> -->
+
+<h1 class="govuk-heading-l">Evidence to support your decision about the product deemed serious risk</h1>
+
+<p>It's encouraged to question the presumption of serious risk which should be seen as rebuttable.</p>
+
+
+      <form class="form govuk-!-margin-bottom-6" action="/rebuttable-4" method="post" margin-bottom="">
+
+
+<div class="govuk-form-group">
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable" name="rebuttable" type="radio" value="yes" {{ checked('multiple-casualties','yes') }} data-aria-controls="rebuttable-yes">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="rebuttable-yes">
+
+          <div class="govuk-!-margin-top-6">
+          <p>
+    Describe unique circumstances of the product or include links to relevant information.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+                 <div class="govuk-form-group">
+                  <label class="govuk-label" for="event-name">
+                    Attach evidence in support of the unique circumstanes of the product. Acceptable file formats: pdf, Word, Excel, PowerPoint, jpeg, gif and png.
+                  </label>
+                 <div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+</div>
+                </div>
+
+              </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable-1" name="rebuttable" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+    </div>
+
+
+  </fieldset>
+</div>
+
+
+        <p><button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Continue</button></p>
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

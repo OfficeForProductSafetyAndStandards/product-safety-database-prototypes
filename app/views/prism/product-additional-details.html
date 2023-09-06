@@ -1,0 +1,244 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Define the product" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">Add product identification details</h1>
+
+   <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">XYZ Car seat</p>
+  </div>
+
+    <form class="form govuk-!-margin-bottom-6" action="product-market-placement" method="post">
+
+<div class="govuk-!-margin-top-6">
+  <div class="govuk-form-group">
+    <h3 class="govuk-heading-m">Product category</h3>
+    <fieldset class="govuk-fieldset">
+        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+              <option value="choose" selected>Select category</option>
+              <option value="unitedkingdom">Abc</option>
+              <option value="unitedstates">DBN</option>
+              <option value="china">KMN</option>
+              <option value="taiwan">KMN</option>
+              <option value="japan">TGN</option>
+            </select>
+  </fieldset>
+</div>
+</div>
+
+<div class="govuk-!-margin-top-6">
+  <div class="govuk-form-group">
+    <h3 class="govuk-heading-m">Select subcategory</h3>
+    <fieldset class="govuk-fieldset">
+        <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+              <option value="choose" selected>Choose subcategory</option>
+              <option value="unitedkingdom">Abc</option>
+              <option value="unitedstates">DBN</option>
+              <option value="china">KMN</option>
+              <option value="taiwan">KMN</option>
+              <option value="japan">TGN</option>
+            </select>
+  </fieldset>
+</div>
+</div>
+
+<div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Product description</h3>
+          <p id="more-detail-hint" class="govuk-hint">
+    For example, colour, size, packaging description.</p>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+
+</div>
+
+ <div class="govuk-!-margin-top-6">
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Does the product have UKCA, UKNI, or CE marking?</h3>
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-ce-marking" name="product-ce-marking" type="radio" value="yes" data-aria-controls="ce-marking-yes">
+              <label class="govuk-label govuk-radios__label" for="product-ce-marking">
+                Yes
+              </label>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="ce-marking-yes">
+               <div class="govuk-form-group">
+
+                <div id="waste-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      UKCA
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      UKNI
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      CE
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="product-ce-marking-2" name="product-ce-marking" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="product-ce-marking-2">
+              No
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="product-ce-marking-3" name="product-ce-marking" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="product-ce-marking-3">
+              Unknown
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Was the product placed on the market before 1 January 2021?</h3>
+   <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-market-date" name="product-market-date" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="product-market-date">
+                Yes
+              </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="product-market-date-2" name="product-market-date" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="product-market-date-2">
+              No
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="product-market-date-3" name="product-market-date" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="product-market-date-3">
+              Unknown
+            </label>
+          </div>
+        </div>
+      </div>
+
+<div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Is the product counterfeit?</h3>
+   <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="counterfeit" name="counterfeit" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="counterfeit">
+                Yes
+              </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="counterfeit-2" name="counterfeit" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="counterfeit-2">
+              No
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="govuk-!-margin-top-6">
+
+        <h3 class="govuk-heading-m">Webpage</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        The manufacturer's page for the product or a link to where it can be bought.</p>
+        <label class="govuk-label" for="event-name">
+
+        </label>
+        <input class="govuk-input" id="model" name="model" type="text">
+      </div>
+
+
+
+      <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Would you like to upload captured images of the product?</h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-serious-risk" name="product-serious-risk" type="radio" value="yes" data-aria-controls="product-image">
+                <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+                  Yes
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="product-image">
+                 <div class="govuk-form-group">
+                  <label class="govuk-label" for="event-name">
+                    Acceptable file formats: jpeg, gif or png. Maximimum file size 50MB.
+                  </label>
+                 <div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+</div>
+                </div>
+        </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-serious-risk-2" name="product-serious-risk" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+{% endblock %}

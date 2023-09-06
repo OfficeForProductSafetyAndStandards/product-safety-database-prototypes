@@ -1,0 +1,213 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+
+    <h1 class="govuk-heading-l">Check existing product details</h1>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Product identification</h2>
+    <p>as recorded on the PSD</p>
+
+
+    {{ govukSummaryList({
+  rows: [
+
+    {
+      key: {
+        text: "PSD reference"
+      },
+      value: {
+        html: "<a href='#'>psd-345</a>"
+      }
+
+    },
+    {
+      key: {
+        text: "Brand name"
+      },
+      value: {
+        text: "Cosatto"
+      }
+
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        html: "All in All + Car Seat"
+      }
+    },
+    {
+      key: {
+        text: "Category"
+      },
+      value: {
+        html: 'Childcare articles and children’s equipment'
+      }
+    },
+    {
+      key: {
+        text: "Subcategory"
+      },
+      value: {
+        html: 'Car seat'
+      }
+
+    },
+    {
+      key: {
+        text: "Barcode"
+      },
+      value: {
+        html: 'Not available'
+      }
+    },
+    {
+      key: {
+        text: "Batch number"
+      },
+      value: {
+        html: 'From 37/2019 to 24/2020 (inclusive). Car seats from later batches are not affected.'
+      }
+    },
+
+    {
+      key: {
+        text: "Description"
+      },
+      value: {
+        html: 'Children’s rotating car seats available in various colours and designs.'
+      }
+    },
+    {
+      key: {
+        text: "Webpage"
+      },
+      value: {
+        html: '<a href="https://www.cosatto.com/pages/buckle">https://www.cosatto.com/pages/buckle</a>'
+      }
+    },
+    {
+      key: {
+        text: "Date avaiable on the market"
+      },
+      value: {
+        html: '1 January 2022'
+      }
+    },
+    {
+      key: {
+        text: "Country of origin"
+      },
+      value: {
+        html: 'UK'
+      }
+    },
+    {
+      key: {
+        text: "Counterfeit"
+      },
+      value: {
+        html: 'No'
+      }
+    },
+    {
+      key: {
+        text: "Product marking"
+      },
+      value: {
+        html: 'N/A'
+      }
+    },
+    {
+      key: {
+        text: "Other product identifiers"
+      },
+      value: {
+        html: 'N/A'
+      }
+    },
+    {
+      key: {
+        text: "Applicable safety regulations"
+      },
+      value: {
+        html: '<ul><li>Regulation UN/ECE N. 44-04</li><li>General Product Safety Regulations 2005</li><li>BS EN 71 series</li></ul>'
+      }
+    },
+    {
+      key: {
+        text: "Nature of non-compliance"
+      },
+      value: {
+        html: '<p>In case of a frontal crash, the child car seat (CRS) may not give the protection against head displacement as required.<p><p>The product does not comply with Regulation UN/ECE N. 44-04 </p> '
+      }
+    },
+    {
+      key: {
+        text: "Product safety assessment"
+      },
+      value: {
+        html: 'Not undertaken'
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Product sales and safety</h2>
+
+
+    {% include "../includes/sales-safety.html" %}
+
+<h2 class="govuk-heading-m">Product hazards</h2>
+
+
+    {% include "../includes/hazard-details.html" %}
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-1-complete" name="section-1-complete" type="checkbox" value="yes" { checked('section-1-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+<p><button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Complete tasks in this section</button></p>
+
+  </form>
+
+
+</div>
+
+
+<div class="govuk-grid-column-one-third govuk-!-padding-left-9 govuk-!-padding-top-9">
+
+
+    <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
+
+   <p><a href="#" class="govuk-link">More product images +</a></p>
+
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

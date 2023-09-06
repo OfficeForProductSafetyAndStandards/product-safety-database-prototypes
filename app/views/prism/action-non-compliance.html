@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Guidance" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="/product-triage" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Product risk tolerability
+      </h1>
+
+
+    <p>The PRISM product risk tolerability guide sets out steps needed to determine whether the product's risk is tolerable to the public. Use the guide to help you with a decision on the product risk tolerability.</p>
+
+    <p><a href="#">Read the PRISM risk tolerability guide (EXCEL, 160KB)</a></p>
+
+
+     <h3 class="govuk-heading-m">
+        Do you consider the risk presented by the product tolerable to the public?
+      </h3>
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+    {{ govukButton({
+          text: "Submit to Product Safety Database",
+          href: "#"
+        }) }}
+
+        <p><a href="#">Download a pdf of the assessment</a></p>
+
+
+
+    </div>
+
+</form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

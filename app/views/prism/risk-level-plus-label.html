@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Dashboard" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set title = "Determine overall product risk" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">
+      Use the highest risk hazard and add the risk level plus label
+    </h1>
+
+    <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+    <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">Cosatto All in All + Car Seat</p>
+  </div>
+
+  <h2 class="app-task-list__section">
+       Combined hazards and risks
+      </h2>
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Hazard name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Overall product risk</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Risk level plus label</th>
+       <th scope="col" class="govuk-table__header">&nbsp;</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Mechanical (highest risk) <br/>Lack of protection</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+
+       <td class="govuk-table__cell">Description of the label</td>
+
+       <td class="govuk-table__cell"><a href="combine-risks">Change</a></td>
+
+   </tr>
+
+  </tbody>
+
+</table>
+
+
+<div class="govuk-button-group">
+   <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Save and complete tasks in this section</button>
+ <p> <a href="harm-scenario-dashboard"> Remove combined risks</a></p>
+
+</div>
+
+
+
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-3-complete" name="section-3-complete" type="checkbox" value="yes" { checked('section-3-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</form>
+
+
+</div>
+
+  </div>
+
+
+
+  {% endblock %}

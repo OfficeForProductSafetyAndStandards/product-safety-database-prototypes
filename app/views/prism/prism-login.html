@@ -1,0 +1,62 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="prism-dashboard-no-ras
+      " method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Sign in
+      </h1>
+    </legend>
+
+    <p>If you don’t have an account with the PSD, ask someone in your team to send you an invite or <a href="#">email OPSS</a>.</p>
+
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="username">
+          Email address
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="username" name="username" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="password">
+          Password
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="password" name="password" type="text">
+      </div>
+
+    </fieldset>
+
+<p><a href="#">Forgot your password?</a></p>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Sign in
+  </button>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

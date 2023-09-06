@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Choose hazard type</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+<h3 class="govuk-heading-m">What is the hazard type?</h3>
+
+      <form class="form govuk-!-margin-bottom-6" action="subjects-of-harm" method="post" margin-bottom="">
+
+       <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type" name="hazard-type" type="radio" value="Mechanical" {{ checked('hazard-type','Mechanical') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Mechanical
+        </label>
+         <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, sharp edges, trapping hazards, crushing hazards, impact hazards.
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-1" name="hazard-type" type="radio" value="Size and shape" {{ checked('hazard-type','Size and shape') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Size and shape
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, small parts with the potential to be inhaled or ingested.</p>
+<p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">Suffocation or strangulation hazards such as blind cords and clothing with sashes or drawstrings</p>
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-3" name="hazard-type" type="radio" value="Electrical" {{ checked('hazard-type','Electrical') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         Electrical
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, live 240v conductors; arcing; overload; short circuit.
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-4" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Fire and explosion
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, ignition sources and fuel sources, e.g. naked flames, hot surfaces, poorly designed machinery, flammable furniture and furnishings.
+        </p>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-5" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+         Thermal
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, hot or cold surfaces of equipment.
+        </p>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-6" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Ergonomic
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, poorly designed chairs and I.T equipment.
+        </p>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-7" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+         Noise and vibration
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, noisy and vibrating machinery.
+        </p>
+      </div>
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-8" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Microbiological
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, bacteria, viruses, e.g. bacterial contamination of cosmetics.
+        </p>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-9" name="hazard-type" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Chemical
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, substances that are carcinogenic, toxic, corrosive etc. e.g. cadmium in jewellery, cadmium and other heavy metals (lead, nickel, mercury & arsenic) in care products, phthalates in toys, asbestos in building materials or as a contaminant in consumer products.
+        </p>
+      </div>
+
+
+<div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-10" name="hazard-type" type="radio" value="Lack of protection" {{ checked('hazard-type','Lack of protection') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          Lack of protection
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, smoke alarms that fail to activate; infant car seats and PPE that do not provide the specified level of protection.
+        </p>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-type-11" name="hazard-type" type="radio" value="northern-ireland" data-aria-controls="other-hazard-type">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+         Other
+        </label>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-hazard-type">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Name of hazard type
+                  </label>
+                  <input class="govuk-input" id="event-name" name="event-name" type="tex">
+                </div>
+
+              </div>
+      </div>
+
+
+ <div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Hazard description</h3>
+          <p id="more-detail-hint" class="govuk-hint">
+    Describe the specific hazard/s found in the product, for example absence of fuse.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+  </fieldset>
+</div>
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

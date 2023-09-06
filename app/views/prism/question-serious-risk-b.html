@@ -1,0 +1,71 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <form class="form govuk-!-margin-bottom-6" action="/product-serious-risk-5-b" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+ <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Is the product likely to pose a serious risk that would justify exemption from a full risk assessment?
+      </h1>
+
+    </legend>
+    <div id="changed-name-hint" class="govuk-hint">
+For example, products containing prohibited chemicals, non-compliant category III personal protective equipment and other products subject to OPSS safety alerts are likely to present a serious risk of harm and exempt from a full risk assessment.
+    </div>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="serious-risk" name="serious-risk" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="serious-risk-2" name="serious-risk" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="no">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+<br/>
+
+      <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with understanding serious risk products
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+   <p>In some limited circumstances it is appropriate to treat a non-compliant product as likely to present a serious risk, without the need to undertake a full risk assessment.</p>
+
+    <p>For further information please refer to the OPSS guide on products and hazards deemed serious risk: </p>
+    <p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1121889/prism-products-and-hazards-deemed-serious-risk-v01.pdf" target="_blank">Products and hazards deemed serious risk</a> (PDF, 105 KB, 2 pages)</p>
+  </div>
+</details>
+
+    </div>
+  </div>
+
+  <p><button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Continue</button></p>
+
+  </form>
+
+{% endblock %}

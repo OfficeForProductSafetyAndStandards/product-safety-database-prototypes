@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create a new harm scenario" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Documents to support your harm scenario</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">Steps to harm</p>
+    <p><b>Step 1</b></p>
+    <p>{{ data['step1-desc'] }}</p>
+       <p>Probability of harm: {{ data['probability1'] }}</p>
+       <p>Evidence: Some limited empirical evidence</p>
+  </div>
+
+<p>To attach your evidence for the harm scenario, select "Choose file". Check your files are correct and meet the specifications before moving to the next page.</p>
+
+<p>For further information about how your data is stored, read the <a href="#">Privacy notice</a>.</p>
+
+<h2 class="govuk-heading-m">Attach evidence for step to harm 1</h2>
+
+
+<div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+  <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h4 id="heading-4">Attached file</h4>
+<a href="#">Evidence file.pdf</a> -->
+
+
+</div>
+
+         {{ govukButton({
+          text: "Continue",
+          href: "evidence-uncertainty"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

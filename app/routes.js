@@ -19,6 +19,143 @@ router.use('/drafts-gui', require('./views/drafts-gui/_routes'));
 router.use('/product-case-testing', require('./views/product-case-testing/_routes'));
 
 
+// Prototype v5
+
+router.post('/product-triage-5', function(request, response) {
+
+   var triage = request.session.data['product-triage']
+if (triage == "yes") {
+    response.redirect("../prism/task-list-v2")
+} else if (triage == "no") {
+    response.redirect("version_5/question-triage")
+} else if (triage == "notclear") {
+    response.redirect("version_5/triage-guidance")
+}
+})
+
+router.post('/product-triage-5-b', function(request, response) {
+
+   var triage = request.session.data['product-triage']
+if (triage == "yes") {
+    response.redirect("../prism/prism-login")
+} else if (triage == "notclear") {
+    response.redirect("version_5/triage-guidance")
+}
+})
+
+
+
+router.post('/product-triage-5a', function(request, response) {
+
+   var triage = request.session.data['product-triage-a']
+if (triage == "yes") {
+    response.redirect("version_5/triage-guidance")
+} else  {
+    response.redirect("version_5/prism-login")
+}
+})
+
+router.post('/product-serious-risk-5', function(request, response) {
+
+    var srisk = request.session.data['serious-risk']
+    if (srisk == "no"){
+        response.redirect("../../prism//question-triage-a")
+    } else {
+        response.redirect("version_5/serious-risk-rebuttable")
+    }
+})
+
+router.post('/product-serious-risk-5-b', function(request, response) {
+
+    var srisk = request.session.data['serious-risk']
+    if (srisk == "no"){
+        response.redirect("../../prism//question-triage-b")
+    } else {
+        response.redirect("version_5/serious-risk-rebuttable")
+    }
+})
+
+router.post('/product-search-5', function(req,res){
+    var brand = req.session.data['model'];
+    if (brand.includes("XYZ")) {
+       res.redirect('version_5/product-search-no-results');
+    }
+    else {
+        res.redirect('version_5/product-search-results')
+    }
+
+});
+
+router.post('/rebuttable-5', function(request, response) {
+
+    var srisk = request.session.data['rebuttable']
+    if (srisk == "no"){
+        response.redirect("version_5/task-list-serious-risk")
+    } else {
+        response.redirect("version_5/task-list-serious-risk")
+    }
+})
+
+router.post('/pre-product-search', function(request, response) {
+
+    var srisk = request.session.data['pre-product-search']
+    if (srisk == "no"){
+        response.redirect("version_5/product-search")
+    } else {
+        response.redirect("version_5/product-ref-number")
+    }
+})
+
+router.post('/prism-login-5', function(request, response) {
+
+    var credentials = request.session.data['username']
+    if (credentials == "psd"){
+        response.redirect("version_5/prism-assessments-dashboard")
+    } else {
+        response.redirect("version_5/question-serious-risk")
+    }
+})
+
+
+router.post('/product-search-route', function(request, response) {
+
+    var rchoice = request.session.data['psd-ref']
+    if (rchoice == "psd-345"){
+        response.redirect("version_5/product-search-results-psd")
+    } else {
+        response.redirect("version_5/product-search-results")
+    }
+})
+
+router.post('/product-overall-risk-decision', function(request, response) {
+
+    var prisk = request.session.data['product-overall-risk']
+    if (prisk == "risk"){
+        response.redirect("version_5/product-overall-risk-option-1")
+    }
+    else if (prisk == "multiple") {
+        response.redirect("version_5/combine-risks-1")
+    }
+    else if (prisk == "risklabel") {
+        response.redirect("version_5/combine-risks")
+    }
+})
+
+router.post('/product-overall-risk-decision-1', function(request, response) {
+
+    var prisk = request.session.data['product-overall-risk-1']
+    if (prisk == "risk"){
+        response.redirect("version_5/product-overall-risk-option-1a")
+    }
+    else if (prisk == "multiple") {
+        response.redirect("version_5/combine-risks-1")
+    }
+    else if (prisk == "risklabel") {
+        response.redirect("version_5/combine-risks-a")
+    }
+})
+
+
 // **** End folder specific routes
 
 module.exports = router

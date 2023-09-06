@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set title = "Determine overall product risk" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">
+     Use the highest risk hazard and add the risk level plus label
+    </h1>
+
+    <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">Cosatto All in All + Car Seat</p>
+  </div>
+
+    <form class="form govuk-!-margin-bottom-6" action="risk-level-plus-label" method="post">
+
+<h2 class="app-task-list__section">
+       Combined hazards and risks
+      </h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Hazard name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Overall product risk</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Mechanical (highest risk), Lack of protection</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+
+   </tr>
+
+  </tbody>
+
+</table>
+
+<h3 class="govuk-heading-m">Add the risk level plus label
+
+
+          <p>Describe the reason for choosing the risk level plus label.</p>
+    <textarea class="govuk-textarea" id="risk-plus-desc" name="isk-plus-desc" rows="3" aria-describedby="more-detail-hint"></textarea>
+
+
+
+
+<div class="govuk-button-group">
+   <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Add</button>
+   <p> <a href="harm-scenario-dashboard"> Remove combined risks</a></p>
+</div>
+
+
+
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</form>
+
+
+</div>
+
+  </div>
+
+  {% endblock %}

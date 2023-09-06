@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="check-existing-product-assessment" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Risk evaluation outcome
+      </h1>
+
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">Overall product risk  recorded in the assessment</p>
+    <br/>
+    <strong class="govuk-tag govuk-tag--red">Serious risk</strong>
+  </div>
+
+
+    <p>The PRISM <a href="https://www.gov.uk/guidance/product-safety-risk-assessment-methodology-prism" target="_blank"> guide</a> contains information to help you in deciding on the tolerability of the risk.</p>
+
+
+     <h3 class="govuk-heading-m">
+        How would you describe the risk presented by the product?
+      </h3>
+
+    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Risk is tolerable
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Risk management action is not normally required, however action may still be needed to address any relevant non-compliance.
+        </p>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Risk is intolerable
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Risk management action will normally be required to reduce the risk to a tolerable level and to comply with the law.
+        </p>
+      </div>
+   <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

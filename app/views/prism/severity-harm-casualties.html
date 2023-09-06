@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <form class="form govuk-!-margin-bottom-6" action="evidence-uncertainty" method="post" margin-bottom="">
+
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Determine severity of harm casualties</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+   <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+    <p>{{ data['hazard-desc'] }}</p>
+    <p> Affected users:
+
+    {% if checked("product-aim", "Particular group of users") %}
+
+
+
+     {{ data['pug-type'] }}
+
+      {% if checked("product-aim", "General population") %}
+
+     General population
+     {% endif %}
+
+      {% endif %}</p>
+      <p>Overall probability of harm: 1 in 2000</p>
+      <p>Severity of harm: {{ data['severity-level'] }}</p>
+  </div>
+
+
+
+      <form class="form govuk-!-margin-bottom-6" action="/path/of/next/page" method="post" margin-bottom="">
+
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-m">Can severity {{ data['severity-level'] }} harm result in multiple casualties?</h3>
+  <div id="changed-name-hint" class="govuk-hint">Some hazards have the potential to harm more than one subject in a single incident, for example those hazards that can result in fires or explosions, and hazardous chemicals in some types of cosmetics.</div>
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="multiple-casualties" name="multiple-casualties" type="radio" value="yes" {{ checked('multiple-casualties','yes') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="multiple-casualties-1" name="multiple-casualties" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+    </div>
+
+
+  </fieldset>
+</div>
+
+
+       <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+  </form>
+
+    </div>
+  </div>
+
+{% endblock %}

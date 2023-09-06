@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Dashboard" %}
+
+{% set title = "Evaluate product risk and submit assessment
+" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">
+      Determine overall risk level of harm scenarios
+    </h1>
+
+    <form class="form govuk-!-margin-bottom-6" action="task-list-v2" method="post">
+
+    <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+
+   <h2 class="app-task-list__section">
+       Harm scenarios
+      </h2>
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Hazard name</th>
+      <th scope="col" class="govuk-table__header">Probability of harm</th>
+      <th scope="col" class="govuk-table__header">Severity</th>
+      <th scope="col" class="govuk-table__header">Risk level</th>
+      <th scope="col" class="govuk-table__header ">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Mechanical</td>
+      <td class="govuk-table__cell">1 in 2000</td>
+      <td class="govuk-table__cell">Level 4</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+     <td class="govuk-table__cell"><a href="edit-harm-scenario">Change</a></td>
+   </tr>
+
+  </tbody>
+
+</table>
+
+<!-- <p><a href="add-hazard" class="govuk-button govuk-button--secondary">
+    Add another scenario
+  </a></p> -->
+
+
+<div class="govuk-button-group">
+   <a href="risk-evaluation-nature" type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Save and continue</a>
+
+   <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+
+
+
+
+<!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-3-complete" name="section-3-complete" type="checkbox" value="yes" { checked('section-3-complete','yes') }} checked>
+
+      </div>
+    </div> -->
+
+
+
+
+
+
+
+
+</form>
+
+
+</div>
+
+  </div>
+
+
+
+
+
+
+  <!-- <p style="margin-top: 300px;"><a href="harm-scenario-dashboard-1">Scenario 1: Medium/Medium levels of risk</a></p>
+
+  <p><a href="harm-scenario-dashboard">Scenario 2: Medium/Serious levels of risk</a></p> -->
+
+  {% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="../psd-revised-flow/product-page-ra-assigned" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Assign assessment to a case
+      </h1>
+    </legend>
+
+    <div class="app-summary-card">
+      <p class="govuk-body-l">Buckle failure</p>
+      <p class="govuk-!-margin-bottom-0">for</p>
+      <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+    </div>
+
+
+
+    <h2 class="govuk-heading-m">Related cases</h2>
+ <p class="govuk-body">Select the product case to which you'd like to assign the assessment.</p>
+
+         <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Case name and id</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Created by</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Labelling issues</a><br><span style="font-weight:normal">2101-0008</span></th>
+      <td class="govuk-table__cell">Sunderland Council</td>
+      <td class="govuk-table__cell">10 May 2023</td>
+       <td class="govuk-table__cell"><span class="opss-tag opss-tag--plain">Case open</span></td>
+      <td class="govuk-table__cell"><a href="#">Select</a></td>
+    </tr>
+
+     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Rotation platform failure</a><br><span style="font-weight:normal">2101-0008</span></th>
+      <td class="govuk-table__cell">Lancashire Council</td>
+      <td class="govuk-table__cell">3 July 2023</td>
+       <td class="govuk-table__cell"><span class="opss-tag opss-tag--plain">Case open</span></td>
+      <td class="govuk-table__cell"><a href="#">Select</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+    <div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Assign
+  </button>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Create a new product case
+  </button>
+</div>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

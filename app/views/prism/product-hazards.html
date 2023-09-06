@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Identify product hazards" %}
+
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Add a number of hazards</h1>
+
+{% if checked("existing-product", "yes") %}
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+{% else %}
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">XYZ Car Seat</p>
+  </div>
+
+{% endif %}
+
+<h3 class="govuk-heading-m">Number of hazards identified</h3>
+
+      <form class="form govuk-!-margin-bottom-6" action="task-list-v2" method="post" margin-bottom="">
+
+       <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-1" name="hazards" type="radio" value="1" {{ checked('hazards','1') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          1
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-2" name="hazards" type="radio" value="2" {{ checked('hazards','2') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         2
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-3" name="hazards" type="radio" value="3" {{ checked('hazards','3') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         3
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-4" name="hazards" type="radio" value="4" {{ checked('hazards','4') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          4
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hazard-5" name="hazards" type="radio" value="5" {{ checked('hazards','5') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+         5
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-4" name="hazards" type="radio" value="more than 5" {{ checked('hazards','more than 5') }}>
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+          More than 5
+        </label>
+      </div>
+
+
+  </fieldset>
+</div>
+
+
+
+ <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and complete tasks in this section
+  </button>
+
+   </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

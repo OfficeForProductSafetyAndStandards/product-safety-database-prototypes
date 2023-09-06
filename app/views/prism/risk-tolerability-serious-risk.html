@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Evaluate the product posing a serious risk" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Product risk evaluation
+      </h1>
+
+
+    <p>The PRISM product risk evaluation sets out steps needed to determine factors related to perception and tolerability of the serious risk. Use the guide to help you to evaulate the product posing a serious risk.</p>
+
+    <p><a href="/public/images/prism-toolkit-evaluation.xlsm">PRISM risk evaluation (EXCEL, 160KB)</a></p>
+
+
+     <h3 class="govuk-heading-m">
+        How would you describe the risk presented by the product?
+      </h3>
+
+    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Tolerable
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Risk management action is not normally required, however action may still be needed to address any relevant non-compliance.
+        </p>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Intolerable
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Risk management action will normally be required to reduce the risk to a tolerable level and to comply with the law.
+        </p>
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+{{ govukButton({
+          text: "Submit to Product Safety Database",
+          href: "#"
+        }) }}
+
+    </div>
+
+</form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
