@@ -1,4 +1,4 @@
-{% extends "layout-psd-menu_home.html" %}
+{% extends "layout-psd-menu_cases.html" %}
 
 {% block pageTitle %}
 Case 2101-0008
@@ -19,7 +19,7 @@ href: "cases"
         <span class="govuk-caption-m opss-visibility-hidden">The case page</span>
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-            Case {% include "psd-revised-flow/case-ref.html" %}
+            Case <span style="font-weight:normal; font-size: 30px;">6449-2312</span>
             <!--span class="govuk-heading-m govuk-!-font-weight-regular govuk-!-padding-left-1 opss-secondary-text">2101-0008</span-->
         </h1>
 
@@ -61,8 +61,6 @@ href: "cases"
 
     <section id="page-content" role="region" class="govuk-grid-column-three-quarters">
 
-         <h3 class="govuk-heading-m">Rotation platform failure </h3>
-
         {% include "psd-revised-flow/inc_top_nav_2.html" %}
 
         <h2 class="govuk-heading-m govuk-!-margin-top-1 govuk-visually-hidden">Case overview</h2>
@@ -74,7 +72,7 @@ href: "cases"
                     Case name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Rotation platform failure
+                    New feature - readable case name
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -88,7 +86,7 @@ href: "cases"
                     <!-- or Enquiry / Project -->
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    6449-2312 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
+                    2101-0008 <span class="govuk-!-font-size-16 govuk-!-padding-left-2 opss-secondary-text">
                         <span class="govuk-visually-hidden"> - </span>Case number
                     </span>
                 </dd>
@@ -165,7 +163,7 @@ href: "cases"
                     Created by
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Dimitri Koksharov - Warwickshire County Council
+                    Darren Harridence - Renfrewshire Council
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -173,7 +171,7 @@ href: "cases"
                     Case owner
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Dimitri Koksharov - Warwickshire County Council
+                    Darren Harridence - Renfrewshire Council
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -236,7 +234,23 @@ href: "cases"
                     </a>
                 </dd>
             </div>
-
+            <!--div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Risk level validated</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+            </div-->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    COVID-19
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <span class="opss-tag opss-tag--covid opss-tag--lrg">COVID-19 related</span>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Change<span class="govuk-visually-hidden"> the coronavirus status</span>
+                    </a>
+                </dd>
+            </div>
         </dl>
 
         <h3 id="safety" class="govuk-heading-m govuk-!-margin-top-6 opss-float-left">
