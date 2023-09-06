@@ -1,5 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
+{% set title = "Buckle failure" %}
+
 {% block pageTitle %}
   Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -14,19 +16,19 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       <form class="form govuk-!-margin-bottom-6" action="../psd-revised-flow/product-page-ra-assigned" method="post">
 
        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <span class="govuk-caption-l">{{title}}</span>
       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
-        Assign assessment to a case
+        Add assessment to a case
       </h1>
     </legend>
 
     <div class="app-summary-card">
-      <p class="govuk-body-l">Buckle failure</p>
       <p class="govuk-!-margin-bottom-0">for</p>
       <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
     </div>
@@ -34,16 +36,16 @@
 
 
     <h2 class="govuk-heading-m">Related cases</h2>
- <p class="govuk-body">Select the product case to which you'd like to assign the assessment.</p>
+ <p class="govuk-body">Select the product case to which you'd like to add the assessment. If you find that the case doesn't fit your assessment, you have the option to create a new case.</p>
 
          <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Case name and id</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Created by</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+     <th scope="col" class="govuk-table__header">Case name and id</th>
+      <th scope="col" class="govuk-table__header">Created by</th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header"><!-- Actions --></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -53,7 +55,7 @@
       <td class="govuk-table__cell">Sunderland Council</td>
       <td class="govuk-table__cell">10 May 2023</td>
        <td class="govuk-table__cell"><span class="opss-tag opss-tag--plain">Case open</span></td>
-      <td class="govuk-table__cell"><a href="#">Select</a></td>
+      <td class="govuk-table__cell"><a href="#">View</a> | <a href="#">Select</a></td>
     </tr>
 
      <tr class="govuk-table__row">
@@ -61,7 +63,7 @@
       <td class="govuk-table__cell">Lancashire Council</td>
       <td class="govuk-table__cell">3 July 2023</td>
        <td class="govuk-table__cell"><span class="opss-tag opss-tag--plain">Case open</span></td>
-      <td class="govuk-table__cell"><a href="#">Select</a></td>
+      <td class="govuk-table__cell"><a href="#">View</a> | <a href="#">Select</a></td>
     </tr>
 
   </tbody>
@@ -70,7 +72,7 @@
 
     <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button">
-    Assign
+    Add
   </button>
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Create a new product case
