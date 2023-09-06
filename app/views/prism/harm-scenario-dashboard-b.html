@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Dashboard" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">
+    Determine overall risk level of harm scenarios
+    </h1>
+
+    <form class="form govuk-!-margin-bottom-6" action="/product-overall-risk-decision" method="post">
+
+    <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+
+   <h2 class="app-task-list__section">
+       Harm scenarios
+      </h2>
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Hazard name</th>
+      <th scope="col" class="govuk-table__header">Probability of harm</th>
+      <th scope="col" class="govuk-table__header">Severity</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Risk level<br></th>
+      <th scope="col" class="govuk-table__header">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Mechanical</td>
+      <td class="govuk-table__cell">1 in 2000</td>
+      <td class="govuk-table__cell">Level 3</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Medium risk</strong></td>
+     <td class="govuk-table__cell"><a href="check-your-harm-scenario">View</a></td>
+   </tr>
+
+  </tbody>
+
+
+   <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Lack of protection</td>
+      <td class="govuk-table__cell">1 in 1000</td>
+      <td class="govuk-table__cell">Level 4</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+     <td class="govuk-table__cell"><a href="">View</a></td>
+   </tr>
+
+  </tbody>
+</table>
+
+<!-- <p><a href="add-hazard" class="govuk-button govuk-button--secondary">
+    Add another scenario
+  </a></p> -->
+
+<h3 class="govuk-heading-m">
+        How would you determine the overall product risk when considering multiple hazards?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-overall-risk" name="product-overall-risk" type="radio" value="risk">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+         Use the highest risk hazard
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-overall-risk-2" name="product-overall-risk" type="radio" value="risklabel">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Use the highest risk hazard and add the risk level plus label
+        </label>
+
+      </div>
+
+    </div>
+
+
+<div class="govuk-button-group">
+   <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Determine the overall product risk</button>
+
+</div>
+
+
+
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-3-complete" name="section-3-complete" type="checkbox" value="yes" { checked('section-3-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</form>
+
+
+</div>
+
+  </div>
+
+
+
+
+
+
+  <!-- <p style="margin-top: 300px;"><a href="harm-scenario-dashboard-1">Scenario 1: Medium/Medium levels of risk</a></p>
+
+  <p><a href="harm-scenario-dashboard">Scenario 2: Medium/Serious levels of risk</a></p> -->
+
+  {% endblock %}

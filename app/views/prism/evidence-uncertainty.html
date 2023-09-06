@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Add level of uncertainty and sensitivity analysis</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+   <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+    <p>{{ data['hazard-desc'] }}</p>
+    <p> Affected users:
+
+    {% if checked("product-aim", "Particular group of users") %}
+
+
+
+     {{ data['pug-type'] }}
+
+      {% if checked("product-aim", "General population") %}
+
+     General population
+     {% endif %}
+
+      {% endif %}
+
+      <p>Overall probability of harm: 1 in 2000</p>
+   <p> Severity of harm: {{ data['severity-level'] }}, multiple casualties: {{ data['multiple-casualties'] }}</p>
+       <p>Overall risk level <strong class="govuk-tag govuk-tag--red" style="margin-left:10px;">Serious risk</strong></p>
+  </div>
+
+
+
+      <form class="form govuk-!-margin-bottom-6" action="risk-evaluation-nature" method="post" margin-bottom="">
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-m">What is the level of uncertainty associated with the risk assessment? </h3>
+   <p id="more-detail-hint" class="govuk-hint">
+    Every risk assessment that involves some degree of estimation will come with an associated degree of uncertainty; this is normal and does not in itself mean that the risk assessment is flawed.</p>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Low
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Medium
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         High
+        </label>
+      </div>
+    </div>
+    </fieldset>
+  </div>
+
+<div class="govuk-!-margin-top-6">
+          <div class="govuk-form-group">
+  <h3 class="govuk-heading-m">Has sensitivity analysis been undertaken?</h3>
+   <p id="more-detail-hint" class="govuk-hint">
+    The implications of the uncertainty can be considered by undertaking a sensitivity analysis. For example, where there is uncertainty surrounding one or more of the probabilities within a harm scenario, then different probabilities can be applied (which can be higher, lower, or both, than the original figure/s used)) to fairly reflect the extent of the uncertainty.</p>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sensitivity-analysis" name="sensitivity-analysis" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sensitivity-analysis" name="sensitivity-analysis" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+</div>
+
+
+  </div>
+</fieldset>
+
+
+
+
+  </fieldset>
+</div>
+
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+   Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+  </form>
+
+    </div>
+  </div>
+
+{% endblock %}

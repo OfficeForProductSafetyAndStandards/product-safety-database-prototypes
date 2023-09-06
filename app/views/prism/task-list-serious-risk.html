@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <h1 class="govuk-heading-l">
+    Evaluate the product considered to be serious risk
+  </h1>
+
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Risk evaluation incomplete</h2>
+
+<p>You have completed 0 of 2 sections.</p>
+
+
+  <ol class="app-task-list govuk-!-margin-top-7">
+
+
+<li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> Define the product
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-assessment-details">Add evaluation details</a>
+          </span>
+
+             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+
+
+
+
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Search or add a new product
+          </span>
+
+
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+
+
+        </li>
+      </ul>
+    </li>
+
+
+         <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> Evaluate product risk and submit results
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                Complete product risk evaluation</span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                Review and submit results of the evaluation</span>
+               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        </div>
+      </div>
+
+      <!--
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong> -->
+
+      {% endblock %}
+

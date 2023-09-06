@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Product Safety Database
+{% endset%}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Assessment complete",
+        html: "Case reference number<br><strong>2306-0005</strong>"
+      }) }}
+
+      <p>Your sucessfully added the risk assessment to the product case on the PSD.</p>
+
+      <h2 class="govuk-heading-m">
+        Next steps
+      </h2>
+
+
+        <ul class="govuk-list">
+
+          <li><a href="#" class="govuk-link">View or edit</a> the product risk assessments.</li>
+
+
+
+               <li><a href=# class="govuk-link">Update the product</a> if you need to change any of the details.</li>
+
+
+                 <li><a href="#" class="govuk-link">Add more details</a> to the case if you would like to update it.</li>
+
+               </ul>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

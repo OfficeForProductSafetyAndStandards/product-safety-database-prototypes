@@ -1,0 +1,85 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form class="form govuk-!-margin-bottom-6" action="question-serious-risk" method="post">
+
+      <h1 class="govuk-heading-l">
+        Risk assessments
+      </h1>
+
+      <h2 class="govuk-heading-m">Draft risk assessments</h2>
+
+         <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Product name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Hazard description</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">ABC  Room / Space Heater</th>
+      <td class="govuk-table__cell">Non UK plug face </td>
+      <td class="govuk-table__cell">10 May 2023</td>
+       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+  Draft</strong></td>
+      <td class="govuk-table__cell"><a href="task-list">Make changes</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+      <h2 class="govuk-heading-m">Submitted risk assessments</h2>
+
+<table class="govuk-table govuk-!-margin-bottom-8">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Product name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Hazard description</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">All in All + Car Seat, Dragon Kingdom CT4262</th>
+      <td class="govuk-table__cell">Lack of adequate protection</td>
+      <td class="govuk-table__cell">23 April 2023</td>
+      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green" id="company-information-status">Submitted</strong></td>
+      <td class="govuk-table__cell"><a href="#">View assessment</a>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <a href="assign-to-case">Assign to a case</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p><button type="submit" class="govuk-button" data-module="govuk-button" value="Start a new risk assessment" id="submit">Start a new risk assessment</button></p>
+
+
+
+
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

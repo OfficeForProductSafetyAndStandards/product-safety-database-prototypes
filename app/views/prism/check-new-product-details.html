@@ -1,0 +1,426 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+
+      <h1 class="govuk-heading-l">
+        Check new product details
+      </h1>
+
+
+      <h2 class="govuk-heading-m">Product identification</h2>
+
+
+    {{ govukSummaryList({
+  rows: [
+
+
+    {
+      key: {
+        text: "Brand name"
+      },
+      value: {
+        text: "Maxi-Cosi"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        html: "Coral XP Car Seat"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Category"
+      },
+      value: {
+        html: 'Childcare articles and children’s equipment'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Subcategory"
+      },
+      value: {
+        html: 'Car seat'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Barcode"
+      },
+      value: {
+        html: 'Not available'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Batch number"
+      },
+      value: {
+        html: 'Not available'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Description"
+      },
+      value: {
+        html: 'Children’s rotating car seats available in various colours and designs.'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Webpage"
+      },
+      value: {
+        html: 'Not available'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date avaiable on the market"
+      },
+      value: {
+        html: '22 January 2022'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Country of origin"
+      },
+      value: {
+        html: 'USA'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Counterfeit"
+      },
+      value: {
+        html: 'No'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Product marking"
+      },
+      value: {
+        html: 'N/A'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Other product identifiers"
+      },
+      value: {
+        html: 'N/A'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Product safety assessment"
+      },
+      value: {
+        html: 'Not avaialble'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Product sales and safety</h2>
+
+
+    {{ govukSummaryList({
+  rows: [
+
+    {
+      key: {
+        text: "Name of the business that sold the product"
+      },
+      value: {
+        text: "XYZ"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Total number of product sold"
+      },
+      value: {
+        text: "Not available"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Product safety legislation and standards"
+      },
+      value: {
+        html: "General Product Safety Regulations 2005"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Product hazards</h2>
+
+
+    {{ govukSummaryList({
+  rows: [
+
+    {
+      key: {
+        text: "Number of hazards identified"
+      },
+      value: {
+        text: "1"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Who or what could be harmed?"
+      },
+      value: {
+        text: "Children"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+
+    },
+    {
+      key: {
+        text: "Could unintended or non-users be at risk?"
+      },
+      value: {
+        html: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-1-complete" name="section-1-complete" type="checkbox" value="yes" { checked('section-1-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+<p><button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Complete tasks in this section</button></p>
+
+  </form>
+
+
+</div>
+
+
+<div class="govuk-grid-column-one-third govuk-!-padding-left-9 govuk-!-padding-top-9">
+
+
+    <img src="/public/images/car-seat-maxi.jpg" width="200px" height="200px" alt="Product Image">
+
+
+
+</div>
+</div>
+{% endblock %}

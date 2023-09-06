@@ -1,0 +1,387 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+    All products - Search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s"> 
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Search for the product
+        </h1>
+
+        <p class="govuk-body opss-secondary-text">
+          Before starting the assessment, search for the product on the PSD. If you can't find the product, create a new product to start the assessment.
+        </p>
+
+        <details class="govuk-details opss-details--sm" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Help with the products search
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body-s">
+                  <span id="search-hint">You can search for one or more products by using the keywords that describe them or use a single <abbr>PSD</abbr> reference number to find a specific product record.</span> You can also sort the ordering of the search results.
+              </p>
+              <p class="govuk-body-s govuk-!-margin-bottom-1">
+                  You can filter the results by hazard type. As an <abbr>OPSS</abbr> user you can also include 'retired' product records in your search. (These are records which are no longer active and are now considered less relevant).
+              </p>
+              <p class="govuk-body-s govuk-visually-hidden">
+                Search results appear within the following <code>form</code> and within the <code>role = region</code>.
+              </p>
+            </div>
+        </details>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <div class="opss-text-align-right govuk-!-margin-bottom-8">
+          <a href="psd-revised-flow/create-a-product-record.html" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset">
+              Create a product record
+          </a>            
+      </div>
+  </div>
+</div>
+
+<form action="#" accept-charset="UTF-8" method="get" role="search" novalidate>
+  
+    <div class="govuk-grid-row opss-full-height">
+  
+        <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+          <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+               <li class="opss-left-nav__active">
+                  <a class="govuk-link govuk-link--no-visited-state" aria-current="page" href="/psd-products-area/all-products.html">All products - Search</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/team-products.html">Team products</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/your-products-sorting.html">Your products</a>
+                </li>
+            </ul>
+          </nav>
+
+          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-1 govuk-!-margin-bottom-6 govuk-!-margin-right-6">          
+
+          <h2 class="govuk-heading-s">
+              Filters<span class="govuk-visually-hidden">:</span>
+          </h2>
+  
+          <a href="#page-content" class="govuk-skip-link opss-skip-link opss-skip-link--mb">
+              Skip to results
+          </a>
+  
+          <div class="govuk-form-group govuk-!-margin-right-1">
+            <label class="govuk-label" for="hazard_type">Category</label>
+  
+            <select class="govuk-select" id="hazard_type" name="hazard_type">
+              <option class="govuk-!-font-size-16" value="" selected="selected">All</option>
+              <option class="govuk-!-font-size-16" value="Asphyxiation">Asphyxiation</option>
+              <option class="govuk-!-font-size-16" value="Burns">Burns</option>
+              <option class="govuk-!-font-size-16" value="Chemical">Chemical</option>
+              <option class="govuk-!-font-size-16" value="Choking">Choking</option>
+              <option class="govuk-!-font-size-16" value="Cuts">Cuts</option>
+              <option class="govuk-!-font-size-16" value="Damage to hearing">Damage to hearing</option>
+              <option class="govuk-!-font-size-16" value="Damage to sight">Damage to sight</option>
+              <option class="govuk-!-font-size-16" value="Disturbance">Disturbance</option>
+              <option class="govuk-!-font-size-16" value="Drowning">Drowning</option>
+              <option class="govuk-!-font-size-16" value="Electric shock">Electric shock</option>
+              <option class="govuk-!-font-size-16" value="Electromagnetic">Electromagnetic</option>
+              <option class="govuk-!-font-size-16" value="Energy consumption">Energy consumption</option>
+              <option class="govuk-!-font-size-16" value="Entrapment">Entrapment</option>
+              <option class="govuk-!-font-size-16" value="Environment">Environment</option>
+              <option class="govuk-!-font-size-16" value="Fire">Fire</option>
+              <option class="govuk-!-font-size-16" value="Health risk">Health risk</option>
+              <option class="govuk-!-font-size-16" value="Incorrect measurement">Incorrect measurement</option>
+              <option class="govuk-!-font-size-16" value="Injuries">Injuries</option>
+              <option class="govuk-!-font-size-16" value="Microbiological">Microbiological</option>
+              <option class="govuk-!-font-size-16" value="Security">Security</option>
+              <option class="govuk-!-font-size-16" value="Strangulation">Strangulation</option>
+              <option class="govuk-!-font-size-16" value="Suffocation">Suffocation</option>
+              <option class="govuk-!-font-size-16" value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- ******* included for OPSS users only, starts ************ -->
+          <!-- <div class="govuk-form-group opss-form-group opss-form-group--sm-labels">
+            <fieldset class="govuk-fieldset" aria-describedby="">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                  Product record status
+              </legend>  
+          
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input id="status_active" name="status" type="radio" value="active" class="govuk-radios__input" checked="checked">
+                    <label class="govuk-label govuk-radios__label" for="status_active">Active</label>
+                  </div>
+            
+                  <div class="govuk-radios__item">
+                    <input id="status_retired" name="status" type="radio" value="retired" class="govuk-radios__input">
+                    <label class="govuk-label govuk-radios__label" for="status_retired">Retired</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input id="status_all" name="status" type="radio" value="all" class="govuk-radios__input">
+                    <label class="govuk-label govuk-radios__label" for="status_all">All</label>
+                  </div>                  
+              </div>
+            </fieldset>
+          </div>  -->
+          <!-- ******* included for OPSS users only, ends ************ -->         
+  
+          <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Apply
+              </button>
+  
+              <button type="reset" class="govuk-button opss-button-link govuk-!-font-size-16 opss-nojs-hide" id="opss-reset" data-module="govuk-button">
+                  Reset
+              </button>
+          </div>
+  
+  
+        <!--   <div class="govuk-!-padding-top-2 govuk-!-padding-right-0 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-margin-bottom-3 opss-desktop-margin-bottom-220px opss-full-height__col--bottom opss-right-box-arrow">
+              <p class="govuk-body govuk-!-padding-bottom-1 govuk-!-margin-bottom-0 govuk-!-font-size-14">
+                  Request this list as a downloadable <br class="opss-br-desktop"><a href="/psd-general/cases-page-banner" class="govuk-link govuk-link--no-visited-state"><abbr title="Microsoft Excel Open XML Format Spreadsheet">XLSX</abbr> (spreadsheet)</a> file.
+              </p>
+          </div> -->
+  
+        </section>
+
+        <section class="govuk-grid-column-three-quarters" id="page-content">
+  
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-form-group govuk-!-padding-bottom-2">
+                  <label class="govuk-label" for="products-search">
+                    Search
+                  </label>
+
+                  <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-input govuk-!-width-full" type="search" id="products-search" name="products-search" spellcheck="false" aria-describedby="search-hint">
+                    <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Submit search</span>
+                    </button>
+                  </div>
+                </div>
+
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group opss-text-align-right">
+                        <fieldset id="sort-by-fieldset" class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
+                            <label class="govuk-label govuk-body-s" for="sort_by">
+                                Sort <span class="govuk-visually-hidden">the results</span> by
+                            </label>
+                            <select class="govuk-select govuk-!-margin-bottom-1" id="sort_by">
+                            <option selected="selected" data-url="/products?sort_by=created_at">Newly added</option><option data-url="/products?sort_by=name&amp;sort_dir=asc">Name A-Z</option><option data-url="/products?sort_by=name&amp;sort_dir=desc">Name Z-A</option>
+                            </select>
+                        </fieldset>
+  
+                        <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
+                            <dt>
+                                Sort <span class="govuk-visually-hidden">the results</span> by
+                            </dt>
+                            <dd>
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</a>
+                            </dd>
+                            <dd>
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
+                                  <span class="govuk-visually-hidden">Active: </span>Option 2
+                                </a>
+                            </dd>
+                            <dd class="opss-dl-select__active">
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
+                                    Option 3
+                                </a>
+                            </dd>
+                        </dl>
+                  </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <p class="govuk-body">There are currently 34 products.</p>
+            </div>
+          </div>          
+  
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full" role="region" aria-label="Products">
+  
+                <table class="govuk-table opss-table-items opss-table-items--sm">
+                  <caption class="govuk-visually-hidden">
+                      Products: 5 columns with each case described across rows within each table body.
+                  </caption>
+                  <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th id="psdref" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
+                          <th id="prodtype" scope="col" class="govuk-table__header">Category</th>
+                          <th id="haztype" scope="col" class="govuk-table__header">Product type</th>
+                          <th id="cat" scope="col" class="govuk-table__header">Counterfeit</th>
+                      </tr>
+                  </thead>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">
+                              Product
+                          </th>
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                              <a href="../../../psd-revised-flow/product-page" class="govuk-link govuk-link--no-visited-state">All in All+ Car Seat, Dragon Kingdom CT4262</a>
+                          </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                              Metadata
+                          </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-670
+                          </td>                          
+                          <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                            Childcare articles and children’s equipment
+                          </td>
+                          <td headers="haztype item-1 meta-1" class="govuk-table__cell">
+                            Car seat
+                          </td>
+                          <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                            No
+                          </td>
+                      </tr>
+                  </tbody>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">
+                              Product
+                          </th>
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">Calvin Klein CK One Unisex Eau de Toilette 100ml</a>
+                          </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                              Metadata
+                          </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-677
+                          </td>
+                          <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                           Cosmetics
+                          </td>
+                          <td headers="haztype item-1 meta-1" class="govuk-table__cell">
+                            Perfume
+                          </td>
+                          <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                            No
+                          </td>
+                      </tr>
+                  </tbody>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">
+                              Product
+                          </th>
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">HL R-Team E-Bike Batteries and Chargers (2306-0016)</a>
+                          </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                              Metadata
+                          </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-630
+                          </td>
+                          <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                            Electrical appliances and equipment
+                          </td>
+                          <td headers="haztype item-1 meta-1" class="govuk-table__cell">
+                             E-Bike battery and charger
+                          </td>
+                          <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                            No
+                          </td>
+                      </tr>
+                  </tbody>
+
+                  <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">
+                              Product
+                          </th>
+                          <th id="item-1" colspan="4" scope="colgroup" class="govuk-table__header">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">Beefeater 190L Double Door Fridge (2303-0022)</a>
+                          </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th headers="item-1" id="meta-1" class="govuk-visually-hidden">
+                              Metadata
+                          </th>
+                          <td headers="psdref item-1 meta-1" class="govuk-table__cell opss-no-wrap">
+                            psd-690
+                          </td>
+                          <td headers="prodtype item-1 meta-1" class="govuk-table__cell">
+                            Electrical appliances and equipment
+                          </td>
+                          <td headers="haztype item-1 meta-1" class="govuk-table__cell">
+                             Refrigerator
+                          </td>
+                          <td headers="cat item-1 meta-1" class="govuk-table__cell">
+                            No
+                          </td>
+                      </tr>
+                  </tbody>
+
+
+
+                  <tfoot class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                          <th class="govuk-visually-hidden">&nbsp;</th>
+                          <th id="psdref" scope="col" class="govuk-table__header"><abbr>PSD</abbr> ref</th>
+                          <th id="prodtype" scope="col" class="govuk-table__header">Category</th>
+                          <th id="haztype" scope="col" class="govuk-table__header">Product type</th>
+                          <th id="cat" scope="col" class="govuk-table__header">Counterfeit</th>
+                      </tr>
+                  </tfoot>
+
+              </table>                  
+  
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <!-- <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                            </a>
+                        </li> -->
+                        <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                            Page 1
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+  
+  
+              </div>
+          </div>
+  
+        </section>
+  
+    </div>
+
+</form>
+
+
+{% endblock %}

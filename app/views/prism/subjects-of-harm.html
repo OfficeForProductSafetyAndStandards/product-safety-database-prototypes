@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Identify who might be harmed</h1>
+
+<div class="app-summary-card">
+      <p class="govuk-!-margin-bottom-0">For</p>
+      <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+      <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+      <p>{{ data['hazard-desc'] }}</p>
+    </div>
+
+
+      <form class="form govuk-!-margin-bottom-6" action="add-steps-to-harm" method="post" margin-bottom="">
+
+       <div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Who is the product aimed at?</h3>
+
+    <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-aim" name="product-aim" type="radio" value="Particular group of users" data-aria-controls="particular-group" {{ checked('product-aim','Particular group of users') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Particular group of users
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, children, men or women, the the elderly, people in certain living environments such as tower blocks or caravans, certain ethnic or cultural groups, etc.
+        </p>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="particular-group">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Description of user type including age group if applicable. For example, children 2-3 years.
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="pug-type" type="text" value="{{ data['pug-type'] }}">
+                </div>
+
+              </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-aim-2" name="product-aim" type="radio" value="General population" {{ checked('product-aim','General population') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          General population
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Product is not aimed at a particular group but broadly at the general population.
+        </p>
+      </div>
+    </div>
+
+
+
+     </div>
+
+ <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Who else might be at risk?</h3>
+
+           <p id="more-detail-hint" class="govuk-hint">
+        Select all that are applicable.</p>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk" name="who-else-at-risk" type="checkbox" value="Unintended users" {{ checked('who-else-at-risk','Unintended users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Unintended users of the product
+        </label>
+         <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, young children using products intended for their parents or older children, and professional products being used by non-professional users.
+        </p>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk-2" name="who-else-at-risk" type="checkbox" value="Non-users" {{ checked('who-else-at-risk','Non-users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Non-users of the product
+        </label>
+         <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For example, products that present fire hazards with the potential to cause a multi-occupied building to catch fire, and products that either in normal use or as a result of failure can produce projectiles placing people in the general vicinity at risk.
+        </p>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+
+
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+
+  </fieldset>
+</div>
+
+
+   </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

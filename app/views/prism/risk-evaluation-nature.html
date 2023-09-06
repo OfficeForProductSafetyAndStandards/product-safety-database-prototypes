@@ -1,0 +1,389 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="risk-evaluation-tolerability" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Consider the nature of the risk
+      </h1>
+
+     <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">Overall product risk  recorded in the assessment</p>
+    <br/>
+    <strong class="govuk-tag govuk-tag--red">Serious risk</strong>
+  </div>
+
+     <!-- <p> The risk evaluation is aimed at identifying any factors that would or might influence the degree of priority that should be afforded to the issue and the need for risk management action to be taken (or not).</p> -->
+
+     <!--  <h2 class="govuk-body govuk-!-font-size-27">The subjects at risk and psychological harm</h2>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+
+    <!-- Section break -->
+
+
+
+    <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+
+<!-- <h3 class="govuk-heading-m">
+       Could the hazard cause other types of harm?
+      </h3> -->
+
+      <h3 class="govuk-heading-m">
+What other types of harm could the hazard cause?</h3>
+
+           <p id="more-detail-hint" class="govuk-hint">
+        Select all that applicable.</p>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk" name="who-else-at-risk" type="checkbox" value="Unintended users" {{ checked('who-else-at-risk','Unintended users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Psychological harm
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk-2" name="who-else-at-risk" type="checkbox" value="Non-users" {{ checked('who-else-at-risk','Non-users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Damage to property
+        </label>
+      </div>
+
+       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk-2" name="who-else-at-risk" type="checkbox" value="Non-users" {{ checked('who-else-at-risk','Non-users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Harm to animals
+        </label>
+      </div>
+
+ <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="who-else-at-risk-2" name="who-else-at-risk" type="checkbox" value="Non-users" {{ checked('who-else-at-risk','Non-users') }}>
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Harm to the environment
+        </label>
+      </div>
+
+
+
+    </div>
+
+    </div>
+
+
+
+     <h3 class="govuk-heading-m">
+        Is the number of products estimated to be in use expected to change?
+      </h3>
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">As recorded in the assessment</p>
+    <p class="govuk-body-l govuk-!-margin-bottom-0">estimated 3000 products in use</p>
+  </div>
+
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          No changes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Increase
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Fall
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+    </div>
+
+    <!-- <h2 class="govuk-body govuk-!-font-size-27">The level of uncertainty</h2>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+    <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Does the uncertainty level have implications for risk management decisions?
+      </h3>
+
+       <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">As recorded in the assessment</p>
+    <p class="govuk-body-l govuk-!-margin-bottom-0">Medium level of uncertainty</p>
+  </div>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+    </div>
+
+     <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        How does the risk level compare to that of comparable products?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Lower
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Similar
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Higher
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+
+
+
+      </div>
+
+
+     <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is there potential for multiple casualties in a single incident?
+      </h3>
+
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">As recorded in the assessment</p>
+    <p class="govuk-body-l govuk-!-margin-bottom-0">No multiple casualties</p>
+  </div>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+    </div>
+
+     <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is there a significant risk differential?
+      </h3>
+      <p class="govuk-hint govuk-checkboxes__hint govuk-!-padding-left-0">The risk differential is the gap between the level of risk presented by the non- compliant product and the level of risk it would present if it was fully compliant</p>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Not applicable
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Are there people at increased risk?
+      </h3>
+
+        <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">As recorded in the assessment</p>
+    <p class="govuk-body-l govuk-!-margin-bottom-0">Children 0-3 years</p>
+  </div>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+    </div>
+
+
+<!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+       Is relevant action planned or underway by another MSA or other organisation?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+    </div>
+
+
+
+<h3 class="govuk-heading-m">
+       As regards the nature of the risk, are there factors to take account of in relation to risk management decisions?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+
+    </div>
+
+
+
+
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

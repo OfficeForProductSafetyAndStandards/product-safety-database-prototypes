@@ -1,0 +1,230 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Dashboard" %}
+
+{% set title = "Define the product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   <span class="govuk-caption-l">{{title}}</span>
+   <h1 class="govuk-heading-l">
+      Product search results
+    </h1>
+
+    <form class="form govuk-!-margin-bottom-6" action="product-market-placement" method="post">
+
+
+    <ul class=" govuk-list product-list">
+  <li class="product-item govuk-!-padding-top-4" id="selectedItem1">
+    <div class="product-image">
+      <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
+    </div>
+    <div class="product-info">
+      <h3 class="govuk-heading-m govuk-!-padding-top-0">
+      <a href="product-details">All in All + Car Seat, Dragon Kingdom CT4262</a>
+    </h3>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      PSD ref
+    </dt>
+    <dd class="govuk-summary-list__value">
+      psd-345
+    </dd>
+  </div>
+         <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Brand
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Cosatto
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Batch number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      From 37/2019 to 24/2020 (inclusive). Car seats from later batches are not affected.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Country of origin
+    </dt>
+    <dd class="govuk-summary-list__value">
+      UK
+    </dd>
+  </div>
+</dl>
+    </div>
+    <div class="product-select govuk-!-padding-9">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="Continue" id="submit">Select</button>
+    </div>
+  </li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <li class="product-item govuk-!-padding-top-4" id="selectedItem2">
+    <div class="product-image">
+      <img src="/public/images/car-seat-2.jpg" width="200px" height="200px" alt="Product Image">
+    </div>
+
+    <div class="product-info">
+      <h3 class="govuk-heading-m govuk-!-padding-top-0">
+      <a href="#">All in All Rotate Car Seat, Unicorn Land CT4238</a>
+    </h3>
+     <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      PSD ref
+    </dt>
+    <dd class="govuk-summary-list__value">
+      psd-346
+    </dd>
+  </div>
+         <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Brand
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Cosatto
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Barcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      71234567878657
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Country of origin
+    </dt>
+    <dd class="govuk-summary-list__value">
+      UK
+    </dd>
+  </div>
+</dl>
+    </div>
+    <div class="product-select govuk-!-padding-9">
+      <a href="#" class="govuk-button govuk-button--secondary" id="select2">
+  Select
+</a>
+    </div>
+
+  </li>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <li class="product-item govuk-!-padding-top-4" id="selectedItem2">
+    <div class="product-image">
+      <img src="/public/images/no-product-image.jpg" width="200px" height="200px" alt="Product Image">
+    </div>
+
+    <div class="product-info">
+      <h3 class="govuk-heading-m govuk-!-padding-top-0">
+      <a href="#">All in All Rotate Car Seat, One World CT4449</a>
+    </h3>
+     <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      PSD ref
+    </dt>
+    <dd class="govuk-summary-list__value">
+      psd-347
+    </dd>
+  </div>
+         <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Brand
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Cosatto
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Barcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      71234567878623
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Country of origin
+    </dt>
+    <dd class="govuk-summary-list__value">
+      UK
+    </dd>
+  </div>
+</dl>
+    </div>
+    <div class="product-select govuk-!-padding-9">
+      <a href="#" class="govuk-button govuk-button--secondary" id="select2">
+  Select
+</a>
+    </div>
+
+  </li>
+</ul>
+
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+      <h3 class="govuk-heading-m">
+        Did you find the product you were searching for?</h3>
+
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div> -->
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="existing-product" name="existing-product" type="checkbox" value="yes" { checked('existing-product','yes') }} checked>
+
+      </div>
+
+    </div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-m">Can't find the product match?</h3>
+
+  <p class="govuk-body">If you don't see your product in the search results you can <a href="product-additional-details" class="govuk-link">Create a new product</a> or <a href="product-search" class="govuk-link">Start a new search</a></p>
+
+</div>
+
+  </div>
+</form>
+
+
+  {% endblock %}

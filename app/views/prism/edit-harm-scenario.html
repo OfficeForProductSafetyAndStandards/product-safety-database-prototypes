@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        View harm scenario 1
+      </h1>
+
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+      <h2 class="govuk-heading-m">Hazard details</h2>
+
+      {% include "../includes/scenario-details.html" %}
+
+
+
+      <h2 class="govuk-heading-m">Risk level <strong class="govuk-tag govuk-tag--red" style="margin-left: 100px;">Serious risk</strong></h2>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+
+
+       <div class="govuk-button-group">
+  <a href="#" class="govuk-button" data-module="govuk-button">
+    Confirm changes
+  </a>
+  <a href="delete-harm-scenario" class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Delete scenario
+  </a>
+</div>
+
+<p><a href="task-list-v3">Cancel and return to task list</a></p>
+
+
+
+    </div>
+  </div>
+
+<div></div>
+{% endblock %}

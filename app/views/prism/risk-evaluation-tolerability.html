@@ -1,0 +1,260 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="risk-evaluation-decision" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Consider perception and tolerability of the risk
+      </h1>
+
+      <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">Overall product risk  recorded in the assessment</p>
+    <br/>
+    <strong class="govuk-tag govuk-tag--red">Serious risk</strong>
+  </div>
+
+     <!-- <p> There might be already a degree of public concern relevant to the risk under consideration or in the event of harm occurring or continuing to occur, such concern is likely to arise.</p> -->
+
+
+    <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        As well as the hazard associated with the non-compliance, does the product have any other hazards that can and do cause harm?
+      </h3>
+
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+    </div>
+
+     <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is this a low likelihood but high severity risk?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+
+      </div>
+
+       <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is there a risk to non-users?
+      </h3>
+
+        <div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">As recorded in the assessment</p>
+    <p class="govuk-body-l govuk-!-margin-bottom-0">Non-users might be at risk</p>
+  </div>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+    </div>
+
+
+     <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is this a type of product aimed at vulnerable users?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+        Is the product designed to provide a protective function?
+      </h3>
+
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div>
+    </div>
+
+
+<!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+       Can users exert any control over the risk?
+      </h3>
+
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          Yes
+        </label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No
+        </label>
+
+      </div>
+
+      <!-- <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          Unknown
+        </label>
+
+      </div> -->
+    </div>
+
+    <!-- Section break -->
+
+    <h3 class="govuk-heading-m">
+       Are there other matters that will influence the way the risk is perceived
+      </h3>
+
+    <p id="more-detail-hint" class="govuk-hint">
+    Describe the other matters influencing perception of the risk.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+
+
+
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

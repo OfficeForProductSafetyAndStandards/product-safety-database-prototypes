@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">
+     Determine overall risk posed by the product
+    </h1>
+
+    <h2 class="app-task-list__section">
+       Individual harm scenario risks
+      </h2>
+
+    <form class="form govuk-!-margin-bottom-6" action="harm-scenario-dashboard-2-outcome" method="post">
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Hazard name</th>
+      <th scope="col" class="govuk-table__header">Probability of harm</th>
+      <th scope="col" class="govuk-table__header">Severity</th>
+      <th scope="col" class="govuk-table__header">Risk level</th>
+      <th scope="col" class="govuk-table__header">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Mechanical</td>
+      <td class="govuk-table__cell">1 in 2000</td>
+      <td class="govuk-table__cell">Level 3</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">High risk</strong></td>
+   </tr>
+
+  </tbody>
+
+
+   <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Lack of protection</td>
+      <td class="govuk-table__cell">1 in 3000</td>
+      <td class="govuk-table__cell">Level 4</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+   </tr>
+
+  </tbody>
+</table>
+
+<h2 class="app-task-list__section">
+       Combined harm scenario risk
+      </h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Hazard name</th>
+      <th scope="col" class="govuk-table__header">Probability of harm</th>
+      <th scope="col" class="govuk-table__header">Severity</th>
+      <th scope="col" class="govuk-table__header">Risk level</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Mechanical, Lack of protection</td>
+      <td class="govuk-table__cell">0.8 in 1000</td>
+      <td class="govuk-table__cell">Level 3 and 4</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Serious risk</strong></td>
+   </tr>
+
+  </tbody>
+
+</table>
+
+<p><a href="#\" id="level-plus-button" data-module="govuk-button">
+  Add risk level plus label
+</a></p>
+
+<div class="govuk-!-margin-top-2" id="level-plus" style="display:none">
+          <p>
+    Describe the reason for choosing the risk level plus label.</p>
+    <textarea class="govuk-textarea" id="risk-plus-desc" name="isk-plus-desc" rows="3" aria-describedby="more-detail-hint">Example of risk level plus label describing reasons for such classification.</textarea>
+
+</div>
+
+
+<div class="govuk-button-group">
+   <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Combine risks</button>
+</div>
+
+
+
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</form>
+
+
+</div>
+
+  </div>
+
+  {% endblock %}

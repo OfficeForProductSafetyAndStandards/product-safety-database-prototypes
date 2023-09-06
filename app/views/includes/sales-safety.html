@@ -1,0 +1,40 @@
+       <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name of the business that sold the product
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['business-sold'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="product-market-placement">
+
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Total number of sold products
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if checked("product-sold", "yes") %}
+
+      {{ data['number-products-sold'] }}
+
+      {% else %}
+
+      Unknown
+
+      {% endif %}
+
+
+
+
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="product-market-placement">
+
+      </a>
+    </dd>
+  </div>
+</dl>

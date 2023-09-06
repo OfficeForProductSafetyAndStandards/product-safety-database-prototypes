@@ -1,0 +1,236 @@
+{% extends "layouts/main.html" %}
+
+
+{% set title = "Define the product" %}
+
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Add details about products in use and safety</h1>
+
+{% if checked("existing-product", "yes") %}
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+{% else %}
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">XYZ Car Seat</p>
+  </div>
+
+{% endif %}
+
+
+
+
+
+        <form class="form govuk-!-margin-bottom-6" action="task-list-v2" method="post">
+
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Name of the business that sold the product</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        This information is essential for product traceability.</p>
+        <input class="govuk-input" id="business-sold" name="business-sold" type="text" value="{{ data['business-sold'] }}">
+      </div>
+
+      <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Can the total number of products in use be estimated? </h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-sold" name="product-sold" type="radio" value="yes" data-aria-controls="total-products-sold-yes" {{ checked('product-sold','yes') }}>
+                <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+                  Yes
+                </label>
+                <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Based on information provided by the business or other evidence.
+        </p>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="total-products-sold-yes">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Estimated number of products in use
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="number-products-sold" name="number-products-sold" type="text" inputmode="numeric" value="{{ data['number-products-sold'] }}">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-sold-2" name="product-sold" type="radio" value="no" {{ checked('product-sold','no') }}>
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+              <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          Insufficient information available to make a reasonable estimate.
+        </p>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    {% if checked("existing-product", "yes") %}
+
+    <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Product safety legislation and standards </h3>
+          <p id="more-detail-hint" class="govuk-hint">
+        Review the provided legislations and standards and choose the ones that you feel are relevant to your product.</p>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Regulation No 44/04 UN ECE approval of restraining devices for child occupants (child restraint systems)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           Regulation No 129 UN ECE R129 approval of enhanced child restraint systems (i-size)
+        </label>
+      </div>
+       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           BS EN 17072:2018
+        </label>
+      </div>
+       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           BS EN 17022:2018
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="otherOption" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Other
+        </label>
+        <div class="checked">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Name of safety legislation or standard
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+                </div>
+
+              </div>
+      </div>
+    </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+    {% else %}
+
+
+     <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Product safety legislation and standards </h3>
+          <p id="more-detail-hint" class="govuk-hint">
+        Review the provided legislations and standards and choose the ones that you feel are relevant to your product.</p>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Regulation No 44/04 UN ECE approval of restraining devices for child occupants (child restraint systems)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           Regulation No 129 UN ECE R129 approval of enhanced child restraint systems (i-size)
+        </label>
+      </div>
+       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           BS EN 17072:2018
+        </label>
+      </div>
+       <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+           BS EN 17022:2018
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="otherOption" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Other
+        </label>
+        <div class="checked">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Name of safety legislation or standard
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+                </div>
+
+              </div>
+      </div>
+    </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      {% endif %}
+
+    </div>
+
+
+
+
+
+  </fieldset>
+</div>
+
+ <input class="govuk-checkboxes__input" id="section-1-q3-complete" name="section-1-complete" type="checkbox" value="yes" { checked('section-1-complete','yes') }} checked>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and complete tasks in this section
+  </button>
+
+   </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

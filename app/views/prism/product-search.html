@@ -1,0 +1,245 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Define the product" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">Search or add a new product </h1>
+
+   <div class="govuk-inset-text">
+      <p>Before starting the assessment, search for the product on the PSD. If you can't find the product, your product search details will be used to create a new product.</p>
+
+    </div>
+
+    <form class="form govuk-!-margin-bottom-6" action="/product-search-4" method="post">
+
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Product name</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        Include model name if applicable, for example 'PlayStation 5'</p>
+        <label class="govuk-label" for="event-name">
+
+        </label>
+        <input class="govuk-input" id="model" name="model" type="text">
+      </div>
+
+      <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Do you know manufacturer's brand name?</h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-serious-risk" name="product-brand" type="radio" value="yes" data-aria-controls="brand-yes">
+                <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+                  Yes
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="brand-yes">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    For example, Dyson or Sony
+                  </label>
+                  <input class="govuk-input" id="event-name" name="event-name" type="tex">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-serious-risk-2" name="product-brand" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+
+      <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Does the product have a barcode number?</h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-serious-risk" name="product-serious-risk" type="radio" value="yes" data-aria-controls="barcode-yes">
+                <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+                  Yes
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="barcode-yes">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Barcode number (GTIN, EAN or UPC). Normally 8, 12, or 13 digits.
+                  </label>
+                  <input class="govuk-input" id="event-name" name="event-name" type="tex">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-serious-risk-2" name="product-serious-risk" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="govuk-!-margin-top-6">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Does the product have a batch number?</h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-batch-number" name="product-batch-number" type="radio" value="yes" data-aria-controls="batch-yes">
+                <label class="govuk-label govuk-radios__label" for="product-batch-number">
+                  Yes
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="batch-yes">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                    Batch number or a range of batch numbers
+                  </label>
+                  <input class="govuk-input" id="event-name" name="event-name" type="tex">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-serious-risk-2" name="product-batch-number" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+  <div class="govuk-!-margin-top-6">
+    <div class="govuk-form-group">
+      <h3 class="govuk-heading-m">Does the product have any other identifying markings?</h3>
+      <p id="more-detail-hint" class="govuk-hint">
+      For example, serial number, Amazon ID (ASIN) or eBAY ID.</p>
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="product-id-marks" name="product-id-marks" type="radio" value="yes" data-aria-controls="other-id-yes">
+            <label class="govuk-label govuk-radios__label" for="product-id-marks">
+              Yes
+            </label>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-id-yes">
+             <div class="govuk-form-group">
+               <label class="govuk-label" for="event-name">
+                Use a comma to separate multiple identifiers.
+              </label>
+
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" style="width: 400px;" rows="3" aria-describedby="more-detail-hint"></textarea>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="product-id-marks-2" name="product-id-marks" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="product-id-marks-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+
+<div class="govuk-!-margin-top-6">
+  <div class="govuk-form-group">
+    <h3 class="govuk-heading-m">Do you know where the product was manufactured?</h3>
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="product-country-origin" name="product-country-origin" type="radio" value="yes" data-aria-controls="country-origin-yes">
+          <label class="govuk-label govuk-radios__label" for="product-scountry-origin">
+            Yes
+          </label>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="country-origin-yes">
+           <div class="govuk-form-group">
+            <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+              <option value="choose" selected>Choose country</option>
+              <option value="unitedkingdom">United Kingdom</option>
+              <option value="unitedstates">United States</option>
+              <option value="china">China</option>
+              <option value="taiwan">Taiwan</option>
+              <option value="japan">Japan</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-country-origin-2" name="product-country-origin" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="product-country-origin-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+</div>
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Search PSD
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+
+</form>
+
+
+
+
+
+</div>
+
+
+</div>
+
+{% endblock %}

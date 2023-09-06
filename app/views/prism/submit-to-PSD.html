@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Guidance" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="/product-triage" method="post">
+
+
+
+      <h1 class="govuk-heading-l">
+        Now submit the product risk assessment
+      </h1>
+
+
+    <p>You've completed the product risk assessment needed to be submitted to PSD</p>
+
+    <br/>
+    <br/>
+
+    {{ govukButton({
+          text: "Submit to Product Safety Database",
+          href: "#"
+        }) }}
+
+        <p><a href="#">Download a pdf of the assessment</a></p>
+
+
+
+    </div>
+
+</form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

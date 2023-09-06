@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Product details" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">All in All + Car Seat, Dragon Kingdom CT4262</h1>
+
+  <p class="govuk-body-s govuk-!-margin-bottom-1"><b>Last updated:</b> 23 April 2023</p>
+  <p class="govuk-body-s govuk-!-margin-bottom-8"><b>Created:</b> 2 January 2022</p>
+
+
+    {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "PSD reference"
+      },
+      value: {
+        html: "<a href='#'>psd-345</a>"
+      }
+
+    },
+    {
+      key: {
+        text: "Brand name"
+      },
+      value: {
+        text: "Cosatto"
+      }
+
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        html: "All in All + Car Seat, Dragon Kingdom CT4262."
+      }
+    },
+    {
+      key: {
+        text: "Batch number"
+      },
+      value: {
+        html: 'From 37/2019 to 24/2020 (inclusive). Car seats from later batches are not affected.
+    </dd>'
+      }
+    },
+    {
+      key: {
+        text: "Description"
+      },
+      value: {
+        html: 'Children’s rotating car seats available in various colours and designs'
+      }
+    },
+    {
+      key: {
+        text: "Webpage"
+      },
+      value: {
+        html: '<a href="https://www.cosatto.com/pages/buckle">https://www.cosatto.com/pages/buckle</a>'
+      }
+    },
+    {
+      key: {
+        text: "Country of origin"
+      },
+      value: {
+        html: 'UK'
+      }
+    },
+
+    {
+      key: {
+        text: "Primary hazard"
+      },
+      value: {
+        html: '<p>Lack of protection<p> '
+      }
+    },
+    {
+      key: {
+        text: "Nature of hazard"
+      },
+      value: {
+        html: '<p>In case of a frontal crash, the child car seat (CRS) may not give the protection against head displacement as required.</p> '
+      }
+    },
+    {
+      key: {
+        text: "Product safety assessment"
+      },
+      value: {
+        html: 'Not undertaken'
+      }
+    }
+  ]
+}) }}
+
+
+<p><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="Continue" id="submit">View full product record on the PSD</button></p>
+
+
+
+  <p class="govuk-body"><a href="product-search-results" class="govuk-link">Return to search results</a></p>
+
+
+</div>
+
+
+<div class="govuk-grid-column-one-third">
+
+
+    <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
+
+
+</div>
+</div>
+
+
+{% endblock %}

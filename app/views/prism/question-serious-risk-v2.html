@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="/product-serious-risk" method="post" margin-bottom="">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        How would you describe the product?
+      </h1>
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="serious-risk" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Product contains prohibited chemicals
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="serious-risk" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          Non-compliant category III personal protective equipment
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="serious-risk" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+          Product has already been assessed by OPSS as serious risk
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">
+          For examples, angle grinder chainsaw discs and attachments.
+        </p>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="none" name="serious-risk" type="radio" value="none">
+        <label class="govuk-label govuk-radios__label" for="none">
+          None of the above
+        </label>
+      </div>
+    </div>
+</fieldset>
+
+
+
+    </div>
+  </div>
+
+  <p><button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Continue</button></p>
+
+  </form>
+
+{% endblock %}

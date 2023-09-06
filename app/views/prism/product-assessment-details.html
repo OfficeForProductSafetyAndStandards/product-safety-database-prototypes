@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Define the product" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">Add assessment details</h1>
+
+
+     <form class="form" action="/version_4/have-you-searched-PSD" method="post">
+
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Name of assessor</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        Full name of the individual carrying out the assessment.</p>
+        <input class="govuk-input" id="assessor-name" name="assessor-name" type="text" value="{{ data['assessor-name'] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Name of assessment organisation</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        For example, the name of the organisation that employs the assessor.</p>
+        <label class="govuk-label" for="event-name">
+
+        </label>
+        <input class="govuk-input" id="assessing-org" name="assessor-org" type="text" value="{{ data['assessor-org'] }}">
+      </div>
+
+</div>
+
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+</form>
+
+<form class="form" action="/version_4/task-list" method="post">
+
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="section-1-q1-complete" name="section-1-q1-complete" type="checkbox" value="yes" { checked('section-1-q1-complete','yes') }} checked>
+      </div>
+
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:-12px;">
+    Save as draft
+  </button>
+
+</form>
+
+</div>
+
+
+
+{% endblock %}

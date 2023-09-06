@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Create product harm scenarios" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+<h1 class="govuk-heading-l">Add a harm scenario and probability of harm</h1>
+
+<div class="app-summary-card">
+    <p class="govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">{{ data['hazard-type'] }} </p>
+    <p>All in All + Car Seat, Dragon Kingdom CT4262</p>
+    <p>{{ data['hazard-desc'] }}</p>
+    <p> Affected users:
+
+    {% if checked("product-aim", "Particular group of users") %}
+
+
+
+     {{ data['pug-type'] }}
+
+      {% if checked("product-aim", "General population") %}
+
+     General population
+     {% endif %}
+
+      {% endif %}</p>
+  </div>
+
+
+
+      <p>The scenario will normally contain between two or more steps. The nature of probability is such that the more steps there are, in general the lower the probability will be. It is rare that more than five steps are necessary.</p>
+
+      <form class="form govuk-!-margin-bottom-6" action="harm-details" method="post" margin-bottom="">
+
+        <div class="govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Step 1</h2>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+           <h3 class="govuk-heading-s">
+    Step description
+  </h3>
+
+  <p id="more-detail-hint" class="govuk-hint">
+    Step 1 should cover the existence of a hazard which can foreseeably cause harm during the lifetime of the product. For example, the car seat is occupied by an infant while the vehicle is in use.</p>
+
+
+    <textarea class="govuk-textarea" id="step1-desc" name="step1-desc" rows="2" aria-describedby="step1-desc">{{ data['step1-desc'] }}</textarea>
+
+
+
+<div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+
+         <h3 class="govuk-heading-s">
+    Probability of harm
+  </h3>
+         <p id="more-detail-hint" class="govuk-hint">
+            Enter the number that can be decimal or percentage.
+          </p>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="probability1" name="probability1" type="text" inputmode="numeric">
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with defining probability of harm
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <!-- Some degree of probability estimation by the assessor will always be required, and will often be the sole or main means of determining probabilities. Such estimations will inevitably involve a degree of uncertainty, which can be addressed in part by consulting with relevant colleagues and over time through experience. -->
+
+    <p>Identifying a reliable probability can be challenging, and the starting point should be to obtain and consider any relevant empirical evidence that can inform probability decisions.</p>
+    <p>Some degree of probability estimation by the assessor will therefore nearly always be required, and will often be the sole or main means of determining probabilities.</p>
+    <p>To help with defining steps to harm and probability of harm please refer to risk assessment case studies.</p>
+    <p>Please note that the detail of the risk assessments including the probabilities highlighted should not be transferred to other assessments. They are provided primarily to illustrate the application of PRISM and not as an OPSS position on the issues featured.</p>
+
+<p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1122454/prism-worked-example-car-seat.pdf">Risk assessment example: non-compliant car seat</a> (PDF, 182 KB, 5 pages)</p>
+
+<p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1122457/prism-worked-example-electric-heater.pdf">Risk assessment example: non-compliant room / space heater</a> (PDF, 182 KB, 6 pages)</p>
+
+<p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1127314/prism-worked-example-remote-control-for-lighting-chain.pdf">Risk assessment example: non-compliant remote control for lighting chain (PDF, 184 KB, 5 pages)</a></p>
+  </div>
+</details
+>
+      </div>
+
+</div>
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-s">How did you decide on probability of harm? </h3>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Sole judgement or estimation
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland" data-aria-controls="step-1-evidence-1">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Some limited empirical evidence
+        </label>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="step-1-evidence-1">
+
+          <div class="govuk-!-margin-top-6">
+          <p>
+    Describe the evidence including any links to reference materials.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+                 <div class="govuk-form-group">
+                  <label class="govuk-label" for="event-name">
+                    Attach documents in support of your decision. Acceptable file formats: pdf, Word, Excel, PowerPoint, jpeg, gif and png.
+                  </label>
+                 <div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+</div>
+                </div>
+        </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales" data-aria-controls="step-1-evidence-2">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         Strong empirical evidence
+        </label>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="step-1-evidence-2">
+
+           <div class="govuk-!-margin-top-6">
+          <p>
+    Describe the evidence including any links to reference materials.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+                 <div class="govuk-form-group">
+                  <label class="govuk-label" for="event-name">
+                    Attach documents in support of your decision. Acceptable file formats: pdf, Word, Excel, PowerPoint, jpeg, gif and png.
+                  </label>
+                 <div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+</div>
+                </div>
+        </div>
+      </div>
+    </div>
+
+
+      <br/>
+
+            <div class="checked govuk-!-margin-top-6" id="step2"  style="display: none;">
+          <h2 class="govuk-heading-m">Step 2</h2>
+          <p class="govuk-body"><a href="#\" class="govuk-link" id="step2_remove">Remove</a></p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+           <h3 class="govuk-heading-s">
+    Step description
+  </h3>
+
+  <p id="more-detail-hint" class="govuk-hint">
+    Step 2 should describe how the user (and/or other subjects) becomes exposed to risk. For example, the vehicle containing the seat/child is involved in a frontal collision of sufficient magnitude that the protection offered by the seat is necessary.</p>
+
+
+   <textarea class="govuk-textarea" id="step2-desc-1" name="step2-desc" rows="2" aria-describedby="step2-desc">{{ data['step2-desc'] }}</textarea>
+
+
+<div class="govuk-date-input__item">
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-s">
+    Probability of harm
+  </h3>
+         <p id="more-detail-hint" class="govuk-hint">
+            Enter the number that can be decimal or percentage.
+          </p>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="probability2" name="probability2" type="text" inputmode="numeric">
+        </div>
+        <br/>
+
+      </div>
+
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-s">How did you decide on probability of harm? </h3>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Sole judgement or estimation
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Some limited empirical evidence
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         Strong empirical evidence
+        </label>
+      </div>
+    </div>
+</div>
+
+<div class="checked govuk-!-margin-top-6" id="step3"  style="display: none;">
+          <h2 class="govuk-heading-m">Step 3</h2>
+          <p class="govuk-body"><a href="#\" class="govuk-link" id="step3_remove">Remove</a></p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+           <h3 class="govuk-heading-s">
+    Step description
+  </h3>
+
+  <p id="more-detail-hint" class="govuk-hint">
+    Step 3 should describe how exposure to the risk results in harm. For example, the occupant of the seat suffers injury as a result of the collision. </p>
+
+
+   <textarea class="govuk-textarea" id="step3-desc-2" name="step3-desc" rows="2" aria-describedby="step3-desc">{{ data['step3-desc'] }}</textarea>
+
+
+<div class="govuk-date-input__item">
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-s">
+    Probability of harm
+  </h3>
+         <p id="more-detail-hint" class="govuk-hint">
+            Enter the number that can be decimal or percentage.
+          </p>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="probability3" name="probability3" type="text" inputmode="numeric">
+        </div>
+        <br/>
+
+      </div>
+
+
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-s">How did you decide on probability of harm? </h3>
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Sole judgement or estimation
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+         Some limited empirical evidence
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+         Strong empirical evidence
+        </label>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+  </div>
+</fieldset>
+
+
+
+</div>
+
+  <h3 class="govuk-heading-m">Overall harm scenario risk</h3>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-bo">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Probability of harm
+    </dt>
+    <dd class="govuk-summary-list__value" id="overall_probability">
+      Not yet available
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Risk level
+    </dt>
+    <dd class="govuk-summary-list__value" id="overall_risk">
+       Not yet available
+
+    </dd>
+  </div>
+</dl>
+
+<p><a href="#\" id="steps_btn">
+    Add another step
+  </a></p>
+
+
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+  </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

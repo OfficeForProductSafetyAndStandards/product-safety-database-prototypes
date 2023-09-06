@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <h1 class="govuk-heading-l">
+    Determine and evaluate the level of product risk
+  </h1>
+
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Assessment incomplete</h2>
+  <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+
+  <ol class="app-task-list govuk-!-margin-top-7">
+
+    <!-- <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> Check before you start
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="#">Confirm the type of product you're assessing</a>
+          </span>
+
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+
+        </li>
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="#">Find out if your product needs a safety assessment</a>
+          </span>
+
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+
+        </li>
+      </ul>
+    </li> -->
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span> Complete assessment and product details
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-assessment-details">Add assessment details</a>
+          </span>
+
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-search">Search or add a new product</a>
+          </span>
+
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-market-placement">Add details about product's market presence</a>
+          </span>
+
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-hazards">Add details about product's hazards</a>
+          </span>
+
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Create product harm scenarios
+      </h2>
+      <ul class="app-task-list__items">
+            <!-- <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Company information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                  Your contact details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  List convictions
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li> -->
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="add-hazard">Create a new harm scenario</a>
+              </span>
+             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+            </li>
+
+          </ul>
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Submit results of the assessment
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                <a href="check-assessment-details">Review and submit results of the assessment</a></span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+              </li>
+            </ul>
+          </li>
+
+        </div>
+      </div>
+
+      {% endblock %}
+

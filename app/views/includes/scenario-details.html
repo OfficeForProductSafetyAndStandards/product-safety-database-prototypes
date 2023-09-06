@@ -1,0 +1,174 @@
+
+
+
+      <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Hazard type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['hazard-type'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Hazard description
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['hazard-desc'] }}
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Harm scenario</h2>
+
+ <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Affected users
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if checked("product-aim", "Particular group of users") %}
+
+
+
+      {{ data['product-aim'] }}: {{ data['pug-type'] }}
+
+      {% if checked("product-aim", "General population") %}
+
+     General population
+     {% endif %}
+
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
+ <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Step 1
+    </dt>
+    <dd class="govuk-summary-list__value">
+       <p>{{ data['step1-desc'] }}</p>
+       <p>Probability of harm: {{ data['probability1'] }}</p>
+       <p>Evidence: Sole judgement or estimation</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-steps-to-harm">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Step 2
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['step2-desc'] }}
+      <p>Probability of harm: {{ data['probability2'] }}</p>
+       <p>Evidence: Some limited empirical evidence</p>
+       <p><a href="#">Supporting evidence 1.pdf</a></p>
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-steps-to-harm">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Step 3
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['step3-desc'] }}
+      <p>Probability of harm: {{ data['probability3'] }}</p>
+       <p>Evidence: Sole judgement or estimation</p>
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-steps-to-harm">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Overall probability of harm
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 in 2000
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Severity level
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['severity-level'] }}, multiple casualties: {{ data['multiple-casualties'] }}
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 class="govuk-heading-m">Uncertainty and sensitivity analysis</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Level of uncertainty
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Medium
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Has sensitivity analysis been undertaken?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+
+      </a>
+    </dd>
+  </div>
+</dl>

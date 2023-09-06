@@ -614,6 +614,43 @@
     <textarea aria-describedby="product_description-hint" class="govuk-textarea app-!-max-width-three-quarters" id="product_description" maxlength="10000" name="product[description]" rows="5">
   </textarea>
     </div>
+
+
+    <div class="govuk-!-margin-top-8">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Would you like to upload an image of the product?</h3>
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="product-serious-risk" name="product-serious-risk" type="radio" value="yes" data-aria-controls="product-image">
+                <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+                  Yes
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="product-image">
+                 <div class="govuk-form-group">
+                  <label class="govuk-label" for="event-name">
+                    Acceptable file formats: jpeg, gif or png. Maximum file size: 50MB.
+                  </label>
+                 <div class="govuk-form-group" style="background-color: #f8f8f8; padding: 20px; margin-bottom: 15px;">
+  <input class="govuk-file-upload" id="file_upload_3" name="file-upload-3" type="file"><br/>
+</div>
+                </div>
+        </div>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="product-serious-risk-2" name="product-serious-risk" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+
   
   <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save" />
   
