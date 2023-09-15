@@ -5,9 +5,9 @@ Product psd-304
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-text: "Back",
-href: "products"
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -32,7 +32,7 @@ href: "products"
                 <a class="govuk-link" href="#"> Create a case</a>
 
  <a href="../../prism/question-serious-risk.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Start a risk assessment
+    Start a new risk assessment
   </a>
 
     </div>

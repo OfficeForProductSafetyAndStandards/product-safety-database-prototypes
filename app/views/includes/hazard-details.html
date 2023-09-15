@@ -4,53 +4,14 @@
       <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Number of hazards identified
+      Number of hazards
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['hazards'] }}
+      2
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="product-hazards">
-
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Who is the product aimed at?
-    </dt>
-    <dd class="govuk-summary-list__value">
-       {% if checked("product-aim", "Particular group of users") %}
-
-
-
-      {{ data['product-aim'] }}: {{ data['pug-type'] }}
-
-      {% if checked("product-aim", "General population") %}
-
-     General population
-     {% endif %}
-
-      {% endif %}
-
-
-
-    </dd>
-      <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="product-hazards">
-
-      </a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Who else might be at risk?
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['who-else-at-risk'] }}
-    </dd>
-      <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="product-hazards">
+        Change
 
       </a>
     </dd>
