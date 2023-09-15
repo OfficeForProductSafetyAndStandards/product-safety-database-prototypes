@@ -1,0 +1,65 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Home
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters opss-desktop-min-height--s">
+                <span class="govuk-caption-l">Rotation platform failure case: 6449-2312</span>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+                    Select a product for risk assessment
+                </h1>
+
+                <!-- <p>Choose the product to which you want to add the risk assessment.</p> -->
+
+                <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage" name="product-triage" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
+          All in All+ Car Seat, Dragon Kingdom CT4262
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="product-triage-2" name="product-triage" type="radio" value="notclear">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          All in All Rotate Car Seat, Unicorn Land CT4238
+        </label>
+      </div>
+
+
+
+    </div>
+
+            </div>
+
+
+
+        </div>
+
+<div class="govuk-button-group">
+  <a href="../../prism/case-assessments-dash.html" class="govuk-button" data-module="govuk-button">
+    Continue
+  </a>
+
+</div>
+
+    </div>
+</div>
+
+
+{% endblock %}

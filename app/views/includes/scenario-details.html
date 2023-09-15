@@ -7,11 +7,11 @@
       Hazard type
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['hazard-type'] }}
+      Lack of protection
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="add-hazard">
-
+        Change
       </a>
     </dd>
   </div>
@@ -21,60 +21,77 @@
       Hazard description
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['hazard-desc'] }}
+      In case of a frontal crash, the child car seat (CRS) may not give the protection against head displacement as required.
     </dd>
       <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="add-hazard">
-
+        Change
       </a>
     </dd>
   </div>
-</dl>
 
-<h2 class="govuk-heading-m">Harm scenario</h2>
 
- <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Affected users
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if checked("product-aim", "Particular group of users") %}
-
-
-
-      {{ data['product-aim'] }}: {{ data['pug-type'] }}
-
-      {% if checked("product-aim", "General population") %}
-
-     General population
-     {% endif %}
-
-      {% endif %}
+      Children 2-3 years
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="add-hazard">
+        Change
 
       </a>
     </dd>
   </div>
 
-</dl>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other users that might be at risk
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not applicable
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="add-hazard">
+        Change
 
- <dl class="govuk-summary-list">
+      </a>
+    </dd>
+  </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Step 1
     </dt>
     <dd class="govuk-summary-list__value">
-       <p>{{ data['step1-desc'] }}</p>
-       <p>Probability of harm: {{ data['probability1'] }}</p>
-       <p>Evidence: Sole judgement or estimation</p>
+       <p>The car seat is occupied by an infant while the vehicle is in use.</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Probability of harm: 1 in 1000</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Supporting evidence: Sole judgement or estimation</p>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="add-steps-to-harm">
-
+ <a class="govuk-link" href="#">
+        Change
       </a>
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
     </dd>
   </div>
 
@@ -82,16 +99,37 @@
     <dt class="govuk-summary-list__key">
       Step 2
     </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['step2-desc'] }}
-      <p>Probability of harm: {{ data['probability2'] }}</p>
-       <p>Evidence: Some limited empirical evidence</p>
-       <p><a href="#">Supporting evidence 1.pdf</a></p>
+     <dd class="govuk-summary-list__value">
+       <p>The vehicle containing the seat/child is involved in a frontal collision of sufficient magnitude that the protection offered by the seat is necessary.</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Probability of harm: 1 in 1000</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Supporting evidence: Some limited empirical evidence</p>
+       <p><a href="#">Supporting evidence 1.doc</a></p>
     </dd>
-      <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="add-steps-to-harm">
-
+    <dd class="govuk-summary-list__actions">
+ <a class="govuk-link" href="#">
+        Change
       </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
     </dd>
   </div>
 
@@ -99,13 +137,50 @@
     <dt class="govuk-summary-list__key">
       Step 3
     </dt>
+     <dd class="govuk-summary-list__value">
+       <p>The occupant of the seat suffers injury as a result of the collision and the lack of expected protection offered.</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Probability of harm: 1 in 2000</p>
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p>Supporting evidence: Some limited empirical evidence</p>
+       <p><a href="#">Supporting evidence 2.doc</a></p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+ <a class="govuk-link" href="#">
+        Change
+      </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <a class="govuk-link" href="#">
+        Change
+      </a>
+
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Severity level
+    </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['step3-desc'] }}
-      <p>Probability of harm: {{ data['probability3'] }}</p>
-       <p>Evidence: Sole judgement or estimation</p>
+      – Level 4 <br/>
+      – No multiple casualties
     </dd>
       <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="add-steps-to-harm">
+      <a class="govuk-link" href="add-hazard">
+        Change
 
       </a>
     </dd>
@@ -120,6 +195,7 @@
     </dd>
       <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="add-hazard">
+        Change
 
       </a>
     </dd>
@@ -127,48 +203,17 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Severity level
+      Scenario risk level
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['severity-level'] }}, multiple casualties: {{ data['multiple-casualties'] }}
+      <strong class="govuk-tag govuk-tag--red">Serious risk</strong>
     </dd>
       <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="add-hazard">
 
-      </a>
-    </dd>
-  </div>
-
-</dl>
-
-<h2 class="govuk-heading-m">Uncertainty and sensitivity analysis</h2>
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Level of uncertainty
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Medium
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="add-hazard">
 
       </a>
     </dd>
   </div>
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Has sensitivity analysis been undertaken?
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No
-    </dd>
-      <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="add-hazard">
-
-      </a>
-    </dd>
-  </div>
 </dl>
