@@ -1,6 +1,6 @@
-{% extends "layouts/main.html" %}
+{% extends "layout-psd-menu_home.html" %}
 
-{% set title = "Define the product" %}
+{% set title = "Add assessment and extra product information" %}
 
 {% block pageTitle %}
 Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
@@ -24,6 +24,13 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
 
      <form class="form" action="/version_4/have-you-searched-PSD" method="post">
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-heading-m">Assessment title</h3>
+        <p id="more-detail-hint" class="govuk-hint">
+        Give the risk assessment a short descriptive title.</p>
+        <input class="govuk-input" id="assessor-name" name="assessor-name" type="text" value="{{ data['assessor-name'] }}">
+      </div>
 
 
       <div class="govuk-form-group">
