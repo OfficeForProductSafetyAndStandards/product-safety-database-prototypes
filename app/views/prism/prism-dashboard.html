@@ -8,7 +8,26 @@ Home
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+
+  <div class="govuk-grid-column-one-quarter">
+
+          <nav aria-label="Secondary" style="margin-top: 130px;">
+            <ul class="govuk-list opss-left-nav">
+               <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">All assessments - Search</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Team assessments</a>
+                </li>
+                <li class="opss-left-nav__active">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#"aria-current="page">Your assessments</a>
+                </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+  <div class="govuk-grid-column-three-quarters">
 
     <form class="form govuk-!-margin-bottom-6" action="../psd-products-area/psd-product-search" method="post">
 
@@ -60,7 +79,7 @@ Home
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">All in All + Car Seat, Dragon Kingdom CT4262</th>
-      <td class="govuk-table__cell">Buckle failure</td>
+      <td class="govuk-table__cell">Buckle failure <p>(HTML)</p></td>
       <td class="govuk-table__cell">23 April 2023</td>
       <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green" id="company-information-status">Submitted</strong></td>
       <td class="govuk-table__cell"><a href="view-existing-assessment">View assessment</a>
@@ -72,9 +91,6 @@ Home
 </table>
 
 <p><button type="submit" class="govuk-button" data-module="govuk-button" value="Start a new risk assessment" id="submit">Start a new risk assessment</button></p>
-
-
-
 
 
     </form>
