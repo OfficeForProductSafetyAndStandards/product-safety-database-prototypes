@@ -1,0 +1,429 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Evaluate product risk and submit assessment" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l">
+        Check your risk evaluation details
+      </h1>
+
+      <h2 class="govuk-heading-m">About assessment</h2>
+
+
+    {% include "../includes/assessment-details.html" %}
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Product details</h2>
+      <p>as recorded on the PSD</p>
+
+
+    {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "PSD reference"
+      },
+      value: {
+        html: "<a href='#'>psd-670</a>"
+      }
+
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        html: "All in All + Car Seat, Dragon Kingdom CT4262"
+      }
+    },
+    {
+      key: {
+        text: "Brand name"
+      },
+      value: {
+        text: "Cosatto"
+      }
+
+    },
+
+    {
+      key: {
+        text: "Description"
+      },
+      value: {
+        html: 'Children’s rotating car seats available in various colours and designs'
+      }
+    },
+    {
+      key: {
+        text: "Country of origin"
+      },
+      value: {
+        html: 'UK'
+      }
+    },
+    {
+      key: {
+        text: "Counterfeit"
+      },
+      value: {
+        html: 'No'
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Risk evaluation</h2>
+      <h3 class="govuk-heading-m" style="font-weight: normal;">Nature of risk</h3>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "What other types of harm could the hazard cause?"
+            },
+            value: {
+              text: "Psychological harm"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is the number of products estimated to be in use expected to change?"
+            },
+            value: {
+              text: "No change"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does the uncertainty level have implications for risk management decisions?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How does the risk level compare to that of comparable products?"
+            },
+            value: {
+              text: "Similar"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is there potential for multiple casualties in a single incident?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is there a significant risk differential?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are there people at increased risk?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is relevant action planned or underway by another MSA or other organisation?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "As regards the nature of the risk, are there factors to take account of in relation to risk management decisions?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-m" style="font-weight: normal;">Perception and tolerability of risk</h3>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "As well as the hazard associated with the non-compliance, does the product have any other hazards that can and do cause harm?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is this a low likelihood but high severity risk?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is there a risk to non-users?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is this a type of product aimed at vulnerable users?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is the product designed to provide a protective function?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Can users exert any control over the risk?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are there other matters that will influence the way the risk is perceived?"
+            },
+            value: {
+              text: "No other matters"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m">Risk evaluation outcome
+</h2>
+
+      {{ govukSummaryList({
+        rows: [
+
+          {
+            key: {
+              text: "How would you describe the risk presented by the product?"
+            },
+            value: {
+              html: 'Risk is intolerable'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-one-third govuk-!-padding-left-9 govuk-!-padding-top-9">
+
+
+    <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
+
+
+
+</div>
+</div>
+<br/>
+
+{{ govukButton({
+          text: "Submit",
+          href: "confirmation-ra.html"
+        }) }}
+
+        <p><a href="#">Download a pdf of the assessment</a></p>
+
+
+
+{% endblock %}
