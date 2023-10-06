@@ -7,6 +7,21 @@ Home
 
 {% block content %}
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      <span style="font-weight:normal">You have successfully deleted the 'Non UK plug' draft assessment.</span>
+    </h3>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-quarter">
@@ -37,29 +52,7 @@ Home
 
       <h2 class="govuk-heading-m">Draft risk assessments</h2>
 
-         <table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Product name</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Assessment title</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">ABC  Room / Space Heater</th>
-      <td class="govuk-table__cell">Non UK plug face </td>
-      <td class="govuk-table__cell">10 May 2023</td>
-       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-  Draft</strong></td>
-      <td class="govuk-table__cell"><a href="#">Make changes</a><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-        <a href="delete-draft-assessment">Delete</a></td>
-    </tr>
-
-  </tbody>
+         <p>There are no draft risk assessments.</p>
 </table>
 
 

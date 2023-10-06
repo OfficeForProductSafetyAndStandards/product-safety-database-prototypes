@@ -1,4 +1,4 @@
-{% extends "layout-psd-menu_home.html" %}
+{% extends "layout-prism.html" %}
 
 {% set pageName="Start page" %}
 
@@ -7,7 +7,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-padding-top-6">
+    <h1 class="govuk-heading-l">
       Determine and evaluate the level of risk presented by a consumer product
     </h1>
 
@@ -50,7 +50,7 @@
 
         <li>Product test reports.</li>
          <li>Any relevant research studies, statistical data sets or other evidence to indicate the probability of harm ocurring and the nature of the harm.</li>
-        <li>Any risk assessments that have been undertaken previously for the type of product being assessed or,for
+        <li>Any risk assessments that have been undertaken previously for the type of product being assessed or, for
 closely related products.</li>
       </ul>
 
@@ -58,7 +58,7 @@ closely related products.</li>
 
   {{ govukButton({
     text: "Start now",
-    href: "question-serious-risk-b.html",
+    href: "question-serious-risk-b",
     isStartButton: true
   }) }}
 

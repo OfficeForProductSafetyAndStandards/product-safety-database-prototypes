@@ -1,5 +1,4 @@
-{% extends "layouts/main.html" %}
-
+{% extends "layout-psd-menu_home.html" %}
 {% set title = "Identify product hazards" %}
 
 
@@ -23,21 +22,11 @@
       <span class="govuk-caption-l">{{title}}</span>
 <h1 class="govuk-heading-l">Add a number of hazards</h1>
 
-{% if checked("existing-product", "yes") %}
 
 <div class="app-summary-card">
     <p class="govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">All in All + Car Seat, Dragon Kingdom CT4262</p>
   </div>
-
-{% else %}
-
-<div class="app-summary-card">
-    <p class="govuk-!-margin-bottom-0">For</p>
-    <p class="govuk-body-l">XYZ Car Seat</p>
-  </div>
-
-{% endif %}
 
 <h3 class="govuk-heading-m">Number of hazards identified</h3>
 

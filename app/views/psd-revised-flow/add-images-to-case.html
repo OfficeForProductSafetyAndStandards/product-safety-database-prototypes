@@ -1,0 +1,110 @@
+{% extends "layout-psd-menu_home.html" %}
+
+
+{% block pageTitle %}
+Assigned cases
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-two-thirds-from-desktop">
+
+  <span class="govuk-caption-l">Case: 2306-0005</span>
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Add image</h1>
+
+  <div class="govuk-hint govuk-!-margin-bottom-6">To provide visual evidence of the product hazard or incident/accident, you can upload either a single image or multiple images to the case.</div>
+
+  <div id="singleUpload">
+
+
+
+  <input autocomplete="off" type="hidden" name="document[existing_document_file_id]" id="document_existing_document_file_id">
+
+
+  <div class="govuk-form-group">
+
+      <div class="govuk-hint" id="document-hint"></div>
+      <input class="govuk-file-upload" id="imageUpload" name="document[document]" type="file" aria-describedby=" document-hint">
+  </div>
+
+  <div>
+      <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="title">Image title</label>
+          <input class="govuk-input" id="title" name="document[title]" type="text">
+
+      </div>
+
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+</div>
+
+<div id="uploadAnother" style="display: none;">
+    <a href="#" class="govuk-button govuk-button--secondary" id="uploadAnotherbtn"data-module="govuk-button">
+      Upload another image
+  </a>
+</div>
+
+<div id="fileDisplay" style="display: none;">
+
+    <dl class="govuk-summary-list govuk-summary-list--long-key">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="color:grey;">
+          image2.jpg  <img src="/public/images/loader.gif" valign="middle" style="margin-left: 10px;">
+      </dt>
+      <dd class="govuk-summary-list__value">
+          <ef>Uploading...</ef>
+</strong>
+
+        </dd>
+      <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Remove<span class="govuk-visually-hidden"> receipt1.jpg</span>
+        </a>
+    </dd>
+</div>
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      <a class="govuk-link" href="#">image1.jpg</a>
+  </dt>
+   <dd class="govuk-summary-list__value">
+          Damaged car seat buckle
+</strong>
+
+        </dd>
+  <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Remove<span class="govuk-visually-hidden"> receipt1.jpg</span>
+    </a>
+</dd>
+</div>
+</dl>
+
+</div>
+
+
+
+
+
+
+
+<!-- <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="description">Description</label>
+
+
+
+
+
+  <textarea class="govuk-textarea" id="description" name="document[description]" rows="5" aria-describedby="" maxlength="10000"></textarea>
+</div> -->
+
+<button class="govuk-button" data-module="govuk-button">Save</button>
+
+<p><a href="add-images-to-case-error.html">Example of file upload error message</a></p>
+
+</div>
+
+
+{% endblock %}
