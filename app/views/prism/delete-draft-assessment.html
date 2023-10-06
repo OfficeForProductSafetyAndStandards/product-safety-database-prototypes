@@ -1,0 +1,44 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="prism-dashboard-assessment-delete" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Are you sure you want delete 'Non UK plug face' draft assessment?
+      </h1>
+    </legend>
+
+     <p class="govuk-body">You are about to delete the draft assessment. This action will permanently remove the assessment from the system and cannot be undone. Please ensure that you want to proceed with this deletion.
+        </p>
+
+    <div class="govuk-button-group">
+  <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Delete draft assessment
+  </button>
+  <p><a href="harm-scenario-dashboard-single">Cancel</a></p>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

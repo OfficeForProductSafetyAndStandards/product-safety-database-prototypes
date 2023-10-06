@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -36,7 +36,7 @@
 
 
 
-      <form action="/version_5/task-list-v2" method="post" novalidate>
+      <form action="task-list-v2" method="post" novalidate>
 
         {{ govukButton({
           text: "Confirm and create scenario"

@@ -27,9 +27,9 @@ router.post('/product-triage-5', function(request, response) {
 if (triage == "yes") {
     response.redirect("../prism/task-list-v2")
 } else if (triage == "no") {
-    response.redirect("version_5/question-triage")
+    response.redirect("../prism/question-triage")
 } else if (triage == "notclear") {
-    response.redirect("version_5/triage-guidance")
+    response.redirect("../prism/triage-guidance")
 }
 })
 
@@ -39,7 +39,17 @@ router.post('/product-triage-5-b', function(request, response) {
 if (triage == "yes") {
     response.redirect("../prism/prism-login")
 } else if (triage == "notclear") {
-    response.redirect("version_5/triage-guidance")
+    response.redirect("../prism/triage-guidance-pre-login")
+}
+})
+
+router.post('/product-triage-5-al', function(request, response) {
+
+   var triage = request.session.data['product-triage']
+if (triage == "yes") {
+    response.redirect("../prism/task-list-v2")
+} else if (triage == "notclear") {
+    response.redirect("../prism/triage-guidance-pre-login")
 }
 })
 
@@ -69,9 +79,19 @@ router.post('/product-serious-risk-5-b', function(request, response) {
 
     var srisk = request.session.data['serious-risk']
     if (srisk == "no"){
-        response.redirect("../../prism//question-triage-b")
+        response.redirect("../../prism/question-triage-b")
     } else {
-        response.redirect("version_5/serious-risk-rebuttable")
+        response.redirect("../../prism/serious-risk-rebuttable")
+    }
+})
+
+router.post('/product-serious-risk-5-al', function(request, response) {
+
+    var srisk = request.session.data['serious-risk']
+    if (srisk == "no"){
+        response.redirect("../../prism/task-list-v2")
+    } else {
+        response.redirect("../../prism/serious-risk-rebuttable")
     }
 })
 
