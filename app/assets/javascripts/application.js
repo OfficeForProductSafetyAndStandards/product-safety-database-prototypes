@@ -46,3 +46,26 @@ $(document).ready(function () {
                 }
             });
         });
+
+  $(document).ready(function() {
+      // Hide the "upload-image" div initially
+      $("#upload-image").hide();
+
+      // When the "add-image" link is clicked
+      $("#add-image").click(function(e) {
+        e.preventDefault();
+        // Hide the "add-image" link
+        $(this).hide();
+        // Display the "upload-image" div
+        $("#upload-image").show();
+      });
+
+      // When the "remove-image" link is clicked
+      $("#remove-image").click(function(e) {
+        e.preventDefault();
+        // Hide the "upload-image" div
+        $("#upload-image").hide();
+        // Display the "add-image" link
+        $("#add-image").show();
+      });
+    });

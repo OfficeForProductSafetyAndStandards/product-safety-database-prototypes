@@ -8,22 +8,6 @@ Assigned cases
 
 {% block content %}
 
-<div class="govuk-error-summary" data-module="govuk-error-summary">
-
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#not-uploaded-error">The selected file has not fully uploaded</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div class="govuk-grid-column-two-thirds-from-desktop">
 
   <span class="govuk-caption-l">Case: 2306-0005</span>
@@ -31,27 +15,49 @@ Assigned cases
 
   <div class="govuk-hint govuk-!-margin-bottom-6">To provide visual evidence of the product hazard or incident/accident, you can upload either a single image or multiple images to the case.</div>
 
-  <div id="uploadAnother">
+  <div>
+
+
+
+  <input autocomplete="off" type="hidden" name="document[existing_document_file_id]" id="document_existing_document_file_id">
+
+
+  <div class="govuk-form-group">
+
+      <div id="document-hint"><p class="govuk-hint">Acceptable file formats: jpeg, gif or png. Maximum file size: 50MB.</p></div>
+      <input class="govuk-file-upload" name="document[document]" type="file" aria-describedby=" document-hint">
+  </div>
+
+ <div>
+      <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="title">Image title</label>
+          <input class="govuk-input" id="title" name="document[title]" type="text">
+
+      </div>
+
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+</div>
+
+<div id="uploadAnother" style="display: none;">
     <a href="#" class="govuk-button govuk-button--secondary" id="uploadAnotherbtn"data-module="govuk-button">
       Select another image
   </a>
 </div>
 
-
-<div id="fileDisplay">
+<div id="fileDisplay" style="display: none;">
 
     <dl class="govuk-summary-list govuk-summary-list--long-key">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="color:grey; width:50%;">
-          <div class="govuk-form-group govuk-form-group--error">
-          image2.jpg
-          <p id="not-uploaded-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> The selected file has not fully uploaded
-            </p>
-          </div>
+        <dt class="govuk-summary-list__key" style="color:grey;">
+          <a class="govuk-link" href="#">image2.jpg</a>
       </dt>
       <dd class="govuk-summary-list__value">
-        Car seat fabric burn
+          <p>Car seat fabric burn</p>
+</strong>
 
         </dd>
       <dd class="govuk-summary-list__actions">
@@ -60,7 +66,6 @@ Assigned cases
         </a>
     </dd>
 </div>
-
 <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       <a class="govuk-link" href="#">image1.jpg</a>
@@ -95,10 +100,12 @@ Assigned cases
 
   <textarea class="govuk-textarea" id="description" name="document[description]" rows="5" aria-describedby="" maxlength="10000"></textarea>
 </div> -->
+<a href="add-images-to-case-success.html" class="govuk-button" data-module="govuk-button">Upload</a>
 
-<a href="add-images-to-case-error.html" class="govuk-button" data-module="govuk-button">Upload</a>
+<p><a href="#">Finish uploading images</a></p>
 
-<p><a href="add-images-to-case-error.html">Finish uploading images</a></p>
+
 </div>
+
 
 {% endblock %}
