@@ -800,3 +800,50 @@ noscript {
   line-height: 1.25;
   padding: 10px 15px;
 }
+
+// Product search results
+
+.product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-item {
+  display: flex;
+  align-items: top;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-info {
+  flex: 2;
+  padding: 0 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.product-details {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.product-select {
+  flex: 1;
+  text-align: right;
+}
+
+.product-select button {
+  cursor: pointer;
+}

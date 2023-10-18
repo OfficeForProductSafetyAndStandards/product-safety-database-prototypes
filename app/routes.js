@@ -175,6 +175,19 @@ router.post('/product-overall-risk-decision-1', function(request, response) {
     }
 })
 
+router.post('/product-safety', function(request, response) {
+
+   var psafety = request.session.data['product-safety-choice']
+if (psafety == "nc") {
+    response.redirect("/psd-products-area/multiple-products/create-case")
+} else if (psafety == "unsafe") {
+    response.redirect("../psd-products-area/multiple-products/no-upload-unsafe")
+}
+else if (psafety == "mixed") {
+    response.redirect("../psd-products-area/multiple-products/no-upload-mix")
+}
+})
+
 
 // **** End folder specific routes
 

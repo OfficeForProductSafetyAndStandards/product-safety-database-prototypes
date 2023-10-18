@@ -1,0 +1,58 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Upload multiple products" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="duplicate-products" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Upload products by Excel
+      </h1>
+      <p class="govuk-body"><a href="#">Download a template Excel file</a> to see an example of the format required.</p>
+      <p class="govuk-body">The Excel file provided includes all the essential product details needed to create new products on the PSD.</p>
+    </legend>
+
+<div class="govuk-form-group">
+  <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+</div>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+       <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Continue</button>
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

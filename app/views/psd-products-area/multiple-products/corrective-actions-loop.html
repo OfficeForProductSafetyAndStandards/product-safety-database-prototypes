@@ -1,0 +1,88 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Upload multiple products" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="corrective-actions-remaining" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <div><span class="govuk-caption-l">{{title}}</span>
+          <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+            Choose the remaining products that require a corrective action
+
+        </legend></div>
+
+
+<div class="govuk-form-group ">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Miss Dior edt vapo 120ml
+        </label>
+      </div>
+
+  </fieldset>
+
+  <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Products already selected for corrective action</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Product</th>
+      <th scope="col" class="govuk-table__header">Corrective action</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">CK One edt vapo 100ml</th>
+      <td class="govuk-table__cell">Removal of the listing by the online marketplace</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Classic edt vapo 90ml</th>
+      <td class="govuk-table__cell">Removal of the listing by the online marketplace</td>
+    </tr>
+  </tbody>
+</table> -->
+</div>
+
+
+
+    </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button" value="Continue" id="submit">Continue</button>
+
+
+    </div>
+  </div>
+
+
+
+
+
+    </div>
+  </form>
+
+
+
+
+{% endblock %}
