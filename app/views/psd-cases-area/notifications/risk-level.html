@@ -1,0 +1,111 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+</div>
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">Determine product risk level</h1>
+    <p class="govuk-body">The case risk level will usually match the risk assessment.</p>
+    <p class="govuk-body">It can differ from risk assessments if necessary - such as when there are conflicting assessments, or where the assessment was provided by a third party.</p>
+
+    <div class="govuk-inset-text">
+      This notification does not have a risk assessment. You may want to <a class="govuk-link" href="/cases/2308-0002/risk-assessments/new">add a risk assessment</a> before setting the case risk level.
+    </div>
+
+    <form action="/cases/2308-0002/edit-risk-level" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" autocomplete="off"><input type="hidden" name="authenticity_token" value="ynUODrkh5Wyzguax4l7fXLiejWtLATI25tv0t3r9rJABu0whauMuh-ix5NXMBMsNKG_FDu_-wOlwYHSRPJ-D4A" autocomplete="off">
+
+
+
+
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="">
+    <legend class="govuk-fieldset__legend ">
+        Case risk level
+</legend>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="investigation_risk_level_serious" name="investigation[risk_level]" type="radio" value="serious" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_serious">Serious risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_high">High risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="investigation_risk_level_medium" name="investigation[risk_level]" type="radio" value="medium" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_medium">Medium risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="investigation_risk_level_low" name="investigation[risk_level]" type="radio" value="low" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_low">Low risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__divider">
+          or
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="investigation_risk_level_not_conclusive" name="investigation[risk_level]" type="radio" value="not_conclusive" class="govuk-radios__input" checked="checked">
+            <label class="govuk-label govuk-radios__label" for="investigation_risk_level_not_conclusive">Not conclusive</label>
+
+
+      </div>
+
+</div>
+</fieldset>
+</div>
+
+
+      <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+</div>
+</div>
+
+  <input class="govuk-checkboxes__input" id="section-4c-complete" name="section-4c-complete" type="checkbox" value="yes" { checked('section-4c-complete','yes') }} checked>
+
+  </form>
+
+
+
+
+
+{% endblock %}

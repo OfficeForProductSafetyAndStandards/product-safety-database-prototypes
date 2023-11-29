@@ -1,0 +1,43 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Product Safety Database
+{% endset%}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Notification submitted",
+        html: "Notification reference number<br><strong>2308-00025</strong>"
+      }) }}
+
+      <p>Your sucessfully submitted a notification for <a href="../../psd-revised-flow/product-page">All in All+ Car Seat, Dragon Kingdom CT4262</a>.</p>
+
+      <h2 class="govuk-heading-m">
+        Next steps
+      </h2>
+
+
+        <ul class="govuk-list">
+
+          <li><a href="edit-submitted" class="govuk-link">View or edit</a> the submitted product notification</li>
+
+               <li><a href="notifications-dashboard" class="govuk-link">View or edit </a> all your draft and submitted notifications</li>
+               </ul>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

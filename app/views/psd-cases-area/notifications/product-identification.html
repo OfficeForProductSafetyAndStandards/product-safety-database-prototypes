@@ -1,0 +1,117 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add notification and additional product details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Add product identification details
+      </h1>
+       <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+    </legend>
+
+    <p>Add product identification details if known.</p>
+
+
+
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Batch numbers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="batch-numbers">
+                Add<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Customs codes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="customs-codes">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique Consignment Reference (UCR) numbers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="ucr-numbers">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of units affected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="units-affected">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+ <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+
+
+    </div>
+
+
+
+{% endblock %}

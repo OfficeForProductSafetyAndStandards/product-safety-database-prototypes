@@ -1,0 +1,52 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add notification and additional product details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       <form class="form govuk-!-margin-bottom-6" action="product-identification" method="post">
+
+
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="customs_code">Add customs codes </label>
+  </h1>
+
+
+    <p class="govuk-hint govuk-!-margin-bottom-5" id="customs_code-hint">
+          For example, a <abbr>CN</abbr>  code (8 digits) or a TARIC code (10 digits). Use a comma and a space to separate multiple customs codes. </p>
+
+  <input class="govuk-input govuk-!-width-two-thirds" id="customs_code" name="customs_code" type="text" aria-describedby="customs_code-hint" maxlength="45">
+
+
+
+</div>
+
+
+
+       <div class="govuk-button-group">
+         <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save">
+         <a class="govuk-link govuk-link--no-visited-state" href="product-identification">Cancel</a>
+       </div>
+    </div>
+  </div>
+
+</form>
+
+
+
+{% endblock %}

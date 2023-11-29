@@ -1,0 +1,86 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add business that supplied the product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+</div>
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">You have added 1 business</h1>
+
+    <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        ABC Limited
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove</span></a></li>
+        </ul>
+      </dd>
+    </div>
+  </dl>
+
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-heading-m">
+        Do you need to add another business?
+      </h2>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+  <input class="govuk-checkboxes__input" id="section-4c-complete" name="section-4c-complete" type="checkbox" value="yes" { checked('section-4c-complete','yes') }} checked>
+
+   <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+ <input class="govuk-checkboxes__input" id="section-3-complete" name="section-3-complete" type="checkbox" value="yes" { checked('section-3-complete','yes') }} checked>
+
+</form>
+
+
+
+
+
+{% endblock %}

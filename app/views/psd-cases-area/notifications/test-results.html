@@ -1,0 +1,308 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+     <form class="form govuk-!-margin-bottom-6" action="add-another-test-report" method="post">
+
+
+      <h1 class="govuk-heading-l">Add test report</h1>
+
+      <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+
+        <div class="govuk-form-group ">
+
+
+
+  </div>
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="legislation">Under which legislation?</label>
+
+
+    <div class="govuk-hint" id="test_result[legislation]-hint">Select the relevant legislation from the list.</div>
+
+
+
+
+        <select class="govuk-select" id="legislation" name="test_result[legislation]">
+        <option selected="selected"></option>
+        <option value="ATEX 2016">ATEX 2016</option>
+        <option value="Aerosol Dispensers Regulations 2009 (Consumer Protection Act 1987)">Aerosol Dispensers Regulations 2009 (Consumer Protection Act 1987)</option>
+        <option value="Cableway Installations Regulations 2018">Cableway Installations Regulations 2018</option>
+        <option value="Carriage of Dangerous Goods and Use of Transportable Pressure Equipment Regulations 2009">Carriage of Dangerous Goods and Use of Transportable Pressure Equipment Regulations 2009</option>
+        <option value="Classification, Labelling and Packaging of Chemicals Regulations 2015">Classification, Labelling and Packaging of Chemicals Regulations 2015</option>
+        <option value="Construction Products Regulations 2013">Construction Products Regulations 2013</option>
+        <option value="Consumer Protection Act 1987">Consumer Protection Act 1987</option>
+        <option value="Consumer Protection Act 1987 / Motor Vehicle Tyres (Safety) Regulations 1994">Consumer Protection Act 1987 / Motor Vehicle Tyres (Safety) Regulations 1994</option>
+        <option value="Cosmetic Products Enforcement Regulations 2013">Cosmetic Products Enforcement Regulations 2013</option>
+        <option value="EC Fertilisers (England and Wales) Regulations 2006">EC Fertilisers (England and Wales) Regulations 2006</option>
+        <option value="Ecodesign for Energy-Related Products Regulations 2010">Ecodesign for Energy-Related Products Regulations 2010</option>
+        <option value="Electrical Equipment (Safety) Regulations 2016">Electrical Equipment (Safety) Regulations 2016</option>
+        <option value="Electromagnetic Compatibility Regulations 2016">Electromagnetic Compatibility Regulations 2016</option>
+        <option value="End-of-Life Vehicles Regulations 2003 (as amended)">End-of-Life Vehicles Regulations 2003 (as amended)</option>
+        <option value="Energy Information Regulations 2011">Energy Information Regulations 2011</option>
+        <option value="Explosives Regulations 2014">Explosives Regulations 2014</option>
+        <option value="Fireworks Act 2003 / Fireworks Regulations 2004">Fireworks Act 2003 / Fireworks Regulations 2004</option>
+        <option value="Food Imitations (Safety) Regulations 1989">Food Imitations (Safety) Regulations 1989</option>
+        <option value="Furniture and Furnishings (Fire) (Safety) Regulations 1988">Furniture and Furnishings (Fire) (Safety) Regulations 1988</option>
+        <option value="Gas Appliances (Enforcement) and Miscellaneous Amendments Regulations 2018">Gas Appliances (Enforcement) and Miscellaneous Amendments Regulations 2018</option>
+        <option value="General Product Safety Regulations 2005">General Product Safety Regulations 2005</option>
+        <option value="Gun Barrel Proof Acts 1868 to 1978">Gun Barrel Proof Acts 1868 to 1978</option>
+        <option value="Lifts Regulations 2016">Lifts Regulations 2016</option>
+        <option value="Measuring Instruments Regulations 2016">Measuring Instruments Regulations 2016</option>
+        <option value="Measuring Instruments Regulations 2016 (also NAWI)">Measuring Instruments Regulations 2016 (also NAWI)</option>
+        <option value="Medical Devices Regulations 2002">Medical Devices Regulations 2002</option>
+        <option value="Merchant Shipping (Marine Equipment) Regulations 2016">Merchant Shipping (Marine Equipment) Regulations 2016</option>
+        <option value="Motor Vehicle Tyres (Safety) Regulations 1994 (Consumer Protection Act 1987)">Motor Vehicle Tyres (Safety) Regulations 1994 (Consumer Protection Act 1987)</option>
+        <option value="N-nitrosamines and N-nitrosatable Substances in Elastomer or Rubber Teats and Dummies (Safety) Regulations 1995">N-nitrosamines and N-nitrosatable Substances in Elastomer or Rubber Teats and Dummies (Safety) Regulations 1995</option>
+        <option value="Nightwear (Safety) Regulations 1985">Nightwear (Safety) Regulations 1985</option>
+        <option value="Noise Emission in the Environment by Equipment for use Outdoors Regulations 2001 (as amended)">Noise Emission in the Environment by Equipment for use Outdoors Regulations 2001 (as amended)</option>
+        <option value="Non-Automatic Weighing Instruments Regulations 2016">Non-Automatic Weighing Instruments Regulations 2016</option>
+        <option value="Oil Heaters (Safety) Regulations 1977">Oil Heaters (Safety) Regulations 1977</option>
+        <option value="Personal Protective Equipment (Enforcement) Regulations 2018">Personal Protective Equipment (Enforcement) Regulations 2018</option>
+        <option value="Plugs and Sockets etc. (Safety) Regulations 1994">Plugs and Sockets etc. (Safety) Regulations 1994</option>
+        <option value="Pressure Equipment (Safety) Regulations 2016">Pressure Equipment (Safety) Regulations 2016</option>
+        <option value="Pyrotechnic Articles (Safety) Regulations 2015">Pyrotechnic Articles (Safety) Regulations 2015</option>
+        <option value="REACH Enforcement Regulations 2008">REACH Enforcement Regulations 2008</option>
+        <option value="Radio Equipment Regulations 2017">Radio Equipment Regulations 2017</option>
+        <option value="Recreational Craft Regulations 2017">Recreational Craft Regulations 2017</option>
+        <option value="Restriction of Use of Certain Hazardous Substances in Electrical and Electronic Equipment Regulations 2012">Restriction of Use of Certain Hazardous Substances in Electrical and Electronic Equipment Regulations 2012</option>
+        <option value="Simple Pressure Vessels (Safety) Regulations 2016">Simple Pressure Vessels (Safety) Regulations 2016</option>
+        <option value="Supply of Machinery (Safety) Regulations 2008">Supply of Machinery (Safety) Regulations 2008</option>
+        <option value="Textile Products (Labelling and Fibre Composition) Regulations 2012">Textile Products (Labelling and Fibre Composition) Regulations 2012</option>
+        <option value="Toys (Safety) Regulations 2011 (Consumer Protection Act 1987)">Toys (Safety) Regulations 2011 (Consumer Protection Act 1987)</option>
+        <option value="Weights and Measures (Packaged Goods) Regulations (Northern Ireland) 2011">Weights and Measures (Packaged Goods) Regulations (Northern Ireland) 2011</option>
+        <option value="Weights and Measures (Packaged Goods) Regulations 2006">Weights and Measures (Packaged Goods) Regulations 2006</option>
+</select>
+
+</div>
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="standards_product_was_tested_against">Which standard was the product tested against?</label>
+
+
+    <div class="govuk-hint" id="standards_product_was_tested_against-hint">For example, EN71. Use a comma to separate multiple standards.</div>
+
+
+
+
+
+
+  <input class="govuk-input" id="standards_product_was_tested_against" name="test_result[standards_product_was_tested_against]" type="text" aria-describedby="standards_product_was_tested_against-hint">
+
+
+
+</div>
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="date-fieldset-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Date of test
+</legend>    <div class="govuk-hint" id="date-fieldset-hint">For example, 12 7 2019</div>
+
+  <div class="govuk-date-input" id="date-fieldset">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="date">Day</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date" name="test_result[date][day]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="date-fieldset-test_result[date][month]">Month</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-fieldset-test_result[date][month]" name="test_result[date][month]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="date-fieldset-test_result[date][year]">Year</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-fieldset-test_result[date][year]" name="test_result[date][year]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+</div>
+</fieldset>
+</div>
+
+
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        What was the result?
+</legend>
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="result" name="test_result[result]" type="radio" value="passed" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="result">Pass</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="result-1" name="test_result[result]" type="radio" value="failed" class="govuk-radios__input" aria-controls="conditional-result-1" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="result-1">Fail</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-result-1">
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="failure_details">How the product failed</label>
+
+
+    <div class="govuk-hint" id="failure_details-hint">Describe how the product was tested and how it failed to meet the requirements</div>
+
+
+
+
+  <textarea class="govuk-textarea" id="failure_details" name="test_result[failure_details]" rows="5" aria-describedby="failure_details-hint"></textarea>
+</div>
+</div>        <div class="govuk-radios__item">
+          <input id="result-2" name="test_result[result]" type="radio" value="other" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="result-2">Other</label>
+
+
+      </div>
+
+</div>
+</fieldset>
+</div>
+
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="details">Further details</label>
+
+
+
+
+
+  <textarea class="govuk-textarea" id="details" name="test_result[details]" rows="5" aria-describedby="" maxlength="32767"></textarea>
+</div>
+
+<input autocomplete="off" type="hidden" name="test_result[existing_document_file_id]" id="test_result_existing_document_file_id">
+<fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      Test report attachment
+    </legend>
+
+  <div class="govuk-body govuk-hint">
+    If you have multiple files, compress them in a zip
+  </div>
+
+
+  <div class="govuk-form-group " id="document">
+
+
+
+
+                <div class="govuk-form-group">
+          <label class="govuk-label" for="attachment-file-input">Upload a file</label>
+        </div>
+
+        <input class="govuk-file-upload" id="attachment-file-input" type="file" name="test_result[document_form][file]">
+
+
+      <div id="attachment-description" style="display: none;">
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="test_result_document_form_description">Attachment description</label>
+
+
+
+
+
+  <textarea class="govuk-textarea" id="test_result_document_form_description" name="test_result[document_form][description]" key="description" rows="5" aria-describedby="" maxlength="10000"></textarea>
+</div>
+
+      </div>
+  </div>
+</fieldset>
+
+
+
+     <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+ </div>
+</div>
+
+
+
+  </form>
+
+
+
+
+
+{% endblock %}

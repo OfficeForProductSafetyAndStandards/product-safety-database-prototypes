@@ -1,0 +1,118 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add notification and additional product details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form govuk-!-margin-bottom-6" action="product-identification" method="post">
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="number_of_affected_units_form_affected_units_status-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <span class="govuk-caption-l">{{title}}</span>
+                <h1 class="govuk-fieldset__heading">
+          Add the number of affected units
+        </h1>
+
+</legend>
+
+<br/>
+
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="affected_units_status" name="number_of_affected_units_form[affected_units_status]" type="radio" value="exact" class="govuk-radios__input" aria-controls="conditional-affected_units_status" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="affected_units_status">Exact number</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-affected_units_status">
+          <div class="govuk-form-group">
+    <label class="govuk-label" for="exact_units">How many units are affected?</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-input--width-10" id="exact_units" name="number_of_affected_units_form[exact_units]" type="text">
+
+
+
+</div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_approx" name="number_of_affected_units_form[affected_units_status]" type="radio" value="approx" class="govuk-radios__input" aria-controls="conditional-number_of_affected_units_form_affected_units_status_approx" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_approx">Approximate number</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-number_of_affected_units_form_affected_units_status_approx">
+          <div class="govuk-form-group">
+    <label class="govuk-label" for="approx_units">How many units are affected?</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-input--width-10" id="approx_units" name="number_of_affected_units_form[approx_units]" type="text">
+
+
+
+</div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_unknown" name="number_of_affected_units_form[affected_units_status]" type="radio" value="unknown" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_unknown">Unknown</label>
+
+
+      </div>
+
+        <div class="govuk-radios__divider">
+          or
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_not_relevant" name="number_of_affected_units_form[affected_units_status]" type="radio" value="not_relevant" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_not_relevant">Not relevant</label>
+
+
+      </div>
+
+</div>
+</fieldset>
+</div>
+
+
+      <div class="govuk-button-group">
+        <input type="submit" name="commit" value="Save" class="govuk-button" data-disable-with="Save">
+        <a class="govuk-link govuk-link--no-visited-state" href="product-identification">Cancel</a>
+      </div>
+</form>  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add notification and product safety details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="product-identification" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Add product safety and compliance details
+      </h1>
+       <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+    </legend>
+
+
+
+
+     <div class="govuk-checkboxes govuk-!-padding-top-3" data-module="govuk-checkboxes">
+
+      <h3 class="govuk-heading-m">Why is the product of concern?</h3>
+      <p class="govuk-hint" id="investigation_why_reporting-hint">Select all that are applicable.</p>
+
+        <div class="govuk-checkboxes__item">
+          <input id="reported_reason" name="investigation[reported_reason_unsafe]" type="checkbox" value="true" data-mutually-exclusive-set-id="reported-set" class="govuk-checkboxes__input js-mutually-exclusive__item" aria-controls="conditional-reported_reason" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="reported_reason">The product is unsafe</label>
+
+        </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-reported_reason">
+            <div id="hazard-type-auto-complete-container"></div>
+<div class="govuk-!-width-one-half govuk-!-margin-bottom-6">
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="hazard_type">What is the primary hazard?</label>
+
+
+
+
+
+        <select class="govuk-select" id="hazard_type" name="investigation[hazard_type]">
+        <option selected="selected"></option>
+        <option class="govuk-!-font-size-16" value="Asphyxiation">Asphyxiation</option>
+        <option class="govuk-!-font-size-16" value="Burns">Burns</option>
+        <option class="govuk-!-font-size-16" value="Chemical">Chemical</option>
+        <option class="govuk-!-font-size-16" value="Choking">Choking</option>
+        <option class="govuk-!-font-size-16" value="Cuts">Cuts</option>
+        <option class="govuk-!-font-size-16" value="Damage to hearing">Damage to hearing</option>
+        <option class="govuk-!-font-size-16" value="Damage to sight">Damage to sight</option>
+        <option class="govuk-!-font-size-16" value="Drowning">Drowning</option>
+        <option class="govuk-!-font-size-16" value="Electric shock">Electric shock</option>
+        <option class="govuk-!-font-size-16" value="Electromagnetic disturbance">Electromagnetic disturbance</option>
+        <option class="govuk-!-font-size-16" value="Energy consumption">Energy consumption</option>
+        <option class="govuk-!-font-size-16" value="Entrapment">Entrapment</option>
+        <option class="govuk-!-font-size-16" value="Environment">Environment</option>
+        <option class="govuk-!-font-size-16" value="Fire">Fire</option>
+        <option class="govuk-!-font-size-16" value="Health risk">Health risk</option>
+        <option class="govuk-!-font-size-16" value="Incorrect measurement">Incorrect measurement</option>
+        <option class="govuk-!-font-size-16" value="Injuries">Injuries</option>
+        <option class="govuk-!-font-size-16" value="Microbiological">Microbiological</option>
+        <option class="govuk-!-font-size-16" value="Security">Security</option>
+        <option class="govuk-!-font-size-16" value="Strangulation">Strangulation</option>
+        <option class="govuk-!-font-size-16" value="Suffocation">Suffocation</option>
+</select>
+
+</div>
+
+</div>
+
+
+
+<div class="govuk-form-group">
+
+    <label class="govuk-label" for="hazard_description">Why is the product unsafe?</label>
+
+    <div class="govuk-hint" id="hazard_description-hint">If the product has been involved in an incident include this additional information.</div>
+  <textarea class="govuk-textarea govuk-!-width-three-quarters" id="hazard_description" name="investigation[hazard_description]" key="hazard_description" rows="5" aria-describedby="hazard_description-hint" maxlength="10000"></textarea>
+</div>
+          </div>
+
+        <div class="govuk-checkboxes__item">
+          <input id="investigation_reported_reason_non_compliant" name="investigation[reported_reason_non_compliant]" type="checkbox" value="true" data-mutually-exclusive-set-id="reported-set" class="govuk-checkboxes__input js-mutually-exclusive__item" aria-controls="conditional-investigation_reported_reason_non_compliant" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="investigation_reported_reason_non_compliant">The product is non-compliant</label>
+
+        </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-investigation_reported_reason_non_compliant">
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="non_compliant_reason">Why is the product non-compliant?</label>
+
+
+
+
+
+  <textarea class="govuk-textarea govuk-!-width-three-quarters" id="non_compliant_reason" name="investigation[non_compliant_reason]" key="non_compliant_reason" rows="5" aria-describedby="" maxlength="10000"></textarea>
+</div>
+
+          </div>
+</div>
+<br/>
+
+     <h3 class="govuk-heading-m">Do you want to add your own reference number to the case?</h3>
+      <p id="more-detail-hint" class="govuk-hint">The reference number might be from a different internal system for your case or a global identifier for multiple systems. It's searchable on the PSD case search page and can be added or edited later.</p>
+
+     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="has_complainant_reference" name="investigation[has_complainant_reference]" type="radio" value="true" class="govuk-radios__input" aria-controls="conditional-has_complainant_reference" aria-expanded="true">
+            <label class="govuk-label govuk-radios__label" for="has_complainant_reference">Yes</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional" id="conditional-has_complainant_reference">
+                  <div class="govuk-form-group">
+    <label class="govuk-label" for="complainant_reference">Reference number</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-input--width-20" id="complainant_reference" name="investigation[complainant_reference]" type="text">
+
+
+
+</div>
+
+
+
+</div>        <div class="govuk-radios__item">
+          <input id="investigation_has_complainant_reference_false" name="investigation[has_complainant_reference]" type="radio" value="false" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="investigation_has_complainant_reference_false">No</label>
+
+
+      </div>
+
+</div>
+
+
+
+    </div>
+
+
+  </div>
+
+       <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+
+</form>
+
+
+
+    </div>
+
+
+
+{% endblock %}

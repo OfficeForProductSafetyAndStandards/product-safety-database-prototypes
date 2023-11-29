@@ -1,0 +1,93 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl" style="margin-bottom:30px;">
+           Welcome to the Product Safety Database</span>
+        </h1>
+
+        <p class="govuk-body-l" >The place to create notifications for unsafe or non-compliant products.</p>
+
+        <div class="govuk-form-group govuk-!-padding-bottom-2">
+              <label class="govuk-label" for="q"><b>Search for products</b></label>
+              <div class="govuk-input__wrapper opss-search__wrapper">
+                <input id="sort_by_current" autocomplete="off" type="hidden" name="sort_by">
+                <input autocomplete="off" type="hidden" name="sort_dir" id="sort_dir">
+                <input class="govuk-input govuk-!-width-full" data-opss-clear-on-reset="element" spellcheck="false" style="height: 50px;" aria-describedby="search-hint" type="search" name="q" id="q">
+                <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" style="height: 50px;">
+                  <span class="govuk-visually-hidden">Submit search</span>
+                </button>
+              </div>
+            </div>
+
+
+        <h2 class="gem-c-heading govuk-heading-l   govuk-!-margin-bottom-6">
+ Popular tasks and  actions
+</h2>
+
+
+      <ul style="padding-left:0;">
+
+<li class="chevron-card" style="list-style-type:none" >
+  <div class="chevron-card__wrapper">
+    <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+  <a class="govuk-link chevron-card__link" href="../../psd-cases-area/notifications/task-list">Product safety notifications</a>
+</h3>
+    <p class="govuk-body chevron-card__description">Create a safety product notification</p>
+  </div>
+</li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<li class="chevron-card" style="list-style-type:none" >
+  <div class="chevron-card__wrapper">
+    <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+  <a class="govuk-link chevron-card__link" href="#">Products</a>
+</h3>
+    <p class="govuk-body chevron-card__description">Add a new product</p>
+  </div>
+</li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<li class="chevron-card" style="list-style-type:none" >
+  <div class="chevron-card__wrapper">
+    <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+  <a class="govuk-link chevron-card__link" href="#">Businesses</a>
+</h3>
+    <p class="govuk-body chevron-card__description">Add a new business</p>
+  </div>
+</li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<li class="chevron-card" style="list-style-type:none" >
+  <div class="chevron-card__wrapper">
+    <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+  <a class="govuk-link chevron-card__link" href="#">Risk assessments</a>
+</h3>
+    <p class="govuk-body chevron-card__description">Add or create a new risk assessment</p>
+  </div>
+</li>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+</ul>
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}

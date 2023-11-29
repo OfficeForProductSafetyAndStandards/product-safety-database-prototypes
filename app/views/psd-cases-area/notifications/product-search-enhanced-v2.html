@@ -1,0 +1,245 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% set title = "Upload multiple products" %}
+
+{% block pageTitle %}
+    All products - Search
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s"> 
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Choose the product for the notification</span>
+            <h1 class="govuk-fieldset__heading">Search for or add a product</h1>
+          </legend>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third" style="padding-left: 9%">
+
+          <div class="govuk-button-group">
+            <a class="govuk-link govuk-!-margin-bottom-0" href="../psd-products-area/multiple-products/question-safety">Upload multiple products</a>
+</div>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add a product
+  </button>
+
+  </div>
+</div>
+
+<form action="task-list" accept-charset="UTF-8" method="get" role="search" novalidate>
+  
+    <div class="govuk-grid-row opss-full-height">
+  
+        <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+
+          <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+               <li class="opss-left-nav__active">
+                  <a class="govuk-link govuk-link--no-visited-state" aria-current="page" href="/psd-products-area/all-products.html">All products</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/team-products.html">Team products</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="/psd-products-area/your-products-sorting.html">Your products</a>
+                </li>
+            </ul>
+          </nav>
+
+
+        </section>
+
+        <section class="govuk-grid-column-three-quarters" id="page-content">
+  
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-form-group govuk-!-padding-bottom-2">
+                  <label class="govuk-label" for="products-search">
+                    Search
+                  </label>
+
+                  <div class="govuk-input__wrapper opss-search__wrapper">
+                    <input class="govuk-input govuk-input govuk-!-width-full" type="search" id="products-search" name="products-search" spellcheck="false" aria-describedby="search-hint">
+                    <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                        <span class="govuk-visually-hidden">Submit search</span>
+                    </button>
+                  </div>
+                </div>
+
+            </div>
+            <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group opss-text-align-right">
+                        <fieldset id="sort-by-fieldset" class="opss-border-none govuk-!-padding-0 opss-nojs-hide">
+                            <label class="govuk-label govuk-body-s" for="sort_by">
+                                Sort <span class="govuk-visually-hidden">the results</span> by
+                            </label>
+                            <select class="govuk-select govuk-!-margin-bottom-1" id="sort_by">
+                            <option selected="selected" data-url="/products?sort_by=created_at">Newly added</option><option data-url="/products?sort_by=name&amp;sort_dir=asc">Name A-Z</option><option data-url="/products?sort_by=name&amp;sort_dir=desc">Name Z-A</option>
+                            </select>
+                        </fieldset>
+  
+                        <dl class="govuk-list opss-float-right opss-dl-select opss-js-enabled-hidden">
+                            <dt>
+                                Sort <span class="govuk-visually-hidden">the results</span> by
+                            </dt>
+                            <dd>
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt1">Option 1</a>
+                            </dd>
+                            <dd>
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt2">
+                                  <span class="govuk-visually-hidden">Active: </span>Option 2
+                                </a>
+                            </dd>
+                            <dd class="opss-dl-select__active">
+                                <a href="https://opss-html.herokuapp.com/psd-general/cases-page?sort=opt3">
+                                    Option 3
+                                </a>
+                            </dd>
+                        </dl>
+                  </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <p class="govuk-body">There are currently 34 products.</p>
+            </div>
+          </div>          
+  
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full" role="region" aria-label="Products">
+                 <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Product details</th>
+      <th scope="col" class="govuk-table__header">&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">
+
+        <img src="/public/images/no-product-image-small.png"  alt="Product Image" style="float:left">
+
+        <div style="float:left; margin-left: 12px">
+        <a href="#"><b>All in All+ Car Seat, Dragon Kingdom CT4262</b></a>
+         <span style="display:block; margin-bottom:0;" class="govuk-body-s">Car seat by Cosatto</span>
+        <span style="display:block;" class="govuk-body-s">psd-670</span>
+
+      </div>
+    </td>
+
+
+      <td class="govuk-table__cell" class="govuk-body-s"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Select
+</button></td>
+
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">
+
+        <img src="/public/images/no-product-image-small.png"  alt="Product Image" style="float:left">
+
+        <div style="float:left; margin-left: 12px">
+        <a href="#"><b>Calvin Klein CK One Unisex Eau de Toilette 100ml</b></a>
+         <span style="display:block; margin-bottom:0;" class="govuk-body-s">Perfume by Calvin Klein</span>
+        <span style="display:block;" class="govuk-body-s">psd-697</span>
+
+      </div></td>
+
+      <td class="govuk-table__cell" class="govuk-body-s"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Select
+</button></td>
+
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">
+
+        <img src="/public/images/no-product-image-small.png"  alt="Product Image" style="float:left">
+
+        <div style="float:left; margin-left: 12px">
+        <a href="#"><b>HL R-Team E-Bike Batteries and Chargers</b></a>
+         <span style="display:block; margin-bottom:0;" class="govuk-body-s">E-bike by HL R-Team</span>
+        <span style="display:block;" class="govuk-body-s">psd-612</span>
+
+      </div></td>
+
+      <td class="govuk-table__cell" class="govuk-body-s"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Select
+</button></td>
+
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">
+
+        <img src="/public/images/no-product-image-small.png"  alt="Product Image" style="float:left">
+
+        <div style="float:left; margin-left: 12px">
+        <a href="#"><b>Beefeater 190L Double Door Fridge</b></a>
+         <span style="display:block; margin-bottom:0;" class="govuk-body-s">Fridge by Beefeater</span>
+        <span style="display:block;" class="govuk-body-s">psd-690</span>
+
+      </div></td>
+
+      <td class="govuk-table__cell" class="govuk-body-s"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Select
+</button></td>
+
+
+    </tr>
+
+
+  </tbody>
+</table>
+                <nav class="opss-pagination-link opss-pagination-link--no-top-border">
+                    <ul>
+                        <!-- <li class="opss-pagination-link__wrap opss-pagination-link--prev">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Previous page</span><span class="govuk-visually-hidden">:</span> <span>Page 1 of 3</span>
+                            </a>
+                        </li> -->
+                        <li class="opss-pagination-link__wrap opss-pagination-link--text govuk-body">
+                            Page 1
+                        </li>
+                        <li class="opss-pagination-link__wrap opss-pagination-link--next">
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">
+                                <span>Next page</span><span class="govuk-visually-hidden">:</span> <span>Page 3 of 3</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+  
+  
+              </div>
+          </div>
+  
+        </section>
+  
+    </div>
+
+    <input class="govuk-checkboxes__input" id="section-1-complete" name="section-1-complete" type="checkbox" value="yes" { checked('section-1-complete','yes') }} checked>
+
+</form>
+
+
+{% endblock %}
+
+
