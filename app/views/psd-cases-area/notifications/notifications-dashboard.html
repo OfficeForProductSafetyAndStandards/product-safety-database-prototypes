@@ -1,0 +1,104 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <h1 class="govuk-heading-l">
+        Product safety notifications
+      </h1>
+
+  <div class="govuk-grid-column-one-quarter">
+
+          <nav aria-label="Secondary">
+            <ul class="govuk-list opss-left-nav">
+               <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">All assessments - Search</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Team assessments</a>
+                </li>
+                <li class="opss-left-nav__active">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#"aria-current="page">Your assessments</a>
+                </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+
+
+      <h2 class="govuk-heading-m">Draft product safety
+      notifications</h2>
+
+         <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     <th scope="col" class="govuk-table__header govuk-!-width-one-third">Product name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Notification title</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">ABC  Room/Space Heater</th>
+      <td class="govuk-table__cell">ABC  Room/Space Heater - flammable health risk</td>
+      <td class="govuk-table__cell">10 May 2023</td>
+       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+  Draft</strong></td>
+      <td class="govuk-table__cell"><a href="edit-draft">Make changes</a><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <a href="delete-draft-assessment">Delete</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+      <h2 class="govuk-heading-m">Submitted product safety notifications</h2>
+
+<table class="govuk-table govuk-!-margin-bottom-8">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Product name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Notification title</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Last updated</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"><!-- Actions --></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">All in All + Car Seat, Dragon Kingdom CT4262</th>
+      <td class="govuk-table__cell">All in All + Car Seat - buckle failure</p></td>
+      <td class="govuk-table__cell">23 April 2023</td>
+      <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green" id="company-information-status">Submitted</strong></td>
+      <td class="govuk-table__cell"><a href="edit-submitted">Add further information</a>
+        </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p><button type="submit" class="govuk-button" data-module="govuk-button" value="Start a new risk assessment" id="submit">Create a new product safety notification</button></p>
+
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

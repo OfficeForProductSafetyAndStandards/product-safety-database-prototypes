@@ -69,3 +69,58 @@ $(document).ready(function () {
         $("#add-image").show();
       });
     });
+
+  $(document).ready(function(){
+    $("#case-status-trigger").click(function(event){
+        // Prevent default action of <a> (if it's a link)
+        event.preventDefault();
+
+        // Toggle the div with id="case-status"
+        $("#case-status").toggle();
+
+        // Check the visibility of the SVG with id "icon-up"
+        if($("#icon-up").is(":visible")){
+            // If visible, hide it and show the "icon-down"
+            $("#icon-up").hide();
+            $("#icon-down").show();
+        } else {
+            // If not visible, hide "icon-down" and show the "icon-up"
+            $("#icon-down").hide();
+            $("#icon-up").show();
+        }
+    });
+});
+
+$(document).ready(function(){
+
+    // Display the div when the checkbox is selected
+    $("#case-status-open").change(function(){
+        if($(this).prop("checked")) { // If checkbox is checked
+            $("#filter-tag").show();
+        } else { // If checkbox is unchecked
+            $("#filter-tag").hide();
+        }
+    });
+
+    // Hide the div and deselect the checkbox when the button is clicked
+    $("#filter-remove").click(function(){
+        $("#filter-tag").hide();
+        $("#case-status-open").prop("checked", false);
+    });
+
+});
+
+$(document).ready(function(){
+    $('#image-upload-cta').click(function(){
+        // Make the div with id="fileDisplay" visible
+        $('#fileDisplay').css('display', 'block');
+
+        // Get the file name from the input and display it in the href
+        var fileName = $('#file_upload').val().split('\\').pop(); // This splits the path and gets the file name
+        $('#uploaded-file-name').text(fileName); // Update the href text
+        $('#uploaded-file-name').attr('href', '#'); // Update the href link if necessary
+
+        // Change the button text
+        $(this).text('Upload another image');
+    });
+});

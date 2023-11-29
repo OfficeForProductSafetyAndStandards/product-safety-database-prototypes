@@ -1,0 +1,90 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Add supporting images</h1>
+
+        <div class="govuk-body">To provide visual evidence of the product hazard or incident/accident, you can upload either a single image or multiple images to the notification.</div>
+
+
+        <div>
+      <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="title">Image title</label>
+          <input class="govuk-input" id="title" name="document[title]" type="text">
+
+      </div>
+
+  </div>
+
+        <div class="govuk-form-group">
+<div class="govuk-hint" id="file_upload-hint"></div>
+<input class="govuk-file-upload" id="file_upload" name="image_upload[file_upload]" type="file" aria-describedby=" file_upload-hint"></div>
+
+<div class="govuk-hint">Acceptable file formats: GIF, JPEG, PNG, WEBP or HEIC/HEIF. Maximum file size: 100MB.</div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div id="fileDisplay" style="display: none;">
+
+    <dl class="govuk-summary-list govuk-summary-list--long-key">
+
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      <a class="govuk-link" href="#" id="uploaded-file-name"></a>
+  </dt>
+   <dd class="govuk-summary-list__value">
+          Damaged car seat buckle
+</strong>
+
+        </dd>
+  <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Remove<span class="govuk-visually-hidden"> receipt1.jpg</span>
+    </a>
+</dd>
+</div>
+</dl>
+
+</div>
+
+<a href="#\" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="image-upload-cta" style="text-decoration:none;">
+  Upload image
+</a>
+
+<br/>
+      <button class="govuk-button" data-module="govuk-button">
+  Finish uploading images
+</button>
+
+
+    </div>
+  </div>
+
+  <input class="govuk-checkboxes__input" id="section-4c-complete" name="section-4c-complete" type="checkbox" value="yes" { checked('section-4c-complete','yes') }} checked>
+
+  </form>
+
+
+
+
+
+{% endblock %}

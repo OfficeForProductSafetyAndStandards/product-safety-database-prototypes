@@ -1,0 +1,188 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+    Your cases
+{% endblock %}
+
+
+{% block content %}
+
+
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/cases/your-cases">Cases</a>
+      </li>
+  </ol>
+</nav>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds opss-desktop-min-height--s">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+      Your cases
+    </h1>
+    <p class="govuk-body opss-secondary-text govuk-!-margin-bottom-1">
+      You are the case owner of 2 open cases.
+    </p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+  <div class="opss-text-align-right govuk-!-margin-bottom-8">
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 opss-text-underline-offset" role="button" data-cy="create-case" href="task-list">Create a product safety notification</a>
+  </div>
+</div>
+
+</div>
+
+
+<form id="cases-search-form" novalidate="novalidate" role="search" action="/cases/search" accept-charset="UTF-8" method="get">
+  <div class="govuk-grid-row opss-full-height">
+    <section class="govuk-grid-column-one-quarter govuk-!-padding-right-1 opss-full-height__col">
+  <a href="#page-content" class="govuk-skip-link opss-skip-link">
+    Skip to the main content
+  </a>
+  <nav aria-label="Secondary">
+  <ul class="govuk-list opss-left-nav">
+      <li class="opss-left-nav__active">
+        <a class="govuk-link govuk-link--no-visited-state" aria-current="page" href="/cases/your-cases">Your cases</a>
+      </li>
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/cases/team-cases">Team cases</a>
+      </li>
+
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/cases/assigned-cases">Assigned cases</a>
+      </li>
+
+      <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="/cases/all-cases">All cases – Search</a>
+      </li>
+  </ul>
+</nav>
+
+</section>
+
+    <section class="govuk-grid-column-three-quarters" id="page-content">
+        <div class="govuk-grid-row">
+
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" role="region" aria-label="Cases">
+            <table class="govuk-table opss-table-items opss-table-items--sm">
+              <caption class="govuk-visually-hidden">
+                Cases data: 5 columns with each case described across rows within each table body.
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-visually-hidden">&nbsp;</th>
+                  <th id="case" scope="col" class="govuk-table__header">Case number</th>
+                    <th id="casecreated" scope="col" class="govuk-table__header">Case created</th>
+
+                    <th id="haztype" scope="col" class="govuk-table__header">Hazard type</th>
+
+                  <th scope="col" class="govuk-table__header">Product count</th>
+
+                    <th id="updated" scope="col" class="govuk-table__header">Updated</th>
+                </tr>
+              </thead>
+
+                <tbody class="govuk-table__body" data-cy-case-id="2308-0002">
+  <tr class="govuk-table__row">
+    <th class="govuk-visually-hidden">
+      Case title
+    </th>
+    <th id="item_investigation_1077" colspan="5" scope="colgroup" class="govuk-table__header">
+      <a class="govuk-link govuk-link--no-visited-state" href="/cases/2308-0002">Buckle failure and labelling issues</a>
+    </th>
+  </tr>
+  <tr class="govuk-table__row">
+    <th headers="item_investigation_1077" id="meta_investigation_1077" class="govuk-visually-hidden">
+      Metadata
+    </th>
+    <td headers="case item_investigation_1077 meta_investigation_1077" class="govuk-table__cell">
+      2308-0002
+    </td>
+      <td headers="casecreated item_investigation_1077 meta_investigation_1077" class="govuk-table__cell">
+        7 August 2023
+      </td>
+      <td headers="haztype" class="govuk-table__cell">
+        Injuries
+      </td>
+    <td headers="product_count" class="govuk-table__cell">
+      3 products
+    </td>
+      <td headers="updated item_investigation_1077 meta_investigation_1077" class="govuk-table__cell">
+        26 October 2023
+      </td>
+  </tr>
+
+<tr class="govuk-table__row">
+  <th headers="item_investigation_1077" id="status_investigation_1077" class="govuk-visually-hidden">
+    Type
+  </th>
+  <td headers="item_investigation_1077 status_investigation_1077" colspan="5" class="govuk-table__cell">
+    <span class="opss-tag opss-tag--std">Notification</span>
+  </td>
+</tr>
+
+</tbody>
+
+  <tbody class="govuk-table__body" data-cy-case-id="2306-0005">
+  <tr class="govuk-table__row">
+    <th class="govuk-visually-hidden">
+      Case title
+    </th>
+    <th id="item_investigation_1060" colspan="5" scope="colgroup" class="govuk-table__header">
+      <a class="govuk-link govuk-link--no-visited-state" href="/cases/2306-0005">All in All + Car Seat Buckle Failure</a>
+    </th>
+  </tr>
+  <tr class="govuk-table__row">
+    <th headers="item_investigation_1060" id="meta_investigation_1060" class="govuk-visually-hidden">
+      Metadata
+    </th>
+    <td headers="case item_investigation_1060 meta_investigation_1060" class="govuk-table__cell">
+      2306-0005
+    </td>
+      <td headers="casecreated item_investigation_1060 meta_investigation_1060" class="govuk-table__cell">
+        14 June 2023
+      </td>
+      <td headers="haztype" class="govuk-table__cell">
+        Injuries
+      </td>
+    <td headers="product_count" class="govuk-table__cell">
+      2 products
+    </td>
+      <td headers="updated item_investigation_1060 meta_investigation_1060" class="govuk-table__cell">
+        6 October 2023
+      </td>
+  </tr>
+
+<tr class="govuk-table__row">
+  <th headers="item_investigation_1060" id="status_investigation_1060" class="govuk-visually-hidden">
+    Type
+  </th>
+  <td headers="item_investigation_1060 status_investigation_1060" colspan="5" class="govuk-table__cell">
+    <span class="opss-tag opss-tag--std">Notification</span>
+  </td>
+</tr>
+
+</tbody>
+
+
+
+            </table>
+
+
+          </div>
+        </div>
+    </section>
+  </div>
+</form>
+
+{% endblock %}

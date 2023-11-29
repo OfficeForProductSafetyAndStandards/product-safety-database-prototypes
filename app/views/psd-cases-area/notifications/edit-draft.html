@@ -1,0 +1,213 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <h1 class="govuk-heading-l">
+    Create a product safety notification
+  </h1>
+
+   {% if checked("section-1-complete", "yes") %}
+   <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">ABC Room/Space Heater</p>
+  </div>
+{% endif %}
+
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Assessment incomplete</h2>
+
+
+  <p class="govuk-body">You have completed 1 of 4 sections.</p>
+
+  <p class="govuk-body govuk-!-margin-bottom-7">You must first complete Sections <span style="color:#d4351c;">1</span>, <span style="color:#d4351c;">2</span>, and <span style="color:#d4351c;">3</span> in order to access Section <span style="color:#d4351c;">6</span> for the final submission. Note that Sections 4 and 5 are optional and can be completed after you have made your initial submission.</p>
+
+
+
+  <ol class="app-task-list govuk-!-margin-top-7">
+
+
+    <!-- Section 1 -->
+
+
+     <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">1. </span>Choose the product for your notification <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="product-search-enhanced-v2">Search for or add a product</a>
+          </span>
+
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+        </li>
+      </ul>
+    </li>
+
+
+    <!-- Section 2 -->
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Add notification and additional product details  <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+      </h2>
+      <ul class="app-task-list__items">
+
+         <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="notification-details">Add notification details</a>
+          </span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+
+        </li>
+
+         <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Add product safety and compliance details
+          </span>
+
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+
+        </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Add product identification details
+          </span>
+
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+
+        </li>
+
+      </ul>
+    </li>
+
+
+<!-- Section 3 -->
+
+
+<li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">3. </span> Add business that supplied the product  <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+      </h2>
+
+
+      <ul class="app-task-list__items">
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            Select business type
+          </span>
+           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+        </li>
+
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+           Add business address
+         </span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+       </li>
+
+</ul>
+</li>
+
+
+ <!-- Section 4 -->
+
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">4. </span> Add evidence <span style="font-weight: normal; font-size: 16px;">(can be completed after the initial submission)</span>
+  </h2>
+  <ul class="app-task-list__items">
+       <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Add test reports </span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+        </li>
+
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Add supporting images</span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+        </li>
+
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+         Create or add risk assessment</span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+        </li>
+
+      </ul>
+
+
+    </li>
+
+
+    <!-- Section 5 -->
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">5. Add corrective actions <span style="font-weight: normal; font-size: 16px;">(can be completed after the initial submission)</span>
+  </h2>
+  <ul class="app-task-list__items">
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        Record a corrective action for the product</span>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+      </li>
+
+  <input class="govuk-checkboxes__input" id="section-5a-complete" name="section-5a-complete" type="checkbox" value="yes" { checked('section-5a-complete','yes') }} checked>
+
+</form>
+
+      </ul>
+    </li>
+
+
+    <li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">6. </span> Submit notification  <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+  </h2>
+  <ul class="app-task-list__items">
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        Check the notification details and submit</span>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">cannot start yet</strong>
+      </li>
+
+
+      </ul>
+    </li>
+
+
+
+  </ol>
+
+
+
+</div>
+</div>
+
+
+        {% endblock %}
+

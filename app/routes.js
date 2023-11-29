@@ -188,6 +188,16 @@ else if (psafety == "mixed") {
 }
 })
 
+router.post('/test-report-choice', function(request, response) {
+
+   var treport = request.session.data['test-report-choice']
+if (treport == "yes") {
+    response.redirect("../psd-cases-area/notifications/test-certificate")
+} else  {
+    response.redirect("../psd-cases-area/notifications/test-results")
+}
+})
+
 
 // **** End folder specific routes
 

@@ -1,0 +1,341 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="business-address" method="post">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset" aria-describedby="type-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Add business that supplied the product</span>
+            <h1 class="govuk-fieldset__heading">Select business type</h1>
+          </legend>
+
+           <h3 class="govuk-heading-m">What is the role of the business in the economic supply chain?</h3>
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+</legend>
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="type" name="set_business_type_on_case_form[type]" type="radio" value="retailer" class="govuk-radios__input" aria-describedby="type-item-hint">
+            <label class="govuk-label govuk-radios__label" for="type">Retailer</label>
+
+
+            <div class="govuk-hint govuk-radios__hint" id="type-item-hint">This includes traditional retailers and retailers selling directly to customers via their own online presence.</div>
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-1" name="set_business_type_on_case_form[type]" type="radio" value="online_seller" class="govuk-radios__input" aria-describedby="type-1-item-hint">
+            <label class="govuk-label govuk-radios__label" for="type-1">Online seller</label>
+
+
+            <div class="govuk-hint govuk-radios__hint" id="type-1-item-hint">This includes businesses primarily selling products to end users via an online marketplace such as Amazon.</div>
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-2" name="set_business_type_on_case_form[type]" type="radio" value="online_marketplace" class="govuk-radios__input" aria-describedby="type-2-item-hint" aria-controls="conditional-type-2" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="type-2">Online marketplace</label>
+
+
+            <div class="govuk-hint govuk-radios__hint" id="type-2-item-hint">Online platforms whose primary business is connecting traders and consumers and hosting third party sellers/sales.</div>
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-type-2">
+
+            <div class="govuk-form-group ">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half govuk-!-padding-right-0">
+                  <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="6" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_6">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_6">AliBaba</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="3" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_3">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_3">AliExpress</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="1" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_1">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_1">Amazon</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="7" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_7">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_7">Asos Marketplace</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="8" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_8">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_8">Banggood</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="9" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_9">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_9">Bonanza</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="10" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_10">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_10">Depop</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="11" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_11">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_11">DesertCart</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="2" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_2">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_2">eBay</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="12" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_12">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_12">Ecrater</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="5" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_5">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_5">Etsy</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="13" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_13">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_13">Facebook Marketplace</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="14" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_14">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_14">Farfetch</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="15" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_15">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_15">Fishpond</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="16" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_16">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_16">Folksy</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="17" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_17">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_17">ForDeal</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="18" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_18">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_18">Fruugo</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="19" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_19">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_19">Grandado</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="20" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_20">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_20">Groupon</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="21" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_21">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_21">Gumtree</label>
+                      </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-half govuk-!-padding-right-0">
+                  <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="22" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_22">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_22">Houzz</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="23" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_23">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_23">Instagram</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="24" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_24">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_24">Joom</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="25" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_25">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_25">Light In The Box</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="28" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_28">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_28">Manomano</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="27" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_27">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_27">NotOnTheHighStreet</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="26" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_26">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_26">OnBuy</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="29" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_29">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_29">PatPat</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="30" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_30">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_30">Pinterest</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="31" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_31">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_31">Rakuten</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="32" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_32">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_32">Shein</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="33" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_33">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_33">Shpock</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="34" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_34">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_34">Stockx</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="35" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_35">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_35">Temu</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="36" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_36">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_36">Vinted</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="37" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_37">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_37">Wayfair</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="4" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_4">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_4">Wish</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="38" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_38">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_38">Wowcher</label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input js-radio-handle-other" type="radio" value="39" name="set_business_type_on_case_form[online_marketplace_id]" id="set_business_type_on_case_form_online_marketplace_id_39">
+                        <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_39">Zalando</label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-form-group">
+    <label class="govuk-label" for="other_marketplace_name">Other online platform</label>
+
+
+
+
+
+
+
+  <input class="govuk-input js-input-handle-other" id="other_marketplace_name" name="set_business_type_on_case_form[other_marketplace_name]" type="text">
+
+
+
+</div>
+
+
+</div>        <div class="govuk-radios__item">
+          <input id="type-3" name="set_business_type_on_case_form[type]" type="radio" value="manufacturer" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-3">Manufacturer</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-4" name="set_business_type_on_case_form[type]" type="radio" value="exporter" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-4">Exporter</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-5" name="set_business_type_on_case_form[type]" type="radio" value="importer" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-5">Importer</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-6" name="set_business_type_on_case_form[type]" type="radio" value="fulfillment_house" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-6">Fulfillment house</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-7" name="set_business_type_on_case_form[type]" type="radio" value="distributor" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-7">Distributor</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="type-8" name="set_business_type_on_case_form[type]" type="radio" value="authorised_representative" class="govuk-radios__input" aria-controls="conditional-type-8" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="type-8">Authorised representative</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-type-8">
+                      <div class="govuk-form-group ">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-radios govuk-radios--small">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" type="radio" value="uk_authorised_representative" name="set_business_type_on_case_form[authorised_representative_choice]" id="set_business_type_on_case_form_authorised_representative_choice_uk_authorised_representative">
+                      <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_authorised_representative_choice_uk_authorised_representative">UK Authorised representative</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" type="radio" value="eu_authorised_representative" name="set_business_type_on_case_form[authorised_representative_choice]" id="set_business_type_on_case_form_authorised_representative_choice_eu_authorised_representative">
+                      <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_authorised_representative_choice_eu_authorised_representative">EU Authorised representative</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="type-9" name="set_business_type_on_case_form[type]" type="radio" value="responsible_person" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="type-9">Responsible person</label>
+
+
+      </div>
+
+</div>
+</fieldset>
+</div>
+          </fieldset></div>
+
+      </div>
+    </div>
+
+      <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+
+</form>
+
+
+
+{% endblock %}

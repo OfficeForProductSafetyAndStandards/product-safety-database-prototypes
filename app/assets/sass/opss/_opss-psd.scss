@@ -847,3 +847,74 @@ noscript {
 .product-select button {
   cursor: pointer;
 }
+
+// Search filters
+
+.filter-module {
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.check-box-module {
+  margin-top: -7px;
+}
+
+.cm-off {
+  display: none;
+}
+
+.cm-fixed-height {
+  height: 150px;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.filter-option {
+  text-decoration: none;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#icon-down,
+#icon-up {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.facet-tags {
+  padding-bottom: 5px;
+}
+
+.facet-tag {
+  display: table-cell;
+  position: relative;
+  padding: .3125em;
+  border: 1px solid #b1b4b6;
+  border-radius: .3125em;
+  background-color: #f3f2f1;
+}
+
+.facet-tag__remove {
+  border: none;
+}
+
+.chevron-card__link:before {
+  border-right: 3px solid #1d70b8;
+  border-top: 3px solid #1d70b8;
+  content: "";
+  display: block;
+  height: 7px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: 5px;
+  -webkit-transform: translateY(0) rotate(45deg) scale(1);
+  -ms-transform: translateY(0) rotate(45deg) scale(1);
+  transform: translateY(0) rotate(45deg) scale(1);
+  width: 7px;
+}
+
+.chevron-card__wrapper {
+  position: relative;
+}

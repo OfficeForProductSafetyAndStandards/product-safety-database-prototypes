@@ -1,0 +1,134 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form govuk-!-margin-bottom-6" action="test-results" method="post">
+
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Add the test certificate details</h1>
+      <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+  </div>
+      <p class="govuk-body">These details will help the <abbr>OPSS</abbr> match funding to individual tests.</p>
+
+      <div class="govuk-form-group">
+
+    <h2 class="govuk-heading-m">What is the trading standards officer sample reference number?</h2>
+
+
+    <div class="govuk-hint" id="set_test_result_certificate_on_case_form_tso_certificate_reference_number-hint">The reference number, for a specific product, that was<br>provided to the test lab for product testing.</div>
+
+
+
+
+
+
+  <input class="govuk-input govuk-!-width-one-third" id="set_test_result_certificate_on_case_form_tso_certificate_reference_number" name="set_test_result_certificate_on_case_form[tso_certificate_reference_number]" type="text" aria-describedby="set_test_result_certificate_on_case_form_tso_certificate_reference_number-hint">
+
+
+
+</div>
+
+
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="tso_certificate_issue_date-fieldset-hint">
+
+<h2 class="govuk-heading-m">What date was the test certificate issued?</h2>
+
+
+<div class="govuk-hint" id="tso_certificate_issue_date-fieldset-hint">For example, 12 5 2023</div>
+
+  <div class="govuk-date-input" id="tso_certificate_issue_date-fieldset">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="tso_certificate_issue_date">Day</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="tso_certificate_issue_date" name="set_test_result_certificate_on_case_form[tso_certificate_issue_date][day]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="tso_certificate_issue_date-fieldset-set_test_result_certificate_on_case_form[tso_certificate_issue_date][month]">Month</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="tso_certificate_issue_date-fieldset-set_test_result_certificate_on_case_form[tso_certificate_issue_date][month]" name="set_test_result_certificate_on_case_form[tso_certificate_issue_date][month]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="tso_certificate_issue_date-fieldset-set_test_result_certificate_on_case_form[tso_certificate_issue_date][year]">Year</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="tso_certificate_issue_date-fieldset-set_test_result_certificate_on_case_form[tso_certificate_issue_date][year]" name="set_test_result_certificate_on_case_form[tso_certificate_issue_date][year]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+</div>
+</fieldset>
+</div>
+
+      <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a>
+
+</div>
+</form>  </div>
+</div>
+
+  </form>
+
+
+
+
+
+{% endblock %}
