@@ -48,6 +48,14 @@
         <input class="govuk-input" id="assessor-name" name="assessor-name" type="text" value="{{ data['assessor-name'] }}">
       </div>
 
+           <div class="govuk-!-margin-top-6">
+   <h3 class="govuk-heading-m">Notification summary <span style="font-size:16px; font-weight:normal">(optional)</span></h3>
+          <p id="more-detail-hint" class="govuk-hint">
+    Include a concise summary of the notification, covering product hazards, reported incidents, and related actions.</p>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+
 
       <h3 class="govuk-heading-m">Why are you creating the notification?</h3>
 
@@ -55,8 +63,6 @@
         <div class="govuk-radios__item">
           <input id="case_is_safe" name="investigation[case_is_safe]" type="radio" value="no" class="govuk-radios__input">
             <label class="govuk-label govuk-radios__label" for="case_is_safe">A product is unsafe or non-compliant</label>
-
-
       </div>
 
         <div class="govuk-radios__item">
