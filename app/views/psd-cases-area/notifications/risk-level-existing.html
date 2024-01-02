@@ -25,10 +25,13 @@
     <p class="govuk-body">It can differ from risk assessments if necessary - such as when there are conflicting assessments, or where the assessment was provided by a third party.</p>
 
     <div class="govuk-inset-text">
-      This notification does not have a risk assessment. You may want to <a class="govuk-link" href="/cases/2308-0002/risk-assessments/new">add a risk assessment</a> before setting the case risk level.
+      A risk assessment has been completed for the All in All+ Car Seat, Dragon Kingdom CT4262, indicating a <strong class="govuk-tag govuk-tag--red">
+         High risk
+        </strong> level. The notification's risk level has been aligned with this assessment. If needed, you have the option to adjust the risk level.
     </div>
 
     <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
 
 
 
@@ -37,7 +40,7 @@
 <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="">
     <legend class="govuk-fieldset__legend ">
-        Case risk level
+        Notification risk level
 </legend>
 
   <div class="govuk-radios" data-module="govuk-radios">
@@ -49,7 +52,7 @@
       </div>
 
         <div class="govuk-radios__item">
-          <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input">
+          <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input" checked="checked">
             <label class="govuk-label govuk-radios__label" for="investigation_risk_level_high">High risk</label>
 
 
@@ -74,7 +77,7 @@
       </div>
 
         <div class="govuk-radios__item">
-          <input id="investigation_risk_level_not_conclusive" name="investigation[risk_level]" type="radio" value="not_conclusive" class="govuk-radios__input" checked="checked">
+          <input id="investigation_risk_level_not_conclusive" name="investigation[risk_level]" type="radio" value="not_conclusive" class="govuk-radios__input">
             <label class="govuk-label govuk-radios__label" for="investigation_risk_level_not_conclusive">Not conclusive</label>
 
 
@@ -101,7 +104,6 @@
 
 
   <input class="govuk-checkboxes__input" id="section-4e-complete" name="section-4e-complete" type="checkbox" value="yes" { checked('section-4e-complete','yes') }} checked>
-
 
   </form>
 

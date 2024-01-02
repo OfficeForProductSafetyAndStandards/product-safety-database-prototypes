@@ -26,12 +26,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
    <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
-     {% if checked("section-1a-complete", "yes") %}
-    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
-    {% endif %}
-
-
-    <a href="product-search-enhanced-v2">Add another product</a>
+    <a href="./../psd-cases-area/notifications/product-search-enhanced-v2">Add another product</a>
   </div>
 {% endif %}
 
@@ -72,7 +67,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
       <ul class="app-task-list__items">
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="added-products-summary">Search for or add a product</a>
+            <a href="product-search-enhanced-v2">Search for or add a product</a>
           </span>
 
           <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
@@ -216,7 +211,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
     <li>
       <h2 class="app-task-list__section">
-        <span class="app-task-list__section-number">3. </span> Add the business in the product's supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+        <span class="app-task-list__section-number">3. </span> Add business that supplied the product <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
       </h2>
 
 
@@ -225,10 +220,17 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="added-business-summary">Add the type and details of the business</a>
+            <a href="add-business">Select business type</a>
           </span>
           <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
         </li>
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+           <a href="business-address">Add business details</a>
+         </span>
+         <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+       </li>
 
 </ul>
 
@@ -238,7 +240,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
 <li>
       <h2 class="app-task-list__section">
-        <span class="app-task-list__section-number">3. </span> Add the business in the product's supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+        <span class="app-task-list__section-number">3. </span> Add business that supplied the product <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
       </h2>
 
 
@@ -246,24 +248,38 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
          {% if checked("section-2-complete", "yes") %}
 
+         <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="add-business">Search for or add business</a>
+          </span>
+           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+        </li>
+
 
          <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="add-business">Add the type and details of the business</a>
+            Add business details
           </span>
-           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
         </li>
 
         {% else %}
 
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            Add the type and details of the business
+            Add business details
           </span>
            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
         </li>
 
         {% endif %}
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+           Select business type
+         </span>
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+       </li>
 
 </ul>
 </li>
@@ -279,90 +295,70 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
   </h2>
   <ul class="app-task-list__items">
 
-
- {% if checked("section-4e-complete", "yes") %}
-
+  {% if checked("section-4e-complete", "yes") %}
   <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="added-test-reports-summary">Add test reports</a></span>
-        <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
-      </li>
-
-      <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-     <a href="image-upload">Add supporting images</a>
-   </span>
-   <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
- </li>
-
-      <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="added-risk-assessment-summary">Create or add risk assessment</a></span>
-       <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
-      </li>
-      <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-        <a href="risk-level-existing">Determine notification risk level</a></span>
+        <a href="#">Determine case risk level</a>
           <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
         </li>
 
-        {% elseif checked("section-4d-complete", "yes") %}
-
-  <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="added-test-reports-summary">Add test reports</a></span>
-        <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
-      </li>
-
-      <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-     <a href="image-upload">Add supporting images</a>
-   </span>
-   <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
- </li>
-
-      <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="added-risk-assessment-summary">Create or add risk assessment</a></span>
-       <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
-      </li>
-      <li class="app-task-list__item">
+  {% elseif checked("section-4d-complete", "yes") %}
+ <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-        <a href="risk-level-existing">Determine notification risk level</a></span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+        <a href="add-assessment">Create or add risk assessment</a></span>
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
         </li>
+
+
 
 
   {% elseif checked("section-4c-complete", "yes") %}
 
+
+  {% if checked("section-4b-complete", "yes") %}
+
   <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="added-test-reports-summary">Add test reports</a></span>
+        <a href="test-report-choice">Add test reports</a></span>
         <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
       </li>
 
-      <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
+    {% else %}
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="test-report-choice">Add test reports</a></span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+      </li>
+
+      {% endif %}
+
+
+ <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
      <a href="image-upload">Add supporting images</a>
    </span>
-   <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
- </li>
+          <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+        </li>
 
-      <li class="app-task-list__item">
+         <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="product-choice-assessment">Create or add risk assessment</a></span>
+        <a href="add-assessment">Create or add risk assessment</a></span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
       </li>
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-        <a href="risk-level">Determine notification risk level</a></span>
+        <a href="risk-level">Determine overall product risk level</a></span>
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
         </li>
 
-        {% elseif checked("section-4b-complete", "yes") %}
+
+
+
+  {% elseif checked("section-4b-complete", "yes") %}
   <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="added-test-reports-summary">Add test reports</a></span>
+        <a href="test-report-choice">Add test reports</a></span>
         <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
       </li>
 
@@ -375,21 +371,22 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="product-choice-assessment">Create or add risk assessment</a></span>
+        <a href="add-assessment">Create or add risk assessment</a></span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
       </li>
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-        <a href="risk-level">Determine notification risk level</a></span>
+        <a href="risk-level">Determine overall product risk level</a></span>
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
         </li>
+
 
 
   {% elseif checked("section-3-complete", "yes") %}
 
   <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-       <a href="product-choice-test-reports">Add test reports</a></span>
+       <a href="test-report-choice">Add test reports</a></span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
       </li>
 
@@ -409,7 +406,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        <a href="risk-level">Determine notification risk level</a></span>
+        <a href="risk-level">Determine overall product risk level</a></span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
 
       </li>
@@ -438,7 +435,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
       <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        Determine notification risk level</span>
+        Determine overall product risk level</span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
       </li>
 
@@ -450,9 +447,33 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
     </li>
 
 
+
+
+
+
+
     <!-- Section 5 -->
 
-    {% if checked("section-4a-complete", "yes") %}
+    {% if checked("section-3-complete", "yes") %}
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">5. Add corrective actions <span style="font-weight: normal; font-size: 16px;">(can be completed after the initial submission)</span>
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="corrective-actions">
+        <a href="corrective-actions">Record a corrective action for the product</a></span>
+       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
+      </li>
+      <br/>
+
+      </ul>
+    </li>
+
+
+
+    {% if checked("section-4-complete", "yes") %}
 
 
     <li>
@@ -464,31 +485,15 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
     <li class="app-task-list__item">
 
       <span class="app-task-list__task-name">
-        <a href="added-corrective-action-summary">Record a corrective action </a></span>
+        <a href="corrective-actions">Record a corrective action for the product</a></span>
         <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
       </li>
 
+<br/>
 
+{% endif %}
 
 {% else %}
-
-{% if checked("section-3-complete", "yes") %}
-
-<li>
-  <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">5. Add corrective actions <span style="font-weight: normal; font-size: 16px;">(can be completed after the initial submission)</span>
-  </h2>
-  <ul class="app-task-list__items">
-    <li class="app-task-list__item">
-      <span class="corrective-actions">
-        <a href="product-choice-corrective-actions">Record a corrective action </a></span>
-       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
-      </li>
-
-      </ul>
-    </li>
-{% else %}
-
 
 <li>
   <h2 class="app-task-list__section">
@@ -498,12 +503,9 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-        Record a corrective action</span>
+        Record a corrective action for the product</span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
       </li>
-{% endif %}
-{% endif %}
-
 
   <input class="govuk-checkboxes__input" id="section-5a-complete" name="section-5a-complete" type="checkbox" value="yes" { checked('section-5a-complete','yes') }} checked>
 
@@ -512,7 +514,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
       </ul>
     </li>
 
-
+    {% endif %}
 
     <!-- Section 6 -->
 

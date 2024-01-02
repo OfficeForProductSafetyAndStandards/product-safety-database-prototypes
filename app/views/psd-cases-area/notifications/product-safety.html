@@ -30,6 +30,9 @@
        <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+     {% if checked("section-1a-complete", "yes") %}
+    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
+    {% endif %}
   </div>
     </legend>
 
@@ -38,14 +41,22 @@
 
      <div class="govuk-checkboxes govuk-!-padding-top-3" data-module="govuk-checkboxes">
 
-      <h3 class="govuk-heading-m">Why is the product of concern?</h3>
-      <p class="govuk-hint" id="investigation_why_reporting-hint">Select all that are applicable.</p>
+      {% if checked("section-1a-complete", "yes") %}
+
+      <h3 class="govuk-heading-m">What specific issues make the products unsafe or non-compliant?</h3>
+
+      {% else %}
+
+       <h3 class="govuk-heading-m">What specific issues make the product unsafe or non-compliant?</h3>
+       {% endif %}
+      <p class="govuk-hint" id="investigation_why_reporting-hint">Please select all applicable issues.</p>
 
         <div class="govuk-checkboxes__item">
           <input id="reported_reason" name="investigation[reported_reason_unsafe]" type="checkbox" value="true" data-mutually-exclusive-set-id="reported-set" class="govuk-checkboxes__input js-mutually-exclusive__item" aria-controls="conditional-reported_reason" aria-expanded="false">
-            <label class="govuk-label govuk-checkboxes__label" for="reported_reason">The product is unsafe</label>
+            <label class="govuk-label govuk-checkboxes__label" for="reported_reason">Product hazard</label>
 
         </div>
+
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-reported_reason">
             <div id="hazard-type-auto-complete-container"></div>
 <div class="govuk-!-width-one-half govuk-!-margin-bottom-6">
@@ -91,7 +102,7 @@
 
 <div class="govuk-form-group">
 
-    <label class="govuk-label" for="hazard_description">Why is the product unsafe?</label>
+    <label class="govuk-label" for="hazard_description">Provide additional information about the product hazard.</label>
 
     <div class="govuk-hint" id="hazard_description-hint">If the product has been involved in an incident include this additional information.</div>
   <textarea class="govuk-textarea govuk-!-width-three-quarters" id="hazard_description" name="investigation[hazard_description]" key="hazard_description" rows="5" aria-describedby="hazard_description-hint" maxlength="10000"></textarea>
@@ -100,7 +111,7 @@
 
         <div class="govuk-checkboxes__item">
           <input id="investigation_reported_reason_non_compliant" name="investigation[reported_reason_non_compliant]" type="checkbox" value="true" data-mutually-exclusive-set-id="reported-set" class="govuk-checkboxes__input js-mutually-exclusive__item" aria-controls="conditional-investigation_reported_reason_non_compliant" aria-expanded="false">
-            <label class="govuk-label govuk-checkboxes__label" for="investigation_reported_reason_non_compliant">The product is non-compliant</label>
+            <label class="govuk-label govuk-checkboxes__label" for="investigation_reported_reason_non_compliant">Product incomplete markings, labeling or other issues</label>
 
         </div>
           <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-investigation_reported_reason_non_compliant">
@@ -108,7 +119,7 @@
 
 
 <div class="govuk-form-group">
-    <label class="govuk-label" for="non_compliant_reason">Why is the product non-compliant?</label>
+    <label class="govuk-label" for="non_compliant_reason">Describe the product non-compliance issues?</label>
 
 
 
