@@ -1,0 +1,287 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+      <span class="govuk-caption-l">Add evidence</span>
+      <h1 class="govuk-heading-l">Attach existing risk assessment</h1>
+      <div class="govuk-inset-text">
+        <p class="govuk-body">For</p>
+        <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+      </div>
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="assessed_on-fieldset-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Date of assessment
+</legend>    <div class="govuk-hint" id="assessed_on-fieldset-hint">For example, 31 1 2020</div>
+
+  <div class="govuk-date-input" id="assessed_on-fieldset">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="assessed_on">Day</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="assessed_on" name="risk_assessment_form[assessed_on][day]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="assessed_on-fieldset-risk_assessment_form[assessed_on][month]">Month</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="assessed_on-fieldset-risk_assessment_form[assessed_on][month]" name="risk_assessment_form[assessed_on][month]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+    <label class="govuk-label govuk-date-input__label" for="assessed_on-fieldset-risk_assessment_form[assessed_on][year]">Year</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="assessed_on-fieldset-risk_assessment_form[assessed_on][year]" name="risk_assessment_form[assessed_on][year]" type="text" pattern="[0-9]*" inputmode="numeric">
+
+
+
+</div>
+
+      </div>
+</div>
+</fieldset>
+</div>
+
+
+
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        What was the risk level?
+</legend>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="risk_level" name="risk_assessment_form[risk_level]" type="radio" value="serious" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="risk_level">Serious risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="risk_level-1" name="risk_assessment_form[risk_level]" type="radio" value="high" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="risk_level-1">High risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="risk_level-2" name="risk_assessment_form[risk_level]" type="radio" value="medium" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="risk_level-2">Medium risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="risk_level-3" name="risk_assessment_form[risk_level]" type="radio" value="low" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="risk_level-3">Low risk</label>
+
+
+      </div>
+
+        <div class="govuk-radios__divider">
+          or
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="risk_level-5" name="risk_assessment_form[risk_level]" type="radio" value="not_conclusive" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="risk_level-5">Not conclusive</label>
+
+
+      </div>
+
+</div>
+</fieldset>
+</div>
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Who completed the assessment?
+</legend>
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="assessed_by" name="risk_assessment_form[assessed_by]" type="radio" value="my_team" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="assessed_by">Renfrewshire Council</label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="assessed_by-1" name="risk_assessment_form[assessed_by]" type="radio" value="another_team" class="govuk-radios__input" aria-controls="conditional-assessed_by-1" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="assessed_by-1">Another team or market surveilance authority</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-assessed_by-1">
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="assessed_by_team_id">Choose team</label>
+
+
+
+
+
+        <select class="govuk-select" id="assessed_by_team_id" name="risk_assessment_form[assessed_by_team_id]">
+        <option selected="selected" value=""></option>
+        <option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+        <option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+        <option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+        <option value="83995037-bb4f-407c-b02c-c0ddf9350ce5">GDS assessors</option>
+        <option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+        <option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+        <option value="7562b9f0-01c3-4722-90a8-7a994776807d">OPSS</option>
+        <option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+        <option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+        <option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+        <option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+        <option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+        <option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+        <option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+        <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+        <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option>
+</select>
+
+</div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="assessed_by-2" name="risk_assessment_form[assessed_by]" type="radio" value="other" class="govuk-radios__input" aria-controls="conditional-assessed_by-2" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="assessed_by-2">Someone else</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-assessed_by-2">
+            <div class="govuk-form-group">
+    <label class="govuk-label" for="assessed_by_other">Organisation name</label>
+
+
+
+
+
+
+
+  <input class="govuk-input" id="assessed_by_other" name="risk_assessment_form[assessed_by_other]" type="text">
+
+
+
+</div>
+
+
+</div></div>
+</fieldset>
+</div>
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Which products were assessed?
+</legend>
+  <div class="govuk-hint" id="-hint">You must choose at least one. Only products already added to the notification are listed.</div>
+
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+        <div class="govuk-checkboxes__item">
+          <input id="investigation_product_ids" name="risk_assessment_form[investigation_product_ids][]" type="checkbox" value="702" class="govuk-checkboxes__input">
+            <label class="govuk-label govuk-checkboxes__label" for="investigation_product_ids">All in All+ Car Seat, Dragon Kingdom CT4262 (psd-669_1691423089)</label>
+
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input id="investigation_product_ids-1" name="risk_assessment_form[investigation_product_ids][]" type="checkbox" value="719" class="govuk-checkboxes__input">
+            <label class="govuk-label govuk-checkboxes__label" for="investigation_product_ids-1">Heinz beans (psd-675_1691423089)</label>
+
+        </div>
+</div>
+
+</fieldset>
+</div>
+
+  <input autocomplete="off" type="hidden" name="risk_assessment_form[existing_risk_assessment_file_file_id]" id="risk_assessment_form_existing_risk_assessment_file_file_id"><div class="govuk-form-group">  <label class="govuk-label govuk-label--m" for="risk_assessment_file">Upload the risk assessment</label>
+<div class="govuk-hint" id="risk_assessment_file-hint"></div>
+<input class="govuk-file-upload" id="risk_assessment_file" name="risk_assessment_form[risk_assessment_file]" type="file" aria-describedby=" risk_assessment_file-hint"></div>
+
+
+
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="details">Further details (optional)</label>
+
+
+
+
+
+  <textarea class="govuk-textarea" id="details" name="risk_assessment_form[details]" rows="5" aria-describedby=""></textarea>
+</div>
+
+      <button class="govuk-button" data-module="govuk-button">Attach risk assessment</button>
+
+      <input class="govuk-checkboxes__input" id="section-4d-complete" name="section-4d-complete" type="checkbox" value="yes" { checked('section-4d-complete','yes') }} checked>
+</form>  </div>
+</div>
+
+
+
+
+{% endblock %}

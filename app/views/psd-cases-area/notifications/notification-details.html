@@ -31,6 +31,9 @@
        <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+    {% if checked("section-1a-complete", "yes") %}
+    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
+    {% endif %}
   </div>
 
     </legend>
@@ -38,20 +41,40 @@
 
       <div class="govuk-form-group">
         <h3 class="govuk-heading-m">Notification title</h3>
-    <p class="govuk-body">
-      A suggested format for the notification title: Brand name, Model name and Description of the hazard. For example:
+    <p id="more-detail-hint" class="govuk-hint">
+      A recommended format for the notification title must includes the name of the product(s) and the hazard associated with it.
     </p>
-    <ul id="case-name-examples" class="govuk-list govuk-list--bullet govuk-hint">
+    <!-- <ul id="case-name-examples" class="govuk-list govuk-list--bullet govuk-hint">
       <li>Microsoft Xbox Series X gaming console causing burns</li>
       <li>Chairplan Gary office chair - flammable health risk</li>
-    </ul>
-        <input class="govuk-input" id="assessor-name" name="assessor-name" type="text" value="{{ data['assessor-name'] }}">
+    </ul> -->
+      <!--  <div style="overflow:hidden">
+        <div class="govuk-form-group" style="float:left">
+         <label class="govuk-label" for="width-20">
+           Product name
+         </label>
+         <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text" value="All in All+ Car Seat">
+       </div>
+
+       <div class="govuk-form-group" style="float:left; margin-left: 15px;">
+         <label class="govuk-label" for="width-10">
+           Hazard description
+         </label>
+         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+       </div></div>
+      </div> -->
+
+      <div style="overflow:hidden">
+        <div class="govuk-form-group">
+         <input class="govuk-input" type="text">
+       </div>
+     </div>
       </div>
 
            <div class="govuk-!-margin-top-6">
    <h3 class="govuk-heading-m">Notification summary <span style="font-size:16px; font-weight:normal">(optional)</span></h3>
           <p id="more-detail-hint" class="govuk-hint">
-    Include a concise summary of the notification, covering product hazards, reported incidents, and related actions.</p>
+    The notification summary must provides a clear, concise overview to help users unfamiliar with the notification's details understand it better.</p>
     <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
 
 </div>
@@ -62,12 +85,34 @@
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input id="case_is_safe" name="investigation[case_is_safe]" type="radio" value="no" class="govuk-radios__input">
+            {% if checked("section-1a-complete", "yes") %}
+
+            <label class="govuk-label govuk-radios__label" for="case_is_safe">Product are unsafe or non-compliant</label>
+
+            {% else %}
             <label class="govuk-label govuk-radios__label" for="case_is_safe">A product is unsafe or non-compliant</label>
+
+
+
+
+            <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">Examples of non-compliance in products include missing or incomplete markings, errors in product labeling, or inadequate documentation.</p>
+
+              {% endif %}
+
       </div>
 
         <div class="govuk-radios__item">
           <input id="case_is_safe-2" name="investigation[case_is_safe]" type="radio" value="yes" class="govuk-radios__input" aria-describedby="case_is_safe-2-item-hint">
+
+          {% if checked("section-1a-complete", "yes") %}
+            <label class="govuk-label govuk-radios__label" for="case_is_safe-2">Products are safe and compliant</label>
+
+            {% else %}
+
             <label class="govuk-label govuk-radios__label" for="case_is_safe-2">A product is safe and compliant</label>
+
+            {% endif %}
+
 
 
             <div class="govuk-hint govuk-radios__hint" id="case_is_safe-2-item-hint">This helps other market surveillance authorities avoid testing the same product again.</div>

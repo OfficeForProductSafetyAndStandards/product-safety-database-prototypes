@@ -1,8 +1,0 @@
-{
-    "editor.formatOnSave": true,
-    "files.insertFinalNewline": true,
-    "editor.tabSize": 2,
-    "html.format.wrapLineLength": 0,
-    "scss.format.spaceAroundSelectorSeparator": true,
-    "scss.format.enable": false
-}

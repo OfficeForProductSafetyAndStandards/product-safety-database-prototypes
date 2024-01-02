@@ -27,25 +27,35 @@
       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
         Add product identification details
       </h1>
-       <div class="govuk-inset-text">
+      <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+     {% if checked("section-1a-complete", "yes") %}
+    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
+    {% endif %}
   </div>
     </legend>
 
     <p>Add product identification details if known.</p>
 
 
-
+<h3 class="govuk-heading-m">All in All+ Car Seat, Dragon Kingdom CT4262</h3>
 
      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Batch numbers
             </dt>
+            {% if checked("section-2batch-complete", "yes") %}
+            <dd class="govuk-summary-list__value">
+              37364361, 98774776
+            </dd>
+            {% else %}
             <dd class="govuk-summary-list__value">
               Not provided
             </dd>
+            {% endif %}
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="batch-numbers">
                 Add<span class="govuk-visually-hidden"> name</span>
@@ -92,6 +102,65 @@
             </dd>
           </div>
         </dl>
+
+        {% if checked("section-1a-complete", "yes") %}
+        <h3 class="govuk-heading-m">All in All+ Car Seat, Fika Forrest CT4243</h3>
+
+     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Batch numbers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="product-choice">
+                Add<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Customs codes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="customs-codes">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique Consignment Reference (UCR) numbers
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="ucr-numbers">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of units affected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not provided
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="units-affected">
+                Add<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+    {% endif %}
 
  <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
 
