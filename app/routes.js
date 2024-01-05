@@ -198,6 +198,17 @@ if (treport == "yes") {
 }
 })
 
+router.post('/corrective-actions-status', function(request, response) {
+
+   var status = request.session.data['ca-status']
+if (status == "yes") {
+    response.redirect("../psd-cases-area/notifications/product-choice-corrective-actions")
+} else  {
+    response.redirect("../psd-cases-area/notifications/no-corrective-actions-message")
+}
+})
+
+
 
 // **** End folder specific routes
 
