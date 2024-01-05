@@ -15,57 +15,68 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form govuk-!-margin-bottom-6" action="product-choice-corrective-actions" method="post">
+      <form class="form govuk-!-margin-bottom-6" action="/corrective-actions-status" method="post">
 
        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-    <span class="govuk-caption-l">{{title}}</span>
+      <span class="govuk-caption-l">{{title}}</span>
       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
-        Have you already taken a corrective action for the unsafe product(s)?
+       Have you already taken a corrective action for the unsafe product(s)?
       </h1>
-
     </legend>
 
-   <p class="govuk-hint"> Select only one option.</p>
+     <p class="govuk-hint"> Select only one option.</p>
 
-    <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios govuk-radios govuk-!-margin-bottom-6" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+        <input class="govuk-radios__input" id="product-triage" name="ca-status" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk">
           Yes, I have taken a corrective action.
         </label>
       </div>
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+        <input class="govuk-radios__input" id="product-triage-2" name="ca-status" type="radio" value="notclear">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
           No, I need to refer the issue to another authority.
+        </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-          No, I don't have enough information to take a corrective action. 
+        <input class="govuk-radios__input" id="product-triage-2" name="ca-status" type="radio" value="notclear">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+           No, I don't have enough information to take a corrective action. 
+        </label>
       </div>
 
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-          No, I have another reason for not taking a corrective action. 
-      </div>
-
+        <input class="govuk-radios__input" id="product-triage-2" name="ca-status" type="radio" value="notclear" data-aria-controls="other-corrective-action-reason">
+        <label class="govuk-label govuk-radios__label" for="product-serious-risk-2">
+          No, I have another reason for not taking corrective action.
         </label>
 
-       </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-corrective-action-reason">
+                 <div class="govuk-form-group">
+                  <h3 class="govuk-heading-m"></h3>
+
+                  <label class="govuk-label" for="event-name">
+                  Provide the reason for not taking corrective action
+                  </label>
+                  <input class="govuk-input" id="event-name" type="tex">
+                </div>
+
+              </div>
+      </div>
 
 
-  
 
+    </div>
+    <br/>
 
-       <div class="govuk-button-group govuk-!-margin-top-6">
+    <div class="govuk-button-group govuk-!-margin-top-6">
   <button class="govuk-button" data-module="govuk-button">
     Save and continue
   </button>
@@ -76,11 +87,12 @@
 
 </div>
 
-</form>
-
 
 
     </div>
+
+  </form>
+
 
 
 

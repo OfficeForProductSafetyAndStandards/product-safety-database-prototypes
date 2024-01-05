@@ -1,0 +1,52 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add corrective actions" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="check-submit" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+       You can record the corrective action later
+      </h1>
+
+      <p>You have the option to add the corrective action after your initial notification submission.</p>
+    </legend>
+
+
+    <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Continue to notification submission 
+  </button>
+
+
+</div>
+
+
+
+    </div>
+
+  </form>
+
+
+
+
+
+{% endblock %}
