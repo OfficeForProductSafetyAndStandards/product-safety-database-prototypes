@@ -1,0 +1,43 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="remove-products-summary" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Are you sure you want remove this product from your notification?
+      </h1>
+    </legend>
+
+    <p class="govuk-body">This action will permanently remove <b>All in All+ Car Seat, Dragon Kingdom CT4262</b> from your notification list. Please confirm if you wish to proceed.</p>
+
+    <div class="govuk-button-group">
+  <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Remove product
+  </button>
+  <p><a href="harm-scenario-dashboard-single">Cancel</a></p>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

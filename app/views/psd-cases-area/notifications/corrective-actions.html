@@ -290,14 +290,30 @@
 
 
     <div id="waste-hint" class="govuk-hint">
-      Select all that apply.
+      Select only one option.
     </div>
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+         Cossatto <span class="govuk-body-s">(Manufacturer)</span>
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+          Cossatto <span class="govuk-body-s">(Online seller)</span>
+        </label>
+      </div>
+
+    <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="waste">
-          Cossatto <span class="govuk-body-s">(Manufacturer)</span>
+          Cossatto <span class="govuk-body-s">(Manufacturer)</span></label>
       </div>
+    </div>
 
       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -306,15 +322,7 @@
           Cossatto <span class="govuk-body-s">(Online seller)</span>
       </div>
 
-
-
-
-        <!-- <select class="govuk-select" id="business_id" name="corrective_action[business_id]">
-        <option selected="selected" value=""></option>
-        <option value="384">Cossatto</option>
-</select> -->
-
-</div>
+</div> -->
     </div>
 
 </fieldset>

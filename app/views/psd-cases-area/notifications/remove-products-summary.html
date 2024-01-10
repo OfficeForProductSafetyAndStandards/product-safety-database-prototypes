@@ -21,28 +21,9 @@
 
     <span class="govuk-caption-l">{{title}}</span>
     <h1 class="govuk-heading-l">Search for or add a product<h1>
-    {% if checked("section-1a-complete", "yes") %}
-    <p>You have added 2 products to the notification.</p>
-    {% else %}
-     <p>You have added 1 product to the notification.</p>
-
-     {% endif %}
-
+    <p>You have removed 1 product from the notification.</p>
+  
      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-    <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-        <b>All in All+ Car Seat, Dragon Kingdom CT4262</b>
-      </dt>
-      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
-        <ul class="govuk-summary-list__actions-list">
-          <!-- <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="../../psd-revised-flow/product-page"><span aria-hidden="true">View</span><span class="govuk-visually-hidden">View</span></a></li> -->
-          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="delete-product-to-notify"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove</span></a></li>
-        </ul>
-      </dd>
-    </div>
-  </dl>
 
   {% if checked("section-1a-complete", "yes") %}
 
