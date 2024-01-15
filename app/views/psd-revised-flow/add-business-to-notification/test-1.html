@@ -1,0 +1,37 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Search or add a business – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-0"> 
+
+    <form class="form" action="test-1" method="post">
+
+
+      <heading class="govuk-heading-l">Test 1</heading>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+
+
+    </form>
+
+    <input type="hidden" name="trading_name" value="{{ data['trading_name'] if data['trading_name'] else "Cunningham Tradsssing Ltd" }}" />
+
+{% endblock %}

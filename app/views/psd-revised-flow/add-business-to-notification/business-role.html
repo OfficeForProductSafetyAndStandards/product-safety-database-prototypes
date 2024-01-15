@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+  Business role – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,6 +17,8 @@
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="business-role" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="role-hint">
@@ -296,7 +298,7 @@
       </div>
     </div>
 
-    
+
 
       <div class="govuk-button-group govuk-!-margin-top-6">
   <button class="govuk-button" data-module="govuk-button">

@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+  Add a business – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set title = "Add businesses and their roles in the supply chain" %}
@@ -18,9 +18,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form govuk-!-margin-bottom-6" action="how-to-add-business" method="post">
+      <form class="form" action="how-to-add-business" method="post">
 
-       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <span class="govuk-caption-l">{{title}}</span>
@@ -31,14 +31,14 @@
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+        <input class="govuk-radios__input" id="companies-house" name="add-business" type="radio" value="companies-house">
+        <label class="govuk-label govuk-radios__label" for="companies-house">
           Use Companies House record to pre-fill the details
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+        <input class="govuk-radios__input" id="manually" name="add-business" type="radio" value="manually">
+        <label class="govuk-label govuk-radios__label" for="manually">
           Manually enter the details  
         </label>
         <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
@@ -59,6 +59,7 @@
   <button class="govuk-button" data-module="govuk-button">
     Save and continue
   </button>
+
 
   </form>
 

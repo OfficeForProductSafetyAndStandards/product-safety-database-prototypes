@@ -1,0 +1,107 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Add businesses and their roles in the supply chain</span>
+      <h1 class="govuk-heading-l">{{ data['trading_name'] }}</h1>
+  </div>
+</div>
+
+
+                <h2 class="govuk-heading-m">Company identification</h2>
+
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Trading name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['business-details-trading_name'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Registered or legal name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['business-details-legal_name'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <h2 class="govuk-heading-m govuk-!-margin-top-8">Addresses</h2>
+
+                  <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        {{ data['business-details-address_1'] }}, {{ data['business-details-address_2'] }},  {{ data['business-details-city'] }},  {{ data['business-details-county'] }},  {{ data['business-details-postcode'] }},  {{ data['business-details-country'] }}
+                        </dt>
+                        <dd class="govuk-summary-list__actions">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                                </dd>
+                      </div>
+                    </dl>
+
+
+         
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {{ data['business-details-name'] }}
+                <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] }}</p>
+              </dt>
+
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['business-details-email'] }}</p>
+              <p class="govuk-body">{{ data['business-details-phone'] }}</p>
+              <p class="govuk-body">{{ data['business-details-address_1'] }}, {{ data['business-details-address_2'] }},  {{ data['business-details-city'] }},  {{ data['business-details-county'] }},  {{ data['business-details-postcode'] }},  {{ data['business-details-country'] }}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+            </ul>
+            </dd>
+          </div>
+        </dl>
+        </div>
+      </div>
+
+
+      <form class="form" action="business-blank" method="post">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+        </form>
+
+</div>
+</div>
+
+
+  {% endblock %}

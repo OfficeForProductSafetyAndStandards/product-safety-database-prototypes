@@ -18,6 +18,9 @@ router.use('/create-cases-add-products', require('./views/create-cases-add-produ
 router.use('/drafts-gui', require('./views/drafts-gui/_routes'));
 router.use('/product-case-testing', require('./views/product-case-testing/_routes'));
 
+// added by OJ
+router.use('/psd-revised-flow/add-business-to-notification', require('./views/psd-revised-flow/add-business-to-notification/_routes'));
+
 
 // Prototype v5
 
