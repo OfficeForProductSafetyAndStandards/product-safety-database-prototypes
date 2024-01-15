@@ -51,7 +51,7 @@
                         Bartholomew Trading Ltd
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> name</span></a>
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -62,7 +62,7 @@
                         Bartholomew Trading Ltd
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -73,7 +73,7 @@
                         01727846    <a href="#">(View Companies House record)</a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> address</span></a>
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
                       </dd>
                     </div>
                   </dl>
@@ -86,7 +86,7 @@
                         </dt>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                                           </dd>
                       </div>
                     </dl>
@@ -108,8 +108,8 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
               </dd>
             </div>
           </dl>
@@ -134,6 +134,8 @@
 <button type="submit" class="govuk-button" data-module="govuk-button">
     Save and continue
   </button>
+
+  <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Bartholomew Trading Ltd" }}" />
 
 </form>
 

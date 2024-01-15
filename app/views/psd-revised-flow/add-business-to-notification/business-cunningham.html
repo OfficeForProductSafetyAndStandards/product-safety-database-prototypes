@@ -31,7 +31,7 @@
                         Trading name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['business-details-trading_name'] }}
+                        Cunningham Products Ltd
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -108,6 +108,9 @@
             Save and continue
           </button>
           
+
+          <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Cunningham Products Ltd" }}" />
+
         </form>
 
 </div>

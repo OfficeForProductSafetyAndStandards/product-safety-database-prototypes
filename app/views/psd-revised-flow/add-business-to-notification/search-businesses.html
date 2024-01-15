@@ -36,6 +36,21 @@
     </div>
   </div>
 
+  <input type="hidden" name="trading_name" value="{{ data['trading_name'] if data['trading_name'] else "Bartholomew Trading Ltd" }}" />
+  <input type="hidden" name="legal_name" value="{{ data['legal_name'] if data['legal_name'] else "Bartholomew Trading Ltd" }}" />
+  <input type="hidden" name="ch_number" value="{{ data['trading_name'] if data['trading_name'] else "01727846" }}" />
+  <input type="hidden" name="address_1" value="{{ data['address_1'] if data['address_1'] else "65 Commercial Road" }}" />
+  <input type="hidden" name="address_2" value="{{ data['address_2'] if data['address_2'] else "" }}" />
+  <input type="hidden" name="city" value="{{ data['city'] if data['city'] else "Liverpool" }}" />
+  <input type="hidden" name="county" value="{{ data['county'] if data['county'] else "" }}" />
+  <input type="hidden" name="postcode" value="{{ data['postcode'] if data['postcode'] else "L5 9XE" }}" />
+  <input type="hidden" name="country" value="{{ data['country'] if data['country'] else "UK" }}" />
+  <input type="hidden" name="name" value="{{ data['name'] if data['name'] else "Peter Jacobson" }}" />
+  <input type="hidden" name="job_title" value="{{ data['job_title'] if data['job_title'] else "Chief Operations Officer" }}" />
+  <input type="hidden" name="email" value="{{ data['email'] if data['email'] else "peter.jacobson@batholomewtrading.co.uk" }}" />
+  <input type="hidden" name="phone" value="{{ data['phone'] if data['phone'] else "Chief Operations Officer" }}" />
+  <input type="hidden" name="location" value="{{ data['location'] if data['location'] else "65 Commercial Road, Liverpool, L5 9XE, UK" }}" />
+
 </form>
 
 

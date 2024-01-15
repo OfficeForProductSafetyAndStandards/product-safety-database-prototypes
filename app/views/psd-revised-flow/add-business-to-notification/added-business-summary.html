@@ -15,6 +15,8 @@
 
 {% block content %}
 
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -26,7 +28,9 @@
     <dl class="govuk-summary-list ">
     <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-        <b>{{ data['business-details-trading_name'] }}</b> <br/><span class="govuk-body-s">Online seller, Importer, Distributor</span>
+        <b>{{ data['business-details-trading_name'] }}</b> <br/><span class="govuk-body-s">
+          {{ data['role-1'] }}{{ data['role-2'] }}{{ data['role-3'] }}{{ data['role-4'] }}{{ data['role-5'] }}{{ data['role-6'] }}{{ data['role-7'] }}{{ data['role-8a'] }}{{ data['role-8b'] }}{{ data['role-9'] }}{{ data['role-10a'] }}
+        </span>
       </dt>
       <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
         <ul class="govuk-summary-list__actions-list">
