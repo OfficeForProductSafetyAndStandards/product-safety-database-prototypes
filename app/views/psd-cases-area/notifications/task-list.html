@@ -54,7 +54,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
   {% endif %}
 
-<p class="govuk-body govuk-!-margin-bottom-7">You must first complete Sections <span style="color:#d4351c;">1</span>, <span style="color:#d4351c;">2</span>, <span style="color:#d4351c;">3</span>  and <span style="color:#d4351c;">5</span> in order to access Section <span style="color:#d4351c;">6</span> for the final submission. Note that Sections 4 and 5 are optional and can be completed after you have made your initial submission.</p>
+<p class="govuk-body govuk-!-margin-bottom-7">You must first complete Sections <span style="color:#d4351c;">1</span>, <span style="color:#d4351c;">2</span>, <span style="color:#d4351c;">3</span>  and <span style="color:#d4351c;">5</span> in order to access Section <span style="color:#d4351c;">6</span> for the final submission. All sections marked with an asterisk (<span style="color:#d4351c;">*</span>) are mandatory. Note that Section 4 is optional and can be completed after you have made your initial submission.</p>
 
 
   <ol class="app-task-list govuk-!-margin-top-7">
@@ -216,7 +216,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
     <li>
       <h2 class="app-task-list__section">
-        <span class="app-task-list__section-number">3. </span> Add the business in the product's supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+        <span class="app-task-list__section-number">3. </span> Add businesses and their role in the supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
       </h2>
 
 
@@ -225,7 +225,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="added-business-summary">Add the type and details of the business</a>
+            <a href="added-business-summary">Search or add businesses and select role</a>
           </span>
           <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
         </li>
@@ -238,7 +238,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
 <li>
       <h2 class="app-task-list__section">
-        <span class="app-task-list__section-number">3. </span> Add the business in the product's supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+        <span class="app-task-list__section-number">3. </span> Add businesses and their role in the supply chain <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
       </h2>
 
 
@@ -249,7 +249,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
          <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            <a href="add-business">Add the type and details of the business</a>
+            <a href="add-business">Search or add businesses and select role</a>
           </span>
            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not started</strong>
         </li>
@@ -258,7 +258,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-            Add the type and details of the business
+           Search or add businesses and select role
           </span>
            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
         </li>
@@ -525,9 +525,23 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
     <!-- Section 5 -->
 
-    {% if checked("section-4a-complete", "yes") %}
+    {% if checked("section-4g-complete", "yes") %}
 
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">5. Add corrective actions <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="corrective-actions">
+        <a href="record-corrective-actions-choice">Record a corrective action </a></span>
+       <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="medical-information-status">In progress</strong>
+      </li>
 
+      </ul>
+    </li>
+
+    {% elseif checked("section-4a-complete", "yes") %}
     <li>
   <h2 class="app-task-list__section">
     <span class="corrective-actions">5. Add corrective actions <span style="font-weight: normal; font-size: 16px; color: #d4351c;">*</span>
@@ -560,6 +574,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
       </ul>
     </li>
+    
 {% else %}
 
 
@@ -574,8 +589,10 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
         Record a corrective action</span>
        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Cannot start yet</strong>
       </li>
+
 {% endif %}
 {% endif %}
+
 
 
   <input class="govuk-checkboxes__input" id="section-5a-complete" name="section-5a-complete" type="checkbox" value="yes" { checked('section-5a-complete','yes') }} checked>
@@ -589,7 +606,7 @@ Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
 
     <!-- Section 6 -->
 
-    {% if checked("section-4a-complete", "yes") %}
+    {% if checked("section-4a-complete", "yes") or checked("section-4g-complete", "yes")%}
 
 <li>
   <h2 class="app-task-list__section">

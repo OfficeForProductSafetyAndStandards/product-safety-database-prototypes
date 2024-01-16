@@ -132,6 +132,37 @@
 </div>
 <br/>
 
+<h3 class="govuk-heading-m">Was the safety issue reported by an overseas regulator?</h3>
+
+<div class="govuk-form-group">
+  <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable" name="rebuttable" type="radio" value="yes" {{ checked('multiple-casualties','yes') }} data-aria-controls="rebuttable-yes">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="rebuttable-yes">
+
+      <div class="govuk-form-group"><label for="add-team-to-notification-form-team-id-field" class="govuk-label govuk-label--s" style="font-weight:normal">Select country</label><select id="add-team-to-notification-form-team-id-field" class="govuk-select" name="add_team_to_notification_form[team_id]"><option value=""></option>
+<option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Albania</option>
+<option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Afgansitan</option>
+<option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Algeria</option>
+</select></div>
+
+              </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable-1" name="rebuttable" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No, it originated in the UK
+        </label>
+      </div>
+    </div>
+  </div>
+
+
      <h3 class="govuk-heading-m">Do you want to add your own reference number to the case?</h3>
       <p id="more-detail-hint" class="govuk-hint">The reference number might be from a different internal system for your case or a global identifier for multiple systems. It's searchable on the PSD case search page and can be added or edited later.</p>
 

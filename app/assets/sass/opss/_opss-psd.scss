@@ -918,3 +918,29 @@ noscript {
 .chevron-card__wrapper {
   position: relative;
 }
+
+.govuk-summary-card {
+  margin-bottom: 20px;
+  border: 1px solid #b1b4b6;
+}
+
+.govuk-summary-card__title-wrapper {
+  padding: 7px 12px 0;
+  border-bottom: 1px solid #00000000;
+  background-color: #f3f2f1;
+}
+
+.govuk-summary-card__title {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  margin: 5px 20px 10px 0;
+}
+
+.govuk-summary-card__content {
+  padding: 15px 15px 0;
+}
