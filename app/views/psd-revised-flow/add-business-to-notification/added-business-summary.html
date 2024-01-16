@@ -30,7 +30,7 @@
       <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
         <b>{{ data['business-details-trading_name'] }}</b> <br/>
         <span class="govuk-body-s">
-          {{ data['role-1'] }} {{ data['role-2'] }} {{ data['role-3'] }} {{ data['role-4'] }} {{ data['role-5'] }} {{ data['role-6'] }} {{ data['role-7'] }} {{ data['role-8a'] }} {{ data['role-8b'] }} {{ data['role-9'] }} {{ data['role-10a'] }}
+          {{ data['role-1'] }} {{ data['role-2'] }} {{ data['role-3'] }} {{ data['role-4'] }}  {{ data['role-5'] }} {{ data['role-6'] }} {{ data['role-7'] }} {{ data['role-8a'] }} {{ data['role-8b'] }} {{ data['role-9'] }} {{ data['role-10a'] }}
         </span>
       </dt>
       <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
@@ -71,10 +71,25 @@
     Save and continue
   </button>
 
+
+
+
+
+
 </form>
 
+<script>
 
+  const myArray = [1,2,3,4,5, "string value"];
+  
+  const presentation = myArray.join(", ");
+  
+  
 
-
+  
+  </script>
+<p>
+  {{presentation}}
+</p>
 
 {% endblock %}
