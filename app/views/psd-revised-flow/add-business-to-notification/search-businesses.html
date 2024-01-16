@@ -36,21 +36,6 @@
     </div>
   </div>
 
-  <input type="hidden" name="trading_name" value="{{ data['trading_name'] if data['trading_name'] else "Bartholomew Trading Ltd" }}" />
-  <input type="hidden" name="legal_name" value="{{ data['legal_name'] if data['legal_name'] else "Bartholomew Trading Ltd" }}" />
-  <input type="hidden" name="ch_number" value="{{ data['trading_name'] if data['trading_name'] else "01727846" }}" />
-  <input type="hidden" name="address_1" value="{{ data['address_1'] if data['address_1'] else "65 Commercial Road" }}" />
-  <input type="hidden" name="address_2" value="{{ data['address_2'] if data['address_2'] else "" }}" />
-  <input type="hidden" name="city" value="{{ data['city'] if data['city'] else "Liverpool" }}" />
-  <input type="hidden" name="county" value="{{ data['county'] if data['county'] else "" }}" />
-  <input type="hidden" name="postcode" value="{{ data['postcode'] if data['postcode'] else "L5 9XE" }}" />
-  <input type="hidden" name="country" value="{{ data['country'] if data['country'] else "UK" }}" />
-  <input type="hidden" name="name" value="{{ data['name'] if data['name'] else "Peter Jacobson" }}" />
-  <input type="hidden" name="job_title" value="{{ data['job_title'] if data['job_title'] else "Chief Operations Officer" }}" />
-  <input type="hidden" name="email" value="{{ data['email'] if data['email'] else "peter.jacobson@batholomewtrading.co.uk" }}" />
-  <input type="hidden" name="phone" value="{{ data['phone'] if data['phone'] else "Chief Operations Officer" }}" />
-  <input type="hidden" name="location" value="{{ data['location'] if data['location'] else "65 Commercial Road, Liverpool, L5 9XE, UK" }}" />
-
 </form>
 
 
@@ -311,39 +296,6 @@
   </div>
 </div>
 
-        <!-- ********* Pagination ************ -->
-
-        <div class="govuk-grid-column-full govuk-!-padding-0">
-
-        <nav class="govuk-pagination " role="navigation" aria-label="Pagination">
-          <ul class="govuk-pagination__list" >
-              <li class="govuk-pagination__item govuk-pagination__item--current">
-                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
-                  1
-                </a>
-              </li>
-            </li>
-            <li class="govuk-pagination__item">
-              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-                2
-              </a>
-            </li>
-            <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-            <li class="govuk-pagination__item">
-              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 22">
-                22
-              </a>
-            </li>
-          </ul>
-          <div class="govuk-pagination__next">
-            <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-              </svg></a>
-          </div>
-        </nav>
-
-<!-- Your HTML code (unchanged) -->
-
 <script>
   const searchInput = document.getElementById("searchInput");
   const searchButton = document.getElementById("searchButton");
@@ -354,7 +306,6 @@
   const allRows = dataTable.querySelectorAll("tbody tr");
   const specialRows = [...allRows].slice(20);
 
-  // Hide rows beyond the first 20 initially
   specialRows.forEach(row => {
     row.style.display = "none";
   });
@@ -368,7 +319,6 @@
 
   function resetTable() {
     allRows.forEach((row, index) => {
-      // Show the first 20 rows, hide the rest
       if (index < 20) {
         row.style.display = "";
       } else {
@@ -381,21 +331,11 @@
     updateDisplayCount();
   }
 
-  function updatePaginationVisibility() {
-    const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
-    const paginationElement = document.querySelector(".govuk-pagination");
-    if (visibleRows <= 19) {
-      paginationElement.style.display = "none"; // Hide the pagination when there are 19 or fewer visible rows
-    } else {
-      paginationElement.style.display = "block"; // Show the pagination when there are more than 19 visible rows
-    }
-  }
-
   function performSearch() {
     const filter = searchInput.value.trim().toUpperCase();
 
     if (filter === "") {
-      resetTable(); // Reset the table when the search is empty
+      resetTable(); 
       return;
     }
 
@@ -408,7 +348,6 @@
       }
     });
 
-    // Show the first 20 rows and special rows when they match the search criteria
     allRows.forEach((row, index) => {
       if ((index < 20 || specialRows.includes(row)) && row.style.display !== "none") {
         row.style.display = "";
@@ -417,27 +356,81 @@
       }
     });
 
-    // Update the searchInfo element
     const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
     searchInfo.innerHTML = `<p>${visibleRows} business${visibleRows === 1 ? "" : "es"} matching keyword(s) <strong>${filter}</strong>, were found`;
 
-    // Check if there are no matching rows and display the empty state
     if (visibleRows === 0) {
-      emptyState.style.display = "block"; // Show the empty state when there are no matching rows
+      emptyState.style.display = "block"; 
     } else {
-      emptyState.style.display = "none"; // Hide the empty state when there are matching rows
+      emptyState.style.display = "none";
     }
 
     updateDisplayCount();
-
-    // Call the function to update pagination visibility
-    updatePaginationVisibility();
   }
 
   searchButton.addEventListener("click", performSearch);
   updateDisplayCount();
+
+  function updatePagination(count) {
+    const paginationContainer = document.getElementById("pagination-container");
+
+    if (count >= 0 && count <= 19) {
+      paginationContainer.style.display = "none;"; 
+    } else {
+      paginationContainer.style.display = "block"; 
+    }
+  }
+
+  function getVisibleRowCount() {
+    const visibleRows = Array.from(dataTable.querySelectorAll("tbody tr")).filter(row => row.style.display !== "none");
+    return visibleRows.length;
+  }
+
+  function handleTableUpdates() {
+    const count = getVisibleRowCount();
+    updatePagination(count);
+  }
+
+  handleTableUpdates();
+
+
 </script>
         
 <!-- End of dynamic table -->
+
+
+          <div class="govuk-grid-column-full govuk-!-padding-0" >
+        
+            <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+              <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                  <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                    1
+                  </a>
+                </li>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 22">
+                  22
+                </a>
+              </li>
+              </ul>
+              <div class="govuk-pagination__next" >
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                  <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                </a>
+              </div>
+            </nav>
+        </div>
+
 
 {% endblock %}

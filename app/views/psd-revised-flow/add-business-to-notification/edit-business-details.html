@@ -39,6 +39,12 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
   <input class="govuk-input govuk-!-width-two-thirds" id="business-details-legal_name" name="business-details-legal_name" type="text" aria-describedby="legal_name-hint" value="{{ data['business-details-legal_name'] }}">
 </div>
 
+<div class="govuk-form-group">
+  <label class="govuk-label" for="ch_number">Companies House number</label>
+  <div class="govuk-hint govuk-!-font-size-16" id="legal_name-hint">In the UK this is an eight-digit number assigned to incorporated businesses.</div>
+<input class="govuk-input govuk-!-width-two-thirds" id="business-details-ch_number" name="business-details-ch_number" type="text" aria-describedby="ch_number-hint" value="{{ data['business-details-ch_number'] }}">
+</div>
+
 </fieldset>
 
   <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
