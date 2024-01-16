@@ -1,0 +1,226 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Search Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-0"> 
+
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search on Companies House </h1>
+      <div class="govuk-grid-row opss-full-height">
+      </div>        
+  </div>        
+
+
+<!-- Start of dynamic table -->
+
+
+<section class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-top-2" id="page-content">
+
+  <div class="govuk-grid-column-one-half">
+<label class="govuk-label" for="case-search-term">
+  Enter company name, number or officer name
+  </label>
+  <div class="govuk-input__wrapper opss-search__wrapper">
+    <input type="text" class="govuk-input" id="searchInput">
+    <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton">
+      <span class="govuk-visually-hidden">Submit search</span>
+    </button>
+  </div>
+</div>
+
+<div class="govuk-grid-column-one-quarter ">
+  <div class="govuk-form-group opss-text-align-right">
+<p></p>      </div>
+</div>
+
+      <div class="govuk-grid-column-one-quarter ">
+        <div class="govuk-form-group opss-text-align-right">
+            <label class="govuk-label " for="sort" id="sortLabel" style="display: none;">
+                  Sort by
+                </label>
+                <select class="govuk-select opss-text-align-right " id="sort" name="sort" style="display: none;">
+                  <option value="recently-added">Recently added</option>
+                </select>
+              </div>
+          </div>
+
+        <div class="govuk-grid-column-full govuk-!-margin-top-2 ">
+
+<div id="searchInfo"><p></p></div>
+
+<table class="govuk-table govuk-!-margin-top-2" id="dataTable">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Company name</th>
+      <th scope="col" class="govuk-table__header ">Status</th>
+      <th scope="col" class="govuk-table__header ">Companies House number</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-half">Registered office address</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr>
+      <td class="govuk-table__cell"><a href="#">Cube Crates Ltd</a></td>
+      <td class="govuk-table__cell">Active</td>
+      <td class="govuk-table__cell">01785622</td>
+      <td class="govuk-table__cell">Unit 3, Killigrew Trading Estate, Ellis Fields, Grantham, GR7 4RF, UK</td>
+    </tr>
+    <tr>
+      <td class="govuk-table__cell"><a href="#">Cunningham Consulting Ltd</a></td>
+      <td class="govuk-table__cell">Active</td>
+      <td class="govuk-table__cell">06564687</td>
+      <td class="govuk-table__cell">31 Cherry Lane, Nottingham, NG1 6HJ, UK</td>
+    </tr>
+    <tr>
+      <td class="govuk-table__cell"><a href="#">Cunningham Groundwork Ltd</a></td>
+      <td class="govuk-table__cell">Dissolved</td>
+      <td class="govuk-table__cell">01258978</td>
+      <td class="govuk-table__cell">65 Commercial Road, Liverpool, L5 9XE, UK</td>
+    </tr>
+      <tr>
+        <td class="govuk-table__cell"><a href="business-cunningham">Cunningham Products Ltd</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">02076315</td>
+        <td class="govuk-table__cell">Unit 34, Purley Industrial Estate, Grantham Road, Barnsley, S71 5GY, UK</td>
+      </tr>
+      <tr>
+        <td class="govuk-table__cell"><a href="#">Cuno Arts Supplies</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">01729420</td>
+        <td class="govuk-table__cell">The Old Rectory, Much Hadham, HW7 9PL, UK</td>
+      </tr>
+      <tr>
+        <td class="govuk-table__cell"><a href="#">Cuthberts & Sons Removals Ltd</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">01730248</td>
+        <td class="govuk-table__cell">24 Rose Walk, Cheshunt, EN16 7GY, UK</td>
+      </tr>
+      <tr>
+        <td class="govuk-table__cell"><a href="#">Dream Designs</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">01281233</td>
+        <td class="govuk-table__cell">Holly Drive, Hay-on-Wye, Powys, HR3 5BT, UK</td>
+      </tr>
+      <tr>
+        <td class="govuk-table__cell"><a href="duplicate-business">Dream Manufacturing Ltd</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">01169426</td>
+        <td class="govuk-table__cell">Building 5, Willow Estate, Riber Road, Buxton, SK17 6BH, UK</td>
+      </tr>
+    <tr>
+      <td class="govuk-table__cell"><a href="#">Dreamtech Electronics Ltd</a></td>
+      <td class="govuk-table__cell">Dissolved</td>
+      <td class="govuk-table__cell">012965644</td>
+      <td class="govuk-table__cell">56 Maple Street, Uckfield, TN22 1PH, UK</td>
+    </tr>
+
+      <tr>
+        <td class="govuk-table__cell"><a href="#">Dreamtime Bedding Ltd</a></td>
+        <td class="govuk-table__cell">Active</td>
+        <td class="govuk-table__cell">012823551</td>
+        <td class="govuk-table__cell">72 Birchwood Road, Wotton-under-Edge, GL12 7AJ, UK</td>
+      </tr>
+
+  </tbody>
+</table>
+
+<div class="govuk-grid-column-two-thirds govuk-!-padding-0">
+  <div class="empty-state  govuk-!-margin-top-6" style="display: none;">
+    <div class="govuk-heading-m govuk-!-margin-bottom-2 ">
+      No results found on Companies House
+    </div>
+    <div class="govuk-body govuk-!-margin-bottom-9">
+      There are no results that match your search. Try searching again using different search criteria or <a href="enter-business-details">enter the business details manually</a>.
+    </div>  
+  </div>
+</div>
+
+
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
+  const dataTable = document.getElementById("dataTable");
+  const emptyState = document.querySelector(".empty-state");
+  const displayCount = document.getElementById("displayCount");
+  const searchInfo = document.getElementById("searchInfo");
+  const selectSort = document.getElementById("sort");
+  const sortLabel = document.getElementById("sortLabel"); 
+  const allRows = dataTable.querySelectorAll("tbody tr");
+  const specialRows = [...allRows].slice(20);
+
+  // Search button
+  searchButton.addEventListener("click", performSearch);
+
+  // Hide table and sort
+  dataTable.style.display = "none";
+  selectSort.style.display = "none";
+  sortLabel.style.display = "none";
+
+  // Count
+  function updateDisplayCount() {
+    const totalRows = allRows.length;
+    const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
+
+    displayCount.textContent = `Showing ${visibleRows} of ${totalRows}`;
+  }
+
+  function performSearch() {
+    const filter = searchInput.value.trim().toUpperCase();
+
+    // Check if the search input is empty, and prevent the search if it is
+    if (filter === "") {
+      return;
+    }
+
+    allRows.forEach(row => {
+      const text = row.textContent || row.innerText;
+      if (text.toUpperCase().includes(filter)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    // Show the table, select, and label after search
+    dataTable.style.display = "table";
+    selectSort.style.display = "block";
+    sortLabel.style.display = "block"; // Show the label
+
+    // Update the searchInfo element
+    const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
+    searchInfo.innerHTML = `<p>${visibleRows} business${visibleRows === 1 ? "" : "es"} matching keyword(s) <strong>${filter}</strong>, were found`;
+
+    // Check if there are no matching rows and display the empty state
+    if (visibleRows === 0) {
+      emptyState.style.display = "block"; // Show the empty state when there are no matching rows
+    } else {
+      emptyState.style.display = "none"; // Hide the empty state when there are matching rows
+    }
+
+    updateDisplayCount();
+
+    // Call the function to update pagination visibility
+    updatePaginationVisibility();
+  }
+</script>
+
+
+<!-- End of dynamic table -->
+
+{% endblock %}
+

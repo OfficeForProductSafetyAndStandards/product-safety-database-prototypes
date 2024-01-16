@@ -1,0 +1,363 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Business role – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="business-role" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="role-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{title}}</span>
+
+            <h1 class="govuk-fieldset__heading">
+              Add the business’s role in the supply chain for this notification
+            </h1>
+          </legend>
+          <div id="role-hint" class="govuk-hint">
+            You can choose more than one option except for online marketplace.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-1" name="role-1" type="checkbox" value="Retailer">
+              <label class="govuk-label govuk-checkboxes__label" for="role-1">
+                Retailer
+              </label>
+              <div class="govuk-hint govuk-radios__hint" id="type-item-hint">This includes traditional retailers and retailers selling directly to customers via their own online presence.</div>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-2" name="role-2" type="checkbox" value="Online-seller">
+              <label class="govuk-label govuk-checkboxes__label" for="role-2">
+                Online seller
+              </label>
+              <div class="govuk-hint govuk-radios__hint" id="type-1-item-hint">This includes businesses primarily selling products to end users via an online marketplace such as Amazon.</div>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-3" name="role-3" type="checkbox" value="Manufacturer">
+              <label class="govuk-label govuk-checkboxes__label" for="role-3">
+                Manufacturer
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-4" name="role-4" type="checkbox" value="Exporter">
+              <label class="govuk-label govuk-checkboxes__label" for="role-4">
+                Exporter
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-5" name="role-5" type="checkbox" value="Importer">
+              <label class="govuk-label govuk-checkboxes__label" for="role-5">
+                Importer
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-6" name="role-6" type="checkbox" value="Fulfillment-house">
+              <label class="govuk-label govuk-checkboxes__label" for="role-6">
+                Fulfillment house
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-7" name="role-7" type="checkbox" value="Distributor">
+              <label class="govuk-label govuk-checkboxes__label" for="role-7">
+                Distributor
+              </label>
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="role-8" name="role-8" type="checkbox" value="authorised-representative" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-checkboxes__label" for="contact">
+                  Authorised representative
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="role-8a" name="role-8a" type="radio" value="UK authorised representative">
+                    <label class="govuk-label govuk-radios__label" for="role-8a">
+                      UK authorised representative
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="role-8b" name="role-8b" type="radio" value="EU authorised representative">
+                    <label class="govuk-label govuk-radios__label" for="role-8b">
+                      EU authorised representative
+                    </label>
+                  </div>
+                </div>
+            
+              </div>
+        
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="role-9" name="role-9" type="checkbox" value="Responsible-person">
+              <label class="govuk-label govuk-checkboxes__label" for="role-9">
+                Responsible person
+              </label>
+            </div>
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="role-10" name="role-10" type="checkbox" value="email" data-aria-controls="conditional-role" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="role-10">
+                    Online marketplace
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-role">
+                  <div class="govuk-form-group ">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half govuk-!-padding-right-0">
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: AliBaba" id="set_business_type_on_case_form_online_marketplace_id_6">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_6">AliBaba</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: AliExpress" id="set_business_type_on_case_form_online_marketplace_id_3">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_3">AliExpress</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Amazon" id="set_business_type_on_case_form_online_marketplace_id_1">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_1">Amazon</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Asos Marketplace" id="set_business_type_on_case_form_online_marketplace_id_7">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_7">Asos Marketplace</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Banggood" id="set_business_type_on_case_form_online_marketplace_id_8">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_8">Banggood</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Bonanza" id="set_business_type_on_case_form_online_marketplace_id_9">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_9">Bonanza</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Depop" id="set_business_type_on_case_form_online_marketplace_id_10">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_10">Depop</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: DesertCart" id="set_business_type_on_case_form_online_marketplace_id_11">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_11">DesertCart</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: eBay" id="set_business_type_on_case_form_online_marketplace_id_2">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_2">eBay</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Ecrater" id="set_business_type_on_case_form_online_marketplace_id_12">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_12">Ecrater</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Etsy" id="set_business_type_on_case_form_online_marketplace_id_5">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_5">Etsy</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Facebook Marketplace" id="set_business_type_on_case_form_online_marketplace_id_13">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_13">Facebook Marketplace</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: Farfetch" id="set_business_type_on_case_form_online_marketplace_id_14">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_14">Farfetch</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Fishpond" id="set_business_type_on_case_form_online_marketplace_id_15">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_15">Fishpond</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Folksy" id="set_business_type_on_case_form_online_marketplace_id_16">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_16">Folksy</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: ForDeal" id="set_business_type_on_case_form_online_marketplace_id_17">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_17">ForDeal</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Fruugo" id="set_business_type_on_case_form_online_marketplace_id_18">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_18">Fruugo</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Grandado" id="set_business_type_on_case_form_online_marketplace_id_19">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_19">Grandado</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Groupon" id="set_business_type_on_case_form_online_marketplace_id_20">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_20">Groupon</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Gumtree" id="set_business_type_on_case_form_online_marketplace_id_21">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_21">Gumtree</label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="govuk-grid-column-one-half govuk-!-padding-right-0">
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: Houzz" id="set_business_type_on_case_form_online_marketplace_id_22">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_22">Houzz</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Instagram" id="set_business_type_on_case_form_online_marketplace_id_23">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_23">Instagram</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Joom" id="set_business_type_on_case_form_online_marketplace_id_24">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_24">Joom</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Light In The Box" id="set_business_type_on_case_form_online_marketplace_id_25">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_25">Light In The Box</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Manomano" id="set_business_type_on_case_form_online_marketplace_id_28">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_28">Manomano</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: NotOnTheHighStreet" id="set_business_type_on_case_form_online_marketplace_id_27">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_27">NotOnTheHighStreet</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: OnBuy" id="set_business_type_on_case_form_online_marketplace_id_26">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_26">OnBuy</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: PatPat" id="set_business_type_on_case_form_online_marketplace_id_29">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_29">PatPat</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Pinterest" id="set_business_type_on_case_form_online_marketplace_id_30">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_30">Pinterest</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: Rakuten" id="set_business_type_on_case_form_online_marketplace_id_31">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_31">Rakuten</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Shein" id="set_business_type_on_case_form_online_marketplace_id_32">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_32">Shein</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Shpock" id="set_business_type_on_case_form_online_marketplace_id_33">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_33">Shpock</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Stockx" id="set_business_type_on_case_form_online_marketplace_id_34">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_34">Stockx</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Temu" id="set_business_type_on_case_form_online_marketplace_id_35">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_35">Temu</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Vinted" id="set_business_type_on_case_form_online_marketplace_id_36">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_36">Vinted</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio" name="role-10a" value="Online marketplace: Wayfair" id="set_business_type_on_case_form_online_marketplace_id_37">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_37">Wayfair</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Wish" id="set_business_type_on_case_form_online_marketplace_id_4">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_4">Wish</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Wowcher" id="set_business_type_on_case_form_online_marketplace_id_38">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_38">Wowcher</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input js-radio-handle-other" type="radio"  name="role-10a" value="Online marketplace: Zalando" id="set_business_type_on_case_form_online_marketplace_id_39">
+                              <label class="govuk-label govuk-radios__label" for="set_business_type_on_case_form_online_marketplace_id_39">Zalando</label>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="govuk-form-group">
+          <label class="govuk-label" for="other_marketplace_name">Other online platform</label>
+
+        <input class="govuk-input js-input-handle-other" id="other_marketplace_name" name="role-10a" type="text">
+
+      </div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+      <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+</div>
+
+
+
+
+
+</form>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const exclusiveCheckbox = document.getElementById('role-10'); // Exclusive checkbox (Online marketplace)
+    const role8RadioButtons = document.querySelectorAll('input[type="radio"][name="role-8a"], input[type="radio"][name="role-8b"]'); // Radio buttons for role-8
+    const role10RadioButtons = document.querySelectorAll('input[type="radio"][name="role-10a"]'); // Radio buttons for role-10
+    const role8Conditional = document.getElementById('conditional-contact'); // Conditional section for role-8
+    const role10Conditional = document.getElementById('conditional-role'); // Conditional section for role-10
+    const otherCheckboxes = document.querySelectorAll('.govuk-checkboxes__input:not(#role-10)'); // All other checkboxes
+
+    // Function to hide a conditional section
+    function hideConditional(element) {
+      if (!element.classList.contains('govuk-checkboxes__conditional--hidden')) {
+        element.classList.add('govuk-checkboxes__conditional--hidden');
+      }
+    }
+
+    // Function to clear all checkboxes or radio buttons in a given NodeList
+    function clearInputs(inputs) {
+      inputs.forEach(function(input) {
+        input.checked = false;
+      });
+    }
+
+    // Event listener for the exclusive checkbox
+    exclusiveCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        clearInputs(otherCheckboxes); // Clear other checkboxes
+        clearInputs(role8RadioButtons); // Clear role-8 radio buttons
+        hideConditional(role8Conditional); // Hide role-8 conditional section
+      }
+    });
+
+    // Event listeners for the other checkboxes
+    otherCheckboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          exclusiveCheckbox.checked = false; // Uncheck the exclusive checkbox
+          clearInputs(role10RadioButtons); // Clear role-10 radio buttons
+          hideConditional(role10Conditional); // Hide role-10 conditional section
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+{% endblock %}

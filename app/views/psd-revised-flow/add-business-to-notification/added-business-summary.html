@@ -1,0 +1,95 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Business added – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form class="form govuk-!-margin-bottom-6" action="added-business-summary" method="post">
+
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l">You have added 1 business<h1>
+
+    <dl class="govuk-summary-list ">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+        <b>{{ data['business-details-trading_name'] }}</b> <br/>
+        <span class="govuk-body-s">
+          {{ data['role-1'] }} {{ data['role-2'] }} {{ data['role-3'] }} {{ data['role-4'] }}  {{ data['role-5'] }} {{ data['role-6'] }} {{ data['role-7'] }} {{ data['role-8a'] }} {{ data['role-8b'] }} {{ data['role-9'] }} {{ data['role-10a'] }}
+        </span>
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="add-business"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove</span></a></li>
+        </ul>
+      </dd>
+    </div>
+  </dl>
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Do you need to add another business?
+      </h2>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+   <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+
+
+
+
+
+
+</form>
+
+<script>
+
+  const myArray = [1,2,3,4,5, "string value"];
+  
+  const presentation = myArray.join(", ");
+  
+  
+
+  
+  </script>
+<p>
+  {{presentation}}
+</p>
+
+{% endblock %}

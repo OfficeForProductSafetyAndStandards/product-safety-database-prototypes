@@ -1,0 +1,120 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Cunningham Products Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">Add businesses and their roles in the supply chain</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Cunningham Products Ltd</h1>
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-8">Active</strong>
+
+      
+                <h2 class="govuk-heading-m">Company identification</h2>
+
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Trading name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Cunningham Products Ltd
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> name</span></a>
+                      </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Registered or legal name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Cunningham Products Ltd
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Companies House number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        02076315    <a href="#">(View Companies House record)</a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> address</span></a>
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <h2 class="govuk-heading-m govuk-!-margin-top-8">Addresses</h2>
+
+                  <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        Unit 34, Purley Industrial Estate, Grantham Road, Barnsley, S71 5GY, United Kingdom
+                        </dt>
+                        <dd class="govuk-summary-list__actions">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                        </dd>
+                      </div>
+                    </dl>
+
+
+         
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                None available
+                <p class="govuk-body govuk-!-margin-top-2"></p>
+              </dt>
+
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"></p>
+              <p class="govuk-body"></p>
+              <p class="govuk-body"></p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+    </ul>
+            </dd>
+          </div>
+        </dl>
+
+
+
+      <form class="form govuk-!-margin-top-4" action="business-cunningham" method="post">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          
+
+          <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Cunningham Products Ltd" }}" />
+
+        </form>
+
+</div>
+</div>
+
+
+  {% endblock %}
