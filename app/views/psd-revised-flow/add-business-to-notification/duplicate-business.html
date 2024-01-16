@@ -1,0 +1,177 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Business role – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form class="form" action="duplicate-business" method="post"> 
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="role-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">{{title}}</span>
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
+              Duplicate business record
+            </h1>
+          </legend>
+
+          <p>We have found a business record with the same <strong>Companies House number</strong>.</p>
+          <p>Select the business record you'd like to continue with.</p>
+
+
+
+
+
+          <div class="govuk-grid-row">  
+
+
+            <section class="govuk-grid-column-full opss-panels">
+
+              <div class="opss-panels__single govuk-!-margin-right-2">
+
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-3" style="color: #333;">Dreem Manufacturing Ltd<br><strong class="govuk-tag govuk-tag--green">
+          Record in Product Safety Database
+        </strong></h2>
+
+        <dl class="govuk-summary-list ">
+          <div class="govuk-summary-list__row govuk-!-width-one-half ">
+            <dt class="govuk-summary-list__key govuk-!-padding-bottom-2">
+              Companies House number
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half ">
+              01169426
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-padding-bottom-2">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-bottom-2">
+              Building 5, Willow Estate, Riber Road, Buxton, SK17 6BH, UK
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact details
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-bottom-2">
+              Eric Graham<br>Head of Distribution<br>eric.graham@dreammanufacturing.co.uk<br>01226 856 456
+            </dd>
+          </div>
+        </dl>
+              </div>
+
+              <div class="opss-panels__single govuk-!-margin-left-2" >
+
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-3" style="color: #333" >Dream Manufacturing Ltd <br><strong class="govuk-tag govuk-tag--yellow">
+          New record
+        </strong></h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row govuk-!-width-one-half">
+            <dt class="govuk-summary-list__key govuk-!-padding-bottom-2">
+              Companies House number
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              01169426
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-bottom-2">
+              None available
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact details
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-padding-bottom-2">
+              None available
+            </dd>
+          </div>
+        </dl>
+
+              </div>
+            </section>
+
+          </div>
+
+
+               <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds govuk-radios govuk-!-padding-top-3 govuk-!-padding-bottom-1">
+
+              <div class="govuk-form-group">
+              <h3 class="govuk-heading-m">What would you like to do?</h3> <!--*** extra nested form-group for this layout ***-->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="correct" name="correct" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="correct">
+                    Use record in Product Safety Database 
+                  </label>
+                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                    You can edit this record on the next page if you think there are mistakes.
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="correct-2" name="correct" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="correct-2">
+                    Use new record
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+
+      <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dreem Manufacturing Ltd" }}" />
+      <input type="hidden" name="business-details-legal_name" value="{{ data['business-details-legal_name'] if data['business-details-legal_name'] else "Dreem Manufacturing Ltd" }}" />
+      <input type="hidden" name="business-details-ch_number" value="{{ data['business-details-ch_number'] if data['business-details-ch_number'] else "01169426" }}" />
+      <input type="hidden" name="business-details-address_1" value="{{ data['business-details-address_1'] if data['business-details-address_1'] else "Building 5, Willow Estate" }}" />
+      <input type="hidden" name="business-details-address_2" value="{{ data['business-details-address_2'] if data['business-details-address_2'] else "Riber RoadLtd" }}" />
+      <input type="hidden" name="business-details-city" value="{{ data['business-details-city'] if data['business-details-city'] else "Buxton" }}" />
+      <input type="hidden" name="business-details-county" value="{{ data['business-details-county'] if data['business-details-county'] else "" }}" />
+      <input type="hidden" name="business-details-postcode" value="{{ data['business-details-postcode'] if data['business-details-postcode'] else "SK17 6BH" }}" />
+      <input type="hidden" name="business-details-country" value="{{ data['business-details-country'] if data['business-details-country'] else "United Kingdom" }}" />
+      <input type="hidden" name="business-details-name" value="{{ data['business-details-name'] if data['business-details-name'] else "Eric Graham" }}" />
+      <input type="hidden" name="business-details-job_title" value="{{ data['business-details-job_title'] if data['business-details-job_title'] else "Head of Distribution" }}" />
+      <input type="hidden" name="business-details-email" value="{{ data['business-details-email'] if data['business-details-email'] else "eric.graham@dreammanufacturing.co.uk" }}" />
+      <input type="hidden" name="business-details-phone" value="{{ data['business-details-phone'] if data['business-details-phone'] else "01226 856 456" }}" />
+
+
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

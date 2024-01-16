@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+  Cunningham Products Ltd – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set title = "Add businesses and their roles in the supply chain" %}
@@ -19,11 +19,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Add businesses and their roles in the supply chain</span>
-      <h1 class="govuk-heading-l  govuk-!-margin-bottom-8">{{ data['trading_name'] }}</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">{{ data['business-details-trading_name'] }}</h1>
   </div>
 </div>
 
-
+      
                 <h2 class="govuk-heading-m">Company identification</h2>
 
                 <dl class="govuk-summary-list">
@@ -35,9 +35,10 @@
                         {{ data['business-details-trading_name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> name</span></a>
                       </dd>
                     </div>
+
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                         Registered or legal name
@@ -46,7 +47,18 @@
                         {{ data['business-details-legal_name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Companies House number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['business-details-ch_number'] }}    <a href="#">(View Companies House record)</a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> address</span></a>
                       </dd>
                     </div>
                   </dl>
@@ -61,11 +73,11 @@
                         {% if data['business-details-county'] %}, {{ data['business-details-county'] }}{% endif %}
                         {% if data['business-details-postcode'] %}, {{ data['business-details-postcode'] }}{% endif %}
                         {% if data['business-details-country'] %}, {{ data['business-details-country'] }}{% endif %}
-                        </dt>
+                                </dt>
                         <dd class="govuk-summary-list__actions">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
-                                </dd>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                        </dd>
                       </div>
                     </dl>
 
@@ -90,28 +102,27 @@
                 {% if data['business-details-county'] %}, {{ data['business-details-county'] }}{% endif %}
                 {% if data['business-details-postcode'] %}, {{ data['business-details-postcode'] }}{% endif %}
                 {% if data['business-details-country'] %}, {{ data['business-details-country'] }}{% endif %}
-              </p>
-        
-              
-              
-                          </dd>
+      </p>
+            </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
                 <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
-            </ul>
             </dd>
           </div>
         </dl>
 
 
 
-      <form class="form" action="business-blank" method="post">
+      <form class="form govuk-!-margin-top-4" action="business-dreams" method="post">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
           
+
+          <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dreams Manufacturing Ltd" }}" />
+
         </form>
 
 </div>
