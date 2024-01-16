@@ -124,3 +124,36 @@ $(document).ready(function(){
         $(this).text('Upload another image');
     });
 });
+
+$(document).ready(function() {
+    // Handle click on 'Hide all'/'Show all' link
+    $('#trigger-all').click(function(e) {
+        e.preventDefault();  // Prevent the default anchor behavior
+
+        var isCurrentlyHideAll = $(this).text() === 'Hide all';
+        
+        // Toggle the div visibility and the link text
+        $('#product1, #product2').toggle(!isCurrentlyHideAll);
+        $('#trigger-product1, #trigger-product2').text(isCurrentlyHideAll ? 'Show' : 'Hide');
+        $(this).text(isCurrentlyHideAll ? 'Show all' : 'Hide all');
+    });
+
+    // Handle click on individual 'Show'/'Hide' links for products
+    $('#trigger-product1, #trigger-product2').click(function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+
+        var productID = $(this).attr('id').replace('trigger-', '');
+        var isCurrentlyShow = $(this).text() === 'Show';
+        
+        // Toggle the visibility of the respective div and the link text
+        $('#' + productID).toggle(isCurrentlyShow);
+        $(this).text(isCurrentlyShow ? 'Hide' : 'Show');
+
+        // If both are visible or both are hidden, update the 'Hide all'/'Show all' link text
+        if ($('#product1').is(':visible') && $('#product2').is(':visible')) {
+            $('#trigger-all').text('Hide all');
+        } else if ($('#product1').is(':hidden') && $('#product2').is(':hidden')) {
+            $('#trigger-all').text('Show all');
+        }
+    });
+});

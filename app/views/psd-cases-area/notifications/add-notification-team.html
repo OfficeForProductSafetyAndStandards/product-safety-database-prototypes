@@ -1,0 +1,54 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add corrective actions" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form action="assign-notification-overview" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="-XGbG4gwxlHmPHkIlTWgyNV6ntJrie91_4fWZ7YZxoX5iTmzGCynek6jKL50GK_wnVIrbd5jGch70P_tUcYVBg" autocomplete="off">
+      
+      <span class="govuk-caption-l">All in All+ Car Seat – lack of protection from the buckle</span>
+      <h1 class="govuk-heading-l">Add a team to the notification</h1>
+      <div class="govuk-form-group"><label for="add-team-to-notification-form-team-id-field" class="govuk-label govuk-label--s">Choose team</label><select id="add-team-to-notification-form-team-id-field" class="govuk-select" name="add_team_to_notification_form[team_id]"><option value=""></option>
+<option value="7ecd90eb-c0d4-442d-b5f6-564b21868505">Birmingham trading standards</option>
+<option value="48b7b4e4-8b26-428a-b7e2-08707ce8eca9">Digital Accessibility Centre</option>
+<option value="e4051cc8-ebe3-4fff-b3fa-3dde8cca7257">Dumfries and Galloway council</option>
+<option value="af446511-f397-421e-9fb0-cf336c2f4308">Herefordshire Council</option>
+<option value="82dd698e-8118-4c98-a963-ab5656c0da0f">New TS group</option>
+<option value="7562b9f0-01c3-4722-90a8-7a994776807d">OPSS</option>
+<option value="b7e9da4c-9a0e-4ac1-89af-c82f78138ad7">OPSS Enforcement</option>
+<option value="be01b09c-bacd-482d-be8d-63ea604cc22f">OPSS Incident Management</option>
+<option value="8f1640c2-0e52-49d3-a19f-83e5ac30ee0e">OPSS Processing</option>
+<option value="ecc0ac8b-50de-4dc6-adf8-f29d6a26ab1d">OPSS Science and Tech</option>
+<option value="2227bb27-4164-42ca-b974-e9de6c58fd9e">OPSS Testing</option>
+<option value="01faef39-6272-4270-bac5-4d89ba39e238">OPSS Trading Standards Co-ordination</option>
+<option value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Test Group Email alerts</option>
+<option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
+<option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option></select></div>
+      <p class="govuk-body">We’ll email the team to let them know they’ve been added to the notification.</p>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Permission level</legend><input value="" autocomplete="off" type="hidden" name="add_team_to_notification_form[permission_level]" id="add_team_to_notification_form_permission_level"><div class="govuk-radios" data-module="govuk-radios"><div class="govuk-radios__item"><input id="add-team-to-notification-form-permission-level-readonly-field" aria-describedby="add-team-to-notification-form-permission-level-readonly-hint" class="govuk-radios__input" type="radio" value="readonly" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-readonly-field" class="govuk-label govuk-radios__label">View only</label><div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-readonly-hint">Access to view all notification details.</div></div><div class="govuk-radios__item"><input id="add-team-to-notification-form-permission-level-edit-field" aria-describedby="add-team-to-notification-form-permission-level-edit-hint" class="govuk-radios__input" type="radio" value="edit" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-edit-field" class="govuk-label govuk-radios__label">Edit</label><div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-edit-hint">Ability to modify notification details (excluding team management and notification archiving)</div></div></div></fieldset></div>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Would you like to add a custom message to the notification email?</legend><div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item"><input id="add-team-to-notification-form-include-message-true-field" class="govuk-radios__input" type="radio" value="true" name="add_team_to_notification_form[include_message]" aria-controls="add-team-to-notification-form-include-message-true-conditional" aria-expanded="false"><label for="add-team-to-notification-form-include-message-true-field" class="govuk-label govuk-radios__label">Yes, add a message</label></div><div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="add-team-to-notification-form-include-message-true-conditional">
+          <div class="govuk-form-group"><label for="add-team-to-notification-form-message-field" class="govuk-label">Message to the team</label><div class="govuk-hint" id="add-team-to-notification-form-message-hint">Message will also be included on the notification timeline</div><textarea id="add-team-to-notification-form-message-field" class="govuk-textarea" rows="5" aria-describedby="add-team-to-notification-form-message-hint" name="add_team_to_notification_form[message]"></textarea></div>
+</div>        <div class="govuk-radios__item"><input id="add-team-to-notification-form-include-message-false-field" class="govuk-radios__input" type="radio" value="false" name="add_team_to_notification_form[include_message]"><label for="add-team-to-notification-form-include-message-false-field" class="govuk-label govuk-radios__label">No</label></div>
+</div></fieldset></div>      <button type="submit" formnovalidate="formnovalidate" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Add team to this notification</button>
+</form>  </div>
+</div>
+
+
+
+
+
+{% endblock %}

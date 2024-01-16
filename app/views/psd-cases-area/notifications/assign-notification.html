@@ -1,0 +1,261 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add corrective actions" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-column-two-thirds-from-desktop">
+    <form action="assign-notification-confirm" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" autocomplete="off"><input type="hidden" name="authenticity_token" value="a_xs2yuaTlECe1FiL7pRGO3qDvmfz13fWC1ROU-UjgdstqQPFgFiF3GsC0vhK6xigrNzQLMl-JnzOCb6aimHdQ" autocomplete="off">
+  
+  
+      <span class="govuk-caption-l">All in All+ Car Seat – lack of protection from the buckle</span>
+<h1 class="govuk-heading-l">Reassign notification owner</h1>
+
+<div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">Current notification owner</p>
+    <p class="govuk-body-l">Dimitri Koksharov (Renfrewshire Council)</p>
+  </div>
+
+  <h2 class="govuk-heading-m">Select new notification owner</h2>
+
+  <p style="width:70%">The new owner will be notified via email that they have been assigned to this notification. Teams currently with view only or edit permissions will receive full ownership rights if selected.</p>
+
+<div class="govuk-form-group">
+
+  <div class="govuk-radios govuk-radios--conditional opss-radios__divider--title" data-module="govuk-radios">
+    <div class="govuk-radios__divider">
+          Assign to individuals or team members
+      </div>
+
+       <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_all_individuals" name="change_notification_owner_form[owner_id]" type="radio" value="all_individuals" class="govuk-radios__input" aria-controls="conditional-change_notification_owner_form_owner_id_all_individuals" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_all_individuals">All individuals</label>
+      </div>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-change_notification_owner_form_owner_id_all_individuals">
+            
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-visually-hidden" for="change_notification_owner_form_select_team_member">Select team member</label>
+
+
+
+
+
+    <div class="autocomplete-select-with-clear">
+          <select class="govuk-select" id="change_notification_owner_form_select_someone_else" name="change_notification_owner_form[select_someone_else]">
+        <option></option>
+        <option value="a77cb59d-1dcd-47e9-ba90-97a333513102">Richard Burnett</option>
+        <option value="83e47bcc-6afd-447c-84f3-ccea80d6a1b5">Scott Mountifield</option>
+        <option value="13762607-c942-4f64-8b88-51bd4d7afb42">Deborah Lader</option>
+        <option value="4f11cf4f-43c6-4b40-b4e8-e87350e8792e">Gilead Bempah (OPSS Processing)</option>
+        <option value="e2dbc993-1810-4e70-93fb-8062dc5189c5">Marc Sardon (OPSS Processing)</option>
+        <option value="a6ef4fd3-43e4-4acc-ad45-53855f2fe963">Kara Barnard</option>
+        <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
+        <option value="07e369b7-5751-4bcd-bca8-be0a7c713078">Jack Holland (OPSS Processing)</option>
+        <option value="89f4cedd-fc65-4ebd-bf80-a57d4fe5f1f0">Phil Preece (OPSS)</option>
+        <option value="49f8b7cd-e0e7-49bd-a85e-270d313065f6">Nasir Khan (Birmingham trading standards)</option>
+        <option value="791800d6-605f-4184-9c48-585236b7d933">Jacob O'Toole</option>
+        <option value="6ab54c7f-b439-4950-9532-e834a13d7a46">Christopher Whiles (OPSS Processing)</option>
+        <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O'Kane</option>
+        <option value="554c3252-d4de-45c5-b6bc-963cfa40df92">Jonas Krivelis (Dumfries and Galloway council)</option>
+        <option value="95031954-5947-44f3-9842-0be08bef5b52">Sam Imevbore (Birmingham trading standards)</option>
+        <option value="2ef5c5fe-3c68-4eff-aa0a-cdee8e45afd3">Neil Lines (pen tester)</option>
+        <option value="943f243b-d2e6-4783-ae68-60cc5cf53996">Lucy Duncan</option>
+        <option value="951ca879-ac86-4fa1-8484-70f8b7e6d9ed">Smoke Test (OPSS Testing)</option>
+        <option value="6916ff17-858b-4fd1-8796-31677e582851">Ruben Arakelyan (OPSS Incident Management)</option>
+        <option value="c18d1518-b265-40d6-a8db-9f3bb0db04a4">Adam McKeown (OPSS Processing)</option>
+        <option value="08730f1a-2ad4-4f68-b73d-57dce4ab4c10">Nick Henson (OPSS Processing)</option>
+        <option value="8f241166-76c1-4568-b43e-1a3f6ede5000">Nick Henson (OPSS)</option>
+        <option value="87d14963-7a52-48dd-b9c9-4bd773cbd861">Alec Johns (Trading Standards view)</option>
+        <option value="4b287fcd-a651-46a7-af2d-9036f7ada70c">Dimitri Koksharov</option>
+        <option value="ed674b83-00a1-4f2a-bfff-5060c1079202">Katherine Forrest (OPSS)</option>
+        <option value="ac7895da-af63-45f4-b591-e99672f0a066">Soko Esuga (OPSS Incident Management)</option>
+        <option value="a059b4fc-c6ec-495d-9e01-942c000d40d4">Michelle Venn (OPSS)</option>
+        <option value="5ff38ad7-eb4a-4bd1-8a31-b989422cfdbc">Monika Ciejek (OPSS)</option>
+        <option value="488ff719-fc1b-4089-9831-c4f3edfc2bc3">Bev Tolley (OPSS Incident Management)</option>
+        <option value="f39d583e-e35b-4ff9-aa13-0a4bd6675602">Dimitri Koksharov (OPSS user account) (OPSS Processing)</option>
+        <option value="6d466339-e4b5-4fb5-98d7-12cd18e59fa0">Andy Callaghan (OPSS Processing)</option>
+        <option value="276b76a7-7c58-4eb1-9d47-734d4cf40e8f">Stuart Ogier (OPSS)</option>
+        <option value="2dd744fb-d622-4331-9f17-cd5cf841e841">Nick Henson Staging DBT</option>
+        <option value="37284b81-e4c8-45e2-8b3c-ca9938a5bcf1">Mat Hobson (Dumfries and Galloway council)</option>
+        <option value="d18c70c0-f79d-42b9-bf06-96793a095b52">Austin McDonald (Dumfries and Galloway council)</option>
+        <option value="0dad1550-befe-4ba6-96fc-5c5d6b237a9e">Sarah Jenkins (OPSS)</option>
+        <option value="8aa4589a-42c7-4461-afd5-8dc2b76acccf">Dave Boston</option>
+        <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+        <option value="9e5aeb75-6d56-47f3-931b-85d13009e493">Nasir  (OPSS Processing)</option>
+        <option value="fb5c932c-2087-4da6-88aa-5d5e457aa3fb">Nasir Ali Khan (OPSS Processing)</option>
+        <option value="d02665d8-f531-42e8-9a2b-c009fa862bfc"> (OPSS Processing)</option>
+        <option value="8929ea85-0e8c-4c89-ace5-8003cb77054f">Joe O'Kane (OPSS Processing)</option>
+        <option value="a330dc65-e294-475b-9afd-11ad3a00d495">Sławosz Sławiński (OPSS Processing)</option>
+        <option value="757cee56-c803-478a-9e57-c1b315bb7d3b">Trading Standards User 1 (Trading Standards 1)</option>
+        <option value="268697f3-9a25-43a7-9566-6d8565bd23bc">Slawosz TS Slawinski (Birmingham trading standards)</option>
+        <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+        <option value="6a30ee36-6e29-4916-95f6-1851218acf3b">DH (OPSS Processing)</option>
+        <option value="f25ff148-e467-4782-9cd4-f3c2f30920ce">Steve Lorek (OPSS Processing)</option>
+        <option value="6e4c2ae9-6cc4-4af6-9f45-237abea92543">Wayne Hillier (OPSS Processing)</option>
+        <option value="2b7c3f52-e9fc-4365-9d71-93bbef9820e7">Bruce (OPSS Processing)</option>
+        <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+        <option value="9da495d0-9921-4313-bdfa-0a4f75c32e54">Nasir Ali Khan (Birmingham trading standards)</option>
+        <option value="412aa24e-cc82-47e8-bf8f-97e6b2490ae5">Sham Islam (OPSS Processing)</option>
+</select>
+</div>      <button class="autocomplete__clear-button" id="clear-change_notification_owner_form_select_team_member" style="display: none;" type="button">
+        <span class="govuk-visually-hidden">Clear autocomplete</span>
+        <svg class="autocomplete__clear-viewbox" viewBox="0 0 40 40">
+          <path class="autocomplete__clear-icon" d="M 10,10 L 30,30 M 30,10 L 10,30"></path>
+        </svg>
+      </button>
+
+    <script>
+//<![CDATA[
+      window.callAutocompleteWhenReady("change_notification_owner_form_select_team_member", {showAllValues: "true"});
+
+//]]>
+</script>
+</div>
+
+  </div>
+</div>
+
+
+</div>  
+
+        <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_someone_else_in_your_team" name="change_notification_owner_form[owner_id]" type="radio" value="someone_else_in_your_team" class="govuk-radios__input" aria-controls="conditional-change_notification_owner_form_owner_id_someone_else_in_your_team" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_someone_else_in_your_team">Renfrewshire Council</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-change_notification_owner_form_owner_id_someone_else_in_your_team">
+            
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-visually-hidden" for="change_notification_owner_form_select_team_member">Select team member</label>
+
+
+
+
+
+    <div class="autocomplete-select-with-clear">
+          <select class="govuk-select" id="change_notification_owner_form_select_team_member" name="change_notification_owner_form[select_team_member]">
+        <option></option>
+        <option value="13762607-c942-4f64-8b88-51bd4d7afb42">Deborah Lader</option>
+        <option value="a77cb59d-1dcd-47e9-ba90-97a333513102">Richard Burnett</option>
+        <option value="83e47bcc-6afd-447c-84f3-ccea80d6a1b5">Scott Mountifield</option>
+        <option value="ae18c084-a582-4a06-b1bd-290dac156c75">Joe O'Kane</option>
+        <option value="a6ef4fd3-43e4-4acc-ad45-53855f2fe963">Kara Barnard</option>
+        <option value="d8cd92e9-7aa7-4b74-b6da-dbcc1978d192">Matt Gray</option>
+        <option value="791800d6-605f-4184-9c48-585236b7d933">Jacob O'Toole</option>
+        <option value="2ef5c5fe-3c68-4eff-aa0a-cdee8e45afd3">Neil Lines (pen tester)</option>
+        <option value="943f243b-d2e6-4783-ae68-60cc5cf53996">Lucy Duncan</option>
+        <option value="87d14963-7a52-48dd-b9c9-4bd773cbd861">Alec Johns (Trading Standards view)</option>
+        <option value="2dd744fb-d622-4331-9f17-cd5cf841e841">Nick Henson Staging DBT</option>
+        <option value="8aa4589a-42c7-4461-afd5-8dc2b76acccf">Dave Boston</option>
+        <option value="954fbba8-a15b-424e-86a2-a3ad4b746171">kyle macpherson</option>
+        <option value="66bba3b2-eccb-40dd-b92b-5f3df1533ce7">Bev Tolley</option>
+        <option value="c61d117d-8786-41ce-8072-b92ecce180fb">Bruce Fanshawe</option>
+</select>
+</div>      <button class="autocomplete__clear-button" id="clear-change_notification_owner_form_select_team_member" style="display: none;" type="button">
+        <span class="govuk-visually-hidden">Clear autocomplete</span>
+        <svg class="autocomplete__clear-viewbox" viewBox="0 0 40 40">
+          <path class="autocomplete__clear-icon" d="M 10,10 L 30,30 M 30,10 L 10,30"></path>
+        </svg>
+      </button>
+
+    <script>
+//<![CDATA[
+      window.callAutocompleteWhenReady("change_notification_owner_form_select_team_member", {showAllValues: "true"});
+
+//]]>
+</script>
+</div>
+
+  </div>
+</div>
+
+
+</div>        
+
+<div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e" name="change_notification_owner_form[owner_id]" type="radio" value="c33ae052-df08-46c4-bcda-6c917a89440e" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e">OPSS Incident Management</label>
+
+             <div class="govuk-hint govuk-radios__hint" id="change_notification_owner_form_owner_id_be01b09c-bacd-482d-be8d-63ea604cc22f-item-hint">For reporting serious risks to OPSS</div>
+
+
+      </div>
+
+       <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e" name="change_notification_owner_form[owner_id]" type="radio" value="c33ae052-df08-46c4-bcda-6c917a89440e" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e">OPSS Processing</label>
+
+      </div>
+
+       <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e" name="change_notification_owner_form[owner_id]" type="radio" value="c33ae052-df08-46c4-bcda-6c917a89440e" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_c33ae052-df08-46c4-bcda-6c917a89440e">Trading Standards Southampton</label>
+
+      </div>
+
+        <div class="govuk-radios__divider">
+          Assign to whole team
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" name="change_notification_owner_form[owner_id]" type="radio" value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Renfrewshire Council</label>
+
+
+      </div>
+
+       <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" name="change_notification_owner_form[owner_id]" type="radio" value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">OPSS</label>
+
+
+      </div>
+      <div class="govuk-radios__item">
+          <input id="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" name="change_notification_owner_form[owner_id]" type="radio" value="ba5cbbd7-89ff-4bb6-b49c-84d37d25a471" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="change_notification_owner_form_owner_id_ba5cbbd7-89ff-4bb6-b49c-84d37d25a471">Birmingham Council</label>
+
+
+      </div>
+
+       
+
+</div></div>
+</div>
+
+
+  <div class="govuk-button-group">
+    <input type="submit" name="commit" value="Reassign owner" class="govuk-button" data-disable-with="Continue">
+    <a class="govuk-link" href="edit-submitted">Cancel</a>
+  </div>
+</form>  </div>
+</div>
+
+
+
+
+
+{% endblock %}

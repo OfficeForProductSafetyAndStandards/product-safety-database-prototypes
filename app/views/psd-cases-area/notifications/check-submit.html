@@ -24,14 +24,14 @@
         Check the notification details and submit
       </h1>
 
-
-
-
        <div class="govuk-form-group ">
     <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
-    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
-    <a href="product-search-enhanced-v2">Change</a>
+    <p class="govuk-body-l"><img src="/public/images/car-seat.jpg" width="100px" height="100px" alt="Product Image" align="middle">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+    {% if checked("section-1a-complete", "yes") %}
+    <p class="govuk-body-l"><img src="/public/images/car-seat-2.jpg" width="100px" height="100px" alt="Product Image" align="middle">All in All+ Car Seat, Fika Forrest CT4243</p>
+    {% endif %}
+    <a href="product-search-enhanced-v2-a">Add another product</a>
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -39,17 +39,18 @@
     <p class="govuk-body-s" style="margin-bottom:5px;"><b>Last updated:</b> 2 minutes ago</p>
   <p class="govuk-body-s" style="margin-bottom:5px;"><b>Created:</b> 15 July 2023 </p>
   <p class="govuk-body-s" style="margin-bottom:5px;"><b>Created by:</b> Dimitri Koksharov - Renfrewshire Council</p>
-  <p class="govuk-body-s" style="margin-bottom:5px;"><b>Case owner:</b> Dimitri Koksharov - Renfrewshire Council</p>
-  <p class="govuk-body-s" style="margin-bottom:5px;"><b>Teams added:</b> Renfrewshire Council, England</p>
+  <p class="govuk-body-s" style="margin-bottom:5px;"><b>Notification owner:</b> Dimitri Koksharov - Renfrewshire Council</p>
+  <p class="govuk-body-s" style="margin-bottom:5px;"><b>Notifying country:</b> UK</p>
+  <!-- <p class="govuk-body-s" style="margin-bottom:5px;"><b>Teams added:</b> Renfrewshire Council, England</p> -->
 
 </div>
 
 
 
 
-      <h2 class="govuk-heading-m">Notification and additional product details </h2>
+      <h2 class="govuk-heading-m">Notification details </h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Notification number
@@ -93,7 +94,7 @@
               Why are you creating the notification?
             </dt>
             <dd class="govuk-summary-list__value">
-              A product is unsafe or non-compliant
+              Products are unsafe or non-compliant
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change
@@ -103,10 +104,24 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Why is the product of concern?
+              What specific issues make the products unsafe or non-compliant?
             </dt>
             <dd class="govuk-summary-list__value">
-              Product is unsafe
+              Product hazard: lack of protection <br>
+              <p style="font-size:16px">The car seats present an injury hazard as the manufacture of some of the buckles did not reach the exacting standards set by the quality and safety protocol and contain components that can potentially become defective.</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Was the safety issue reported by an oversees regulator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change
@@ -127,71 +142,151 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Batch numbers
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not provided
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Customs codes
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not provided
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             UCR codes
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not provided
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Units affected
-            </dt>
-            <dd class="govuk-summary-list__value">
-              3000
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
+          
         </dl>
 
-        <h2 class="govuk-heading-m">Business that supplied the product</h2>
+        <div style="overflow:hidden; margin-bottom: 15px;">
+          <h2 class="govuk-heading-m" style="float:left;">Product identification details</h2><a href="#" style="float:left; margin-left: 15px; margin-top: 5px;" id="trigger-all">Hide all</a>
+        </div>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
+          <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+             <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="overflow:hidden">
+    <h2 class="govuk-summary-card__title" style="float:left;">All in All+ Car Seat, Dragon Kingdom CT4262</h2><a href="#" style="float:right; font-size: 16px; margin-top: 5px;" id="trigger-product1">Hide</a>
+  </div>
+  <div class="govuk-summary-card__content" id="product1">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Batch numbers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customs codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UCR codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row" style="border-bottom:none;">
+        <dt class="govuk-summary-list__key">
+          Units affected
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3000
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+  <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">All in All+ Car Seat, Fika Forrest CT4243</h2><a href="#" style="float:right; font-size: 16px; margin-top: 5px;" id="trigger-product2">Hide</a>
+  </div>
+  <div class="govuk-summary-card__content" id="product2">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Batch numbers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customs codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UCR codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row" style="border-bottom:none;">
+        <dt class="govuk-summary-list__key">
+          Units affected
+        </dt>
+        <dd class="govuk-summary-list__value">
+          5000
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+        <h2 class="govuk-heading-m" style="margin-top: 40px;">Business and their role in the supply chain</h2>
+
+         <div class="govuk-summary-card" style="margin-bottom:0;">
+          <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">Bartholomew Trading Ltd</h2><a href="#" style="float:right; margin-top: 5px;">Change</a>
+  </div>
+
+        <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Business type
+             Business role in the supply chain
             </dt>
             <dd class="govuk-summary-list__value">
-            Online market place
+            Manufacturer, online seller
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Registered or legal name
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Bartholomew Trading Ltd
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change
 
@@ -200,18 +295,50 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Business address
+             Companies House number
             </dt>
             <dd class="govuk-summary-list__value">
-             Amazon.co.uk <br/>
-             Address details<br/>
-             Contact person details
+            01727846
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Addresses
+            </dt>
+            <dd class="govuk-summary-list__value">
+             65 Commercial Road <br/>
+             Liverpool<br/>
+             L5 9XE <br/>
+             United Kingdom
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row" style="border-bottom:none;">
+            <dt class="govuk-summary-list__key">
+              Contact details
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Peter Jacobson <br/>
+             Chief Operations Officer<br/>
+             e: peter.jacobson@bartholomewtrading.co.uk<br/>
+             t: 0151 2327318<br/>
+             address: 65 Commercial Road, Liverpool, L5 9XE, UK
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+              </a>
+            </dd>
+          </div>
+        </div>
+      </div>
 
           <br/>
 
@@ -222,8 +349,17 @@
 
         <h2 class="govuk-heading-m">Evidence</h2>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
+
+             <div class="govuk-summary-card">
+         <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">All in All+ Car Seat, Dragon Kingdom CT4262</h2>
+  </div>
+
+   
+
+               <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+             <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Test report
             </dt>
@@ -235,20 +371,8 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Supporting product images
-            </dt>
-            <dd class="govuk-summary-list__value">
-             Not provided
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change
-              </a>
-            </dd>
-          </div>
 
-          <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row" style="border-bottom:none;">
             <dt class="govuk-summary-list__key">
               Risk assessment
             </dt>
@@ -260,10 +384,63 @@
               </a>
             </dd>
           </div>
+  </dl>
+</div>
+</div>
 
-           <div class="govuk-summary-list__row">
+         <div class="govuk-summary-card">
+
+          <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">All in All+ Car Seat, Fika Forrest CT4243</h2>
+  </div>
+
+        <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Product risk level
+             Test report
+            </dt>
+            <dd class="govuk-summary-list__value">
+         Not provided
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row" style="border-bottom:none;">
+            <dt class="govuk-summary-list__key">
+              Risk assessment
+            </dt>
+            <dd class="govuk-summary-list__value">
+             <a href="#">Risk-assessment0123.pdf</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+              </a>
+            </dd>
+          </div>
+</dl>
+</div>
+</div>
+
+           <dl class="govuk-summary-list" style="margin-bottom:0">
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Supporting product images
+            </dt>
+            <dd class="govuk-summary-list__value">
+             <a href="#">buckle-damage.jpg</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Supporting documents
             </dt>
             <dd class="govuk-summary-list__value">
              Not provided
@@ -273,17 +450,50 @@
               </a>
             </dd>
           </div>
-
-          <br/>
-
-          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:0;">
-  Add new evidence
-</a>
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Notification risk level
+            </dt>
+            <dd class="govuk-summary-list__value">
+             <strong class="govuk-tag govuk-tag--red">
+         High risk
+        </strong>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has the risk level been validated?
+            </dt>
+            <dd class="govuk-summary-list__value">
+           
+         No
+     
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change
+              </a>
+            </dd>
+          </div>
         </dl>
 
-         <h2 class="govuk-heading-m">Corrective actions</h2>
 
-         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <a href="select-evidence-type" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top: 25px; margin-bottom:0;">
+  Add new evidence
+</a>
+
+
+         <h2 class="govuk-heading-m" style="margin-top: 40px;">Corrective actions</h2>
+
+           <div class="govuk-summary-card">
+         <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">– All in All+ Car Seat, Dragon Kingdom CT4262<br/>– All in All+ Car Seat, Fika Forrest CT4243</h2>
+  </div>
+               <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Corrective action
@@ -396,7 +606,7 @@
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row" style="border-bottom:none;">
             <dt class="govuk-summary-list__key">
               Related supporting documentation
             <dd class="govuk-summary-list__value">
@@ -407,31 +617,8 @@
               </a>
             </dd>
           </div>
-
-          <br/>
-
-          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:0;">
-  Add new corrective action
-</a>
-
         </dl>
-
-
-
-
-
-
 </div>
-</div>
-
-
-<div class="govuk-grid-column-one-third govuk-!-padding-left-9 govuk-!-padding-top-9">
-
-
-    <img src="/public/images/car-seat.jpg" width="200px" height="200px" alt="Product Image">
-
-
-
 </div>
 </div>
 
