@@ -25,14 +25,14 @@
 <div class="govuk-form-group">
   <div class="govuk-radios govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="rebuttable-1" name="rebuttable" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <input class="govuk-radios__input" id="rebuttable-1" name="validation" type="radio" value="Validated by OPSS Processing on 16 January 2024" {{ checked('validation','Validated by OPSS Processing on 16 January 2024') }}>
         <label class="govuk-label govuk-radios__label" for="changed-name-2">
           Yes
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="rebuttable" name="rebuttable" type="radio" value="yes" {{ checked('multiple-casualties','yes') }} data-aria-controls="rebuttable-yes">
+        <input class="govuk-radios__input" id="rebuttable" name="validation" type="radio" value="No" {{ checked('validation','No') }} data-aria-controls="rebuttable-yes">
         <label class="govuk-label govuk-radios__label" for="changed-name">
           No
         </label>
