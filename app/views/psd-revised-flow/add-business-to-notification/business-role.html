@@ -312,50 +312,55 @@
 
 
 </form>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const exclusiveCheckbox = document.getElementById('role-10'); // Exclusive checkbox (Online marketplace)
-    const role8RadioButtons = document.querySelectorAll('input[type="radio"][name="role-8a"], input[type="radio"][name="role-8b"]'); // Radio buttons for role-8
-    const role10RadioButtons = document.querySelectorAll('input[type="radio"][name="role-10a"]'); // Radio buttons for role-10
-    const role8Conditional = document.getElementById('conditional-contact'); // Conditional section for role-8
-    const role10Conditional = document.getElementById('conditional-role'); // Conditional section for role-10
-    const otherCheckboxes = document.querySelectorAll('.govuk-checkboxes__input:not(#role-10)'); // All other checkboxes
+    const exclusiveCheckbox = document.getElementById('role-10');
+    const role8RadioButtons = document.querySelectorAll('input[type="radio"][name="role-8a"], input[type="radio"][name="role-8b"]');
+    const role10RadioButtons = document.querySelectorAll('input[type="radio"][name="role-10a"]');
+    const role8Conditional = document.getElementById('conditional-contact');
+    const role10Conditional = document.getElementById('conditional-role');
+    const otherCheckboxes = document.querySelectorAll('.govuk-checkboxes__input:not(#role-10)');
+    const role8Checkbox = document.getElementById('role-8');
 
-    // Function to hide a conditional section
     function hideConditional(element) {
       if (!element.classList.contains('govuk-checkboxes__conditional--hidden')) {
         element.classList.add('govuk-checkboxes__conditional--hidden');
       }
     }
 
-    // Function to clear all checkboxes or radio buttons in a given NodeList
     function clearInputs(inputs) {
       inputs.forEach(function(input) {
         input.checked = false;
       });
     }
 
-    // Event listener for the exclusive checkbox
     exclusiveCheckbox.addEventListener('change', function() {
       if (this.checked) {
-        clearInputs(otherCheckboxes); // Clear other checkboxes
-        clearInputs(role8RadioButtons); // Clear role-8 radio buttons
-        hideConditional(role8Conditional); // Hide role-8 conditional section
+        clearInputs(otherCheckboxes);
+        clearInputs(role8RadioButtons);
+        hideConditional(role8Conditional);
       }
     });
 
-    // Event listeners for the other checkboxes
+    role8Checkbox.addEventListener('change', function() {
+      if (!this.checked) {
+        clearInputs(role8RadioButtons);
+      }
+    });
+
     otherCheckboxes.forEach(function(checkbox) {
       checkbox.addEventListener('change', function() {
         if (this.checked) {
-          exclusiveCheckbox.checked = false; // Uncheck the exclusive checkbox
-          clearInputs(role10RadioButtons); // Clear role-10 radio buttons
-          hideConditional(role10Conditional); // Hide role-10 conditional section
+          exclusiveCheckbox.checked = false;
+          clearInputs(role10RadioButtons);
+          hideConditional(role10Conditional);
         }
       });
     });
   });
 </script>
+
 
 
 
