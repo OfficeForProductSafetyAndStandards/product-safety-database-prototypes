@@ -38,12 +38,31 @@
 <option value="6b3fff35-4469-4c8f-b068-332bf0d9b29b">Trading Standards 1</option>
 <option value="2a0c7037-593d-47ee-9447-c49426759fac">Trading Standards Southampton</option></select></div>
       <p class="govuk-body">We’ll email the team to let them know they’ve been added to the notification.</p>
-      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Permission level</legend><input value="" autocomplete="off" type="hidden" name="add_team_to_notification_form[permission_level]" id="add_team_to_notification_form_permission_level"><div class="govuk-radios" data-module="govuk-radios"><div class="govuk-radios__item"><input id="add-team-to-notification-form-permission-level-readonly-field" aria-describedby="add-team-to-notification-form-permission-level-readonly-hint" class="govuk-radios__input" type="radio" value="readonly" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-readonly-field" class="govuk-label govuk-radios__label">View only</label><div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-readonly-hint">Access to view all notification details.</div></div><div class="govuk-radios__item"><input id="add-team-to-notification-form-permission-level-edit-field" aria-describedby="add-team-to-notification-form-permission-level-edit-hint" class="govuk-radios__input" type="radio" value="edit" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-edit-field" class="govuk-label govuk-radios__label">Edit</label><div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-edit-hint">Ability to modify notification details (excluding team management and notification archiving)</div></div></div></fieldset></div>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Permission level</legend><input value="" autocomplete="off" type="hidden" name="add_team_to_notification_form[permission_level]" id="add_team_to_notification_form_permission_level">
+
+        <!-- <div class="govuk-radios" data-module="govuk-radios"><div class="govuk-radios__item"><input id="add-team-to-notification-form-permission-level-readonly-field" aria-describedby="add-team-to-notification-form-permission-level-readonly-hint" class="govuk-radios__input" type="radio" value="readonly" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-readonly-field" class="govuk-label govuk-radios__label">View only</label><div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-readonly-hint">Access to view all notification details.</div></div><div class="govuk-radios__item"> -->
+
+          <!-- <input id="add-team-to-notification-form-permission-level-edit-field" aria-describedby="add-team-to-notification-form-permission-level-edit-hint" class="govuk-radios__input" type="radio" value="edit" name="add_team_to_notification_form[permission_level]"><label for="add-team-to-notification-form-permission-level-edit-field" class="govuk-label govuk-radios__label">Edit</label>
+          <div class="govuk-hint govuk-radios__hint" id="add-team-to-notification-form-permission-level-edit-hint">Ability to modify notification details (excluding team management and notification archiving)</div> -->
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Grant edit access
+        </label>
+        <p id="home-life-hint" class="govuk-hint govuk-checkboxes__hint">Allow this team to modify notification details.</p>
+      </div>
+        </div>
+     
+    </fieldset>
+  </div>
+
       <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Would you like to add a custom message to the notification email?</legend><div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item"><input id="add-team-to-notification-form-include-message-true-field" class="govuk-radios__input" type="radio" value="true" name="add_team_to_notification_form[include_message]" aria-controls="add-team-to-notification-form-include-message-true-conditional" aria-expanded="false"><label for="add-team-to-notification-form-include-message-true-field" class="govuk-label govuk-radios__label">Yes, add a message</label></div><div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="add-team-to-notification-form-include-message-true-conditional">
           <div class="govuk-form-group"><label for="add-team-to-notification-form-message-field" class="govuk-label">Message to the team</label><div class="govuk-hint" id="add-team-to-notification-form-message-hint">Message will also be included on the notification timeline</div><textarea id="add-team-to-notification-form-message-field" class="govuk-textarea" rows="5" aria-describedby="add-team-to-notification-form-message-hint" name="add_team_to_notification_form[message]"></textarea></div>
 </div>        <div class="govuk-radios__item"><input id="add-team-to-notification-form-include-message-false-field" class="govuk-radios__input" type="radio" value="false" name="add_team_to_notification_form[include_message]"><label for="add-team-to-notification-form-include-message-false-field" class="govuk-label govuk-radios__label">No</label></div>
-</div></fieldset></div>      <button type="submit" formnovalidate="formnovalidate" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Add team to this notification</button>
+</div></fieldset></div>      <button type="submit" formnovalidate="formnovalidate" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Update team permissions</button>
 </form>  </div>
 </div>
 
