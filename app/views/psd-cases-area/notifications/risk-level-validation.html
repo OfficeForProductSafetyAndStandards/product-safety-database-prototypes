@@ -1,0 +1,76 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <span class="govuk-caption-l">All in All+ Car Seat – lack of protection from the buckle</span>
+    <h1 class="govuk-heading-l">Has the notification risk level been validated?</h1>
+<form class="form govuk-!-margin-bottom-6" action="edit-submitted" method="post">
+<div class="govuk-form-group">
+  <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable-1" name="rebuttable" type="radio" value="no" {{ checked('multiple-casualties','no') }}>
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="rebuttable" name="rebuttable" type="radio" value="yes" {{ checked('multiple-casualties','yes') }} data-aria-controls="rebuttable-yes">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          No
+        </label>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="rebuttable-yes">
+
+          <div>
+          <span>
+    Provide a brief explanation.</span>
+    <textarea class="govuk-textarea" id="hazard-desc" name="hazard-desc" rows="3" aria-describedby="more-detail-hint" value="{{ data['hazard-desc'] }}">{{ data['hazard-desc'] }}</textarea>
+
+</div>
+
+              </div>
+
+      </div>
+      
+    </div>
+
+
+  </fieldset>
+</div>
+
+<br/>
+
+<div class="govuk-button-group">
+    <input type="submit" name="commit" value="Update risk validation" class="govuk-button" data-disable-with="Continue">
+    <a class="govuk-link" href="edit-submitted">Cancel</a>
+  </div>
+
+
+  <input class="govuk-checkboxes__input" id="section-4e-complete" name="section-4e-complete" type="checkbox" value="yes" { checked('section-4e-complete','yes') }} checked>
+
+
+  </form>
+
+
+
+
+
+{% endblock %}
