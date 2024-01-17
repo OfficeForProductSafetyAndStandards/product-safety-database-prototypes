@@ -30,7 +30,22 @@
       <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
         <b>{{ data['business-details-trading_name'] }}</b> <br/>
         <span class="govuk-body-s">
-          {{ data['role-1'] }} {{ data['role-2'] }} {{ data['role-3'] }} {{ data['role-4'] }}  {{ data['role-5'] }} {{ data['role-6'] }} {{ data['role-7'] }} {{ data['role-8a'] }} {{ data['role-8b'] }} {{ data['role-9'] }} {{ data['role-10a'] }}
+          {% set roles = [data['role-1'], data['role-2'], data['role-3'], data['role-4'], 
+                          data['role-5'], data['role-6'], data['role-7'], data['role-8a'], 
+                          data['role-8b'], data['role-9'], data['role-10a']] %}
+          
+          {% set rolesString = "" %}
+          {% for role in roles %}
+            {% if role %}
+              {% if rolesString.length > 0 %}
+                {% set rolesString = rolesString + ', ' + role %}
+              {% else %}
+                {% set rolesString = role %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        
+          {{ rolesString }}
         </span>
       </dt>
       <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
@@ -72,5 +87,6 @@
   </button>
 
 
-
+  
+  
 {% endblock %}
