@@ -34,7 +34,7 @@
 
   <div class="govuk-grid-column-one-half">
 <label class="govuk-label" for="case-search-term">
-  Enter company name, number or officer name
+  Enter Companies House number, number or officer name
   </label>
   <div class="govuk-input__wrapper opss-search__wrapper">
     <input type="text" class="govuk-input" id="searchInput">
@@ -203,7 +203,7 @@
 
     // Update the searchInfo element
     const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
-    searchInfo.innerHTML = `<p>${visibleRows} business${visibleRows === 1 ? "" : "es"} matching keyword(s) <strong>${filter}</strong>, were found`;
+    searchInfo.innerHTML = `<p><strong>${visibleRows}</strong> business${visibleRows === 1 ? "" : "es"} matching keyword(s) <strong>${filter}</strong>, were found`;
 
     // Check if there are no matching rows and display the empty state
     if (visibleRows === 0) {
