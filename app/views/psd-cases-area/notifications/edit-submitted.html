@@ -140,10 +140,10 @@
               Risk validated
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['validation'] }}
+              {{ data['validation'] or "No"}}
             </dd>
             <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="risk-level-validation">Change
+             <a class="govuk-link" href="risk-level-validation?validation=No">Change
               </a>
             </dd>
           </div>
