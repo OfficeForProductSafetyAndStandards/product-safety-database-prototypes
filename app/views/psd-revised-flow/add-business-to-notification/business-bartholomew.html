@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-l">Add businesses and their roles in the supply chain</span>
-        <h1 class="govuk-heading-l">Bartholomew Trading Ltd</h1>
+        <h1 class="govuk-heading-l">{{ data['business-details-trading_name'] }}</h1>
     </div>
 </div>
 
@@ -95,9 +95,16 @@
             {% endif %}
           {% endif %}
         {% endfor %}
-        
-        {{ rolesString }}                        </dt>
-                        <dd class="small-tag ">Registered address</dd>
+
+        {{ rolesString }}
+        {% if data['business-details-registered'] == 'option1' %}
+        <dd class="small-tag">Registered address</dd>
+        {% endif %}                   
+      
+        <dd class="small-tag" id="registeredAddressTag">Registered address</dd>              
+      
+      </dt>
+
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                         </dd>
@@ -117,7 +124,12 @@
           {% endif %}
         {% endfor %}
         
-        {{ rolesString }}                        </dt>
+        {{ rolesString }}
+        {% if data['business-details-registered'] == 'option2' %}
+        <dd class="small-tag">Registered address</dd>
+        {% endif %}           
+
+      </dt>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                         </dd>
@@ -187,7 +199,22 @@
 </form>
 
 
+<script>
+  // Function to toggle the visibility of the tag
+  function toggleRegisteredAddressTag(visible) {
+    const registeredAddressTag = document.getElementById("registeredAddressTag");
+    if (registeredAddressTag) {
+      registeredAddressTag.style.display = visible ? "block" : "none";
+    }
+  }
 
+  // Check if a query parameter named "hide" is present in the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const hideTag = urlParams.get("hide");
+  if (hideTag === "true") {
+    toggleRegisteredAddressTag(false);
+  }
+</script>
 
 
 

@@ -50,7 +50,12 @@ router.post('/edit-business-details', function (req, res) {
 
 // Edit Bartholomew //
 router.post('/edit-business-details-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew'); 
+  res.redirect('./business-bartholomew?hide=true'); 
+})
+
+// Edit Bartholomew //
+router.post('/edit-business-details-cunningham', function (req, res) {
+  res.redirect('./business-cunningham'); 
 })
 
 // Business role //
@@ -74,5 +79,17 @@ router.post('/added-business-summary', function (req, res) {
     res.status(204).end(); // <-- No redirect when not selected
   }
 });
+
+
+
+// Duplicate  //
+router.post('/test1', function (req, res) {
+  res.redirect('./test2?hide=true'); 
+})
+
+// Duplicate  //
+router.post('/test2', function (req, res) {
+  res.redirect('./test1'); 
+})
 
 module.exports = router

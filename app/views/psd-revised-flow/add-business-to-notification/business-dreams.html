@@ -83,6 +83,10 @@
         {% endfor %}
       
         {{ rolesString }}
+
+        {% if data['business-details-registered'] %}
+<dd class="small-tag ">Registered address</dd>
+{% endif %}  
                                 </dt>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
@@ -121,6 +125,8 @@
 {% endfor %}
 
 {{ rolesString }}
+
+
       </p>
             </dd>
             <dd class="govuk-summary-list__actions">

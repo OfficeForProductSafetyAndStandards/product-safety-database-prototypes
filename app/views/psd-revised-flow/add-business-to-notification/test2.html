@@ -1,0 +1,64 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="test2" method="post">
+
+
+        {{ rolesString }}
+        {% if data['option'] == 'option1' %}
+        <dd class="small-tag">Registered address</dd>
+        {% endif %}
+        
+        {{ rolesString }}
+{% if data['option'] == 'option2' %}
+<dd class="small-tag">Not registered address</dd>
+{% endif %}
+
+
+{{ rolesString }}
+<dd class="small-tag" id="registeredAddressTag">Registered address</dd>
+
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+      </form>
+
+      <script>
+        // Function to toggle the visibility of the tag
+        function toggleRegisteredAddressTag(visible) {
+          const registeredAddressTag = document.getElementById("registeredAddressTag");
+          if (registeredAddressTag) {
+            registeredAddressTag.style.display = visible ? "block" : "none";
+          }
+        }
+      
+        // Check if a query parameter named "hide" is present in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const hideTag = urlParams.get("hide");
+        if (hideTag === "true") {
+          toggleRegisteredAddressTag(false);
+        }
+      </script>
+      
+  {% endblock %}
