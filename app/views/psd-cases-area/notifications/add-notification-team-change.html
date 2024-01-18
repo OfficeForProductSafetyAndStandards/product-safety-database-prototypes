@@ -20,16 +20,16 @@
     <form action="assign-notification-overview" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" autocomplete="off"><input type="hidden" name="authenticity_token" value="YihGvrbmdaW7FEJmeMCvwSSOaPXCcNibcH8aeXq5KiqmaQWgonBn5tyns5BWveC1wccLBymkIdzJoyoKCf089w" autocomplete="off">
       
       <span class="govuk-caption-l">All in All+ Car Seat – lack of protection from the buckle</span>
-      <h1 class="govuk-heading-l">Manage notification permissions</h1>
+      <h1 class="govuk-heading-l">Manage team permissions</h1>
       <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-margin-bottom-0">For</p>
     <p class="govuk-body-l">Birmingham Council</p>
   </div>
       <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Permission level</legend><div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-permission-level-readonly-field" class="govuk-radios__input" aria-describedby="edit-notification-collaborator-form-permission-level-readonly-hint" type="radio" value="readonly" name="edit_notification_collaborator_form[permission_level]"><label for="edit-notification-collaborator-form-permission-level-readonly-field" class="govuk-label govuk-radios__label">View only</label><div class="govuk-hint govuk-radios__hint" id="edit-notification-collaborator-form-permission-level-readonly-hint">Access to view all notification details.</div></div>
-        <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-permission-level-edit-field" class="govuk-radios__input" aria-describedby="edit-notification-collaborator-form-permission-level-edit-hint" type="radio" value="edit" checked="checked" name="edit_notification_collaborator_form[permission_level]"><label for="edit-notification-collaborator-form-permission-level-edit-field" class="govuk-label govuk-radios__label">Edit</label><div class="govuk-hint govuk-radios__hint" id="edit-notification-collaborator-form-permission-level-edit-hint">Ability to modify notification details (excluding team management and notification archiving)</div></div>
+  
+        <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-permission-level-edit-field" class="govuk-radios__input" aria-describedby="edit-notification-collaborator-form-permission-level-edit-hint" type="radio" value="edit" checked="checked" name="edit_notification_collaborator_form[permission_level]"><label for="edit-notification-collaborator-form-permission-level-edit-field" class="govuk-label govuk-radios__label">Grant edit access</label><div class="govuk-hint govuk-radios__hint" id="edit-notification-collaborator-form-permission-level-edit-hint">Ability to modify notification details (excluding team management and notification archiving).</div></div>
         <div class="govuk-radios__divider">or</div>
-        <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-permission-level-delete-field" class="govuk-radios__input" aria-describedby="edit-notification-collaborator-form-permission-level-delete-hint" type="radio" value="delete" name="edit_notification_collaborator_form[permission_level]"><label for="edit-notification-collaborator-form-permission-level-delete-field" class="govuk-label govuk-radios__label">Remove access</label><div class="govuk-hint govuk-radios__hint" id="edit-notification-collaborator-form-permission-level-delete-hint">Revoke current access rights, reverting to default view-only permissions.</div></div>
+        <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-permission-level-delete-field" class="govuk-radios__input" aria-describedby="edit-notification-collaborator-form-permission-level-delete-hint" type="radio" value="delete" name="edit_notification_collaborator_form[permission_level]"><label for="edit-notification-collaborator-form-permission-level-delete-field" class="govuk-label govuk-radios__label">Remove edit access</label><div class="govuk-hint govuk-radios__hint" id="edit-notification-collaborator-form-permission-level-delete-hint">Revoke current access rights, reverting to default view-only permissions.</div></div>
 </div></fieldset></div>      <p class="govuk-body">We’ll email <b>Birmingham Council</b> to let them know that their permission level has been changed.</p>
       <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Would you like to add a custom message to the notification email?</legend><div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item"><input id="edit-notification-collaborator-form-include-message-true-field" class="govuk-radios__input" type="radio" value="true" name="edit_notification_collaborator_form[include_message]" aria-controls="edit-notification-collaborator-form-include-message-true-conditional" aria-expanded="false"><label for="edit-notification-collaborator-form-include-message-true-field" class="govuk-label govuk-radios__label">Yes, add a message</label></div><div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="edit-notification-collaborator-form-include-message-true-conditional">
@@ -38,7 +38,7 @@
 </div></fieldset></div> 
 
 <div class="govuk-button-group">
-    <input type="submit" name="commit" value="Update team" class="govuk-button" data-disable-with="Continue">
+    <input type="submit" name="commit" value="Update team access" class="govuk-button" data-disable-with="Continue">
     <a class="govuk-link" href="assign-notification-overview">Cancel</a>
   </div>
 
