@@ -48,7 +48,7 @@
                         Trading name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Bartholomew Trading Ltd" }}                      
+                        {{ data['business-details-trading_name'] }}                      
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -59,7 +59,7 @@
                         Registered or legal name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['business-details-legal_name'] if data['business-details-legal_name'] else "Bartholomew Trading Ltd" }}                      
+                        {{ data['business-details-legal_name'] }}                      
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -70,7 +70,7 @@
                         Companies House number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['business-details-ch_number'] if data['business-details-ch_number'] else "01727846" }}     <a href="#">(View Companies House record)</a>
+                        {{ data['business-details-ch_number']}}     <a href="#">(View Companies House record)</a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> address</span></a>
@@ -82,16 +82,42 @@
 
                   <dl class="govuk-summary-list">
                       <div class="govuk-summary-list__row ">
-                        65 Commercial Road, Liverpool, L5 9XE, United Kingdom 
-                        </dt>
+                        {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
+                        data['business-details-postcode'], data['business-details-country']] %}
+        
+        {% set rolesString = "" %}
+        {% for role in roles %}
+          {% if role %}
+            {% if rolesString.length > 0 %}
+              {% set rolesString = rolesString + ', ' + role %}
+            {% else %}
+              {% set rolesString = role %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        
+        {{ rolesString }}                        </dt>
                         <dd class="small-tag ">Registered address</dd>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row ">
-                        8 Porters Wood Industrial Estate, Harlow, CM20 1EG, United Kingdom 
-                        </dt>
+                        {% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
+                        data['business-details-postcode_2'], data['business-details-country_2']] %}
+        
+        {% set rolesString = "" %}
+        {% for role in roles %}
+          {% if role %}
+            {% if rolesString.length > 0 %}
+              {% set rolesString = rolesString + ', ' + role %}
+            {% else %}
+              {% set rolesString = role %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        
+        {{ rolesString }}                        </dt>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                         </dd>
@@ -105,14 +131,28 @@
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  {{ data['business-details-name'] if data['business-details-name'] else "Peter Jacobson" }}                      
+                  {{ data['business-details-name'] }}                      
                   <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] if data['business-details-job_title'] else "Chief Operations Officer" }} </p>
                 </dt>
 
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['business-details-email'] if data['business-details-email'] else "peter.jacobson@batholomewtrading.co.uk" }} </p>
-                <p class="govuk-body">{{ data['business-details-phone'] if data['business-details-phone'] else "0151 232 7318" }} </p>
-                <p class="govuk-body">{{ data['business-details-location'] if data['business-details-location'] else "65 Commercial Road, Liverpool, L5 9XE, UK" }} </p>
+                <p class="govuk-body">{{ data['business-details-email'] }} </p>
+                <p class="govuk-body">{{ data['business-details-phone'] }} </p>
+                <p class="govuk-body">{% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
+                  data['business-details-postcode_2'], data['business-details-country_2']] %}
+  
+  {% set rolesString = "" %}
+  {% for role in roles %}
+    {% if role %}
+      {% if rolesString.length > 0 %}
+        {% set rolesString = rolesString + ', ' + role %}
+      {% else %}
+        {% set rolesString = role %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  
+  {{ rolesString }}   </p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
