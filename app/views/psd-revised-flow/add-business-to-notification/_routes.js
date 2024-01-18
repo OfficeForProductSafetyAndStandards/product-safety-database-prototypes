@@ -48,6 +48,11 @@ router.post('/edit-business-details', function (req, res) {
   res.redirect('./business-dreams'); 
 })
 
+// Edit Bartholomew //
+router.post('/edit-business-details-bartholomew', function (req, res) {
+  res.redirect('./business-bartholomew'); 
+})
+
 // Business role //
 router.post('/business-role', function (req, res) {
   res.redirect('./added-business-summary'); 

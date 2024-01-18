@@ -48,10 +48,10 @@
                         Trading name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Bartholomew Trading Ltd
+                        {{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Bartholomew Trading Ltd" }}                      
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                        <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> name</span></a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -59,10 +59,10 @@
                         Registered or legal name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Bartholomew Trading Ltd
+                        {{ data['business-details-legal_name'] if data['business-details-legal_name'] else "Bartholomew Trading Ltd" }}                      
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                        <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -70,10 +70,10 @@
                         Companies House number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        01727846    <a href="#">(View Companies House record)</a>
+                        {{ data['business-details-ch_number'] if data['business-details-ch_number'] else "01727846" }}     <a href="#">(View Companies House record)</a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                        <a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> address</span></a>
                       </dd>
                     </div>
                   </dl>
@@ -81,15 +81,23 @@
                   <h2 class="govuk-heading-m govuk-!-margin-top-8">Addresses</h2>
 
                   <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        65 Commercial Road, Liverpool, L5 9XE, United Kingdom
+                      <div class="govuk-summary-list__row ">
+                        65 Commercial Road, Liverpool, L5 9XE, United Kingdom 
+                        </dt>
+                        <dd class="small-tag ">Registered address</dd>
+                        <dd class="govuk-summary-list__actions">
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row ">
+                        8 Porters Wood Industrial Estate, Harlow, CM20 1EG, United Kingdom 
                         </dt>
                         <dd class="govuk-summary-list__actions">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
-                                          </dd>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                        </dd>
                       </div>
                     </dl>
+
 
          
         <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact details</h2>
@@ -97,19 +105,19 @@
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Peter Jacobson
-                  <p class="govuk-body govuk-!-margin-top-2">Chief Operations Officer</p>
+                  {{ data['business-details-name'] if data['business-details-name'] else "Peter Jacobson" }}                      
+                  <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] if data['business-details-job_title'] else "Chief Operations Officer" }} </p>
                 </dt>
 
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">peter.jacobson@batholomewtrading.co.uk</p>
-                <p class="govuk-body">0151 232 7318</p>
-                <p class="govuk-body">65 Commercial Road, Liverpool, L5 9XE, UK</p>
+                <p class="govuk-body">{{ data['business-details-email'] if data['business-details-email'] else "peter.jacobson@batholomewtrading.co.uk" }} </p>
+                <p class="govuk-body">{{ data['business-details-phone'] if data['business-details-phone'] else "0151 232 7318" }} </p>
+                <p class="govuk-body">{{ data['business-details-location'] if data['business-details-location'] else "65 Commercial Road, Liverpool, L5 9XE, UK" }} </p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+                  <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
               </dd>
             </div>
           </dl>
@@ -135,8 +143,12 @@
     Save and continue
   </button>
 
-  <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Bartholomew Trading Ltd" }}" />
 
 </form>
+
+
+
+
+
 
   {% endblock %}

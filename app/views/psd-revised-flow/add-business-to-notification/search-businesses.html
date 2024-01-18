@@ -36,8 +36,8 @@
     </div>
   </div>
 
-</form>
 
+</form>
 
 
 <!-- Start of dynamic table -->
@@ -226,7 +226,7 @@
   {
     name: "Bartholomew Trading Ltd",
     companyNumber: "01727846",
-    address: "65 Commercial Road, Liverpool, L5 9XE, UK",
+    address: "65 Commercial Road, Liverpool, L5 9XE, UK<hr class='govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2 govuk-!-margin-top-2'>8 Porters Wood Industrial Estate, Harlow, CM20 1EG, UK",
     url: "business-bartholomew"
   },
   {
@@ -297,12 +297,12 @@
   {
     name: "Kingsbury Digital Ventures",
     companyNumber: "01549238",
-    address: "Multiple addesses (7) including:<br>67 Bartholomew Drive, Peterborough, PT5 4GH, UK",
+    address: "23 St Bartholomew Avenue, Hitchin, SG6 2HJ, UK",
   },
   {
     name: "St Bartholomew Academy",
     companyNumber: "07324573",
-    address: "23 St Bartholomew Avenue, Hitchin, SG6 2HJ, UK",
+    address: "Multiple addesses (7) including:<br>67 Bartholomew Drive, Peterborough, PT5 4GH, UK",
   },
   {
     name: "Turner and Sons",
@@ -445,6 +445,7 @@
 
   // Initialize the table with full data
   updateTableWithFilteredData(data);
+
 </script>
 
 
@@ -475,6 +476,9 @@
       </svg></a>
   </div>
 </nav>
+
+
+<input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Stu" }}" />
 
 
 {% endblock %}
