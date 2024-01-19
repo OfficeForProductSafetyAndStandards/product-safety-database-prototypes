@@ -55,6 +55,13 @@
 
                   <dl class="govuk-summary-list">
                       <div class="govuk-summary-list__row">
+
+
+                        {% if 'business-details-address_1' in data and (data['business-details-address_1'] == '' or data['business-details-address_1'] is none) %}
+                        <p class="govuk-body ">None available</p>
+                      {% endif %}
+
+                        
                         {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
                         data['business-details-postcode'], data['business-details-country']] %}
         
@@ -91,12 +98,18 @@
           <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 {{ data['business-details-name'] }}
+
+                {% if 'business-details-name' in data and (data['business-details-name'] == '' or data['business-details-name'] is none) %}
+                <p class="govuk-body ">None available</p>
+              {% endif %}
+              
                 <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] }}</p>
               </dt>
 
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">{{ data['business-details-email'] }}</p>
               <p class="govuk-body">{{ data['business-details-phone'] }}</p>
+              {% if data['business-details-name'] %}
               <p class="govuk-body">
                 {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
                 data['business-details-postcode'], data['business-details-country']] %}
@@ -113,10 +126,10 @@
 {% endfor %}
 
 {{ rolesString }} 
-
-
               </p>
-        
+              {% endif %}
+
+ 
           </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">

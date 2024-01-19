@@ -143,15 +143,21 @@
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  {{ data['business-details-name'] }}                      
-                  <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] if data['business-details-job_title'] else "Chief Operations Officer" }} </p>
+                  {{ data['business-details-name'] }}     
+
+
+                  <p class="govuk-body govuk-!-margin-top-2">{{ data['business-details-job_title'] }} </p>
                 </dt>
 
               <dd class="govuk-summary-list__value">
                 <p class="govuk-body">{{ data['business-details-email'] }} </p>
                 <p class="govuk-body">{{ data['business-details-phone'] }} </p>
-                <p class="govuk-body">{% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
-                  data['business-details-postcode_2'], data['business-details-country_2']] %}
+                {% if data['business-details-name'] %}
+
+
+
+                <p class="govuk-body">{% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
+                  data['business-details-postcode'], data['business-details-country']] %}
   
   {% set rolesString = "" %}
   {% for role in roles %}
@@ -164,7 +170,9 @@
     {% endif %}
   {% endfor %}
   
-  {{ rolesString }}   </p>
+  {{ rolesString }}   
+</p>
+{% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
