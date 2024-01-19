@@ -57,7 +57,7 @@
                       <div class="govuk-summary-list__row">
 
 
-                        {% if 'business-details-address_1' in data and (data['business-details-address_1'] == '' or data['business-details-address_1'] is none) %}
+                        {% if 'business-details-country' in data and (data['business-details-country'] == '' or data['business-details-country'] is none) %}
                         <p class="govuk-body ">None available</p>
                       {% endif %}
 
@@ -85,7 +85,7 @@
                         </dt>
                         <dd class="govuk-summary-list__actions">
                           <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
                                 </dd>
                       </div>
                     </dl>
@@ -134,7 +134,7 @@
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
             </ul>
             </dd>
           </div>
