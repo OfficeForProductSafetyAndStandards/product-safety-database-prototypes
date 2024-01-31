@@ -17,42 +17,15 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<script>
-  const checkbox = document.getElementById('business-details-registered_1');
-
-  checkbox.addEventListener('change', function () {
-    // Store checkbox state in local storage
-    localStorage.setItem('checkboxState', checkbox.checked);
-  });
-</script>
 
  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form govuk-!-margin-bottom-6" action="enter-business-details" method="post">
+    <form class="form govuk-!-margin-bottom-6" action="add-address" method="post">
 
       <span class="govuk-caption-l">{{title}}</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Enter the business details</h1>
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Company details</legend>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="trading_name">Trading name (mandatory)</label>
-    <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">The name the business is known as.</div>
-  <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-</div>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="legal_name">Registered or legal name</label>
-    <div class="govuk-hint govuk-!-font-size-16" id="legal_name-hint">As it appears on Companies House for UK businesses (usually ends in 'Ltd' or 'Limited').</div>
-  <input class="govuk-input govuk-!-width-two-thirds" id="business-details-legal_name" name="business-details-legal_name" type="text" aria-describedby="legal_name-hint">
-</div>
-
-</fieldset>
-
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Add addresses</h1>
   <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Address</legend>
-  <div id="contact-hint" class="govuk-hint">You can add more than one address.</div>
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Address 1</legend>
 
   <div class="govuk-form-group">
@@ -366,60 +339,12 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
 </select>
 </div>
 
-<div class="govuk-form-group govuk-!-margin-bottom-7">
-  <label class="govuk-label" for="registered">Registered address</label>
-  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="business-details-registered_1" name="business-details-registered" type="checkbox" value="yes" data-behaviour="exclusive">
-      <label class="govuk-label govuk-checkboxes__label" for="business-details-registered_1">
-        This is the business's registered address
-      </label>
-    </div>
-  </div>
-</div>
-
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add another address
 </button>
 
 </fieldset>
 
-<fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Contact details</legend>
-  <div id="contact-hint" class="govuk-hint ">These are the details for a contact at the business. You can add more than one contact.</div>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_name">Full name</label>
-  <input class="govuk-input govuk-!-width-two-thirds" id="business-details-name" name="business-details-name" type="text">
-</div>
-
-<div class="govuk-form-group">
-  <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_job_title">Job title or role description</label>
-<input class="govuk-input govuk-!-width-two-thirds" id="business-details-job_title" name="business-details-job_title" type="text">
-</div>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_email">Email</label>
-  <input class="govuk-input govuk-!-width-two-thirds" id="business-details-email" name="business-details-email" type="text">
-</div>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_phone_number">Phone</label>
-    <div id="telephone-number-hint" class="govuk-hint govuk-!-font-size-16">For international numbers include the country code.</div>
-    <input class="govuk-input govuk-!-width-two-thirds" aria-describedby="telephone-number" type="tel" name="business-details-phone" id="business-details-phone">
-  </div>
-
-  <div class="govuk-form-group govuk-!-width-two-thirds">
-    <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_location">Location</label>
-        <select class="govuk-select govuk-!-width-full" id="business-details-location" name="business-details-location">
-          <option selected="selected">Select a location</option>
-          <option value="address-1">Address 1</option>
-          <option value="unknown">Unknown</option>
-        </select>
-  </div>
-
-
-</fieldset>
 </div>
 </div>
 

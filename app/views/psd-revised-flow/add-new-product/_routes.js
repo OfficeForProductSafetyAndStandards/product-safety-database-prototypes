@@ -12,32 +12,14 @@ router.post('/how-to-add-business', function (req, res) {
   if (addBusiness === 'companies-house') {
     res.redirect('./search-companies-house');
   } else if (addBusiness === 'manually') {
-    res.redirect('./add-details');
+    res.redirect('./enter-business-details');
   } else {
     res.status(204).end(); // <-- No redirect when not selected
   }
 });
 
-
-// Add business details  //
-router.post('/add-business-details', function (req, res) {
-  res.redirect('./add-address'); 
-})
-
-// Add address  //
-router.post('/add-address', function (req, res) {
-  res.redirect('./add-contact'); 
-})
-
-// Duplicate  //
-router.post('/add-contact', function (req, res) {
-  res.redirect('./business-blank'); 
-})
-
-
-
 // Manual //
-router.post('/enter-details', function (req, res) {
+router.post('/enter-business-details', function (req, res) {
   res.redirect('./business-blank'); 
 })
 
@@ -64,55 +46,6 @@ router.post('/business-blank', function (req, res) {
 // Edit details //
 router.post('/edit-business-details', function (req, res) {
   res.redirect('./business-dreams'); 
-})
-
-// Edit Dream details //
-router.post('/edit-details-dream', function (req, res) {
-  res.redirect('./business-dreams'); 
-})
-
-// Edit Dream address //
-router.post('/edit-address-dream', function (req, res) {
-  res.redirect('./business-dreams'); 
-})
-
-// Edit Dream contact //
-router.post('/edit-contact-dream', function (req, res) {
-  res.redirect('./business-dreams'); 
-})
-
-
-
-
-
-// Edit Bartholomew //
-router.post('/edit-business-details-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-details-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-address1-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-address2-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-contact-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-business-details-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
 })
 
 // Edit Bartholomew //
@@ -158,7 +91,5 @@ router.post('/test1', function (req, res) {
 router.post('/test2', function (req, res) {
   res.redirect('./test1'); 
 })
-
-
 
 module.exports = router

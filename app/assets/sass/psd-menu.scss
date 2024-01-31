@@ -891,3 +891,19 @@ ul#navigation.psd-header__navigation {
   padding: 2px 6px;
   margin-left: 15px;
 }
+
+.how-to-photo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px; 
+}
+
+.how-to-photo-column {
+  width: 204px; 
+}
+
+.button-container {
+  display: flex;
+  align-items: baseline;
+  gap: 10px; 
+}
