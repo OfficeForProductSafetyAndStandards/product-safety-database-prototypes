@@ -24,7 +24,7 @@
 </div>
 
       
-                <h2 class="govuk-heading-m">Company identification</h2>
+                <h2 class="govuk-heading-m">Business details</h2>
 
                 <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
@@ -35,7 +35,7 @@
                         {{ data['business-details-trading_name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> name</span></a>
+                        <a class="govuk-link" href="edit-details-dream">Change<span class="govuk-visually-hidden"> name</span></a>
                       </dd>
                     </div>
 
@@ -47,7 +47,7 @@
                         {{ data['business-details-legal_name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                        <a class="govuk-link" href="edit-details-dream">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                       </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -55,10 +55,10 @@
                         Companies House number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['business-details-ch_number'] }}    <a href="#">(View Companies House record)</a>
+                        {{ data['business-details-ch_number'] }}    <a href="#">(View on Companies House)</a>
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> address</span></a>
+                        <a class="govuk-link" href="edit-details-dream">Change<span class="govuk-visually-hidden"> address</span></a>
                       </dd>
                     </div>
                   </dl>
@@ -89,10 +89,12 @@
 {% endif %}  
                                 </dt>
                         <dd class="govuk-summary-list__actions">
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+                          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-address-dream">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
                         </dd>
                       </div>
+                      <p class="govuk-body govuk-!-margin-top-4">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another address</a>
+                      </p>
                     </dl>
 
 
@@ -134,10 +136,12 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
-                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-business-details">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-contact-dream">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
             </dd>
           </div>
+          <p class="govuk-body govuk-!-margin-top-4">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Add another contact</a>
+          </p>
         </dl>
 
 
@@ -145,7 +149,7 @@
       <form class="form govuk-!-margin-top-4" action="business-dreams" method="post">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
+          Use business
           </button>
           
 

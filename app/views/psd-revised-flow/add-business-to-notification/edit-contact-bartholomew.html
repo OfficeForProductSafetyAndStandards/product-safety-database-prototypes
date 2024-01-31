@@ -1,0 +1,72 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Upload multiple products" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form govuk-!-margin-bottom-6" action="edit-contact-bartholomew" method="post">
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Edit contact details</h1>
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_name">Full name</label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-name" name="business-details-name" type="text" value="{{ data['business-details-name'] }}">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_job_title">Job title or role description</label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="business-details-job_title" name="business-details-job_title" type="text" value="{{ data['business-details-job_title'] }}">
+        </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_email">Email</label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-email" name="business-details-email" type="text" value="{{ data['business-details-email'] }}">
+        </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add_business_to_case_form_contacts_attributes_0_phone_number">Phone</label>
+            <div id="telephone-number-hint" class="govuk-hint govuk-!-font-size-16">For international numbers include the country code.</div>
+            <input class="govuk-input govuk-!-width-two-thirds" aria-describedby="telephone-number" type="tel" name="business-details-phone" id="business-details-phone" value="{{ data['business-details-phone'] }}">
+          </div>
+        
+          <div class="govuk-form-group govuk-!-width-two-thirds">
+            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_location">Location</label>
+                <select class="govuk-select govuk-!-width-full" id="business-details-location" name="business-details-location">
+                  <option value="selected">Select a location</option>
+                  <option selected="selected" value="address-1">Address 1</option>
+                  <option value="unknown">Unknown</option>
+                </select>
+          </div>
+        
+        
+     <div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Save
+  </button>
+
+</div>
+
+
+</form>
+
+
+
+{% endblock %}

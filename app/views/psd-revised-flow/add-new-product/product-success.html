@@ -1,0 +1,45 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    Product record created
+                  </h1>
+                  <div class="govuk-panel__body">
+                    Your reference number<br><strong>psd-702</strong>
+                  </div>
+                </div>
+                <p class="govuk-body">The product record will now appear in search results for <a href="#">all products</a>.</p>
+                <h2 class="govuk-heading-m">What happens next</h2>
+                <p class="govuk-body">
+                  You can now create a notification for this product or add it to an existing notification.
+                </p>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link">View the product record</a> 
+                </p>
+              </div>
+            </div>
+          </main>
+        </div>
+
+</form>
+
+  {% endblock %}

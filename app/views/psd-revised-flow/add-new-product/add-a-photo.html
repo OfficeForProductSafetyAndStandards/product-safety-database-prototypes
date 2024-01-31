@@ -1,0 +1,120 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="add-a-photo" method="post">
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Add a product image</h1>
+
+      <p>Where possible we recommend uploading an image from the product website or online seller but you can also submit your own photos.</p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help on submitting the best photos
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Show the full assembled product</li>
+            <li>Remove any packaging</li>
+            <li>Ensure the product is evenly lit</li>
+            <li>Photograph on a plain light-coloured background </li>
+          </ul>
+          <div class="how-to-photo-container">
+            <div class="how-to-photo-column">
+              <img src="../../public/images/carseat-1.png" alt="Car seat 1" width="195" height="250">
+              <div class="how-to-photo-container govuk-!-margin-top-1">
+              <img src="../../public/images/tick.svg" alt="Tick">
+              <p class="govuk-body-s">Plain light-coloured background</p>    
+              </div>
+            </div>
+            <div class="how-to-photo-column">
+              <img src="../../public/images/carseat-2.png" alt="Car seat 2" width="195" height="250">
+              <div class="how-to-photo-container govuk-!-margin-top-1">
+              <img src="../../public/images/cross.svg" alt="Cross">
+              <p class="govuk-body-s">Dark or on a patterned background</p>   
+            </div> 
+            </div>
+            <div class="how-to-photo-column">
+              <img src="../../public/images/carseat-3.png" alt="Car seat 2" width="195" height="250">
+              <div class="how-to-photo-container govuk-!-margin-top-1">
+              <img src="../../public/images/cross.svg" alt="Cross">
+              <p class="govuk-body-s">Unassembled or in packaging</p>   
+            </div> 
+            </div>
+          </div>
+
+        </div>
+      </details>
+
+
+    <h2 class="govuk-heading-m">Upload your photo</h2>
+    <h3 class="govuk-heading-s">Your photo must be:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a jpg or jpeg file</li>
+      <li>at least 50KB and no more than 10MB</li>
+    </ul>
+
+    <div class="button-container">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Choose your photo
+      </button>
+        <p class="govuk-body-m">or</p>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Skip this step  
+      </button>
+    </div>
+
+  </form>
+
+    <form id="uploadForm" enctype="multipart/form-data" style="display:none;">
+      <input type="file" id="fileInput" name="file" onchange="uploadFile()">
+  </form>
+  <button type="button" class="govuk-button" onclick="document.getElementById('fileInput').click()">Choose your photo</button>
+  
+
+
+<script>
+
+function uploadFile() {
+    var file = document.getElementById('fileInput').files[0];
+    if (!file) {
+        return; // No file selected
+    }
+
+    var formData = new FormData();
+    formData.append('file', file);
+
+    fetch('YOUR_SERVER_ENDPOINT', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        window.location.href = 'uploading-photo'; // Redirect to new page
+    })
+    .catch(error => console.error(error));
+}
+
+</script>
+
+  {% endblock %}
