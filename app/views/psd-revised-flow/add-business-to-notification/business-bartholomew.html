@@ -23,113 +23,77 @@
 </div>
 
 <div class="govuk-tabs" data-module="govuk-tabs">
-    <h2 class="govuk-tabs__title">
-        Contents
-    </h2>
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a href="#full-detail" class="govuk-tabs__tab">Business details</a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a href="#locations" class="govuk-tabs__tab">Issued notifications (4)</a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a href="#trading" class="govuk-tabs__tab">Associated businesses (2)</a>
-      </li>
-    </ul>
-    <div id="full-detail" class="govuk-tabs__panel">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full-from-desktop">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a href="#full-detail" class="govuk-tabs__tab">Business details</a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a href="#locations" class="govuk-tabs__tab">Issued notifications (4)</a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a href="#trading" class="govuk-tabs__tab">Associated businesses (2)</a>
+    </li>
+  </ul>
+  <div id="full-detail" class="govuk-tabs__panel">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-from-desktop">
 
-          <h2 class="govuk-heading-m">Business details </h2>
+        <h2 class="govuk-heading-m">Business details </h2>
 
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Trading name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['business-details-trading_name'] }}                      
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="edit-details-bartholomew">Change<span class="govuk-visually-hidden"> name</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Registered or legal name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['business-details-legal_name'] }}                      
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="edit-details-bartholomew"><span class="govuk-visually-hidden"> date of birth</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Companies House number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['business-details-ch_number']}}     <a href="#">(View on Companies House)</a>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="edit-details-bartholomew"><span class="govuk-visually-hidden"> address</span></a>
-              </dd>
-            </div>
-          </dl>
-
-          <h2 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-3">Addresses</h2>
-
-          <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All selected addresses will be added to the notification.</div>
-          
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row ">
-
-              <label class="custom-checkbox govuk-!-margin-right-7">
-                <input type="checkbox" checked/>
-                <span class="checkmark"></span>
-              </label>
-
-              {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
-              data['business-details-postcode'], data['business-details-country']] %}
-        
-              {% set rolesString = "" %}
-              {% for role in roles %}
-              {% if role %}
-              {% if rolesString.length > 0 %}
-              {% set rolesString = rolesString + ', ' + role %}
-              {% else %}
-              {% set rolesString = role %}
-              {% endif %}
-              {% endif %}
-              {% endfor %}
-
-              {{ rolesString }}
-              {% if data['business-details-registered'] == 'option1' %}
-              <dd class="small-tag">Registered address</dd>
-              {% endif %}                   
-      
-              <dd class="small-tag" id="registeredAddressTag">Registered address</dd>              
-      
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Trading name
             </dt>
-
+            <dd class="govuk-summary-list__value">
+              {{ data['business-details-trading_name'] }}                      
+            </dd>
             <dd class="govuk-summary-list__actions">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-address1-bartholomew"><span class="govuk-visually-hidden"> contact details</span></a></li>
+              <a class="govuk-link" href="edit-details-bartholomew">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row ">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Registered or legal name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['business-details-legal_name'] }}                      
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="edit-details-bartholomew"><span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Companies House number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['business-details-ch_number']}}     <a href="#">(View on Companies House)</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="edit-details-bartholomew"><span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-3">Addresses</h2>
+
+        <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All selected addresses will be added to the notification.</div>
+          
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row ">
 
             <label class="custom-checkbox govuk-!-margin-right-7">
               <input type="checkbox" checked/>
               <span class="checkmark"></span>
             </label>
 
-
-            {% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
-            data['business-details-postcode_2'], data['business-details-country_2']] %}
-    
+            {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
+            data['business-details-postcode'], data['business-details-country']] %}
+        
             {% set rolesString = "" %}
             {% for role in roles %}
             {% if role %}
@@ -140,117 +104,147 @@
             {% endif %}
             {% endif %}
             {% endfor %}
-        
-            {{ rolesString }}
-            {% if data['business-details-registered'] == 'option2' %}
-            <dd class="small-tag">Registered address</dd>
-            {% endif %}           
 
+            {{ rolesString }}
+            {% if data['business-details-registered'] == 'option1' %}
+            <dd class="small-tag">Registered address</dd>
+            {% endif %}                   
+      
+            <dd class="small-tag" id="registeredAddressTag">Registered address</dd>              
+      
           </dt>
+
           <dd class="govuk-summary-list__actions">
-            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-address2-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-address1-bartholomew"><span class="govuk-visually-hidden"> contact details</span></a></li>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row ">
+
+          <label class="custom-checkbox govuk-!-margin-right-7">
+            <input type="checkbox" checked/>
+            <span class="checkmark"></span>
+          </label>
+
+          {% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
+          data['business-details-postcode_2'], data['business-details-country_2']] %}
+    
+          {% set rolesString = "" %}
+          {% for role in roles %}
+          {% if role %}
+          {% if rolesString.length > 0 %}
+          {% set rolesString = rolesString + ', ' + role %}
+          {% else %}
+          {% set rolesString = role %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        
+          {{ rolesString }}
+          {% if data['business-details-registered'] == 'option2' %}
+          <dd class="small-tag">Registered address</dd>
+          {% endif %}           
+
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-address2-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+        </dd>
+      </div>
+      <p class="govuk-body govuk-!-margin-top-4">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another address</a>
+      </p>
+    </dl>
+   
+    <h2 class="govuk-heading-m govuk-!-margin-top-8  govuk-!-margin-bottom-3">Contact details</h2>
+
+    <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">This contact will be added to the notification unless you choose to add more contacts.</div>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{ data['business-details-name'] }}     
+          <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">{{ data['business-details-job_title'] }} </p>
+        </dt>
+
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['business-details-email'] }} </p>
+          <p class="govuk-body">{{ data['business-details-phone'] }} </p>
+        </dd>
+
+        <dd class="govuk-summary-list__actions ">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item "><a class="govuk-link" href="edit-contact-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
           </dd>
         </div>
         <p class="govuk-body govuk-!-margin-top-4">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">Add another address</a>
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Add another contact</a>
         </p>
       </dl>
-   
-      <h2 class="govuk-heading-m govuk-!-margin-top-8  govuk-!-margin-bottom-3">Contact details</h2>
-
-      <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">This contact will be added to the notification unless you choose to add more contacts.</div>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ data['business-details-name'] }}     
-            <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">{{ data['business-details-job_title'] }} </p>
-          </dt>
-
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{ data['business-details-email'] }} </p>
-            <p class="govuk-body">{{ data['business-details-phone'] }} </p>
-          </dd>
-
-          <dd class="govuk-summary-list__actions ">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item "><a class="govuk-link" href="edit-contact-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
-            </dd>
-          </div>
-          <p class="govuk-body govuk-!-margin-top-4">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">Add another contact</a>
-          </p>
-        </dl>
-      </div>
     </div>
-
-    </div>
-
-    <div id="locations" class="govuk-tabs__panel">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full-from-desktop">
-        </div>
-      </div>
-    </div>
-
-    <div id="trading" class="govuk-tabs__panel govuk-tabs__panel--hidden">
-      <div class="govuk-grid-row ">
-        <div class="govuk-grid-column-full-from-desktop ">
-          <h2 class="govuk-heading-m ">Associated businesses</h2>
-          
-          <div class="govuk-inset-text  govuk-grid-column-three-quarters govuk-!-margin-top-2 govuk-!-margin-bottom-4">
-            These businesses operate under different trading names but are registered as the same legal entity.
-                    </div>
-         
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Trading name</th>
-                <th scope="col" class="govuk-table__header">Number of notifications</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" ><a href="#">Bartholomew Machinery</a></td>
-                <td class="govuk-table__cell">1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" ><a href="#">Bartholomew Plastics</a></td>
-                <td class="govuk-table__cell">3</td>
-              </tr>
-            </tbody>
-          </table>
-          
-        </div>
-      </div>
-    </div>
-    
   </div>
 
-  <form class="form" action="business-bartholomew" method="post">
+</div>
 
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Use business
-    </button>
+<div id="locations" class="govuk-tabs__panel">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-from-desktop">
+    </div>
+  </div>
+</div>
 
-  </form>
+<div id="trading" class="govuk-tabs__panel govuk-tabs__panel--hidden">
+  <div class="govuk-grid-row ">
+    <div class="govuk-grid-column-full-from-desktop ">
+      <h2 class="govuk-heading-m ">Associated businesses</h2>
+          
+      <div class="govuk-inset-text  govuk-grid-column-three-quarters govuk-!-margin-top-2 govuk-!-margin-bottom-4">
+        These businesses operate under different trading names but are registered as the same legal entity.
+      </div>
+         
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Trading name</th>
+            <th scope="col" class="govuk-table__header">Number of notifications</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" ><a href="#">Bartholomew Machinery</a></td>
+            <td class="govuk-table__cell">1</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" ><a href="#">Bartholomew Plastics</a></td>
+            <td class="govuk-table__cell">3</td>
+          </tr>
+        </tbody>
+      </table>
+          
+    </div>
+  </div>
+</div>
+</div>
 
-  <script>
-    // Function to toggle the visibility of the tag
-    function toggleRegisteredAddressTag(visible) {
-      const registeredAddressTag = document.getElementById("registeredAddressTag");
-      if (registeredAddressTag) {
-        registeredAddressTag.style.display = visible ? "block" : "none";
-      }
+<form class="form" action="business-bartholomew" method="post">
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Use business
+  </button>
+
+</form>
+
+<script>
+  function toggleRegisteredAddressTag(visible) {
+    const registeredAddressTag = document.getElementById("registeredAddressTag");
+    if (registeredAddressTag) {
+      registeredAddressTag.style.display = visible ? "block" : "none";
     }
+  }
 
-    // Check if a query parameter named "hide" is present in the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const hideTag = urlParams.get("hide");
-    if (hideTag === "true") {
-      toggleRegisteredAddressTag(false);
-    }
-  </script>
-
+  const urlParams = new URLSearchParams(window.location.search);
+  const hideTag = urlParams.get("hide");
+  if (hideTag === "true") {
+    toggleRegisteredAddressTag(false);
+  }
+</script>
 
 {% endblock %}
