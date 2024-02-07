@@ -81,10 +81,19 @@
             </div>
           </dl>
 
-          <h2 class="govuk-heading-m govuk-!-margin-top-8">Addresses</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-3">Addresses</h2>
 
+          <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All addresses will be added to the notification unless you select which ones to add.</div>
+          
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row ">
+
+              <label class="custom-checkbox govuk-!-margin-right-7">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+
+
               {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
               data['business-details-postcode'], data['business-details-country']] %}
         
@@ -113,6 +122,14 @@
             </dd>
           </div>
           <div class="govuk-summary-list__row ">
+
+
+            <label class="custom-checkbox govuk-!-margin-right-7">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+
+
             {% set roles = [data['business-details-address_1_2'], data['business-details-address_2_2'], data['business-details-city_2'], data['business-details-county_2'], 
             data['business-details-postcode_2'], data['business-details-country_2']] %}
     
@@ -142,7 +159,9 @@
         </p>
       </dl>
    
-      <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact details</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-8  govuk-!-margin-bottom-3">Contact details</h2>
+
+      <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">This contact will be added to the notification unless you choose to add more contacts.</div>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -255,5 +274,7 @@
       toggleRegisteredAddressTag(false);
     }
   </script>
+
+
 
 {% endblock %}

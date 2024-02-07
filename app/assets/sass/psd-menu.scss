@@ -907,3 +907,31 @@ ul#navigation.psd-header__navigation {
   align-items: baseline;
   gap: 10px;
 }
+
+/* Base style for the custom checkbox */
+.custom-checkbox input[type="checkbox"] {
+  visibility: hidden; /* Hide the default checkbox */
+  position: absolute; /* Remove checkbox from the document flow */
+}
+
+.custom-checkbox .checkmark {
+  position:absolute;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #0B0C0C;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Style for the tick mark using :after pseudo-element */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark:after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 9px;
+  border: solid #0B0C0C;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
