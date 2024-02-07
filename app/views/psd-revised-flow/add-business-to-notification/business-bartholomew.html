@@ -81,16 +81,15 @@
 
           <h2 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-3">Addresses</h2>
 
-          <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All addresses will be added to the notification unless you select which ones to add.</div>
+          <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All selected addresses will be added to the notification.</div>
           
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row ">
 
               <label class="custom-checkbox govuk-!-margin-right-7">
-                <input type="checkbox" />
+                <input type="checkbox" checked/>
                 <span class="checkmark"></span>
               </label>
-
 
               {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
               data['business-details-postcode'], data['business-details-country']] %}
@@ -123,7 +122,7 @@
 
 
             <label class="custom-checkbox govuk-!-margin-right-7">
-              <input type="checkbox" />
+              <input type="checkbox" checked/>
               <span class="checkmark"></span>
             </label>
 
