@@ -908,10 +908,9 @@ ul#navigation.psd-header__navigation {
   gap: 10px;
 }
 
-/* Base style for the custom checkbox */
 .custom-checkbox input[type="checkbox"] {
-  visibility: hidden; /* Hide the default checkbox */
-  position: absolute; /* Remove checkbox from the document flow */
+  visibility: hidden;
+  position: absolute;
 }
 
 .custom-checkbox .checkmark {
@@ -923,7 +922,6 @@ ul#navigation.psd-header__navigation {
   margin-right: 10px;
 }
 
-/* Style for the tick mark using :after pseudo-element */
 .custom-checkbox input[type="checkbox"]:checked + .checkmark:after {
   content: '';
   position: absolute;
