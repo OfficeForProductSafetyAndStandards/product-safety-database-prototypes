@@ -48,29 +48,6 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
             <input class="govuk-input govuk-!-width-two-thirds" aria-describedby="telephone-number" type="tel" name="business-details-phone" id="business-details-phone" value="{{ data['business-details-phone'] }}">
           </div>
         
-          <div class="govuk-form-group govuk-!-width-two-thirds">
-            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_location">Location</label>
-                <select class="govuk-select govuk-!-width-full" id="business-details-location" name="business-details-location">
-                  <option value="selected">Select a location</option>
-                  <option value="address-1">{% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
-                    data['business-details-postcode'], data['business-details-country']] %}
-    
-    {% set rolesString = "" %}
-    {% for role in roles %}
-      {% if role %}
-        {% if rolesString.length > 0 %}
-          {% set rolesString = rolesString + ', ' + role %}
-        {% else %}
-          {% set rolesString = role %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    
-    {{ rolesString }} </option>
-                  <option value="unknown">Address not known</option>
-                </select>
-          </div>
-                
         
      <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button">
