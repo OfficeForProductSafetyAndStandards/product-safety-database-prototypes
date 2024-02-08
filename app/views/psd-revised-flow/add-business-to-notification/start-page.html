@@ -1,0 +1,45 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<h3 class="govuk-heading-m">Add businesses to notification</h3>
+
+
+  <p><a href="psd-revised-flow/add-business-to-notification/notification-task-list">
+    Main flow
+  </a></p>
+
+  <br>
+
+  <h3 class="govuk-heading-m">Duplicates</h3>
+  
+  <p><a href="/psd-revised-flow/add-business-to-notification/duplicate-business-ch-single.html">
+    Companies House - single result
+  </a></p>
+  
+  <p><a href="/psd-revised-flow/add-business-to-notification/duplicate-business-ch-multiple.html">
+    Companies House - multiple results
+  </a></p>
+
+  <p><a href="/psd-revised-flow/add-business-to-notification/duplicate-business-add-single.html">
+    Manual add - single result
+  </a></p>
+  
+  <p><a href="/psd-revised-flow/add-business-to-notification/duplicate-business-add-multiple.html">
+    Manual add - multiple results
+  </a></p>
+  
+  {% endblock %}

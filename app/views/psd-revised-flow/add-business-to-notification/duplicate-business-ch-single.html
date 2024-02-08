@@ -1,0 +1,93 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Business role – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain " %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="duplicate-business-ch-single" method="post"> 
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l ">{{title}}</span>
+        This business is already in our database
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-8">This business has the same Registered name and Companies House number.</p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            <h1 class="govuk-heading-s">Trading name</h1>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dream Manufacturing 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            <h1 class="govuk-heading-s">Registered or legal name</h1>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DREAM MANUFACTURING LTD
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            <h1 class="govuk-heading-s">Companies House number</h1>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01169426
+          </dd>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-2">
+          <a href="#" class="govuk-link">View product record</a>
+        </p>
+      </dl>
+
+      <div class="govuk-form-group govuk-!-margin-top-6">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <h3 class="govuk-heading-m">
+              What would you like to do?
+            </h3>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+                Create new business using the Companies House record 
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Only do this if the new business is the same legal entity operating under a different trading name.
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn-2">
+                Use the business in the Product Safety Database
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dream Manufacturing" }}" />
+
+    </form>
+
+{% endblock %}
