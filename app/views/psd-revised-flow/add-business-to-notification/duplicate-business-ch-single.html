@@ -25,37 +25,88 @@
         This business is already in our database
       </h1>
 
-      <p class="govuk-body govuk-!-margin-top-8">This business has the same Registered name and Companies House number.</p>
+      <p class="govuk-body govuk-!-margin-top-8">There is <strong>1</strong> trading name associated with this business.</p>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            <h1 class="govuk-heading-s">Trading name</h1>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Dream Manufacturing 
-          </dd>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Dreamtime Bedding</h2>
+
+      <details class="govuk-details govuk-!-margin-bottom-2">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Business details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                <h1 class="govuk-heading-s">Trading name</h1>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Dreamtime Bedding 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                <h1 class="govuk-heading-s">Registered or legal name</h1>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                DREAMTIME BEDDING LTD
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                <h1 class="govuk-heading-s">Companies House number</h1>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                012823551
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-6">Addresses</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                65 Commercial Road, Liverpool, L5 9XE, United Kingdom 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                8 Valley Industrial Estate, Harlow, CM20 1EG, United Kingdom 
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-6">Contact details</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Aisling Patterson     
+                <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">Head of Marketing </p>
+              </dt>
+      
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-margin-bottom-2">aisling.patterson@batholomewtrading.co.uk </p>
+                <p class="govuk-body ">01279 443196 </p>
+              </dd>
+      
+            </div>
+          </dl>    
+
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            <h1 class="govuk-heading-s">Registered or legal name</h1>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            DREAM MANUFACTURING LTD
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            <h1 class="govuk-heading-s">Companies House number</h1>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            01169426
-          </dd>
-        </div>
-        <p class="govuk-body govuk-!-margin-top-2">
-          <a href="#" class="govuk-link">View business record</a>
-        </p>
-      </dl>
+      </details>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-8">
+
 
       <div class="govuk-form-group govuk-!-margin-top-6">
         <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
@@ -69,13 +120,13 @@
                 Create new business using the Companies House record 
               </label>
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                Only do this if the new business is the same legal entity operating under a different trading name.
+                Only do this if the new business is the same legal entity operating under a different trading name.              
               </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
               <label class="govuk-label govuk-radios__label" for="signIn-2">
-                Use the business in the Product Safety Database
+                Use Dreamtime Bedding
               </label>
             </div>
           </div>
@@ -86,7 +137,7 @@
         Continue
       </button>
 
-      <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dream Manufacturing" }}" />
+      <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dreamtime Bedding" }}" />
 
     </form>
 
