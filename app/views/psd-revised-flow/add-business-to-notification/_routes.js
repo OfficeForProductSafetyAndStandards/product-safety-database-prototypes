@@ -162,22 +162,22 @@ router.post('/test2', function (req, res) {
 
 // Duplicate CH single //
 router.post('/duplicate-business-ch-single', function (req, res) {
-  res.redirect('./business-role'); 
+  res.redirect('./business-dreamtime'); 
 })
 
 // Duplicate CH single //
 router.post('/duplicate-business-ch-multiple', function (req, res) {
-  res.redirect('./business-role'); 
+  res.redirect('./business-dreamtime'); 
 })
 
 // Duplicate CH single //
 router.post('/duplicate-business-add-single', function (req, res) {
-  res.redirect('./business-role'); 
+  res.redirect('./business-dreamtime'); 
 })
 
 // Duplicate CH single //
 router.post('/duplicate-business-add-multiple', function (req, res) {
-  res.redirect('./business-role'); 
+  res.redirect('./business-dreamtime'); 
 })
 
 
