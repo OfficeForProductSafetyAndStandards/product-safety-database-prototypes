@@ -67,7 +67,7 @@
           <dl class="govuk-summary-list govuk-!-margin-bottom-4">
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__value">
-                65 Commercial Road, Liverpool, L5 9XE, United Kingdom 
+                101-103 Parish Road, Birmingham, B6 9JS, United Kingdom 
               </dd>
             </div>
           </dl>
@@ -144,7 +144,7 @@
       
               <dd class="govuk-summary-list__value">
                 <p class="govuk-body govuk-!-margin-bottom-2">aisling.patterson@batholomewtrading.co.uk </p>
-                <p class="govuk-body ">01279 443196 </p>
+                <p class="govuk-body ">0121 326 4526 </p>
               </dd>
       
             </div>
@@ -233,8 +233,22 @@
         Continue
       </button>
   
-      <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dreamtime Bedding" }}" />
   
-    </form>
+
+    <input type="hidden" name="business-details-trading_name" value="{{ data['business-details-trading_name'] if data['business-details-trading_name'] else "Dreamtime Bedding" }}" />
+    <input type="hidden" name="business-details-legal_name" value="{{ data['business-details-legal_name'] if data['business-details-legal_name'] else "DREAMTIME BEDDING LTD" }}" />
+    <input type="hidden" name="business-details-ch_number" value="{{ data['business-details-ch_number'] if data['business-details-ch_number'] else "012823551" }}" />
+    <input type="hidden" name="business-details-address_1" value="{{ data['business-details-address_1'] if data['business-details-address_1'] else "101-103 Parish Road" }}" />
+    <input type="hidden" name="business-details-address_2" value="{{ data['business-details-address_2'] if data['business-details-address_2'] else "" }}" />
+    <input type="hidden" name="business-details-city" value="{{ data['business-details-city'] if data['business-details-city'] else "Birmingham" }}" />
+    <input type="hidden" name="business-details-county" value="{{ data['business-details-county'] if data['business-details-county'] else "" }}" />
+    <input type="hidden" name="business-details-postcode" value="{{ data['business-details-postcode'] if data['business-details-postcode'] else "B6 9JS" }}" />
+    <input type="hidden" name="business-details-country" value="{{ data['business-details-country'] if data['business-details-country'] else "United Kingdom" }}" />
+    <input type="hidden" name="business-details-name" value="{{ data['business-details-name'] if data['business-details-name'] else "Aisling Patterson" }}" />
+    <input type="hidden" name="business-details-job_title" value="{{ data['business-details-job_title'] if data['business-details-job_title'] else "Head of Marketing" }}" />
+    <input type="hidden" name="business-details-email" value="{{ data['business-details-email'] if data['business-details-email'] else "aisling.patterson@batholomewtrading.co.uk" }}" />
+    <input type="hidden" name="business-details-phone" value="{{ data['business-details-phone'] if data['business-details-phone'] else "0121 326 4526" }}" />
+  </form>
+
 
 {% endblock %}
