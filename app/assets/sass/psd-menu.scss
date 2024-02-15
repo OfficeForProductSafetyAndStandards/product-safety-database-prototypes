@@ -895,7 +895,7 @@ ul#navigation.psd-header__navigation {
 .how-to-photo-container {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
 }
 
 .how-to-photo-column {
@@ -946,20 +946,27 @@ ul#navigation.psd-header__navigation {
 
 .custom-table {
   width: 100%;
-  border-collapse: collapse;
-  border-top: 1px solid #b1b4b6;
-  border-bottom: 1px solid #b1b4b6;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #0b0c0c;
+  border-bottom: 1px solid #0b0c0c;
+  table-layout: fixed; 
 }
 
 .custom-table td {
   padding: 10px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #b1b4b6; 
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
 }
 
 .table-image {
   width: 90px;
   height: 90px;
   display: block;
-  margin-right: 20px;
 }
 
 .table-content {
@@ -971,3 +978,23 @@ ul#navigation.psd-header__navigation {
   padding: 10px 0;
   text-align: right;
 }
+
+.custom-table td:first-child {
+  width: 110px; 
+  text-align: center; 
+}
+
+.custom-table td.table-content {
+  width: 450px;
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+}
+
+.summary-content img {
+  margin-right: 5px; /* Adjust margin as needed */
+}
+
+

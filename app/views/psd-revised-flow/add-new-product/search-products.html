@@ -29,7 +29,7 @@
 
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group bottom-box opss-text-align-right opss-text-align-bottom">
-          <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3" data-module="govuk-button">
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-4" data-module="govuk-button">
             Add a new product
           </button>
           <p class="govuk-body">
@@ -42,9 +42,12 @@
   </form>
 
 
+
+
+
 <!-- Search -->
 
-<section class="govuk-grid-column-three-quarters govuk-!-padding-0 govuk-!-margin-top-2" id="page-content">
+<section class="govuk-grid-column-three-quarters govuk-!-padding-0 govuk-!-margin-bottom-8 govuk-!-margin-top-0" id="page-content">
 
   <div class="govuk-grid-column-full">
     <label class="govuk-label" for="case-search-term">
@@ -60,69 +63,140 @@
 </div>
 
 
-<!-- Break -->
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-  
-<!-- Sort -->
 
-<section class="govuk-grid-row govuk-!-margin-top-2" id="page-content">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group">
-          <p>Showing 1-10 of <strong>4456</strong> results</p>
-        </div>
-      </div>
-
-      <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group opss-text-align-right">
-          <div class="govuk-label" for="sort">
-            Sort by
-            <select class="govuk-select" id="sort" name="sort">
-              <option value="recently-added">Recently added</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
 
 <!-- Filters & table -->
 
-<section class="govuk-grid-row " id="page-content">
+<section class="govuk-grid-row" id="page-content">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
-          <p>sjkkjfsdf skdfhsdkfjh sdkfh sdkfhsd fksdjfh sdkfh sdlfh sdlf shdflsdkhf lsdhfk sldf ds</p>
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <details id="teamDetails">
+                <summary class="summary-content govuk-!-margin-bottom-3 ">
+                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('teamDetails')">Team</a>
+                </summary>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      My products
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      My team’s products
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <details id="categoryDetails">
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails')">Category</a>
+                </summary>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Electrical
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Fragrances
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Furniture
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Home appliances
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Sport & travel
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-summary-list__row">
+              <details>
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state">Sub-category</a>
+                </summary>
+              </details>
+            </div>
+          </dl>
         </div>
       </div>
+            
 
-      <div class="govuk-grid-column-two-thirds">
+  
+
+      <div class="govuk-grid-column-two-thirds ">
+
+        <section class="govuk-grid-row" id="page-content">
+          <div class="govuk-grid-column-full ">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group">
+                  <p class="govuk-body-s govuk-!-margin-top-2">Showing 1-10 of <strong>4456</strong> results</p>
+                </div>
+              </div>
+        
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group opss-text-align-right ">
+                  <div class="govuk-label " for="sort">
+                    Sort by
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="recently-added">Recently added</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
         <div class="govuk-form-group opss-text-align-right">
-
           <table class="custom-table">
             <tbody>
               <tr>
                 <td>
-                  <img src="../../../assets/images/generic-product-image.png" alt="Image" class="table-image">
+                  <img src="../../public/images/image-a.png" alt="Image" class="table-image">
                 </td>
-                <td class="table-content" colspan="2">
-                  <h4 class="govuk-heading-s">Acqua di Parma Colonia Eau de Cologne</h4>
-                  <p class="govuk-body-xs"><strong>Category: </strong>Beauty</p>
-                  <p class="govuk-body-xs"><strong>Sub-category: </strong>Fragrance</p>
-                  <p class="govuk-body-xs"><strong>PSD ref: </strong>psd-345</p>
-                  <details class="govuk-details ">
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acer Aspire 3 </h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electricals</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Laptop</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-425</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
                     <summary class="govuk-details__summary govuk-body-xs">
                       <span class="govuk-details__summary-text">
-                        Help with nationality
+                        More details
                       </span>
                     </summary>
                     <div class="govuk-details__text">
-                      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
                 </td>
@@ -134,21 +208,255 @@
               </tr>
               <tr>
                 <td>
-                  <img src="../../../assets/images/car-seat-2.jpg" alt="Image" class="table-image">
+                  <img src="../../public/images/image-b.png" alt="Image" class="table-image">
                 </td>
                 <td class="table-content" colspan="2">
-                  <p>Line 1</p>
-                  <p>Line 2</p>
-                  <p>Line 3</p>
-                  <p>Line 4</p>
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acqua di Parma Colonia Eau de Cologne</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Beauty</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Fragrance</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-345</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
                 </td>
                 <td class="table-action">
-                  <button>Button</button>
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
                 </td>
               </tr>
-              <!-- Add more rows as needed -->
+              <tr>
+                <td>
+                  <img src="../../public/images/image-c.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Adidas Power VI Recycled Backpack</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-623</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-d.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alessi Pepper Mill</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Tableware</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Pepper mill</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-622</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-e.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alpina AL-727LNS4H6 Startimer Chronograph</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Timepieces</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Watch</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-146</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-f.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">American Crew Fiber™ Grooming Foam</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Haircare</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Hair styling</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-836</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-g.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Anglepoise Type 75 Lamp</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Lighting</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Desk lamp</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-382</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-h.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Antler Chelsea Overnight Holdall</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-823</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-i.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Asics Gel-Trabuco 12</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Running shoes</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-910</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-j.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Audio-Technica AT-LP60XBT</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electrical</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Turntable</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-293</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
             </tbody>
           </table>
+
+          <br>
                                                   
           
           
@@ -187,366 +495,12 @@
 
 
 
-
-
-
-
-
-
-        
   <script>
-  const searchInput = document.getElementById("searchInput");
-  const searchButton = document.getElementById("searchButton");
-  const dataTable = document.getElementById("dataTable");
-  const emptyState = document.querySelector(".empty-state");
-  const displayCount = document.getElementById("displayCount");
-  const searchInfo = document.getElementById("searchInfo");
-  const paginationContainer = document.getElementById("pagination-container");
-
-  const data = [
-  {
-    name: "Abigail Hunter Ltd",
-    companyNumber: "01234567",
-    address: "Unit 6, Bradley Trading Estate, Oldham, OL4 1GH, UK",
-  },
-  {
-    name: "Academic Trading Ltd",
-    companyNumber: "01547846",
-    address: "21 Macclesfield Road, Manchester, M4 8KH, UK",
-  },
-  {
-    name: "Adam Worth Ltd",
-    companyNumber: "05845267",
-    address: "22 Bakers Lane, Little Whinging, WH3 4RT, UK",
-  },
-  {
-  name: "Adaptive Distribution Services",
-  companyNumber: "09581256",
-  address: [
-  "Unit 3, Abbeyview Estate, Chelmsford, ES1 2TY, UK<hr class='govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2 govuk-!-margin-top-2'>1 St Catherines Way, Bishop Auckland DL14 6DD, UK",
-],
-},
-  {
-    name: "Adventure International Trade",
-    companyNumber: "07896233",
-    address: "83 Kingfisher Way, Rivermouth, NR1 9GT",
-  },
-  {
-    name: "AEK Commerce Group",
-    companyNumber: "01155422",
-    address: "Multiple addesses (7)",
-  },
-  {
-    name: "Aether Energy Ltd",
-    companyNumber: "02348211",
-    address: "29 Maple Avenue, Edinburgh, EH2 3JX, UK",
-  },
-  {
-    name: "Affinity Legal Partners",
-    companyNumber: "01738393",
-    address: "58 Windsor Terrace, Bristol, BS8 4LW, UK",
-  },
-  {
-    name: "Alchemy Ventures Ltd",
-    companyNumber: "00122782",
-    address: "2 Riverside Avenue, Cambridge, CB5 8HN, UK",
-  },
-  {
-    name: "AlphaNex Innovations Ltd",
-    companyNumber: "01069566",
-    address: "29 Elmsgate Gardens, Warwick, WR2 5ZA, UK",
-  },
-  {
-    name: "Alpine Optics Ltd",
-    companyNumber: "02323331",
-    address: "7 Meadow Lane, Oxford, OX4 1SG, UK",
-  },
-  {
-    name: "Amber Glow Cosmetics",
-    companyNumber: "01187687",
-    address: "11 Beacon Hill, Norwich, NR1 3QZ, UK",
-  },
-  {
-    name: "Apex Dynamics",
-    companyNumber: "01766787",
-    address: "19 Harbour Road, Belfast, BT3 9SS, UK",
-  },
-  {
-    name: "Aqua Nova Dynamics",
-    companyNumber: "01119585",
-    address:
-      "98 Heather Close, Eastwood, DV6 7UP, UK<hr class='govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2 govuk-!-margin-top-2'>10 Penymaes Ave, Wrexham LL12 7AP, UK<hr class='govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2 govuk-!-margin-top-2'>87 Walton Rd, Wellesbourne, Warwick CV35 9TX, UK",
-  },
-  {
-    name: "Aquarius Waters",
-    companyNumber: "01987634",
-    address: "6 Cedar Place, Newcastle, NE1 4BR, UK",
-  },
-  {
-    name: "Artisanal Brews Co.",
-    companyNumber: "01783643",
-    address: "4 Elm Street, Sheffield, S1 2GY, UK",
-  },
-  {
-    name: "Astralsync Merchandising Ltd",
-    companyNumber: "05621532",
-    address: "15 Oakend Drive, Amberdale, SO7 8JN, UK",
-  },
-  {
-    name: "Avidity Entertainment",
-    companyNumber: "01729473",
-    address: "15 Rose Court, Glasgow, G1 1RB, UK",
-  },
-  {
-    name: "Axiom Solutions",
-    companyNumber: "02358964",
-    address: "71 Crescent Road, Silverhill, Shropshire, SH3 8PR, UK",
-  },
-  {
-    name: "Azimuth Electronics",
-    companyNumber: "01629462",
-    address: "22 Parkside Crescent, Leeds, LS8 2ET, UK",
-  },
-  {
-    name: "Balmoral Tech",
-    companyNumber: "01000001",
-    address: "12 Windsor Road, London, N1 1AA, UK",
-  },
-  {
-    name: "Bartholomew Innovation",
-    companyNumber: "03432522",
-    address: "123 Abbey Road, Streatham, SW2 6HN, UK",
-  },
-  {
-    name: "Bartholomew Trading",
-    companyNumber: "01727846",
-    address: "65 Commercial Road, Liverpool, L5 9XE, UK<hr class='govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2 govuk-!-margin-top-2'>8 Porters Wood Estate, Harlow, CM20 1EG, UK",
-    url: "business-bartholomew?business-details-trading_name={{ data['business-details-trading_name'] or 'Bartholomew Trading' }}&business-details-legal_name={{ data['business-details-legal_name'] or 'BARTHOLOMEW TRADING LTD' }}&business-details-ch_number={{ data['business-details-ch_number'] or '01727846' }}&business-details-address_1={{ data['business-details-address_1'] or '65 Commercial Road' }}&business-details-address_2={{ data['business-details-address_2'] or '' }}&business-details-city={{ data['business-details-city'] or 'Liverpool' }}&business-details-county={{ data['business-details-county'] or '' }}&business-details-postcode={{ data['business-details-postcode'] or 'L5 9XE' }}&business-details-country={{ data['business-details-country'] or 'United Kingdom' }}&business-details-address_1_2={{ data['business-details-address_1_2'] or '8 Valley Industrial Estate' }}&business-details-address_2_2={{ data['business-details-address_2_2'] or '' }}&business-details-city_2={{ data['business-details-city_2'] or 'Harlow' }}&business-details-county_2={{ data['business-details-county_2'] or '' }}&business-details-postcode_2={{ data['business-details-postcode_2'] or 'CM20 1EG' }}&business-details-country_2={{ data['business-details-country_2'] or 'United Kingdom' }}&business-details-name={{ data['business-details-name'] or 'Peter Jacobson' }}&business-details-job_title={{ data['business-details-job_title'] or 'Chief Operations Officer' }}&business-details-email={{ data['business-details-email'] or 'peter.jacobson@batholomewtrading.co.uk' }}&business-details-phone={{ data['business-details-phone'] or '0151 232 7318' }}&business-details-location={{ data['business-details-location'] or '65 Commercial Road, Liverpool, L5 9XE, UK' }}&business-details-registered={{ data['business-details-registered'] == 'option1' }}"
-  },
-  {
-    name: "Baxter Solutions",
-    companyNumber: "01933102",
-    address: "3 Juniper Close, Leeds, LS1 4ZQ, UK",
-  },
-  {
-    name: "Beacon Enterprises",
-    companyNumber: "01526003",
-    address: "47 Oak Avenue, Manchester, M2 4JN, UK",
-  },
-  {
-    name: "Bella Healthcare",
-    companyNumber: "01000004",
-    address: "88 Elm Street, Liverpool, L3 5TP, UK",
-  },
-  {
-    name: "Bespoke Innovations",
-    companyNumber: "01825005",
-    address: "22 Maple Drive, Bristol, BS4 1QU, UK",
-  },
-  {
-    name: "Blue Ocean Shipping",
-    companyNumber: "01025606",
-    address: "14 Harbour Lane, Southampton, SO14 3QT, UK",
-  },
-  {
-    name: "Blythe Electronics",
-    companyNumber: "01925607",
-    address: "55 Riverside Road, Newcastle, NE1 3XX, UK",
-  },
-  {
-    name: "Bright Futures Consulting",
-    companyNumber: "01052308",
-    address: "99 High Street, Edinburgh, EH1 1SG, UK",
-  },
-  {
-    name: "Bristol Networks",
-    companyNumber: "0182313",
-    address: "11 Broad Way, Birmingham, B1 2LN, UK",
-  },
-  {
-    name: "Brookside Capital",
-    companyNumber: "01345010",
-    address: "45 Meadow Lane, Sheffield, S1 2PD, UK",
-  },
-  {
-    name: "Bryant Graphic Designs",
-    companyNumber: "010352011",
-    address: "31 Cherry Lane, Nottingham, NG1 6HJ, UK",
-  },
-  {
-    name: "Buffalo Security Systems",
-    companyNumber: "01025612",
-    address: "78 Park Road, Glasgow, G1 2AB, UK",
-  },
-  {
-    name: "Build-Right Contractors",
-    companyNumber: "01920013",
-    address: "6 Oakfield Terrace, Cardiff, CF10 3",
-  },
-  {
-    name: "Bumblebee Marketing",
-    companyNumber: "05660014",
-    address: "29 Rose Lane, Norwich, NR1 1EJ, UK",
-  },
-  {
-    name: "Kingsbury Digital Ventures",
-    companyNumber: "01549238",
-    address: "23 St Bartholomew Avenue, Hitchin, SG6 2HJ, UK",
-  },
-  {
-    name: "St Bartholomew Academy",
-    companyNumber: "07324573",
-    address: "Multiple addesses (7) including:<br>67 Bartholomew Drive, Peterborough, PT5 4GH, UK",
-  },
-  {
-    name: "Turner and Sons",
-    companyNumber: "01822588",
-    address: "56 Vesta Road, St Albans, AL3 6YH, UK",
-  },
-  {
-    name: "Williams Sisters Sports Goods",
-    companyNumber: "01727845",
-    address: "7 The High Street, Wimbledon, London, SW7 7JK, UK",
-  },
-  {
-    name: "Wrapping For Presents",
-    companyNumber: "017965233",
-    address: "Unit 6, Graphene way, Cambridge, CM5 9YH, UK",
-  },
-  {
-    name: "Zoom Products Ltd",
-    companyNumber: "011236588",
-    address: "68 Stanley Avenue, Luton, LU5 0GH, UK",
-  },
-  ];
-
-  let currentPage = 1;
-  let rowsPerPage = 20;
-  let searchPerformed = false;
-
-  function updateSearchInfo(totalRows, searchTerm = '') {
-  if (searchPerformed && searchTerm) {
-    const resultText = totalRows === 1 ? 'business matching' : 'businesses matching';
-    searchInfo.innerHTML = `<p><strong>${totalRows}</strong> ${resultText} keyword(s) "<strong>${searchTerm}</strong>" were found.</p>`;
-  } else {
-    const firstRow = Math.min(totalRows, (currentPage - 1) * rowsPerPage + 1);
-    const lastRow = Math.min(totalRows, currentPage * rowsPerPage);
-    searchInfo.innerHTML = `<p>Showing ${firstRow}-${lastRow} of <strong>${totalRows}</strong> results</p>`;
-  }
-}
-
-
-  function updateTableWithFilteredData(filteredData, searchTerm = '') {
-    const startIndex = (currentPage - 1) * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
-    const visibleData = filteredData.slice(startIndex, endIndex);
-
-    const tableBody = document.getElementById("tableBody");
-    tableBody.innerHTML = "";
-
-    visibleData.forEach((item) => {
-  const row = document.createElement("tr");
-  row.innerHTML = `
-    <td class="govuk-table__cell">
-      <a href="${item.url}">${item.name}</a>  <!-- Name as a hyperlink -->
-    </td>
-    <td class="govuk-table__cell">${item.companyNumber}</td>
-    <td class="govuk-table__cell">${item.address}</td>
-  `;
-  tableBody.appendChild(row);
-});
-
-    updateSearchInfo(filteredData.length, searchTerm);
-    updatePagination(filteredData.length);
-  }
-
-  function updatePagination(totalRows) {
-  const paginationContainer = document.querySelector(".govuk-pagination");
-  
-  // Hide pagination if total rows are 19 or fewer
-  if (totalRows <= 19) {
-    paginationContainer.style.display = "none";
-    return;
-  } else {
-    paginationContainer.style.display = ""; 
-  }
-
-  const totalPages = Math.ceil(totalRows / rowsPerPage);
-  const paginationList = document.querySelector(".govuk-pagination__list");
-  paginationList.innerHTML = "";  // Clear existing pagination items
-
-  // Create pagination items
-  for (let i = 1; i <= totalPages; i++) {
-    const pageItem = document.createElement("li");
-    pageItem.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
-    
-    const pageLink = document.createElement("a");
-    pageLink.className = "govuk-link govuk-pagination__link";
-    pageLink.href = "#";
-    pageLink.textContent = i;
-    pageLink.setAttribute("aria-label", `Page ${i}`);
-    if (i === currentPage) {
-      pageLink.setAttribute("aria-current", "page");
+    function toggleDetails(detailsId) {
+      var details = document.getElementById(detailsId);
+      details.open = !details.open;
     }
-
-    pageLink.addEventListener("click", function(event) {
-      event.preventDefault();
-      currentPage = i;
-      updateTableWithFilteredData(data);  
-    });
-
-    pageItem.appendChild(pageLink);
-    paginationList.appendChild(pageItem);
-  }
-
-  // Handle 'Next' button if needed
-  const nextButton = document.querySelector(".govuk-pagination__next a");
-  nextButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    if (currentPage < totalPages) {
-      currentPage++;
-      updateTableWithFilteredData(data);
-    }
-  });
-}
-
-  function performSearch() {
-    const searchTerm = searchInput.value.trim().toLowerCase();
-    searchPerformed = true;
-
-    const filteredData = data.filter(item => {
-      return item.name.toLowerCase().includes(searchTerm) ||
-             item.companyNumber.toLowerCase().includes(searchTerm) ||
-             item.address.toString().toLowerCase().includes(searchTerm);
-    });
-
-    if (filteredData.length === 0) {
-      emptyState.style.display = "block";
-      dataTable.style.display = "none";
-    } else {
-      emptyState.style.display = "none";
-      dataTable.style.display = "";
-    }
-
-    currentPage = 1; 
-    updateTableWithFilteredData(filteredData, searchTerm);
-  }
-
-  searchButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    performSearch();
-  });
-
-  // Initialize the table with full data
-  updateTableWithFilteredData(data);
-
-</script>
-
-
-<!-- End of dynamic table -->
-
-
-
+  </script>
 
 
 {% endblock %}

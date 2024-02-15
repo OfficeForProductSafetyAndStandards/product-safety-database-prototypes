@@ -75,9 +75,8 @@
     </ul>
 
     <div class="button-container">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Choose your photo
-      </button>
+      <button type="button" class="govuk-button" onclick="document.getElementById('fileInput').click()">Choose your photo</button>
+
         <p class="govuk-body-m">or</p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Skip this step  
@@ -89,7 +88,6 @@
     <form id="uploadForm" enctype="multipart/form-data" style="display:none;">
       <input type="file" id="fileInput" name="file" onchange="uploadFile()">
   </form>
-  <button type="button" class="govuk-button" onclick="document.getElementById('fileInput').click()">Choose your photo</button>
   
 
 

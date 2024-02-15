@@ -27,28 +27,7 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Add product information</h1>
 
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product category</legend>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
-              <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Select a category</option>
-                <option value="territory:AE-AZ">Category 1</option>
-                <option value="country:AF">Category 2</option>
-                <option value="territory:AE-AJ">Category 3</option>
-                <option value="territory:XQZ">Category 4</option>
-                <option value="country:AL">Category 5</option>
-              </select>
-          </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
-            <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-          </div>
-
-      </fieldset>
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product details</legend>
@@ -134,6 +113,29 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
           </fieldset>
         </div>
+
+      </fieldset>
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product category</legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
+              <select class="govuk-select" id="business-details-country" name="business-details-country">
+                <option value="United Kingdom">Select a category</option>
+                <option value="territory:AE-AZ">Category 1</option>
+                <option value="country:AF">Category 2</option>
+                <option value="territory:AE-AJ">Category 3</option>
+                <option value="territory:XQZ">Category 4</option>
+                <option value="country:AL">Category 5</option>
+              </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+            <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+          </div>
 
       </fieldset>
 
