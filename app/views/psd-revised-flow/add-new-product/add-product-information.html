@@ -4,7 +4,7 @@
 Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Upload multiple products" %}
+{% set title = "Choose the product for your notification" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -22,6 +22,8 @@ Enter the business details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form govuk-!-margin-bottom-6" action="enter-product-details" method="post">
+      <span class="govuk-caption-l">{{title}}</span>
+
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Add product information</h1>
 

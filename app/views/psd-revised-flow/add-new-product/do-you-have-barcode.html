@@ -4,7 +4,7 @@
   Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain" %}
+{% set title = "Choose the product for your notification" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -19,6 +19,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="do-you-have-barcode" method="post">
+        <span class="govuk-caption-l">{{title}}</span>
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="haveBarcode-hint">

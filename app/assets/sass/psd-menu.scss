@@ -902,6 +902,16 @@ ul#navigation.psd-header__navigation {
   width: 204px;
 }
 
+.barcode-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.barcode-column {
+  width: 300px;
+}
+
 .button-container {
   display: flex;
   align-items: baseline;
@@ -933,3 +943,32 @@ ul#navigation.psd-header__navigation {
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #B1B4B6;
+  border-bottom: 1px solid #B1B4B6;
+}
+
+.custom-table td {
+  padding: 10px 0;
+}
+
+.table-image {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin-right: 20px;
+}
+
+.table-content {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.table-action {
+  padding: 10px 0;
+  text-align: right;
+}
+
