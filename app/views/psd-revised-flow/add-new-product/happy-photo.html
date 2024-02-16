@@ -18,7 +18,6 @@ Uploaded photo – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="add-a-photo" method="post">
 
         <span class="govuk-caption-l">{{title}}</span>
 
@@ -34,13 +33,17 @@ Uploaded photo – {{ serviceName }} – GOV.UK Prototype Kit
         <a href="#">Rotate image</a>
       </div>
       </div>
+
+      <form class="form" action="happy-photo" method="post">
+
     
     <div class="button-container">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
+      <button type="submit" class="govuk-button" data-module="govuk-button" name="happy-with-photo" id="happy-with-photo-1" value="yes">
         Save and continue
       </button>
         <p class="govuk-body-m">or</p>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+
+      <button type="submit" name="happy-with-photo" id="happy-with-photo-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="no">
         Get a different photo  
       </button>
     </div>
