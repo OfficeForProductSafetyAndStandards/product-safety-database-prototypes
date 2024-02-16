@@ -21,13 +21,21 @@
 
     <span class="govuk-caption-l">{{title}}</span>
     <h1 class="govuk-heading-l">Determine notification risk level</h1>
-    <p class="govuk-body">The case risk level will usually match the risk assessment.</p>
+    <p class="govuk-body">The notification risk level will usually match the risk assessment.</p>
     <p class="govuk-body">It can differ from risk assessments if necessary - such as when there are conflicting assessments, or where the assessment was provided by a third party.</p>
 
-    <div class="govuk-inset-text">
+<!--     <div class="govuk-inset-text">
       A risk assessment has been completed for the <b>All in All+ Car Seat, Dragon Kingdom CT4262</b>, indicating a <strong class="govuk-tag govuk-tag--red">
          High risk
         </strong> level. The notification's risk level has been aligned with this assessment. If needed, you have the option to adjust the risk level.
+    </div> -->
+
+    <div class="govuk-inset-text">
+     This notice includes <b>1</b> risk assessment that evaluates the product risk as <b>High</b>.
+    </div>
+
+    <div class="govuk-inset-text">
+     This notice includes <b>2</b> risk assessments, with the highest product risk being evaluated as <b>High</b>.
     </div>
 
     <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
@@ -52,7 +60,7 @@
       </div>
 
         <div class="govuk-radios__item">
-          <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input" checked="checked">
+          <input id="investigation_risk_level_high" name="investigation[risk_level]" type="radio" value="high" class="govuk-radios__input">
             <label class="govuk-label govuk-radios__label" for="investigation_risk_level_high">High risk</label>
 
 

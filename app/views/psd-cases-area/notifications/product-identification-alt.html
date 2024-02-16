@@ -1,0 +1,185 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add product identification and evidence details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Add product identification details
+      </h1>
+      <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
+  </div>
+    </legend>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">All in All+ Car Seat, Dragon Kingdom CT4262</h2>
+  </div>
+
+  <div class="govuk-summary-card__content" id="product1">
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Batch numbers</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="batch_number-hint">
+          Use a comma and a space to separate multiple batch numbers. For example, 37364361, 98774776 </p>
+
+  <input class="govuk-input govuk-!-width-two-thirds" id="batch_number" name="batch_number" type="text" aria-describedby="batch_number-hint" maxlength="45">
+  </fieldset>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Customs codes</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="customs_code-hint">
+          For example, a <abbr>CN</abbr>  code (8 digits) or a TARIC code (10 digits). Use a comma and a space to separate multiple customs codes. </p>
+
+  <input class="govuk-input govuk-!-width-two-thirds" id="customs_code" name="customs_code" type="text" aria-describedby="customs_code-hint" maxlength="45">
+  </fieldset>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group" style="margin-bottom:0;">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Unique Consignment Reference (<abbr>UCR</abbr>) numbers</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="ucr-number-hint">
+          UCR numbers are between 12 and 35 characters long.
+          </p>
+      </fieldset>
+
+          <div class="nested-form-wrapper govuk-grid-row" data-new-record="true">
+  <div class="govuk-grid-column-three-quarters">
+    <input class="govuk-input" maxlength="45" size="45" type="text" name="investigation_product[ucr_numbers_attributes][NEW_RECORD][number]" id="investigation_product_ucr_numbers_attributes_NEW_RECORD_number">
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <a class="govuk-link govuk-link--no-visited-state opss-nojs-hide" data-action="nested-form#remove" href="#">Remove</a>
+
+    <input autocomplete="off" type="hidden" value="false" name="investigation_product[ucr_numbers_attributes][NEW_RECORD][_destroy]" id="investigation_product_ucr_numbers_attributes_NEW_RECORD__destroy">
+  </div>
+</div>
+<br/>
+ <button type="button" data-action="nested-form#add" class="govuk-button govuk-button--secondary opss-nojs-hide">Add UCR number</button>
+</div>
+</div>
+</div>
+
+<br/>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">All in All+ Car Seat, Fika Forrest CT4243</h2>
+  </div>
+
+  <div class="govuk-summary-card__content" id="product1">
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Batch numbers</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="batch_number-hint">
+          Use a comma and a space to separate multiple batch numbers. For example, 37364361, 98774776 </p>
+
+  <input class="govuk-input govuk-!-width-two-thirds" id="batch_number" name="batch_number" type="text" aria-describedby="batch_number-hint" maxlength="45">
+  </fieldset>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Customs codes</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="customs_code-hint">
+          For example, a <abbr>CN</abbr>  code (8 digits) or a TARIC code (10 digits). Use a comma and a space to separate multiple customs codes. </p>
+
+  <input class="govuk-input govuk-!-width-two-thirds" id="customs_code" name="customs_code" type="text" aria-describedby="customs_code-hint" maxlength="45">
+  </fieldset>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group" style="margin-bottom:0;">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      <b>Unique Consignment Reference (<abbr>UCR</abbr>) numbers</b>
+    </legend>
+  
+  <p class="govuk-hint govuk-!-margin-bottom-5" id="ucr-number-hint">
+          UCR numbers are between 12 and 35 characters long.
+          </p>
+      </fieldset>
+
+          <div class="nested-form-wrapper govuk-grid-row" data-new-record="true">
+  <div class="govuk-grid-column-three-quarters">
+    <input class="govuk-input" maxlength="45" size="45" type="text" name="investigation_product[ucr_numbers_attributes][NEW_RECORD][number]" id="investigation_product_ucr_numbers_attributes_NEW_RECORD_number">
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <a class="govuk-link govuk-link--no-visited-state opss-nojs-hide" data-action="nested-form#remove" href="#">Remove</a>
+
+    <input autocomplete="off" type="hidden" value="false" name="investigation_product[ucr_numbers_attributes][NEW_RECORD][_destroy]" id="investigation_product_ucr_numbers_attributes_NEW_RECORD__destroy">
+  </div>
+</div>
+<br/>
+ <button type="button" data-action="nested-form#add" class="govuk-button govuk-button--secondary opss-nojs-hide">Add UCR number</button>
+</div>
+</div>
+</div>
+
+
+ <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+ <div class="govuk-button-group govuk">
+  <button class="govuk-button" data-module="govuk-button">
+    Add product identification details
+  </button>
+
+<!-- <a href="#" data-module="govuk-button">
+    Cancel
+  </a> -->
+
+</div>
+
+</form>
+</div>
+
+
+
+
+{% endblock %}
