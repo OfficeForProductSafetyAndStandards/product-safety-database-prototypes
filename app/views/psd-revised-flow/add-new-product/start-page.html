@@ -1,0 +1,30 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<h3 class="govuk-heading-m">Add product to notification</h3>
+
+  <p><a href="/psd-revised-flow/add-new-product/task-list-start">
+    Main flow
+  </a></p>
+
+  
+  <p><a href="/psd-revised-flow/add-new-product/duplicate">
+    Duplicate after manual entry
+  </a></p>
+  
+  
+  {% endblock %}

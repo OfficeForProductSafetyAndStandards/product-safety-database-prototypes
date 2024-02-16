@@ -49,7 +49,7 @@ router.post('/added-product', function (req, res) {
 router.post('/not-found', function (req, res) {
   const notFound = req.session.data['not-found-it'];
   if (notFound === 'yes') {
-    res.redirect('./search-products');
+    res.redirect('./add-a-barcode');
   } else {
     res.redirect('./add-product-information');
   }
@@ -65,13 +65,15 @@ router.post('/product-psd', function (req, res) {
   res.redirect('./added-product'); 
 })
 
-// Edit product information //
-router.post('/edit-product-information', function (req, res) {
-  const backURL = req.header('Referer') || '/';
-  res.redirect(backURL);
+// Edit product information PSD //
+router.post('/edit-product-information-psd', function (req, res) {
+  res.redirect('./product-psd'); 
 })
 
-
+// Edit product information BL //
+router.post('/edit-product-information-bl', function (req, res) {
+  res.redirect('./product-bl'); 
+})
 
 // Duplicate //
 router.post('/duplicate', function (req, res) {
@@ -85,7 +87,6 @@ router.post('/duplicate', function (req, res) {
   }
 });
 
-
 // Do you have a barcode //
 router.post('/do-you-have-barcode', function (req, res) {
   const haveBarcode = req.session.data['have-barcode'];
@@ -97,8 +98,5 @@ router.post('/do-you-have-barcode', function (req, res) {
     res.status(204).end(); // <-- No redirect when not selected
   }
 });
-
-
-
 
 module.exports = router

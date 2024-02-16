@@ -15,41 +15,71 @@
 
 {% block content %}
 
+
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="add-a-barcode" method="post">
+    <form class="form" action="add-a-barcode" method="post">
 
-        <span class="govuk-caption-l">{{title}}</span>
+      <span class="govuk-caption-l">{{title}}</span>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search using barcode, serial number or Amazon ASIN</h1>
 
-
-
-    <div class="barcode-container govuk-!-margin-bottom-4">
-      <div class="barcode-column">
-        <img src="../../public/images/barcode.png" alt="barcode" width="180" height="115">
-        <p class="govuk-body-s govuk-!-margin-top-1">Use the 12-13 digits at the bottom of the barcode</p>   
+      <div class="barcode-container govuk-!-margin-bottom-4">
+        <div class="barcode-column">
+          <img src="../../public/images/barcode.png" alt="barcode" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">Use the 12-13 digits at the bottom of the barcode</p>
+        </div>
+        <div class="barcode-column">
+          <img src="../../public/images/asin.png" alt="asin" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">The ASIN number can be found in the product details section on an Amazon page</p>
+        </div>
       </div>
-      <div class="barcode-column">
-        <img src="../../public/images/asin.png" alt="asin" width="180" height="115">
-        <p class="govuk-body-s govuk-!-margin-top-1">The ASIN number can be found in the product details section on an Amazon page</p>   
-      </div>
-    </div>
 
-    <fieldset class="govuk-fieldset">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="barcode">
-          Barcode, serial number or Amazon ASIN
-        </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="barcode" name="barcode" type="text" autocomplete="address-level2">
-      </div>
-    </fieldset>
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="barcode">
+            Barcode, serial number or Amazon ASIN
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" list="barcode-options" id="barcode" name="barcode" type="text" autocomplete="off">
+          <datalist id="barcode-options">
+            <option value="9 420015 715897"></option>
+            <option value="L87SDM5K2U"></option>
+            <option value="7 131214 989796"></option>
+            <option value="0308/0001"></option>
+          </datalist>
+        </div>
+      </fieldset>
 
+      <button type="button" class="govuk-button" id="continue-button">Continue</button>
 
+    </form>
 
-  <button type="button" class="govuk-button">Continue</button>
-  
+  </div>
+</div>
+
+<script>
+  document.getElementById('continue-button').addEventListener('click', function() {
+    var selectedOption = document.getElementById('barcode').value;
+
+    // Define URLs for each option
+    var urls = {
+      "9 420015 715897": "product-psd",
+      "L87SDM5K2U": "product-bl",
+      "7 131214 989796": "not-found",
+      "0308/0001": "multiple-products"
+    };
+
+    // Redirect based on selected option
+    if (urls[selectedOption]) {
+      window.location.href = urls[selectedOption];
+    } else {
+      // Handle case where selected option doesn't match any predefined URL
+      console.log("No URL found for selected option");
+    }
+  });
+</script>
 
 
   {% endblock %}
