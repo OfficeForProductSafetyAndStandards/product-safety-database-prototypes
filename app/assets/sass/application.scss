@@ -29,6 +29,8 @@ $govuk-assets-path: "/govuk/assets/";
 @import "opss/opss-psd";
 @import "opss/opss-msa";
 
+// new styles for PSD tags
+
 .app-task-list__tag {
   background-color: transparent;
   color: #0c2d4a;
@@ -39,5 +41,5 @@ $govuk-assets-path: "/govuk/assets/";
 }
 
 .govuk-tag--blue {
-    background-color: #bbd4ea;
+  background-color: #bbd4ea;
 }
