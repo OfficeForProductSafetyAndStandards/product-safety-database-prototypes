@@ -952,6 +952,12 @@ ul#navigation.psd-header__navigation {
   border-bottom: 1px solid #0b0c0c;
   table-layout: fixed; 
 }
+.custom-table-2 {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed; 
+}
 
 .custom-table td {
   padding: 10px 0;
@@ -960,6 +966,16 @@ ul#navigation.psd-header__navigation {
 }
 
 .custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table-2 td {
+  padding: 10px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #b1b4b6; 
+}
+
+.custom-table-2 tr:last-child td {
   border-bottom: none;
 }
 
@@ -984,7 +1000,16 @@ ul#navigation.psd-header__navigation {
   text-align: center; 
 }
 
+.custom-table-2 td:first-child {
+  width: 110px; 
+  text-align: center; 
+}
+
 .custom-table td.table-content {
+  width: 450px;
+}
+
+.custom-table-2 td.table-content {
   width: 450px;
 }
 

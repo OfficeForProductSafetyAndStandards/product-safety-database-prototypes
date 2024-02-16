@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Search or add a business – {{ serviceName }} – GOV.UK Prototype Kit
+  Search or add a product – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-padding-0"> 
 
-    <form class="form" action="search-businesses" method="post">
+    <form class="form" action="search-products-barcode" method="post">
 
       <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-l">{{title}}</span>
@@ -65,6 +65,7 @@
 
 
 
+<form class="form" action="search-products-laptop" method="post">
 
 
 
@@ -492,6 +493,7 @@
     </div>
   </div>
 
+</form>
 
 
 

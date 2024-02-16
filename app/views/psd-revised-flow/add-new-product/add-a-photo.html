@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+  Add a photo – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set title = "Choose the product for your notification" %}
@@ -26,7 +26,7 @@
 
       <p>Where possible we recommend uploading an image from the product website or online seller but you can also submit your own photos.</p>
 
-      <details class="govuk-details">
+      <details id="photoUploadDetails" class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             Help on submitting the best photos
@@ -75,7 +75,7 @@
     </ul>
 
     <div class="button-container">
-      <button type="button" class="govuk-button" onclick="document.getElementById('fileInput').click()">Choose your photo</button>
+      <button type="button" class="govuk-button" onclick="openDialog()">Choose your photo</button>
 
         <p class="govuk-body-m">or</p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -88,32 +88,21 @@
     <form id="uploadForm" enctype="multipart/form-data" style="display:none;">
       <input type="file" id="fileInput" name="file" onchange="uploadFile()">
   </form>
-  
 
 
-<script>
+  <script type="text/javascript">
+    // Function to open the dialog
+    function openDialog() {
+        // Simulate an image selection dialog
+        let userConfirmed = confirm("Select your image. Click OK to confirm.");
 
-function uploadFile() {
-    var file = document.getElementById('fileInput').files[0];
-    if (!file) {
-        return; // No file selected
+        // Check if the user clicked 'OK'
+        if (userConfirmed) {
+            // User confirmed, redirect to abc.com
+            window.location.href = "uploading-photo";
+        }
     }
-
-    var formData = new FormData();
-    formData.append('file', file);
-
-    fetch('YOUR_SERVER_ENDPOINT', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        window.location.href = 'uploading-photo'; // Redirect to new page
-    })
-    .catch(error => console.error(error));
-}
-
 </script>
+
 
   {% endblock %}
