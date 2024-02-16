@@ -1,0 +1,174 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add notification and additional product details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form govuk-!-margin-bottom-6" action="task-list" method="post">
+
+       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+        Add product identification details
+      </h1>
+      <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-margin-bottom-0">For</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Dragon Kingdom CT4262</p>
+    <p class="govuk-body-l">All in All+ Car Seat, Fika Forrest CT4243</p>
+  </div>
+    </legend>
+
+    <!-- <p>Add product identification details if known.</p> -->
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+             <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="overflow:hidden;">
+    <h2 class="govuk-summary-card__title" style="float:left;">All in All+ Car Seat, Dragon Kingdom CT4262</h2><a href="#" style="float:right; font-size: 16px; margin-top: 5px;" id="trigger-product2">Expand all details</a>
+  </div>
+  <div class="govuk-summary-card__content" id="product1">
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+       <b>Number of affected units</b> (mandatory)
+    </legend>
+  <div class="govuk-radios govuk-radios--small--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input id="affected_units_status" name="number_of_affected_units_form[affected_units_status]" type="radio" value="exact" class="govuk-radios__input" aria-controls="conditional-affected_units_status" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="affected_units_status">Exact number</label>
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-affected_units_status">
+          <div class="govuk-form-group">
+    <label class="govuk-label" for="exact_units">How many units are affected?</label>
+
+
+
+
+
+
+
+  <input class="govuk-input govuk-input--width-10" id="exact_units" name="number_of_affected_units_form[exact_units]" type="text">
+
+
+
+</div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_approx" name="number_of_affected_units_form[affected_units_status]" type="radio" value="approx" class="govuk-radios__input" aria-controls="conditional-number_of_affected_units_form_affected_units_status_approx" aria-expanded="false">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_approx">Approximate number</label>
+
+
+      </div>
+
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-number_of_affected_units_form_affected_units_status_approx">
+          <div class="govuk-form-group">
+    <label class="govuk-label" for="approx_units">How many units are affected?</label>
+
+  <input class="govuk-input govuk-input--width-10" id="approx_units" name="number_of_affected_units_form[approx_units]" type="text">
+</div>
+
+</div>        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_unknown" name="number_of_affected_units_form[affected_units_status]" type="radio" value="unknown" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_unknown">Unknown</label>
+
+
+      </div>
+
+        <div class="govuk-radios__divider">
+          or
+      </div>
+
+        <div class="govuk-radios__item">
+          <input id="number_of_affected_units_form_affected_units_status_not_relevant" name="number_of_affected_units_form[affected_units_status]" type="radio" value="not_relevant" class="govuk-radios__input">
+            <label class="govuk-label govuk-radios__label" for="number_of_affected_units_form_affected_units_status_not_relevant">Not relevant</label>
+
+
+      </div>
+
+</div>
+  </fieldset>
+</div>
+
+    <dl class="govuk-summary-list">
+       <div class="govuk-summary-list__row">
+        
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Batch numbers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customs codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row" style="border-bottom:none;">
+        <dt class="govuk-summary-list__key">
+          UCR codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+ <input class="govuk-checkboxes__input" id="section-2-complete" name="section-2-complete" type="checkbox" value="yes" { checked('section-2-complete','yes') }} checked>
+
+ <div class="govuk-button-group govuk-!-margin-top-6">
+  <button class="govuk-button" data-module="govuk-button">
+    Save and complete tasks in this section
+  </button>
+
+  <!-- <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save as draft
+  </a> -->
+
+</div>
+
+</form>
+
+
+
+    </div>
+
+
+
+{% endblock %}
