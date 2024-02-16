@@ -65,13 +65,33 @@ router.post('/product-psd', function (req, res) {
   res.redirect('./added-product'); 
 })
 
+// Edit product information //
+router.post('/edit-product-information', function (req, res) {
+  const backURL = req.header('Referer') || '/';
+  res.redirect(backURL);
+})
+
+
+
+// Duplicate //
+router.post('/duplicate', function (req, res) {
+  const whichOne = req.session.data['which-one'];
+  if (whichOne === 'yes') {
+    res.redirect('./added-product-3');
+  } else if (whichOne === 'no') {
+    res.redirect('./added-product');
+  } else {
+    res.status(204).end(); 
+  }
+});
+
 
 // Do you have a barcode //
 router.post('/do-you-have-barcode', function (req, res) {
   const haveBarcode = req.session.data['have-barcode'];
-  if (haveBarcode === 'haveBarcode-1') {
+  if (haveBarcode === 'yes') {
     res.redirect('./add-a-barcode');
-  } else if (haveBarcode === 'haveBarcode-2') {
+  } else if (haveBarcode === 'no') {
     res.redirect('./add-a-photo');
   } else {
     res.status(204).end(); // <-- No redirect when not selected
