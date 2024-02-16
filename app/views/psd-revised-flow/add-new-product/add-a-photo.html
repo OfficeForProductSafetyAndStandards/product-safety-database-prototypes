@@ -75,7 +75,7 @@
     </ul>
 
     <div class="button-container">
-      <button type="button" class="govuk-button" onclick="openDialog()">Choose your photo</button>
+      <button type="button" class="govuk-button" id="uploadBtn">Choose your photo</button>
 
         <p class="govuk-body-m">or</p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -90,19 +90,39 @@
   </form>
 
 
-  <script type="text/javascript">
-    // Function to open the dialog
-    function openDialog() {
-        // Simulate an image selection dialog
-        let userConfirmed = confirm("Select your image. Click OK to confirm.");
-
-        // Check if the user clicked 'OK'
-        if (userConfirmed) {
-            // User confirmed, redirect to abc.com
-            window.location.href = "uploading-photo";
+  <div id="uploadedImage" style="display: none;">
+    <img id="imagePreview" src="#" alt="Uploaded Image" width="200">
+  </div>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var uploadBtn = document.getElementById('uploadBtn');
+    var uploadedImage = document.getElementById('uploadedImage');
+    var imagePreview = document.getElementById('imagePreview');
+    var uploadStatus = document.getElementById('uploadStatus');
+  
+    uploadBtn.addEventListener('click', function() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+  
+      input.onchange = function(e) {
+        var file = e.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function() {
+            imagePreview.src = reader.result;
+            setTimeout(function() {
+              window.location.href = 'uploading-photo';
+            }, 0); // Redirect after 3 seconds
+          };
+          reader.readAsDataURL(file);
         }
-    }
-</script>
-
-
+      };
+  
+      input.click();
+    });
+  });
+  </script>
+  
   {% endblock %}

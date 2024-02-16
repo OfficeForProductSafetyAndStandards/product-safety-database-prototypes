@@ -37,9 +37,9 @@ router.post('/add-product-information', function (req, res) {
 router.post('/added-product', function (req, res) {
   const addedProduct = req.session.data['addedProduct'];
   if (addedProduct === 'yes') {
-    res.redirect('./task-list-finish');
-  } else if (addedProduct === 'no') {
     res.redirect('./search-products');
+  } else if (addedProduct === 'no') {
+    res.redirect('./task-list-finish');
   } else {
     res.status(204).end(); 
   }

@@ -37,21 +37,20 @@
         </div>
       </div>
 
-      <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="barcode">
-            Barcode, serial number or Amazon ASIN
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" list="barcode-options" id="barcode" name="barcode" type="text" autocomplete="off">
-          <datalist id="barcode-options">
-            <option value="9 420015 715897"></option>
-            <option value="L87SDM5K2U"></option>
-            <option value="7 131214 989796"></option>
-            <option value="0308/0001"></option>
-          </datalist>
+      <div class="custom-dropdown">
+        <select class="custom-dropdown-select">
+          <option value="" disabled selected>Select an option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <div class="custom-dropdown-options">
+          <div class="custom-dropdown-option" data-value="option1">Option 1</div>
+          <div class="custom-dropdown-option" data-value="option2">Option 2</div>
+          <div class="custom-dropdown-option" data-value="option3">Option 3</div>
         </div>
-      </fieldset>
-      
+      </div>
+            
       <button type="button" class="govuk-button" id="continue-button">Continue</button>
 
     </form>
@@ -79,6 +78,30 @@
       console.log("No URL found for selected option");
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  var selectElement = document.querySelector('.custom-dropdown-select');
+  var optionsContainer = document.querySelector('.custom-dropdown-options');
+  var options = document.querySelectorAll('.custom-dropdown-option');
+
+  selectElement.addEventListener('click', function() {
+    optionsContainer.style.display = 'block';
+  });
+
+  options.forEach(function(option) {
+    option.addEventListener('click', function() {
+      selectElement.value = option.getAttribute('data-value');
+      optionsContainer.style.display = 'none';
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!selectElement.contains(event.target)) {
+      optionsContainer.style.display = 'none';
+    }
+  });
+});
+
 </script>
 
 
