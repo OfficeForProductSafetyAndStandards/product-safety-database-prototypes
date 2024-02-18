@@ -1038,8 +1038,9 @@ ul#navigation.psd-header__navigation {
   padding-top: 8px;
   cursor: pointer;
   background-color: #fff; 
-  border: 1px solid #b1b4b6; 
-  margin: -1px;
+  border-left: 1px solid #b1b4b6; 
+  border-right: 1px solid #b1b4b6; 
+  border-bottom: 1px solid #b1b4b6; 
   margin-left: 1px;
   width: 416px;
   font-size: 16px;
@@ -1098,7 +1099,6 @@ body #autocompleteInput:focus {
   max-height: 240px; 
   overflow-y: auto; 
   width: 435px; 
-  border-bottom: 1px solid #d4d4d4; 
 }
 
 #searchButton2 {

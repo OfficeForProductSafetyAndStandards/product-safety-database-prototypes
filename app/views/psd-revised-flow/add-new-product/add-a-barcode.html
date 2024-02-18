@@ -83,7 +83,7 @@
                 div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
                 
                 var span = document.createElement("SPAN");
-                span.innerHTML = " - " + country.info;
+                span.innerHTML = "" + country.info;
                 div.appendChild(span);
                 
                 div.addEventListener("click", function(e) {
