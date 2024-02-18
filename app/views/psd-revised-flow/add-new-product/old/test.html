@@ -1,0 +1,97 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Add a barcode – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Choose the product for your notification" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<label class="govuk-label" for="case-search-term">
+  Search the Product Safety Database
+</label>
+<div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-two-thirds">
+  <div class="autocomplete" style="position: relative; width: 100%;">
+    <input id="autocompleteInput" type="text" name="myCountry" placeholder="">
+    <div id="autocompleteSuggestions" class="autocomplete-items">
+    </div>
+    <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton2">
+      <span class="govuk-visually-hidden">Submit search</span>
+    </button>
+  </div>
+</div>
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-9 govuk-!-margin-top-9">We have found multiple products</h1>
+
+<p class="govuk-body govuk-!-margin-bottom-6">
+  Please select a record to continue or <a href="#" class="govuk-link">start again</a>.
+</p>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var countries = [
+        {name: "Swan Construction Ltd", info: "Business"},
+        {name: "Swan gas hob", info: "Product"},
+        {name: "Swan gas hob elbow joint failure", info: "Notification"},
+        {name: "Swan gas hob risk assessment 23092023", info: "Assessment"},
+        {name: "Swan gas hob risk assessment 12092023.docx", info: "Test report"},
+    ];
+
+    var input = document.getElementById("autocompleteInput");
+    var suggestionBox = document.getElementById("autocompleteSuggestions");
+    
+    input.addEventListener("input", function() {
+        var val = this.value.toLowerCase();
+        suggestionBox.innerHTML = '';
+        if (!val) { return false;}
+        let matches = 0; // Counter for the number of matches
+
+        countries.forEach(function(country) {
+            if (matches >= 10) return; // Stop adding suggestions after 10 matches
+
+            // Search for the input value in the country name
+            var index = country.name.toLowerCase().indexOf(val);
+            if (index > -1) { // If the input value is found within the country name
+                var div = document.createElement("DIV");
+                // Highlight the matching part
+                var beforeMatch = country.name.substring(0, index);
+                var matchText = country.name.substring(index, index + val.length);
+                var afterMatch = country.name.substring(index + val.length);
+                div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
+                
+                // Add secondary info
+                var span = document.createElement("SPAN");
+                span.innerHTML = " - " + country.info;
+                div.appendChild(span);
+                
+                div.addEventListener("click", function(e) {
+                    input.value = country.name;
+                    suggestionBox.innerHTML = "";
+                });
+                
+                suggestionBox.appendChild(div);
+                matches++; // Increment the counter
+            }
+        });
+    });
+
+    document.addEventListener("click", function (e) {
+        suggestionBox.innerHTML = '';
+    });
+});
+
+
+</script>
+
+  {% endblock %}

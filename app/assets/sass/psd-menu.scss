@@ -1022,3 +1022,86 @@ ul#navigation.psd-header__navigation {
   margin-right: 5px; 
 }
 
+.autocomplete-items {
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 19px;
+}
+
+.autocomplete-items div {
+  padding: 8px;
+  padding-top: 8px;
+  cursor: pointer;
+  background-color: #fff; 
+  border: 1px solid #b1b4b6; 
+  margin: -1px;
+  margin-left: 1px;
+  width: 416px;
+  font-size: 16px;
+  color: #0b0c0c;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.autocomplete-items div span {
+  display: block;
+  color: #505a5f;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+#autocompleteInput {
+  width: 425px;
+  height: 34px;
+  border: 2px solid #0b0c0c;
+  padding-left: 6px;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 19px;
+}
+
+body #autocompleteInput:focus {
+  border: 4px solid black;
+  width: 423px;
+  height: 30px;
+  outline: none;
+  box-shadow: 0 0 0 3px #F9DE4B;
+  padding-left: 4px;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 435px;
+}
+
+#autocompleteSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 240px; 
+  overflow-y: auto; 
+  width: 435px; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+#searchButton2 {
+  margin-left: -4px; 
+}
+
