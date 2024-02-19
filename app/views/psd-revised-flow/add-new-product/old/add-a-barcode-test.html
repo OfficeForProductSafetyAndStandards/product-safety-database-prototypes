@@ -1,0 +1,108 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Add a barcode – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Choose the product for your notification" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="add-a-barcode" method="post">
+
+      <span class="govuk-caption-l">{{title}}</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search using barcode, serial number or Amazon ASIN</h1>
+
+      <div class="barcode-container govuk-!-margin-bottom-4">
+        <div class="barcode-column">
+          <img src="../../public/images/barcode.png" alt="barcode" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">Use the 12-13 digits at the bottom of the barcode</p>
+        </div>
+        <div class="barcode-column">
+          <img src="../../public/images/asin.png" alt="asin" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">The ASIN number can be found in the product details section on an Amazon page</p>
+        </div>
+      </div>
+
+      <div class="custom-dropdown">
+        <select class="custom-dropdown-select">
+          <option value="" disabled selected>Select an option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <div class="custom-dropdown-options">
+          <div class="custom-dropdown-option" data-value="option1">Option 1</div>
+          <div class="custom-dropdown-option" data-value="option2">Option 2</div>
+          <div class="custom-dropdown-option" data-value="option3">Option 3</div>
+        </div>
+      </div>
+            
+      <button type="button" class="govuk-button" id="continue-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('continue-button').addEventListener('click', function() {
+    var selectedOption = document.getElementById('barcode').value;
+
+    // Define URLs for each option
+    var urls = {
+      "9 420015 715897": "product-psd",
+      "L87SDM5K2U": "product-bl",
+      "7 131214 989796": "not-found",
+      "0308/0001": "multiple-products"
+    };
+
+    // Redirect based on selected option
+    if (urls[selectedOption]) {
+      window.location.href = urls[selectedOption];
+    } else {
+      // Handle case where selected option doesn't match any predefined URL
+      console.log("No URL found for selected option");
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  var selectElement = document.querySelector('.custom-dropdown-select');
+  var optionsContainer = document.querySelector('.custom-dropdown-options');
+  var options = document.querySelectorAll('.custom-dropdown-option');
+
+  selectElement.addEventListener('click', function() {
+    optionsContainer.style.display = 'block';
+  });
+
+  options.forEach(function(option) {
+    option.addEventListener('click', function() {
+      selectElement.value = option.getAttribute('data-value');
+      optionsContainer.style.display = 'none';
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!selectElement.contains(event.target)) {
+      optionsContainer.style.display = 'none';
+    }
+  });
+});
+
+</script>
+
+
+  {% endblock %}

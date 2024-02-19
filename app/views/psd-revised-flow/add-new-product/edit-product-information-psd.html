@@ -1,7 +1,7 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-Add product information – {{ serviceName }} – GOV.UK Prototype Kit
+Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set title = "Add product" %}
@@ -13,7 +13,7 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 {% endblock %}
 
-{% set title = "Add product " %}
+{% set title = "Add businesses and their roles in the supply chain " %}
 
 {% block content %}
 
@@ -21,12 +21,10 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
  <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form govuk-!-margin-bottom-6" action="add-product-information" method="post">
+    <form class="form govuk-!-margin-bottom-6" action="edit-product-information-psd" method="post">
       <span class="govuk-caption-l">{{title}}</span>
 
-
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Add product information</h1>
-
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Edit product information</h1>
 
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
@@ -35,19 +33,19 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Brand name (mandatory)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, ‘Dyson’ or ‘Sony’.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="phil&teds">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Product name (mandatory)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Include model name and number, for example ‘PlayStation 5’.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="sport™">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Country of origin (mandatory)</label>
             <select class="govuk-select" id="business-details-country" name="business-details-country">
-              <option value="United Kingdom">Select a country of origin</option>
+              <option value="China">China</option>
               <option value="territory:AE-AZ">Category 1</option>
               <option value="country:AF">Category 2</option>
               <option value="territory:AE-AJ">Category 3</option>
@@ -59,17 +57,18 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Description of product</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars.
+          </textarea>
         </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend">
-              Does the product have UKCA, UKNI, or CE marking?            
+              Does the product have UKCA, UKNI, or CE marking?
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" checked>
                 <label class="govuk-label govuk-radios__label" for="contact">
                   Yes
                 </label>
@@ -90,7 +89,7 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
                       </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" checked>
                       <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                         CE
                       </label>
@@ -116,10 +115,9 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Webpage</label>
-          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="https://uk.philandteds.com/products/sport-pram">
         </div>
-
-
+        
       </fieldset>
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
@@ -128,7 +126,7 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
               <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Select a category</option>
+                <option value="United Kingdom">Baby & Toddler</option>
                 <option value="territory:AE-AZ">Category 1</option>
                 <option value="country:AF">Category 2</option>
                 <option value="territory:AE-AJ">Category 3</option>
@@ -140,10 +138,12 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
             <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Baby Transport Accessories">
           </div>
 
       </fieldset>
+
+
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product identifiers</legend>
@@ -151,13 +151,13 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="9 420015 715897">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Other product identifiers</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">ASIN: L87SDM5K2U</textarea>
         </div>
 
       </fieldset>
@@ -172,7 +172,7 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked>
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                   Yes
                 </label>
@@ -199,7 +199,7 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
 
     <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">
-        Create product record
+        Save and continue
       </button>
 
     </div>

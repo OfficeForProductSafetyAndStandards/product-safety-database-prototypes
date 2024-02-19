@@ -1,0 +1,124 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Add a barcode – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Choose the product for your notification" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{title}}</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search using barcode, serial number or Amazon ASIN</h1>
+
+      <div class="barcode-container govuk-!-margin-bottom-4">
+        <div class="barcode-column">
+          <img src="../../public/images/barcode.png" alt="barcode" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">Use the 12-13 digits at the bottom of the barcode</p>
+        </div>
+        <div class="barcode-column">
+          <img src="../../public/images/asin.png" alt="asin" width="180" height="115">
+          <p class="govuk-body-s govuk-!-margin-top-1">The ASIN number can be found in the product details section on an Amazon page</p>
+        </div>
+      </div>
+
+      <label class="govuk-label" for="case-search-term">
+        Barcode, serial number or Amazon ASIN
+      </label>
+      <div class="govuk-input__wrapper opss-search__wrapper ">
+        <div class="autocomplete" style="position: relative; width: 100%;">
+          <input id="autocompleteInput" type="text" name="myCountry" placeholder="">
+          <div id="autocompleteSuggestions" class="autocomplete-items">
+          </div>
+          <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton2">
+            <span class="govuk-visually-hidden">Submit search</span>
+          </button>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var countries = [
+        {name: "0 420015 715897", info: "Product in PSD"},
+        {name: "0 731214 989796", info: "Product not found"},
+        {name: "0908/0001", info: "Multiple products"},
+        {name: "0L7SDM5K2U", info: "Product in Barcode Lookup"},
+    ];
+
+    var input = document.getElementById("autocompleteInput");
+    var suggestionBox = document.getElementById("autocompleteSuggestions");
+    
+    input.addEventListener("input", function() {
+        var val = this.value.toLowerCase();
+        suggestionBox.innerHTML = '';
+        if (!val) { return false;}
+        let matches = 0; 
+
+        countries.forEach(function(country) {
+            if (matches >= 10) return; 
+
+            var index = country.name.toLowerCase().indexOf(val);
+            if (index > -1) { 
+                var div = document.createElement("DIV");
+                var beforeMatch = country.name.substring(0, index);
+                var matchText = country.name.substring(index, index + val.length);
+                var afterMatch = country.name.substring(index + val.length);
+                div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
+                
+                var span = document.createElement("SPAN");
+                span.innerHTML = " - " + country.info;
+                div.appendChild(span);
+                
+                div.addEventListener("click", function(e) {
+                    input.value = country.name;
+                    suggestionBox.innerHTML = "";
+                });
+                
+                suggestionBox.appendChild(div);
+                matches++; 
+            }
+        });
+    });
+
+    document.addEventListener("click", function (e) {
+        suggestionBox.innerHTML = '';
+    });
+});
+
+  document.getElementById('searchButton2').addEventListener('click', function() {
+    var selectedOption = document.getElementById('autocompleteInput').value;
+
+    var urls = {
+      "0 420015 715897": "product-psd",
+      "0 731214 989796": "not-found",
+      "0908/0001": "multiple-products",
+      "0L7SDM5K2U": "product-bl"
+    };
+
+    if (urls[selectedOption]) {
+      window.location.href = urls[selectedOption];
+    } else {
+      console.log("No URL found for selected option");
+    }
+  });
+</script>
+
+
+  {% endblock %}

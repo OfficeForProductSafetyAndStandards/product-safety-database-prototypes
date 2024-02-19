@@ -1,10 +1,10 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+Uploaded photo – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain" %}
+{% set title = "Add product" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -18,30 +18,32 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="add-a-photo" method="post">
 
+        <span class="govuk-caption-l">{{title}}</span>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Uploaded photo</h1>
 
 
 
 
-      <div class="how-to-photo-column">
-        <img src="../../public/images/pt_sport_own.png" alt="Car seat 1" width="400" height="400">
+      <div class="how-to-photo-column govuk-!-margin-bottom-6">
+        <img src="../../public/images/p+t-taken.png" alt="Car seat 1" width="400" height="400">
         <div class="how-to-photo-container govuk-!-margin-top-1">
         <img src="../../public/images/rotate.svg" alt="Tick">
         <a href="#">Rotate image</a>
       </div>
       </div>
-      
-      <br>
 
+      <form class="form" action="happy-photo" method="post">
+
+    
     <div class="button-container">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
+      <button type="submit" class="govuk-button" data-module="govuk-button" name="happy-with-photo" id="happy-with-photo-1" value="yes">
         Save and continue
       </button>
         <p class="govuk-body-m">or</p>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+
+      <button type="submit" name="happy-with-photo" id="happy-with-photo-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" value="no">
         Get a different photo  
       </button>
     </div>

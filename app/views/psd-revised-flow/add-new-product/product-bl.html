@@ -1,0 +1,187 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="product-bl" method="post">
+
+        <span class="govuk-caption-l">{{title}}</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">phil&teds sport™</h1>
+      <span class="govuk-caption-m govuk-!-margin-bottom-9">Found on Barcode Lookup</span>
+
+
+      <div class="barcode-column govuk-!-margin-bottom-8">
+        <img src="../../public/images/p+t-stock.png" alt="barcode" width="217" height="217">
+        <p class="govuk-body">
+          <a href="add-a-photo" class="govuk-link govuk-link--no-visited-state">Change</a>
+        </p>      
+      </div>
+
+
+    <h2 class="govuk-heading-m ">Product details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Brand name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            phil&teds
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Product name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            sport™
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of origin
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body"></p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Product marking
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body"></p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Webpage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body"></p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+    <h2 class="govuk-heading-m">Categories</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Product category
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Baby & Toddler
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Product sub-category
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Baby Transport Accessories
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+      </dl>
+
+    <h2 class="govuk-heading-m">Product identifiers</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Barcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 420015 715897
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other product identifiers
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ASIN: L87SDM5K2U
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+      </dl>    
+      
+      
+  <h2 class="govuk-heading-m">Availability</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Market date
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+    </dl>   
+  
+  <div class="button-container">
+    <button type="submit" class="govuk-button" data-module="govuk-button" name="happy-with-photo" id="happy-with-photo-1" value="yes">
+      Create product record and add to notification
+    </button>
+  </div>
+
+</form>
+
+  {% endblock %}

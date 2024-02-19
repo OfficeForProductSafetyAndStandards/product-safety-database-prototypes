@@ -1,95 +1,107 @@
 const express = require('express')
 const router = express.Router()
 
-// Search or add a business //
-router.post('/search-businesses', function (req, res) {
-  res.redirect('./how-to-add-business'); 
+// Search to barcode //
+router.post('/search-products-barcode', function (req, res) {
+  res.redirect('./do-you-have-barcode'); 
 })
 
-// How to add a business //
-router.post('/how-to-add-business', function (req, res) {
-  const addBusiness = req.session.data['add-business'];
-  if (addBusiness === 'companies-house') {
-    res.redirect('./search-companies-house');
-  } else if (addBusiness === 'manually') {
-    res.redirect('./enter-business-details');
+// Search to laptop //
+router.post('/search-products-laptop', function (req, res) {
+  res.redirect('./added-product-2'); 
+})
+
+
+// Multiple products //
+router.post('/multiple-products', function (req, res) {
+  res.redirect('./product-bl'); 
+})
+
+// Happy photo //
+router.post('/happy-photo', function (req, res) {
+  const happyPhoto = req.session.data['happy-with-photo'];
+  if (happyPhoto === 'yes') {
+    res.redirect('./add-product-information');
+  } else {
+    res.redirect('./add-a-photo');
+  }
+});
+
+// Add product information //
+router.post('/add-product-information', function (req, res) {
+  res.redirect('./product-manual'); 
+})
+
+// Add product information //
+router.post('/product-manual', function (req, res) {
+  res.redirect('./added-product-3'); 
+})
+
+
+// Added product //
+router.post('/added-product', function (req, res) {
+  const addedProduct = req.session.data['addedProduct'];
+  if (addedProduct === 'yes') {
+    res.redirect('./search-products');
+  } else if (addedProduct === 'no') {
+    res.redirect('./task-list-finish');
+  } else {
+    res.status(204).end(); 
+  }
+});
+
+// Not found //
+router.post('/not-found', function (req, res) {
+  const notFound = req.session.data['not-found-it'];
+  if (notFound === 'yes') {
+    res.redirect('./add-a-barcode');
+  } else {
+    res.redirect('./add-product-information');
+  }
+});
+
+// Product from Barcode Lookup //
+router.post('/product-bl', function (req, res) {
+  res.redirect('./added-product'); 
+})
+
+// Product from PSD //
+router.post('/product-psd', function (req, res) {
+  res.redirect('./added-product'); 
+})
+
+// Edit product information PSD //
+router.post('/edit-product-information-psd', function (req, res) {
+  res.redirect('./product-psd'); 
+})
+
+// Edit product information BL //
+router.post('/edit-product-information-bl', function (req, res) {
+  res.redirect('./product-bl'); 
+})
+
+// Duplicate //
+router.post('/duplicate', function (req, res) {
+  const whichOne = req.session.data['which-one'];
+  if (whichOne === 'yes') {
+    res.redirect('./added-product-3');
+  } else if (whichOne === 'no') {
+    res.redirect('./added-product');
+  } else {
+    res.status(204).end(); 
+  }
+});
+
+// Do you have a barcode //
+router.post('/do-you-have-barcode', function (req, res) {
+  const haveBarcode = req.session.data['have-barcode'];
+  if (haveBarcode === 'yes') {
+    res.redirect('./add-a-barcode');
+  } else if (haveBarcode === 'no') {
+    res.redirect('./add-a-photo');
   } else {
     res.status(204).end(); // <-- No redirect when not selected
   }
 });
-
-// Manual //
-router.post('/enter-business-details', function (req, res) {
-  res.redirect('./business-blank'); 
-})
-
-// Bartholmew //
-router.post('/business-bartholomew', function (req, res) {
-  res.redirect('./business-role'); 
-})
-
-// Cunningham //
-router.post('/business-cunningham', function (req, res) {
-  res.redirect('./business-role'); 
-})
-
-// Dreams //
-router.post('/business-dreams', function (req, res) {
-  res.redirect('./business-role'); 
-})
-
-// Blank //
-router.post('/business-blank', function (req, res) {
-  res.redirect('./business-role'); 
-})
-
-// Edit details //
-router.post('/edit-business-details', function (req, res) {
-  res.redirect('./business-dreams'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-business-details-bartholomew', function (req, res) {
-  res.redirect('./business-bartholomew?hide=true'); 
-})
-
-// Edit Bartholomew //
-router.post('/edit-business-details-cunningham', function (req, res) {
-  res.redirect('./business-cunningham'); 
-})
-
-// Business role //
-router.post('/business-role', function (req, res) {
-  res.redirect('./added-business-summary'); 
-})
-
-// Duplicate  //
-router.post('/duplicate-business', function (req, res) {
-  res.redirect('./business-dreams'); 
-})
-
-// Business summary //
-router.post('/added-business-summary', function (req, res) {
-  const changedName = req.session.data['changedName'];
-  if (changedName === 'yes') {
-    res.redirect('./search-businesses');
-  } else if (changedName === 'no') {
-    res.redirect('./notification-task-list-2');
-  } else {
-    res.status(204).end(); // <-- No redirect when not selected
-  }
-});
-
-
-
-// Duplicate  //
-router.post('/test1', function (req, res) {
-  res.redirect('./test2?hide=true'); 
-})
-
-// Duplicate  //
-router.post('/test2', function (req, res) {
-  res.redirect('./test1'); 
-})
 
 module.exports = router

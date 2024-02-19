@@ -1,10 +1,10 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+  Product not found – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain" %}
+{% set title = "Add product" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -20,6 +20,7 @@
 
       <form class="form" action="not-found" method="post">
 
+        <span class="govuk-caption-l">{{title}}</span>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Product details could not be found</h1>
 
@@ -30,11 +31,11 @@
       <p>Please enter a new barcode / Amazon ASIN or enter the product details manually.</p>
 
       <div class="button-container">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button" id="not-found-it-1" name="not-found-it" value="yes">
           Add another barcode or ASIN
         </button>
           <p class="govuk-body-m">or</p>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="not-found-it-2" name="not-found-it" value="manual">
           Enter details manually  
         </button>
       </div>

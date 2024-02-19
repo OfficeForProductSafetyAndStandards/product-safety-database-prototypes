@@ -1,10 +1,10 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+Add a product image – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain" %}
+{% set title = "Add product" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -16,20 +16,23 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Add a product image</h1>
+    <span class="govuk-caption-l">{{title}}</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Uploading image</h1>
 
-      <div class="how-to-photo-container">
-        <img src="../../public/images/loader.gif">
-        <h2 class="govuk-heading-m">Processing image</h2>
+    <div class="how-to-photo-container">
+      <img src="../../public/images/loader.gif">
+      <h2 class="govuk-heading-m">Processing</h2>
     </div>
 
+  </div>
+</div>
 
-    <script type="text/javascript">
-      setTimeout(function() {
-          window.location.href = 'happy-photo'; // Replace with your desired URL
-      }, 2000); // 2000 milliseconds = 2 seconds
-  </script>
+<script type="text/javascript">
+  setTimeout(function() {
+    window.location.href = 'happy-photo'; 
+  }, 3000); 
+</script>
 
   {% endblock %}

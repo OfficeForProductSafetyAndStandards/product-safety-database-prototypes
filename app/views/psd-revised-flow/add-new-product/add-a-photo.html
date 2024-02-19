@@ -1,10 +1,10 @@
 {% extends "layout-psd-menu_home.html" %}
 
 {% block pageTitle %}
-  Bartholomew Trading Ltd – {{ serviceName }} – GOV.UK Prototype Kit
+  Add a photo – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain" %}
+{% set title = "Add product" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -20,12 +20,13 @@
 
       <form class="form" action="add-a-photo" method="post">
 
+        <span class="govuk-caption-l">{{title}}</span>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Add a product image</h1>
 
       <p>Where possible we recommend uploading an image from the product website or online seller but you can also submit your own photos.</p>
 
-      <details class="govuk-details">
+      <details id="photoUploadDetails" class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             Help on submitting the best photos
@@ -74,9 +75,8 @@
     </ul>
 
     <div class="button-container">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Choose your photo
-      </button>
+      <button type="button" class="govuk-button" id="uploadBtn">Choose your photo</button>
+
         <p class="govuk-body-m">or</p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Skip this step  
@@ -88,33 +88,41 @@
     <form id="uploadForm" enctype="multipart/form-data" style="display:none;">
       <input type="file" id="fileInput" name="file" onchange="uploadFile()">
   </form>
-  <button type="button" class="govuk-button" onclick="document.getElementById('fileInput').click()">Choose your photo</button>
+
+
+  <div id="uploadedImage" style="display: none;">
+    <img id="imagePreview" src="#" alt="Uploaded Image" width="200">
+  </div>
   
-
-
-<script>
-
-function uploadFile() {
-    var file = document.getElementById('fileInput').files[0];
-    if (!file) {
-        return; // No file selected
-    }
-
-    var formData = new FormData();
-    formData.append('file', file);
-
-    fetch('YOUR_SERVER_ENDPOINT', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        window.location.href = 'uploading-photo'; // Redirect to new page
-    })
-    .catch(error => console.error(error));
-}
-
-</script>
-
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var uploadBtn = document.getElementById('uploadBtn');
+    var uploadedImage = document.getElementById('uploadedImage');
+    var imagePreview = document.getElementById('imagePreview');
+    var uploadStatus = document.getElementById('uploadStatus');
+  
+    uploadBtn.addEventListener('click', function() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+  
+      input.onchange = function(e) {
+        var file = e.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function() {
+            imagePreview.src = reader.result;
+            setTimeout(function() {
+              window.location.href = 'uploading-photo';
+            }, 0); // Redirect after 3 seconds
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+  
+      input.click();
+    });
+  });
+  </script>
+  
   {% endblock %}

@@ -1,0 +1,124 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Duplicate product – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="duplicate" method="post">
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">We found a duplicate product record</h1>
+
+      <p>Please select a record to continue.</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
+
+      <span class="govuk-caption-m">Your product</span>
+      <table class="custom-table-2">
+        <tbody>
+          <tr>
+            <td>
+              <img src="../../public/images/p+t-taken.png" alt="Image" class="table-image">
+            </td>
+            <td class="table-content " colspan="2">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds sport™ </h4>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+              <details class="govuk-details govuk-!-margin-bottom-0">
+                <summary class="govuk-details__summary govuk-body-xs">
+                  <span class="govuk-details__summary-text">
+                    More details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>    
+                </div>
+              </details>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-2">
+    
+      <span class="govuk-caption-m">Product in the database</span>
+      <table class="custom-table-2">
+        <tbody>
+          <tr>
+            <td>
+              <img src="../../public/images/pram-1.png" alt="Image" class="table-image">
+            </td>
+            <td class="table-content " colspan="2">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds sport™ </h4>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-436</p>
+
+              <details class="govuk-details govuk-!-margin-bottom-0">
+                <summary class="govuk-details__summary govuk-body-xs">
+                  <span class="govuk-details__summary-text">
+                    More details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </div>
+              </details>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <hr class="govuk-section-break  govuk-section-break--visible">
+
+      <div class="govuk-form-group govuk-!-margin-top-6">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <h3 class="govuk-heading-m">
+              What would you like to do?
+            </h3>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="which-one" name="which-one" type="radio" value="yes" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="which-one">
+                Create new product record   
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="which-one-2" name="which-one" type="radio" value="no" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="which-one-2">
+                Use the product in the database
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  
+  
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+  
+  </form>
+
+
+
+
+  
+{% endblock %}

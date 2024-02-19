@@ -895,11 +895,21 @@ ul#navigation.psd-header__navigation {
 .how-to-photo-container {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
 }
 
 .how-to-photo-column {
   width: 204px;
+}
+
+.barcode-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.barcode-column {
+  width: 300px;
 }
 
 .button-container {
@@ -932,4 +942,160 @@ ul#navigation.psd-header__navigation {
   border: solid #0b0c0c;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #0b0c0c;
+  border-bottom: 1px solid #0b0c0c;
+  table-layout: fixed;
+}
+
+.custom-table-2 {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.custom-table td {
+  padding: 10px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.custom-table-2 td {
+  padding: 10px 0;
+  vertical-align: top;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.custom-table-2 tr:last-child td {
+  border-bottom: none;
+}
+
+.table-image {
+  width: 90px;
+  height: 90px;
+  display: block;
+}
+
+.table-content {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.table-action {
+  padding: 10px 0;
+  text-align: right;
+}
+
+.custom-table td:first-child {
+  width: 110px;
+  text-align: center;
+}
+
+.custom-table-2 td:first-child {
+  width: 110px;
+  text-align: center;
+}
+
+.custom-table td.table-content {
+  width: 450px;
+}
+
+.custom-table-2 td.table-content {
+  width: 450px;
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+}
+
+.summary-content img {
+  margin-right: 5px;
+}
+
+.autocomplete-items {
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 19px;
+}
+
+.autocomplete-items div {
+  padding: 8px;
+  padding-top: 8px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-left: 1px solid #b1b4b6;
+  border-right: 1px solid #b1b4b6;
+  border-bottom: 1px solid #b1b4b6;
+  margin-left: 1px;
+  width: 416px;
+  font-size: 16px;
+  color: #0b0c0c;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+.autocomplete-items div span {
+  display: block;
+  color: #505a5f;
+  padding-top: 2px;
+  font-size: 14px;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.autocomplete-input {
+  width: 425px;
+  height: 34px;
+  border: 2px solid #0b0c0c;
+  padding-left: 6px;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 19px;
+}
+
+body .autocomplete-input:focus {
+  border: 4px solid #0b0c0c;
+  width: 423px;
+  height: 30px;
+  outline: none;
+  box-shadow: 0 0 0 3px #f9de4b;
+  padding-left: 4px;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 435px;
+}
+
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 240px;
+  overflow-y: auto;
+  width: 435px;
+}
+
+.search-button2 {
+  margin-left: -4px;
 }

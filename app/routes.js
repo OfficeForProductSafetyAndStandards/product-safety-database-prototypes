@@ -20,7 +20,7 @@ router.use('/product-case-testing', require('./views/product-case-testing/_route
 
 // added by OJ
 router.use('/psd-revised-flow/add-business-to-notification', require('./views/psd-revised-flow/add-business-to-notification/_routes'));
-
+router.use('/psd-revised-flow/add-new-product', require('./views/psd-revised-flow/add-new-product/_routes'));
 
 // Prototype v5
 

@@ -1,0 +1,508 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Search or add a product – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set title = "Add product" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-0"> 
+
+    <form class="form" action="search-products-barcode" method="post">
+
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{{title}}</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search for or add a product</h1>
+        <div class="govuk-grid-row opss-full-height">
+        </div>        
+      </div>        
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group bottom-box opss-text-align-right opss-text-align-bottom">
+          <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-4" data-module="govuk-button">
+            Add a new product
+          </button>
+          <p class="govuk-body">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Add multiple products</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </form>
+
+
+
+
+
+<!-- Search -->
+
+<section class="govuk-grid-column-three-quarters govuk-!-padding-0 govuk-!-margin-bottom-8 govuk-!-margin-top-0" id="page-content">
+
+  <div class="govuk-grid-column-full">
+    <label class="govuk-label" for="case-search-term">
+      Enter business name, Companies House number or address
+    </label>
+    <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-two-thirds">
+      <input type="text" class="govuk-input " id="searchInput">
+      <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton">
+        <span class="govuk-visually-hidden">Submit search</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<form class="form" action="search-products-laptop" method="post">
+
+
+
+<!-- Filters & table -->
+
+<section class="govuk-grid-row" id="page-content">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <details id="teamDetails">
+                <summary class="summary-content govuk-!-margin-bottom-3 ">
+                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('teamDetails')">Team</a>
+                </summary>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      My products
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      My team’s products
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <details id="categoryDetails">
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails')">Category</a>
+                </summary>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Electrical
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Fragrances
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Furniture
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Home appliances
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Sport & travel
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-summary-list__row">
+              <details>
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state">Sub-category</a>
+                </summary>
+              </details>
+            </div>
+          </dl>
+        </div>
+      </div>
+            
+
+  
+
+      <div class="govuk-grid-column-two-thirds ">
+
+        <section class="govuk-grid-row" id="page-content">
+          <div class="govuk-grid-column-full ">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group">
+                  <p class="govuk-body-s govuk-!-margin-top-2">Showing 1-10 of <strong>4456</strong> results</p>
+                </div>
+              </div>
+        
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group opss-text-align-right ">
+                  <div class="govuk-label " for="sort">
+                    Sort by
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="recently-added">Recently added</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <div class="govuk-form-group opss-text-align-right">
+          <table class="custom-table">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-a.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acer Aspire 3 </h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electricals</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Laptop</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-425</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-b.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acqua di Parma Colonia Eau de Cologne</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Beauty</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Fragrance</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-345</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-c.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Adidas Power VI Recycled Backpack</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-623</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-d.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alessi Pepper Mill</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Tableware</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Pepper mill</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-622</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-e.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alpina AL-727LNS4H6 Startimer Chronograph</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Timepieces</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Watch</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-146</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-f.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">American Crew Fiber™ Grooming Foam</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Haircare</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Hair styling</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-836</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-g.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Anglepoise Type 75 Lamp</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Lighting</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Desk lamp</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-382</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-h.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Antler Chelsea Overnight Holdall</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-823</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-i.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content " colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Asics Gel-Trabuco 12</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Running shoes</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-910</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                    </div>
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../../public/images/image-j.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Audio-Technica AT-LP60XBT</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electrical</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Turntable</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-293</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+                                                  
+          
+          
+
+          <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg></a>
+            </div>
+          </nav>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+
+
+  <script>
+    function toggleDetails(detailsId) {
+      var details = document.getElementById(detailsId);
+      details.open = !details.open;
+    }
+  </script>
+
+
+{% endblock %}
