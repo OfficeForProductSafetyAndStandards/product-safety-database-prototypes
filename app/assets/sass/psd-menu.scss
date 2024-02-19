@@ -1066,7 +1066,7 @@ ul#navigation.psd-header__navigation {
   font-family: "GDS Transport", arial, sans-serif;
 }
 
-#autocompleteInput {
+\#autocompleteInput {
   width: 425px;
   height: 34px;
   border: 2px solid #0b0c0c;
@@ -1076,7 +1076,7 @@ ul#navigation.psd-header__navigation {
 }
 
 body #autocompleteInput:focus {
-  border: 4px solid #0b0c0c;
+  border: 4px solid #0b0c0c; /* eslint-disable-next-line */
   width: 423px;
   height: 30px;
   outline: none;
