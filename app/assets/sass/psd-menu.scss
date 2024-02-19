@@ -1061,7 +1061,7 @@ ul#navigation.psd-header__navigation {
   font-family: "GDS Transport", arial, sans-serif;
 }
 
-#autocompleteInput { /* eslint-disable-next-line */
+.autocompleteInput {
   width: 425px;
   height: 34px;
   border: 2px solid #0b0c0c;
@@ -1070,8 +1070,8 @@ ul#navigation.psd-header__navigation {
   font-size: 19px;
 }
 
-body #autocompleteInput:focus {
-  border: 4px solid #0b0c0c; 
+body .autocompleteInput:focus {
+  border: 4px solid #0b0c0c;
   width: 423px;
   height: 30px;
   outline: none;
@@ -1085,7 +1085,7 @@ body #autocompleteInput:focus {
   width: 435px;
 }
 
-#autocompleteSuggestions {
+.autocompleteSuggestions {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1096,6 +1096,6 @@ body #autocompleteInput:focus {
   width: 435px;
 }
 
-#searchButton2 {
+.searchButton2 {
   margin-left: -4px;
 }
