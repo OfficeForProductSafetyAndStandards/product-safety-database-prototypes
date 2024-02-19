@@ -29,6 +29,11 @@ router.post('/happy-photo', function (req, res) {
 
 // Add product information //
 router.post('/add-product-information', function (req, res) {
+  res.redirect('./product-manual'); 
+})
+
+// Add product information //
+router.post('/product-manual', function (req, res) {
   res.redirect('./added-product-3'); 
 })
 

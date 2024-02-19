@@ -4,7 +4,7 @@
   Add a barcode – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% set title = "Choose the product for your notification" %}
+{% set title = "Add product" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -83,7 +83,7 @@
                 div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
                 
                 var span = document.createElement("SPAN");
-                span.innerHTML = "" + country.info;
+                span.innerHTML = " - " + country.info;
                 div.appendChild(span);
                 
                 div.addEventListener("click", function(e) {
