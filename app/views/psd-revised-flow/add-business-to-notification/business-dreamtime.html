@@ -104,19 +104,25 @@
          
         <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact details</h2>
 
-        <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">This contact will be added to the notification unless you choose to add more contacts.</div>
+        <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All selected contacts will be added to the notification.</div>
 
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                {{ data['business-details-name'] }}
-                <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">{{ data['business-details-job_title'] }} </p>
-              </dt>
-
+            <dt class="govuk-summary-list__key">
+              <label class="custom-checkbox govuk-!-margin-right-7">
+                <input type="checkbox"/>
+                <span class="checkmark"></span>
+              </label>
+              {{ data['business-details-name'] }}     
+              <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-margin-left-7">{{ data['business-details-job_title'] }} </p>
+            </dt>
+    
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['business-details-email'] }}</p>
-              <p class="govuk-body">{{ data['business-details-phone'] }}</p>
+              <p class="govuk-body govuk-!-margin-left-7">{{ data['business-details-email'] }} </p>
+              <p class="govuk-body govuk-!-margin-left-7">{{ data['business-details-phone'] }} </p>
+            </dd>
+    
 
             </dd>
             <dd class="govuk-summary-list__actions">
