@@ -41,10 +41,10 @@
       </label>
       <div class="govuk-input__wrapper opss-search__wrapper ">
         <div class="autocomplete" style="position: relative; width: 100%;">
-          <input id="autocompleteInput" class="autocompleteInput" type="text" name="myCountry" placeholder="">
-          <div id="autocompleteSuggestions" class="autocompleteSuggestions autocomplete-items">
+          <input id="autocomplete-input" class="autocomplete-input" type="text" name="myCountry" placeholder="">
+          <div id="autocomplete-suggestions" class="autocomplete-suggestions autocomplete-items">
           </div>
-          <button class="govuk-button govuk-!-margin-bottom-0 searchButton2" id="searchButton2">
+          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2">
             <span class="govuk-visually-hidden">Submit search</span>
           </button>
         </div>
@@ -62,8 +62,8 @@
         {name: "0L7SDM5K2U", info: "Product in Barcode Lookup"},
     ];
 
-    var input = document.getElementById("autocompleteInput");
-    var suggestionBox = document.getElementById("autocompleteSuggestions");
+    var input = document.getElementById("autocomplete-input");
+    var suggestionBox = document.getElementById("autocomplete-suggestions");
     
     input.addEventListener("input", function() {
         var val = this.value.toLowerCase();
@@ -102,8 +102,8 @@
     });
 });
 
-  document.getElementById('searchButton2').addEventListener('click', function() {
-    var selectedOption = document.getElementById('autocompleteInput').value;
+  document.getElementById('search-button2').addEventListener('click', function() {
+    var selectedOption = document.getElementById('autocomplete-input').value;
 
     var urls = {
       "0 420015 715897": "product-psd",
