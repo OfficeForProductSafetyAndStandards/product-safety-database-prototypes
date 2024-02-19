@@ -81,15 +81,18 @@
 
         <h2 class="govuk-heading-m govuk-!-margin-top-8 govuk-!-margin-bottom-3">Addresses</h2>
 
-        <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">All selected addresses will be added to the notification.</div>
+        <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">Select at least one address to add to the notification.</div>
           
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row ">
 
             <label class="custom-checkbox govuk-!-margin-right-7">
-              <input type="checkbox" checked/>
+              <input type="checkbox"/>
               <span class="checkmark"></span>
             </label>
+
+
+      
 
             {% set roles = [data['business-details-address_1'], data['business-details-address_2'], data['business-details-city'], data['business-details-county'], 
             data['business-details-postcode'], data['business-details-country']] %}
@@ -121,7 +124,7 @@
         <div class="govuk-summary-list__row ">
 
           <label class="custom-checkbox govuk-!-margin-right-7">
-            <input type="checkbox" checked/>
+            <input type="checkbox"/>
             <span class="checkmark"></span>
           </label>
 
@@ -156,18 +159,25 @@
    
     <h2 class="govuk-heading-m govuk-!-margin-top-8  govuk-!-margin-bottom-3">Contact details</h2>
 
-    <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">This contact will be added to the notification unless you choose to add more contacts.</div>
+    <div id="waste-hint" class="govuk-hint  govuk-!-margin-bottom-2">Any selected contact will be added to the notification.</div>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
+
+
+
         <dt class="govuk-summary-list__key">
+          <label class="custom-checkbox govuk-!-margin-right-7">
+            <input type="checkbox"/>
+            <span class="checkmark"></span>
+          </label>
           {{ data['business-details-name'] }}     
-          <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">{{ data['business-details-job_title'] }} </p>
+          <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-margin-left-7">{{ data['business-details-job_title'] }} </p>
         </dt>
 
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">{{ data['business-details-email'] }} </p>
-          <p class="govuk-body">{{ data['business-details-phone'] }} </p>
+          <p class="govuk-body govuk-!-margin-left-7">{{ data['business-details-email'] }} </p>
+          <p class="govuk-body govuk-!-margin-left-7">{{ data['business-details-phone'] }} </p>
         </dd>
 
         <dd class="govuk-summary-list__actions ">
@@ -175,12 +185,14 @@
             <li class="govuk-summary-list__actions-list-item "><a class="govuk-link" href="edit-contact-bartholomew">Change<span class="govuk-visually-hidden"> contact details</span></a></li>                </ul>
           </dd>
         </div>
-        <p class="govuk-body govuk-!-margin-top-4">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">Add another contact</a>
-        </p>
-      </dl>
-    </div>
+
+      <p class="govuk-body govuk-!-margin-top-4">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Add another contact</a>
+      </p>
+
+    </dl>
   </div>
+</div>
 
 </div>
 
