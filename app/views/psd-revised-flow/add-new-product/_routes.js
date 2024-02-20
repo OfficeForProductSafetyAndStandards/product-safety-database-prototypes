@@ -12,10 +12,6 @@ router.post('/search-products-laptop', function (req, res) {
 })
 
 
-// Multiple products //
-router.post('/multiple-products', function (req, res) {
-  res.redirect('./product-bl'); 
-})
 
 // Happy photo //
 router.post('/happy-photo', function (req, res) {
@@ -62,13 +58,30 @@ router.post('/not-found', function (req, res) {
 
 // Product from Barcode Lookup //
 router.post('/product-bl', function (req, res) {
-  res.redirect('./added-product'); 
-})
+  const notFound = req.session.data['not-found-it'];
+  if (notFound === 'yes') {
+    res.redirect('./added-product');
+  } else {
+    res.redirect('./do-you-have-barcode');
+  }
+});
 
 // Product from PSD //
 router.post('/product-psd', function (req, res) {
-  res.redirect('./added-product'); 
+  const notFound = req.session.data['not-found-it'];
+  if (notFound === 'yes') {
+    res.redirect('./added-product');
+  } else {
+    res.redirect('./do-you-have-barcode');
+  }
+});
+
+
+// Multiple products //
+router.post('/multiple-products', function (req, res) {
+  res.redirect('./product-bl'); 
 })
+
 
 // Edit product information PSD //
 router.post('/edit-product-information-psd', function (req, res) {
