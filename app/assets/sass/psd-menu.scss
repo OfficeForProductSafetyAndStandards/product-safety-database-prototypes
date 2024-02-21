@@ -425,6 +425,17 @@
   padding-right: 10px;
 }
 
+.psd-header__product-name-bold {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1111;
+  display: inline-table;
+  padding-right: 10px;
+}
+
 @media (min-width: 40.0625em) {
   .psd-header__product-name {
     font-size: 24px;
@@ -1099,3 +1110,4 @@ body .autocomplete-input:focus {
 .search-button2 {
   margin-left: -4px;
 }
+

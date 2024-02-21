@@ -97,9 +97,9 @@ router.post('/edit-product-information-bl', function (req, res) {
 router.post('/duplicate', function (req, res) {
   const whichOne = req.session.data['which-one'];
   if (whichOne === 'yes') {
-    res.redirect('./added-product-3');
+    res.redirect('./product-manual');
   } else if (whichOne === 'no') {
-    res.redirect('./added-product');
+    res.redirect('./product-psd');
   } else {
     res.status(204).end(); 
   }
