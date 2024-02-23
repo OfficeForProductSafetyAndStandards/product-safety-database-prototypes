@@ -48,6 +48,14 @@ Uploaded photo – {{ serviceName }} – GOV.UK Prototype Kit
       </button>
     </div>
 
+    <input type="hidden" name="brand-name" value="{{ data['brand-name'] if data['brand-name'] else 'Bosch' }}" />
+    <input type="hidden" name="product-name" value="{{ data['product-name'] if data['product-name'] else 'Series 6 WGG24409GB' }}" />
+    <input type="hidden" name="more-detail" value="{{ data['more-detail'] if data['more-detail'] else 'Free 5 Year Warranty! (Via Registration) Capacity 9kg 1400rpm Anti Stain Active Water Plus Eco Silence Drive Speed Perfect LED Display Colour: White With Black Door Energy Rating (A-G): A H848 x W598 x D590 mm.' }}" />
+    <input type="hidden" name="product-subcategory" value="{{ data['product-subcategory'] if data['product-subcategory'] else 'Home & Garden > Household Appliances > Laundry Appliances > Washing Machines' }}" />
+    <input type="hidden" name="barcode" value="{{ data['barcode'] if data['barcode'] else '9 324652 876225' }}" />
+    <input type="hidden" name="amazon-asin" value="{{ data['amazon-asin'] if data['amazon-asin'] else 'ASIN: 934587' }}" />
+        
+
   </form>
 
 

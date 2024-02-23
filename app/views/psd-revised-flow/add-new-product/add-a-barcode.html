@@ -159,7 +159,6 @@
                  </button>
               </td>
             </tr>
-            </form>
 
             </tbody>
           </table>
@@ -174,6 +173,10 @@
           </div>
         </div>
       </div>
+
+<input type="hidden" name="brand-name" value="{{ data['brand-name'] if data['brand-name'] else “Bosch” }}" />
+
+</form>
 
       <script>
         function toggleDetails(detailsId) {
@@ -263,6 +266,10 @@
             displayCount.textContent = `Showing ${visibleRows} of ${totalRows}`;
         }
     </script>
+
+
+
+
           
       
   {% endblock %}

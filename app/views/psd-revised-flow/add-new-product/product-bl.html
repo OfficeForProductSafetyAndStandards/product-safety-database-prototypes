@@ -40,7 +40,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Brand name
           </dt>
           <dd class="govuk-summary-list__value">
-            Bosch 
+            {{ data['brand-name'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -51,7 +51,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Product name
           </dt>
           <dd class="govuk-summary-list__value">
-            Series 6 WGG24409GB
+            {{ data['product-name'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -65,7 +65,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> address</span></a>
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -73,8 +73,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Description
           </dt>
           <dd class="govuk-summary-list__value">
-            Free 5 Year Warranty! (Via Registration) Capacity 9kg 1400rpm Anti Stain Active Water Plus Eco Silence Drive Speed Perfect LED Display Colour: White With Black Door Energy Rating (A-G): AH848 x W598 x D590 mm.
-            <p class="govuk-body"></p>
+            {{ data['more-detail'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -91,7 +90,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> contact details</span></a></li>
+              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
             </ul>
           </dd>
         </div>
@@ -100,7 +99,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Webpage
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body"></p>
+            {{ data['webpage'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -120,7 +119,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> name</span></a>
+            <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -128,7 +127,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Product sub-category
           </dt>
           <dd class="govuk-summary-list__value">
-            Home & Garden > Household Appliances > Laundry Appliances > Washing Machines
+            {{ data['product-subcategory'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -143,7 +142,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Barcode
           </dt>
           <dd class="govuk-summary-list__value">
-            9 324652 876225
+            {{ data['barcode'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -154,7 +153,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             Other product identifiers
           </dt>
           <dd class="govuk-summary-list__value">
-            ASIN: 934587
+            {{ data['amazon-asin'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -170,9 +169,10 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
           Market date
         </dt>
         <dd class="govuk-summary-list__value">
+          {{ data['market-date'] }} 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="edit-product-information-bl">Add<span class="govuk-visually-hidden"> name</span></a>
+          <a class="govuk-link" href="edit-product-information-bl">Change<span class="govuk-visually-hidden"> name</span></a>
         </dd>
     </dl>   
 
