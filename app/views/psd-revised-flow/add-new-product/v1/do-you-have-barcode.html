@@ -25,23 +25,23 @@
     <fieldset class="govuk-fieldset" aria-describedby="haveBarcode-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          How do you want to add your product?
+          Do you want to find the product by barcode, serial number or ASIN?
         </h1>
       </legend>
+      <div id="haveBarcode-hint" class="govuk-hint">
+        We will use these details to search our and third-party databases to reduce the amount of information you need to enter.
+      </div>
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="have-barcode-1" name="have-barcode" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="have-barcode-1">
-            Find on Barcode Lookup
+            Yes
           </label>
-          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-            This will reduce the amount of information you need to enter.
-          </div>
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="have-barcode-2" name="have-barcode" type="radio" value="no">
           <label class="govuk-label govuk-radios__label" for="have-barcode-2">
-            Add manually 
+            No
           </label>
         </div>
       </div>

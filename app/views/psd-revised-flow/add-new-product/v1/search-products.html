@@ -47,33 +47,27 @@
 
 <!-- Search -->
 
-<section class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-bottom-2 govuk-!-margin-top-0" id="page-content">
+<section class="govuk-grid-column-three-quarters govuk-!-padding-0 govuk-!-margin-bottom-8 govuk-!-margin-top-0" id="page-content">
 
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
     <label class="govuk-label" for="case-search-term">
-      Enter a product name, brand, barcode, ASIN or PSD ref
+      Enter product name, brand or PSD reference
     </label>
     <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-two-thirds">
-      <input type="text" class="govuk-input" id="searchInput">
-      <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
+      <input type="text" class="govuk-input " id="searchInput">
+      <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton">
         <span class="govuk-visually-hidden">Submit search</span>
       </button>
     </div>
   </div>
-  
+</div>
 
-<div class="govuk-grid-column-one-quarter">
-  <div class="govuk-form-group opss-text-align-right">
 
-      <label class="govuk-label" for="sort">
-            Sort by
-          </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="recently-added">Recently added</option>
-          </select>
-        </div>
-      </div>
-    </div>
+
+
+<form class="form" action="search-products-laptop" method="post">
+
+
 
 <!-- Filters & table -->
 
@@ -148,7 +142,7 @@
             <div class="govuk-summary-list__row">
               <details>
                 <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state">Sub-category</a>
+                    <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state">Sub-category</a>
                 </summary>
               </details>
             </div>
@@ -156,16 +150,35 @@
         </div>
       </div>
             
-      <div class="govuk-grid-column-two-thirds">
 
-              <p class="govuk-!-margin-bottom-3">Showing 1-10 of <strong>418</strong> results</p>
+  
 
-              <div id="searchInfo"><p></p></div>
+      <div class="govuk-grid-column-two-thirds ">
 
+        <section class="govuk-grid-row" id="page-content">
+          <div class="govuk-grid-column-full ">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group">
+                  <p class="govuk-body-s govuk-!-margin-top-2">Showing 1-10 of <strong>4456</strong> results</p>
+                </div>
+              </div>
         
-          <div class="govuk-form-group ">
-            <table class="custom-table">
-              <tbody>
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-form-group opss-text-align-right ">
+                  <div class="govuk-label " for="sort">
+                    Sort by
+                    <select class="govuk-select" id="sort" name="sort">
+                      <option value="recently-added">Recently added</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <div class="govuk-form-group opss-text-align-right">
+          <table class="custom-table">
+            <tbody>
               <tr>
                 <td>
                   <img src="../../public/images/image-a.png" alt="Image" class="table-image">
@@ -183,7 +196,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
@@ -211,7 +224,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                   </details>
                 </td>
@@ -238,7 +251,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
@@ -266,7 +279,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 123456</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                   </details>
                 </td>
@@ -293,7 +306,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
@@ -321,7 +334,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                   </details>
                 </td>
@@ -348,7 +361,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
@@ -376,7 +389,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                   </details>
                 </td>
@@ -403,7 +416,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                     </div>
                   </details>
@@ -431,7 +444,7 @@
                     </summary>
                     <div class="govuk-details__text">
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN 232345</p>    
                       <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
                   </details>
                 </td>
@@ -440,135 +453,16 @@
                     Add
                   </button>
                 </td>
-
-                <tr>
-                  <td>
-                    <img src="../../public/images/pram-4.png" alt="Image" class="table-image">
-                  </td>
-                  <td class="table-content" colspan="2">
-                    <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds go™</h4>
-                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
-                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
-                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-801</p>
-                    <details class="govuk-details govuk-!-margin-bottom-0">
-                      <summary class="govuk-details__summary govuk-body-xs">
-                        <span class="govuk-details__summary-text">
-                          More details
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234891</p>
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879351</p>    
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
-                    </details>
-                  </td>
-                  <td class="table-action">
-                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                      Add
-                    </button>
-                  </td>
-                  <form class="form" action="search-products-laptop" method="post">
-
-                  <tr>
-                    <td>
-                      <img src="../../public/images/pram-1.png" alt="Image" class="table-image">
-                    </td>
-                    <td class="table-content" colspan="2">
-                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds sport™</h4>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
-                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-802</p>
-                      <details class="govuk-details govuk-!-margin-bottom-0">
-                        <summary class="govuk-details__summary govuk-body-xs">
-                          <span class="govuk-details__summary-text">
-                            More details
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234892</p>
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879352</p>    
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
-                      </details>
-                    </td>
-                    <td class="table-action">
-                      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Add
-                      </button>
-                    </td>
-                  </form>
-
-                    <tr>
-                      <td>
-                        <img src="../../public/images/pram-2.png" alt="Image" class="table-image">
-                      </td>
-                      <td class="table-content" colspan="2">
-                        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds verso™</h4>
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
-                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-803</p>
-                        <details class="govuk-details govuk-!-margin-bottom-0">
-                          <summary class="govuk-details__summary govuk-body-xs">
-                            <span class="govuk-details__summary-text">
-                              More details
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234893</p>
-                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879353</p>    
-                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
-                        </details>
-                      </td>
-                      <td class="table-action">
-                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                          Add
-                        </button>
-                      </td>
-
-                      <tr>
-                        <td>
-                          <img src="../../public/images/pram-3.png" alt="Image" class="table-image">
-                        </td>
-                        <td class="table-content" colspan="2">
-                          <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds voyager™</h4>
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
-                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-804</p>
-                          <details class="govuk-details govuk-!-margin-bottom-0">
-                            <summary class="govuk-details__summary govuk-body-xs">
-                              <span class="govuk-details__summary-text">
-                                More details
-                              </span>
-                            </summary>
-                            <div class="govuk-details__text">
-                              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234894</p>
-                              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879354</p>    
-                              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
-                          </details>
-                        </td>
-                        <td class="table-action">
-                          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Add
-                          </button>
-                        </td>
               </tr>
             </tbody>
           </table>
 
-
-
-            <div class="empty-state govuk-!-margin-top-6" style="display: none;">
-              <div class="govuk-heading-m govuk-!-margin-bottom-2 ">
-                No results found 
-              </div>
-              <div class="govuk-body govuk-!-margin-bottom-9">
-                There are no results that match your search. Try searching again using different search criteria or <a href="do-you-have-barcode">add a product</a>.
-              </div>  
-            </div>
-
           <br>
-                                        
+                                                  
+          
+          
 
-          <nav  class="govuk-pagination" role="navigation" aria-label="Pagination">
+          <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
             <ul class="govuk-pagination__list">
               <li class="govuk-pagination__item govuk-pagination__item--current">
                 <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
@@ -585,33 +479,22 @@
                   3
                 </a>
               </li>
-              <li class="govuk-pagination__item govuk-pagination__item--ellipses">
-                &ctdot;
-              </li>
-              <li class="govuk-pagination__item">
-                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
-                  42
-                </a>
-              </li>
             </ul>
             <div class="govuk-pagination__next">
-              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
-                <span class="govuk-pagination__link-title">
-                  Next<span class="govuk-visually-hidden"> page</span>
-                </span>
-                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
                   <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                </svg>
-              </a>
+                </svg></a>
             </div>
           </nav>
-
+          
+          
         </div>
       </div>
     </div>
   </div>
 
-  
+</form>
+
 
 
   <script>
@@ -619,68 +502,7 @@
       var details = document.getElementById(detailsId);
       details.open = !details.open;
     }
-  
-    // Get the table rows
-    var rows = document.querySelectorAll('.custom-table tbody tr');
-    var resultsContainer = document.getElementById('resultsContainer');
-    var emptyStateDiv = document.querySelector('.empty-state');
-  
-    // Hide rows after the first 10
-    for (var i = 10; i < rows.length; i++) {
-      rows[i].style.display = 'none';
-    }
-  
-    // Get the search button element
-    var searchButton = document.getElementById('searchButton');
-  
-    // Add event listener for button click events
-    searchButton.addEventListener('click', function() {
-      // Get the filter value (search query)
-      var filter = document.getElementById('searchInput').value.toUpperCase();
-  
-      // Reset the display of all rows
-      rows.forEach(function(row) {
-        row.style.display = '';
-      });
-  
-      // Variable to keep track of the number of displayed rows
-      var displayedRows = 0;
-  
-      // Loop through all table rows
-      rows.forEach(function(row) {
-        // Get the table data cells in this row
-        var cells = row.querySelectorAll('td');
-  
-        // Variable to keep track of whether this row should be displayed or not
-        var displayRow = false;
-  
-        // Loop through all table data cells
-        cells.forEach(function(cell) {
-          // Check if the cell text contains the filter value
-          if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
-            // If any cell contains the filter value, set displayRow to true
-            displayRow = true;
-          }
-        });
-  
-        // Set the display style of the row based on displayRow and the number of displayed rows
-        if (displayRow && displayedRows < 10) {
-          row.style.display = '';
-          displayedRows++;
-        } else {
-          row.style.display = 'none';
-        }
-      });
-  
-      // Check if no results were found
-      if (displayedRows === 0) {
-        // Display empty state message
-        emptyStateDiv.style.display = 'block';
-      } else {
-        // Hide empty state message
-        emptyStateDiv.style.display = 'none';
-      }
-    });
   </script>
+
 
 {% endblock %}

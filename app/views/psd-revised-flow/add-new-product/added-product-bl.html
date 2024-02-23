@@ -1,0 +1,77 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product added – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form govuk-!-margin-bottom-6" action="added-product" method="post">
+
+      <span class="govuk-caption-l">{{title}}</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">You have added 1 product<h1>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-0">
+
+        <table class="custom-table-2">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../../public/images/bosch.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Bosch Series 6 WGG24409GB</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electricals</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Vacuum cleaner</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-901</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6">
+  
+
+    
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                Do you need to add another product?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addedProduct" name="addedProduct" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="addedProduct">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addedProduct-2" name="addedProduct" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="addedProduct-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group govuk-!-margin-top-6">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+{% endblock %}

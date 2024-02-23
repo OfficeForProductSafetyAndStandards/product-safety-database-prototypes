@@ -8,7 +8,7 @@ router.post('/search-products-barcode', function (req, res) {
 
 // Search to laptop //
 router.post('/search-products-laptop', function (req, res) {
-  res.redirect('./added-product'); 
+  res.redirect('./added-product-2'); 
 })
 
 
@@ -23,16 +23,6 @@ router.post('/happy-photo', function (req, res) {
   }
 });
 
-// Happy photo BL //
-router.post('/happy-photo-bl', function (req, res) {
-  const happyPhoto = req.session.data['happy-with-photo'];
-  if (happyPhoto === 'yes') {
-    res.redirect('./add-product-information-bl');
-  } else {
-    res.redirect('./add-a-photo-bl');
-  }
-});
-
 // Add product information //
 router.post('/add-product-information', function (req, res) {
   res.redirect('./product-manual'); 
@@ -40,7 +30,7 @@ router.post('/add-product-information', function (req, res) {
 
 // Add product information //
 router.post('/product-manual', function (req, res) {
-  res.redirect('./added-product-manual'); 
+  res.redirect('./added-product-3'); 
 })
 
 
@@ -70,7 +60,7 @@ router.post('/not-found', function (req, res) {
 router.post('/product-bl', function (req, res) {
   const notFound = req.session.data['not-found-it'];
   if (notFound === 'yes') {
-    res.redirect('./added-product-bl');
+    res.redirect('./added-product');
   } else {
     res.redirect('./do-you-have-barcode');
   }
@@ -94,8 +84,8 @@ router.post('/multiple-products', function (req, res) {
 
 
 // Edit product information PSD //
-router.post('/edit-product-information-manual', function (req, res) {
-  res.redirect('./product-manual'); 
+router.post('/edit-product-information-psd', function (req, res) {
+  res.redirect('./product-psd'); 
 })
 
 // Edit product information BL //
@@ -126,16 +116,5 @@ router.post('/do-you-have-barcode', function (req, res) {
     res.status(204).end(); // <-- No redirect when not selected
   }
 });
-
-
-// Edit product information BL //
-router.post('/add-a-photo', function (req, res) {
-  res.redirect('./add-product-information'); 
-})
-
-// Add a barcode //
-router.post('/add-a-barcode', function (req, res) {
-  res.redirect('./happy-photo-bl'); 
-})
 
 module.exports = router

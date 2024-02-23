@@ -13,7 +13,6 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 {% endblock %}
 
-
 {% block content %}
 
 
@@ -24,7 +23,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
 
       <span class="govuk-caption-l">{{title}}</span>
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Edit product information</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Imported product information from Barcode Lookup</h1>
 
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
@@ -39,13 +38,13 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Product name (mandatory)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Include model name and number, for example ‘PlayStation 5’.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="sport™">
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Series 6 WGG24409GB">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Country of origin (mandatory)</label>
             <select class="govuk-select" id="business-details-country" name="business-details-country">
-              <option value="China">China</option>
+              <option value="Select a country">Select a country</option>
               <option value="territory:AE-AZ">Category 1</option>
               <option value="country:AF">Category 2</option>
               <option value="territory:AE-AJ">Category 3</option>
@@ -57,7 +56,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Description of product</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Free 5 Year Warranty! (Via Registration) Capacity 9kg 1400rpm Anti Stain Active Water Plus Eco Silence Drive Speed Perfect LED Display Colour: White With Black Door Energy Rating (A-G): AH848 x W598 x D590 mm.
           </textarea>
         </div>
 
@@ -126,7 +125,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
               <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Baby & Toddler</option>
+                <option value="United Kingdom">Select a category</option>
                 <option value="territory:AE-AZ">Category 1</option>
                 <option value="country:AF">Category 2</option>
                 <option value="territory:AE-AJ">Category 3</option>
@@ -138,7 +137,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
             <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Baby Transport Accessories">
+            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Home & Garden > Household Appliances > Laundry Appliances > Washing Machines">
           </div>
 
       </fieldset>
@@ -151,13 +150,13 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="9 420015 715897">
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="9 324652 876225">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Other product identifiers</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">ASIN: L87SDM5K2U</textarea>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">ASIN: 934587</textarea>
         </div>
 
       </fieldset>
@@ -199,7 +198,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
 
     <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">
-        Save and continue
+        Create product record
       </button>
 
     </div>
