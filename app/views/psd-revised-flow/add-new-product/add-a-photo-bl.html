@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="add-a-photo" method="post">
+      <form class="form" action="add-a-photo-bl" method="post">
 
         <span class="govuk-caption-l">{{title}}</span>
 
@@ -114,7 +114,7 @@
           reader.onload = function() {
             imagePreview.src = reader.result;
             setTimeout(function() {
-              window.location.href = 'uploading-photo';
+              window.location.href = 'uploading-photo-bl';
             }, 0); // Redirect after 3 seconds
           };
           reader.readAsDataURL(file);

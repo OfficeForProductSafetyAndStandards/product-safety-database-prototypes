@@ -18,104 +18,258 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-l">{{title}}</span>
+    <span class="govuk-caption-l">{{title}}</span>
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Search by barcode, serial number or ASIN</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Add a product using Barcode Lookup</h1>
 
-      <div class="barcode-container govuk-!-margin-bottom-4">
-        <div class="barcode-column">
-          <img src="../../public/images/barcode.png" alt="barcode" width="150" height="92">
-          <p class="govuk-body-s govuk-!-margin-top-1">Barcode numbers are 12-13 digits and are shown at the bottom of the barcode</p>
-        </div>
-        <div class="barcode-column">
-          <img src="../../public/images/asin.png" alt="asin" width="150" height="92">
-          <p class="govuk-body-s govuk-!-margin-top-1">The ASIN can be found in the 'Product details' section on Amazon pages</p>
-        </div>
-      </div>
-
-      <label class="govuk-label" for="case-search-term">
-        Barcode, serial number or ASIN
-      </label>
-      <div class="govuk-input__wrapper opss-search__wrapper ">
-        <div class="autocomplete" style="position: relative; width: 100%;">
-          <input id="autocomplete-input" class="autocomplete-input" type="text" name="myCountry" placeholder="">
-          <div id="autocomplete-suggestions" class="autocomplete-suggestions autocomplete-items">
+    <details id="photoUploadDetails" class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Where to find barcodes and ASINs
+        </span>
+      </summary> 
+      <div class="govuk-details__text">
+        <div class="barcode-container govuk-!-margin-top-4">
+          <div class="barcode-column">
+            <img src="../../public/images/barcode.png" alt="barcode" width="150" height="92">
+            <p class="govuk-body-s govuk-!-margin-top-1">Barcode numbers are 12-13 digits and are shown at the bottom of the barcode</p>
           </div>
-          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2">
+          <div class="barcode-column">
+            <img src="../../public/images/asin.png" alt="asin" width="150" height="92">
+            <p class="govuk-body-s govuk-!-margin-top-1">The ASIN can be found in the 'Product details' section on Amazon pages</p>
+          </div>
+        </div>            
+      </div>
+    </details>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <label class="govuk-label" for="case-search-term">
+          Enter a product name, brand, barcode or ASIN
+        </label>
+        <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-two-thirds">
+          <input type="text" class="govuk-input" id="searchInput">
+          <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
             <span class="govuk-visually-hidden">Submit search</span>
           </button>
         </div>
       </div>
+      
+        <div id="sortContainer" style="display: none;"> <!-- Hidden initially -->
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+                  <div class="govuk-form-group opss-text-align-right">
+                      <label class="govuk-label" for="sort">
+                          Sort by
+                      </label>
+                      <select class="govuk-select" id="sort" name="sort">
+                          <option value="recently-added">Recently added</option>
+                          <!-- Add more options here if needed -->
+                      </select>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
 
-  </div>
-</div>
+      
+    <div class="govuk-form-group" id="tableContainer" style="display: none;">
 
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-    var countries = [
-        {name: "0 420015 715897", info: "Product in PSD"},
-        {name: "0 731214 989796", info: "Product not found"},
-        {name: "0908/0001", info: "Multiple products"},
-        {name: "0L7SDM5K2U", info: "Product in Barcode Lookup"},
-    ];
+      <div id="searchInfo"><p></p></div>
 
-    var input = document.getElementById("autocomplete-input");
-    var suggestionBox = document.getElementById("autocomplete-suggestions");
+      <table class="custom-table">
+        <tbody>
+
+          <tr>
+            <td>
+              <img src="../../public/images/bosch-3.png" alt="Image" class="table-image">
+            </td>
+            <td class="table-content" colspan="2">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Bosch BGBS2BA1GB</h4>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Home & Garden > Household Appliance Accessories > Vacuum Accessories</p>
+              <details class="govuk-details govuk-!-margin-bottom-0">
+                <summary class="govuk-details__summary govuk-body-xs">
+                  <span class="govuk-details__summary-text">
+                    More details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>4 242005 310906</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 7682342</p>    
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Which? BEST BUY Award! Free 2 Year Warranty! 10 Year Motor Guarantee Bagged Cylinder Vacuum Cleaner Suitable For All Floor Types 600W Motor - 3 Power Settings Light Weight & Compact Micro Filter Made Using 64% Recycled Plastic7m Cord Length Cord Rewind Extendable Hose Include Crevice & Upholstery Tools Colour: BlackH237 x W290 x D367 mm.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+
+
+          <tr>
+            <td>
+              <img src="../../public/images/bosch-2.png" alt="Image" class="table-image">
+            </td>
+            <td class="table-content" colspan="2">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Bosch HBS573BB0B</h4>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Home & Garden > Kitchen & Dining > Kitchen Appliances > Ovens</p>
+              <details class="govuk-details govuk-!-margin-bottom-0">
+                <summary class="govuk-details__summary govuk-body-xs">
+                  <span class="govuk-details__summary-text">
+                    More details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>4 242005 285297</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 923201</p>    
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>The built-in oven with AutoPilot: automatically prepares perfect dishes. 3D Hotair: even heat distribution for perfect results on up to three levels. Red LED display control. Pyrolytic self-cleaning: AutoPilot 10: automatically prepares perfect dishes. Pyrolytic self-cleaning function Oven with 5 cooking functions: heating methods: 3D Hotair, conventional top and bottom heat, Hotair grilling, full width variable grill, Hotair gentle 2 x combination grid, 1 x universal pan, 2 x Universal pan, slim size.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <form class="form" action="add-a-barcode" method="post">
+
+          <tr>
+            <td>
+              <img src="../../public/images/bosch.png" alt="Image" class="table-image">
+            </td>
+            <td class="table-content" colspan="2">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Bosch Series 6 WGG24409GB</h4>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Home & Garden > Household Appliances > Laundry Appliances > Washing Machines</p>
+              <details class="govuk-details govuk-!-margin-bottom-0">
+                <summary class="govuk-details__summary govuk-body-xs">
+                  <span class="govuk-details__summary-text">
+                    More details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>9 324652 876225</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 934587</p>    
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Free 5 Year Warranty! (Via Registration) Capacity 9kg 1400rpm Anti Stain Active Water Plus Eco Silence Drive Speed Perfect LED Display Colour: White With Black Door Energy Rating (A-G): AH848 x W598 x D590 mm.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                 </button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+
+          <div class="empty-state govuk-!-margin-top-6" style="display: none;">
+            <div class="govuk-heading-m govuk-!-margin-bottom-2 ">
+              No results found 
+            </div>
+            <div class="govuk-body govuk-!-margin-bottom-9">
+              There are no results that match your search. Try searching again using different search criteria or <a href="add-a-photo">add the product manually</a>.
+            </div>  
+          </div>
+        </div>
+      </div>
+
+<input type="hidden" name="brand-name" value="{{ data['brand-name'] if data['brand-name'] else “Bosch” }}" />
+
+</form>
+
+      <script>
+        function toggleDetails(detailsId) {
+            var details = document.getElementById(detailsId);
+            details.open = !details.open;
+        }
     
-    input.addEventListener("input", function() {
-        var val = this.value.toLowerCase();
-        suggestionBox.innerHTML = '';
-        if (!val) { return false;}
-        let matches = 0; 
-
-        countries.forEach(function(country) {
-            if (matches >= 10) return; 
-
-            var index = country.name.toLowerCase().indexOf(val);
-            if (index > -1) { 
-                var div = document.createElement("DIV");
-                var beforeMatch = country.name.substring(0, index);
-                var matchText = country.name.substring(index, index + val.length);
-                var afterMatch = country.name.substring(index + val.length);
-                div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
-                
-                var span = document.createElement("SPAN");
-                span.innerHTML = " - " + country.info;
-                div.appendChild(span);
-                
-                div.addEventListener("click", function(e) {
-                    input.value = country.name;
-                    suggestionBox.innerHTML = "";
+        // Get the table rows
+        var rows = document.querySelectorAll('.custom-table tbody tr');
+        var tableContainer = document.getElementById('tableContainer');
+        var emptyStateDiv = document.querySelector('.empty-state');
+        var sortContainer = document.getElementById('sortContainer'); // Added
+    
+        // Hide rows after the first 10
+        for (var i = 10; i < rows.length; i++) {
+            rows[i].style.display = 'none';
+        }
+    
+        // Hide sort container initially
+        sortContainer.style.display = 'none'; // Added
+    
+        // Get the search button element
+        var searchButton = document.getElementById('searchButton');
+    
+        // Add event listener for button click events
+        searchButton.addEventListener('click', function () {
+            // Get the filter value (search query)
+            var filter = document.getElementById('searchInput').value.toUpperCase();
+    
+            // Reset the display of all rows
+            rows.forEach(function (row) {
+                row.style.display = '';
+            });
+    
+            // Variable to keep track of the number of displayed rows
+            var displayedRows = 0;
+    
+            // Loop through all table rows
+            rows.forEach(function (row) {
+                // Get the table data cells in this row
+                var cells = row.querySelectorAll('td');
+    
+                // Variable to keep track of whether this row should be displayed or not
+                var displayRow = false;
+    
+                // Loop through all table data cells
+                cells.forEach(function (cell) {
+                    // Check if the cell text contains the filter value
+                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                        // If any cell contains the filter value, set displayRow to true
+                        displayRow = true;
+                    }
                 });
-                
-                suggestionBox.appendChild(div);
-                matches++; 
+    
+                // Set the display style of the row based on displayRow and the number of displayed rows
+                if (displayRow && displayedRows < 10) {
+                    row.style.display = '';
+                    displayedRows++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+    
+            // Check if no results were found
+            if (displayedRows === 0) {
+                // Hide table
+                tableContainer.style.display = 'none';
+                // Hide sort container
+                sortContainer.style.display = 'none'; // Added
+                // Display empty state message
+                emptyStateDiv.style.display = 'block';
+            } else {
+                // Show table
+                tableContainer.style.display = 'block';
+                // Show sort container
+                sortContainer.style.display = 'block'; // Added
+                // Hide empty state message
+                emptyStateDiv.style.display = 'none';
             }
         });
-    });
-
-    document.addEventListener("click", function (e) {
-        suggestionBox.innerHTML = '';
-    });
-});
-
-  document.getElementById('search-button2').addEventListener('click', function() {
-    var selectedOption = document.getElementById('autocomplete-input').value;
-
-    var urls = {
-      "0 420015 715897": "product-psd",
-      "0 731214 989796": "not-found",
-      "0908/0001": "multiple-products",
-      "0L7SDM5K2U": "product-bl"
-    };
-
-    if (urls[selectedOption]) {
-      window.location.href = urls[selectedOption];
-    } else {
-      console.log("No URL found for selected option");
-    }
-  });
-</script>
+    
+        // Count
+        function updateDisplayCount() {
+            const totalRows = allRows.length;
+            const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
+    
+            displayCount.textContent = `Showing ${visibleRows} of ${totalRows}`;
+        }
+    </script>
 
 
+
+
+          
+      
   {% endblock %}

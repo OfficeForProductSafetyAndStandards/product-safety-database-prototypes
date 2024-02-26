@@ -1,0 +1,582 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add product" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form id="example-form" action="product-bl" method="GET">
+  <div id="error-summary" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" style="display: none;">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list" id="error-summary-list">
+              <!-- Error messages will be inserted here dynamically -->
+          </ul>
+      </div>
+  </div>
+
+
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{title}}</span>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Imported product information from Barcode Lookup</h1>
+
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product details</legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Brand name (mandatory)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, ‘Dyson’ or ‘Sony’.</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="brand-name" name="brand-name" type="text" aria-describedby="trading_name-hint" value="{{ data['brand-name'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Product name (mandatory)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Include model name and number, for example ‘PlayStation 5’.</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="product-name" name="product-name" type="text" aria-describedby="trading_name-hint" value="{{ data['product-name'] }}">
+        </div>
+
+        <div class="govuk-form-group" id="select-form-group-1">
+          <label class="govuk-label" for="select-1">Country of origin (mandatory)</label>
+          <span id="select-error-1" class="govuk-error-message" style="display: none;">
+              <span class="govuk-visually-hidden"></span>Select a country of origin
+          </span>
+          <select class="govuk-select" id="select-1" name="select-1">
+              <option value="">Select country of origin</option>
+              <option value="Unknown">Unknown</option>
+              <option value="Abu Dhabi">Abu Dhabi</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Ajman">Ajman</option>
+              <option value="Akrotiri">Akrotiri</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="American Samoa">American Samoa</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Anguilla">Anguilla</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Aruba">Aruba</option>
+              <option value="Ascension">Ascension</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Baker Island">Baker Island</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bermuda">Bermuda</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bonaire">Bonaire</option>
+              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Bouvet Island">Bouvet Island</option>
+              <option value="Brazil">Brazil</option>
+              <option value="British Antarctic Territory">British Antarctic Territory</option>
+              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+              <option value="British Virgin Islands">British Virgin Islands</option>
+              <option value="Brunei">Brunei</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Myanmar (Burma)">Myanmar (Burma)</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Ceuta">Ceuta</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Congo (Democratic Republic)">Congo (Democratic Republic)</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curaçao">Curaçao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czechia">Czechia</option>
+<option value="Czechoslovakia">Czechoslovakia</option>
+<option value="Denmark">Denmark</option>
+<option value="Dhekelia">Dhekelia</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Dubai">Dubai</option>
+<option value="East Germany">East Germany</option>
+<option value="East Timor">East Timor</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Eswatini">Eswatini</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Falkland Islands">Falkland Islands</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<option value="Fujairah">Fujairah</option>
+<option value="Gabon">Gabon</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-Bissau">Guinea-Bissau</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Howland Island">Howland Island</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran">Iran</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Ivory Coast">Ivory Coast</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jarvis Island">Jarvis Island</option>
+<option value="Jersey">Jersey</option>
+<option value="Johnston Atoll">Johnston Atoll</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kingman Reef">Kingman Reef</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kosovo">Kosovo</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Laos">Laos</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macao">Macao</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Melilla">Melilla</option>
+<option value="Mexico">Mexico</option>
+<option value="Micronesia">Micronesia</option>
+<option value="Midway Islands">Midway Islands</option>
+<option value="Moldova">Moldova</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Navassa Island">Navassa Island</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="North Korea">North Korea</option>
+<option value="North Macedonia">North Macedonia</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Norway">Norway</option>
+<option value="Occupied Palestinian Territories">Occupied Palestinian Territories</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palmyra Atoll">Palmyra Atoll</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn, Henderson, Ducie and Oeno Islands">Pitcairn, Henderson, Ducie and Oeno Islands</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Ras al-Khaimah">Ras al-Khaimah</option>
+<option value="Romania">Romania</option>
+<option value="Russia">Russia</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Réunion">Réunion</option>
+<option value="Saba">Saba</option>
+<option value="Saint Barthélemy">Saint Barthélemy</option>
+<option value="Saint Helena">Saint Helena</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint-Martin (French part)">Saint-Martin (French part)</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sharjah">Sharjah</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Sint Eustatius">Sint Eustatius</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia and South Sandwich Islands">South Georgia and South Sandwich Islands</option>
+<option value="South Korea">South Korea</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="St Kitts and Nevis">St Kitts and Nevis</option>
+<option value="St Lucia">St Lucia</option>
+<option value="St Vincent">St Vincent</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syria">Syria</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania">Tanzania</option>
+<option value="Thailand">Thailand</option>
+<option value="The Bahamas">The Bahamas</option>
+<option value="The Gambia">The Gambia</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tristan da Cunha">Tristan da Cunha</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="USSR">USSR</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="Umm al-Quwain">Umm al-Quwain</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="United States Virgin Islands">United States Virgin Islands</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Vatican City">Vatican City</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Vietnam">Vietnam</option>
+<option value="Wake Island">Wake Island</option>
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<option value="Yemen">Yemen</option>
+<option value="Yugoslavia">Yugoslavia</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+<option value="Åland Islands">Åland Islands</option>
+            </select>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="trading_name">Description of product</label>
+        <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint" >{{ data['more-detail'] }}</textarea>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Does the product have UKCA, UKNI, or CE marking?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-1" name="product-marking" type="radio" value="" data-aria-controls="conditional-contact" >
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="ukca" type="checkbox" value="UKCA">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      UKCA
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="ukni" type="checkbox" value="UKNI">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      UKNI
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="ce" type="checkbox" value="CE" >
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      CE
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="product-marking" type="radio" value="None" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-3" name="product-marking" type="radio" value="Unknown" data-aria-controls="conditional-contact-3">
+              <label class="govuk-label govuk-radios__label" for="contact-3">
+                Unknown
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="trading_name">Webpage</label>
+        <input class="govuk-input govuk-!-width-full" id="webpage" name="webpage" type="text" aria-describedby="trading_name-hint" value="{{ data['webpage'] }}">
+      </div>
+
+    </fieldset>
+
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Categories</legend>
+
+      <div class="govuk-form-group" id="select-form-group-2">
+        <label class="govuk-label" for="select-2">Product category (mandatory)</label>
+        <span id="select-error-2" class="govuk-error-message" style="display: none;">
+            <span class="govuk-visually-hidden"></span>Select a product category
+        </span>
+        <select class="govuk-select" id="select-2" name="select-2">
+            <option value="">Select product category</option>
+            <option value="Personal protective equipment (PPE)">Personal protective equipment (PPE)</option>
+            <option value="Chemical products">Chemical products</option>
+            <option value="Childcare articles and children&#39;s equipment">Childcare articles and children&#39;s equipment</option>
+            <option value="Clothing, textiles and fashion items">Clothing, textiles and fashion items</option>
+            <option value="Communication and media equipment">Communication and media equipment</option>
+            <option value="Construction products">Construction products</option>
+            <option value="Cosmetics">Cosmetics</option>
+            <option value="Decorative articles">Decorative articles</option>
+            <option value="Eco-design">Eco-design</option>
+            <option value="Electrical appliances and equipment">Electrical appliances and equipment</option>
+            <option value="Explosive atmospheres equipment">Explosive atmospheres equipment</option>
+            <option value="Food-imitating products">Food-imitating products</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Gadgets">Gadgets</option>
+            <option value="Gas appliances and components">Gas appliances and components</option>
+            <option value="Hand tools">Hand tools</option>
+            <option value="Hobby / sports equipment">Hobby / sports equipment</option>
+            <option value="Jewellery">Jewellery</option>
+            <option value="Kitchen / cooking accessories">Kitchen / cooking accessories</option>
+            <option value="Laser pointers">Laser pointers</option>
+            <option value="Lifts">Lifts</option>
+            <option value="Lighters">Lighters</option>
+            <option value="Lighting chains">Lighting chains</option>
+            <option value="Lighting equipment">Lighting equipment</option>
+            <option value="Machinery">Machinery</option>
+            <option value="Measuring instruments">Measuring instruments</option>
+            <option value="Motor vehicles (including spare parts)">Motor vehicles (including spare parts)</option>
+            <option value="Pressure equipment / vessels">Pressure equipment / vessels</option>
+            <option value="Pyrotechnic articles">Pyrotechnic articles</option>
+            <option value="Rail and guided transport">Rail and guided transport</option>
+            <option value="Recreational crafts">Recreational crafts</option>
+            <option value="Stationery">Stationery</option>
+            <option value="Toys">Toys</option>
+            <option value="Waste">Waste</option>
+          </select>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+      <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+      <input class="govuk-input govuk-!-width-two-thirds" id="product-subcategory" name="product-subcategory" type="text" aria-describedby="trading_name-hint" value="{{ data['product-subcategory'] }}">
+    </div>
+
+  </fieldset>
+
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product identifiers</legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="barcode" name="barcode" type="text" aria-describedby="trading_name-hint" value="{{ data['barcode'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Other product identifiers</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
+          <textarea class="govuk-textarea" id="amazon-asin" name="amazon-asin" rows="5" aria-describedby="more-detail-hint" >{{ data['amazon-asin'] }}</textarea>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Availability</legend>
+
+        <div class="govuk-form-group govuk-!-margin-bottom-1">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend">
+              Was the product placed on the market before 1 January 2021?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="market-date" type="radio" value="Before 1 January 2021">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="market-date" type="radio"  value="After 1 January 2021">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-4" name="market-date" type="radio" value="Unable to ascertain"> 
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                  Unable to ascertain 
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-button-group ">
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Create product record
+    </button>
+
+    </div>
+
+  </form>
+
+
+<script>
+  document.getElementById('example-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission by default
+      
+      const errorSummaryList = document.getElementById('error-summary-list');
+      errorSummaryList.innerHTML = ''; // Clear existing errors
+      let isError = false;
+
+      function addError(message, anchor) {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#' + anchor;
+          a.textContent = message;
+          li.appendChild(a);
+          errorSummaryList.appendChild(li);
+      }
+
+      // Check first select
+      if (document.getElementById('select-1').value === "") {
+          addError('You must choose an option from the first dropdown', 'select-1');
+          document.getElementById('select-error-1').style.display = 'block';
+          document.getElementById('select-form-group-1').classList.add('govuk-form-group--error');
+          isError = true;
+      } else {
+          document.getElementById('select-error-1').style.display = 'none';
+          document.getElementById('select-form-group-1').classList.remove('govuk-form-group--error');
+      }
+
+      // Check second select
+      if (document.getElementById('select-2').value === "") {
+          addError('You must choose an option from the second dropdown', 'select-2');
+          document.getElementById('select-error-2').style.display = 'block';
+          document.getElementById('select-form-group-2').classList.add('govuk-form-group--error');
+          isError = true;
+      } else {
+          document.getElementById('select-error-2').style.display = 'none';
+          document.getElementById('select-form-group-2').classList.remove('govuk-form-group--error');
+      }
+
+      // Display or hide the error summary
+      document.getElementById('error-summary').style.display = isError ? 'block' : 'none';
+
+// If no errors, proceed with form submission
+if (!isError) {
+    // Programmatically submit the form
+    document.getElementById('example-form').submit();
+} else {
+    // Scroll to the error summary if there are errors
+    window.location.href = '#error-summary';
+}
+
+  });
+</script>
+
+
+{% endblock %}

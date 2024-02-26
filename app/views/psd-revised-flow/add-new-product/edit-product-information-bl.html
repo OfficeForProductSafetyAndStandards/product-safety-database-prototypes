@@ -13,7 +13,6 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 {% endblock %}
 
-{% set title = "Add businesses and their roles in the supply chain " %}
 
 {% block content %}
 
@@ -34,116 +33,422 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Brand name (mandatory)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, ‘Dyson’ or ‘Sony’.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="phil&teds">
+          <input class="govuk-input govuk-!-width-two-thirds" id="brand-name" name="brand-name" type="text" aria-describedby="trading_name-hint" value="{{ data['brand-name'] }}">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Product name (mandatory)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Include model name and number, for example ‘PlayStation 5’.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="sport™">
+          <input class="govuk-input govuk-!-width-two-thirds" id="product-name" name="product-name" type="text" aria-describedby="trading_name-hint" value="{{ data['product-name'] }}">
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Country of origin (mandatory)</label>
-            <select class="govuk-select" id="business-details-country" name="business-details-country">
-              <option value="China">China</option>
-              <option value="territory:AE-AZ">Category 1</option>
-              <option value="country:AF">Category 2</option>
-              <option value="territory:AE-AJ">Category 3</option>
-              <option value="territory:XQZ">Category 4</option>
-              <option value="country:AL">Category 5</option>
-            </select>
-        </div>
+        <div class="govuk-form-group" id="select-form-group-1">
+          <label class="govuk-label" for="select-1">Country of origin (mandatory)</label>
+          <span id="select-error-1" class="govuk-error-message" style="display: none;">
+              <span class="govuk-visually-hidden"></span>Select a country of origin
+          </span>
+          <select class="govuk-select" id="select-1" name="select-1">
+              <option value="">Select country of origin</option>
+              <option value="Unknown" {% if data['select-1'] == "Unknown" %}selected{% endif %}>Unknown</option>
+              <option value="Abu Dhabi" {% if data['select-1'] == "Abu Dhabi" %}selected{% endif %}>Abu Dhabi</option>
+              <option value="Afghanistan" {% if data['select-1'] == "Afghanistan" %}selected{% endif %}>Afghanistan</option>
+              <option value="Ajman" {% if data['select-1'] == "Ajman" %}selected{% endif %}>Ajman</option>
+              <option value="Akrotiri" {% if data['select-1'] == "Akrotiri" %}selected{% endif %}>Akrotiri</option>
+              <option value="Albania" {% if data['select-1'] == "Albania" %}selected{% endif %}>Albania</option>
+              <option value="Algeria" {% if data['select-1'] == "Algeria" %}selected{% endif %}>Algeria</option>
+              <option value="American Samoa" {% if data['select-1'] == "American Samoa" %}selected{% endif %}>American Samoa</option>
+              <option value="Andorra" {% if data['select-1'] == "Andorra" %}selected{% endif %}>Andorra</option>
+              <option value="Angola" {% if data['select-1'] == "Angola" %}selected{% endif %}>Angola</option>
+              <option value="Anguilla" {% if data['select-1'] == "Anguilla" %}selected{% endif %}>Anguilla</option>
+              <option value="Antarctica" {% if data['select-1'] == "Antarctica" %}selected{% endif %}>Antarctica</option>
+              <option value="Antigua and Barbuda" {% if data['select-1'] == "Antigua and Barbuda" %}selected{% endif %}>Antigua and Barbuda</option>
+              <option value="Argentina" {% if data['select-1'] == "Argentina" %}selected{% endif %}>Argentina</option>
+              <option value="Armenia" {% if data['select-1'] == "Armenia" %}selected{% endif %}>Armenia</option>
+              <option value="Aruba" {% if data['select-1'] == "Aruba" %}selected{% endif %}>Aruba</option>
+              <option value="Ascension" {% if data['select-1'] == "Ascension" %}selected{% endif %}>Ascension</option>
+              <option value="Australia" {% if data['select-1'] == "Australia" %}selected{% endif %}>Australia</option>
+              <option value="Austria" {% if data['select-1'] == "Austria" %}selected{% endif %}>Austria</option>
+              <option value="Azerbaijan" {% if data['select-1'] == "Azerbaijan" %}selected{% endif %}>Azerbaijan</option>
+              <option value="Bahrain" {% if data['select-1'] == "Bahrain" %}selected{% endif %}>Bahrain</option>
+              <option value="Baker Island" {% if data['select-1'] == "Baker Island" %}selected{% endif %}>Baker Island</option>
+              <option value="Bangladesh" {% if data['select-1'] == "Bangladesh" %}selected{% endif %}>Bangladesh</option>
+              <option value="Barbados" {% if data['select-1'] == "Barbados" %}selected{% endif %}>Barbados</option>
+              <option value="Belarus" {% if data['select-1'] == "Belarus" %}selected{% endif %}>Belarus</option>
+              <option value="Belgium" {% if data['select-1'] == "Belgium" %}selected{% endif %}>Belgium</option>
+              <option value="Belize" {% if data['select-1'] == "Belize" %}selected{% endif %}>Belize</option>
+              <option value="Benin" {% if data['select-1'] == "Benin" %}selected{% endif %}>Benin</option>
+              <option value="Bermuda" {% if data['select-1'] == "Bermuda" %}selected{% endif %}>Bermuda</option>
+              <option value="Bhutan" {% if data['select-1'] == "Bhutan" %}selected{% endif %}>Bhutan</option>
+              <option value="Bolivia" {% if data['select-1'] == "Bolivia" %}selected{% endif %}>Bolivia</option>
+              <option value="Bonaire" {% if data['select-1'] == "Bonaire" %}selected{% endif %}>Bonaire</option>
+              <option value="Bosnia and Herzegovina" {% if data['select-1'] == "Bosnia and Herzegovina" %}selected{% endif %}>Bosnia and Herzegovina</option>
+              <option value="Botswana" {% if data['select-1'] == "Botswana" %}selected{% endif %}>Botswana</option>
+              <option value="Bouvet Island" {% if data['select-1'] == "Bouvet Island" %}selected{% endif %}>Bouvet Island</option>
+              <option value="Brazil" {% if data['select-1'] == "Brazil" %}selected{% endif %}>Brazil</option>
+              <option value="British Antarctic Territory" {% if data['select-1'] == "British Antarctic Territory" %}selected{% endif %}>British Antarctic Territory</option>
+              <option value="British Indian Ocean Territory" {% if data['select-1'] == "British Indian Ocean Territory" %}selected{% endif %}>British Indian Ocean Territory</option>
+              <option value="British Virgin Islands">British Virgin Islands</option>
+              <option value="Brunei" {% if data['select-1'] == "Brunei" %}selected{% endif %}>Brunei</option>
+              <option value="Bulgaria" {% if data['select-1'] == "Bulgaria" %}selected{% endif %}>Bulgaria</option>
+              <option value="Burkina Faso" {% if data['select-1'] == "Burkina Faso" %}selected{% endif %}>Burkina Faso</option>
+              <option value="Myanmar (Burma)" {% if data['select-1'] == "Myanmar (Burma)" %}selected{% endif %}>Myanmar (Burma)</option>
+              <option value="Burundi" {% if data['select-1'] == "Burundi" %}selected{% endif %}>Burundi</option>
+              <option value="Cambodia" {% if data['select-1'] == "Cambodia" %}selected{% endif %}>Cambodia</option>
+              <option value="Cameroon" {% if data['select-1'] == "Cameroon" %}selected{% endif %}>Cameroon</option>
+              <option value="Canada" {% if data['select-1'] == "Canada" %}selected{% endif %}>Canada</option>
+              <option value="Cape Verde" {% if data['select-1'] == "Cape Verde" %}selected{% endif %}>Cape Verde</option>
+              <option value="Cayman Islands" {% if data['select-1'] == "Cayman Islands" %}selected{% endif %}>Cayman Islands</option>
+              <option value="Central African Republic" {% if data['select-1'] == "Central African Republic" %}selected{% endif %}>Central African Republic</option>
+              <option value="Ceuta" {% if data['select-1'] == "Ceuta" %}selected{% endif %}>Ceuta</option>
+              <option value="Chad" {% if data['select-1'] == "Chad" %}selected{% endif %}>Chad</option>
+              <option value="Chile" {% if data['select-1'] == "Chile" %}selected{% endif %}>Chile</option>
+              <option value="China" {% if data['select-1'] == "China" %}selected{% endif %}>China</option>
+              <option value="Christmas Island" {% if data['select-1'] == "Christmas Island" %}selected{% endif %}>Christmas Island</option>
+              <option value="Cocos (Keeling) Islands" {% if data['select-1'] == "Cocos (Keeling) Islands" %}selected{% endif %}>Cocos (Keeling) Islands</option>
+              <option value="Colombia" {% if data['select-1'] == "Colombia" %}selected{% endif %}>Colombia</option>
+              <option value="Comoros" {% if data['select-1'] == "Comoros" %}selected{% endif %}>Comoros</option>
+              <option value="Congo">Congo</option>
+              <option value="Congo (Democratic Republic)" {% if data['select-1'] == "Congo (Democratic Republic)" %}selected{% endif %}>Congo (Democratic Republic)</option>
+              <option value="Cook Islands" {% if data['select-1'] == "Cook Islands" %}selected{% endif %}>Cook Islands</option>
+              <option value="Costa Rica" {% if data['select-1'] == "Costa Rica" %}selected{% endif %}>Costa Rica</option>
+              <option value="Croatia" {% if data['select-1'] == "Croatia" %}selected{% endif %}>Croatia</option>
+              <option value="Cuba" {% if data['select-1'] == "Cuba" %}selected{% endif %}>Cuba</option>
+              <option value="Curaçao" {% if data['select-1'] == "Curaçao" %}selected{% endif %}>Curaçao</option>
+              <option value="Cyprus" {% if data['select-1'] == "Cyprus" %}selected{% endif %}>Cyprus</option>
+              <option value="Czechia" {% if data['select-1'] == "Czechia" %}selected{% endif %}>Czechia</option>
+              <option value="Czechoslovakia" {% if data['select-1'] == "Czechoslovakia" %}selected{% endif %}>Czechoslovakia</option>
+              <option value="Denmark" {% if data['select-1'] == "Denmark" %}selected{% endif %}>Denmark</option>
+              <option value="Dhekelia" {% if data['select-1'] == "Dhekelia" %}selected{% endif %}>Dhekelia</option>
+              <option value="Djibouti" {% if data['select-1'] == "Djibouti" %}selected{% endif %}>Djibouti</option>
+              <option value="Dominica" {% if data['select-1'] == "Dominica" %}selected{% endif %}>Dominica</option>
+              <option value="Dominican Republic" {% if data['select-1'] == "Dominican Republic" %}selected{% endif %}>Dominican Republic</option>
+              <option value="Dubai" {% if data['select-1'] == "Dubai" %}selected{% endif %}>Dubai</option>
+              <option value="East Germany" {% if data['select-1'] == "East Germany" %}selected{% endif %}>East Germany</option>
+              <option value="East Timor" {% if data['select-1'] == "East Timor" %}selected{% endif %}>East Timor</option>
+              <option value="Ecuador" {% if data['select-1'] == "Ecuador" %}selected{% endif %}>Ecuador</option>
+              <option value="Egypt" {% if data['select-1'] == "Egypt" %}selected{% endif %}>Egypt</option>
+              <option value="El Salvador" {% if data['select-1'] == "El Salvador" %}selected{% endif %}>El Salvador</option>
+              <option value="Equatorial Guinea" {% if data['select-1'] == "Equatorial Guinea" %}selected{% endif %}>Equatorial Guinea</option>
+              <option value="Eritrea" {% if data['select-1'] == "Eritrea" %}selected{% endif %}>Eritrea</option>
+              <option value="Estonia" {% if data['select-1'] == "Estonia" %}selected{% endif %}>Estonia</option>
+              <option value="Eswatini" {% if data['select-1'] == "Eswatini" %}selected{% endif %}>Eswatini</option>
+              <option value="Ethiopia" {% if data['select-1'] == "Ethiopia" %}selected{% endif %}>Ethiopia</option>
+              <option value="Falkland Islands" {% if data['select-1'] == "Falkland Islands" %}selected{% endif %}>Falkland Islands</option>
+              <option value="Faroe Islands" {% if data['select-1'] == "Faroe Islands" %}selected{% endif %}>Faroe Islands</option>
+              <option value="Fiji" {% if data['select-1'] == "Fiji" %}selected{% endif %}>Fiji</option>
+              <option value="Finland" {% if data['select-1'] == "Finland" %}selected{% endif %}>Finland</option>
+              <option value="France" {% if data['select-1'] == "France" %}selected{% endif %}>France</option>
+              <option value="French Guiana" {% if data['select-1'] == "French Guiana" %}selected{% endif %}>French Guiana</option>
+              <option value="French Polynesia" {% if data['select-1'] == "French Polynesia" %}selected{% endif %}>French Polynesia</option>
+              <option value="French Southern Territories" {% if data['select-1'] == "French Southern Territories" %}selected{% endif %}>French Southern Territories</option>
+              <option value="Fujairah" {% if data['select-1'] == "Fujairah" %}selected{% endif %}>Fujairah</option>
+              <option value="Gabon" {% if data['select-1'] == "Gabon" %}selected{% endif %}>Gabon</option>
+              <option value="Georgia" {% if data['select-1'] == "Georgia" %}selected{% endif %}>Georgia</option>
+              <option value="Germany" {% if data['select-1'] == "Germany" %}selected{% endif %}>Germany</option>
+              <option value="Ghana" {% if data['select-1'] == "Ghana" %}selected{% endif %}>Ghana</option>
+              <option value="Gibraltar" {% if data['select-1'] == "Gibraltar" %}selected{% endif %}>Gibraltar</option>
+              <option value="Greece" {% if data['select-1'] == "Greece" %}selected{% endif %}>Greece</option>
+              <option value="Greenland">Greenland</option>
+              <option value="Grenada" {% if data['select-1'] == "Grenada" %}selected{% endif %}>Grenada</option>
+              <option value="Guadeloupe" {% if data['select-1'] == "Guadeloupe" %}selected{% endif %}>Guadeloupe</option>
+              <option value="Guam" {% if data['select-1'] == "Guam" %}selected{% endif %}>Guam</option>
+              <option value="Guatemala" {% if data['select-1'] == "Guatemala" %}selected{% endif %}>Guatemala</option>
+              <option value="Guernsey" {% if data['select-1'] == "Guernsey" %}selected{% endif %}>Guernsey</option>
+              <option value="Guinea" {% if data['select-1'] == "Guinea" %}selected{% endif %}>Guinea</option>
+              <option value="Guinea-Bissau" {% if data['select-1'] == "Guinea-Bissau" %}selected{% endif %}>Guinea-Bissau</option>
+              <option value="Guyana" {% if data['select-1'] == "Guyana" %}selected{% endif %}>Guyana</option>
+              <option value="Haiti" {% if data['select-1'] == "Haiti" %}selected{% endif %}>Haiti</option>
+              <option value="Heard Island and McDonald Islands" {% if data['select-1'] == "Heard Island and McDonald Islands" %}selected{% endif %}>Heard Island and McDonald Islands</option>
+              <option value="Honduras" {% if data['select-1'] == "Honduras" %}selected{% endif %}>Honduras</option>
+              <option value="Hong Kong" {% if data['select-1'] == "Hong Kong" %}selected{% endif %}>Hong Kong</option>
+              <option value="Howland Island" {% if data['select-1'] == "Howland Island" %}selected{% endif %}>Howland Island</option>
+              <option value="Hungary" {% if data['select-1'] == "Hungary" %}selected{% endif %}>Hungary</option>
+              <option value="Iceland" {% if data['select-1'] == "Iceland" %}selected{% endif %}>Iceland</option>
+              <option value="India" {% if data['select-1'] == "India" %}selected{% endif %}>India</option>
+              <option value="Indonesia" {% if data['select-1'] == "Indonesia" %}selected{% endif %}>Indonesia</option>
+              <option value="Iran" {% if data['select-1'] == "Iran" %}selected{% endif %}>Iran</option>
+              <option value="Iraq" {% if data['select-1'] == "Iraq" %}selected{% endif %}>Iraq</option>
+              <option value="Ireland" {% if data['select-1'] == "Ireland" %}selected{% endif %}>Ireland</option>
+              <option value="Isle of Man" {% if data['select-1'] == "Isle of Man" %}selected{% endif %}>Isle of Man</option>
+              <option value="Israel" {% if data['select-1'] == "Israel" %}selected{% endif %}>Israel</option>
+              <option value="Italy" {% if data['select-1'] == "Italy" %}selected{% endif %}>Italy</option>
+              <option value="Ivory Coast" {% if data['select-1'] == "Ivory Coast" %}selected{% endif %}>Ivory Coast</option>
+              <option value="Jamaica" {% if data['select-1'] == "Jamaica" %}selected{% endif %}>Jamaica</option>
+              <option value="Japan" {% if data['select-1'] == "Japan" %}selected{% endif %}>Japan</option>
+              <option value="Jarvis Island" {% if data['select-1'] == "Jarvis Island" %}selected{% endif %}>Jarvis Island</option>
+              <option value="Jersey" {% if data['select-1'] == "Jersey" %}selected{% endif %}>Jersey</option>
+              <option value="Johnston Atoll" {% if data['select-1'] == "Johnston Atoll" %}selected{% endif %}>Johnston Atoll</option>
+              <option value="Jordan" {% if data['select-1'] == "Jordan" %}selected{% endif %}>Jordan</option>
+              <option value="Kazakhstan" {% if data['select-1'] == "Kazakhstan" %}selected{% endif %}>Kazakhstan</option>
+              <option value="Kenya" {% if data['select-1'] == "Kenya" %}selected{% endif %}>Kenya</option>
+              <option value="Kingman Reef" {% if data['select-1'] == "Kingman Reef" %}selected{% endif %}>Kingman Reef</option>
+              <option value="Kiribati" {% if data['select-1'] == "Kiribati" %}selected{% endif %}>Kiribati</option>
+              <option value="Kosovo" {% if data['select-1'] == "Kosovo" %}selected{% endif %}>Kosovo</option>
+              <option value="Kuwait" {% if data['select-1'] == "Kuwait" %}selected{% endif %}>Kuwait</option>
+              <option value="Kyrgyzstan" {% if data['select-1'] == "Kyrgyzstan" %}selected{% endif %}>Kyrgyzstan</option>
+              <option value="Laos" {% if data['select-1'] == "Laos" %}selected{% endif %}>Laos</option>
+              <option value="Latvia" {% if data['select-1'] == "Latvia" %}selected{% endif %}>Latvia</option>
+              <option value="Lebanon" {% if data['select-1'] == "Lebanon" %}selected{% endif %}>Lebanon</option>
+              <option value="Lesotho" {% if data['select-1'] == "Lesotho" %}selected{% endif %}>Lesotho</option>
+              <option value="Liberia" {% if data['select-1'] == "Liberia" %}selected{% endif %}>Liberia</option>
+              <option value="Libya" {% if data['select-1'] == "Libya" %}selected{% endif %}>Libya</option>
+              <option value="Liechtenstein" {% if data['select-1'] == "Liechtenstein" %}selected{% endif %}>Liechtenstein</option>
+              <option value="Lithuania" {% if data['select-1'] == "Lithuania" %}selected{% endif %}>Lithuania</option>
+              <option value="Luxembourg" {% if data['select-1'] == "Luxembourg" %}selected{% endif %}>Luxembourg</option>
+              <option value="Macao" {% if data['select-1'] == "Macao" %}selected{% endif %}>Macao</option>
+              <option value="Madagascar" {% if data['select-1'] == "Madagascar" %}selected{% endif %}>Madagascar</option>
+              <option value="Malawi" {% if data['select-1'] == "Malawi" %}selected{% endif %}>Malawi</option>
+              <option value="Malaysia" {% if data['select-1'] == "Malaysia" %}selected{% endif %}>Malaysia</option>
+              <option value="Maldives" {% if data['select-1'] == "Maldives" %}selected{% endif %}>Maldives</option>
+              <option value="Mali" {% if data['select-1'] == "Mali" %}selected{% endif %}>Mali</option>
+              <option value="Malta" {% if data['select-1'] == "Malta" %}selected{% endif %}>Malta</option>
+              <option value="Marshall Islands" {% if data['select-1'] == "Marshall Islands" %}selected{% endif %}>Marshall Islands</option>
+              <option value="Martinique" {% if data['select-1'] == "Martinique" %}selected{% endif %}>Martinique</option>
+              <option value="Mauritania" {% if data['select-1'] == "Mauritania" %}selected{% endif %}>Mauritania</option>
+              <option value="Mauritius" {% if data['select-1'] == "Mauritius" %}selected{% endif %}>Mauritius</option>
+              <option value="Mayotte" {% if data['select-1'] == "Mayotte" %}selected{% endif %}>Mayotte</option>
+              <option value="Melilla" {% if data['select-1'] == "Melilla" %}selected{% endif %}>Melilla</option>
+              <option value="Mexico" {% if data['select-1'] == "Mexico" %}selected{% endif %}>Mexico</option>
+              <option value="Micronesia" {% if data['select-1'] == "Micronesia" %}selected{% endif %}>Micronesia</option>
+              <option value="Midway Islands" {% if data['select-1'] == "Midway Islands" %}selected{% endif %}>Midway Islands</option>
+              <option value="Moldova" {% if data['select-1'] == "Moldova" %}selected{% endif %}>Moldova</option>
+              <option value="Monaco" {% if data['select-1'] == "Monaco" %}selected{% endif %}>Monaco</option>
+              <option value="Mongolia" {% if data['select-1'] == "Mongolia" %}selected{% endif %}>Mongolia</option>
+              <option value="Montenegro" {% if data['select-1'] == "Montenegro" %}selected{% endif %}>Montenegro</option>
+              <option value="Montserrat" {% if data['select-1'] == "Montserrat" %}selected{% endif %}>Montserrat</option>
+              <option value="Morocco" {% if data['select-1'] == "Morocco" %}selected{% endif %}>Morocco</option>
+              <option value="Mozambique" {% if data['select-1'] == "Mozambique" %}selected{% endif %}>Mozambique</option>
+              <option value="Namibia" {% if data['select-1'] == "Namibia" %}selected{% endif %}>Namibia</option>
+              <option value="Nauru" {% if data['select-1'] == "Nauru" %}selected{% endif %}>Nauru</option>
+              <option value="Navassa Island" {% if data['select-1'] == "Navassa Island" %}selected{% endif %}>Navassa Island</option>
+              <option value="Nepal" {% if data['select-1'] == "Nepal" %}selected{% endif %}>Nepal</option>
+              <option value="Netherlands" {% if data['select-1'] == "Netherlands" %}selected{% endif %}>Netherlands</option>
+              <option value="New Caledonia" {% if data['select-1'] == "New Caledonia" %}selected{% endif %}>New Caledonia</option>
+              <option value="New Zealand" {% if data['select-1'] == "New Zealand" %}selected{% endif %}>New Zealand</option>
+              <option value="Nicaragua" {% if data['select-1'] == "Nicaragua" %}selected{% endif %}>Nicaragua</option>
+              <option value="Niger" {% if data['select-1'] == "Niger" %}selected{% endif %}>Niger</option>
+              <option value="Nigeria" {% if data['select-1'] == "Nigeria" %}selected{% endif %}>Nigeria</option>
+              <option value="Niue" {% if data['select-1'] == "Niue" %}selected{% endif %}>Niue</option>
+              <option value="Norfolk Island" {% if data['select-1'] == "Norfolk Island" %}selected{% endif %}>Norfolk Island</option>
+              <option value="North Korea" {% if data['select-1'] == "North Korea" %}selected{% endif %}>North Korea</option>
+              <option value="North Macedonia" {% if data['select-1'] == "North Macedonia" %}selected{% endif %}>North Macedonia</option>
+              <option value="Northern Mariana Islands" {% if data['select-1'] == "Northern Mariana Islands" %}selected{% endif %}>Northern Mariana Islands</option>
+              <option value="Norway">Norway</option>
+              <option value="Norway" {% if data['select-1'] == "Norway" %}selected{% endif %}>Norway</option>
+              <option value="Occupied Palestinian Territories" {% if data['select-1'] == "Occupied Palestinian Territories" %}selected{% endif %}>Occupied Palestinian Territories</option>
+              <option value="Oman" {% if data['select-1'] == "Oman" %}selected{% endif %}>Oman</option>
+              <option value="Pakistan" {% if data['select-1'] == "Pakistan" %}selected{% endif %}>Pakistan</option>
+              <option value="Palau" {% if data['select-1'] == "Palau" %}selected{% endif %}>Palau</option>
+              <option value="Palmyra Atoll" {% if data['select-1'] == "Palmyra Atoll" %}selected{% endif %}>Palmyra Atoll</option>
+              <option value="Panama" {% if data['select-1'] == "Panama" %}selected{% endif %}>Panama</option>
+              <option value="Papua New Guinea" {% if data['select-1'] == "Papua New Guinea" %}selected{% endif %}>Papua New Guinea</option>
+              <option value="Paraguay" {% if data['select-1'] == "Paraguay" %}selected{% endif %}>Paraguay</option>
+              <option value="Peru" {% if data['select-1'] == "Peru" %}selected{% endif %}>Peru</option>
+              <option value="Philippines" {% if data['select-1'] == "Philippines" %}selected{% endif %}>Philippines</option>
+              <option value="Pitcairn, Henderson, Ducie and Oeno Islands" {% if data['select-1'] == "Pitcairn, Henderson, Ducie and Oeno Islands" %}selected{% endif %}>Pitcairn, Henderson, Ducie and Oeno Islands</option>
+              <option value="Poland" {% if data['select-1'] == "Poland" %}selected{% endif %}>Poland</option>
+              <option value="Portugal" {% if data['select-1'] == "Portugal" %}selected{% endif %}>Portugal</option>
+              <option value="Puerto Rico" {% if data['select-1'] == "Puerto Rico" %}selected{% endif %}>Puerto Rico</option>
+              <option value="Qatar" {% if data['select-1'] == "Qatar" %}selected{% endif %}>Qatar</option>
+              <option value="Ras al-Khaimah" {% if data['select-1'] == "Ras al-Khaimah" %}selected{% endif %}>Ras al-Khaimah</option>
+              <option value="Romania" {% if data['select-1'] == "Romania" %}selected{% endif %}>Romania</option>
+              <option value="Russia" {% if data['select-1'] == "Russia" %}selected{% endif %}>Russia</option>
+              <option value="Rwanda" {% if data['select-1'] == "Rwanda" %}selected{% endif %}>Rwanda</option>
+              <option value="Réunion" {% if data['select-1'] == "Réunion" %}selected{% endif %}>Réunion</option>
+              <option value="Saba" {% if data['select-1'] == "Saba" %}selected{% endif %}>Saba</option>
+              <option value="Saint Barthélemy" {% if data['select-1'] == "Saint Barthélemy" %}selected{% endif %}>Saint Barthélemy</option>
+              <option value="Saint Helena" {% if data['select-1'] == "Saint Helena" %}selected{% endif %}>Saint Helena</option>
+              <option value="Saint Pierre and Miquelon" {% if data['select-1'] == "Saint Pierre and Miquelon" %}selected{% endif %}>Saint Pierre and Miquelon</option>
+              <option value="Saint-Martin (French part)" {% if data['select-1'] == "Saint-Martin (French part)" %}selected{% endif %}>Saint-Martin (French part)</option>
+              <option value="Samoa" {% if data['select-1'] == "Samoa" %}selected{% endif %}>Samoa</option>
+              <option value="San Marino" {% if data['select-1'] == "San Marino" %}selected{% endif %}>San Marino</option>
+              <option value="Sao Tome and Principe" {% if data['select-1'] == "Sao Tome and Principe" %}selected{% endif %}>Sao Tome and Principe</option>
+              <option value="Saudi Arabia" {% if data['select-1'] == "Saudi Arabia" %}selected{% endif %}>Saudi Arabia</option>
+              <option value="Senegal" {% if data['select-1'] == "Senegal" %}selected{% endif %}>Senegal</option>
+              <option value="Serbia" {% if data['select-1'] == "Serbia" %}selected{% endif %}>Serbia</option>
+              <option value="Seychelles" {% if data['select-1'] == "Seychelles" %}selected{% endif %}>Seychelles</option>
+              <option value="Sharjah" {% if data['select-1'] == "Sharjah" %}selected{% endif %}>Sharjah</option>
+              <option value="Sierra Leone" {% if data['select-1'] == "Sierra Leone" %}selected{% endif %}>Sierra Leone</option>
+              <option value="Singapore" {% if data['select-1'] == "Singapore" %}selected{% endif %}>Singapore</option>
+              <option value="Sint Eustatius" {% if data['select-1'] == "Sint Eustatius" %}selected{% endif %}>Sint Eustatius</option>
+              <option value="Sint Maarten (Dutch part)" {% if data['select-1'] == "Sint Maarten (Dutch part)" %}selected{% endif %}>Sint Maarten (Dutch part)</option>
+              <option value="Slovakia" {% if data['select-1'] == "Slovakia" %}selected{% endif %}>Slovakia</option>
+              <option value="Slovenia" {% if data['select-1'] == "Slovenia" %}selected{% endif %}>Slovenia</option>
+              <option value="Solomon Islands" {% if data['select-1'] == "Solomon Islands" %}selected{% endif %}>Solomon Islands</option>
+              <option value="Somalia" {% if data['select-1'] == "Somalia" %}selected{% endif %}>Somalia</option>
+              <option value="South Africa" {% if data['select-1'] == "South Africa" %}selected{% endif %}>South Africa</option>
+              <option value="South Georgia and South Sandwich Islands" {% if data['select-1'] == "South Georgia and South Sandwich Islands" %}selected{% endif %}>South Georgia and South Sandwich Islands</option>
+              <option value="South Korea" {% if data['select-1'] == "South Korea" %}selected{% endif %}>South Korea</option>
+              <option value="South Sudan" {% if data['select-1'] == "South Sudan" %}selected{% endif %}>South Sudan</option>
+              <option value="Spain" {% if data['select-1'] == "Spain" %}selected{% endif %}>Spain</option>
+              <option value="Sri Lanka" {% if data['select-1'] == "Sri Lanka" %}selected{% endif %}>Sri Lanka</option>
+              <option value="St Kitts and Nevis" {% if data['select-1'] == "St Kitts and Nevis" %}selected{% endif %}>St Kitts and Nevis</option>
+              <option value="St Lucia" {% if data['select-1'] == "St Lucia" %}selected{% endif %}>St Lucia</option>
+              <option value="St Vincent" {% if data['select-1'] == "St Vincent" %}selected{% endif %}>St Vincent</option>
+              <option value="Sudan" {% if data['select-1'] == "Sudan" %}selected{% endif %}>Sudan</option>
+              <option value="Suriname" {% if data['select-1'] == "Suriname" %}selected{% endif %}>Suriname</option>
+              <option value="Svalbard and Jan Mayen" {% if data['select-1'] == "Svalbard and Jan Mayen" %}selected{% endif %}>Svalbard and Jan Mayen</option>
+              <option value="Sweden" {% if data['select-1'] == "Sweden" %}selected{% endif %}>Sweden</option>
+              <option value="Switzerland" {% if data['select-1'] == "Switzerland" %}selected{% endif %}>Switzerland</option>
+              <option value="Syria" {% if data['select-1'] == "Syria" %}selected{% endif %}>Syria</option>
+              <option value="Taiwan" {% if data['select-1'] == "Taiwan" %}selected{% endif %}>Taiwan</option>
+              <option value="Tajikistan" {% if data['select-1'] == "Tajikistan" %}selected{% endif %}>Tajikistan</option>
+              <option value="Tanzania" {% if data['select-1'] == "Tanzania" %}selected{% endif %}>Tanzania</option>
+              <option value="Thailand" {% if data['select-1'] == "Thailand" %}selected{% endif %}>Thailand</option>
+              <option value="The Bahamas" {% if data['select-1'] == "The Bahamas" %}selected{% endif %}>The Bahamas</option>
+              <option value="The Gambia" {% if data['select-1'] == "The Gambia" %}selected{% endif %}>The Gambia</option>
+              <option value="Togo" {% if data['select-1'] == "Togo" %}selected{% endif %}>Togo</option>
+              <option value="Tokelau" {% if data['select-1'] == "Tokelau" %}selected{% endif %}>Tokelau</option>
+              <option value="Tonga" {% if data['select-1'] == "Tonga" %}selected{% endif %}>Tonga</option>
+              <option value="Trinidad and Tobago" {% if data['select-1'] == "Trinidad and Tobago" %}selected{% endif %}>Trinidad and Tobago</option>
+              <option value="Tristan da Cunha" {% if data['select-1'] == "Tristan da Cunha" %}selected{% endif %}>Tristan da Cunha</option>
+              <option value="Tunisia" {% if data['select-1'] == "Tunisia" %}selected{% endif %}>Tunisia</option>
+              <option value="Turkey" {% if data['select-1'] == "Turkey" %}selected{% endif %}>Turkey</option>
+              <option value="Turkmenistan" {% if data['select-1'] == "Turkmenistan" %}selected{% endif %}>Turkmenistan</option>
+              <option value="Turks and Caicos Islands" {% if data['select-1'] == "Turks and Caicos Islands" %}selected{% endif %}>Turks and Caicos Islands</option>
+              <option value="Tuvalu" {% if data['select-1'] == "Tuvalu" %}selected{% endif %}>Tuvalu</option>
+              <option value="USSR" {% if data['select-1'] == "USSR" %}selected{% endif %}>USSR</option>
+              <option value="Uganda" {% if data['select-1'] == "Uganda" %}selected{% endif %}>Uganda</option>
+              <option value="Ukraine" {% if data['select-1'] == "Ukraine" %}selected{% endif %}>Ukraine</option>
+              <option value="Umm al-Quwain" {% if data['select-1'] == "Umm al-Quwain" %}selected{% endif %}>Umm al-Quwain</option>
+              <option value="United Arab Emirates" {% if data['select-1'] == "United Arab Emirates" %}selected{% endif %}>United Arab Emirates</option>
+              <option value="United Kingdom" {% if data['select-1'] == "United Kingdom" %}selected{% endif %}>United Kingdom</option>
+              <option value="United States" {% if data['select-1'] == "United States" %}selected{% endif %}>United States</option>
+              <option value="United States Virgin Islands" {% if data['select-1'] == "United States Virgin Islands" %}selected{% endif %}>United States Virgin Islands</option>
+              <option value="Uruguay" {% if data['select-1'] == "Uruguay" %}selected{% endif %}>Uruguay</option>
+              <option value="Uzbekistan" {% if data['select-1'] == "Uzbekistan" %}selected{% endif %}>Uzbekistan</option>
+              <option value="Vanuatu" {% if data['select-1'] == "Vanuatu" %}selected{% endif %}>Vanuatu</option>
+              <option value="Vatican City" {% if data['select-1'] == "Vatican City" %}selected{% endif %}>Vatican City</option>
+              <option value="Venezuela" {% if data['select-1'] == "Venezuela" %}selected{% endif %}>Venezuela</option>
+              <option value="Vietnam" {% if data['select-1'] == "Vietnam" %}selected{% endif %}>Vietnam</option>
+              <option value="Wake Island" {% if data['select-1'] == "Wake Island" %}selected{% endif %}>Wake Island</option>
+              <option value="Wallis and Futuna" {% if data['select-1'] == "Wallis and Futuna" %}selected{% endif %}>Wallis and Futuna</option>
+              <option value="Western Sahara" {% if data['select-1'] == "Western Sahara" %}selected{% endif %}>Western Sahara</option>
+              <option value="Yemen" {% if data['select-1'] == "Yemen" %}selected{% endif %}>Yemen</option>
+              <option value="Yugoslavia" {% if data['select-1'] == "Yugoslavia" %}selected{% endif %}>Yugoslavia</option>
+              <option value="Zambia" {% if data['select-1'] == "Zambia" %}selected{% endif %}>Zambia</option>
+              <option value="Zimbabwe" {% if data['select-1'] == "Zimbabwe" %}selected{% endif %}>Zimbabwe</option>
+              <option value="Åland Islands" {% if data['select-1'] == "Åland Islands" %}selected{% endif %}>Åland Islands</option>
+                          </select>
+      </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Description of product</label>
-          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">
-          </textarea>
-        </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="trading_name">Description of product</label>
+        <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint" >{{ data['more-detail'] }}</textarea>
+      </div>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend">
-              Does the product have UKCA, UKNI, or CE marking?
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" >
-                <label class="govuk-label govuk-radios__label" for="contact">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste">
-                        UKCA
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                        UKNI
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" >
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                        CE
-                      </label>
-                    </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Does the product have UKCA, UKNI, or CE marking?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-1" name="product-marking" type="radio" value="" data-aria-controls="conditional-contact" >
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="ukca" type="checkbox" value="UKCA">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      UKCA
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="ukni" type="checkbox" value="UKNI">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      UKNI
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="ce" type="checkbox" value="CE" >
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      CE
+                    </label>
                   </div>
                 </div>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="contact-2">
-                  No
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-                <label class="govuk-label govuk-radios__label" for="contact-3">
-                  Unknown
-                </label>
-              </div>
             </div>
-          </fieldset>
-        </div>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Webpage</label>
-          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-        </div>
-        
-      </fieldset>
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product category</legend>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
-              <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Baby & Toddler</option>
-                <option value="territory:AE-AZ">Category 1</option>
-                <option value="country:AF">Category 2</option>
-                <option value="territory:AE-AJ">Category 3</option>
-                <option value="territory:XQZ">Category 4</option>
-                <option value="country:AL">Category 5</option>
-              </select>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="product-marking" type="radio" value="None" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-3" name="product-marking" type="radio" value="Unknown" data-aria-controls="conditional-contact-3">
+              <label class="govuk-label govuk-radios__label" for="contact-3">
+                Unknown
+              </label>
+            </div>
           </div>
+        </fieldset>
+      </div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
-            <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Baby Transport Accessories">
-          </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="trading_name">Webpage</label>
+        <input class="govuk-input govuk-!-width-full" id="webpage" name="webpage" type="text" aria-describedby="trading_name-hint" value="{{ data['webpage'] }}">
+      </div>
 
-      </fieldset>
+    </fieldset>
 
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Categories</legend>
+
+      <div class="govuk-form-group" id="select-form-group-2">
+        <label class="govuk-label" for="select-2">Product category (mandatory)</label>
+        <span id="select-error-2" class="govuk-error-message" style="display: none;">
+            <span class="govuk-visually-hidden"></span>Select a product category
+        </span>
+        <select class="govuk-select" id="select-2" name="select-2">
+          <option value="">Select product category</option>
+          <option value="Personal protective equipment (PPE)" {% if data['select-2'] == "Personal protective equipment (PPE)" %}selected{% endif %}>Personal protective equipment (PPE)</option>
+          <option value="Chemical products" {% if data['select-2'] == "Chemical products" %}selected{% endif %}>Chemical products</option>
+          <option value="Childcare articles and children's equipment" {% if data['select-2'] == "Childcare articles and children's equipment" %}selected{% endif %}>Childcare articles and children's equipment</option>
+          <option value="Clothing, textiles and fashion items" {% if data['select-2'] == "Clothing, textiles and fashion items" %}selected{% endif %}>Clothing, textiles and fashion items</option>
+          <option value="Communication and media equipment" {% if data['select-2'] == "Communication and media equipment" %}selected{% endif %}>Communication and media equipment</option>
+          <option value="Construction products" {% if data['select-2'] == "Construction products" %}selected{% endif %}>Construction products</option>
+          <option value="Cosmetics" {% if data['select-2'] == "Cosmetics" %}selected{% endif %}>Cosmetics</option>
+          <option value="Decorative articles" {% if data['select-2'] == "Decorative articles" %}selected{% endif %}>Decorative articles</option>
+          <option value="Eco-design" {% if data['select-2'] == "Eco-design" %}selected{% endif %}>Eco-design</option>
+          <option value="Electrical appliances and equipment" {% if data['select-2'] == "Electrical appliances and equipment" %}selected{% endif %}>Electrical appliances and equipment</option>
+          <option value="Explosive atmospheres equipment" {% if data['select-2'] == "Explosive atmospheres equipment" %}selected{% endif %}>Explosive atmospheres equipment</option>
+          <option value="Food-imitating products" {% if data['select-2'] == "Food-imitating products" %}selected{% endif %}>Food-imitating products</option>
+          <option value="Furniture" {% if data['select-2'] == "Furniture" %}selected{% endif %}>Furniture</option>
+          <option value="Gadgets" {% if data['select-2'] == "Gadgets" %}selected{% endif %}>Gadgets</option>
+          <option value="Gas appliances and components" {% if data['select-2'] == "Gas appliances and components" %}selected{% endif %}>Gas appliances and components</option>
+          <option value="Hand tools" {% if data['select-2'] == "Hand tools" %}selected{% endif %}>Hand tools</option>
+          <option value="Hobby / sports equipment" {% if data['select-2'] == "Hobby / sports equipment" %}selected{% endif %}>Hobby / sports equipment</option>
+          <option value="Jewellery" {% if data['select-2'] == "Jewellery" %}selected{% endif %}>Jewellery</option>
+          <option value="Kitchen / cooking accessories" {% if data['select-2'] == "Kitchen / cooking accessories" %}selected{% endif %}>Kitchen / cooking accessories</option>
+          <option value="Laser pointers" {% if data['select-2'] == "Laser pointers" %}selected{% endif %}>Laser pointers</option>
+          <option value="Lifts" {% if data['select-2'] == "Lifts" %}selected{% endif %}>Lifts</option>
+          <option value="Lighters" {% if data['select-2'] == "Lighters" %}selected{% endif %}>Lighters</option>
+          <option value="Lighting chains" {% if data['select-2'] == "Lighting chains" %}selected{% endif %}>Lighting chains</option>
+          <option value="Lighting equipment" {% if data['select-2'] == "Lighting equipment" %}selected{% endif %}>Lighting equipment</option>
+          <option value="Machinery" {% if data['select-2'] == "Machinery" %}selected{% endif %}>Machinery</option>
+          <option value="Measuring instruments" {% if data['select-2'] == "Measuring instruments" %}selected{% endif %}>Measuring instruments</option>
+          <option value="Motor vehicles (including spare parts)" {% if data['select-2'] == "Motor vehicles (including spare parts)" %}selected{% endif %}>Motor vehicles (including spare parts)</option>
+          <option value="Pressure equipment / vessels" {% if data['select-2'] == "Pressure equipment / vessels" %}selected{% endif %}>Pressure equipment / vessels</option>
+          <option value="Pyrotechnic articles" {% if data['select-2'] == "Pyrotechnic articles" %}selected{% endif %}>Pyrotechnic articles</option>
+          <option value="Rail and guided transport" {% if data['select-2'] == "Rail and guided transport" %}selected{% endif %}>Rail and guided transport</option>
+          <option value="Recreational crafts" {% if data['select-2'] == "Recreational crafts" %}selected{% endif %}>Recreational crafts</option>
+          <option value="Stationery" {% if data['select-2'] == "Stationery" %}selected{% endif %}>          </select>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+      <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+      <input class="govuk-input govuk-!-width-two-thirds" id="product-subcategory" name="product-subcategory" type="text" aria-describedby="trading_name-hint" value="{{ data['product-subcategory'] }}">
+    </div>
+
+  </fieldset>
 
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
@@ -152,13 +457,13 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="9 420015 715897">
+          <input class="govuk-input govuk-!-width-two-thirds" id="barcode" name="barcode" type="text" aria-describedby="trading_name-hint" value="{{ data['barcode'] }}">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Other product identifiers</label>
           <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">ASIN: L87SDM5K2U</textarea>
+          <textarea class="govuk-textarea" id="amazon-asin" name="amazon-asin" rows="5" aria-describedby="more-detail-hint" >{{ data['amazon-asin'] }}</textarea>
         </div>
 
       </fieldset>
@@ -166,32 +471,31 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Availability</legend>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-1">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend">
               Was the product placed on the market before 1 January 2021?
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" >
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                <input class="govuk-radios__input" id="market-date-yes" name="market-date" type="radio" value="Before 1 January 2021">
+                <label class="govuk-label govuk-radios__label" for="market-date-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                <input class="govuk-radios__input" id="market-date-no" name="market-date" type="radio" value="After 1 January 2021">
+                <label class="govuk-label govuk-radios__label" for="market-date-no">
                   No
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                  Unable to ascertain 
+                <input class="govuk-radios__input" id="market-date-unknown" name="market-date" type="radio" value="Unable to ascertain">
+                <label class="govuk-label govuk-radios__label" for="market-date-unknown">
+                  Unable to ascertain
                 </label>
               </div>
             </div>
-
           </fieldset>
 
         </div>
