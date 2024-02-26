@@ -323,10 +323,8 @@
             
       <div class="govuk-grid-column-two-thirds">
 
-        <p>Showing 1-10 of <strong>418</strong> results</p>
+        <p id="displayCount">There are currently 418 products</p>
 
-        <div id="searchInfo"><p></p></div>
-        
           <div class="govuk-form-group">
             <table class="custom-table">
               <tbody>
@@ -795,54 +793,77 @@
     // Get the search button element
     var searchButton = document.getElementById('searchButton');
   
-    // Add event listener for button click events
-    searchButton.addEventListener('click', function() {
-      // Get the filter value (search query)
-      var filter = document.getElementById('searchInput').value.toUpperCase();
-  
-      // Reset the display of all rows
-      rows.forEach(function(row) {
+// Function to update the display count
+function updateDisplayCount(visibleRows, totalRows, searchTerm) {
+    var displayCount = document.getElementById('displayCount');
+    if (searchTerm !== '') {
+        var searchTermRegex = new RegExp('(' + searchTerm + ')', 'gi');
+        var searchTermFormatted = `<strong>${searchTerm}</strong>`;
+        var message = `<strong>${visibleRows}</strong> products matching keyword(s) "${searchTermFormatted}" were found.`;
+        message = message.replace(searchTermRegex, searchTermFormatted);
+        displayCount.innerHTML = message;
+    } else {
+        displayCount.textContent = `There are currently ${totalRows} products`;
+    }
+}
+
+// Add event listener for button click events
+searchButton.addEventListener('click', function() {
+    // Get the filter value (search query)
+    var filter = document.getElementById('searchInput').value.toUpperCase();
+
+    // Reset the display of all rows
+    rows.forEach(function(row) {
         row.style.display = '';
-      });
-  
-      // Variable to keep track of the number of displayed rows
-      var displayedRows = 0;
-  
-      // Loop through all table rows
-      rows.forEach(function(row) {
+    });
+
+    // Variable to keep track of the number of displayed rows
+    var displayedRows = 0;
+
+    // Loop through all table rows
+    rows.forEach(function(row) {
         // Get the table data cells in this row
         var cells = row.querySelectorAll('td');
-  
+
         // Variable to keep track of whether this row should be displayed or not
         var displayRow = false;
-  
+
         // Loop through all table data cells
         cells.forEach(function(cell) {
-          // Check if the cell text contains the filter value
-          if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
-            // If any cell contains the filter value, set displayRow to true
-            displayRow = true;
-          }
+            // Check if the cell text contains the filter value
+            if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                // If any cell contains the filter value, set displayRow to true
+                displayRow = true;
+            }
         });
-  
+
         // Set the display style of the row based on displayRow and the number of displayed rows
         if (displayRow && displayedRows < 10) {
-          row.style.display = '';
-          displayedRows++;
+            row.style.display = '';
+            displayedRows++;
         } else {
-          row.style.display = 'none';
+            row.style.display = 'none';
         }
-      });
-  
-      // Check if no results were found
-      if (displayedRows === 0) {
+    });
+
+    // Update the count display
+    var totalRows = rows.length;
+    var searchTerm = filter.trim() !== '' ? filter : '';
+    updateDisplayCount(displayedRows, totalRows, searchTerm);
+
+    // Check if no results were found
+    if (displayedRows === 0) {
         // Display empty state message
         emptyStateDiv.style.display = 'block';
-      } else {
+    } else {
         // Hide empty state message
         emptyStateDiv.style.display = 'none';
-      }
-    });
+    }
+
+    // Hide the navigation
+    var navigation = document.querySelector('.govuk-pagination');
+    navigation.style.display = 'none';
+});
   </script>
 
 {% endblock %}

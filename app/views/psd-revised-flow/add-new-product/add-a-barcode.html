@@ -75,7 +75,7 @@
       
     <div class="govuk-form-group" id="tableContainer" style="display: none;">
 
-      <div id="searchInfo"><p></p></div>
+      <div class="govuk-body" id="displayCount"><p></p></div>
 
       <table class="custom-table">
         <tbody>
@@ -173,99 +173,110 @@
           </div>
         </div>
       </div>
-
-<input type="hidden" name="brand-name" value="{{ data['brand-name'] if data['brand-name'] else “Bosch” }}" />
-
+      
 </form>
 
-      <script>
-        function toggleDetails(detailsId) {
-            var details = document.getElementById(detailsId);
-            details.open = !details.open;
-        }
-    
-        // Get the table rows
-        var rows = document.querySelectorAll('.custom-table tbody tr');
-        var tableContainer = document.getElementById('tableContainer');
-        var emptyStateDiv = document.querySelector('.empty-state');
-        var sortContainer = document.getElementById('sortContainer'); // Added
-    
-        // Hide rows after the first 10
-        for (var i = 10; i < rows.length; i++) {
-            rows[i].style.display = 'none';
-        }
-    
-        // Hide sort container initially
-        sortContainer.style.display = 'none'; // Added
-    
-        // Get the search button element
-        var searchButton = document.getElementById('searchButton');
-    
-        // Add event listener for button click events
-        searchButton.addEventListener('click', function () {
-            // Get the filter value (search query)
-            var filter = document.getElementById('searchInput').value.toUpperCase();
-    
-            // Reset the display of all rows
-            rows.forEach(function (row) {
-                row.style.display = '';
-            });
-    
-            // Variable to keep track of the number of displayed rows
-            var displayedRows = 0;
-    
-            // Loop through all table rows
-            rows.forEach(function (row) {
-                // Get the table data cells in this row
-                var cells = row.querySelectorAll('td');
-    
-                // Variable to keep track of whether this row should be displayed or not
-                var displayRow = false;
-    
-                // Loop through all table data cells
-                cells.forEach(function (cell) {
-                    // Check if the cell text contains the filter value
-                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
-                        // If any cell contains the filter value, set displayRow to true
-                        displayRow = true;
-                    }
-                });
-    
-                // Set the display style of the row based on displayRow and the number of displayed rows
-                if (displayRow && displayedRows < 10) {
-                    row.style.display = '';
-                    displayedRows++;
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-    
-            // Check if no results were found
-            if (displayedRows === 0) {
-                // Hide table
-                tableContainer.style.display = 'none';
-                // Hide sort container
-                sortContainer.style.display = 'none'; // Added
-                // Display empty state message
-                emptyStateDiv.style.display = 'block';
-            } else {
-                // Show table
-                tableContainer.style.display = 'block';
-                // Show sort container
-                sortContainer.style.display = 'block'; // Added
-                // Hide empty state message
-                emptyStateDiv.style.display = 'none';
+<script>
+
+// Function to toggle details
+function toggleDetails(detailsId) {
+    var details = document.getElementById(detailsId);
+    details.open = !details.open;
+}
+
+// Get the table rows
+var rows = document.querySelectorAll('.custom-table tbody tr');
+var tableContainer = document.getElementById('tableContainer');
+var emptyStateDiv = document.querySelector('.empty-state');
+var sortContainer = document.getElementById('sortContainer');
+
+// Hide rows after the first 10
+for (var i = 10; i < rows.length; i++) {
+    rows[i].style.display = 'none';
+}
+
+// Hide sort container initially
+sortContainer.style.display = 'none';
+
+// Get the search button element
+var searchButton = document.getElementById('searchButton');
+
+// Add event listener for button click events
+searchButton.addEventListener('click', function () {
+    // Get the filter value (search query)
+    var filter = document.getElementById('searchInput').value.toUpperCase();
+
+    // Reset the display of all rows
+    rows.forEach(function (row) {
+        row.style.display = '';
+    });
+
+    // Variable to keep track of the number of displayed rows
+    var displayedRows = 0;
+
+    // Loop through all table rows
+    rows.forEach(function (row) {
+        // Get the table data cells in this row
+        var cells = row.querySelectorAll('td');
+
+        // Variable to keep track of whether this row should be displayed or not
+        var displayRow = false;
+
+        // Loop through all table data cells
+        cells.forEach(function (cell) {
+            // Check if the cell text contains the filter value
+            if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                // If any cell contains the filter value, set displayRow to true
+                displayRow = true;
             }
         });
-    
-        // Count
-        function updateDisplayCount() {
-            const totalRows = allRows.length;
-            const visibleRows = Array.from(allRows).filter(row => row.style.display !== "none").length;
-    
-            displayCount.textContent = `Showing ${visibleRows} of ${totalRows}`;
+
+        // Set the display style of the row based on displayRow and the number of displayed rows
+        if (displayRow && displayedRows < 10) {
+            row.style.display = '';
+            displayedRows++;
+        } else {
+            row.style.display = 'none';
         }
-    </script>
+    });
+
+    // Update the display count
+    updateDisplayCount(displayedRows, rows.length, filter);
+
+    // Check if no results were found
+    if (displayedRows === 0) {
+        // Hide table
+        tableContainer.style.display = 'none';
+        // Hide sort container
+        sortContainer.style.display = 'none';
+        // Display empty state message
+        emptyStateDiv.style.display = 'block';
+    } else {
+        // Show table
+        tableContainer.style.display = 'block';
+        // Show sort container
+        sortContainer.style.display = 'block';
+        // Hide empty state message
+        emptyStateDiv.style.display = 'none';
+    }
+});
+
+// Function to update the display count
+function updateDisplayCount(visibleRows, totalRows, searchTerm) {
+    var displayCount = document.getElementById('displayCount');
+    if (searchTerm !== '') {
+        var searchTermRegex = new RegExp('(' + searchTerm + ')', 'gi');
+        var searchTermFormatted = `<strong>${searchTerm}</strong>`;
+        var message = `<strong>${visibleRows}</strong> products matching keyword(s) "${searchTermFormatted}" were found.`;
+        message = message.replace(searchTermRegex, searchTermFormatted);
+        displayCount.innerHTML = message;
+    } else {
+        displayCount.textContent = `There are currently ${totalRows} products`;
+    }
+}
+
+
+</script>
 
 
 
