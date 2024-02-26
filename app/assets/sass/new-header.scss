@@ -17,26 +17,25 @@ nav ul li a {
   position: relative;
   color: #0b0c0c !important;
   margin-left: 10px;
-
 }
 
 nav ul li a.active::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: -4px;
   height: 4px;
-  background-color: #386EB3;
+  background-color: #386eb3;
   width: calc(100% + 20px);
 }
 
 nav ul li a:hover::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: -4px;
   height: 4px;
-  background-color: #102F74;
+  background-color: #102f74;
   width: calc(100% + 20px);
 }
 
