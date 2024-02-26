@@ -19,7 +19,7 @@ nav ul li a {
   margin-left: 10px;
 }
 
-nav ul li a.active::after {
+nav ul li a.active:after {
   content: "";
   display: block;
   position: absolute;
@@ -29,7 +29,7 @@ nav ul li a.active::after {
   width: calc(100% + 20px);
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover:after {
   content: "";
   display: block;
   position: absolute;
