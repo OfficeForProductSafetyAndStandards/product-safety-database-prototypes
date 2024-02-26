@@ -1116,3 +1116,8 @@ body .autocomplete-input:focus {
   border-top: 2px solid #0b0c0c;
   border-bottom: 2px solid #0b0c0c;
 }
+
+.scrollable-container {
+  max-height: 275px;
+  overflow-y: auto;
+}
