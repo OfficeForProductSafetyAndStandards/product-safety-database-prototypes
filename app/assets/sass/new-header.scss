@@ -1,73 +1,72 @@
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    margin-left: -40px;
-    padding-bottom: 13px;
-    padding-top: 12px;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    padding-bottom: 9px;
-    position: relative;
-    color: #0b0c0c !important;
-    margin-left: 10px;
+  list-style-type: none;
+  margin: 0;
+  margin-left: -40px;
+  padding-bottom: 13px;
+  padding-top: 12px;
+}
 
-  }
-  
-  nav ul li a.active::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -4px;
-    height: 4px;
-    background-color: #386EB3;
-    width: calc(100% + 20px);
-  }
-  
-  nav ul li a:hover::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -4px;
-    height: 4px;
-    background-color: #102F74;
-    width: calc(100% + 20px);
-  }
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
 
-  .app-chevron-card-list__entry {
-    position: relative;
-    margin-bottom: 20px !important;
-    border-bottom: 1px solid #b1b4b6;
-  }
-  
-  .app-chevron-card-list__link:before {
-    border-right: 3px solid #1d70b8;
-    border-top: 3px solid #1d70b8;
-    content: "";
-    display: block;
-    height: 7px;
-    position: absolute;
-    right: 5px;
-    top: calc(50% - 20px);
-    margin-top: 5px;
-    -webkit-transform: translateY(0) rotate(45deg) scale(1);
-    -ms-transform: translateY(0) rotate(45deg) scale(1);
-    transform: translateY(0) rotate(45deg) scale(1);
-    width: 7px;
-  }
+nav ul li a {
+  text-decoration: none;
+  padding-bottom: 9px;
+  position: relative;
+  color: #0b0c0c !important;
+  margin-left: 10px;
 
-  ul.govuk-list li {
-    margin-bottom: 14px;
-  }
+}
 
-  .blue-line {
-    height: 2px;
-    background-color: #386EB3;
-  }
-  
+nav ul li a.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  height: 4px;
+  background-color: #386EB3;
+  width: calc(100% + 20px);
+}
+
+nav ul li a:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  height: 4px;
+  background-color: #102F74;
+  width: calc(100% + 20px);
+}
+
+.app-chevron-card-list__entry {
+  position: relative;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.app-chevron-card-list__link:before {
+  border-right: 3px solid #1d70b8;
+  border-top: 3px solid #1d70b8;
+  content: "";
+  display: block;
+  height: 7px;
+  position: absolute;
+  right: 5px;
+  top: calc(50% - 20px);
+  margin-top: 5px;
+  -webkit-transform: translateY(0) rotate(45deg) scale(1);
+  -ms-transform: translateY(0) rotate(45deg) scale(1);
+  transform: translateY(0) rotate(45deg) scale(1);
+  width: 7px;
+}
+
+ul.govuk-list li {
+  margin-bottom: 14px;
+}
+
+.blue-line {
+  height: 2px;
+  background-color: #386eb3;
+}
