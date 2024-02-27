@@ -152,4 +152,18 @@ router.post(/test/, (req, res) => {
 
 });
 
+// --- 1 ---
+router.post(/test/, (req, res) => {
+
+  if (!req.session.data['case-search-term']) {
+    req.session.data['case-search-null'] = 1;
+    res.redirect('test') // Try again
+  } else {
+    delete req.session.data['case-search-null'];
+    res.redirect('test2')
+  }
+
+});
+
+
 module.exports = router

@@ -27,11 +27,16 @@
         Search for safety notifications, products, businesses, or risk assessments
       </label>
       <div class="govuk-input__wrapper opss-search__wrapper ">
-        <input type="text" class="govuk-input" id="searchInput">
-        <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
-          <span class="govuk-visually-hidden">Submit search</span>
-        </button>
+        <div class="autocomplete" style="position: relative; width: 100%;">
+          <input id="autocomplete-input" class="autocomplete-input" type="text" name="myCountry" placeholder="" style="width: 575px;">
+          <div id="autocomplete-suggestions" class="autocomplete-suggestions autocomplete-items">
+          </div>
+          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2">
+            <span class="govuk-visually-hidden">Submit search</span>
+          </button>
+        </div>
       </div>
+
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -57,5 +62,12 @@
       </ul>
     </div>
   </div>
+
+
+  <script>
+
+
+
+  </script>
 
   {% endblock %}
