@@ -26,17 +26,17 @@
       <label class="govuk-label" for="case-search-term">
         Search for safety notifications, products, businesses, or risk assessments
       </label>
-      <div class="govuk-input__wrapper opss-search__wrapper ">
+      <div class="govuk-input__wrapper opss-search__wrapper">
         <div class="autocomplete" style="position: relative; width: 100%;">
-          <input id="autocomplete-input" class="autocomplete-input" type="text" name="myCountry" placeholder="" style="width: 575px;">
-          <div id="autocomplete-suggestions" class="autocomplete-suggestions autocomplete-items">
+          <input id="autocomplete-input2" class="autocomplete-input" type="text" name="myCountry" placeholder="" style="width: 575px;">
+          <div id="autocomplete-suggestions2" class="autocomplete-suggestions autocomplete-items">
           </div>
-          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2">
+          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2-2">
             <span class="govuk-visually-hidden">Submit search</span>
           </button>
         </div>
       </div>
-
+    
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -64,10 +64,71 @@
   </div>
 
 
-  <script>
 
+<script>
 
+function toggleSearch2() {
+  var searchContainer = document.getElementById('searchContainer2');
+  searchContainer.style.display = (searchContainer.style.display === 'none' || searchContainer.style.display === '') ? 'block' : 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var countries = [
+    {name: "Swan gas hob", info: "Product", url: "product-psd"},
+    {name: "Swan gas hob elbow joint failure", info: "Notification"},
+    {name: "Swan gas hob - Test report 1209357862.docx", info: "Document"},
+    {name: "Swan gas hob - Risk assessment", info: "Risk assessment"},
+    {name: "Swan Construction Ltd", info: "Business"},
+  ];
+
+  var input = document.getElementById("autocomplete-input2");
+  var suggestionBox = document.getElementById("autocomplete-suggestions2");
+
+  input.addEventListener("input", function() {
+    var val = this.value.toLowerCase();
+    suggestionBox.innerHTML = '';
+    if (!val) { return false;}
+    let matches = 0; 
+
+    countries.forEach(function(country) {
+      if (matches >= 10) return; 
+
+      var index = country.name.toLowerCase().indexOf(val);
+      if (index > -1) { 
+        var div = document.createElement("DIV");
+        var beforeMatch = country.name.substring(0, index);
+        var matchText = country.name.substring(index, index + val.length);
+        var afterMatch = country.name.substring(index + val.length);
+        div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
+
+        var span = document.createElement("SPAN");
+        span.innerHTML = "" + country.info;
+        div.appendChild(span);
+
+        div.addEventListener("click", function(e) {
+          input.value = country.name;
+          suggestionBox.innerHTML = "";
+          if (country.url) {
+            window.location.href = country.url;
+          }
+        });
+
+        suggestionBox.appendChild(div);
+        matches++; 
+      }
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    suggestionBox.innerHTML = '';
+  });
+});
+
+document.getElementById('search-button2-2').addEventListener('click', function() {
+  // Redirect to "search-results"
+  window.location.href = "search-results";
+});
 
   </script>
-
+  
   {% endblock %}
