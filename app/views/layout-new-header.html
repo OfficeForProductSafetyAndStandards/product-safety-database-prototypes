@@ -47,61 +47,85 @@
     containerClasses: "govuk-width-container"
   }) }}
 
-
-<nav class="govuk-width-container">
-  <ul>
-    <li><a href="#" class="active">Notifications</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Businesses</a></li>
-    <li><a href="#">Risk assessments</a></li>
-    <li><a href="#">Account settings</a></li>
-    <li class="search" style="float: right;">
-      <a href="#" id="searchLink" onclick="toggleSearch()">
-        <img class="govuk-!-margin-right-1 search-icon" src="../../public/images/new-search.svg" alt="Tick">
-        <span>Search database</span>
-      </a>
-    </li>
-  </ul>
-  <hr class="govuk-section-break govuk-section-break--visible">
-</nav>
-
-<div id="searchContainer" class="search-container" style="display: none;">
-
-  <label class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-2" for="case-search-term">
-    Search Product Safety Database
-  </label>
   
-  <div class="govuk-input__wrapper opss-search__wrapper">
-    <div class="autocomplete" style="position: relative; width: 100%;">
-      <input id="autocompleteInput" class="govuk-input" type="text">
-      <div id="autocompleteSuggestions" class="autocomplete-items">
+  <nav class="govuk-width-container">
+    <ul>
+      <li><a href="#" class="active">Notifications</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Businesses</a></li>
+      <li><a href="#">Risk assessments</a></li>
+      <li><a href="#">Account settings</a></li>
+      <li class="search" style="float: right;">
+        <a href="#" id="searchLink" onclick="toggleSearch()" class="search-link">
+          <img class="govuk-!-margin-right-1 search-icon" src="../../public/images/search-box.svg" alt="Tick">
+          <span>Search database</span>
+        </a>
+      </li>
+    </ul>
+    <hr class="govuk-section-break govuk-section-break--visible">
+  </nav>
+  
+<div id="searchContainer" class="search-container" style="display: none;">
+  <div class="centered-search-container">
+
+    <label class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7" for="case-search-term">
+      Search Product Safety Database
+    </label>
+    <div class="govuk-input__wrapper opss-search__wrapper govuk-!-margin-bottom-7">
+      <div class="autocomplete" style="position: relative; width: 100%;">
+        <input id="autocomplete-input" class="autocomplete-input" type="text" name="myCountry" placeholder="" style="width: 575px;">
+        <div id="autocomplete-suggestions" class="autocomplete-suggestions autocomplete-items">
+        </div>
+        <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2">
+          <span class="govuk-visually-hidden">Submit search</span>
+        </button>
       </div>
-      <button class="govuk-button govuk-!-margin-bottom-0" id="searchButton2">
-        <span class="govuk-visually-hidden">Submit search</span>
-      </button>
     </div>
   </div>
-  
-</div>
 </div>
 
+
+<div class="govuk-width-container govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+
 <script>
-  function toggleSearch() {
-    var searchContainer = document.getElementById('searchContainer');
-    searchContainer.style.display = (searchContainer.style.display === 'none' || searchContainer.style.display === '') ? 'block' : 'none';
+function toggleSearch() {
+  var searchContainer = document.getElementById('searchContainer');
+  var searchLink = document.getElementById('searchLink');
+  var searchIcon = document.querySelector('.search-icon');
+  var searchText = document.querySelector('.search-link span');
+  
+  if (searchContainer.style.display === 'block') {
+    searchContainer.style.display = 'none';
+    searchText.style.display = 'inline';
+    searchIcon.src = '../../public/images/search-box.svg';
+  } else {
+    searchContainer.style.display = 'block';
+    searchText.style.display = 'none';
+    searchIcon.src = '../../public/images/grey-square.svg'; // Change the path to your other SVG
   }
+}
 
   document.addEventListener("DOMContentLoaded", function() {
     var countries = [
-        {name: "Swan gas hob", info: "Product"},
-        {name: "Swan gas hob elbow joint failure", info: "Notification"},
-        {name: "Swan gas hob - Test report 1209357862.docx", info: "Document"},
-        {name: "Swan gas hob - Risk assessment", info: "Risk assessment"},
-        {name: "Swan Construction Ltd", info: "Business"},
+    {name: "Swan Gas Hob", info: "Product", url: "product"},
+    {name: "Swan Gas Hob elbow joint failure", info: "Notification"},
+    {name: "Swan Gas Hob - Risk assessment", info: "Risk assessment"},
+    {name: "Swan Gas Hob - Test report 1209357862.docx", info: "Document"},
+    {name: "Swan Trading Ltd", info: "Business"},
     ];
 
-    var input = document.getElementById("autocompleteInput");
-    var suggestionBox = document.getElementById("autocompleteSuggestions");
+    var input = document.getElementById("autocomplete-input");
+    var suggestionBox = document.getElementById("autocomplete-suggestions");
     
     input.addEventListener("input", function() {
         var val = this.value.toLowerCase();
@@ -127,6 +151,9 @@
                 div.addEventListener("click", function(e) {
                     input.value = country.name;
                     suggestionBox.innerHTML = "";
+                    if (country.url) {
+                        window.location.href = country.url;
+                    }
                 });
                 
                 suggestionBox.appendChild(div);
@@ -140,38 +167,17 @@
     });
 });
 
-  document.getElementById('searchButton2').addEventListener('click', function() {
-    var selectedOption = document.getElementById('autocompleteInput').value;
-
-    var urls = {
-      "Swan gas hob": "product-psd",
-      "Swan gas hob elbow joint failure": "not-found",
-      "Swan gas hob - Test report 1209357862.docx": "multiple-products",
-      "Swan gas hob - Risk assessment": "product-bl",
-      "Swan Construction Ltd": "product-bl"
-    };
-
-    if (urls[selectedOption]) {
-      window.location.href = urls[selectedOption];
-    } else {
-      console.log("No URL found for selected option");
-    }
-  });
+document.getElementById('search-button2').addEventListener('click', function() {
+    // Always redirect to "abc.com"
+    window.location.href = "search-results";
+});
 
 </script>
 
 
 
-  <div class="govuk-width-container govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        Beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
+
 {% endblock %}
 
 {% block bodyEnd %}

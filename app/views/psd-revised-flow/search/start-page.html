@@ -1,0 +1,29 @@
+{% extends "layout-psd-menu_home.html" %}
+
+{% block pageTitle %}
+  Product risk question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set title = "Add businesses and their roles in the supply chain" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <p><a href="/psd-revised-flow/search/homepage-dimitri">
+    Route 1
+  </a></p>
+
+  <br>
+
+  <p><a href="/psd-revised-flow/search/homepage-ur">
+    Route 2
+  </a></p>
+  
+  {% endblock %}
