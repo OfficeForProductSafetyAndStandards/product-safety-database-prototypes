@@ -57,7 +57,7 @@
       <li><a href="#">Account settings</a></li>
       <li class="search" style="float: right;">
         <a href="#" id="searchLink" onclick="toggleSearch()" class="search-link">
-          <img class="govuk-!-margin-right-1 search-icon" src="../../public/images/new-search.svg" alt="Tick">
+          <img class="govuk-!-margin-right-1 search-icon" src="../../public/images/search-box.svg" alt="Tick">
           <span>Search database</span>
         </a>
       </li>
@@ -98,18 +98,30 @@
 
 
 <script>
-  function toggleSearch() {
-    var searchContainer = document.getElementById('searchContainer');
-    searchContainer.style.display = (searchContainer.style.display === 'none' || searchContainer.style.display === '') ? 'block' : 'none';
+function toggleSearch() {
+  var searchContainer = document.getElementById('searchContainer');
+  var searchLink = document.getElementById('searchLink');
+  var searchIcon = document.querySelector('.search-icon');
+  var searchText = document.querySelector('.search-link span');
+  
+  if (searchContainer.style.display === 'block') {
+    searchContainer.style.display = 'none';
+    searchText.style.display = 'inline';
+    searchIcon.src = '../../public/images/search-box.svg';
+  } else {
+    searchContainer.style.display = 'block';
+    searchText.style.display = 'none';
+    searchIcon.src = '../../public/images/grey-square.svg'; // Change the path to your other SVG
   }
+}
 
   document.addEventListener("DOMContentLoaded", function() {
     var countries = [
-        {name: "Swan gas hob", info: "Product", url: "product-psd"},
-        {name: "Swan gas hob elbow joint failure", info: "Notification"},
-        {name: "Swan gas hob - Test report 1209357862.docx", info: "Document"},
-        {name: "Swan gas hob - Risk assessment", info: "Risk assessment"},
-        {name: "Swan Construction Ltd", info: "Business"},
+    {name: "Swan Gas Hob", info: "Product", url: "product"},
+    {name: "Swan Gas Hob elbow joint failure", info: "Notification"},
+    {name: "Swan Gas Hob - Risk assessment", info: "Risk assessment"},
+    {name: "Swan Gas Hob - Test report 1209357862.docx", info: "Document"},
+    {name: "Swan Trading Ltd", info: "Business"},
     ];
 
     var input = document.getElementById("autocomplete-input");

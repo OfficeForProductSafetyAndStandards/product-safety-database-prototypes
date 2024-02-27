@@ -1,0 +1,261 @@
+{% extends "layout-new-header.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- H1 -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Search results
+    </h1>
+  </div>
+</div>
+
+
+<!-- Search & sort -->
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-bottom-2 govuk-!-margin-top-0" id="page-content">
+
+    <div class="govuk-grid-column-three-quarters">
+      <label class="govuk-label" for="case-search-term">
+        Enter safety notifications, products, businesses, or risk assessments
+      </label>
+      <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-three-quarters">
+        <input type="text" class="govuk-input" id="searchInput" value="Swan">
+        <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
+          <span class="govuk-visually-hidden">Submit search</span>
+        </button>
+      </div>
+    </div>
+       
+    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-form-group opss-text-align-right">
+        <label class="govuk-label" for="sort">
+          Sort by
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="recently-added">Recently added</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Search & sort -->
+
+<section class="govuk-grid-row " id="page-content">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <details id="categoryDetails">
+                  <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                      <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails')">Category</a>
+                  </summary>
+                  <div class="scrollable-container">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Notifications
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Products
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Businesses
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Risk assessments
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </dl>
+        </div>
+      </div>
+            
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+
+        <p id="displayCount"><strong>5</strong> results matching keyword(s) <strong>"SWAN"</strong> were found.
+
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break govuk-section-break--visible">
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <a href="product" class="govuk-heading-s govuk-!-margin-bottom-0" style="color: #1d70b8; text-decoration: none;">Swan Gas Hob</a>
+              <p class="govuk-body-xs govuk-!-margin-bottom-2" style="color: #505A5F;">Product</p>
+              <p class="govuk-body-s">SXB7040B 60cm and SXB75260SS 60cm hobs</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-heading-s govuk-!-margin-bottom-0" style="color: #1d70b8;">Swan Gas Hob elbow joint failure</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-2" style="color: #505A5F;">Notification</p>
+              <p class="govuk-body-s">Product Safety Report for Swan Gas Hobs presenting a serious risk of poisoning, burns or gas explosion and/or fire.</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-heading-s govuk-!-margin-bottom-0" style="color: #1d70b8;">Swan Gas Hob - Risk assessment</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-2" style="color: #505A5F;">Risk assessment</p>
+              <p class="govuk-body-s">Hazard: The hobs present a serious risk of poisoning, burns or gas explosion and/or fire.</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-heading-s govuk-!-margin-bottom-0" style="color: #1d70b8;">Swan Gas Hob - Test report 1209357862.docx</p>
+              <p class="govuk-body-xs" style="color: #505A5F;">Document</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-heading-s govuk-!-margin-bottom-0" style="color: #1d70b8;">Swan Trading Ltd</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-2" style="color: #505A5F;">Business</p>
+              <p class="govuk-body-s">Swan Trading Ltd specialises in providing fixing brackets for Pindhurst Level Machinary across the EU and UK.</p>
+            </dd>
+          </div>
+        </dl>
+            <div class="empty-state govuk-!-margin-top-6" style="display: none;">
+              <div class="govuk-heading-m govuk-!-margin-bottom-2 ">
+                No results found 
+              </div>
+              <div class="govuk-body govuk-!-margin-bottom-9">
+                There are no results that match your search. Try searching again using different search criteria or <a href="do-you-have-barcode">add a product</a>.
+              </div>  
+            </div>
+
+          <br>
+                                        
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleDetails(detailsId) {
+      var details = document.getElementById(detailsId);
+      details.open = !details.open;
+    }
+  
+    // Get the table rows
+    var rows = document.querySelectorAll('.custom-table tbody tr');
+    var resultsContainer = document.getElementById('resultsContainer');
+    var emptyStateDiv = document.querySelector('.empty-state');
+  
+    // Hide rows after the first 10
+    for (var i = 10; i < rows.length; i++) {
+      rows[i].style.display = 'none';
+    }
+  
+    // Get the search button element
+    var searchButton = document.getElementById('searchButton');
+  
+// Function to update the display count
+function updateDisplayCount(visibleRows, totalRows, searchTerm) {
+    var displayCount = document.getElementById('displayCount');
+    if (searchTerm !== '') {
+        var searchTermRegex = new RegExp('(' + searchTerm + ')', 'gi');
+        var searchTermFormatted = `<strong>${searchTerm}</strong>`;
+        var message = `<strong>${visibleRows}</strong> products matching keyword(s) "${searchTermFormatted}" were found.`;
+        message = message.replace(searchTermRegex, searchTermFormatted);
+        displayCount.innerHTML = message;
+    } else {
+        displayCount.textContent = `There are currently ${totalRows} products`;
+    }
+}
+
+// Add event listener for button click events
+searchButton.addEventListener('click', function() {
+    // Get the filter value (search query)
+    var filter = document.getElementById('searchInput').value.toUpperCase();
+
+    // Reset the display of all rows
+    rows.forEach(function(row) {
+        row.style.display = '';
+    });
+
+    // Variable to keep track of the number of displayed rows
+    var displayedRows = 0;
+
+    // Loop through all table rows
+    rows.forEach(function(row) {
+        // Get the table data cells in this row
+        var cells = row.querySelectorAll('td');
+
+        // Variable to keep track of whether this row should be displayed or not
+        var displayRow = false;
+
+        // Loop through all table data cells
+        cells.forEach(function(cell) {
+            // Check if the cell text contains the filter value
+            if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                // If any cell contains the filter value, set displayRow to true
+                displayRow = true;
+            }
+        });
+
+        // Set the display style of the row based on displayRow and the number of displayed rows
+        if (displayRow && displayedRows < 10) {
+            row.style.display = '';
+            displayedRows++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    // Update the count display
+    var totalRows = rows.length;
+    var searchTerm = filter.trim() !== '' ? filter : '';
+    updateDisplayCount(displayedRows, totalRows, searchTerm);
+
+    // Check if no results were found
+    if (displayedRows === 0) {
+        // Display empty state message
+        emptyStateDiv.style.display = 'block';
+    } else {
+        // Hide empty state message
+        emptyStateDiv.style.display = 'none';
+    }
+
+    // Hide the navigation
+    var navigation = document.querySelector('.govuk-pagination');
+    navigation.style.display = 'none';
+});
+  </script>
+
+{% endblock %}

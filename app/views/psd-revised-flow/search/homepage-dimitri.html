@@ -12,16 +12,12 @@
     </h1>
 
     <p class="govuk-body-l">
-      Use this service to find or create product safety notifications to report .
+      Use this service to access, report, and manage product safety information.
     </p>
 
-    <h2 class="govuk-heading-l">
-      Your guide to getting started
-    </h2>
-
-    <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-2">
+    <h2 class="govuk-heading-m">
       Find product safety information
-    </h3>
+    </h2>
 
       <label class="govuk-label" for="case-search-term">
         Search for safety notifications, products, businesses, or risk assessments
@@ -36,6 +32,8 @@
           </button>
         </div>
       </div>
+
+
     
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -74,11 +72,11 @@ function toggleSearch2() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var countries = [
-    {name: "Swan gas hob", info: "Product", url: "product-psd"},
-    {name: "Swan gas hob elbow joint failure", info: "Notification"},
-    {name: "Swan gas hob - Test report 1209357862.docx", info: "Document"},
-    {name: "Swan gas hob - Risk assessment", info: "Risk assessment"},
-    {name: "Swan Construction Ltd", info: "Business"},
+    {name: "Swan Gas Hob", info: "Product", url: "product"},
+    {name: "Swan Gas Hob elbow joint failure", info: "Notification"},
+    {name: "Swan Gas Hob - Risk assessment", info: "Risk assessment"},
+    {name: "Swan Gas Hob - Test report 1209357862.docx", info: "Document"},
+    {name: "Swan Trading Ltd", info: "Business"},
   ];
 
   var input = document.getElementById("autocomplete-input2");
