@@ -1,0 +1,90 @@
+{% extends "layout-new-header-products.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Products</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- H1 -->
+<div class="test-container">
+  <input type="checkbox" id="checkbox1" class="test-checkbox">
+  <label for="checkbox1">Checkbox 1</label><br>
+  <input type="checkbox" id="checkbox2" class="test-checkbox">
+  <label for="checkbox2">Checkbox 2</label><br>
+  <input type="checkbox" id="checkbox3" class="test-checkbox">
+  <label for="checkbox3">Checkbox 3</label>
+</div>
+
+<div id="tagContainer" class="test-tag-container"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var checkboxes = document.querySelectorAll('.test-checkbox');
+    var tagContainer = document.getElementById("tagContainer");
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener("change", function() {
+            var tagName = this.nextElementSibling.textContent.trim();
+
+            if (this.checked) {
+                // Create a tag element
+                var tag = document.createElement("div");
+                tag.classList.add("test-tag");
+                tag.textContent = tagName;
+
+                // Create a close button
+                var closeButton = document.createElement("span");
+                closeButton.classList.add("close-button");
+
+                // Append close button to tag
+                tag.appendChild(closeButton);
+
+                // Append tag to container
+                tagContainer.appendChild(tag);
+            } else {
+                // Find and remove corresponding tag
+                var tags = document.querySelectorAll('.test-tag');
+                tags.forEach(function(tag) {
+                    if (tag.textContent.trim() === tagName) {
+                        tag.parentNode.removeChild(tag);
+                    }
+                });
+            }
+        });
+    });
+
+    // Event delegation for removing tags
+    tagContainer.addEventListener("click", function(event) {
+        if (event.target.classList.contains("close-button")) {
+            var tag = event.target.parentNode;
+            var tagName = tag.textContent.trim();
+
+            // Find and uncheck corresponding checkbox
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.nextElementSibling.textContent.trim() === tagName) {
+                    checkbox.checked = false;
+                }
+            });
+
+            // Remove the clicked tag
+            tag.parentNode.removeChild(tag);
+        }
+    });
+});
+</script>
+
+
+
+{% endblock %}

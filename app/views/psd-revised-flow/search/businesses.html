@@ -1,0 +1,457 @@
+{% extends "layout-new-header-businesses.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- H1 -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-0"> 
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Businesses - not started</h1>
+    </div>        
+
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group bottom-box opss-text-align-right opss-text-align-bottom">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Create a new notification
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Search & sort -->
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-bottom-2 govuk-!-margin-top-0" id="page-content">
+
+    <div class="govuk-grid-column-three-quarters">
+      <label class="govuk-label" for="case-search-term">
+        Enter notification title or reference number
+      </label>
+      <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-three-quarters">
+        <input type="text" class="govuk-input" id="searchInput" value="">
+        <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
+          <span class="govuk-visually-hidden">Submit search</span>
+        </button>
+      </div>
+    </div>
+       
+    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-form-group opss-text-align-right">
+        <label class="govuk-label" for="sort">
+          Sort by
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="recently-added">Recently added</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Search & sort -->
+
+<section class="govuk-grid-row " id="page-content">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <dl class="govuk-summary-list">
+
+            <div class="tab-container">
+              <h3 class="tab-title">Team notifications</h3>
+              <ul class="tab-list" id="tabList">
+                <li class="tab-item">
+                  <a href="#" class="tab-link tab-selected govuk-link--no-visited-state" onclick="selectTab(event, 0)">Option 1</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 1)">Option 2</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 2)">Option 3</a>
+                </li>
+              </ul>
+              <hr class="govuk-section-break govuk-!-margin-top-1 govuk-section-break--visible">
+            </div>
+            
+            
+
+            <div class="govuk-summary-list__row">
+              <details id="categoryDetails1">
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails1')">Risk level</a>
+                </summary>
+                <div class="scrollable-container">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                        Serious risk
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                        High risk
+                      </label>
+                    </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Medium risk
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Low risk
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Not conclusive
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+
+      <div class="govuk-summary-list__row">
+        <details id="categoryDetails2">
+            <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails2')">Status</a>
+            </summary>
+            <div class="scrollable-container">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                Submitted
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Draft
+              </label>
+            </div>
+          </div>
+        </details>
+      </div>
+
+<div class="govuk-summary-list__row">
+  <details id="categoryDetails3">
+      <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+          <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails3')">Type</a>
+      </summary>
+      <div class="scrollable-container">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Unsafe
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Non-compliant
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Unsafe and non-compliant
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Safe and compliant
+        </label>
+      </div>
+    </div>
+  </details>
+</div>
+
+<div class="govuk-summary-list__row">
+  <details id="categoryDetails4">
+    <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+      <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails4')">Product owner</a>
+    </summary>
+    <div class="scrollable-container">
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      </div>
+    </details>
+  </div>
+</dl>
+</div>
+</div>
+   
+            
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+
+        <p id="displayCount"> Showing 1-10 of <strong>761</strong> notifications
+
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break govuk-section-break--visible">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Notification details</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" width="120px">Last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>All in All+ Car Seat - lack of protection</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2310-0004</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>BHR-98567-89D</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Injury</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+              </td>
+              <td class="govuk-table__cell">Submitted</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>Tefal Proexpress Iron - Electrical fault</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2310-0004</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>JHD-27783-46X</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+              </td>
+              <td class="govuk-table__cell">Draft</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>Day Plus Electric Pruning Shears sold via eBay</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>8239-1734</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GUS-85803-39G</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+              </td>
+              <td class="govuk-table__cell">Draft</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>VSSHE Cat Toy Laser Pen</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>5234-6322</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GHD-66234-84H</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Damage to sight</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+              </td>
+              <td class="govuk-table__cell">Submitted</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Baby Walker 608-1</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2402-0016</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>KBV-80674-83M</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Serious risk of injuries</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>AC Adapter for Xbox One</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0067</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>BHR-98567-89D</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Injury</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Submitted</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Sacmi Packaging S.p.A LT13 forming machine exit conveyor</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0058</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>JHD-27783-46X</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+            </td>
+            <td class="govuk-table__cell">Submitted</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Fan Heater XH-1201</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0052</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GUS-85803-39G</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>WaxRhyed Soldering Iron Kit sold via Amazon</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2312-0119</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GHD-66234-84H</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Damage to sight</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+            <strong>Creworks Ultrasonic Cleaner 40A</strong>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2310-0182</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>KBV-80674-83M</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Serious risk of injuries</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+          </td>
+          <td class="govuk-table__cell">Submitted</td>
+          <td class="govuk-table__cell">12 Jan 2024</td>
+        </tr>
+
+        </tbody>
+        </table>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+function selectTab(event, tabIndex) {
+  event.preventDefault();
+  var tabList = document.getElementById("tabList");
+  var tabs = tabList.querySelectorAll(".tab-link");
+  tabs.forEach(function(tab, index) {
+    if (index === tabIndex) {
+      tab.classList.add("tab-selected");
+    } else {
+      tab.classList.remove("tab-selected");
+    }
+  });
+}
+
+
+function toggleDetails(detailsId) {
+      var details = document.getElementById(detailsId);
+      details.open = !details.open;
+    }
+  
+    // Get the table rows
+    var rows = document.querySelectorAll('.custom-table tbody tr');
+    var resultsContainer = document.getElementById('resultsContainer');
+    var emptyStateDiv = document.querySelector('.empty-state');
+  
+    // Hide rows after the first 10
+    for (var i = 10; i < rows.length; i++) {
+      rows[i].style.display = 'none';
+    }
+  
+    // Get the search button element
+    var searchButton = document.getElementById('searchButton');
+  
+// Function to update the display count
+function updateDisplayCount(visibleRows, totalRows, searchTerm) {
+    var displayCount = document.getElementById('displayCount');
+    if (searchTerm !== '') {
+        var searchTermRegex = new RegExp('(' + searchTerm + ')', 'gi');
+        var searchTermFormatted = `<strong>${searchTerm}</strong>`;
+        var message = `<strong>${visibleRows}</strong> products matching keyword(s) "${searchTermFormatted}" were found.`;
+        message = message.replace(searchTermRegex, searchTermFormatted);
+        displayCount.innerHTML = message;
+    } else {
+        displayCount.textContent = `There are currently ${totalRows} products`;
+    }
+}
+
+// Add event listener for button click events
+searchButton.addEventListener('click', function() {
+    // Get the filter value (search query)
+    var filter = document.getElementById('searchInput').value.toUpperCase();
+
+    // Reset the display of all rows
+    rows.forEach(function(row) {
+        row.style.display = '';
+    });
+
+    // Variable to keep track of the number of displayed rows
+    var displayedRows = 0;
+
+    // Loop through all table rows
+    rows.forEach(function(row) {
+        // Get the table data cells in this row
+        var cells = row.querySelectorAll('td');
+
+        // Variable to keep track of whether this row should be displayed or not
+        var displayRow = false;
+
+        // Loop through all table data cells
+        cells.forEach(function(cell) {
+            // Check if the cell text contains the filter value
+            if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                // If any cell contains the filter value, set displayRow to true
+                displayRow = true;
+            }
+        });
+
+        // Set the display style of the row based on displayRow and the number of displayed rows
+        if (displayRow && displayedRows < 10) {
+            row.style.display = '';
+            displayedRows++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    // Update the count display
+    var totalRows = rows.length;
+    var searchTerm = filter.trim() !== '' ? filter : '';
+    updateDisplayCount(displayedRows, totalRows, searchTerm);
+
+    // Check if no results were found
+    if (displayedRows === 0) {
+        // Display empty state message
+        emptyStateDiv.style.display = 'block';
+    } else {
+        // Hide empty state message
+        emptyStateDiv.style.display = 'none';
+    }
+
+    // Hide the navigation
+    var navigation = document.querySelector('.govuk-pagination');
+    navigation.style.display = 'none';
+});
+
+
+
+  </script>
+
+{% endblock %}

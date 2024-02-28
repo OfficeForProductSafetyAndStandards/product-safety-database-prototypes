@@ -1,0 +1,54 @@
+{% extends "layout-new-header-account-settings.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- H1 -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Account settings
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li class="app-chevron-card-list__entry">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link app-chevron-card-list__link" style="text-decoration: none">Your account</a>
+        </h3>
+        <p class="govuk-body">Review and update your name, or for changes to other details, contact us at <a href="#" >opss.enquiries@beis.gov.uk</a></p>
+      </li>
+      <li class="app-chevron-card-list__entry">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link app-chevron-card-list__link" style="text-decoration: none">Your team</a>
+        </h3>
+        <p class="govuk-body">View member information including their names, email addresses, and status regarding team invitations and permissions.</p>
+      </li>
+      <li class="app-chevron-card-list__entry">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+          <a href="#" class="govuk-link app-chevron-card-list__link" style="text-decoration: none">Sign out</a>
+        </h3>
+        <p class="govuk-body">Log out of your account safely. Remember to keep your username and password at hand for your next login.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+{% endblock %}

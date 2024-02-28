@@ -43,6 +43,7 @@ nav ul li a:hover:after {
   position: relative;
   margin-bottom: 20px !important;
   border-bottom: 1px solid #b1b4b6;
+  padding-right: 50px;
 }
 
 .app-chevron-card-list__link:before {
@@ -238,3 +239,153 @@ body .autocomplete-input:focus {
 .custom-table-2 td.table-content {
   width: 450px;
 }
+.tab-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tab-title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0b0c0c;
+  }
+  
+  .tab-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab-item {
+    margin-bottom: 5px;
+  }
+  
+  .tab-link {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #0b0c0c;
+    text-decoration: none;
+  }
+  
+  .tab-link:hover {
+    text-decoration: underline;
+  }
+  
+  .tab-selected {
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .tab-selected::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 4px;
+    background-color: #1d70b8;
+  }
+
+  .tab-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  .tab-title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0b0c0c;
+  }
+  
+  .tab-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab-item {
+    margin-bottom: 5px;
+  }
+  
+  .tab-link {
+    display: inline-block;
+    padding: 5px 15px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .tab-link:hover {
+    text-decoration: underline;
+  }
+  
+  .tab-selected {
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .tab-selected:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 4px;
+    background-color: #1d70b8;
+  }
+
+  .tag-container {
+    border: 0px solid #ccc;
+    padding: 0px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: #F3F2F1;
+    padding: 5px 10px;
+    border: 1px solid #b1b4b6;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: "GDS Transport", arial, sans-serif;
+  }
+
+  .tag:hover {
+    background-color: #b1b4b6;
+  }
+
+  .tag-close {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  .test-container {
+    margin-bottom: 20px;
+  }
+  
+  .test-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .test-tag {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .test-tag:hover {
+    background-color: #0056b3;
+  }
+  

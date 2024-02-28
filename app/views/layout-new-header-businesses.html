@@ -29,6 +29,7 @@
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
@@ -51,10 +52,10 @@
   <nav class="govuk-width-container">
     <ul>
       <li><a href="notifications" >Notifications</a></li>
-      <li><a href="products" class="active">Products</a></li>
-      <li><a href="businesses">Businesses</a></li>
+      <li><a href="products" >Products</a></li>
+      <li><a href="businesses" class="active">Businesses</a></li>
       <li><a href="risk-assessments">Risk assessments</a></li>
-      <li><a href="account-settings">Account settings</a></li>
+      <li><a href="account-settings" >Account settings</a></li>
       <li class="search" style="float: right;">
         <a href="#" id="searchLink" onclick="toggleSearch()" class="search-link">
           <img class="govuk-!-margin-right-1 search-icon" src="../../public/images/search-box.svg" alt="Tick">
