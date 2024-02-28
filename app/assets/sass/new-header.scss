@@ -388,4 +388,18 @@ body .autocomplete-input:focus {
   .test-tag:hover {
     background-color: #0056b3;
   }
+
+  .govuk-tag {
+    font-weight: 200;
+    text-transform: initial;
+    letter-spacing: 0px;
+  }
+
+  .govuk-phase-banner__content__tag {
+    font-weight: 200;
+    text-transform: initial;
+    letter-spacing: 0px;
+    background-color: #c0d3e8;
+    color: #152c48;
+  }
   

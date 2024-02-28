@@ -21,13 +21,13 @@
   <div class="govuk-grid-column-full govuk-!-padding-0"> 
 
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Products - not started</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Products</h1>
     </div>        
 
     <div class="govuk-grid-column-one-third">
       <div class="govuk-form-group bottom-box opss-text-align-right opss-text-align-bottom">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Create a new notification
+          Add a new product
         </button>
       </div>
     </div>
@@ -78,32 +78,32 @@
               <h3 class="tab-title">Team notifications</h3>
               <ul class="tab-list" id="tabList">
                 <li class="tab-item">
-                  <a href="#" class="tab-link tab-selected govuk-link--no-visited-state" onclick="selectTab(event, 0)">Option 1</a>
+                  <a href="#" class="tab-link tab-selected govuk-link--no-visited-state" onclick="selectTab(event, 0)">My notifications</a>
                 </li>
                 <li class="tab-item">
-                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 1)">Option 2</a>
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 1)">My team</a>
                 </li>
                 <li class="tab-item">
-                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 2)">Option 3</a>
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 2)">All teams</a>
                 </li>
               </ul>
               <hr class="govuk-section-break govuk-!-margin-top-1 govuk-section-break--visible">
             </div>
             
-            
+
 
             <div class="govuk-summary-list__row">
               <details id="categoryDetails1">
                 <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails1')">Risk level</a>
+                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails1')">Categories</a>
                 </summary>
                 <div class="scrollable-container">
                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      <input class="govuk-checkboxes__input" id="organisation1" name="organisation" type="checkbox" value="Serious risk">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation1">
                         Serious risk
-                      </label>
+                                  </label>
                     </div>
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
@@ -133,85 +133,19 @@
               </details>
             </div>
 
-
-      <div class="govuk-summary-list__row">
-        <details id="categoryDetails2">
-            <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-                <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails2')">Status</a>
-            </summary>
-            <div class="scrollable-container">
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                Submitted
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                Draft
-              </label>
-            </div>
-          </div>
-        </details>
-      </div>
-
-<div class="govuk-summary-list__row">
-  <details id="categoryDetails3">
-      <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-          <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails3')">Type</a>
-      </summary>
-      <div class="scrollable-container">
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-          Unsafe
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-          Non-compliant
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-          Unsafe and non-compliant
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-          Safe and compliant
-        </label>
-      </div>
-    </div>
-  </details>
-</div>
-
-<div class="govuk-summary-list__row">
-  <details id="categoryDetails4">
-    <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-      <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails4')">Product owner</a>
-    </summary>
-    <div class="scrollable-container">
-      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      </div>
-    </details>
-  </div>
 </dl>
 </div>
 </div>
-   
+
             
       <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
 
         <p id="displayCount"> Showing 1-10 of <strong>761</strong> notifications
 
         </p>
+
+        <div class="tag-container" id="tagContainer"></div>
+
 
         <hr class="govuk-section-break govuk-section-break govuk-section-break--visible">
 
@@ -343,115 +277,96 @@
     </div>
   </div>
 
-
   <script>
-
-function selectTab(event, tabIndex) {
-  event.preventDefault();
-  var tabList = document.getElementById("tabList");
-  var tabs = tabList.querySelectorAll(".tab-link");
-  tabs.forEach(function(tab, index) {
-    if (index === tabIndex) {
-      tab.classList.add("tab-selected");
-    } else {
-      tab.classList.remove("tab-selected");
-    }
-  });
-}
-
-
-function toggleDetails(detailsId) {
-      var details = document.getElementById(detailsId);
-      details.open = !details.open;
-    }
-  
-    // Get the table rows
-    var rows = document.querySelectorAll('.custom-table tbody tr');
-    var resultsContainer = document.getElementById('resultsContainer');
-    var emptyStateDiv = document.querySelector('.empty-state');
-  
-    // Hide rows after the first 10
-    for (var i = 10; i < rows.length; i++) {
-      rows[i].style.display = 'none';
-    }
-  
-    // Get the search button element
-    var searchButton = document.getElementById('searchButton');
-  
-// Function to update the display count
-function updateDisplayCount(visibleRows, totalRows, searchTerm) {
-    var displayCount = document.getElementById('displayCount');
-    if (searchTerm !== '') {
-        var searchTermRegex = new RegExp('(' + searchTerm + ')', 'gi');
-        var searchTermFormatted = `<strong>${searchTerm}</strong>`;
-        var message = `<strong>${visibleRows}</strong> products matching keyword(s) "${searchTermFormatted}" were found.`;
-        message = message.replace(searchTermRegex, searchTermFormatted);
-        displayCount.innerHTML = message;
-    } else {
-        displayCount.textContent = `There are currently ${totalRows} products`;
-    }
-}
-
-// Add event listener for button click events
-searchButton.addEventListener('click', function() {
-    // Get the filter value (search query)
-    var filter = document.getElementById('searchInput').value.toUpperCase();
-
-    // Reset the display of all rows
-    rows.forEach(function(row) {
-        row.style.display = '';
-    });
-
-    // Variable to keep track of the number of displayed rows
-    var displayedRows = 0;
-
-    // Loop through all table rows
-    rows.forEach(function(row) {
-        // Get the table data cells in this row
-        var cells = row.querySelectorAll('td');
-
-        // Variable to keep track of whether this row should be displayed or not
-        var displayRow = false;
-
-        // Loop through all table data cells
-        cells.forEach(function(cell) {
-            // Check if the cell text contains the filter value
-            if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
-                // If any cell contains the filter value, set displayRow to true
-                displayRow = true;
+    // Function to switch tabs
+    function selectTab(event, tabIndex) {
+        event.preventDefault();
+        var tabList = document.getElementById("tabList");
+        var tabs = tabList.querySelectorAll(".tab-link");
+        tabs.forEach(function(tab, index) {
+            if (index === tabIndex) {
+                tab.classList.add("tab-selected");
+            } else {
+                tab.classList.remove("tab-selected");
             }
         });
-
-        // Set the display style of the row based on displayRow and the number of displayed rows
-        if (displayRow && displayedRows < 10) {
-            row.style.display = '';
-            displayedRows++;
-        } else {
-            row.style.display = 'none';
-        }
-    });
-
-    // Update the count display
-    var totalRows = rows.length;
-    var searchTerm = filter.trim() !== '' ? filter : '';
-    updateDisplayCount(displayedRows, totalRows, searchTerm);
-
-    // Check if no results were found
-    if (displayedRows === 0) {
-        // Display empty state message
-        emptyStateDiv.style.display = 'block';
-    } else {
-        // Hide empty state message
-        emptyStateDiv.style.display = 'none';
     }
 
-    // Hide the navigation
-    var navigation = document.querySelector('.govuk-pagination');
-    navigation.style.display = 'none';
-});
+    // Function to toggle details
+    function toggleDetails(detailsId) {
+        var details = document.getElementById(detailsId);
+        details.open = !details.open;
+    }
 
+// Function to create a tag
+function createTag(tagName, checkbox) {
+    var tag = document.createElement("div");
+    tag.classList.add("tag");
+    tag.textContent = tagName;
 
+    // Create a pretend close button that looks like an "X"
+    var closeButton = document.createElement("span");
+    closeButton.classList.add("tag-close");
 
-  </script>
+    // Event listener for tag removal
+    tag.addEventListener("click", function() {
+        tagContainer.removeChild(tag);
+        checkbox.checked = false;
+    });
+
+    // Create an image element
+    var image = document.createElement("img");
+    image.src = "../../public/images/small-cross.svg"; // Replace with the path to your image
+    image.alt = "Close"; // Alt text for the image
+    image.style.marginLeft = "5px"; // Add space before the image
+    image.style.marginRight = "-5px"; // Add space before the image
+    image.style.marginBottom = "2px"; // Add space before the image
+    image.style.verticalAlign = "middle"; // Center the image vertically
+
+    // Append image after the text content
+    tag.appendChild(image);
+
+    // Append close button to tag
+    tag.appendChild(closeButton);
+    return tag;
+}
+    // Event listener for checkboxes
+    document.addEventListener("DOMContentLoaded", function() {
+        var tagContainer = document.getElementById("tagContainer");
+        console.log("tagContainer:", tagContainer);
+
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        console.log("checkboxes:", checkboxes);
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener("change", function() {
+                console.log("Checkbox changed");
+                var tagName = this.parentElement.querySelector(".govuk-label").textContent;
+                console.log("tagName:", tagName);
+
+                var tag = createTag(tagName, this);
+                console.log("tag:", tag);
+
+                if (this.checked) {
+                    tagContainer.appendChild(tag);
+                    console.log("Tag added");
+                } else {
+                    var existingTags = tagContainer.querySelectorAll('.tag');
+                    console.log("existingTags:", existingTags);
+
+                    existingTags.forEach(function(existingTag) {
+                        if (existingTag.textContent === tagName) {
+                            console.log("Tag found:", existingTag);
+                            tagContainer.removeChild(existingTag);
+                            checkbox.checked = false;
+                            console.log("Tag removed");
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+  
 
 {% endblock %}
