@@ -50,6 +50,57 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
           <input class="govuk-input govuk-!-width-two-thirds" id="product-name" name="product-name" type="text" aria-describedby="trading_name-hint" value="{{ data['product-name'] }}">
         </div>
 
+        <div class="govuk-form-group" id="select-form-group-2">
+          <label class="govuk-label" for="select-2">Product category (mandatory)</label>
+          <span id="select-error-2" class="govuk-error-message" style="display: none;">
+              <span class="govuk-visually-hidden"></span>Select a product category
+          </span>
+          <select class="govuk-select" id="select-2" name="select-2">
+              <option value="">Select product category</option>
+              <option value="Personal protective equipment (PPE)">Personal protective equipment (PPE)</option>
+              <option value="Chemical products">Chemical products</option>
+              <option value="Childcare articles and children&#39;s equipment">Childcare articles and children&#39;s equipment</option>
+              <option value="Clothing, textiles and fashion items">Clothing, textiles and fashion items</option>
+              <option value="Communication and media equipment">Communication and media equipment</option>
+              <option value="Construction products">Construction products</option>
+              <option value="Cosmetics">Cosmetics</option>
+              <option value="Decorative articles">Decorative articles</option>
+              <option value="Eco-design">Eco-design</option>
+              <option value="Electrical appliances and equipment">Electrical appliances and equipment</option>
+              <option value="Explosive atmospheres equipment">Explosive atmospheres equipment</option>
+              <option value="Food-imitating products">Food-imitating products</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Gadgets">Gadgets</option>
+              <option value="Gas appliances and components">Gas appliances and components</option>
+              <option value="Hand tools">Hand tools</option>
+              <option value="Hobby / sports equipment">Hobby / sports equipment</option>
+              <option value="Jewellery">Jewellery</option>
+              <option value="Kitchen / cooking accessories">Kitchen / cooking accessories</option>
+              <option value="Laser pointers">Laser pointers</option>
+              <option value="Lifts">Lifts</option>
+              <option value="Lighters">Lighters</option>
+              <option value="Lighting chains">Lighting chains</option>
+              <option value="Lighting equipment">Lighting equipment</option>
+              <option value="Machinery">Machinery</option>
+              <option value="Measuring instruments">Measuring instruments</option>
+              <option value="Motor vehicles (including spare parts)">Motor vehicles (including spare parts)</option>
+              <option value="Pressure equipment / vessels">Pressure equipment / vessels</option>
+              <option value="Pyrotechnic articles">Pyrotechnic articles</option>
+              <option value="Rail and guided transport">Rail and guided transport</option>
+              <option value="Recreational crafts">Recreational crafts</option>
+              <option value="Stationery">Stationery</option>
+              <option value="Toys">Toys</option>
+              <option value="Waste">Waste</option>
+            </select>
+      </div>
+  
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+        <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+        <input class="govuk-input govuk-!-width-two-thirds" id="product-subcategory" name="product-subcategory" type="text" aria-describedby="trading_name-hint" value="{{ data['product-subcategory'] }}">
+      </div>
+  
+
         <div class="govuk-form-group" id="select-form-group-1">
           <label class="govuk-label" for="select-1">Country of origin (mandatory)</label>
           <span id="select-error-1" class="govuk-error-message" style="display: none;">
@@ -339,126 +390,8 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
             </select>
       </div>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="trading_name">Description of product</label>
-        <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint" >{{ data['more-detail'] }}</textarea>
-      </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend">
-            Does the product have UKCA, UKNI, or CE marking?
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-1" name="product-marking" type="radio" value="" data-aria-controls="conditional-contact" >
-              <label class="govuk-label govuk-radios__label" for="contact">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-              <div class="govuk-form-group">
-                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste" name="ukca" type="checkbox" value="UKCA">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste">
-                      UKCA
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-2" name="ukni" type="checkbox" value="UKNI">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                      UKNI
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-3" name="ce" type="checkbox" value="CE" >
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                      CE
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="product-marking" type="radio" value="None" data-aria-controls="conditional-contact-2">
-              <label class="govuk-label govuk-radios__label" for="contact-2">
-                No
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="product-marking" type="radio" value="Unknown" data-aria-controls="conditional-contact-3">
-              <label class="govuk-label govuk-radios__label" for="contact-3">
-                Unknown
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="trading_name">Webpage</label>
-        <input class="govuk-input govuk-!-width-full" id="webpage" name="webpage" type="text" aria-describedby="trading_name-hint" value="{{ data['webpage'] }}">
-      </div>
-
     </fieldset>
 
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="address-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Categories</legend>
-
-      <div class="govuk-form-group" id="select-form-group-2">
-        <label class="govuk-label" for="select-2">Product category (mandatory)</label>
-        <span id="select-error-2" class="govuk-error-message" style="display: none;">
-            <span class="govuk-visually-hidden"></span>Select a product category
-        </span>
-        <select class="govuk-select" id="select-2" name="select-2">
-            <option value="">Select product category</option>
-            <option value="Personal protective equipment (PPE)">Personal protective equipment (PPE)</option>
-            <option value="Chemical products">Chemical products</option>
-            <option value="Childcare articles and children&#39;s equipment">Childcare articles and children&#39;s equipment</option>
-            <option value="Clothing, textiles and fashion items">Clothing, textiles and fashion items</option>
-            <option value="Communication and media equipment">Communication and media equipment</option>
-            <option value="Construction products">Construction products</option>
-            <option value="Cosmetics">Cosmetics</option>
-            <option value="Decorative articles">Decorative articles</option>
-            <option value="Eco-design">Eco-design</option>
-            <option value="Electrical appliances and equipment">Electrical appliances and equipment</option>
-            <option value="Explosive atmospheres equipment">Explosive atmospheres equipment</option>
-            <option value="Food-imitating products">Food-imitating products</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Gadgets">Gadgets</option>
-            <option value="Gas appliances and components">Gas appliances and components</option>
-            <option value="Hand tools">Hand tools</option>
-            <option value="Hobby / sports equipment">Hobby / sports equipment</option>
-            <option value="Jewellery">Jewellery</option>
-            <option value="Kitchen / cooking accessories">Kitchen / cooking accessories</option>
-            <option value="Laser pointers">Laser pointers</option>
-            <option value="Lifts">Lifts</option>
-            <option value="Lighters">Lighters</option>
-            <option value="Lighting chains">Lighting chains</option>
-            <option value="Lighting equipment">Lighting equipment</option>
-            <option value="Machinery">Machinery</option>
-            <option value="Measuring instruments">Measuring instruments</option>
-            <option value="Motor vehicles (including spare parts)">Motor vehicles (including spare parts)</option>
-            <option value="Pressure equipment / vessels">Pressure equipment / vessels</option>
-            <option value="Pyrotechnic articles">Pyrotechnic articles</option>
-            <option value="Rail and guided transport">Rail and guided transport</option>
-            <option value="Recreational crafts">Recreational crafts</option>
-            <option value="Stationery">Stationery</option>
-            <option value="Toys">Toys</option>
-            <option value="Waste">Waste</option>
-          </select>
-    </div>
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
-      <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-      <input class="govuk-input govuk-!-width-two-thirds" id="product-subcategory" name="product-subcategory" type="text" aria-describedby="trading_name-hint" value="{{ data['product-subcategory'] }}">
-    </div>
-
-  </fieldset>
 
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
@@ -479,9 +412,68 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
       </fieldset>
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Availability</legend>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Additional information</legend>
 
-        <div class="govuk-form-group govuk-!-margin-bottom-1">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Description of product</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint" >{{ data['more-detail'] }}</textarea>
+        </div>
+  
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend">
+              Does the product have UKCA, UKNI, or CE marking?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-1" name="product-marking" type="radio" value="" data-aria-controls="conditional-contact" >
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="ukca" type="checkbox" value="UKCA">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        UKCA
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="ukni" type="checkbox" value="UKNI">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        UKNI
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="ce" type="checkbox" value="CE" >
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        CE
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="product-marking" type="radio" value="None" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="product-marking" type="radio" value="Unknown" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                  Unknown
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+  
+
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend">
               Was the product placed on the market before 1 January 2021?
@@ -506,12 +498,16 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
                 </label>
               </div>
             </div>
-
           </fieldset>
+        </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="trading_name">Webpage</label>
+            <input class="govuk-input govuk-!-width-full" id="webpage" name="webpage" type="text" aria-describedby="trading_name-hint" value="{{ data['webpage'] }}">
+          </div>
 
         </div>
       </div>
-    </div>
 
     <div class="govuk-button-group ">
 

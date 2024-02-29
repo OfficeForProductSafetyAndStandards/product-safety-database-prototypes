@@ -1,0 +1,772 @@
+{% extends "layout-new-header-products.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- H1 -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-0"> 
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Products</h1>
+    </div>        
+
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group bottom-box opss-text-align-right opss-text-align-bottom">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add a new product
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Search & sort -->
+
+<div class="govuk-grid-row">
+  <section class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-bottom-2 govuk-!-margin-top-0" id="page-content">
+
+    <div class="govuk-grid-column-three-quarters">
+      <label class="govuk-label" for="case-search-term">
+        Enter a product name, brand, barcode, ASIN or PSD ref
+      </label>
+      <div class="govuk-input__wrapper opss-search__wrapper govuk-!-width-three-quarters">
+        <input type="text" class="govuk-input" id="searchInput" value="">
+        <button class="govuk-button  govuk-!-margin-bottom-0" id="searchButton">
+          <span class="govuk-visually-hidden">Submit search</span>
+        </button>
+      </div>
+    </div>
+       
+    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-form-group opss-text-align-right">
+        <label class="govuk-label" for="sort">
+          Sort by
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="recently-added">Recently added</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Search & sort -->
+
+<section class="govuk-grid-row " id="page-content">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <dl class="govuk-summary-list">
+
+            <div class="tab-container">
+              <h3 class="tab-title">Team notifications</h3>
+              <ul class="tab-list" id="tabList">
+                <li class="tab-item">
+                  <a href="#" class="tab-link tab-selected govuk-link--no-visited-state" onclick="selectTab(event, 0)">My notifications</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 1)">My team</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link govuk-link--no-visited-state" onclick="selectTab(event, 2)">All teams</a>
+                </li>
+              </ul>
+              <hr class="govuk-section-break govuk-!-margin-top-1 govuk-section-break--visible">
+            </div>
+            
+
+
+            <div class="govuk-summary-list__row">
+              <details id="categoryDetails1">
+                <summary class="summary-content govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                  <a href="#" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" onclick="toggleDetails('categoryDetails1')">Categories</a>
+                </summary>
+                <div class="scrollable-container">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation1" name="organisation" type="checkbox" value="Serious risk">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation1">
+                        Serious risk
+                                  </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                        High risk
+                      </label>
+                    </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      Medium risk
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Low risk
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Not conclusive
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+</dl>
+</div>
+</div>
+
+            
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+
+        <p id="displayCount"> Showing 1-10 of <strong>428</strong> products
+
+        </p>
+
+        <div class="tag-container" id="tagContainer"></div>
+
+
+        <hr class="govuk-section-break govuk-section-break govuk-section-break--visible">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" >Notification details</th>
+              <th scope="col" class="govuk-table__header" width="120px">Last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <tr>
+                <td>
+                  <img src="../../public/images/pram-3.png" alt="Image" class="table-image">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds voyager™</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-804</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234894</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879354</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
+                  </details>
+                </td>
+                <td class="govuk-table__cell">12 Jan 2024</td>
+
+      <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>Tefal Proexpress Iron - Electrical fault</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2310-0004</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>JHD-27783-46X</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+              </td>
+              <td class="govuk-table__cell">Draft</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>Day Plus Electric Pruning Shears sold via eBay</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>8239-1734</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GUS-85803-39G</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+              </td>
+              <td class="govuk-table__cell">Draft</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+                <strong>VSSHE Cat Toy Laser Pen</strong>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>5234-6322</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GHD-66234-84H</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Damage to sight</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+              </td>
+              <td class="govuk-table__cell">Submitted</td>
+              <td class="govuk-table__cell">12 Jan 2024</td>
+            </tr>
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Baby Walker 608-1</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2402-0016</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>KBV-80674-83M</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Serious risk of injuries</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>AC Adapter for Xbox One</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0067</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>BHR-98567-89D</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Injury</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Submitted</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Sacmi Packaging S.p.A LT13 forming machine exit conveyor</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0058</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>JHD-27783-46X</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+            </td>
+            <td class="govuk-table__cell">Submitted</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>Fan Heater XH-1201</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2401-0052</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GUS-85803-39G</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Electric shock</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe & Non-compliant</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+              <strong>WaxRhyed Soldering Iron Kit sold via Amazon</strong>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2312-0119</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>GHD-66234-84H</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Damage to sight</p>
+              <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+            </td>
+            <td class="govuk-table__cell">Draft</td>
+            <td class="govuk-table__cell">12 Jan 2024</td>
+          </tr>
+          <td href="product" class="govuk-table__cell" style="color: #1d70b8; text-decoration: none;">
+            <strong>Creworks Ultrasonic Cleaner 40A</strong>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-margin-top-1"><strong>PSD ref: </strong>2310-0182</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Internal ref: </strong>KBV-80674-83M</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Hazard: </strong>Serious risk of injuries</p>
+            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Type: </strong>Unsafe</p>
+          </td>
+          <td class="govuk-table__cell">Submitted</td>
+          <td class="govuk-table__cell">12 Jan 2024</td>
+        </tr>
+
+        </tbody>
+        </table>
+
+        <div class="govuk-form-group">
+          <table class="custom-table">
+            <tbody>
+            <tr>
+              <td>
+                <img src="../../public/images/image-a.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acer Aspire 3 </h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electricals</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Laptop</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-425</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </div>
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-b.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content" colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Acqua di Parma Colonia Eau de Cologne</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Beauty</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Fragrance</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-345</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-c.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Adidas Power VI Recycled Backpack</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-623</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </div>
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-d.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content" colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alessi Pepper Mill</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Tableware</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Pepper mill</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-622</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 123456</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-e.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Alpina AL-727LNS4H6 Startimer Chronograph</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Timepieces</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Watch</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-146</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </div>
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-f.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content" colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">American Crew Fiber™ Grooming Foam</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Haircare</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Hair styling</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-836</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-g.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Anglepoise Type 75 Lamp</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Lighting</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Desk lamp</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-382</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </div>
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-h.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content" colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Antler Chelsea Overnight Holdall</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Bag</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-823</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-i.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content " colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Asics Gel-Trabuco 12</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Sport & leisure</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Running shoes</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-910</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                  </div>
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../../public/images/image-j.png" alt="Image" class="table-image">
+              </td>
+              <td class="table-content" colspan="2">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Audio-Technica AT-LP60XBT</h4>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Electrical</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Turntable</p>
+                <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-293</p>
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary govuk-body-xs">
+                    <span class="govuk-details__summary-text">
+                      More details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>0 456324 345987</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 232345</p>    
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </details>
+              </td>
+              <td class="table-action">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add
+                </button>
+              </td>
+
+              <tr>
+                <td>
+                  <img src="../../public/images/pram-4.png" alt="Image" class="table-image">
+                </td>
+                <td class="table-content" colspan="2">
+                  <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds go™</h4>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+                  <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-801</p>
+                  <details class="govuk-details govuk-!-margin-bottom-0">
+                    <summary class="govuk-details__summary govuk-body-xs">
+                      <span class="govuk-details__summary-text">
+                        More details
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234891</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879351</p>    
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
+                  </details>
+                </td>
+                <td class="table-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add
+                  </button>
+                </td>
+                <form class="form" action="search-products-laptop" method="post">
+
+                <tr>
+                  <td>
+                    <img src="../../public/images/pram-1.png" alt="Image" class="table-image">
+                  </td>
+                  <td class="table-content" colspan="2">
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds sport™</h4>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+                    <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-802</p>
+                    <details class="govuk-details govuk-!-margin-bottom-0">
+                      <summary class="govuk-details__summary govuk-body-xs">
+                        <span class="govuk-details__summary-text">
+                          More details
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234892</p>
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879352</p>    
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
+                    </details>
+                  </td>
+                  <td class="table-action">
+                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                      Add
+                    </button>
+                  </td>
+                </form>
+
+                  <tr>
+                    <td>
+                      <img src="../../public/images/pram-2.png" alt="Image" class="table-image">
+                    </td>
+                    <td class="table-content" colspan="2">
+                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds verso™</h4>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+                      <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-803</p>
+                      <details class="govuk-details govuk-!-margin-bottom-0">
+                        <summary class="govuk-details__summary govuk-body-xs">
+                          <span class="govuk-details__summary-text">
+                            More details
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234893</p>
+                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879353</p>    
+                          <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
+                      </details>
+                    </td>
+                    <td class="table-action">
+                      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Add
+                      </button>
+                    </td>
+
+                    <tr>
+                      <td>
+                        <img src="../../public/images/pram-3.png" alt="Image" class="table-image">
+                      </td>
+                      <td class="table-content" colspan="2">
+                        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">phil&teds voyager™</h4>
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Category: </strong>Baby & Toddler</p>
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Sub-category: </strong>Baby Transport Accessories</p>
+                        <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>PSD ref: </strong>psd-804</p>
+                        <details class="govuk-details govuk-!-margin-bottom-0">
+                          <summary class="govuk-details__summary govuk-body-xs">
+                            <span class="govuk-details__summary-text">
+                              More details
+                            </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Barcode: </strong>8 907095 234894</p>
+                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Other product identifiers: </strong>ASIN: 879354</p>    
+                            <p class="govuk-body-xs govuk-!-margin-bottom-0"><strong>Description: </strong>For 0-5 years. Max load 15kg. Seat width 30cm. Weighs 3.2kg. Made of 600d 100% polyester. Folded it's (H) 41cm x (W) 65cm x (L) 90cm. It has a gear tray and adjustable handlebars</p>    
+                        </details>
+                      </td>
+                      <td class="table-action">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                          Add
+                        </button>
+                      </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to switch tabs
+    function selectTab(event, tabIndex) {
+        event.preventDefault();
+        var tabList = document.getElementById("tabList");
+        var tabs = tabList.querySelectorAll(".tab-link");
+        tabs.forEach(function(tab, index) {
+            if (index === tabIndex) {
+                tab.classList.add("tab-selected");
+            } else {
+                tab.classList.remove("tab-selected");
+            }
+        });
+    }
+
+    // Function to toggle details
+    function toggleDetails(detailsId) {
+        var details = document.getElementById(detailsId);
+        details.open = !details.open;
+    }
+
+// Function to create a tag
+function createTag(tagName, checkbox) {
+    var tag = document.createElement("div");
+    tag.classList.add("tag");
+    tag.textContent = tagName;
+
+    // Create a pretend close button that looks like an "X"
+    var closeButton = document.createElement("span");
+    closeButton.classList.add("tag-close");
+
+    // Event listener for tag removal
+    tag.addEventListener("click", function() {
+        tagContainer.removeChild(tag);
+        checkbox.checked = false;
+    });
+
+    // Create an image element
+    var image = document.createElement("img");
+    image.src = "../../public/images/small-cross.svg"; // Replace with the path to your image
+    image.alt = "Close"; // Alt text for the image
+    image.style.marginLeft = "5px"; // Add space before the image
+    image.style.marginRight = "-5px"; // Add space before the image
+    image.style.marginBottom = "2px"; // Add space before the image
+    image.style.verticalAlign = "middle"; // Center the image vertically
+
+    // Append image after the text content
+    tag.appendChild(image);
+
+    // Append close button to tag
+    tag.appendChild(closeButton);
+    return tag;
+}
+    // Event listener for checkboxes
+    document.addEventListener("DOMContentLoaded", function() {
+        var tagContainer = document.getElementById("tagContainer");
+        console.log("tagContainer:", tagContainer);
+
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        console.log("checkboxes:", checkboxes);
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener("change", function() {
+                console.log("Checkbox changed");
+                var tagName = this.parentElement.querySelector(".govuk-label").textContent;
+                console.log("tagName:", tagName);
+
+                var tag = createTag(tagName, this);
+                console.log("tag:", tag);
+
+                if (this.checked) {
+                    tagContainer.appendChild(tag);
+                    console.log("Tag added");
+                } else {
+                    var existingTags = tagContainer.querySelectorAll('.tag');
+                    console.log("existingTags:", existingTags);
+
+                    existingTags.forEach(function(existingTag) {
+                        if (existingTag.textContent === tagName) {
+                            console.log("Tag found:", existingTag);
+                            tagContainer.removeChild(existingTag);
+                            checkbox.checked = false;
+                            console.log("Tag removed");
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+  
+
+{% endblock %}
