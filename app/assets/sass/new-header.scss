@@ -239,44 +239,45 @@ body .autocomplete-input:focus {
 .custom-table-2 td.table-content {
   width: 450px;
 }
+
 .tab-container {
     display: flex;
     flex-direction: column;
 }
-  
+
 .tab-title {
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #0b0c0c;
 }
-  
+
 .tab-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-  
+
 .tab-item {
   margin-bottom: 5px;
 }
-  
+
 .tab-link {
   display: inline-block;
   padding: 5px 10px;
   color: #0b0c0c;
   text-decoration: none;
 }
-  
+ 
 .tab-link:hover {
   text-decoration: underline;
 }
-  
+
 .tab-selected {
   font-weight: bold;
   position: relative;
 }
-  
+
 .tab-selected::before {
   content: '';
   position: absolute;
@@ -293,40 +294,40 @@ body .autocomplete-input:focus {
   flex-direction: column;
   max-width: 300px;
 }
-  
+
 .tab-title {
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #0b0c0c;
 }
-  
+
 .tab-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-  
+
 .tab-item {
   margin-bottom: 5px;
 }
-  
+
 .tab-link {
   display: inline-block;
   padding: 5px 15px;
   color: #333;
   text-decoration: none;
 }
-  
+
 .tab-link:hover {
   text-decoration: underline;
 }
-  
+
 .tab-selected {
   font-weight: bold;
   position: relative;
 }
-  
+
 .tab-selected:before {
   content: '';
   position: absolute;
@@ -368,13 +369,13 @@ body .autocomplete-input:focus {
 .test-container {
   margin-bottom: 20px;
 }
-  
+
 .test-tag-container {
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
 }
-  
+
 .test-tag {
   background-color: #007bff;
   color: #fff;
@@ -384,7 +385,7 @@ body .autocomplete-input:focus {
   border-radius: 5px;
   cursor: pointer;
 }
-  
+
 .test-tag:hover {
   background-color: #0056b3;
 }
