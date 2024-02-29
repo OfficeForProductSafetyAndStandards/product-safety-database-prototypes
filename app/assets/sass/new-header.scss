@@ -291,10 +291,8 @@ body .autocomplete-input:focus {
 }
 
 .tag-container {
-  border: 0px solid #ccc;
-  padding: 0px;
   margin-bottom: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .tag {
@@ -329,7 +327,7 @@ body .autocomplete-input:focus {
 
 .test-tag {
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
   padding: 5px 10px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -344,13 +342,13 @@ body .autocomplete-input:focus {
 .govuk-tag {
   font-weight: 200;
   text-transform: initial;
-  letter-spacing: 0px;
+  letter-spacing: 0.1px;
 }
 
 .govuk-phase-banner__content__tag {
   font-weight: 200;
   text-transform: initial;
-  letter-spacing: 0px;
+  letter-spacing: 0.1px;
   background-color: #c0d3e8;
   color: #152c48;
 }
