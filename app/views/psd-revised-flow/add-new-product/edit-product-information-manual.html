@@ -41,6 +41,25 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
+          <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
+            <select class="govuk-select" id="business-details-country" name="business-details-country">
+              <option value="United Kingdom">Electrical</option>
+              <option value="territory:AE-AZ">Category 1</option>
+              <option value="country:AF">Category 2</option>
+              <option value="territory:AE-AJ">Category 3</option>
+              <option value="territory:XQZ">Category 4</option>
+              <option value="country:AL">Category 5</option>
+            </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Earphones">
+        </div>
+
+
+        <div class="govuk-form-group">
           <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Country of origin (mandatory)</label>
             <select class="govuk-select" id="business-details-country" name="business-details-country">
               <option value="China">South Korea</option>
@@ -52,93 +71,7 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
             </select>
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Description of product</label>
-          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Comes in box 15 x 10 x 4 cm, Bluetooth earphones, weight 52g 
-          </textarea>
-        </div>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend">
-              Does the product have UKCA, UKNI, or CE marking?
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" checked>
-                <label class="govuk-label govuk-radios__label" for="contact">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste">
-                        UKCA
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                        UKNI
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" checked>
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                        CE
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="contact-2">
-                  No
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-                <label class="govuk-label govuk-radios__label" for="contact-3">
-                  Unknown
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Webpage</label>
-          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="https://www.samsung.com/uk/business/audio-sound/galaxy-buds/galaxy-buds2-graphite-sm-r177nzkaeua/">
-        </div>
         
-      </fieldset>
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product category</legend>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
-              <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Electrical</option>
-                <option value="territory:AE-AZ">Category 1</option>
-                <option value="country:AF">Category 2</option>
-                <option value="territory:AE-AJ">Category 3</option>
-                <option value="territory:XQZ">Category 4</option>
-                <option value="country:AL">Category 5</option>
-              </select>
-          </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
-            <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="Earphones">
-          </div>
-
       </fieldset>
 
 
@@ -161,10 +94,71 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
       </fieldset>
 
       <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Availability</legend>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Additional information</legend>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="trading_name">Description of product</label>
+              <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Details about the product you haven't included above. For example, colour, size, packaging description. Do not include details of damage or incidents.</div>
+              <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Comes in box 15 x 10 x 4 cm, Bluetooth earphones, weight 52g 
+              </textarea>
+            </div>
+    
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend">
+                  Does the product have UKCA, UKNI, or CE marking?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact" checked>
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            UKCA
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            UKNI
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" checked>
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            CE
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                    <label class="govuk-label govuk-radios__label" for="contact-3">
+                      Unknown
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+    
+    
             <legend class="govuk-fieldset__legend">
               Was the product placed on the market before 1 January 2021?
             </legend>
@@ -190,10 +184,16 @@ Edit product information – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
           </fieldset>
+        </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="trading_name">Webpage</label>
+            <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="https://www.samsung.com/uk/business/audio-sound/galaxy-buds/galaxy-buds2-graphite-sm-r177nzkaeua/">
+          </div>
+
 
         </div>
       </div>
-    </div>
 
     <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button">

@@ -402,4 +402,9 @@ body .autocomplete-input:focus {
     background-color: #c0d3e8;
     color: #152c48;
   }
-  
+
+  .button-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }

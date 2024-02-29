@@ -45,6 +45,24 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
+          <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
+            <select class="govuk-select" id="business-details-country" name="business-details-country">
+              <option value="United Kingdom">Select a category</option>
+              <option value="territory:AE-AZ">Category 1</option>
+              <option value="country:AF">Category 2</option>
+              <option value="territory:AE-AJ">Category 3</option>
+              <option value="territory:XQZ">Category 4</option>
+              <option value="country:AL">Category 5</option>
+            </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+        </div>
+
+        <div class="govuk-form-group">
           <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Country of origin (mandatory)</label>
             <select class="govuk-select" id="business-details-country" name="business-details-country">
               <option value="United Kingdom">Select a country of origin</option>
@@ -55,6 +73,30 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
               <option value="country:AL">Category 5</option>
             </select>
         </div>
+
+      </fieldset>
+
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product identifiers</legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Other product identifiers</label>
+          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+      </fieldset>
+
+
+      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Additional information</legend>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="trading_name">Description of product</label>
@@ -115,57 +157,6 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Webpage</label>
-          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-        </div>
-
-
-      </fieldset>
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product category</legend>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="add_business_to_case_form_locations_attributes_0_country">Product category (mandatory)</label>
-              <select class="govuk-select" id="business-details-country" name="business-details-country">
-                <option value="United Kingdom">Select a category</option>
-                <option value="territory:AE-AZ">Category 1</option>
-                <option value="country:AF">Category 2</option>
-                <option value="territory:AE-AJ">Category 3</option>
-                <option value="territory:XQZ">Category 4</option>
-                <option value="country:AL">Category 5</option>
-              </select>
-          </div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="trading_name">Product subcategory (mandatory)</label>
-            <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, 'Face mask' or 'Washing machine'.</div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-          </div>
-
-      </fieldset>
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Product identifiers</legend>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Barcode number (GTIN, EAN or UPC)</label>
-          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">Normally 8, 12, or 13 digits</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
-        </div>
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="trading_name">Other product identifiers</label>
-          <div class="govuk-hint govuk-!-font-size-16" id="trading_name-hint">For example, serial number, Amazon ID (ASIN) or eBay ID. Use a comma to separate multiple identifiers, and a hyphen to indicate ranges.</div>
-          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-        </div>
-
-      </fieldset>
-
-      <fieldset class="govuk-fieldset govuk-!-margin-bottom-6" aria-describedby="contact-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Availability</legend>
-
-        <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend">
               Was the product placed on the market before 1 January 2021?
@@ -190,9 +181,12 @@ Add product information – {{ serviceName }} – GOV.UK Prototype Kit
                 </label>
               </div>
             </div>
-
           </fieldset>
+        </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="trading_name">Webpage</label>
+          <input class="govuk-input govuk-!-width-full" id="business-details-trading_name" name="business-details-trading_name" type="text" aria-describedby="trading_name-hint" value="">
         </div>
       </div>
     </div>

@@ -57,62 +57,7 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Country of origin
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['select-1'] }} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['more-detail'] }} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
-            </ul>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Product markings
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['product-marking'] }} {{ data['ukca'] }}  {{ data['ukni'] }}  {{ data['ce'] }} 
-          </dd>
-        
-          <dd class="govuk-summary-list__actions">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
-            </ul>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Webpage
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['webpage'] }} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <ul class="govuk-summary-list__actions-list">
-              <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
-            </ul>
-          </dd>
-        </div>
-      </dl>
-
-    <h2 class="govuk-heading-m">Categories</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-        <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Product category
           </dt>
@@ -132,6 +77,18 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of origin
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['select-1'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
       </dl>
@@ -163,8 +120,36 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
       </dl>    
       
       
-  <h2 class="govuk-heading-m">Availability</h2>
+  <h2 class="govuk-heading-m">Additional information</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['more-detail'] }} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Product markings
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['product-marking'] }} {{ data['ukca'] }}  {{ data['ukni'] }}  {{ data['ce'] }} 
+        </dd>
+      
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+          </ul>
+        </dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Market date
@@ -175,6 +160,21 @@ phil&teds sport™ – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
         </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Webpage
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['webpage'] }} 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a></li>
+          </ul>
+        </dd>
+      </div>
+
     </dl>   
 
   <div class="button-container">
