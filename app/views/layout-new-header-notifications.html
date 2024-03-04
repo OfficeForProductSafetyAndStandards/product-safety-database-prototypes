@@ -179,6 +179,37 @@ document.getElementById('search-button2').addEventListener('click', function() {
 
 {% endblock %}
 
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+         <p><a href="/prototype-admin/clear-data">Clear data</a></p>
+        <div class="opss-footer__body">
+          Email <a class="govuk-footer__link" href="mailto:opss.enquiries@beis.gov.uk?subject=Help%20requested%20on%20the%20Product%20Safety%20Database">opss.enquiries@beis.gov.uk</a> for help using this service.
+        </div>
+
+        <br>
+
+        <ul class="govuk-footer__inline-list">
+
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" rel="noreferrer noopener" href="/psd-revised-flow/help-how-to-use-psd">How to use the <abbr>PSD</abbr><span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" href="/help/accessibility">Accessibility</a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/privacy-notice">Privacy policy<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+          <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link govuk-!-margin-right-2" target="_blank" href="/help/terms-and-conditions">Terms and conditions<span class="govuk-visually-hidden"> (opens in new tab)</span></a></li>
+        </ul>
+
+      </div>
+
+      <div class="govuk-footer__meta-item">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
 {% block bodyEnd %}
   {% block scripts %}
     {% include "includes/scripts.html" %}
