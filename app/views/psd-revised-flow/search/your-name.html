@@ -1,0 +1,44 @@
+{% extends "layout-new-header-account-settings.html" %}
+
+{% set pageName="Start page" %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="homepage-ur">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="account-settings">Account settings</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="your-account">Your account</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> 
+
+    <form class="form" action="your-name" method="post">
+
+      <h1 class="govuk-heading-l">Change your name</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Full name
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="full-name" name="full-name" type="text" autocomplete="address-line1" value="{{ data['full-name'] if data['full-name'] else 'Tom Woollam' }}">
+      </div>
+  
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save 
+      </button>
+
+
+    </form>
+   
+{% endblock %}
