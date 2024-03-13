@@ -1,0 +1,142 @@
+{% extends "layout-new-header.html" %}
+
+{% set pageName="Start page" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Find or create product safety notifications
+    </h1>
+
+    <p class="govuk-body-l">
+      Use this service to access, report, and manage product safety information.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Find product safety information
+    </h2>
+
+      <label class="govuk-label" for="case-search-term">
+        Search for safety notifications, products, businesses, or risk assessments
+      </label>
+      <div class="govuk-input__wrapper opss-search__wrapper">
+        <div class="autocomplete" style="position: relative; width: 100%;">
+          <input id="autocomplete-input2" class="autocomplete-input" type="text" name="myCountry" placeholder="" style="width: 575px;">
+          <div id="autocomplete-suggestions2" class="autocomplete-suggestions-alt autocomplete-items-alt">
+          </div>
+          <button class="govuk-button govuk-!-margin-bottom-0 search-button2" id="search-button2-2">
+            <span class="govuk-visually-hidden">Submit search</span>
+          </button>
+        </div>
+      </div>
+
+    
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <ul class="govuk-list">
+        <li class="app-chevron-card-list__entry">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+            <a href="task-list" class="govuk-link app-chevron-card-list__link " style="text-decoration: none">Create a product safety notification</a>
+          </h3>
+          <p class="govuk-body">Report unsafe, non-compliant as well as safe and compliant products.</p>
+        </li>
+        <li class="app-chevron-card-list__entry">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+            <a href="notifications" class="govuk-link app-chevron-card-list__link" style="text-decoration: none">Update existing product safety notifications</a>
+          </h3>
+          <p class="govuk-body">Easily update and manage existing safety notifications.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  var countries = [
+    {name: "Gas Hob by Swan: Risk of fire and poisoning", info: "Notifications", url: "notification-1"},
+    {name: "Swan Gas Hob SXB7040B 60cm", info: "Products", url: "product-1"},
+    {name: "Swan Gas Hob SXB75260SS 60cm", info: "Products", url: "product-2"},
+    {name: "Swan Gas Hob SXB7040B 60cm risk assessment", info: "Risk assessments", url: "risk-assessment"},
+    {name: "Swan Gas Hob: Test report 1209357862.docx", info: "Documents", url: "../../public/pdfs/test-report.pdf"},
+    {name: "Swan Gas Hobs: Serious risk of fire", info: "Notifications", url: "notification-2"},
+    {name: "Swan Trading Ltd", info: "Businesses"},
+  ];
+
+  var input = document.getElementById("autocomplete-input2");
+  var suggestionBox = document.getElementById("autocomplete-suggestions2");
+
+  input.addEventListener("input", function() {
+    var val = this.value.toLowerCase();
+    suggestionBox.innerHTML = '';
+    if (!val) { return false;}
+    let matches = 0;
+
+    var groupedResults = {};
+
+    countries.forEach(function(country) {
+      var index = country.name.toLowerCase().indexOf(val);
+      if (index > -1) {
+        if (!groupedResults[country.info]) {
+          groupedResults[country.info] = [];
+        }
+        groupedResults[country.info].push(country);
+      }
+    });
+
+    Object.keys(groupedResults).forEach(function(info) {
+      var group = groupedResults[info];
+
+      // Create section heading
+      var sectionHeading = document.createElement("DIV");
+      sectionHeading.innerHTML = "<strong class='section-heading'>" + info + "</strong>";
+      sectionHeading.classList.add("section-heading"); // Add the class to the section heading
+      suggestionBox.appendChild(sectionHeading);
+
+      group.forEach(function(country) {
+        if (matches >= 10) return;
+
+        var div = document.createElement("DIV");
+        var beforeMatch = country.name.substring(0, country.name.toLowerCase().indexOf(val));
+        var matchText = country.name.substring(country.name.toLowerCase().indexOf(val), country.name.toLowerCase().indexOf(val) + val.length);
+        var afterMatch = country.name.substring(country.name.toLowerCase().indexOf(val) + val.length);
+        div.innerHTML = beforeMatch + "<strong>" + matchText + "</strong>" + afterMatch;
+
+        div.addEventListener("click", function(e) {
+          input.value = country.name;
+          suggestionBox.innerHTML = "";
+          if (country.url) {
+            window.location.href = country.url;
+          }
+        });
+
+        suggestionBox.appendChild(div);
+        matches++;
+      });
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    suggestionBox.innerHTML = '';
+  });
+});
+
+document.getElementById('search-button2-2').addEventListener('click', function() {
+  // Redirect to "search-results"
+  window.location.href = "search-results";
+});
+
+
+</script>
+  
+  {% endblock %}

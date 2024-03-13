@@ -372,3 +372,60 @@ body .autocomplete-input:focus {
 .text-table-container {
   flex: 1;
 }
+
+.section-heading {
+  pointer-events: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #505a5f;
+}
+
+.autocomplete-items-alt div {
+  padding: 8px;
+  padding-top: 9px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-left: 1px solid #b1b4b6;
+  border-right: 1px solid #b1b4b6;
+  margin-left: 1px;
+  width: 566px;
+  font-size: 19px;
+  color: #0b0c0c;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.autocomplete-items-alt {
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 19px;
+}
+
+.autocomplete-items-alt div:hover {
+  background-color: #e9e9e9;
+}
+
+.autocomplete-items-alt div span {
+  display: block;
+  color: #505a5f;
+  padding-top: 2px;
+  font-size: 14px;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.autocomplete-suggestions-alt {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 265px;
+  overflow-y: auto;
+  width: 585px;
+  box-shadow: 0 1px 0 0 #b1b4b6;
+}
