@@ -141,6 +141,8 @@ body .autocomplete-input:focus {
   height: 30px;
   outline: none;
   box-shadow: 0 0 0 3px #f9de4b;
+  margin-right: -4px;
+  padding-left: 4px;
 }
 
 .autocomplete {
