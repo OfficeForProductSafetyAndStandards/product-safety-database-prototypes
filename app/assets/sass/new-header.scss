@@ -141,7 +141,6 @@ body .autocomplete-input:focus {
   height: 30px;
   outline: none;
   box-shadow: 0 0 0 3px #f9de4b;
-  margin-right: -4px;
 }
 
 .autocomplete {
@@ -156,9 +155,10 @@ body .autocomplete-input:focus {
   left: 0;
   right: 0;
   z-index: 99;
-  max-height: 340px;
+  max-height: 255px;
   overflow-y: auto;
   width: 585px;
+  box-shadow: 0px 1px 0px 0px #b1b4b6;
 }
 
 .search-button2 {
