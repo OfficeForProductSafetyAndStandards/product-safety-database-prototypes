@@ -382,6 +382,12 @@ body .autocomplete-input:focus {
   color: #505a5f;
 }
 
+.section-heading:not(:first-child) > strong {
+  border-top: 1px solid #b1b4b6;
+  display: block;
+  padding-top: 20px;
+}
+
 .autocomplete-items-alt div {
   padding: 8px;
   padding-top: 12px;
