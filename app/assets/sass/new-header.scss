@@ -130,7 +130,7 @@ ul.govuk-list li {
   width: 575px;
   height: 34px;
   border: 2px solid #0b0c0c;
-  padding-left: 6px;
+  padding-left: 8px;
   font-family: "GDS Transport", arial, sans-serif;
   font-size: 19px;
 }
@@ -142,7 +142,9 @@ body .autocomplete-input:focus {
   outline: none;
   box-shadow: 0 0 0 3px #f9de4b;
   margin-right: -4px;
-  padding-left: 4px;
+  padding-left: 6px;
+  padding-right: 3px;
+
 }
 
 .autocomplete {
@@ -375,7 +377,7 @@ body .autocomplete-input:focus {
 
 .section-heading {
   pointer-events: none;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #505a5f;
@@ -383,7 +385,7 @@ body .autocomplete-input:focus {
 
 .autocomplete-items-alt div {
   padding: 8px;
-  padding-top: 9px;
+  padding-top: 12px;
   cursor: pointer;
   background-color: #ffffff;
   border-left: 1px solid #b1b4b6;
@@ -424,7 +426,7 @@ body .autocomplete-input:focus {
   left: 0;
   right: 0;
   z-index: 99;
-  max-height: 265px;
+  max-height: 320px;
   overflow-y: auto;
   width: 585px;
   box-shadow: 0 1px 0 0 #b1b4b6;
